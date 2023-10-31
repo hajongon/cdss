@@ -1,0 +1,5 @@
+.resultRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* 첫 번째 요소는 2fr, 나머지 두 개 요소는 각각 1fr */
+    grid-gap: 10px; /* 각 요소 사이의 간격 설정 */
+}
