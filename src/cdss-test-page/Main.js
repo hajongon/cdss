@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import PatientInfo from './PatientInfo'
 import PatientSymptom from './PatientSymptom'
@@ -9,13 +9,27 @@ import AntibioticResistance from './AntibioticResistance'
 import SideChartBar from './SideChartBar'
 import DiagnosticResult from './DiagnosticResult'
 import './Main.css'
+import axios from 'axios'
+
+import AppContext from 'context/Context';
 
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
 
+  // AppContext에서 patientsInfo와 setPatientsInfo를 가져옵니다.
+  const { patientsInfo, setPatientsInfo } = useContext(AppContext);
+
   useEffect(() => {
-    setShowResult(false)
+      // GET 요청을 보내고 데이터를 콘솔에 출력
+      axios.get('http://localhost:8080/patients')
+        .then((response) => {
+          const fetchedData = response.data
+          setPatientsInfo([...fetchedData])
+        })
+        .catch((error) => {
+          console.error('에러 발생:', error)
+        })
   }, [])
 
   return (

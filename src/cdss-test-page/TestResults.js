@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientSymptom.css'
 import { Table } from 'react-bootstrap'
-import TopPages from './TopPages'
-import { testResultData, topPagesTableData } from './dummyData'
+import { testResultData } from './dummyData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVial, faBacterium } from '@fortawesome/free-solid-svg-icons'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
+import AppContext from 'context/Context';
+
 const CategoryFilter = ({ setSelectedCategory }) => {
+
   const onOptionChange = e => {
     setSelectedCategory(e.target.value)
   }
@@ -19,7 +21,7 @@ const CategoryFilter = ({ setSelectedCategory }) => {
       <Form.Select size="sm" onChange={e => onOptionChange(e)}>
         <option value="none">검사 종류</option>
         <option value="all">전체</option>
-        <option value="urine">Urine</option>
+        <option value="R.Urine">Urine</option>
         <option value="serum">Serum</option>
         <option value="anti_sensrslt">Anti_sensrslt</option>
       </Form.Select>
@@ -28,21 +30,23 @@ const CategoryFilter = ({ setSelectedCategory }) => {
 }
 
 const TestResults = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [resultTableData, setResultTableData] = useState(testResultData)
 
-  const tdIconElementRef = useRef(null); // useRef로 td 요소의 참조 생성
+  const { urineData, setUrineData } = useContext(AppContext)
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [filteredResult, setFilteredResult] = useState(urineData)
 
 
   useEffect(() => {
-    if (selectedCategory === 'all' || selectedCategory === 'none') setResultTableData(testResultData)
+    if (selectedCategory === 'all' || selectedCategory === 'none') setFilteredResult([...urineData])
     else {
-      const filteredData = testResultData.filter(
-        data => data.category === selectedCategory
+      const filteredData = urineData.filter(
+        data => data.spcname === selectedCategory
       )
-      setResultTableData(filteredData)
+      setFilteredResult([...filteredData])
     }
   }, [selectedCategory])
+
+  
 
   return (
     <Card className="h-100 fs--1">
@@ -61,10 +65,14 @@ const TestResults = () => {
               <th></th>
               <th></th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="d-flex flex-column align-items-start text-black">
-            {resultTableData.map(data => {
+
+          {/*
+          
+           {filteredResult.map(data => {
               const tooltip = (
                 <Tooltip
                   id={`svg-tooltip-${data.idx}`} // 고유한 ID 생성
@@ -104,8 +112,8 @@ const TestResults = () => {
               }
 
               return (
-                <tr key={data.idx} ref={tdIconElementRef}>
-                  <td>{icon}</td> {/* 아이콘 렌더링 */}
+                <tr key={data.idx}>
+                  <td>{icon}</td> 
                   <td>{data.testDate}</td>
                   <td className="text-info">{data.testCode}</td>
                   <td>{data.resultName}</td>
@@ -114,6 +122,25 @@ const TestResults = () => {
                 </tr>
               )
             })}
+          
+
+          */}
+          { urineData.map((data, idx) => {
+            return (
+              <tr key={idx}>
+              <td><FontAwesomeIcon
+                      icon={faVial}
+                      style={{ color: '#c2b62e' }}
+                    /></td> 
+              <td>{data.orddate}</td>
+              <td className="text-info">{data.examcode}</td>
+              <td>{data.spcname}</td>
+              <td>{data.normalfg}</td>
+              <td>{data.procstat}</td>
+              <td>{data.examtyp}</td>
+            </tr>
+            )
+          })}
           </tbody>
         </Table>
       </Card.Body>

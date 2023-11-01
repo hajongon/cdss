@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from 'context/Context';
 import { settings } from './config';
@@ -53,6 +53,9 @@ const Main = props => {
     });
   };
 
+  const [ patientsInfo, setPatientsInfo ] = useState([])
+  const [ urineData, setUrineData ] = useState([])
+
   if (!isLoaded) {
     return (
       <div
@@ -69,7 +72,7 @@ const Main = props => {
   }
 
   return (
-    <AppContext.Provider value={{ config, setConfig, configDispatch }}>
+    <AppContext.Provider value={{ config, setConfig, configDispatch, patientsInfo, setPatientsInfo, urineData, setUrineData }}>
       {props.children}
     </AppContext.Provider>
   );
