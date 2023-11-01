@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as ReactBootstrap from 'react-bootstrap';
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
-import { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import * as ReactBootstrap from 'react-bootstrap'
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
+import { defaultProps } from 'prism-react-renderer'
+import theme from 'prism-react-renderer/themes/dracula'
+import classNames from 'classnames'
 
 const FalconCardBody = ({
   code,
@@ -49,8 +49,8 @@ const FalconCardBody = ({
         </ReactBootstrap.Tab.Content>
       </LiveProvider>
     </ReactBootstrap.Card.Body>
-  );
-};
+  )
+}
 
 FalconCardBody.propTypes = {
   code: PropTypes.string,
@@ -62,6 +62,6 @@ FalconCardBody.propTypes = {
   noLight: PropTypes.bool,
   className: PropTypes.string,
   childrenPosition: PropTypes.string
-};
+}
 
-export default FalconCardBody;
+export default FalconCardBody

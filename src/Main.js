@@ -1,13 +1,13 @@
-import React, { useReducer, useState } from 'react';
-import PropTypes from 'prop-types';
-import AppContext from 'context/Context';
-import { settings } from './config';
-import { getColor, getItemFromStore } from 'helpers/utils';
-import { configReducer } from './reducers/configReducer';
-import useToggleStyle from './hooks/useToggleStyle';
+import React, { useReducer, useState } from 'react'
+import PropTypes from 'prop-types'
+import AppContext from 'context/Context'
+import { settings } from './config'
+import { getColor, getItemFromStore } from 'helpers/utils'
+import { configReducer } from './reducers/configReducer'
+import useToggleStyle from './hooks/useToggleStyle'
 
-import { Chart as ChartJS, registerables } from 'chart.js';
-ChartJS.register(...registerables);
+import { Chart as ChartJS, registerables } from 'chart.js'
+ChartJS.register(...registerables)
 
 const Main = props => {
   const configState = {
@@ -25,15 +25,15 @@ const Main = props => {
     showBurgerMenu: settings.showBurgerMenu,
     showSettingPanel: false,
     navbarCollapsed: false
-  };
+  }
 
-  const [config, configDispatch] = useReducer(configReducer, configState);
+  const [config, configDispatch] = useReducer(configReducer, configState)
 
   const { isLoaded } = useToggleStyle(
     config.isRTL,
     config.isDark,
     configDispatch
-  );
+  )
 
   const setConfig = (key, value) => {
     configDispatch({
@@ -50,11 +50,16 @@ const Main = props => {
           'navbarStyle'
         ].includes(key)
       }
-    });
-  };
+    })
+  }
 
-  const [ patientsInfo, setPatientsInfo ] = useState([])
-  const [ urineData, setUrineData ] = useState([])
+  const [patientsInfo, setPatientsInfo] = useState([])
+
+  const [testResultData, setTestResultData] = useState([])
+
+  const [urineData, setUrineData] = useState([])
+  const [serumData, setSerumData] = useState([])
+  const [snsrsltData, setSnsrsltData] = useState([])
 
   if (!isLoaded) {
     return (
@@ -68,16 +73,32 @@ const Main = props => {
           backgroundColor: config.isDark ? getColor('dark') : getColor('light')
         }}
       />
-    );
+    )
   }
 
   return (
-    <AppContext.Provider value={{ config, setConfig, configDispatch, patientsInfo, setPatientsInfo, urineData, setUrineData }}>
+    <AppContext.Provider
+      value={{
+        config,
+        setConfig,
+        configDispatch,
+        patientsInfo,
+        setPatientsInfo,
+        urineData,
+        setUrineData,
+        serumData,
+        setSerumData,
+        testResultData,
+        setTestResultData,
+        snsrsltData,
+        setSnsrsltData
+      }}
+    >
       {props.children}
     </AppContext.Provider>
-  );
-};
+  )
+}
 
-Main.propTypes = { children: PropTypes.node };
+Main.propTypes = { children: PropTypes.node }
 
-export default Main;
+export default Main

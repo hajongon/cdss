@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Card, Form } from 'react-bootstrap'
+import { Card, Col, Form, Row } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientSymptom.css'
 import { Table } from 'react-bootstrap'
@@ -8,54 +8,99 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVial, faBacterium } from '@fortawesome/free-solid-svg-icons'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
-import AppContext from 'context/Context';
+import AppContext from 'context/Context'
+import Flex from './Flex'
+import { formatDate, sortByDate } from './timeDateFunction'
 
-const CategoryFilter = ({ setSelectedCategory }) => {
+const SpcnameCheckbox = ({ handleCheckboxChange }) => {
+  const [urineChecked, setUrineChecked] = useState(true)
+  const [serumChecked, setSerumChecked] = useState(true)
 
-  const onOptionChange = e => {
-    setSelectedCategory(e.target.value)
+  useEffect(() => {
+    // 최초 렌더링 시 체크박스 상태를 true로 설정
+    setUrineChecked(true)
+    setSerumChecked(true)
+  }, [])
+
+  const handleUrineChange = e => {
+    const isChecked = e.target.checked
+    setUrineChecked(isChecked)
+    handleCheckboxChange({ urineChecked: isChecked, serumChecked })
+  }
+
+  const handleSerumChange = e => {
+    const isChecked = e.target.checked
+    setSerumChecked(isChecked)
+    handleCheckboxChange({ urineChecked, serumChecked: isChecked })
   }
 
   return (
-    <>
-      <Form.Select size="sm" onChange={e => onOptionChange(e)}>
-        <option value="none">검사 종류</option>
-        <option value="all">전체</option>
-        <option value="R.Urine">Urine</option>
-        <option value="serum">Serum</option>
-        <option value="anti_sensrslt">Anti_sensrslt</option>
-      </Form.Select>
-    </>
+    <Flex direction="row" className="gap-4" alignItems="center">
+      <Form.Check
+        className="custom-label"
+        inline
+        type="checkbox"
+        id="urine"
+        label="R.Urine"
+        onChange={handleUrineChange}
+        checked={urineChecked}
+      />
+      <Form.Check
+        className="custom-label"
+        inline
+        type="checkbox"
+        id="serum"
+        label="Serum"
+        onChange={handleSerumChange}
+        checked={serumChecked}
+      />
+    </Flex>
   )
 }
 
 const TestResults = () => {
-
-  const { urineData, setUrineData } = useContext(AppContext)
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [filteredResult, setFilteredResult] = useState(urineData)
-
+  const { testResultData, setTestResultData } = useContext(AppContext)
+  const [filteredResult, setFilteredResult] = useState(testResultData)
+  const [checkboxState, setCheckboxState] = useState({
+    urineChecked: true,
+    serumChecked: true
+  })
 
   useEffect(() => {
-    if (selectedCategory === 'all' || selectedCategory === 'none') setFilteredResult([...urineData])
-    else {
-      const filteredData = urineData.filter(
-        data => data.spcname === selectedCategory
-      )
-      setFilteredResult([...filteredData])
-    }
-  }, [selectedCategory])
+    // SpcnameCheckbox에서 체크박스 상태에 따라 데이터 필터링
 
-  
+    const filteredData = testResultData.filter(data => {
+      if (checkboxState.urineChecked && checkboxState.serumChecked) {
+        return true // 둘 다 체크된 경우 모든 데이터 표시
+      } else if (checkboxState.urineChecked) {
+        return data.spcname === 'R.Urine'
+      } else if (checkboxState.serumChecked) {
+        return data.spcname === 'Serum'
+      } else {
+        return false // 아무것도 체크하지 않은 경우 데이터 표시하지 않음
+      }
+    })
+    setFilteredResult(filteredData)
+  }, [checkboxState, testResultData])
+
+  const handleCheckboxChange = newState => {
+    setCheckboxState(newState)
+  }
 
   return (
     <Card className="h-100 fs--1">
       <FalconCardHeader
         title="검사정보"
         titleClass="fs-0 fw-bold"
-        endEl={<CategoryFilter setSelectedCategory={setSelectedCategory} />}
+        endEl={<SpcnameCheckbox handleCheckboxChange={handleCheckboxChange} />}
       />
-      <Card.Body className="bg-white">
+      <Card.Body
+        className="bg-white"
+        style={{
+          maxHeight: '160px',
+          overflowY: 'scroll'
+        }}
+      >
         <Table borderless responsive size="sm">
           <thead className="border border-top-0 border-start-0 border-end-0 border-bottom-0">
             <tr>
@@ -68,79 +113,34 @@ const TestResults = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody className="d-flex flex-column align-items-start text-black">
-
-          {/*
-          
-           {filteredResult.map(data => {
-              const tooltip = (
-                <Tooltip
-                  id={`svg-tooltip-${data.idx}`} // 고유한 ID 생성
-                  style={{ position: 'relative' }}
-                >
-                  {data.category}
-                </Tooltip>
-              )
-              let icon = null // 초기 아이콘 값은 null로 설정
-
-              if (data.category === 'urine') {
-                icon = (
-                  <OverlayTrigger overlay={tooltip}>
-                    <FontAwesomeIcon
-                      icon={faVial}
-                      style={{ color: '#c2b62e' }}
-                    />
-                  </OverlayTrigger>
-                )
-              } else if (data.category === 'serum') {
-                icon = (
-                  <OverlayTrigger overlay={tooltip}>
-                    <FontAwesomeIcon
-                      icon={faVial}
-                      style={{ color: '#ff5252' }}
-                    />
-                  </OverlayTrigger>
-                )
-              } else if (data.category === 'anti_sensrslt') {
-                icon = (
-                  <OverlayTrigger overlay={tooltip}>
-                    <FontAwesomeIcon
-                      icon={faBacterium}
-                    />
-                  </OverlayTrigger>
-                )
-              }
-
+          <tbody>
+            {filteredResult.map((data, idx) => {
               return (
-                <tr key={data.idx}>
-                  <td>{icon}</td> 
-                  <td>{data.testDate}</td>
-                  <td className="text-info">{data.testCode}</td>
-                  <td>{data.resultName}</td>
-                  <td>{data.resultDetail}</td>
-                  <td className="text-info">{data.resultNum}</td>
+                <tr key={idx}>
+                  <td>
+                    {data.spcname === 'R.Urine' ? (
+                      <FontAwesomeIcon
+                        icon={faVial}
+                        style={{ color: '#c2b62e' }}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faVial}
+                        style={{ color: '#ff5252' }}
+                      />
+                    )}
+                  </td>
+                  <td>{formatDate(data.orddate)}</td>
+                  <td className="text-info">
+                    {data.spcname === 'R.Urine' ? data.examcode : data.ordcode}
+                  </td>
+                  <td>{data.spcname}</td>
+                  <td>{data.normalfg}</td>
+                  <td>{data.procstat}</td>
+                  <td>{data.examtyp}</td>
                 </tr>
               )
             })}
-          
-
-          */}
-          { urineData.map((data, idx) => {
-            return (
-              <tr key={idx}>
-              <td><FontAwesomeIcon
-                      icon={faVial}
-                      style={{ color: '#c2b62e' }}
-                    /></td> 
-              <td>{data.orddate}</td>
-              <td className="text-info">{data.examcode}</td>
-              <td>{data.spcname}</td>
-              <td>{data.normalfg}</td>
-              <td>{data.procstat}</td>
-              <td>{data.examtyp}</td>
-            </tr>
-            )
-          })}
           </tbody>
         </Table>
       </Card.Body>

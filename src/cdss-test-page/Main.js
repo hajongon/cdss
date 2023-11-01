@@ -11,25 +11,27 @@ import DiagnosticResult from './DiagnosticResult'
 import './Main.css'
 import axios from 'axios'
 
-import AppContext from 'context/Context';
+import AppContext from 'context/Context'
+import AntiSensrslt from './AntiSensrslt'
 
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
 
   // AppContext에서 patientsInfo와 setPatientsInfo를 가져옵니다.
-  const { patientsInfo, setPatientsInfo } = useContext(AppContext);
+  const { patientsInfo, setPatientsInfo } = useContext(AppContext)
 
   useEffect(() => {
-      // GET 요청을 보내고 데이터를 콘솔에 출력
-      axios.get('http://localhost:8080/patients')
-        .then((response) => {
-          const fetchedData = response.data
-          setPatientsInfo([...fetchedData])
-        })
-        .catch((error) => {
-          console.error('에러 발생:', error)
-        })
+    // GET 요청을 보내고 데이터를 콘솔에 출력
+    axios
+      .get('http://localhost:8080/patients')
+      .then(response => {
+        const fetchedData = response.data
+        setPatientsInfo([...fetchedData])
+      })
+      .catch(error => {
+        console.error('에러 발생:', error)
+      })
   }, [])
 
   return (
@@ -67,8 +69,18 @@ const Main = () => {
           {isPatientSelected ? (
             <Row className="mb-3 g-3">
               <Col md={6} xs={12}>
-                <TestResults />
+                <Row className="mb-3 g-3">
+                  <Col xs={12}>
+                    <AntiSensrslt />
+                  </Col>
+                </Row>
+                <Row className="g-3">
+                  <Col xs={12}>
+                    <TestResults />
+                  </Col>
+                </Row>
               </Col>
+
               <Col md={6} xs={12}>
                 <Row className="mb-3 g-3">
                   <Col xs={12}>

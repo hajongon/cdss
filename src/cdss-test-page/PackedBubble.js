@@ -1,7 +1,7 @@
-import React from 'react';
-import * as d3 from 'd3';
-import { trendingKeywords } from './dummyData';
-import FalconComponentCard from './FalconComponentCard';
+import React from 'react'
+import * as d3 from 'd3'
+import { trendingKeywords } from './dummyData'
+import FalconComponentCard from './FalconComponentCard'
 
 const chartCode = `
 BubbleChart = () => {
@@ -105,11 +105,15 @@ BubbleChart = () => {
       </div>
     );
   }
-`;
+`
 const PackedBubble = () => {
   return (
     <FalconComponentCard className="h-100 ps-0 pe-0">
-      <FalconComponentCard.Header title="2022년 대상 환자에게 처방된 내복약 항생제 순위" light={false} className="bg-light"/>
+      <FalconComponentCard.Header
+        title="2022년 대상 환자에게 처방된 내복약 항생제 순위"
+        light={false}
+        className="bg-light"
+      />
       <FalconComponentCard.Body
         className="bg-white"
         code={chartCode}
@@ -120,7 +124,7 @@ const PackedBubble = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default PackedBubble;
+export default PackedBubble

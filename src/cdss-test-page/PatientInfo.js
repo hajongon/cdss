@@ -5,7 +5,7 @@ import './PatientInfo.css'
 import Flex from './Flex'
 import axios from 'axios'
 
-import AppContext from 'context/Context';
+import AppContext from 'context/Context'
 
 const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   const [isMedicated, setIsMedicated] = useState(false)
@@ -19,8 +19,14 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
     temperature: '36.7'
   })
 
-  const { patientsInfo, setPatientsInfo } = useContext(AppContext)
-  const { urineData, setUrineData } = useContext(AppContext)
+  const {
+    patientsInfo,
+    setPatientsInfo,
+    testResultData,
+    setTestResultData,
+    snsrsltData,
+    setSnsrsltData
+  } = useContext(AppContext)
 
   const handleChange = e => {
     setFormData({
@@ -29,36 +35,63 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
     })
   }
 
-  const onNameChange = (e) => {
+  const onNameChange = async e => {
     if (e.target.value === '이름 선택') {
       // 선택한 옵션이 '이름 선택'일 경우, 원하는 동작을 수행하도록 설정
-      setIsPatientSelected(false);
+      setIsPatientSelected(false)
     } else {
-
-      setIsPatientSelected(true);
+      setIsPatientSelected(true)
 
       // patnoid가 입력받은 값과 같은 데이터만 필터링
-      const selectedData = patientsInfo.filter(pat => pat.patnoid === e.target.value)
+      const selectedData = patientsInfo.filter(
+        pat => pat.patnoid === e.target.value
+      )
 
       // 해당 데이터의 ptSbstNo를 저장
       const sbstNo = JSON.stringify({
         pt_sbst_no: selectedData[0].ptSbstNo
       })
 
-      // 요청 바디에 ptSbstNo를 실어서 post 요청하면
-      // urine 결과 중 ptSbstNo가 일치하는 것만 응답으로 온다.
-      axios.post('http://localhost:8080/urine/get-by-pt-sbst-no', sbstNo, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then((response) => {
-        const fetchedData = response.data
-        setUrineData([...fetchedData])
-      })
-      .catch((error) => {
+      try {
+        const urineResponse = await axios.post(
+          'http://localhost:8080/urine/get-by-pt-sbst-no',
+          sbstNo,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        )
+
+        const serumResponse = await axios.post(
+          'http://localhost:8080/serum/get-by-pt-sbst-no',
+          sbstNo,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        )
+
+        const snsrsltResponse = await axios.post(
+          'http://localhost:8080/snsrslt/get-by-pt-sbst-no',
+          sbstNo,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        )
+        console.log(snsrsltResponse.data)
+        const temp = []
+        temp.push(...urineResponse.data)
+        temp.push(...serumResponse.data)
+
+        setTestResultData([...temp])
+        setSnsrsltData([...snsrsltResponse.data])
+      } catch (error) {
         console.error('에러 발생:', error)
-      })
+      }
     }
   }
 
@@ -78,10 +111,14 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
               <Form.Select
                 size="m"
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                onChange={(e) => {onNameChange(e)}}
+                onChange={e => {
+                  onNameChange(e)
+                }}
               >
                 <option>이름 선택</option>
-                { patientsInfo.map((pat) => <option key={pat.patnoid}>{pat.patnoid}</option>) }
+                {patientsInfo.map(pat => (
+                  <option key={pat.patnoid}>{pat.patnoid}</option>
+                ))}
               </Form.Select>
             </Form.Group>
 

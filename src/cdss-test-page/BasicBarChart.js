@@ -1,18 +1,18 @@
-import FalconComponentCard from './FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import FalconComponentCard from './FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const months = [
@@ -119,12 +119,16 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const BasicBarChart = ({ title }) => {
   return (
     <FalconComponentCard className="h-100 ps-0 pe-0">
-      <FalconComponentCard.Header title={title} light={false} className="bg-light"/>
+      <FalconComponentCard.Header
+        title={title}
+        light={false}
+        className="bg-light"
+      />
       <FalconComponentCard.Body
         className="bg-white"
         code={chartCode}
@@ -137,11 +141,11 @@ const BasicBarChart = ({ title }) => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
 BasicBarChart.propTypes = {
   title: PropTypes.string
-};
+}
 
-export default BasicBarChart;
+export default BasicBarChart

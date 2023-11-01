@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Tab, Row, Col, Nav, Button } from 'react-bootstrap';
-import FalconCardBody from './FalconCardBody';
-import classNames from 'classnames';
-import { HashLink } from 'react-router-hash-link';
-import Flex from './Flex';
-import { useLocation } from 'react-router-dom';
-import { camelize } from './utils';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Tab, Row, Col, Nav, Button } from 'react-bootstrap'
+import FalconCardBody from './FalconCardBody'
+import classNames from 'classnames'
+import { HashLink } from 'react-router-hash-link'
+import Flex from './Flex'
+import { useLocation } from 'react-router-dom'
+import { camelize } from './utils'
+import AppContext from 'context/Context'
 
 const PreviewCode = () => {
   return (
@@ -27,8 +27,8 @@ const PreviewCode = () => {
         </Nav>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 const FalconComponentCardHeader = ({
   light,
@@ -37,10 +37,10 @@ const FalconComponentCardHeader = ({
   children,
   noPreview
 }) => {
-  const location = useLocation();
+  const location = useLocation()
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
   return (
     <Card.Header className={classNames({ 'bg-light': light }, className)}>
       <Row
@@ -90,14 +90,12 @@ const FalconComponentCardHeader = ({
               'col-auto': !children,
               'col-md-auto col-12': children
             })}
-          >
-          
-          </Col>
+          ></Col>
         )}
       </Row>
     </Card.Header>
-  );
-};
+  )
+}
 
 const FalconComponentCard = ({
   children,
@@ -113,17 +111,17 @@ const FalconComponentCard = ({
         <Tab.Container defaultActiveKey="preview">{children}</Tab.Container>
       )}
     </Card>
-  );
-};
+  )
+}
 
-FalconComponentCard.Header = FalconComponentCardHeader;
-FalconComponentCard.Body = FalconCardBody;
+FalconComponentCard.Header = FalconComponentCardHeader
+FalconComponentCard.Body = FalconCardBody
 
 FalconComponentCard.propTypes = {
   children: PropTypes.node,
   multiSections: PropTypes.bool,
   noGuttersBottom: PropTypes.bool
-};
+}
 
 FalconComponentCardHeader.propTypes = {
   light: PropTypes.bool,
@@ -131,6 +129,6 @@ FalconComponentCardHeader.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
   noPreview: PropTypes.bool
-};
+}
 
-export default FalconComponentCard;
+export default FalconComponentCard

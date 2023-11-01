@@ -6,10 +6,12 @@ import { Dropdown } from 'react-bootstrap'
 import { Table } from 'react-bootstrap'
 
 const AntibioticResistance = () => {
-
   return (
     <Card className="h-100 fs--1">
-      <FalconCardHeader title="과거 항생제 내성 이력" titleClass="fs-0 fw-bold"/>
+      <FalconCardHeader
+        title="과거 항생제 내성 이력"
+        titleClass="fs-0 fw-bold"
+      />
       <Card.Body className="bg-white">
         <Table borderless responsive size="sm">
           <thead className="border border-200 border-top-0 border-start-0 border-end-0 border-bottom-1 text-600">

@@ -1,14 +1,13 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
 
 // import ModalVideoContent from '../ModalVideoContent';
-import Flex from './Flex';
-import PatientInfo from './PatientInfo';
-import BasicBarChart from './BasicBarChart';
-import SymptomSite from './SymptomSite';
+import Flex from './Flex'
+import PatientInfo from './PatientInfo'
+import BasicBarChart from './BasicBarChart'
+import SymptomSite from './SymptomSite'
 
 const CdssMain = () => {
-
   return (
     <>
       <Card className="overflow-hidden">
@@ -31,8 +30,7 @@ const CdssMain = () => {
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-
-export default CdssMain;
+export default CdssMain

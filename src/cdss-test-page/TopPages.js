@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col } from 'react-bootstrap';
-import AdvanceTableWrapper from './advance-table/AdvanceTableWrapper';
-import AdvanceTable from './advance-table/AdvanceTable';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col } from 'react-bootstrap'
+import AdvanceTableWrapper from './advance-table/AdvanceTableWrapper'
+import AdvanceTable from './advance-table/AdvanceTable'
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -45,7 +45,7 @@ const columns = [
       className: 'text-end'
     }
   }
-];
+]
 
 const TopPages = ({ title, tableData, perPage = 4 }) => {
   return (
@@ -59,9 +59,7 @@ const TopPages = ({ title, tableData, perPage = 4 }) => {
         <Card.Header className="bg-200">
           <Row className="flex-between-center">
             <Col xs="auto" sm={12} lg={12}>
-              <h6 className="fs--1 mb-0 text-nowrap py-2 py-xl-0">
-                {title}
-              </h6>
+              <h6 className="fs--1 mb-0 text-nowrap py-2 py-xl-0">{title}</h6>
             </Col>
           </Row>
         </Card.Header>
@@ -77,8 +75,8 @@ const TopPages = ({ title, tableData, perPage = 4 }) => {
         </Card.Body>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 TopPages.propTypes = {
   tableData: PropTypes.arrayOf(
@@ -91,6 +89,6 @@ TopPages.propTypes = {
     })
   ).isRequired,
   perPage: PropTypes.number
-};
+}
 
-export default TopPages;
+export default TopPages
