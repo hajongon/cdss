@@ -39,7 +39,11 @@ const Main = () => {
     <div className="cdss-test-container">
       <Row className="g-3">
         <Col xl={9}>
-          <Flex direction="column" justifyContent="between" className="h-100">
+          <Flex
+            direction="column"
+            justifyContent={isPatientSelected ? 'between' : 'flex-start'}
+            className="h-100"
+          >
             {/* Courses */}
             <Row className="mb-3 g-3">
               <Col xs={12}>
@@ -50,7 +54,6 @@ const Main = () => {
                 />
               </Col>
             </Row>
-
             {!showResult ? (
               <Row className="mb-3 g-3">
                 <Col md={6} xs={12}>
