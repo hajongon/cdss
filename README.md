@@ -1,6 +1,2 @@
-## Falcon, a theme by ThemeWagon team.
+## CDSS_AI기반 항생제 내성 의사결정 지원 시스템
 
----
-
-Get the figma design file here:
-[https://www.figma.com/file/RtbiVOzKdtq0cDsG4BELJn/Falcon-React-Distributed-(v3.9.0)](<https://www.figma.com/file/RtbiVOzKdtq0cDsG4BELJn/Falcon-React-Distributed-(v3.9.0)>)
