@@ -43,7 +43,7 @@ const MainLayout = () => {
           <div className={classNames('content', { 'pb-0': isKanban })}>
             <NavbarTop />
             {/*------ Main Routes ------*/}
-            <Outlet />
+            <Outlet className="pb-0" />
             {/* {!isKanban && <Footer />} */}
           </div>
         </CourseProvider>

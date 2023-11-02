@@ -10,7 +10,7 @@ const DiagnosticResult = ({ setShowResult }) => {
   return (
     <Card>
       <FalconCardHeader title="Result" titleClass="fs-0 fw-bold" />
-      <Card.Body className="bg-light fs--1">
+      <Card.Body className="bg-white fs--1">
         <Row className="mb-3 g-3">
           <Col xs={1} md={4}>
             <div className="mb-2">감염 예상 부위</div>

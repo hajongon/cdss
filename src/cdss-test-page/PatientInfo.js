@@ -6,18 +6,20 @@ import Flex from './Flex'
 import axios from 'axios'
 
 import AppContext from 'context/Context'
+import { sortByTimestamp } from './timeDateFunction'
 
 const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   const [isMedicated, setIsMedicated] = useState(false)
   const [formData, setFormData] = useState({
-    birth: '1991. 11. 29 (만 31세)',
-    period: '2023. 10. 15',
+    birthday: '1991. 11. 29 (만 31세)',
     medicineName: '',
-    startDate: '2023. 10. 15',
-    endDate: '입원중',
-    gender: '남성',
-    temperature: '36.7'
+    admtime: '2023. 10. 15',
+    dschtime: '입원중',
+    sex: '남성',
+    bodytemp: '36.7'
   })
+
+  console.log(formData)
 
   const {
     patientsInfo,
@@ -45,11 +47,13 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
       // patnoid가 입력받은 값과 같은 데이터만 필터링
       const selectedData = patientsInfo.filter(
         pat => pat.patnoid === e.target.value
-      )
+      )[0]
+
+      setFormData({ ...selectedData })
 
       // 해당 데이터의 ptSbstNo를 저장
       const sbstNo = JSON.stringify({
-        pt_sbst_no: selectedData[0].ptSbstNo
+        pt_sbst_no: selectedData.ptSbstNo
       })
 
       try {
@@ -82,12 +86,13 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
             }
           }
         )
-        console.log(snsrsltResponse.data)
-        const temp = []
-        temp.push(...urineResponse.data)
-        temp.push(...serumResponse.data)
 
-        setTestResultData([...temp])
+        const entireTestResult = []
+        entireTestResult.push(...urineResponse.data)
+        entireTestResult.push(...serumResponse.data)
+
+        const dateSortedEntireTestResult = sortByTimestamp(entireTestResult)
+        setTestResultData([...dateSortedEntireTestResult])
         setSnsrsltData([...snsrsltResponse.data])
       } catch (error) {
         console.error('에러 발생:', error)
@@ -128,19 +133,19 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                 type="text"
                 placeholder="성별"
-                value="남성"
+                value={formData.sex}
                 name="gender"
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={3} xs={12} xl={2} controlId="birth">
+            <Form.Group as={Col} lg={3} xs={12} xl={2} controlId="birthday">
               <Form.Label className="fs--1 mb-0 text-600">생년월일</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                 type="text"
                 placeholder="생년월일"
-                value={formData.birth}
-                name="birth"
+                value={formData.birthday}
+                name="birthday"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -150,7 +155,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                 type="text"
                 placeholder="체온"
-                value={formData.temperature}
+                value={formData.bodytemp}
                 name="temperature"
                 onChange={handleChange}
               />
@@ -166,7 +171,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                     className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                     type="text"
                     placeholder="입원 날짜"
-                    value={formData.startDate}
+                    value={formData.admtime}
                     name="period"
                     onChange={handleChange}
                   />
@@ -179,7 +184,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                     className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                     type="text"
                     placeholder="퇴원 날짜"
-                    value={formData.endDate}
+                    value={formData.dschtime}
                     name="period"
                     onChange={handleChange}
                   />
@@ -231,7 +236,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 <Button
                   variant="primary"
                   type="submit"
-                  className="h-50 fs--1 align-self-center"
+                  className="fs--1 align-self-center"
                 >
                   항생제 내성 판단
                 </Button>

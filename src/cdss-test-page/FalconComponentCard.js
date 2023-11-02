@@ -35,7 +35,9 @@ const FalconComponentCardHeader = ({
   className,
   title,
   children,
-  noPreview
+  noPreview,
+  // chart 면 타이틀 fontweight를 light로
+  charts = false
 }) => {
   const location = useLocation()
   const {
@@ -53,7 +55,11 @@ const FalconComponentCardHeader = ({
           {title && (
             <Flex>
               <h5
-                className="fs-0 fw-semi-bold mb-0 hover-actions-trigger text-truncate text-nowrap"
+                className={
+                  charts
+                    ? `fs-0 fw-light mb-0 hover-actions-trigger text-truncate text-nowrap`
+                    : `fs-0 fw-semi-bold mb-0 hover-actions-trigger text-truncate text-nowrap`
+                }
                 id={camelize(title)}
               >
                 {isRTL ? (

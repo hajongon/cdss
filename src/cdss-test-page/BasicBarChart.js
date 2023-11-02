@@ -123,14 +123,15 @@ const chartCode = `function ChartOptions() {
 
 const BasicBarChart = ({ title }) => {
   return (
-    <FalconComponentCard className="h-100 ps-0 pe-0">
+    <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">
       <FalconComponentCard.Header
         title={title}
         light={false}
-        className="bg-light"
+        charts={true}
+        className="bg-transparent"
       />
       <FalconComponentCard.Body
-        className="bg-white"
+        className="bg-transparent"
         code={chartCode}
         language="jsx"
         scope={{

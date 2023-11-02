@@ -1,1 +1,9 @@
-.cdss-test-container {font-family: 'Noto Sans KR', sans-serif;}
+.cdss-test-container {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Custom CSS 파일 또는 스타일 시트에 추가 */
+.custom-row {
+  display: flex;
+  align-items: stretch; /* 높이를 동일하게 설정 */
+}

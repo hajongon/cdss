@@ -13,6 +13,7 @@ import axios from 'axios'
 
 import AppContext from 'context/Context'
 import AntiSensrslt from './AntiSensrslt'
+import Flex from './Flex'
 
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
@@ -38,63 +39,56 @@ const Main = () => {
     <div className="cdss-test-container">
       <Row className="g-3">
         <Col xl={9}>
-          {/* Courses */}
-          <Row className="mb-3 g-3">
-            <Col xs={12}>
-              <PatientInfo
-                showResult={showResult}
-                setShowResult={setShowResult}
-                setIsPatientSelected={setIsPatientSelected}
-              />
-            </Col>
-          </Row>
-
-          {!showResult ? (
+          <Flex direction="column" justifyContent="between" className="h-100">
+            {/* Courses */}
             <Row className="mb-3 g-3">
-              <Col md={6} xs={12}>
-                <PatientSymptom />
-              </Col>
-              <Col md={6} xs={12}>
-                <SymptomSite />
+              <Col xs={12}>
+                <PatientInfo
+                  showResult={showResult}
+                  setShowResult={setShowResult}
+                  setIsPatientSelected={setIsPatientSelected}
+                />
               </Col>
             </Row>
-          ) : (
-            <Row className="mb-3 g-3">
-              <Col md={12} xs={12}>
-                <DiagnosticResult setShowResult={setShowResult} />
-              </Col>
-            </Row>
-          )}
 
-          {isPatientSelected ? (
-            <Row className="mb-3 g-3">
-              <Col md={6} xs={12}>
+            {!showResult ? (
+              <Row className="mb-3 g-3">
+                <Col md={6} xs={12}>
+                  <PatientSymptom />
+                </Col>
+                <Col md={6} xs={12}>
+                  <SymptomSite />
+                </Col>
+              </Row>
+            ) : (
+              <Row className="mb-3 g-3">
+                <Col md={12} xs={12}>
+                  <DiagnosticResult setShowResult={setShowResult} />
+                </Col>
+              </Row>
+            )}
+
+            {isPatientSelected ? (
+              <>
                 <Row className="mb-3 g-3">
-                  <Col xs={12}>
+                  <Col md={6} xs={12}>
                     <AntiSensrslt />
                   </Col>
-                </Row>
-                <Row className="g-3">
-                  <Col xs={12}>
-                    <TestResults />
-                  </Col>
-                </Row>
-              </Col>
-
-              <Col md={6} xs={12}>
-                <Row className="mb-3 g-3">
-                  <Col xs={12}>
+                  <Col md={6} xs={12}>
                     <AdrHistory />
                   </Col>
                 </Row>
                 <Row className="g-3">
-                  <Col xs={12}>
+                  <Col md={6} xs={12}>
+                    <TestResults />
+                  </Col>
+                  <Col md={6} xs={12}>
                     <AntibioticResistance />
                   </Col>
                 </Row>
-              </Col>
-            </Row>
-          ) : null}
+              </>
+            ) : null}
+          </Flex>
         </Col>
 
         <Col xl={3}>

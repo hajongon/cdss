@@ -108,15 +108,17 @@ BubbleChart = () => {
 `
 const PackedBubble = () => {
   return (
-    <FalconComponentCard className="h-100 ps-0 pe-0">
+    <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">
       <FalconComponentCard.Header
         title="2022년 대상 환자에게 처방된 내복약 항생제 순위"
         light={false}
-        className="bg-light"
+        charts={true}
+        className="bg-transparent"
       />
       <FalconComponentCard.Body
-        className="bg-white"
+        className="bg-transparent"
         code={chartCode}
+        charts={true}
         language="jsx"
         scope={{
           d3,
