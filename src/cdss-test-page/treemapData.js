@@ -1,103 +1,103 @@
 const data = {
-  name: 'Celtics',
+  name: '내가 먹은 음식',
   children: [
     {
-      name: 'Guards',
+      name: '한식',
       children: [
         {
-          category: 'Guards',
-          name: 'Kemba Walker',
-          value: 20.4
+          category: '한식',
+          name: '제육볶음',
+          value: 132
         },
         {
-          category: 'Guards',
-          name: 'Marcus Smart',
-          value: 12.9
+          category: '한식',
+          name: '된장찌개',
+          value: 45
         },
         {
-          category: 'Guards',
-          name: 'Brad Wanamaker',
-          value: 6.9
+          category: '한식',
+          name: '순두부찌개',
+          value: 32
         },
         {
-          category: 'Guards',
-          name: 'Tremont Waters',
-          value: 3.6
+          category: '한식',
+          name: '쌈밥',
+          value: 15
         },
         {
-          category: 'Guards',
-          name: 'Carsen Edwards',
-          value: 3.3
+          category: '한식',
+          name: '불고기',
+          value: 6
         },
         {
-          category: 'Guards',
-          name: 'Romeo Langford',
-          value: 2.5
+          category: '한식',
+          name: '비빔밥',
+          value: 2
         }
       ]
     },
     {
-      name: 'Forwards',
+      name: '중식',
       children: [
         {
-          category: 'Forwards',
-          name: 'Jayson Tatum',
-          value: 23.4
+          category: '중식',
+          name: '짜장면',
+          value: 56
         },
         {
-          category: 'Forwards',
-          name: 'Jaylen Brown',
-          value: 20.3
+          category: '중식',
+          name: '짬뽕',
+          value: 48
         },
         {
-          category: 'Forwards',
-          name: 'Gordon Hayward',
-          value: 17.5
+          category: '중식',
+          name: '볶음밥',
+          value: 17
         },
         {
-          category: 'Forwards',
-          name: 'Grant Williams',
-          value: 3.4
+          category: '중식',
+          name: '마파두부',
+          value: 3
         },
         {
-          category: 'Forwards',
-          name: 'Javonte Green',
-          value: 3.4
+          category: '중식',
+          name: '마라샹궈',
+          value: 34
         },
         {
-          category: 'Forwards',
-          name: 'Semi Ojeleye',
-          value: 3.4
+          category: '중식',
+          name: '양꼬치',
+          value: 3
         },
         {
-          category: 'Forwards',
-          name: 'Vincent Poirier',
-          value: 1.9
+          category: '중식',
+          name: '쯔란양고기볶음 제육볶음 제육볶음 제육볶음 제육볶음',
+          value: 19
         }
       ]
     },
     {
-      name: 'Centers',
+      name: '일식',
       children: [
         {
-          category: 'Centers',
-          name: 'Daniel Theis',
-          value: 9.2
+          category: '일식',
+          name: '스시',
+          value: 16
         },
         {
-          category: 'Centers',
-          name: 'Enes Kanter',
-          value: 8.1
+          category: '일식',
+          name: '히레카츠',
+          value: 8
         },
         {
-          category: 'Centers',
-          name: 'Robert Williams III',
-          value: 5.2
+          category: '일식',
+          name: '카레',
+          value: 5
         },
         {
-          category: 'Centers',
-          name: 'Tacko Fall',
-          value: 3.3
+          category: '일식',
+          name: '사시미',
+          value: 18
         }
       ]
     }

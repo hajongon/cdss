@@ -18,6 +18,8 @@ import Flex from './Flex'
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
+  const [allOrdCount, setAllOrdCount] = useState([])
+  console.log(allOrdCount)
 
   // AppContext에서 patientsInfo와 setPatientsInfo를 가져옵니다.
   const { patientsInfo, setPatientsInfo } = useContext(AppContext)
@@ -29,6 +31,33 @@ const Main = () => {
       .then(response => {
         const fetchedData = response.data
         setPatientsInfo([...fetchedData])
+      })
+      .catch(error => {
+        console.error('에러 발생:', error)
+      })
+
+    axios
+      .get('http://localhost:8080/get-ord-count')
+      .then(response => {
+        const fetchedData = response.data
+        // Initialize an empty array to store the transformed data
+        const transformedData = []
+
+        // Iterate through the fetchedData array
+        for (const item of fetchedData) {
+          // Create a new object with the desired structure
+          const transformedItem = {
+            ptSbstNo: item.ptSbstNo,
+            ordcode: item.ordcode,
+            ordname: item.ordnameTyp1 || item.ordnameTyp2, // Use ordnameTyp1 if it exists, otherwise use ordnameTyp2
+            count: item.count
+          }
+          // Push the transformedItem to the transformedData array
+          transformedData.push(transformedItem)
+        }
+
+        // Set the transformed data in your state
+        setAllOrdCount(transformedData)
       })
       .catch(error => {
         console.error('에러 발생:', error)

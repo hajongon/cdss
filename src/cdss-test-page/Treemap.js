@@ -24,6 +24,7 @@ export default function Treemap({ data, width, height }) {
     const treemapRoot = d3.treemap().size([width, height]).padding(1)(root)
 
     // create 'g' element nodes based on data
+
     const nodes = svg
       .selectAll('g')
       .data(treemapRoot.leaves())
@@ -31,7 +32,7 @@ export default function Treemap({ data, width, height }) {
       .attr('transform', d => `translate(${d.x0},${d.y0})`)
 
     // create color scheme and fader
-    const fader = color => d3.interpolateRgb(color, '#fff')(0.3)
+    const fader = color => d3.interpolateRgb(color, '#fff')(0.4)
     const colorScale = d3.scaleOrdinal(d3.schemeCategory10.map(fader))
 
     // add treemap rects
@@ -41,7 +42,7 @@ export default function Treemap({ data, width, height }) {
       .attr('height', d => d.y1 - d.y0)
       .attr('fill', d => colorScale(d.data.category))
 
-    const fontSize = 12
+    const fontSize = 11
 
     // add text to rects
     nodes
