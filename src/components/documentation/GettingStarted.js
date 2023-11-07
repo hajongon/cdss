@@ -1,16 +1,16 @@
-import { faTrophy } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import corner4 from 'assets/img/illustrations/corner-4.png';
-import corner5 from 'assets/img/illustrations/corner-5.png';
-import Background from 'components/common/Background';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconEditor from 'components/common/FalconEditor';
-import SoftBadge from 'components/common/SoftBadge';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import corner4 from 'assets/img/illustrations/corner-4.png'
+import corner5 from 'assets/img/illustrations/corner-5.png'
+import Background from 'components/common/Background'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconEditor from 'components/common/FalconEditor'
+import SoftBadge from 'components/common/SoftBadge'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
 
 const serveCode = `npm install -g serve
-serve -s build`;
+serve -s build`
 
 const GettingStarted = () => (
   <>
@@ -110,7 +110,7 @@ const GettingStarted = () => (
           </li>
           <li>
             Run <code>npm start</code>. A local web server will start at{' '}
-            <code>http://localhost:3000</code>
+            <code>http://100.100.100.108:3000</code>
           </li>
         </ol>
       </Card.Body>
@@ -196,6 +196,6 @@ theme/
       </Card.Body>
     </Card>
   </>
-);
+)
 
-export default GettingStarted;
+export default GettingStarted

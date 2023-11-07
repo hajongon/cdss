@@ -52,9 +52,12 @@ function ChartSample() {
   }
 
   return (
-    <Card>
-      <FalconCardHeader title="감염 예상 부위" titleClass="fs--1 fw-bold" />
-      <Card.Body className="bg-light fs--2">
+    <Card className="bg-transparent shadow-none">
+      <FalconCardHeader
+        title="감염 예상 부위"
+        titleClass="fs--1 fw-light bg-transparent"
+      />
+      <Card.Body className="bg-transparent fs--2">
         <Bar data={data} options={options} height={1000} width={1618} />
       </Card.Body>
     </Card>

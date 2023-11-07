@@ -4,11 +4,13 @@ import { Card, Row, Col } from 'react-bootstrap'
 import AdvanceTableWrapper from './advance-table/AdvanceTableWrapper'
 import AdvanceTable from './advance-table/AdvanceTable'
 import { Link } from 'react-router-dom'
+import { faCapsules } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const columns = [
   {
     accessor: 'path',
-    Header: 'Page Path',
+    Header: '항생제 성분명',
     Cell: rowData => (
       <Link to="#!" className="text-primary fw-semi-bold">
         {rowData.row.original.path}
@@ -17,7 +19,7 @@ const columns = [
   },
   {
     accessor: 'views',
-    Header: 'Page Views',
+    Header: '항생제 투약 방법',
     headerProps: {
       className: 'text-end'
     },
@@ -27,7 +29,7 @@ const columns = [
   },
   {
     accessor: 'time',
-    Header: 'Avg Time on Page',
+    Header: '항생제 투약 약제',
     headerProps: {
       className: 'text-end'
     },
@@ -37,7 +39,7 @@ const columns = [
   },
   {
     accessor: 'exitRate',
-    Header: 'Exit Rate',
+    Header: '처방 기간',
     headerProps: {
       className: 'text-end'
     },
@@ -47,7 +49,7 @@ const columns = [
   }
 ]
 
-const TopPages = ({ title, tableData, perPage = 4 }) => {
+const RcmndAntiSens = ({ title, tableData, perPage = 4 }) => {
   return (
     <AdvanceTableWrapper
       columns={columns}
@@ -57,11 +59,12 @@ const TopPages = ({ title, tableData, perPage = 4 }) => {
     >
       <Card className="border border-300 shadow-none">
         <Card.Header className="bg-200">
-          <Row className="flex-between-center">
-            <Col xs="auto" sm={12} lg={12}>
-              <h6 className="fs--1 mb-0 text-nowrap py-2 py-xl-0">{title}</h6>
-            </Col>
-          </Row>
+          {/* <Row> */}
+          <h6 className="fs--1 mb-0 text-nowrap py-2 py-xl-0">
+            <FontAwesomeIcon icon={faCapsules} />
+            <span className="ps-2">{title}</span>
+          </h6>
+          {/* </Row> */}
         </Card.Header>
         <Card.Body className="p-0">
           <AdvanceTable
@@ -78,7 +81,7 @@ const TopPages = ({ title, tableData, perPage = 4 }) => {
   )
 }
 
-TopPages.propTypes = {
+RcmndAntiSens.propTypes = {
   tableData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -91,4 +94,4 @@ TopPages.propTypes = {
   perPage: PropTypes.number
 }
 
-export default TopPages
+export default RcmndAntiSens

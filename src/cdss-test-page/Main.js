@@ -14,20 +14,20 @@ import axios from 'axios'
 import AppContext from 'context/Context'
 import AntiSensrslt from './AntiSensrslt'
 import Flex from './Flex'
+import transformData from './transformData'
 
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
-  const [allOrdCount, setAllOrdCount] = useState([])
-  console.log(allOrdCount)
+  const { setAllOrdCount } = useContext(AppContext)
 
   // AppContext에서 patientsInfo와 setPatientsInfo를 가져옵니다.
-  const { patientsInfo, setPatientsInfo } = useContext(AppContext)
+  const { setPatientsInfo } = useContext(AppContext)
 
   useEffect(() => {
     // GET 요청을 보내고 데이터를 콘솔에 출력
     axios
-      .get('http://localhost:8080/patients')
+      .get('http://100.100.100.108:8080/patients')
       .then(response => {
         const fetchedData = response.data
         setPatientsInfo([...fetchedData])
@@ -37,26 +37,12 @@ const Main = () => {
       })
 
     axios
-      .get('http://localhost:8080/get-ord-count')
+      .get('http://100.100.100.108:8080/get-ord-count')
       .then(response => {
         const fetchedData = response.data
         // Initialize an empty array to store the transformed data
-        const transformedData = []
-
-        // Iterate through the fetchedData array
-        for (const item of fetchedData) {
-          // Create a new object with the desired structure
-          const transformedItem = {
-            ptSbstNo: item.ptSbstNo,
-            ordcode: item.ordcode,
-            ordname: item.ordnameTyp1 || item.ordnameTyp2, // Use ordnameTyp1 if it exists, otherwise use ordnameTyp2
-            count: item.count
-          }
-          // Push the transformedItem to the transformedData array
-          transformedData.push(transformedItem)
-        }
-
         // Set the transformed data in your state
+        const transformedData = transformData(fetchedData)
         setAllOrdCount(transformedData)
       })
       .catch(error => {
@@ -70,10 +56,9 @@ const Main = () => {
         <Col xl={9}>
           <Flex
             direction="column"
-            justifyContent={isPatientSelected ? 'between' : 'flex-start'}
+            justifyContent="flex-start"
             className="h-100"
           >
-            {/* Courses */}
             <Row className="mb-3 g-3">
               <Col xs={12}>
                 <PatientInfo
@@ -83,6 +68,7 @@ const Main = () => {
                 />
               </Col>
             </Row>
+
             {!showResult ? (
               <Row className="mb-3 g-3">
                 <Col md={6} xs={12}>
@@ -93,7 +79,7 @@ const Main = () => {
                 </Col>
               </Row>
             ) : (
-              <Row className="mb-3 g-3">
+              <Row className="mb-3 g-3" style={{ flex: '1' }}>
                 <Col md={12} xs={12}>
                   <DiagnosticResult setShowResult={setShowResult} />
                 </Col>
@@ -102,7 +88,7 @@ const Main = () => {
 
             {isPatientSelected ? (
               <>
-                <Row className="mb-3 g-3">
+                <Row className="mb-3 g-3" style={{ flex: '2' }}>
                   <Col md={6} xs={12}>
                     <AntiSensrslt />
                   </Col>
@@ -110,7 +96,7 @@ const Main = () => {
                     <AdrHistory />
                   </Col>
                 </Row>
-                <Row className="g-3">
+                <Row className="g-3" style={{ flex: '2' }}>
                   <Col md={6} xs={12}>
                     <TestResults />
                   </Col>

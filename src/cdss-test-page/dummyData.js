@@ -1,31 +1,31 @@
 export const topPagesTableData = [
   {
     id: 1,
-    path: '/sparrow/landing-page',
-    views: 1455,
-    time: '2m:25s',
-    exitRate: '20.4%'
+    path: 'Septrin Tab',
+    views: '내복약',
+    time: '셉트린정',
+    exitRate: '2w'
   },
   {
     id: 2,
-    path: '/falcon/pages/starter.html',
-    views: 1422,
-    time: '2m:14s',
-    exitRate: '52.4%'
+    path: 'CYCin Tab 250mg',
+    views: '내복약',
+    time: '싸이신 정 250mg',
+    exitRate: '5d'
   },
   {
     id: 3,
-    path: '/pages/falcon-webapp-theme',
-    views: 1378,
-    time: '2m:23s',
-    exitRate: '25.1%'
+    path: 'TazoPERAN Inj 4.5g',
+    views: '주사약',
+    time: '타조페란 주 4.5g',
+    exitRate: '1d'
   },
   {
     id: 4,
-    path: '/product/sparrow-bootstrap-theme',
-    views: 1144,
-    time: '2m:2s',
-    exitRate: '6.3%'
+    path: 'Flumarin Inj 0.5g',
+    views: '주사약',
+    time: '일동 후루마린주 0.5g',
+    exitRate: '1d'
   },
   {
     id: 5,

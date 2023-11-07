@@ -3,8 +3,10 @@ import { Button, Card, Row, Col } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './DiagnosticResult.css'
 import { Table } from 'react-bootstrap'
-import TopPages from './TopPages'
+import TopPages from './FrbdnAntiSens'
 import { topPagesTableData } from './dummyData'
+import RcmndAntiSens from './RcmndAntiSens'
+import FrbdnAntiSens from './FrbdnAntiSens'
 
 const DiagnosticResult = ({ setShowResult }) => {
   return (
@@ -36,13 +38,16 @@ const DiagnosticResult = ({ setShowResult }) => {
         </Row>
         <Row className="mb-3 g-3">
           <Col xs={12} md={6}>
-            <TopPages
+            <RcmndAntiSens
               title="권장 항생제 형태 및 기간"
               tableData={topPagesTableData}
             />
           </Col>{' '}
           <Col xs={12} md={6}>
-            <TopPages title="제외 항생제 목록" tableData={topPagesTableData} />
+            <FrbdnAntiSens
+              title="제외 항생제 목록"
+              tableData={topPagesTableData}
+            />
           </Col>
         </Row>
 

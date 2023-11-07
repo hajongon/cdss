@@ -53,13 +53,37 @@ const Main = props => {
     })
   }
 
+  // 환자 리스트
   const [patientsInfo, setPatientsInfo] = useState([])
 
+  // 검사 결과
   const [testResultData, setTestResultData] = useState([])
 
+  // 소변 검사 이력
   const [urineData, setUrineData] = useState([])
+
+  // 혈액 검사 이력
   const [serumData, setSerumData] = useState([])
+
+  // Anti Sensrslt
   const [snsrsltData, setSnsrsltData] = useState([])
+
+  // treemap 전체 or 개별
+  const [treemapDataRange, setTreemapDataRange] = useState('entire')
+
+  // 전체 환자 항생제 처방 count
+  const [allOrdCount, setAllOrdCount] = useState([])
+
+  // 개별 환자 항생제 처방 count
+  const [ordCount, setOrdCount] = useState([])
+
+  // 환자의 처방 이력 존재 여부
+  const [noDataError, setNoDataError] = useState({
+    urine: false,
+    serum: false,
+    sensrslt: false,
+    hist: false
+  })
 
   if (!isLoaded) {
     return (
@@ -91,7 +115,15 @@ const Main = props => {
         testResultData,
         setTestResultData,
         snsrsltData,
-        setSnsrsltData
+        setSnsrsltData,
+        treemapDataRange,
+        setTreemapDataRange,
+        ordCount,
+        setOrdCount,
+        allOrdCount,
+        setAllOrdCount,
+        noDataError,
+        setNoDataError
       }}
     >
       {props.children}

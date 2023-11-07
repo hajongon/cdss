@@ -4,45 +4,48 @@ import FalconCardHeader from './FalconCardHeader'
 import './PatientInfo.css'
 import Flex from './Flex'
 import axios from 'axios'
-
+import corner1 from 'assets/img/icons/spot-illustrations/corner-3.png'
 import AppContext from 'context/Context'
-import { sortByTimestamp } from './timeDateFunction'
+import { formatDate, sortByTimestamp } from './timeDateFunction'
+import transformData from './transformData'
+import Background from 'components/common/Background'
 
 const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
+  const { setNoDataError } = useContext(AppContext)
   const [isMedicated, setIsMedicated] = useState(false)
-  const [formData, setFormData] = useState({
-    birthday: '1991. 11. 29 (만 31세)',
+  const [patInfoData, setFormData] = useState({
+    birthday: '',
     medicineName: '',
-    admtime: '2023. 10. 15',
-    dschtime: '입원중',
-    sex: '남성',
-    bodytemp: '36.7'
+    admtime: '',
+    dschtime: '',
+    sex: '',
+    bodytemp: 0
   })
-
-  console.log(formData)
 
   const {
     patientsInfo,
-    setPatientsInfo,
-    testResultData,
     setTestResultData,
-    snsrsltData,
-    setSnsrsltData
+    setSnsrsltData,
+    setTreemapDataRange,
+    setOrdCount
   } = useContext(AppContext)
 
   const handleChange = e => {
     setFormData({
-      ...formData,
+      ...patInfoData,
       [e.target.name]: e.target.value
     })
   }
 
   const onNameChange = async e => {
     if (e.target.value === '이름 선택') {
-      // 선택한 옵션이 '이름 선택'일 경우, 원하는 동작을 수행하도록 설정
+      // 환자 선택 여부
       setIsPatientSelected(false)
+      // treemap 크기 결정
+      setTreemapDataRange('entire')
     } else {
       setIsPatientSelected(true)
+      setTreemapDataRange('personal')
 
       // patnoid가 입력받은 값과 같은 데이터만 필터링
       const selectedData = patientsInfo.filter(
@@ -56,9 +59,12 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
         pt_sbst_no: selectedData.ptSbstNo
       })
 
+      // urine, serum test 결과 모을 배열 정의
+      const entireTestResult = []
+
       try {
         const urineResponse = await axios.post(
-          'http://localhost:8080/urine/get-by-pt-sbst-no',
+          'http://100.100.100.108:8080/urine/get-by-pt-sbst-no',
           sbstNo,
           {
             headers: {
@@ -66,9 +72,28 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
             }
           }
         )
+        if (urineResponse.data) {
+          entireTestResult.push(...urineResponse.data)
+          setNoDataError(prevState => ({
+            ...prevState,
+            urine: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            urine: true
+          }))
+        } else {
+          // 다른 오류 처리
+          console.error('오류 발생:', error.message)
+        }
+      }
 
+      try {
         const serumResponse = await axios.post(
-          'http://localhost:8080/serum/get-by-pt-sbst-no',
+          'http://100.100.100.108:8080/serum/get-by-pt-sbst-no',
           sbstNo,
           {
             headers: {
@@ -76,9 +101,28 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
             }
           }
         )
+        if (serumResponse.data) {
+          entireTestResult.push(...serumResponse.data)
+          setNoDataError(prevState => ({
+            ...prevState,
+            serum: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            serum: true
+          }))
+        } else {
+          // 다른 오류 처리
+          console.error('오류 발생:', error.message)
+        }
+      }
 
+      try {
         const snsrsltResponse = await axios.post(
-          'http://localhost:8080/snsrslt/get-by-pt-sbst-no',
+          'http://100.100.100.108:8080/snsrslt/get-by-pt-sbst-no',
           sbstNo,
           {
             headers: {
@@ -86,16 +130,55 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
             }
           }
         )
+        if (snsrsltResponse.data) {
+          setSnsrsltData([...snsrsltResponse.data])
+          setNoDataError(prevState => ({
+            ...prevState,
+            sensrslt: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            sensrslt: true
+          }))
+        } else {
+          // 다른 오류 처리
+          console.error('오류 발생:', error.message)
+        }
+      }
 
-        const entireTestResult = []
-        entireTestResult.push(...urineResponse.data)
-        entireTestResult.push(...serumResponse.data)
-
+      if (entireTestResult.length) {
         const dateSortedEntireTestResult = sortByTimestamp(entireTestResult)
         setTestResultData([...dateSortedEntireTestResult])
-        setSnsrsltData([...snsrsltResponse.data])
+      }
+
+      // treemap data fetching
+
+      try {
+        const ordCountResponse = await axios.request({
+          method: 'get',
+          url: `http://100.100.100.108:8080/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
+        })
+        if (ordCountResponse.data) {
+          const fetchedData = ordCountResponse.data
+          const transformedData = transformData(fetchedData)
+          setOrdCount(transformedData)
+          setNoDataError(prevState => ({
+            ...prevState,
+            hist: false
+          }))
+        }
       } catch (error) {
-        console.error('에러 발생:', error)
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            hist: true
+          }))
+        } else {
+          console.error('오류 발생:', error.message)
+        }
       }
     }
   }
@@ -103,12 +186,17 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   const handleSubmit = e => {
     e.preventDefault()
     setShowResult(true)
+    setFormDate({
+      ...patInfoData,
+      [e.target.name]: e.target.value
+    })
   }
 
   return (
     <Card>
       <FalconCardHeader title="환자 기본 정보" titleClass="fs-0 fw-semi-bold" />
       <Card.Body className="bg-white pb-2 pt-2">
+        {/* <Background image={corner1} className="rounded-soft bg-card" /> */}
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3 g-3">
             <Form.Group as={Col} lg={2} xs={12} controlId="selectPatient">
@@ -129,35 +217,44 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
 
             <Form.Group as={Col} md={1} lg={1} xs={12} controlId="gender">
               <Form.Label className="fs--1 mb-0 text-600">성별</Form.Label>
-              <Form.Control
+              <Form.Select
+                size="m"
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                type="text"
-                placeholder="성별"
-                value={formData.sex}
-                name="gender"
-                onChange={handleChange}
-              />
+                name="sex"
+                value={patInfoData.sex}
+                onChange={e => {
+                  handleChange(e)
+                }}
+              >
+                <option>성별</option>
+                <option>M</option>
+                <option>F</option>
+              </Form.Select>
             </Form.Group>
             <Form.Group as={Col} lg={3} xs={12} xl={2} controlId="birthday">
               <Form.Label className="fs--1 mb-0 text-600">생년월일</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                type="text"
+                type="date"
                 placeholder="생년월일"
-                value={formData.birthday}
+                value={
+                  patInfoData.birthday.length
+                    ? patInfoData.birthday.slice(0, 10)
+                    : ''
+                }
                 name="birthday"
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={1} xs={12} controlId="temperature">
+            <Form.Group as={Col} lg={1} xs={12} controlId="bodytemp">
               <Form.Label className="fs--1 mb-0 text-600">체온</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                 type="text"
                 placeholder="체온"
-                value={formData.bodytemp}
-                name="temperature"
-                onChange={handleChange}
+                value={patInfoData.bodytemp ? patInfoData.bodytemp : ''}
+                name="bodytemp"
+                onChange={e => handleChange(e)}
               />
             </Form.Group>
           </Row>
@@ -169,10 +266,14 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 <Col lg={5}>
                   <Form.Control
                     className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                    type="text"
+                    type="date"
                     placeholder="입원 날짜"
-                    value={formData.admtime}
-                    name="period"
+                    value={
+                      patInfoData.admtime.length
+                        ? patInfoData.admtime.slice(0, 10)
+                        : ''
+                    }
+                    name="admtime"
                     onChange={handleChange}
                   />
                 </Col>
@@ -182,10 +283,14 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 <Col lg={5}>
                   <Form.Control
                     className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                    type="text"
+                    type="date"
                     placeholder="퇴원 날짜"
-                    value={formData.dschtime}
-                    name="period"
+                    value={
+                      patInfoData.dschtime.length
+                        ? patInfoData.dschtime.slice(0, 10)
+                        : ''
+                    }
+                    name="dschtime"
                     onChange={handleChange}
                   />
                 </Col>
@@ -225,7 +330,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                   className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
                   type="text"
                   placeholder="항생제 성분명"
-                  value={formData.medicineName}
+                  value={patInfoData.medicineName}
                   name="medicineName"
                   onChange={handleChange}
                 />

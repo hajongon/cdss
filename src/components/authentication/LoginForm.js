@@ -1,10 +1,10 @@
-import Divider from 'components/common/Divider';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import SocialAuthButtons from './SocialAuthButtons';
+import Divider from 'components/common/Divider'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import SocialAuthButtons from './SocialAuthButtons'
 
 const LoginForm = ({ hasLabel, layout }) => {
   const navigate = useNavigate()
@@ -14,11 +14,11 @@ const LoginForm = ({ hasLabel, layout }) => {
     email: '',
     password: '',
     remember: false
-  });
+  })
 
   // Handler
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const inputData = {
       email: formData.email,
@@ -28,42 +28,42 @@ const LoginForm = ({ hasLabel, layout }) => {
     const requestOptions = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json', // JSON 형식으로 데이터 전송
+        'Content-Type': 'application/json' // JSON 형식으로 데이터 전송
       },
       body: JSON.stringify(inputData) // FormData를 요청의 본문으로 사용합니다.
-    };
+    }
 
     console.log(requestOptions.body)
     // POST 요청 보내기
-    fetch('http://localhost:8080/login', requestOptions)
+    fetch('http://100.100.100.108:8080/login', requestOptions)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Network response was not ok')
         }
-        return response.json();
+        return response.json()
       })
       .then(data => {
         // 서버로부터 받은 데이터(data)를 처리합니다.
-        console.log('Response Data:', data);
+        console.log('Response Data:', data)
         // 원하는 동작을 수행하세요.
         if (data.email === formData.email) navigate('/')
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error('Error:', error)
         // 오류 처리를 수행하세요.
-      });
+      })
 
     toast.success(`Logged in as ${formData.email}`, {
       theme: 'colored'
-    });
-  };
+    })
+  }
 
   const handleFieldChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -134,17 +134,17 @@ const LoginForm = ({ hasLabel, layout }) => {
 
       <SocialAuthButtons />
     </Form>
-  );
-};
+  )
+}
 
 LoginForm.propTypes = {
   layout: PropTypes.string,
   hasLabel: PropTypes.bool
-};
+}
 
 LoginForm.defaultProps = {
   layout: 'simple',
   hasLabel: false
-};
+}
 
-export default LoginForm;
+export default LoginForm

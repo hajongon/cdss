@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Card, Form } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientSymptom.css'
 import { Table } from 'react-bootstrap'
-import { testResultData } from './dummyData'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVial, faBacterium } from '@fortawesome/free-solid-svg-icons'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { faVial } from '@fortawesome/free-solid-svg-icons'
 
 import AppContext from 'context/Context'
 import Flex from './Flex'
-import { formatDate, sortByDate } from './timeDateFunction'
+import { formatDate } from './timeDateFunction'
 
 const SpcnameCheckbox = ({ handleCheckboxChange }) => {
   const [urineChecked, setUrineChecked] = useState(true)
@@ -59,7 +58,7 @@ const SpcnameCheckbox = ({ handleCheckboxChange }) => {
 }
 
 const TestResults = () => {
-  const { testResultData, setTestResultData } = useContext(AppContext)
+  const { testResultData, noDataError } = useContext(AppContext)
   const [filteredResult, setFilteredResult] = useState(testResultData)
   const [checkboxState, setCheckboxState] = useState({
     urineChecked: true,
@@ -97,52 +96,47 @@ const TestResults = () => {
       <Card.Body
         className="bg-white"
         style={{
-          maxHeight: '160px',
+          maxHeight: '15dvh',
           overflowY: 'scroll'
         }}
       >
-        <Table borderless responsive size="sm">
-          <thead className="border border-top-0 border-start-0 border-end-0 border-bottom-0">
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredResult.map((data, idx) => {
-              return (
-                <tr key={idx}>
-                  <td>
-                    {data.spcname === 'R.Urine' ? (
-                      <FontAwesomeIcon
-                        icon={faVial}
-                        style={{ color: '#c2b62e' }}
-                      />
-                    ) : (
-                      <FontAwesomeIcon
-                        icon={faVial}
-                        style={{ color: '#ff5252' }}
-                      />
-                    )}
-                  </td>
-                  <td>{formatDate(data.orddate)}</td>
-                  <td className="text-info">
-                    {data.spcname === 'R.Urine' ? data.examcode : data.ordcode}
-                  </td>
-                  <td>{data.spcname}</td>
-                  <td>{data.normalfg}</td>
-                  <td>{data.procstat}</td>
-                  <td>{data.examtyp}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </Table>
+        {noDataError.urine && noDataError.serum ? (
+          <div>해당 환자의 검사 내역이 없습니다.</div>
+        ) : (
+          <Table borderless responsive size="sm">
+            <tbody>
+              {filteredResult.map((data, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td>
+                      {data.spcname === 'R.Urine' ? (
+                        <FontAwesomeIcon
+                          icon={faVial}
+                          style={{ color: '#c2b62e' }}
+                        />
+                      ) : (
+                        <FontAwesomeIcon
+                          icon={faVial}
+                          style={{ color: '#ff5252' }}
+                        />
+                      )}
+                    </td>
+                    <td>{formatDate(data.orddate)}</td>
+                    <td className="text-info">
+                      {data.spcname === 'R.Urine'
+                        ? data.examcode
+                        : data.ordcode}
+                    </td>
+                    <td>{data.spcname}</td>
+                    <td>{data.normalfg}</td>
+                    <td>{data.procstat}</td>
+                    <td>{data.examtyp}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </Table>
+        )}
       </Card.Body>
     </Card>
   )

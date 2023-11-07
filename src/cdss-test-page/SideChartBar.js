@@ -1,27 +1,27 @@
-import React from 'react'
-import SimpleBarReact from 'simplebar-react'
+import React, { useContext } from 'react'
 import { Card, Row } from 'react-bootstrap'
 import BasicBarChart from './BasicBarChart'
 import PackedBubble from './PackedBubble'
-import ChartSample from './ChartSample'
 import FalconCardHeader from './FalconCardHeader'
 import Treemap from './Treemap'
-import data from './treemapData'
+import AppContext from 'context/Context'
 
-const SideChartBar = ({ showResult }) => {
+const SideChartBar = () => {
+  const { allOrdCount, ordCount, treemapDataRange } = useContext(AppContext)
+
   return (
     <Card className="course-filter overflow-hidden">
       <FalconCardHeader title="Charts" titleClass="fs-0 fw-semi-bold" />
       <Card.Body className="py-0 bg-white overflow-scroll">
         <Row className="mb-3">
-          <Treemap data={data} height={400} width={400} />
+          {treemapDataRange === 'entire' ? (
+            <Treemap data={allOrdCount} height={400} width={420} />
+          ) : (
+            <Treemap data={ordCount} height={200} width={420} />
+          )}
         </Row>
         <Row className="mb-3">
-          {!showResult ? (
-            <BasicBarChart title="2023년 항생제 처방 순위" />
-          ) : (
-            <ChartSample />
-          )}
+          <BasicBarChart title="2023년 항생제 처방 순위" />
         </Row>
 
         <Row className="mb-3">
