@@ -45,7 +45,7 @@ const DiagnosticResult = ({ setShowResult }) => {
           </Col>{' '}
           <Col xs={12} md={6}>
             <FrbdnAntiSens
-              title="제외 항생제 목록"
+              title="제외 항생제 목록 (무슨 기준으로??)"
               tableData={topPagesTableData}
             />
           </Col>

@@ -15,7 +15,7 @@ const SideChartBar = () => {
       <Card.Body className="py-0 bg-white overflow-scroll">
         <Row className="mb-3">
           {treemapDataRange === 'entire' ? (
-            <Treemap data={allOrdCount} height={400} width={420} />
+            <Treemap data={allOrdCount} height={400} />
           ) : (
             <Treemap data={ordCount} height={200} width={420} />
           )}

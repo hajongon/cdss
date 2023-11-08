@@ -13,7 +13,7 @@ import Background from 'components/common/Background'
 const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   const { setNoDataError } = useContext(AppContext)
   const [isMedicated, setIsMedicated] = useState(false)
-  const [patInfoData, setFormData] = useState({
+  const [patInfoData, setPatInfoData] = useState({
     birthday: '',
     medicineName: '',
     admtime: '',
@@ -31,7 +31,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   } = useContext(AppContext)
 
   const handleChange = e => {
-    setFormData({
+    setPatInfoData({
       ...patInfoData,
       [e.target.name]: e.target.value
     })
@@ -52,7 +52,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
         pat => pat.patnoid === e.target.value
       )[0]
 
-      setFormData({ ...selectedData })
+      setPatInfoData({ ...selectedData })
 
       // 해당 데이터의 ptSbstNo를 저장
       const sbstNo = JSON.stringify({
@@ -186,7 +186,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
   const handleSubmit = e => {
     e.preventDefault()
     setShowResult(true)
-    setFormDate({
+    setPatInfoData({
       ...patInfoData,
       [e.target.name]: e.target.value
     })
@@ -257,46 +257,27 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 onChange={e => handleChange(e)}
               />
             </Form.Group>
+            <Form.Group as={Col} lg={2} xs={12} controlId="period">
+              <Form.Label className="fs--1 mb-0 text-600">내원일</Form.Label>
+              <Col lg={12}>
+                <Form.Control
+                  className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
+                  type="date"
+                  placeholder="내원일"
+                  value={
+                    patInfoData.admtime.length
+                      ? patInfoData.admtime.slice(0, 10)
+                      : ''
+                  }
+                  name="admtime"
+                  onChange={handleChange}
+                />
+              </Col>
+            </Form.Group>
           </Row>
 
           <Row className="mb-3 g-3">
-            <Form.Group as={Col} lg={4} xs={12} controlId="period">
-              <Form.Label className="fs--1 mb-0 text-600">입원 기간</Form.Label>
-              <Flex direction="row" className="p-2 gap-2">
-                <Col lg={5}>
-                  <Form.Control
-                    className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                    type="date"
-                    placeholder="입원 날짜"
-                    value={
-                      patInfoData.admtime.length
-                        ? patInfoData.admtime.slice(0, 10)
-                        : ''
-                    }
-                    name="admtime"
-                    onChange={handleChange}
-                  />
-                </Col>
-                <Col lg={2} className="w-auto">
-                  <span className="span-text">~</span>
-                </Col>
-                <Col lg={5}>
-                  <Form.Control
-                    className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                    type="date"
-                    placeholder="퇴원 날짜"
-                    value={
-                      patInfoData.dschtime.length
-                        ? patInfoData.dschtime.slice(0, 10)
-                        : ''
-                    }
-                    name="dschtime"
-                    onChange={handleChange}
-                  />
-                </Col>
-              </Flex>
-            </Form.Group>
-            <Form.Group as={Col} lg={2} controlId="medication">
+            {/* <Form.Group as={Col} lg={2} controlId="medication">
               <Form.Label className="fs--1 mb-0 text-600">
                 항생제 투약 여부
               </Form.Label>
@@ -322,7 +303,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                   }}
                 />
               </Flex>
-            </Form.Group>
+            </Form.Group> */}
             {isMedicated ? (
               <Form.Group as={Col} lg={2} controlId="medicineName">
                 <Form.Label className="fs--1 mb-0">항생제 성분명</Form.Label>
@@ -336,17 +317,6 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 />
               </Form.Group>
             ) : null}
-            <Col lg={2} md={4} className="custom-col">
-              {!showResult ? (
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="fs--1 align-self-center"
-                >
-                  항생제 내성 판단
-                </Button>
-              ) : null}
-            </Col>
           </Row>
         </Form>
       </Card.Body>

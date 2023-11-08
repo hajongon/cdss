@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginForm from 'components/authentication/LoginForm';
-import AuthSplitLayout from 'layouts/AuthSplitLayout';
-import bgImg from 'assets/img/generic/14.jpg';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import LoginForm from 'components/authentication/LoginForm'
+import AuthSplitLayout from 'layouts/AuthSplitLayout'
+import bgImg from 'assets/img/cdss/login-bg-image.jpg'
+import Flex from 'components/common/Flex'
 
 const Login = () => {
   return (
@@ -17,7 +17,7 @@ const Login = () => {
       </Flex>
       <LoginForm layout="split" hasLabel />
     </AuthSplitLayout>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

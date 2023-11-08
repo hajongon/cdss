@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Background from 'components/common/Background';
-import { Card, Col, Row, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Background from 'components/common/Background'
+import { Card, Col, Row, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const AuthSplitLayout = ({ children, bgProps }) => {
   return (
@@ -20,7 +20,7 @@ const AuthSplitLayout = ({ children, bgProps }) => {
                     className="text-white light font-sans-serif fw-bolder fs-4 z-index-1 position-relative"
                     to="/"
                   >
-                    Test
+                    CDSS SYSTEM
                   </Link>
                 </Card.Header>
                 <Card.Body className="p-4">{children}</Card.Body>
@@ -30,12 +30,12 @@ const AuthSplitLayout = ({ children, bgProps }) => {
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
 AuthSplitLayout.propTypes = {
   children: PropTypes.node.isRequired,
   bgProps: PropTypes.shape(Background.propTypes).isRequired
-};
+}
 
-export default AuthSplitLayout;
+export default AuthSplitLayout

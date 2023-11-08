@@ -1,23 +1,24 @@
-import { useRef, useEffect, useContext } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import * as d3 from 'd3'
 import FalconComponentCard from './FalconComponentCard'
 import FalconCardBody from './FalconCardBody'
 import AppContext from 'context/Context'
+import Flex from './Flex'
 
-export default function Treemap({ data, width, height }) {
+export default function Treemap({ data, height }) {
   const svgRef = useRef(null)
   const legendRef = useRef(null)
-
   const { noDataError } = useContext(AppContext)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-  function renderTreemap() {
+  function renderTreemap(width) {
     const svg = d3.select(svgRef.current)
     svg.selectAll('g').remove()
 
     const legendContainer = d3.select(legendRef.current)
     legendContainer.selectAll('g').remove()
 
-    svg.attr('width', width).attr('height', height)
+    svg.attr('width', '100%').attr('height', height)
 
     // create root node
     const root = d3
@@ -38,10 +39,7 @@ export default function Treemap({ data, width, height }) {
 
     // create color scheme and fader
     const fader = color => d3.interpolateRgb(color, '#fff')(0.4)
-    const colorScale = d3.scaleOrdinal([
-      '#1956A6',
-      '#2A7BE4' // 한 단계 어둡게
-    ])
+    const colorScale = d3.scaleOrdinal(['#2c7be5', '#1956A6'])
 
     // add treemap rects
     nodes
@@ -134,8 +132,19 @@ export default function Treemap({ data, width, height }) {
   }
 
   useEffect(() => {
-    renderTreemap()
-  }, [data])
+    renderTreemap(svgRef.current.clientWidth)
+  }, [data, height, windowWidth])
+
+  // Add a window resize event listener to update windowWidth
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">

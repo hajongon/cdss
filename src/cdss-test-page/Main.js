@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Button, Col, Row } from 'react-bootstrap'
 import PatientInfo from './PatientInfo'
 import PatientSymptom from './PatientSymptom'
 import SymptomSite from './SymptomSite'
@@ -85,20 +85,19 @@ const Main = () => {
                 </Col>
               </Row>
             )}
-
             {isPatientSelected ? (
               <>
                 <Row className="mb-3 g-3" style={{ flex: '2' }}>
-                  <Col md={6} xs={12}>
-                    <AntiSensrslt />
-                  </Col>
-                  <Col md={6} xs={12}>
-                    <AdrHistory />
+                  <Col md={12} xs={12}>
+                    <TestResults />
                   </Col>
                 </Row>
-                <Row className="g-3" style={{ flex: '2' }}>
+                <Row
+                  className={isPatientSelected ? `g-3 mb-3` : `g-3`}
+                  style={{ flex: '2' }}
+                >
                   <Col md={6} xs={12}>
-                    <TestResults />
+                    <AdrHistory />
                   </Col>
                   <Col md={6} xs={12}>
                     <AntibioticResistance />
@@ -106,9 +105,20 @@ const Main = () => {
                 </Row>
               </>
             ) : null}
+            {!showResult ? (
+              <Row className="g-1">
+                <Button
+                  variant="primary"
+                  type="button"
+                  className="fs--1 align-self-center"
+                  onClick={() => setShowResult(true)}
+                >
+                  항생제 내성 판단
+                </Button>
+              </Row>
+            ) : null}
           </Flex>
         </Col>
-
         <Col xl={3}>
           <SideChartBar showResult={showResult} />
         </Col>

@@ -16,14 +16,6 @@ const PatientSymptom = () => {
                 className="custom-label mb-0"
                 type="checkbox"
                 id="defaultCheckbox"
-                label="가려움증"
-              />
-            </Col>
-            <Col md={4} xs={12}>
-              <Form.Check
-                className="custom-label mb-0"
-                type="checkbox"
-                id="defaultCheckbox"
                 label="배뇨시 통증"
               />
             </Col>
@@ -35,8 +27,6 @@ const PatientSymptom = () => {
                 label="빈번한 배뇨"
               />
             </Col>
-          </Row>
-          <Row>
             <Col md={4} xs={12}>
               <Form.Check
                 className="custom-label mb-0"
@@ -45,6 +35,8 @@ const PatientSymptom = () => {
                 label="발열"
               />
             </Col>
+          </Row>
+          <Row>
             <Col md={4} xs={12}>
               <Form.Check
                 className="custom-label mb-0"

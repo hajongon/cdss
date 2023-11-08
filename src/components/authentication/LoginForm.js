@@ -19,7 +19,8 @@ const LoginForm = ({ hasLabel, layout }) => {
   // Handler
   const handleSubmit = e => {
     e.preventDefault()
-
+    navigate('/dashboard/cdss')
+    /*
     const inputData = {
       email: formData.email,
       passwd: formData.password
@@ -33,7 +34,6 @@ const LoginForm = ({ hasLabel, layout }) => {
       body: JSON.stringify(inputData) // FormData를 요청의 본문으로 사용합니다.
     }
 
-    console.log(requestOptions.body)
     // POST 요청 보내기
     fetch('http://100.100.100.108:8080/login', requestOptions)
       .then(response => {
@@ -53,6 +53,9 @@ const LoginForm = ({ hasLabel, layout }) => {
         // 오류 처리를 수행하세요.
       })
 
+
+
+    */
     toast.success(`Logged in as ${formData.email}`, {
       theme: 'colored'
     })
@@ -130,9 +133,8 @@ const LoginForm = ({ hasLabel, layout }) => {
         </Button>
       </Form.Group>
 
-      <Divider className="mt-4">or log in with</Divider>
-
-      <SocialAuthButtons />
+      {/* <Divider className="mt-4">or log in with</Divider> */}
+      {/* <SocialAuthButtons /> */}
     </Form>
   )
 }

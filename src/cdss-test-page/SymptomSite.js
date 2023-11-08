@@ -35,32 +35,6 @@ const SymptomSite = () => {
               />
             </Col>
           </Row>
-          <Row>
-            <Col md={4} xs={12}>
-              <Form.Check
-                className="custom-label mb-0"
-                type="checkbox"
-                id="defaultCheckbox"
-                label="없음"
-              />
-            </Col>
-            <Col md={4} xs={12}>
-              <Form.Check
-                className="custom-label mb-0"
-                type="checkbox"
-                id="defaultCheckbox"
-                label="없음"
-              />
-            </Col>
-            <Col md={4} xs={12}>
-              <Form.Check
-                className="custom-label mb-0"
-                type="checkbox"
-                id="defaultCheckbox"
-                label="없음"
-              />
-            </Col>
-          </Row>
         </Form>
       </Card.Body>
     </Card>
