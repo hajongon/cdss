@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconLink from 'components/common/FalconLink';
-import TrafficSourceChart from './TrafficSourceChart';
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconLink from 'components/common/FalconLink'
+import TrafficSourceChart from './TrafficSourceChart'
 
 function TrafficSource() {
   return (
@@ -37,7 +37,7 @@ function TrafficSource() {
         </Row>
       </Card.Footer>
     </Card>
-  );
+  )
 }
 
-export default TrafficSource;
+export default TrafficSource

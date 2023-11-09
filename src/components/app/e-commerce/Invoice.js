@@ -1,8 +1,8 @@
-import logoInvoice from 'assets/img/logos/logo-invoice.png';
-import IconButton from 'components/common/IconButton';
-import React from 'react';
-import { Card, Col, Row, Table } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
+import logoInvoice from 'assets/img/logos/logo-invoice.png'
+import IconButton from 'components/common/IconButton'
+import React from 'react'
+import { Card, Col, Row, Table } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
 
 const Invoice = () => {
   return (
@@ -203,7 +203,7 @@ const Invoice = () => {
         </Card.Footer>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default Invoice;
+export default Invoice

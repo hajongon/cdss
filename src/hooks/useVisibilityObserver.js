@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const useVisibilityObserver = (element, rootMargin) => {
-  const [isVisible, setState] = useState(false);
-  const [observer, setObserver] = useState(null);
+  const [isVisible, setState] = useState(false)
+  const [observer, setObserver] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setState(entry.isIntersecting);
+        setState(entry.isIntersecting)
       },
       { rootMargin }
-    );
+    )
 
-    setObserver(observer);
+    setObserver(observer)
 
-    element.current && observer.observe(element.current);
-  }, []);
+    element.current && observer.observe(element.current)
+  }, [])
 
-  return { isVisible, observer };
-};
+  return { isVisible, observer }
+}
 
-export default useVisibilityObserver;
+export default useVisibilityObserver

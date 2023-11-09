@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import Select from 'react-select';
+import React, { forwardRef } from 'react'
+import PropTypes from 'prop-types'
+import Select from 'react-select'
 
 const MultiSelect = forwardRef(({ options, placeholder, ...rest }, ref) => {
   return (
@@ -13,12 +13,12 @@ const MultiSelect = forwardRef(({ options, placeholder, ...rest }, ref) => {
       classNamePrefix="react-select"
       {...rest}
     />
-  );
-});
+  )
+})
 
 MultiSelect.propTypes = {
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string
-};
+}
 
-export default MultiSelect;
+export default MultiSelect

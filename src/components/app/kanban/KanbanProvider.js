@@ -1,7 +1,7 @@
-import React, { useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { KanbanContext } from 'context/Context';
-import currentUserAvatar from 'assets/img/team/3.jpg';
+import React, { useReducer } from 'react'
+import PropTypes from 'prop-types'
+import { KanbanContext } from 'context/Context'
+import currentUserAvatar from 'assets/img/team/3.jpg'
 
 import {
   members,
@@ -10,8 +10,8 @@ import {
   kanbanItems,
   comments,
   activities
-} from 'data/kanban';
-import { kanbanReducer } from 'reducers/kanbanReducer';
+} from 'data/kanban'
+import { kanbanReducer } from 'reducers/kanbanReducer'
 
 const KanbanProvider = ({ children }) => {
   const initData = {
@@ -25,16 +25,16 @@ const KanbanProvider = ({ children }) => {
       show: false,
       modalContent: {}
     }
-  };
+  }
 
   const currentUser = {
     name: 'Emma',
     avatarSrc: currentUserAvatar,
     profileLink: '/user/profile',
     institutionLink: '#!'
-  };
+  }
 
-  const [kanbanState, kanbanDispatch] = useReducer(kanbanReducer, initData);
+  const [kanbanState, kanbanDispatch] = useReducer(kanbanReducer, initData)
 
   return (
     <KanbanContext.Provider
@@ -42,11 +42,11 @@ const KanbanProvider = ({ children }) => {
     >
       {children}
     </KanbanContext.Provider>
-  );
-};
+  )
+}
 
 KanbanProvider.propTypes = {
   children: PropTypes.node.isRequired
-};
+}
 
-export default KanbanProvider;
+export default KanbanProvider

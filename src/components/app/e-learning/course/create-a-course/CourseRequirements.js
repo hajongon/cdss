@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Card, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { v4 as uuid } from 'uuid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
+import React, { useState } from 'react'
+import { Button, Card, Form, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { v4 as uuid } from 'uuid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
 
 const CourseRequirements = () => {
   const defaultRequirements = [
@@ -16,31 +16,31 @@ const CourseRequirements = () => {
       requirement:
         'Learners with following skills might be more benefited, but little extra work is all that’ll take.'
     }
-  ];
-  const [requirements, setRequirements] = useState(defaultRequirements);
-  const [requirement, setRequirement] = useState('');
-  const [editingRequirement, setEditingRequirement] = useState({});
-  const [isEditing, setIsEditing] = useState(false);
+  ]
+  const [requirements, setRequirements] = useState(defaultRequirements)
+  const [requirement, setRequirement] = useState('')
+  const [editingRequirement, setEditingRequirement] = useState({})
+  const [isEditing, setIsEditing] = useState(false)
 
   const handleRequirementSubmit = () => {
     if (!isEditing) {
-      setRequirements([...requirements, { id: uuid(), requirement }]);
-      setRequirement('');
+      setRequirements([...requirements, { id: uuid(), requirement }])
+      setRequirement('')
     } else {
       const updatedRequirements = requirements.map(requirement => {
         if (requirement.id === editingRequirement.id) {
           return {
             ...requirement,
             requirement: editingRequirement.requirement
-          };
+          }
         }
-        return requirement;
-      });
-      setRequirements(updatedRequirements);
-      setEditingRequirement({});
-      setIsEditing(false);
+        return requirement
+      })
+      setRequirements(updatedRequirements)
+      setEditingRequirement({})
+      setIsEditing(false)
     }
-  };
+  }
 
   const handleChange = value => {
     isEditing
@@ -48,8 +48,8 @@ const CourseRequirements = () => {
           ...editingRequirement,
           requirement: value
         })
-      : setRequirement(value);
-  };
+      : setRequirement(value)
+  }
 
   return (
     <Card className="mb-3">
@@ -83,8 +83,8 @@ const CourseRequirements = () => {
                       variant="link"
                       type="button"
                       onClick={() => {
-                        setEditingRequirement(item);
-                        setIsEditing(true);
+                        setEditingRequirement(item)
+                        setIsEditing(true)
                       }}
                       className="d-flex align-items-center fs--1 text-700 p-0 me-3"
                     >
@@ -140,7 +140,7 @@ const CourseRequirements = () => {
         </Form.Group>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default CourseRequirements;
+export default CourseRequirements

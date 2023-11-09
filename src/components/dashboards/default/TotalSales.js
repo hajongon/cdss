@@ -1,22 +1,22 @@
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
-import * as echarts from 'echarts/core';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Card, Form } from 'react-bootstrap';
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
+import * as echarts from 'echarts/core'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Card, Form } from 'react-bootstrap'
 
-import { months } from 'data/common';
+import { months } from 'data/common'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import { capitalize, getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import { capitalize, getColor, rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -25,7 +25,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = (month, data) => ({
   color: getColor('gray-100'),
@@ -37,8 +37,8 @@ const getOptions = (month, data) => ({
     textStyle: { color: getColor('dark') },
     borderWidth: 1,
     formatter: params => {
-      const { name, value } = params[0];
-      return `${month} ${name} : ${value}`;
+      const { name, value } = params[0]
+      return `${month} ${name} : ${value}`
     },
     transitionDuration: 0
   },
@@ -118,10 +118,10 @@ const getOptions = (month, data) => ({
     }
   ],
   grid: { right: 10, left: 0, bottom: 0, top: 10, containLabel: true }
-});
+})
 
 const TotalSales = ({ data }) => {
-  const [month, setMonth] = useState(0);
+  const [month, setMonth] = useState(0)
   return (
     <Card className="h-100">
       <FalconCardHeader
@@ -155,12 +155,12 @@ const TotalSales = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 TotalSales.propTypes = {
   data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number).isRequired)
     .isRequired
-};
+}
 
-export default TotalSales;
+export default TotalSales

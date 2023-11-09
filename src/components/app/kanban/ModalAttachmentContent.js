@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { attachments } from 'data/kanban';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import Background from 'components/common/Background';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Modal, CloseButton } from 'react-bootstrap';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { attachments } from 'data/kanban'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import Background from 'components/common/Background'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Modal, CloseButton } from 'react-bootstrap'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
 
 const AttachmentItem = ({ setImgIndex, attachment, isLast, index }) => {
-  const [nestedModal, setNestedModal] = useState(false);
+  const [nestedModal, setNestedModal] = useState(false)
 
   return (
     <>
@@ -106,11 +106,11 @@ const AttachmentItem = ({ setImgIndex, attachment, isLast, index }) => {
         </Modal.Body>
       </Modal>
     </>
-  );
-};
+  )
+}
 
 const ModalAttachmentContent = () => {
-  const images = attachments.map(item => item.image);
+  const images = attachments.map(item => item.image)
 
   return (
     <>
@@ -130,8 +130,8 @@ const ModalAttachmentContent = () => {
         )}
       </FalconLightBoxGallery>
     </>
-  );
-};
+  )
+}
 
 AttachmentItem.propTypes = {
   attachment: PropTypes.shape({
@@ -145,6 +145,6 @@ AttachmentItem.propTypes = {
   isLast: PropTypes.bool,
   setImgIndex: PropTypes.func,
   index: PropTypes.number
-};
+}
 
-export default ModalAttachmentContent;
+export default ModalAttachmentContent

@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import createMarkup from 'helpers/createMarkup';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import createMarkup from 'helpers/createMarkup'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
 const Plugins = () => {
   const [plugins] = useState([
@@ -158,7 +158,7 @@ const Plugins = () => {
       description: `The world's most advanced rich text editor in react.`,
       docLink: 'https://www.tiny.cloud/docs/integrations/react/'
     }
-  ]);
+  ])
   return (
     <>
       <PageHeader title="Plugins" className="mb-3">
@@ -178,8 +178,8 @@ const Plugins = () => {
         />
       ))}
     </>
-  );
-};
+  )
+}
 
 const PluginCard = ({ title, description, docLink }) => (
   <FalconComponentCard>
@@ -191,12 +191,12 @@ const PluginCard = ({ title, description, docLink }) => (
       </a>
     </FalconComponentCard.Body>
   </FalconComponentCard>
-);
+)
 
 PluginCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   docLink: PropTypes.string.isRequired
-};
+}
 
-export default Plugins;
+export default Plugins

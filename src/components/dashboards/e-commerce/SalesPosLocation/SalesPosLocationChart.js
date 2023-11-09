@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { RadarChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { RadarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   RadarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const tooltipFormatter = params => {
   return `<strong > ${params.name} </strong>
@@ -30,8 +30,8 @@ const tooltipFormatter = params => {
     <strong>Support</strong>: ${params.value[3]}  <br>
     <strong>Tech</strong>: ${params.value[4]}  <br>
     <strong>Admin</strong>: ${params.value[5]}  <br>
-  </div>`;
-};
+  </div>`
+}
 
 const getOptions = () => ({
   tooltip: {
@@ -128,7 +128,7 @@ const getOptions = () => ({
     top: 0,
     bottom: '100px'
   }
-});
+})
 
 const SalesPosLocationChart = () => {
   return (
@@ -139,7 +139,7 @@ const SalesPosLocationChart = () => {
         style={{ height: '22rem' }}
       />
     </>
-  );
-};
+  )
+}
 
-export default SalesPosLocationChart;
+export default SalesPosLocationChart

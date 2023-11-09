@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import React, { useState } from 'react';
-import { Button, FormControl, InputGroup } from 'react-bootstrap';
-import { useAsyncDebounce } from 'react-table';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import React, { useState } from 'react'
+import { Button, FormControl, InputGroup } from 'react-bootstrap'
+import { useAsyncDebounce } from 'react-table'
 
 const AdvanceTableSearchBox = ({
   globalFilter,
@@ -11,19 +11,19 @@ const AdvanceTableSearchBox = ({
   placeholder = 'Search...',
   className
 }) => {
-  const [value, setValue] = useState(globalFilter);
+  const [value, setValue] = useState(globalFilter)
 
   const onChange = useAsyncDebounce(value => {
-    setGlobalFilter(value || undefined);
-  }, 200);
+    setGlobalFilter(value || undefined)
+  }, 200)
 
   return (
     <InputGroup className={classNames(className, 'position-relative')}>
       <FormControl
         value={value || ''}
         onChange={({ target: { value } }) => {
-          setValue(value);
-          onChange(value);
+          setValue(value)
+          onChange(value)
         }}
         size="sm"
         id="search"
@@ -39,7 +39,7 @@ const AdvanceTableSearchBox = ({
         <FontAwesomeIcon icon="search" className="fs--1" />
       </Button>
     </InputGroup>
-  );
-};
+  )
+}
 
-export default AdvanceTableSearchBox;
+export default AdvanceTableSearchBox

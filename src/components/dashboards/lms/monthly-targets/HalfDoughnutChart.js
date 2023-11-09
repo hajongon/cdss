@@ -1,8 +1,8 @@
-import React from 'react';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import { Doughnut } from 'react-chartjs-2';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
+import React from 'react'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import { Doughnut } from 'react-chartjs-2'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
 
 const HalfDoughnutChart = ({
   color = 'primary',
@@ -20,7 +20,7 @@ const HalfDoughnutChart = ({
       },
       tooltip: chartJsDefaultTooltip()
     }
-  };
+  }
   const data = {
     labels: ['Reached', 'Remaining'],
     datasets: [
@@ -30,14 +30,14 @@ const HalfDoughnutChart = ({
         borderColor: [getColor(color), getColor('gray-300')]
       }
     ]
-  };
-  return <Doughnut data={data} options={options} width="112" />;
-};
+  }
+  return <Doughnut data={data} options={options} width="112" />
+}
 
 HalfDoughnutChart.propTypes = {
   target: PropTypes.number,
   reached: PropTypes.number,
   color: PropTypes.string
-};
+}
 
-export default HalfDoughnutChart;
+export default HalfDoughnutChart

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Tab } from 'react-bootstrap';
-import ChatContentHeader from './ChatContentHeader';
-import threads from 'data/chat/threads';
-import ChatContentBody from './ChatContentBody';
-import MessageTextArea from './MessageTextArea';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Tab } from 'react-bootstrap'
+import ChatContentHeader from './ChatContentHeader'
+import threads from 'data/chat/threads'
+import ChatContentBody from './ChatContentBody'
+import MessageTextArea from './MessageTextArea'
 
 const ChatContent = ({ setHideSidebar }) => {
   return (
@@ -17,11 +17,11 @@ const ChatContent = ({ setHideSidebar }) => {
       ))}
       <MessageTextArea />
     </Tab.Content>
-  );
-};
+  )
+}
 
 ChatContent.propTypes = {
   setHideSidebar: PropTypes.func.isRequired
-};
+}
 
-export default ChatContent;
+export default ChatContent

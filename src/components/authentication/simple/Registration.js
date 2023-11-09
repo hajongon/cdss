@@ -1,7 +1,7 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import RegistrationForm from 'components/authentication/RegistrationForm';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import RegistrationForm from 'components/authentication/RegistrationForm'
 
 const Registration = () => (
   <>
@@ -17,6 +17,6 @@ const Registration = () => (
     </Row>
     <RegistrationForm />
   </>
-);
+)
 
-export default Registration;
+export default Registration

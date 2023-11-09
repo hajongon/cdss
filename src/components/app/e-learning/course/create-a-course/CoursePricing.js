@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Button,
   Card,
@@ -9,7 +9,7 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
+} from 'react-bootstrap'
 
 const CoursePricing = ({
   register,
@@ -83,7 +83,7 @@ const CoursePricing = ({
               size="sm"
               className="fw-medium fs--1"
               onClick={() => {
-                setIsOpenScheduleModal(!isOpenScheduleModal);
+                setIsOpenScheduleModal(!isOpenScheduleModal)
               }}
             >
               Schedule Discount
@@ -92,13 +92,13 @@ const CoursePricing = ({
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
 CoursePricing.propTypes = {
   register: PropTypes.func.isRequired,
   isOpenScheduleModal: PropTypes.bool,
   setIsOpenScheduleModal: PropTypes.func.isRequired
-};
+}
 
-export default CoursePricing;
+export default CoursePricing

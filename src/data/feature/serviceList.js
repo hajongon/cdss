@@ -17,4 +17,4 @@ export default [
     description:
       'All the painful or time-consuming tasks in your development workflow such as compiling the SCSS or transpiring the JS are automated.'
   }
-];
+]

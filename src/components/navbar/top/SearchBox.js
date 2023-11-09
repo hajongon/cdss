@@ -1,14 +1,14 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Form, Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Fuse from 'fuse.js';
-import { Link } from 'react-router-dom';
-import Avatar from 'components/common/Avatar';
-import { isIterableArray } from 'helpers/utils';
-import Flex from 'components/common/Flex';
-import FalconCloseButton from 'components/common/FalconCloseButton';
-import SoftBadge from 'components/common/SoftBadge';
+import React, { Fragment, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Form, Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Fuse from 'fuse.js'
+import { Link } from 'react-router-dom'
+import Avatar from 'components/common/Avatar'
+import { isIterableArray } from 'helpers/utils'
+import Flex from 'components/common/Flex'
+import FalconCloseButton from 'components/common/FalconCloseButton'
+import SoftBadge from 'components/common/SoftBadge'
 
 const MediaSearchContent = ({ item }) => {
   return (
@@ -32,49 +32,49 @@ const MediaSearchContent = ({ item }) => {
         </div>
       </Flex>
     </Dropdown.Item>
-  );
-};
+  )
+}
 
 const SearchBox = ({ autoCompleteItem }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [searchInputValue, setSearchInputValue] = useState('');
-  const [resultItem, setResultItem] = useState(autoCompleteItem);
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [searchInputValue, setSearchInputValue] = useState('')
+  const [resultItem, setResultItem] = useState(autoCompleteItem)
 
   const fuseJsOptions = {
     includeScore: true,
     keys: ['title', 'text', 'breadCrumbTexts']
-  };
+  }
 
   let searchResult = new Fuse(autoCompleteItem, fuseJsOptions)
     .search(searchInputValue)
-    .map(item => item.item);
+    .map(item => item.item)
 
   const recentlyBrowsedItems = resultItem.filter(
     item => item.catagories === 'recentlyBrowsedItems'
-  );
+  )
 
   const suggestedFilters = resultItem.filter(
     item => item.catagories === 'suggestedFilters'
-  );
+  )
 
   const suggestionFiles = resultItem.filter(
     item => item.catagories === 'suggestionFiles'
-  );
+  )
 
   const suggestionMembers = resultItem.filter(
     item => item.catagories === 'suggestionMembers'
-  );
+  )
 
   useEffect(() => {
     if (searchInputValue) {
-      setResultItem(searchResult);
-      isIterableArray(searchResult) && setDropdownOpen(true);
+      setResultItem(searchResult)
+      isIterableArray(searchResult) && setDropdownOpen(true)
     } else {
-      setResultItem(autoCompleteItem);
+      setResultItem(autoCompleteItem)
     }
 
     // eslint-disable-next-line
-  }, [searchInputValue]);
+  }, [searchInputValue])
 
   return (
     <Dropdown show={dropdownOpen} className="search-box">
@@ -100,8 +100,8 @@ const SearchBox = ({ autoCompleteItem }) => {
               noOutline
               className="fs--2"
               onClick={() => {
-                setSearchInputValue('');
-                setDropdownOpen(false);
+                setSearchInputValue('')
+                setDropdownOpen(false)
               }}
             />
           </div>
@@ -139,7 +139,7 @@ const SearchBox = ({ autoCompleteItem }) => {
                               />
                             )}
                           </Fragment>
-                        );
+                        )
                       })}
                     </div>
                   </Flex>
@@ -214,8 +214,8 @@ const SearchBox = ({ autoCompleteItem }) => {
         </div>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 MediaSearchContent.propTypes = {
   item: PropTypes.shape({
@@ -235,12 +235,12 @@ MediaSearchContent.propTypes = {
       class: PropTypes.string
     })
   }).isRequired
-};
+}
 
 SearchBox.propTypes = {
   autoCompleteItem: PropTypes.arrayOf(
     PropTypes.shape(MediaSearchContent.propTypes.item)
   )
-};
+}
 
-export default SearchBox;
+export default SearchBox

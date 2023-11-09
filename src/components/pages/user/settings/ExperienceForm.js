@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Button, Col, Collapse, Form, Row } from 'react-bootstrap';
-import InputField from '../InputField';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Button, Col, Collapse, Form, Row } from 'react-bootstrap'
+import InputField from '../InputField'
 
 const ExperienceForm = ({ collapsed, setCollapsed }) => {
   const [formData, setFormData] = useState({
@@ -14,18 +14,18 @@ const ExperienceForm = ({ collapsed, setCollapsed }) => {
     currentlyWork: false,
     from: '',
     to: ''
-  });
+  })
 
   const handleChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   return (
     <div>
@@ -33,7 +33,7 @@ const ExperienceForm = ({ collapsed, setCollapsed }) => {
         alignItems="center"
         className="mb-4 text-primary cursor-pointer fs-0"
         onClick={() => {
-          setCollapsed(!collapsed);
+          setCollapsed(!collapsed)
         }}
       >
         <span className="circle-dashed">
@@ -91,7 +91,7 @@ const ExperienceForm = ({ collapsed, setCollapsed }) => {
               label="From"
               name="from"
               onChange={value => {
-                setFormData({ ...formData, from: value });
+                setFormData({ ...formData, from: value })
               }}
             />
 
@@ -101,7 +101,7 @@ const ExperienceForm = ({ collapsed, setCollapsed }) => {
               label="To"
               name="to"
               onChange={value => {
-                setFormData({ ...formData, to: value });
+                setFormData({ ...formData, to: value })
               }}
             />
 
@@ -116,12 +116,12 @@ const ExperienceForm = ({ collapsed, setCollapsed }) => {
         </div>
       </Collapse>
     </div>
-  );
-};
+  )
+}
 
 ExperienceForm.propTypes = {
   collapsed: PropTypes.bool.isRequired,
   setCollapsed: PropTypes.func.isRequired
-};
+}
 
-export default ExperienceForm;
+export default ExperienceForm

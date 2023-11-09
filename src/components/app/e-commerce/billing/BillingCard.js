@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import React from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import React from 'react'
+import { Button, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const BillingCard = () => {
   return (
@@ -40,7 +40,7 @@ const BillingCard = () => {
         </small>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BillingCard;
+export default BillingCard

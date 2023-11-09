@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import WizardForm from 'components/wizard/Wizard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import WizardForm from 'components/wizard/Wizard'
 
 const FormTitle = ({ icon, title }) => {
   return (
@@ -25,8 +25,8 @@ const FormTitle = ({ icon, title }) => {
         </p>
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 const WizardForms = () => {
   return (
@@ -52,12 +52,12 @@ const WizardForms = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 FormTitle.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
-};
+}
 
-export default WizardForms;
+export default WizardForms

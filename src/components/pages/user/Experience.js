@@ -1,9 +1,9 @@
-import Flex from 'components/common/Flex';
-import VerifiedBadge from 'components/common/VerifiedBadge';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Flex from 'components/common/Flex'
+import VerifiedBadge from 'components/common/VerifiedBadge'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Image } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Experience = ({ experience, isLast }) => {
   const {
@@ -15,7 +15,7 @@ const Experience = ({ experience, isLast }) => {
     duration,
     location,
     verified
-  } = experience;
+  } = experience
 
   return (
     <Flex>
@@ -37,8 +37,8 @@ const Experience = ({ experience, isLast }) => {
         {!isLast && <div className="border-dashed border-bottom my-3" />}
       </div>
     </Flex>
-  );
-};
+  )
+}
 Experience.propTypes = {
   experience: PropTypes.shape({
     logo: PropTypes.string,
@@ -51,5 +51,5 @@ Experience.propTypes = {
     verified: PropTypes.bool
   }),
   isLast: PropTypes.bool
-};
-export default Experience;
+}
+export default Experience

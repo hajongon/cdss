@@ -1,16 +1,16 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BarLineMixedChart from './BarLineMixedChart';
-import BarNegativeChart from './BarNegativeChart';
-import BarTimelineChart from './BarTimelineChart';
-import BasicBarChart from './BasicBarChart';
-import GradientBarChart from './GradientBarChart';
-import HorizontalBarChart from './HorizontalBarChart';
-import RaceChart from './RaceChart';
-import SeriesBarChart from './SeriesBarChart';
-import StackedChart from './StackedChart';
-import StackedHorizontalChart from './StackedHorizontalChart';
-import WaterFallChart from './WaterFallChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BarLineMixedChart from './BarLineMixedChart'
+import BarNegativeChart from './BarNegativeChart'
+import BarTimelineChart from './BarTimelineChart'
+import BasicBarChart from './BasicBarChart'
+import GradientBarChart from './GradientBarChart'
+import HorizontalBarChart from './HorizontalBarChart'
+import RaceChart from './RaceChart'
+import SeriesBarChart from './SeriesBarChart'
+import StackedChart from './StackedChart'
+import StackedHorizontalChart from './StackedHorizontalChart'
+import WaterFallChart from './WaterFallChart'
 
 const BarCharts = () => {
   return (
@@ -51,7 +51,7 @@ const BarCharts = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default BarCharts;
+export default BarCharts

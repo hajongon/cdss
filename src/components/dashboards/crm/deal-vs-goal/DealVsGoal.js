@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import DealVSGoalChart from './DealVsGoalChart';
-import { dealClosedVsGoalChart } from 'data/dashboard/crm';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import DealVSGoalChart from './DealVsGoalChart'
+import { dealClosedVsGoalChart } from 'data/dashboard/crm'
 
 const DealVsGoal = () => {
   return (
@@ -18,7 +18,7 @@ const DealVsGoal = () => {
         <DealVSGoalChart data={dealClosedVsGoalChart} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DealVsGoal;
+export default DealVsGoal

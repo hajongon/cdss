@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid'
 
 export default [
   {
@@ -50,4 +50,4 @@ export default [
     location: 'Cambridge Masonic Association',
     place: 'Porter Square, North Cambridge'
   }
-];
+]

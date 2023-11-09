@@ -1,18 +1,18 @@
-import course1 from 'assets/img/e-learning/courses/course1.png';
-import course2 from 'assets/img/e-learning/courses/course2.png';
-import course3 from 'assets/img/e-learning/courses/course3.png';
-import course4 from 'assets/img/e-learning/courses/course4.png';
-import course5 from 'assets/img/e-learning/courses/course5.png';
-import course6 from 'assets/img/e-learning/courses/course6.png';
-import course7 from 'assets/img/e-learning/courses/course7.png';
-import course8 from 'assets/img/e-learning/courses/course8.png';
-import course9 from 'assets/img/e-learning/courses/course9.png';
-import beachVideo from 'assets/video/beach.mp4';
-import beachPoster from 'assets/video/beach.jpg';
+import course1 from 'assets/img/e-learning/courses/course1.png'
+import course2 from 'assets/img/e-learning/courses/course2.png'
+import course3 from 'assets/img/e-learning/courses/course3.png'
+import course4 from 'assets/img/e-learning/courses/course4.png'
+import course5 from 'assets/img/e-learning/courses/course5.png'
+import course6 from 'assets/img/e-learning/courses/course6.png'
+import course7 from 'assets/img/e-learning/courses/course7.png'
+import course8 from 'assets/img/e-learning/courses/course8.png'
+import course9 from 'assets/img/e-learning/courses/course9.png'
+import beachVideo from 'assets/video/beach.mp4'
+import beachPoster from 'assets/video/beach.jpg'
 
-import chevronUp from 'assets/img/icons/chevron-up.svg';
-import doubleChevronUp from 'assets/img/icons/double-chevron-up.svg';
-import tripleChevronUp from 'assets/img/icons/triple-chevron-up.svg';
+import chevronUp from 'assets/img/icons/chevron-up.svg'
+import doubleChevronUp from 'assets/img/icons/double-chevron-up.svg'
+import tripleChevronUp from 'assets/img/icons/triple-chevron-up.svg'
 
 export const courseFilters = [
   {
@@ -276,7 +276,7 @@ export const courseFilters = [
       }
     ]
   }
-];
+]
 
 const tags = {
   writing: {
@@ -321,7 +321,7 @@ const tags = {
     content: 'Painting',
     icon: 'palette'
   }
-};
+}
 
 export const courseData = [
   {
@@ -488,4 +488,4 @@ export const courseData = [
     review: 55699,
     tags: [tags.writing, tags.topTrainer]
   }
-];
+]

@@ -1,35 +1,35 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import { Link } from 'react-router-dom';
-import CartItem from './CartItem';
-import CartModal from './CartModal';
-import { ProductContext } from 'context/Context';
-import { getSubtotal } from 'helpers/utils';
+import React, { useContext, useEffect, useState } from 'react'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import { Link } from 'react-router-dom'
+import CartItem from './CartItem'
+import CartModal from './CartModal'
+import { ProductContext } from 'context/Context'
+import { getSubtotal } from 'helpers/utils'
 
 const ShoppingCart = () => {
-  const [totalCost, setTotalCost] = useState(0);
-  const [promoCode, setPromoCode] = useState('');
+  const [totalCost, setTotalCost] = useState(0)
+  const [promoCode, setPromoCode] = useState('')
 
   const {
     productsState: { cartItems },
     productsDispatch
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   useEffect(() => {
-    setTotalCost(getSubtotal(cartItems));
-  }, [cartItems]);
+    setTotalCost(getSubtotal(cartItems))
+  }, [cartItems])
 
   const applyPromo = e => {
-    e.preventDefault();
+    e.preventDefault()
     productsDispatch({
       type: 'APPLY_PROMO',
       payload: {
         promoCode
       }
-    });
-    setPromoCode('');
-  };
+    })
+    setPromoCode('')
+  }
 
   return (
     <>
@@ -147,7 +147,7 @@ const ShoppingCart = () => {
       </Card>
       <CartModal />
     </>
-  );
-};
+  )
+}
 
-export default ShoppingCart;
+export default ShoppingCart

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
 
 const Association = ({ image, title, description }) => (
   <Flex alignItems="center" className="position-relative mb-2">
@@ -14,12 +14,12 @@ const Association = ({ image, title, description }) => (
       <p className="mb-1">{description}</p>
     </div>
   </Flex>
-);
+)
 
 Association.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
-};
+}
 
-export default Association;
+export default Association

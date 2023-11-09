@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
+import { Dropdown } from 'react-bootstrap'
 
 const FeedDropdown = () => {
   return (
@@ -25,9 +25,9 @@ const FeedDropdown = () => {
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
-FeedDropdown.propTypes = {};
+FeedDropdown.propTypes = {}
 
-export default FeedDropdown;
+export default FeedDropdown

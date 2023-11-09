@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import React from 'react';
-import { Button, Tab } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import React from 'react'
+import { Button, Tab } from 'react-bootstrap'
 
 const exampleCode = `
 function Example() {
@@ -17,7 +17,7 @@ function Example() {
       <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
     </Toast>
   );
-}`;
+}`
 const transcluentCode = `
 function Example() {
   const [show, setShow] = useState(true);
@@ -32,7 +32,7 @@ function Example() {
       </Toast>
     </div>
   );
-}`;
+}`
 
 const stackingCode = `
 function Example() {
@@ -57,7 +57,7 @@ function Example() {
       </Toast>
     </ToastContainer>
   );
-}`;
+}`
 
 const placementCode = `
 function Example() {
@@ -111,7 +111,7 @@ function Example() {
       </div>
     </>
   );
-}`;
+}`
 const placementStackedCode = `
 <div
   aria-live="polite"
@@ -136,7 +136,7 @@ const placementStackedCode = `
     </Toast>
   </ToastContainer>
 </div>
-`;
+`
 
 const autoHideCode = `
 function AutoHideExample() {
@@ -157,7 +157,7 @@ function AutoHideExample() {
     </>
   );
 }
-`;
+`
 
 const Toasts = () => (
   <>
@@ -238,6 +238,6 @@ const Toasts = () => (
       <FalconComponentCard.Body code={autoHideCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Toasts;
+export default Toasts

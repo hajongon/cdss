@@ -1,8 +1,8 @@
-import FalconLink from 'components/common/FalconLink';
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
-import ReceivedTicketsChart from './ReceivedTicketsChart';
+import FalconLink from 'components/common/FalconLink'
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
+import ReceivedTicketsChart from './ReceivedTicketsChart'
 
 const ReceivedTickets = () => {
   return (
@@ -31,7 +31,7 @@ const ReceivedTickets = () => {
         <FalconLink title="View all report" className="px-0 fw-medium" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default ReceivedTickets;
+export default ReceivedTickets

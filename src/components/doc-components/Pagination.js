@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
   <Pagination>
@@ -13,7 +13,7 @@ const exampleCode = `
     <Pagination.Item>3</Pagination.Item>
     <Pagination.Next>Next</Pagination.Next>
   </Pagination>
-`;
+`
 const iconExampleCode = `
   <Pagination>
     <Pagination.First />
@@ -22,7 +22,7 @@ const iconExampleCode = `
     <Pagination.Item>3</Pagination.Item>
     <Pagination.Last />
   </Pagination>
-`;
+`
 const sizingCode = `
 <>
   <Pagination size='lg'>
@@ -41,7 +41,7 @@ const sizingCode = `
     <Pagination.Item>3</Pagination.Item>
   </Pagination>
 </>
-`;
+`
 
 const moreOptionsCode = `
 <Pagination>
@@ -58,7 +58,7 @@ const moreOptionsCode = `
   <Pagination.Next />
   <Pagination.Last />
 </Pagination>
-`;
+`
 
 const Pagin = () => (
   <>
@@ -113,6 +113,6 @@ const Pagin = () => (
       <FalconComponentCard.Body code={moreOptionsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Pagin;
+export default Pagin

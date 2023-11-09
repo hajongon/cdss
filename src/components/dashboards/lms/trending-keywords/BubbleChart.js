@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import * as d3 from 'd3';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import * as d3 from 'd3'
 
-const width = 460;
-const height = 400;
-const fontSize = 1; //rem
+const width = 460
+const height = 400
+const fontSize = 1 //rem
 
 const ForceGraph = ({ nodes }) => {
-  const [animatedNodes, setAnimatedNodes] = useState([]);
+  const [animatedNodes, setAnimatedNodes] = useState([])
 
   const radiusScale = value => {
     const fx = d3
@@ -16,40 +16,40 @@ const ForceGraph = ({ nodes }) => {
       .domain([
         0.95 *
           d3.min(nodes, item => {
-            return item.v;
+            return item.v
           }),
         1.05 *
           d3.max(nodes, item => {
-            return item.v;
+            return item.v
           })
-      ]);
-    return fx(value);
-  };
+      ])
+    return fx(value)
+  }
 
   // Tooltip
   const showTooltip = function (e, item) {
-    e.target.classList.add('opacity-75');
-    d3.select('.d3-tooltip').transition().duration(200);
+    e.target.classList.add('opacity-75')
+    d3.select('.d3-tooltip').transition().duration(200)
     d3.select('.d3-tooltip')
       .style('opacity', 1)
       .style('border', `1px solid ${item.color}`)
       .text(item.name + ': ' + item.v)
       .style('left', e.clientX - 40 + 'px')
-      .style('top', e.clientY - 40 + 'px');
-  };
+      .style('top', e.clientY - 40 + 'px')
+  }
 
   const moveTooltip = function (e) {
-    e.target.classList.add('opacity-75');
+    e.target.classList.add('opacity-75')
     d3.select('.d3-tooltip')
       .style('opacity', 1)
       .style('left', e.clientX - 40 + 'px')
-      .style('top', e.clientY - 40 + 'px');
-  };
+      .style('top', e.clientY - 40 + 'px')
+  }
 
   const hideTooltip = function (e) {
-    e.target.classList.remove('opacity-75');
-    d3.select('.d3-tooltip').transition().duration(200).style('opacity', 0);
-  };
+    e.target.classList.remove('opacity-75')
+    d3.select('.d3-tooltip').transition().duration(200).style('opacity', 0)
+  }
 
   useEffect(() => {
     const simulation = d3
@@ -60,18 +60,18 @@ const ForceGraph = ({ nodes }) => {
       .force(
         'collide',
         d3.forceCollide(d => radiusScale(d.v) + 4)
-      );
+      )
 
     simulation.on('tick', () => {
-      setAnimatedNodes([...simulation.nodes()]);
-    });
+      setAnimatedNodes([...simulation.nodes()])
+    })
 
-    simulation.nodes([...nodes]);
+    simulation.nodes([...nodes])
 
-    simulation.alpha(0.01).restart();
+    simulation.alpha(0.01).restart()
 
-    return () => simulation.stop();
-  }, [nodes]);
+    return () => simulation.stop()
+  }, [nodes])
 
   return (
     <>
@@ -98,8 +98,8 @@ const ForceGraph = ({ nodes }) => {
         </g>
       ))}
     </>
-  );
-};
+  )
+}
 
 const BubbleChart = ({ data }) => {
   return (
@@ -112,15 +112,15 @@ const BubbleChart = ({ data }) => {
         <ForceGraph nodes={data} />
       </svg>
     </div>
-  );
-};
+  )
+}
 
 ForceGraph.propTypes = {
   nodes: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
 BubbleChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default BubbleChart;
+export default BubbleChart

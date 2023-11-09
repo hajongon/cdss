@@ -238,4 +238,4 @@ export default [
   'Yugoslavia',
   'Zambia',
   'Zimbabwe'
-];
+]

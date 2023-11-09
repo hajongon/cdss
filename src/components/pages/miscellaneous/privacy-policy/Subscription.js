@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
 
 const Subscription = forwardRef((props, ref) => {
   return (
@@ -68,7 +68,7 @@ const Subscription = forwardRef((props, ref) => {
         </p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Subscription;
+export default Subscription

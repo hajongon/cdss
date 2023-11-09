@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconLink from 'components/common/FalconLink';
-import ActiveUsersChart from './ActiveUsersChart';
-import classNames from 'classnames';
-import { activeUsersChart } from 'data/dashboard/analytics';
+import React, { useState } from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconLink from 'components/common/FalconLink'
+import ActiveUsersChart from './ActiveUsersChart'
+import classNames from 'classnames'
+import { activeUsersChart } from 'data/dashboard/analytics'
 
 const ActiveUsers = ({ ...rest }) => {
   const [stats] = useState([
@@ -25,7 +25,7 @@ const ActiveUsers = ({ ...rest }) => {
       color: 'info',
       value: 3575
     }
-  ]);
+  ])
   return (
     <Card {...rest}>
       <FalconCardHeader
@@ -82,7 +82,7 @@ const ActiveUsers = ({ ...rest }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default ActiveUsers;
+export default ActiveUsers

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BasicScatterChart from './BasicScatterCharr';
-import BubbleChart from './BubbleChart';
-import QuartetScatterChart from './QuartetScatterChart';
-import SingleAxisScatterChart from './SingleAxisScatterChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BasicScatterChart from './BasicScatterCharr'
+import BubbleChart from './BubbleChart'
+import QuartetScatterChart from './QuartetScatterChart'
+import SingleAxisScatterChart from './SingleAxisScatterChart'
 
 const ScatterCharts = () => {
   return (
@@ -21,7 +21,7 @@ const ScatterCharts = () => {
         <SingleAxisScatterChart />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default ScatterCharts;
+export default ScatterCharts

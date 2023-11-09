@@ -1,7 +1,7 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
 
 const sizingWidthCode = `<>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-100"><code>.w-100</code></div>
@@ -9,7 +9,7 @@ const sizingWidthCode = `<>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-50"><code>.w-50</code></div>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-25"><code>.w-25</code></div>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-auto"><code>.w-auto</code></div>
-</>`;
+</>`
 
 const sizingHeightCode = `<>
   <div className="vh-50 text-dark py-3">
@@ -41,7 +41,7 @@ const sizingHeightCode = `<>
       </Col>
     </Row>
   </div>
-</>`;
+</>`
 
 const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vw-100 { width: 100vw; }
@@ -116,7 +116,7 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-xxl-100 { height: 100vh !important; }
 .vh-xxl-75 { height: 75vh !important; }
 .vh-xxl-50 { height: 50vh !important; }
-.vh-xxl-25 { height: 25vh !important; }`;
+.vh-xxl-25 { height: 25vh !important; }`
 
 const Sizing = () => (
   <>
@@ -174,6 +174,6 @@ const Sizing = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Sizing;
+export default Sizing

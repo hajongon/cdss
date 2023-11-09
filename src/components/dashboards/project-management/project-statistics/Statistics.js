@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, ProgressBar, Row } from 'react-bootstrap';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, ProgressBar, Row } from 'react-bootstrap'
+import classNames from 'classnames'
 
 const Statistics = ({ data }) => {
   return (
@@ -42,8 +42,8 @@ const Statistics = ({ data }) => {
         ))}
       </ProgressBar>
     </>
-  );
-};
+  )
+}
 
 Statistics.propTypes = {
   data: PropTypes.arrayOf(
@@ -53,6 +53,6 @@ Statistics.propTypes = {
       variant: PropTypes.string.isRequired
     })
   )
-};
+}
 
-export default Statistics;
+export default Statistics

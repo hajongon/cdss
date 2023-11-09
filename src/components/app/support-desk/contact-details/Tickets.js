@@ -1,10 +1,10 @@
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { tickets } from 'data/support-desk/contactDetailsData';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { Form } from 'react-bootstrap';
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { tickets } from 'data/support-desk/contactDetailsData'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { Form } from 'react-bootstrap'
 
 const PrioritySelect = ({ title, color, data }) => {
   return (
@@ -42,8 +42,8 @@ const PrioritySelect = ({ title, color, data }) => {
       </div>
       <h6 className="mb-0 text-700">{title}</h6>
     </div>
-  );
-};
+  )
+}
 
 PrioritySelect.propTypes = {
   title: PropTypes.string,
@@ -51,7 +51,7 @@ PrioritySelect.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   data: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-};
+}
 
 const AgentSelect = ({ agent, className, style }) => {
   return (
@@ -65,20 +65,20 @@ const AgentSelect = ({ agent, className, style }) => {
         <option key={item}>{item}</option>
       ))}
     </Form.Select>
-  );
-};
+  )
+}
 
 AgentSelect.propTypes = {
   agent: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object
-};
+}
 
 const Tickets = () => {
   return (
     <Flex direction="column" className="gap-3">
       {tickets.map((ticket, index) => {
-        const { subject, status, priority, agent, date } = ticket;
+        const { subject, status, priority, agent, date } = ticket
         return (
           <div
             key={index}
@@ -103,10 +103,10 @@ const Tickets = () => {
               <AgentSelect agent={agent} style={{ width: '9.375rem' }} />
             </Flex>
           </div>
-        );
+        )
       })}
     </Flex>
-  );
-};
+  )
+}
 
-export default Tickets;
+export default Tickets

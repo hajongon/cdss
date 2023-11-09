@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import GoogleMap from 'components/map/GoogleMap';
-import { Button, Card, Col, Row, Table } from 'react-bootstrap';
-import AppContext from 'context/Context';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import GoogleMap from 'components/map/GoogleMap'
+import { Button, Card, Col, Row, Table } from 'react-bootstrap'
+import AppContext from 'context/Context'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MapDark = () => {
   return (
@@ -24,8 +24,8 @@ const MapDark = () => {
         987, Apartment 6, Excellent Street, Good Area, Clean City 5434, Canada
       </p>
     </GoogleMap>
-  );
-};
+  )
+}
 const MapLight = () => {
   return (
     <GoogleMap
@@ -42,13 +42,13 @@ const MapLight = () => {
         987, Apartment 6, Excellent Street, Good Area, Clean City 5434, Canada
       </p>
     </GoogleMap>
-  );
-};
+  )
+}
 
 const BillingAddress = () => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
   return (
     <Card className="h-100">
       <FalconCardHeader
@@ -129,8 +129,8 @@ const BillingAddress = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 const HoverActionsBtn = ({ to = '#!', icon = 'pencil-alt' }) => (
   <Button
@@ -143,11 +143,11 @@ const HoverActionsBtn = ({ to = '#!', icon = 'pencil-alt' }) => (
   >
     <FontAwesomeIcon icon={icon} transform="up-4" className="ms-2 fs--2" />
   </Button>
-);
+)
 
 HoverActionsBtn.propTypes = {
   to: PropTypes.string,
   icon: PropTypes.string
-};
+}
 
-export default BillingAddress;
+export default BillingAddress

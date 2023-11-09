@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import { useForm } from 'react-hook-form';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import { useForm } from 'react-hook-form'
 
 const tooltipsCode = `
 function FormExample() {
@@ -92,7 +92,7 @@ function FormExample() {
       <Button type="submit">Submit form</Button>
     </Form>
   );
-}`;
+}`
 const exampleCode = `
 function FormExample() {
   const [validated, setValidated] = useState(false);
@@ -179,7 +179,7 @@ function FormExample() {
       <Button type="submit">Submit form</Button>
     </Form>
   );
-}`;
+}`
 
 const inputGroupValidationCode = `
 <InputGroup hasValidation>
@@ -189,7 +189,7 @@ const inputGroupValidationCode = `
     Please choose a username.
   </Form.Control.Feedback>
 </InputGroup>
-`;
+`
 
 const reactFormHookCode = `function ReactFormHook() {
   const {
@@ -288,7 +288,7 @@ const reactFormHookCode = `function ReactFormHook() {
       </Col>
     </Row>
   );
-}`;
+}`
 
 const FormValidation = () => (
   <>
@@ -370,6 +370,6 @@ const FormValidation = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FormValidation;
+export default FormValidation

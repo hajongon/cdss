@@ -1,16 +1,16 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { HeatmapChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { HeatmapChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, getRandomNumber, rgbaColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, getRandomNumber, rgbaColor } from 'helpers/utils'
+import React from 'react'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -18,7 +18,7 @@ echarts.use([
   HeatmapChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const hours = ['12a', '2a', '4a', '6a', '8a', '10a', '12p', '2p', '4p', '6p', '8p', '10p'];
@@ -123,7 +123,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const BasicHeatmapChart = () => {
   return (
@@ -141,7 +141,7 @@ const BasicHeatmapChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default BasicHeatmapChart;
+export default BasicHeatmapChart

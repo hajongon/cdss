@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import { Col } from 'react-bootstrap';
-import SoftBadge from 'components/common/SoftBadge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import { Col } from 'react-bootstrap'
+import SoftBadge from 'components/common/SoftBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const Stat = ({ statInfo: { title, grow, amount }, isLast }) => {
   return (
@@ -30,8 +30,8 @@ const Stat = ({ statInfo: { title, grow, amount }, isLast }) => {
         </Flex>
       </div>
     </Col>
-  );
-};
+  )
+}
 
 Stat.propTypes = {
   statInfo: PropTypes.shape({
@@ -44,6 +44,6 @@ Stat.propTypes = {
     amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   }).isRequired,
   isLast: PropTypes.bool.isRequired
-};
+}
 
-export default Stat;
+export default Stat

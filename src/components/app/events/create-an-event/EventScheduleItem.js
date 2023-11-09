@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Form, Row, Button } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CustomDateInput from 'components/common/CustomDateInput';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, Form, Row, Button } from 'react-bootstrap'
+import DatePicker from 'react-datepicker'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CustomDateInput from 'components/common/CustomDateInput'
 
 const EventScheduleItem = ({
   index,
@@ -49,8 +49,8 @@ const EventScheduleItem = ({
             <DatePicker
               selected={startDate}
               onChange={newDate => {
-                handleChange(index, 'startDate', newDate);
-                setValue(`ScheduleStartDate${index}`, newDate);
+                handleChange(index, 'startDate', newDate)
+                setValue(`ScheduleStartDate${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -76,8 +76,8 @@ const EventScheduleItem = ({
               timeCaption="Time"
               dateFormat="h:mm"
               onChange={newDate => {
-                handleChange(index, 'startTime', newDate);
-                setValue(`ScheduleStartTime${index}`, newDate);
+                handleChange(index, 'startTime', newDate)
+                setValue(`ScheduleStartTime${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -98,8 +98,8 @@ const EventScheduleItem = ({
               selected={endDate}
               defaultValue=""
               onChange={newDate => {
-                handleChange(index, 'endDate', newDate);
-                setValue(`ScheduleEndDate${index}`, newDate);
+                handleChange(index, 'endDate', newDate)
+                setValue(`ScheduleEndDate${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -124,8 +124,8 @@ const EventScheduleItem = ({
               timeCaption="Time"
               dateFormat="h:mm"
               onChange={newDate => {
-                handleChange(index, 'endTime', newDate);
-                setValue(`ScheduleEndTime${index}`, newDate);
+                handleChange(index, 'endTime', newDate)
+                setValue(`ScheduleEndTime${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -140,9 +140,9 @@ const EventScheduleItem = ({
         </Col>
       </Row>
     </div>
-  );
-};
-export default EventScheduleItem;
+  )
+}
+export default EventScheduleItem
 
 EventScheduleItem.propTypes = {
   title: PropTypes.string,
@@ -155,4 +155,4 @@ EventScheduleItem.propTypes = {
   endTime: PropTypes.object,
   register: PropTypes.func.isRequired,
   setValue: PropTypes.func.isRequired
-};
+}

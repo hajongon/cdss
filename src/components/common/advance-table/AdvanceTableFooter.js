@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import Flex from '../Flex';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import React, { useState } from 'react'
+import { Button, Form } from 'react-bootstrap'
+import Flex from '../Flex'
 
 export const AdvanceTableFooter = ({
   page,
@@ -23,7 +23,7 @@ export const AdvanceTableFooter = ({
   rowsPerPageOptions = [5, 10, 15],
   className
 }) => {
-  const [isAllVisible, setIsAllVisible] = useState(false);
+  const [isAllVisible, setIsAllVisible] = useState(false)
   return (
     <Flex
       className={classNames(
@@ -46,8 +46,8 @@ export const AdvanceTableFooter = ({
                   size="sm"
                   className="py-2 px-0 fw-semi-bold"
                   onClick={() => {
-                    setIsAllVisible(!isAllVisible);
-                    setPageSize(isAllVisible ? perPage : rowCount);
+                    setIsAllVisible(!isAllVisible)
+                    setPageSize(isAllVisible ? perPage : rowCount)
                   }}
                 >
                   View {isAllVisible ? 'less' : 'all'}
@@ -101,7 +101,7 @@ export const AdvanceTableFooter = ({
         </Flex>
       )}
     </Flex>
-  );
-};
+  )
+}
 
-export default AdvanceTableFooter;
+export default AdvanceTableFooter

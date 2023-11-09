@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import Avatar from 'components/common/Avatar';
-import { Nav } from 'react-bootstrap';
-import LastMessage from './LastMessage';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ChatSidebarDropdownAction from './ChatSidebarDropdownAction';
-import { ChatContext } from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import Avatar from 'components/common/Avatar'
+import { Nav } from 'react-bootstrap'
+import LastMessage from './LastMessage'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ChatSidebarDropdownAction from './ChatSidebarDropdownAction'
+import { ChatContext } from 'context/Context'
 
 const ChatThread = ({ thread, index }) => {
-  const { getUser, messages } = useContext(ChatContext);
-  const user = getUser(thread);
-  const message = messages.find(({ id }) => id === thread.messagesId);
-  const lastMessage = message?.content[message.content.length - 1];
+  const { getUser, messages } = useContext(ChatContext)
+  const user = getUser(thread)
+  const message = messages.find(({ id }) => id === thread.messagesId)
+  const lastMessage = message?.content[message.content.length - 1]
   return (
     <Nav.Link
       eventKey={index}
@@ -62,12 +62,12 @@ const ChatThread = ({ thread, index }) => {
         </div>
       </Flex>
     </Nav.Link>
-  );
-};
+  )
+}
 
 ChatThread.propTypes = {
   thread: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired
-};
+}
 
-export default ChatThread;
+export default ChatThread

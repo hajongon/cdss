@@ -19,7 +19,7 @@ export const orders = [
     ],
     price: 2010
   }
-];
+]
 
 export const shippingAddress = [
   {
@@ -40,4 +40,4 @@ export const shippingAddress = [
     zip: '99703',
     phone: '+(901) 637-734'
   }
-];
+]

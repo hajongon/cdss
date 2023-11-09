@@ -1,8 +1,8 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor } from 'helpers/utils';
-import merge from 'lodash.merge';
-import PropTypes from 'prop-types';
-import React from 'react';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor } from 'helpers/utils'
+import merge from 'lodash.merge'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const getOption = () => ({
   color: getColor('primary'),
@@ -35,7 +35,7 @@ const getOption = () => ({
     }
   ],
   grid: { right: '0', left: '0', bottom: '0', top: '0' }
-});
+})
 
 const BasicECharts = ({ echarts, options, ...rest }) => {
   return (
@@ -44,12 +44,12 @@ const BasicECharts = ({ echarts, options, ...rest }) => {
       option={merge(getOption(), options)}
       {...rest}
     />
-  );
-};
+  )
+}
 
 BasicECharts.propTypes = {
   echarts: PropTypes.object.isRequired,
   options: PropTypes.object.isRequired
-};
+}
 
-export default BasicECharts;
+export default BasicECharts

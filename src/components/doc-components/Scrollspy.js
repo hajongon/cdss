@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
-import { Col, Nav, Row, Button } from 'react-bootstrap';
-import useScrollSpy from 'react-use-scrollspy';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React, { useRef, useState } from 'react'
+import { Col, Nav, Row, Button } from 'react-bootstrap'
+import useScrollSpy from 'react-use-scrollspy'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const exampleCode = `function Scrollspy(){
   const [sections] = useState(['Home', 'Profile', 'Messages', 'Settings']);
@@ -115,7 +115,7 @@ const exampleCode = `function Scrollspy(){
           </Col>
         </Row>
   );
-};`;
+};`
 
 const Scrollspy = () => (
   <>
@@ -147,18 +147,18 @@ const Scrollspy = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Scrollspy;
+export default Scrollspy
 
 function ScrollspyExample() {
-  const [sections] = useState(['Home', 'Profile', 'Messages', 'Settings']);
-  const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const [sections] = useState(['Home', 'Profile', 'Messages', 'Settings'])
+  const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)]
 
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -150
-  });
+  })
 
   return (
     <Row>
@@ -256,5 +256,5 @@ function ScrollspyExample() {
         ))}
       </Col>
     </Row>
-  );
+  )
 }

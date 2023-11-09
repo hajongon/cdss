@@ -1,10 +1,10 @@
-import React from 'react';
-import { Card, Form } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import FalconLink from 'components/common/FalconLink';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import MarketingExpensesChart from './MarketingExpensesChart';
-import MarketingExpensesList from './MarketingExpensesList';
+import React from 'react'
+import { Card, Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import FalconLink from 'components/common/FalconLink'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import MarketingExpensesChart from './MarketingExpensesChart'
+import MarketingExpensesList from './MarketingExpensesList'
 
 const MarketingExpenses = ({ listData }) => {
   return (
@@ -36,14 +36,14 @@ const MarketingExpenses = ({ listData }) => {
         </div>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 MarketingExpenses.propTypes = {
   listData: PropTypes.shape({
     digitalMarketing: PropTypes.arrayOf(PropTypes.object),
     offlineMarketing: PropTypes.arrayOf(PropTypes.object)
   }).isRequired
-};
+}
 
-export default MarketingExpenses;
+export default MarketingExpenses

@@ -1,19 +1,19 @@
-import React, { useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import UnresolvedTicktsChart from './UnresolvedTicktsChart';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import UnresolvedTicktsChart from './UnresolvedTicktsChart'
+import PropTypes from 'prop-types'
 
 const UnresolvedTickets = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   const handleLegend = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: name
-    });
-  };
+    })
+  }
   return (
     <Card className="h-100">
       <FalconCardHeader
@@ -144,11 +144,11 @@ const UnresolvedTickets = ({ data }) => {
         </a>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 UnresolvedTickets.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default UnresolvedTickets;
+export default UnresolvedTickets

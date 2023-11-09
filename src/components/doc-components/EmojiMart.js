@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Picker from '@emoji-mart/react';
-import AppContext from 'context/Context';
-import { getColor } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Picker from '@emoji-mart/react'
+import AppContext from 'context/Context'
+import { getColor } from 'helpers/utils'
 
 const emojiMart = `
   function EmojiMart () {
@@ -41,7 +41,7 @@ const emojiMart = `
       </div>
     );
   }
-`;
+`
 
 const EmojiMartExample = () => (
   <>
@@ -71,6 +71,6 @@ const EmojiMartExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default EmojiMartExample;
+export default EmojiMartExample

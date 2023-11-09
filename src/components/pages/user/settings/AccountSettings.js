@@ -1,7 +1,7 @@
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import TooltipBadge from 'components/common/TooltipBadge';
-import React, { useState } from 'react';
-import { Card, Form } from 'react-bootstrap';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import TooltipBadge from 'components/common/TooltipBadge'
+import React, { useState } from 'react'
+import { Card, Form } from 'react-bootstrap'
 
 const AccountSettings = () => {
   const [formData, setFormData] = useState({
@@ -12,21 +12,21 @@ const AccountSettings = () => {
     showExperience: false,
     numberVisibility: true,
     allowFollow: false
-  });
+  })
 
   const handleChange = e => {
     if (e.target.type === 'checkbox') {
       setFormData({
         ...formData,
         [e.target.name]: e.target.checked
-      });
+      })
     } else {
       setFormData({
         ...formData,
         [e.target.name]: e.target.value
-      });
+      })
     }
-  };
+  }
 
   return (
     <Card className="mb-3">
@@ -162,7 +162,7 @@ const AccountSettings = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default AccountSettings;
+export default AccountSettings

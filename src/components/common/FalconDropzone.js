@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Dropzone from 'react-dropzone';
-import classNames from 'classnames';
-import { isIterableArray } from 'helpers/utils';
-import Flex from './Flex';
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Dropzone from 'react-dropzone'
+import classNames from 'classnames'
+import { isIterableArray } from 'helpers/utils'
+import Flex from './Flex'
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
 
 const getSize = size => {
   if (size < 1024) {
@@ -12,21 +12,21 @@ const getSize = size => {
       <>
         <strong>{size}</strong> Byte
       </>
-    );
+    )
   } else if (size < 1024 * 1024) {
     return (
       <>
         <strong>{(size / 1024).toFixed(2)}</strong> KB
       </>
-    );
+    )
   } else {
     return (
       <>
         <strong>{(size / (1024 * 1024)).toFixed(2)}</strong> MB
       </>
-    );
+    )
   }
-};
+}
 
 const FalconDropzone = ({
   placeholder,
@@ -39,11 +39,11 @@ const FalconDropzone = ({
   <>
     <Dropzone
       onDrop={acceptedFiles => {
-        const stringFiles = [];
+        const stringFiles = []
         if (acceptedFiles.length) {
           acceptedFiles.map(file => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
+            const reader = new FileReader()
+            reader.readAsDataURL(file)
             reader.onload = () => {
               stringFiles.push({
                 // id: uuid(),
@@ -51,11 +51,11 @@ const FalconDropzone = ({
                 size: file.size,
                 path: file.path,
                 type: file.type
-              });
-              onChange([...stringFiles]);
-            };
-            return true;
-          });
+              })
+              onChange([...stringFiles])
+            }
+            return true
+          })
         }
       }}
     >
@@ -109,7 +109,7 @@ const FalconDropzone = ({
       </div>
     )}
   </>
-);
+)
 
 FalconDropzone.propTypes = {
   onChange: PropTypes.func.isRequired,
@@ -118,12 +118,12 @@ FalconDropzone.propTypes = {
   files: PropTypes.array,
   preview: PropTypes.bool,
   isMulti: PropTypes.bool
-};
+}
 
 FalconDropzone.defaultProps = {
   placeholder: <img src={cloudUpload} alt="" width={25} className="me-2" />,
   files: [],
   preview: false
-};
+}
 
-export default FalconDropzone;
+export default FalconDropzone

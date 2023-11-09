@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Button } from 'react-bootstrap';
-import corner1 from 'assets/img/illustrations/corner-1.png';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Background from 'components/common/Background';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Button } from 'react-bootstrap'
+import corner1 from 'assets/img/illustrations/corner-1.png'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Background from 'components/common/Background'
 
 const SpaceWarning = ({ className }) => (
   <Card className={`overflow-hidden ${className}`}>
@@ -26,10 +26,10 @@ const SpaceWarning = ({ className }) => (
       </Button>
     </Card.Body>
   </Card>
-);
+)
 
 SpaceWarning.propTypes = {
   className: PropTypes.string
-};
+}
 
-export default SpaceWarning;
+export default SpaceWarning

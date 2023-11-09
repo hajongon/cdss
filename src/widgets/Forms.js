@@ -1,27 +1,27 @@
-import ForgetPassword from 'components/authentication/simple/ForgetPassword';
-import Registration from 'components/authentication/simple/Registration';
-import LoginForm from 'components/authentication/LoginForm';
-import ExperienceForm from 'components/pages/user/settings/ExperienceForm';
-import CreatePost from 'components/app/social/feed/CreatePost';
-import Compose from 'components/app/email/compose/Compose';
-import EventUpload from 'components/app/events/create-an-event/EventUpload';
-import React, { useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import PasswordReset from 'components/authentication/simple/PasswordReset';
-import PersonalForm from 'components/wizard/PersonalForm';
-import { useForm } from 'react-hook-form';
+import ForgetPassword from 'components/authentication/simple/ForgetPassword'
+import Registration from 'components/authentication/simple/Registration'
+import LoginForm from 'components/authentication/LoginForm'
+import ExperienceForm from 'components/pages/user/settings/ExperienceForm'
+import CreatePost from 'components/app/social/feed/CreatePost'
+import Compose from 'components/app/email/compose/Compose'
+import EventUpload from 'components/app/events/create-an-event/EventUpload'
+import React, { useState } from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import PasswordReset from 'components/authentication/simple/PasswordReset'
+import PersonalForm from 'components/wizard/PersonalForm'
+import { useForm } from 'react-hook-form'
 
 const Forms = () => {
-  const [experienceFormCollapsed, setExperienceFormCollapsed] = useState(false);
+  const [experienceFormCollapsed, setExperienceFormCollapsed] = useState(false)
 
   const {
     register,
     formState: { errors },
     setValue
-  } = useForm();
+  } = useForm()
 
   return (
     <>
@@ -127,7 +127,7 @@ const Forms = () => {
 
       <EventUpload />
     </>
-  );
-};
+  )
+}
 
-export default Forms;
+export default Forms

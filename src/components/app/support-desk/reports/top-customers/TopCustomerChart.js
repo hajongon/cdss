@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, getPosition, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, getPosition, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = data => ({
   color: getColor('gray-100'),
@@ -32,7 +32,7 @@ const getOptions = data => ({
     borderWidth: 1,
     transitionDuration: 0,
     position(pos, params, dom, rect, size) {
-      return getPosition(pos, params, dom, rect, size);
+      return getPosition(pos, params, dom, rect, size)
     },
     axisPointer: {
       type: 'none'
@@ -107,7 +107,7 @@ const getOptions = data => ({
     }
   ],
   grid: { right: '12px', left: '46px', bottom: '12%', top: '3%' }
-});
+})
 
 const TopCustomerChart = ({ data }) => {
   return (
@@ -116,11 +116,11 @@ const TopCustomerChart = ({ data }) => {
       echarts={echarts}
       style={{ minHeight: '22rem' }}
     />
-  );
-};
+  )
+}
 
 TopCustomerChart.propTypes = {
   data: PropTypes.array
-};
+}
 
-export default TopCustomerChart;
+export default TopCustomerChart

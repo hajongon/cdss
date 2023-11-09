@@ -1,8 +1,8 @@
-import classNames from 'classnames';
-import AppContext from 'context/Context';
-import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
-import { CloseButton } from 'react-bootstrap';
+import classNames from 'classnames'
+import AppContext from 'context/Context'
+import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
+import { CloseButton } from 'react-bootstrap'
 
 const FalconCloseButton = ({
   size,
@@ -14,7 +14,7 @@ const FalconCloseButton = ({
 }) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
   return (
     <CloseButton
       variant={variant ? variant : isDark ? 'white' : undefined}
@@ -26,8 +26,8 @@ const FalconCloseButton = ({
       onClick={onClick && onClick}
       {...rest}
     />
-  );
-};
+  )
+}
 
 FalconCloseButton.propTypes = {
   size: PropTypes.oneOf(['sm', 'lg']),
@@ -35,6 +35,6 @@ FalconCloseButton.propTypes = {
   variant: PropTypes.string, // use 'white' for white variant
   onClick: PropTypes.func,
   className: PropTypes.string
-};
+}
 
-export default FalconCloseButton;
+export default FalconCloseButton

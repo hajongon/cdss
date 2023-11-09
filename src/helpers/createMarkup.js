@@ -1,1 +1,1 @@
-export default html => ({ __html: html });
+export default html => ({ __html: html })

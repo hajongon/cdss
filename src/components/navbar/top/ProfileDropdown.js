@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Dropdown } from 'react-bootstrap';
-import team3 from 'assets/img/team/3.jpg';
-import Avatar from 'components/common/Avatar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Dropdown } from 'react-bootstrap'
+import team3 from 'assets/img/team/3.jpg'
+import Avatar from 'components/common/Avatar'
 
 const ProfileDropdown = () => {
   return (
@@ -39,7 +39,7 @@ const ProfileDropdown = () => {
         </div>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
-export default ProfileDropdown;
+export default ProfileDropdown

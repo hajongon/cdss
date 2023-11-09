@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
+import React from 'react'
+import { Card } from 'react-bootstrap'
 
 const Error500 = () => (
   <Card className="text-center h-100">
@@ -19,6 +19,6 @@ const Error500 = () => (
       </p>
     </Card.Body>
   </Card>
-);
+)
 
-export default Error500;
+export default Error500

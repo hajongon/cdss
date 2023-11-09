@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import PackedBubble from './PackedBubble';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import PackedBubble from './PackedBubble'
 
 const D3js = () => {
   return (
@@ -30,7 +30,7 @@ const D3js = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default D3js;
+export default D3js

@@ -1,12 +1,12 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
 export const getPosition = (pos, params, dom, rect, size) => ({
   top: pos[1] - size.contentSize[1] - 10,
   left: pos[0] - size.contentSize[0] / 2
-});
+})
 
 export const tooltipFormatter = params => {
-  let tooltipItem = ``;
+  let tooltipItem = ``
   if (Array.isArray(params)) {
     params?.forEach(el => {
       tooltipItem =
@@ -20,8 +20,8 @@ export const tooltipFormatter = params => {
           typeof el.value === 'object' ? el.value[1] : el.value
         }
       </h6>
-      </div>`;
-    });
+      </div>`
+    })
   }
   return `<div>
             <p class='mb-2 text-600'>
@@ -32,5 +32,5 @@ export const tooltipFormatter = params => {
               }
             </p>
             ${tooltipItem}
-          </div>`;
-};
+          </div>`
+}

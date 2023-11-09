@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Flex from 'components/common/Flex';
-import cookieImg from 'assets/img/icons/cookie-1.png';
-import CookieNotice from 'components/common/CookieNotice';
+import React, { useState } from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Flex from 'components/common/Flex'
+import cookieImg from 'assets/img/icons/cookie-1.png'
+import CookieNotice from 'components/common/CookieNotice'
 
 const exampleCode = `<>
   <Button
@@ -40,10 +40,10 @@ const exampleCode = `<>
       </Card.Body>
     </Card>
   </CookieNotice>
-</>`;
+</>`
 
 const CookieNoticeExample = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   return (
     <>
       <PageHeader
@@ -86,7 +86,7 @@ const CookieNoticeExample = () => {
         />
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default CookieNoticeExample;
+export default CookieNoticeExample

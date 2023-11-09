@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import WizardInput from './WizardInput';
-import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import WizardInput from './WizardInput'
+import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const BillingUserForm = ({ register, errors, setValue }) => {
   return (
@@ -363,13 +363,13 @@ const BillingUserForm = ({ register, errors, setValue }) => {
         />
       </Row>
     </>
-  );
-};
+  )
+}
 
 BillingUserForm.propTypes = {
   register: PropTypes.func.isRequired,
   errors: PropTypes.object,
   setValue: PropTypes.func.isRequired
-};
+}
 
-export default BillingUserForm;
+export default BillingUserForm

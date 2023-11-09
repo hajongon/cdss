@@ -1,20 +1,20 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import { Table } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const exampleCode = `
 <>
   <div className="d-inline bg-primary p-2 text-white">d-inline</div>
   <div className="d-block bg-primary p-2 text-white mt-3">d-inline-block</div>
-</>`;
+</>`
 
 const displayInPrintCode = `
 <>
   <div className="d-print-none">Screen Only (Hide on print only)</div>
   <div className="d-none d-print-block">Print Only (Hide on screen only)</div>
   <div className="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
-</>`;
+</>`
 
 const Display = () => (
   <>
@@ -246,6 +246,6 @@ const Display = () => (
       <FalconComponentCard.Body code={displayInPrintCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Display;
+export default Display

@@ -1,6 +1,6 @@
-import React from 'react';
-import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm';
-import AuthCardLayout from 'layouts/AuthCardLayout';
+import React from 'react'
+import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm'
+import AuthCardLayout from 'layouts/AuthCardLayout'
 
 const ForgetPassword = () => {
   return (
@@ -9,7 +9,7 @@ const ForgetPassword = () => {
       <p className="mb-0">Enter your email and we'll send you a reset link.</p>
       <ForgetPasswordForm layout="card" />
     </AuthCardLayout>
-  );
-};
+  )
+}
 
-export default ForgetPassword;
+export default ForgetPassword

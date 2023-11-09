@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Col, Row, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { ChatContext } from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Col, Row, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { ChatContext } from 'context/Context'
 
 const ChatContentHeader = ({ thread, setHideSidebar }) => {
   const { getUser, isOpenThreadInfo, setIsOpenThreadInfo } =
-    useContext(ChatContext);
-  const user = getUser(thread);
+    useContext(ChatContext)
+  const user = getUser(thread)
 
   return (
     <div className="chat-content-header">
@@ -73,12 +73,12 @@ const ChatContentHeader = ({ thread, setHideSidebar }) => {
         </Col>
       </Row>
     </div>
-  );
-};
+  )
+}
 
 ChatContentHeader.propTypes = {
   thread: PropTypes.object.isRequired,
   setHideSidebar: PropTypes.func.isRequired
-};
+}
 
-export default ChatContentHeader;
+export default ChatContentHeader

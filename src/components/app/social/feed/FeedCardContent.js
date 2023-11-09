@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Image } from 'react-bootstrap';
-import ReactPlayer from 'react-player/youtube';
-import createMarkup from 'helpers/createMarkup';
-import FeedEvent from './FeedEvent';
-import classNames from 'classnames';
-import FeedUrl from './FeedUrl';
-import FeedGallery from 'components/app/social/feed/FeedGallery';
-import FalconLightBox from 'components/common/FalconLightBox';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Image } from 'react-bootstrap'
+import ReactPlayer from 'react-player/youtube'
+import createMarkup from 'helpers/createMarkup'
+import FeedEvent from './FeedEvent'
+import classNames from 'classnames'
+import FeedUrl from './FeedUrl'
+import FeedGallery from 'components/app/social/feed/FeedGallery'
+import FalconLightBox from 'components/common/FalconLightBox'
 
 const FeedCardContent = ({
   status,
@@ -32,8 +32,8 @@ const FeedCardContent = ({
         <ReactPlayer url={video.src} controls={true} className="react-player" />
       )}
     </Card.Body>
-  );
-};
+  )
+}
 
 FeedCardContent.propTypes = {
   status: PropTypes.string,
@@ -42,6 +42,6 @@ FeedCardContent.propTypes = {
   feedEvent: PropTypes.object,
   url: PropTypes.object,
   video: PropTypes.object
-};
+}
 
-export default FeedCardContent;
+export default FeedCardContent

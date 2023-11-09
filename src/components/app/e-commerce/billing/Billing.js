@@ -1,9 +1,9 @@
-import FaqAlt from 'components/pages/faq/faq-alt/FaqAlt';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import BillingCard from './BillingCard';
-import BillingDetails from './BillingDetails';
-import BillingHeader from './BillingHeader';
+import FaqAlt from 'components/pages/faq/faq-alt/FaqAlt'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import BillingCard from './BillingCard'
+import BillingDetails from './BillingDetails'
+import BillingHeader from './BillingHeader'
 
 const Billing = () => {
   return (
@@ -33,9 +33,9 @@ const Billing = () => {
       </Row>
       <FaqAlt />
     </>
-  );
-};
+  )
+}
 
-Billing.propTypes = {};
+Billing.propTypes = {}
 
-export default Billing;
+export default Billing

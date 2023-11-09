@@ -306,4 +306,4 @@ export const orderList = [
     status: 'onhold',
     amount: 111
   }
-];
+]

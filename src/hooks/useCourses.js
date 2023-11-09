@@ -1,15 +1,15 @@
-import { useContext, useState } from 'react';
-import { CourseContext } from 'context/Context';
+import { useContext, useState } from 'react'
+import { CourseContext } from 'context/Context'
 
 const useCourses = course => {
-  const [isAsc, setIsAsc] = useState(true);
-  const [sortBy, setSortBy] = useState('price');
+  const [isAsc, setIsAsc] = useState(true)
+  const [sortBy, setSortBy] = useState('price')
 
   const {
     coursesDispatch: coursesDispatch,
     isInCart,
     isInFavouriteItems
-  } = useContext(CourseContext);
+  } = useContext(CourseContext)
 
   const handleSearch = searchedText => {
     coursesDispatch({
@@ -17,8 +17,8 @@ const useCourses = course => {
       payload: {
         searchedText
       }
-    });
-  };
+    })
+  }
 
   const handleSort = () => {
     coursesDispatch({
@@ -27,28 +27,28 @@ const useCourses = course => {
         sortBy,
         order: isAsc ? 'asc' : 'desc'
       }
-    });
-  };
+    })
+  }
 
   const handleSortByChange = sortValue => {
-    setSortBy(sortValue);
-    setIsAsc(true);
+    setSortBy(sortValue)
+    setIsAsc(true)
 
-    handleSort();
-  };
+    handleSort()
+  }
 
   const handleIsAscClick = isAsc => {
-    setIsAsc(isAsc);
+    setIsAsc(isAsc)
 
-    handleSort();
-  };
+    handleSort()
+  }
 
   const handleAddToCart = () => {
     coursesDispatch({
       type: isInCart(course.id) ? 'REMOVE_FROM_CART' : 'ADD_TO_CART',
       payload: { course }
-    });
-  };
+    })
+  }
 
   const handleFavouriteClick = () => {
     coursesDispatch({
@@ -56,8 +56,8 @@ const useCourses = course => {
         ? 'REMOVE_FROM_FAVOURITES'
         : 'ADD_TO_FAVOURITES',
       payload: { course }
-    });
-  };
+    })
+  }
 
   return {
     handleAddToCart,
@@ -66,7 +66,7 @@ const useCourses = course => {
     handleIsAscClick,
     handleSortByChange,
     isAsc
-  };
-};
+  }
+}
 
-export default useCourses;
+export default useCourses

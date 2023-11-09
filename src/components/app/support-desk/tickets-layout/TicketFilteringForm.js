@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import React from 'react'
+import { Button, Card, Form } from 'react-bootstrap'
 
 const TicketFilteringForm = () => {
   return (
@@ -120,7 +120,7 @@ const TicketFilteringForm = () => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default TicketFilteringForm;
+export default TicketFilteringForm

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import { accountInfo, billingInfo } from 'data/ecommerce/customerDetailsData';
-import classNames from 'classnames';
-import createMarkup from 'helpers/createMarkup';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import { accountInfo, billingInfo } from 'data/ecommerce/customerDetailsData'
+import classNames from 'classnames'
+import createMarkup from 'helpers/createMarkup'
 
 const CustomerInfo = () => {
   return (
@@ -124,7 +124,7 @@ const CustomerInfo = () => {
         </IconButton>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default CustomerInfo;
+export default CustomerInfo

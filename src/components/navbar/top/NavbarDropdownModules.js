@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Nav, Row, Col } from 'react-bootstrap';
-import { getFlatRoutes } from 'helpers/utils';
-import NavbarNavLink from './NavbarNavLink';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Nav, Row, Col } from 'react-bootstrap'
+import { getFlatRoutes } from 'helpers/utils'
+import NavbarNavLink from './NavbarNavLink'
 
 const NavbarDropdownModules = ({ items }) => {
-  const routes = getFlatRoutes(items);
+  const routes = getFlatRoutes(items)
 
   return (
     <>
@@ -90,8 +90,8 @@ const NavbarDropdownModules = ({ items }) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 NavbarDropdownModules.propTypes = {
   items: PropTypes.arrayOf(
@@ -102,6 +102,6 @@ NavbarDropdownModules.propTypes = {
       children: PropTypes.array
     }).isRequired
   ).isRequired
-};
+}
 
-export default NavbarDropdownModules;
+export default NavbarDropdownModules

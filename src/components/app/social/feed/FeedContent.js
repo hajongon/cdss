@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { FeedContext } from 'context/Context';
-import CreatePost from './CreatePost';
-import FeedCard from './FeedCard';
-import classNames from 'classnames';
+import React, { useContext } from 'react'
+import { FeedContext } from 'context/Context'
+import CreatePost from './CreatePost'
+import FeedCard from './FeedCard'
+import classNames from 'classnames'
 
 const FeedContent = () => {
-  const { feeds } = useContext(FeedContext);
+  const { feeds } = useContext(FeedContext)
   return (
     <>
       <CreatePost className="mb-3" />
@@ -20,7 +20,7 @@ const FeedContent = () => {
         />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default FeedContent;
+export default FeedContent

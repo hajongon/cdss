@@ -1,13 +1,13 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import DatePicker, { registerLocale } from 'react-datepicker';
-import es from 'date-fns/locale/es';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import DatePicker, { registerLocale } from 'react-datepicker'
+import es from 'date-fns/locale/es'
+import FalconEditor from 'components/common/FalconEditor'
 
-registerLocale('es', es);
+registerLocale('es', es)
 
 const timeCode = `function DatepickerExample() {
   const [date, setDate] = useState(null);
@@ -24,7 +24,7 @@ const timeCode = `function DatepickerExample() {
       showTimeSelectOnly
     />
   );
-}`;
+}`
 
 const dateCode = `function DatePickerExample() {
   const [date, setDate] = useState(null);
@@ -39,7 +39,7 @@ const dateCode = `function DatePickerExample() {
       placeholderText="Select Date"
     />
   );
-}`;
+}`
 
 const dateTimeCode = `function DatePickerExample() {
   const [date, setDate] = useState(null);
@@ -57,7 +57,7 @@ const dateTimeCode = `function DatePickerExample() {
     fixedHeight
   />
   );
-}`;
+}`
 
 const formatCode = `function DatepickerExample() {
   const [date, setDate] = useState(null);
@@ -74,7 +74,7 @@ const formatCode = `function DatepickerExample() {
       fixedHeight
     />
   );
-}`;
+}`
 
 const rangeCode = `function DatepickerExample() {
   const date = new Date();
@@ -97,7 +97,7 @@ const rangeCode = `function DatepickerExample() {
       className='form-control'
     />
   );
-}`;
+}`
 
 const customInputCode = `function DatepickerExample() {
   const [startDate, setStartDate] = useState(new Date());
@@ -123,7 +123,7 @@ const customInputCode = `function DatepickerExample() {
       customInput={<ExampleCustomInput />}
     />
   );
-}`;
+}`
 
 const localeDocCode = `import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import es from 'date-fns/locale/es';
@@ -132,7 +132,7 @@ registerLocale('es', es)
   <DatePicker
     locale="es"
   />
-`;
+`
 
 const LocalizationCode = `function DatepickerExample() {
   const [date, setDate] = useState(null);
@@ -147,7 +147,7 @@ const LocalizationCode = `function DatepickerExample() {
       locale='es'
     />
   );
-}`;
+}`
 
 const DatePickerExample = () => (
   <>
@@ -263,6 +263,6 @@ const DatePickerExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default DatePickerExample;
+export default DatePickerExample

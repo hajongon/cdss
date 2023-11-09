@@ -1,7 +1,7 @@
-import React from 'react';
-import CustomerDetailsHeader from './CustomerDetailsHeader';
-import CustomerInfo from './CustomerInfo';
-import CustomerLog from './CustomerLog';
+import React from 'react'
+import CustomerDetailsHeader from './CustomerDetailsHeader'
+import CustomerInfo from './CustomerInfo'
+import CustomerLog from './CustomerLog'
 
 const CustomersDetails = () => {
   return (
@@ -10,7 +10,7 @@ const CustomersDetails = () => {
       <CustomerInfo />
       <CustomerLog />
     </>
-  );
-};
+  )
+}
 
-export default CustomersDetails;
+export default CustomersDetails

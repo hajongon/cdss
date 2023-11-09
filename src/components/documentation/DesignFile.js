@@ -1,6 +1,6 @@
-import React from 'react';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
+import React from 'react'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
 
 const DesignFile = () => (
   <>
@@ -39,6 +39,6 @@ const DesignFile = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default DesignFile;
+export default DesignFile

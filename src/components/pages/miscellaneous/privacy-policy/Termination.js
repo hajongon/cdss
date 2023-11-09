@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
 
 const Termination = forwardRef((props, ref) => {
   return (
@@ -17,7 +17,7 @@ const Termination = forwardRef((props, ref) => {
         </p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Termination;
+export default Termination

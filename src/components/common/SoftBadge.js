@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const SoftBadge = ({ bg = 'primary', pill, children, className }) => {
   return (
@@ -11,8 +11,8 @@ const SoftBadge = ({ bg = 'primary', pill, children, className }) => {
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
 SoftBadge.propTypes = {
   bg: PropTypes.oneOf([
@@ -28,6 +28,6 @@ SoftBadge.propTypes = {
   pill: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string
-};
+}
 
-export default SoftBadge;
+export default SoftBadge

@@ -1,7 +1,7 @@
-import person1 from 'assets/img/team/1-thumb.png';
-import person2 from 'assets/img/team/25-thumb.png';
-import person3 from 'assets/img/team/14-thumb.png';
-import person4 from 'assets/img/team/3-thumb.png';
+import person1 from 'assets/img/team/1-thumb.png'
+import person2 from 'assets/img/team/25-thumb.png'
+import person3 from 'assets/img/team/14-thumb.png'
+import person4 from 'assets/img/team/3-thumb.png'
 
 const contactBadges = [
   { content: 'Active', type: 'success' },
@@ -9,7 +9,7 @@ const contactBadges = [
   { content: 'Expired', type: 'danger' },
   { content: 'Pending', type: 'warning' },
   { content: 'N/A', type: '' }
-];
+]
 
 export const contacts = [
   {
@@ -395,4 +395,4 @@ export const contacts = [
     subscription: contactBadges[0],
     social: ''
   }
-];
+]

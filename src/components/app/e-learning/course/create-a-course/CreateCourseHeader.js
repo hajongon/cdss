@@ -1,8 +1,8 @@
-import React from 'react';
-import corner4 from 'assets/img/illustrations/corner-4.png';
-import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Background from 'components/common/Background';
+import React from 'react'
+import corner4 from 'assets/img/illustrations/corner-4.png'
+import { Card, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Background from 'components/common/Background'
 
 const CreateCourseHeader = () => {
   return (
@@ -33,7 +33,7 @@ const CreateCourseHeader = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default CreateCourseHeader;
+export default CreateCourseHeader

@@ -1,45 +1,45 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import WorldMap from 'components/dashboards/analytics/users-by-country/WorldMap';
-import { countryData } from 'data/countryData';
-import { locationBySessionTableData } from 'data/dashboard/crm';
-import React, { useRef, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
-import LocationBySessionTable from './LocationBySessionTable';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import WorldMap from 'components/dashboards/analytics/users-by-country/WorldMap'
+import { countryData } from 'data/countryData'
+import { locationBySessionTableData } from 'data/dashboard/crm'
+import React, { useRef, useState } from 'react'
+import { Button, Card } from 'react-bootstrap'
+import LocationBySessionTable from './LocationBySessionTable'
 
 const LocationBySession = () => {
-  const chartRef = useRef(null);
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const [maxZoomLevel] = useState(5);
-  const [minZoomLevel] = useState(1);
+  const chartRef = useRef(null)
+  const [zoomLevel, setZoomLevel] = useState(1)
+  const [maxZoomLevel] = useState(5)
+  const [minZoomLevel] = useState(1)
 
   const handleMapReset = () => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'restore'
-    });
-  };
+    })
+  }
   const handleZoomIn = () => {
     if (zoomLevel < maxZoomLevel) {
-      setZoomLevel(zoomLevel + 1);
+      setZoomLevel(zoomLevel + 1)
     }
     chartRef.current.getEchartsInstance().setOption({
       series: {
         zoom: zoomLevel + 1
       }
-    });
-  };
+    })
+  }
   const handleZoomOut = () => {
     if (zoomLevel > minZoomLevel) {
-      setZoomLevel(zoomLevel - 1);
+      setZoomLevel(zoomLevel - 1)
     }
     chartRef.current.getEchartsInstance().setOption({
       series: {
         zoom: zoomLevel - 1
       }
-    });
-  };
+    })
+  }
 
   return (
     <Card className="h-100">
@@ -110,7 +110,7 @@ const LocationBySession = () => {
         </p>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default LocationBySession;
+export default LocationBySession

@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import AppContext, { ChatContext } from 'context/Context';
-import Picker from '@emoji-mart/react';
-import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import TextareaAutosize from 'react-textarea-autosize';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import AppContext, { ChatContext } from 'context/Context'
+import Picker from '@emoji-mart/react'
+import PropTypes from 'prop-types'
+import React, { useContext, useEffect, useState } from 'react'
+import { Button, Form } from 'react-bootstrap'
+import TextareaAutosize from 'react-textarea-autosize'
 
 const formatDate = date => {
   const options = {
@@ -15,19 +15,19 @@ const formatDate = date => {
     year: 'numeric',
     hour: 'numeric',
     minute: 'numeric'
-  };
+  }
 
   const now = date
     .toLocaleString('en-US', options)
     .split(',')
-    .map(item => item.trim());
+    .map(item => item.trim())
 
   return {
     day: now[0],
     hour: now[3],
     date: now[1] + ', ' + now[2]
-  };
-};
+  }
+}
 
 const MessageTextArea = () => {
   const {
@@ -37,33 +37,33 @@ const MessageTextArea = () => {
     currentThread,
     setScrollToBottom,
     isOpenThreadInfo
-  } = useContext(ChatContext);
-  const [previewEmoji, setPreviewEmoji] = useState(false);
-  const [message, setMessage] = useState('');
+  } = useContext(ChatContext)
+  const [previewEmoji, setPreviewEmoji] = useState(false)
+  const [message, setMessage] = useState('')
 
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const addEmoji = e => {
-    let emoji = e.native;
-    setMessage(message + emoji);
-    setPreviewEmoji(false);
-  };
+    let emoji = e.native
+    setMessage(message + emoji)
+    setPreviewEmoji(false)
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-    const date = new Date();
+    e.preventDefault()
+    const date = new Date()
     let newMessage = {
       senderUserId: 3,
       message: `${message.replace(/(?:\r\n|\r|\n)/g, '<br>')}`,
       status: 'delivered',
       time: formatDate(date)
-    };
+    }
 
     const { content } = messages.find(
       ({ id }) => id === currentThread.messagesId
-    );
+    )
 
     if (message) {
       messagesDispatch({
@@ -73,24 +73,24 @@ const MessageTextArea = () => {
           content: [...content, newMessage]
         },
         id: currentThread.messagesId
-      });
+      })
 
       threadsDispatch({
         type: 'EDIT',
         payload: currentThread,
         id: currentThread.id,
         isUpdatedStart: true
-      });
+      })
     }
-    setMessage('');
-    setScrollToBottom(true);
-  };
+    setMessage('')
+    setScrollToBottom(true)
+  }
 
   useEffect(() => {
     if (isOpenThreadInfo) {
-      setPreviewEmoji(false);
+      setPreviewEmoji(false)
     }
-  }, [isOpenThreadInfo]);
+  }, [isOpenThreadInfo])
 
   return (
     <Form className="chat-editor-area" onSubmit={handleSubmit}>
@@ -144,11 +144,11 @@ const MessageTextArea = () => {
         Send
       </Button>
     </Form>
-  );
-};
+  )
+}
 
 MessageTextArea.propTypes = {
   thread: PropTypes.object
-};
+}
 
-export default MessageTextArea;
+export default MessageTextArea

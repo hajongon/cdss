@@ -1,4 +1,4 @@
-import resultImg from 'assets/img/team/2-thumb.png';
+import resultImg from 'assets/img/team/2-thumb.png'
 export const inDepthItems = [
   {
     name: 'Email',
@@ -40,7 +40,7 @@ export const inDepthItems = [
     name: 'Question',
     progressbarWidth: ['18', '30', '25', '15']
   }
-];
+]
 
 export const surveyResults = [
   {
@@ -261,14 +261,14 @@ export const surveyResults = [
       countUp: false
     }
   }
-];
+]
 
 export const ticketVolume = [
   [45, 35, 55, 55, 55, 45],
   [58, 42, 65, 65, 65, 30],
   [38, 25, 42, 42, 42, 45],
   [62, 45, 75, 75, 75, 55]
-];
+]
 
 export const topCustomerData = {
   monday: [18, 50, 45, 80, 45, 60, 55, 82, 61, 50],
@@ -278,4 +278,4 @@ export const topCustomerData = {
   friday: [18, 50, 45, 75, 45, 80, 85, 65, 61, 50],
   saturday: [25, 50, 45, 75, 80, 44, 55, 85, 61, 45],
   sunday: [11, 50, 45, 78, 45, 54, 80, 90, 50, 65]
-};
+}

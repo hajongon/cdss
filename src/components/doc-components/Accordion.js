@@ -1,9 +1,9 @@
-import React from 'react';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const basicExampleCode = `
 <Accordion defaultActiveKey="0">
@@ -32,7 +32,7 @@ const basicExampleCode = `
     </Accordion.Body>
   </Accordion.Item>
 </Accordion>
-`;
+`
 
 const fullyCollapsedStateCode = `
 <Accordion>
@@ -61,7 +61,7 @@ const fullyCollapsedStateCode = `
     </Accordion.Body>
   </Accordion.Item>
 </Accordion>
-`;
+`
 
 const flushCode = `
 <Accordion defaultActiveKey="0" flush>
@@ -90,7 +90,7 @@ const flushCode = `
     </Accordion.Body>
   </Accordion.Item>
 </Accordion>
-`;
+`
 
 const customAccordionCode = `
 function CustomToggle({ children, eventKey }) {
@@ -128,7 +128,7 @@ function Example() {
   );
 }
 
-render(<Example />)`;
+render(<Example />)`
 
 const Accordion = () => {
   return (
@@ -195,7 +195,7 @@ const Accordion = () => {
         />
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default Accordion;
+export default Accordion

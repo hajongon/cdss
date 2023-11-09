@@ -1,16 +1,16 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import Greetings from './Greetings';
-import TeamProgress from './TeamProgress';
-import Discussion from './Discussion';
-import CalendarManagement from './calendar/CalendarManagement';
-import ProjectStatistics from './project-statistics/ProjectStatistics';
-import Statistics from './statistics/Statistics';
-import ToDoList from './ToDoList';
-import ReportForThisWeek from './report-for-this-week/ReportForThisWeek';
-import MemberInfo from './MemberInfo';
-import RunningProjects from './RunningProjects';
-import ProjectLocation from './project-location/ProjectLocation';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import Greetings from './Greetings'
+import TeamProgress from './TeamProgress'
+import Discussion from './Discussion'
+import CalendarManagement from './calendar/CalendarManagement'
+import ProjectStatistics from './project-statistics/ProjectStatistics'
+import Statistics from './statistics/Statistics'
+import ToDoList from './ToDoList'
+import ReportForThisWeek from './report-for-this-week/ReportForThisWeek'
+import MemberInfo from './MemberInfo'
+import RunningProjects from './RunningProjects'
+import ProjectLocation from './project-location/ProjectLocation'
 import {
   recentActivities,
   membersActivities,
@@ -24,9 +24,9 @@ import {
   membersInfo,
   runningProjects,
   managementEvents
-} from 'data/dashboard/projectManagement';
-import RecentActivity from './RecentActivity';
-import MembersActivity from './MembersActivity';
+} from 'data/dashboard/projectManagement'
+import RecentActivity from './RecentActivity'
+import MembersActivity from './MembersActivity'
 
 const ProjectManagement = () => {
   return (
@@ -86,7 +86,7 @@ const ProjectManagement = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ProjectManagement;
+export default ProjectManagement

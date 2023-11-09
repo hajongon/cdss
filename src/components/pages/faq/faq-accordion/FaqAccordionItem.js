@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Accordion, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import createMarkup from 'helpers/createMarkup';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Accordion, Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import createMarkup from 'helpers/createMarkup'
 
 const FaqAccordionItem = ({ faq, isFirst, isLast }) => {
   return (
@@ -39,8 +39,8 @@ const FaqAccordionItem = ({ faq, isFirst, isLast }) => {
         </Accordion.Body>
       </Accordion.Item>
     </Card>
-  );
-};
+  )
+}
 
 FaqAccordionItem.propTypes = {
   isFirst: PropTypes.bool,
@@ -50,6 +50,6 @@ FaqAccordionItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   })
-};
+}
 
-export default FaqAccordionItem;
+export default FaqAccordionItem

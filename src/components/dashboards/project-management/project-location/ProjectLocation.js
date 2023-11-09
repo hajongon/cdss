@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import IconButton from 'components/common/IconButton';
-import LeafletMap from './LeafletMap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import IconButton from 'components/common/IconButton'
+import LeafletMap from './LeafletMap'
 
 const ProjectLocation = ({ data }) => {
   return (
@@ -47,11 +47,11 @@ const ProjectLocation = ({ data }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 ProjectLocation.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default ProjectLocation;
+export default ProjectLocation

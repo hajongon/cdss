@@ -1,6 +1,6 @@
-import world from 'assets/json/world.json';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { MapChart } from 'echarts/charts';
+import world from 'assets/json/world.json'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { MapChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
@@ -8,12 +8,12 @@ import {
   ToolboxComponent,
   TooltipComponent,
   VisualMapComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -24,11 +24,11 @@ echarts.use([
   ToolboxComponent,
   LegendComponent,
   VisualMapComponent
-]);
+])
 
-echarts.registerMap('world', { geoJSON: world });
+echarts.registerMap('world', { geoJSON: world })
 
-const total = 6961500;
+const total = 6961500
 
 const getOptions = (data, maxZoomLevel, minZoomLevel) => ({
   tooltip: {
@@ -93,7 +93,7 @@ const getOptions = (data, maxZoomLevel, minZoomLevel) => ({
       }
     }
   ]
-});
+})
 
 const WorldMap = forwardRef(
   ({ data, style, minZoomLevel = 1, maxZoomLevel = 5 }, ref) => {
@@ -104,9 +104,9 @@ const WorldMap = forwardRef(
         option={getOptions(data, maxZoomLevel, minZoomLevel)}
         style={style}
       />
-    );
+    )
   }
-);
+)
 
 WorldMap.propTypes = {
   data: PropTypes.arrayOf(
@@ -118,6 +118,6 @@ WorldMap.propTypes = {
   style: PropTypes.object.isRequired,
   minZoomLevel: PropTypes.number,
   maxZoomLevel: PropTypes.number
-};
+}
 
-export default WorldMap;
+export default WorldMap

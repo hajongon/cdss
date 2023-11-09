@@ -1,6 +1,6 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const exampleCode = `<Ratio aspectRatio="16x9">
   <iframe
@@ -9,7 +9,7 @@ const exampleCode = `<Ratio aspectRatio="16x9">
     title="YouTube video"
   />
 </Ratio>
-`;
+`
 
 const Embed = () => (
   <>
@@ -30,6 +30,6 @@ const Embed = () => (
       <FalconComponentCard.Body code={exampleCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Embed;
+export default Embed

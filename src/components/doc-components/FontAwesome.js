@@ -1,20 +1,20 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
 
 const addIconCode = `import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGulp } from '@fortawesome/free-brands-svg-icons' // module
 import { faCheckSquare, faHome } from '@fortawesome/free-solid-svg-icons' // module
  
-library.add(faGulp, faCheckSquare, faHome)`;
+library.add(faGulp, faCheckSquare, faHome)`
 
 const individualAddIconCode = `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-const element = <FontAwesomeIcon icon={faCoffee} />`;
+const element = <FontAwesomeIcon icon={faCoffee} />`
 
 const exampleCode = `<div>
   <div>
@@ -27,7 +27,7 @@ const exampleCode = `<div>
     <FontAwesomeIcon icon={['fab', 'twitter']} className="text-twitter fs-3 me-3"/>
     <FontAwesomeIcon icon={['fab', 'youtube']} className="text-youtube fs-3 me-3"/>
   </div>
-</div>`;
+</div>`
 
 const FontAwesome = () => (
   <>
@@ -82,6 +82,6 @@ const FontAwesome = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FontAwesome;
+export default FontAwesome

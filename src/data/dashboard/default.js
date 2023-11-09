@@ -1,32 +1,32 @@
-import product10 from 'assets/img/products/10.png';
-import product11 from 'assets/img/products/11.png';
-import product12 from 'assets/img/products/12.png';
-import product13 from 'assets/img/products/13.png';
-import product14 from 'assets/img/products/14.png';
+import product10 from 'assets/img/products/10.png'
+import product11 from 'assets/img/products/11.png'
+import product12 from 'assets/img/products/12.png'
+import product13 from 'assets/img/products/13.png'
+import product14 from 'assets/img/products/14.png'
 
-import iconDocs from 'assets/img/icons/docs.png';
-import iconZip from 'assets/img/icons/zip.png';
-import product2 from 'assets/img/products/2.jpg';
-import product3 from 'assets/img/products/3.jpg';
-import product5 from 'assets/img/products/5.jpg';
+import iconDocs from 'assets/img/icons/docs.png'
+import iconZip from 'assets/img/icons/zip.png'
+import product2 from 'assets/img/products/2.jpg'
+import product3 from 'assets/img/products/3.jpg'
+import product5 from 'assets/img/products/5.jpg'
 
-import team1 from 'assets/img/team/1.jpg';
-import team2 from 'assets/img/team/2.jpg';
-import team3 from 'assets/img/team/3.jpg';
-import team4 from 'assets/img/team/4.jpg';
-import team5 from 'assets/img/team/5.jpg';
-import team6 from 'assets/img/team/6.jpg';
-import team7 from 'assets/img/team/7.jpg';
+import team1 from 'assets/img/team/1.jpg'
+import team2 from 'assets/img/team/2.jpg'
+import team3 from 'assets/img/team/3.jpg'
+import team4 from 'assets/img/team/4.jpg'
+import team5 from 'assets/img/team/5.jpg'
+import team6 from 'assets/img/team/6.jpg'
+import team7 from 'assets/img/team/7.jpg'
 
-export const weeklySalesData = [6000, 9000, 8500, 4000, 4500, 6500, 7000];
+export const weeklySalesData = [6000, 9000, 8500, 4000, 4500, 6500, 7000]
 
-export const totalOrder = [20, 40, 100, 120];
+export const totalOrder = [20, 40, 100, 120]
 
 export const marketShare = [
   { id: 1, value: 53000000, name: 'Samsung', color: 'primary' },
   { id: 2, value: 19000000, name: 'Huawei', color: 'info' },
   { id: 3, value: 20000000, name: 'Apple', color: 'gray-300' }
-];
+]
 export const weather = {
   city: 'New York City',
   condition: 'Sunny',
@@ -34,7 +34,7 @@ export const weather = {
   temperature: 31,
   highestTemperature: 32,
   lowestTemperature: 25
-};
+}
 
 export const totalSales = [
   [60, 80, 60, 80, 65, 130, 120, 100, 30, 40, 30, 70],
@@ -49,7 +49,7 @@ export const totalSales = [
   [50, 80, 50, 80, 50, 80, 120, 80, 50, 120, 110, 110],
   [60, 90, 60, 70, 40, 70, 100, 140, 30, 40, 30, 70],
   [20, 40, 20, 50, 30, 80, 120, 100, 30, 40, 30, 70]
-];
+]
 
 export const products = [
   {
@@ -92,7 +92,7 @@ export const products = [
     unit: 6,
     price: 39
   }
-];
+]
 
 export const runningProjects = [
   {
@@ -130,7 +130,7 @@ export const runningProjects = [
     duration: '21:20:00',
     color: 'danger'
   }
-];
+]
 
 export const storageStatus = [
   {
@@ -153,7 +153,7 @@ export const storageStatus = [
     size: 576,
     color: '200'
   }
-];
+]
 
 export const files = [
   {
@@ -196,7 +196,7 @@ export const files = [
     time: '1 Oct at 4:30 PM',
     border: false
   }
-];
+]
 
 export const users = [
   {
@@ -269,7 +269,7 @@ export const users = [
     },
     role: 'Editor'
   }
-];
+]
 
 export const topProducts = [
   ['product', '2019', '2018'],
@@ -280,4 +280,4 @@ export const topProducts = [
   ['Sparrow', 80, 50],
   ['Hideaway', 50, 70],
   ['Freya', 80, 90]
-];
+]

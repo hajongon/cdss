@@ -1,13 +1,13 @@
-import React from 'react';
-import { Card, Col, ProgressBar, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import { dealForecastData } from 'data/dashboard/crm';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Card, Col, ProgressBar, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import { dealForecastData } from 'data/dashboard/crm'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
 
 const DealForecastBar = () => {
-  const total = dealForecastData.reduce((acc, data) => acc + data.amount, 0);
+  const total = dealForecastData.reduce((acc, data) => acc + data.amount, 0)
 
   return (
     <Card className="h-100">
@@ -69,7 +69,7 @@ const DealForecastBar = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DealForecastBar;
+export default DealForecastBar

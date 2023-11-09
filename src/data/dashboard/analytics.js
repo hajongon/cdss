@@ -1,6 +1,6 @@
-import chromeLogo from 'assets/img/icons/chrome-logo.png';
-import firefoxLogo from 'assets/img/icons/firefox-logo.png';
-import safariLogo from 'assets/img/icons/safari-logo.png';
+import chromeLogo from 'assets/img/icons/chrome-logo.png'
+import firefoxLogo from 'assets/img/icons/firefox-logo.png'
+import safariLogo from 'assets/img/icons/safari-logo.png'
 
 export const audienceChart = {
   users: [
@@ -19,7 +19,7 @@ export const audienceChart = {
     [625, 269, 479, 654, 549, 305, 671],
     [499, 670, 550, 222, 696, 695, 469]
   ]
-};
+}
 
 export const realTimeUsers = [
   {
@@ -46,7 +46,7 @@ export const realTimeUsers = [
     page: '/product/falcon-admin-dashboard/',
     count: 3
   }
-];
+]
 
 export const sessionByBrowser = [
   {
@@ -76,12 +76,12 @@ export const sessionByBrowser = [
     color: 'info',
     progressValue: '220.7%'
   }
-];
+]
 
 export const sessionByCountry = [
   ['CHINA', 'INDIA', 'USA', 'IRAN', 'BRAZIL', 'PAKISTAN'],
   [19.53, 17.32, 4.49, 3.46, 2.8, 1.7]
-];
+]
 
 export const intelligence = [
   {
@@ -106,7 +106,7 @@ export const intelligence = [
     icon: 'map-marker-alt',
     description: 'What pages do people from California go to the most?'
   }
-];
+]
 
 export const activeUsersChart = {
   mobile: [
@@ -124,7 +124,7 @@ export const activeUsersChart = {
     1439, 1564, 1581, 1590, 1656, 1815, 1868, 2010, 2133, 2179, 2264, 2265,
     2278, 2343, 2354, 2456, 2472, 2480
   ]
-};
+}
 
 export const campaignTable = [
   {
@@ -163,17 +163,17 @@ export const campaignTable = [
     cost: 1200.5,
     revenue: 5004.87
   }
-];
+]
 
 export const campaignChart = {
   revenue: [10100, 16500, 14000, 16200, 12100, 19000, 13900],
   clicks: [119, 199, 195, 101, 155, 131, 180]
-};
+}
 
 export const bounceRate = [
   40, 37, 42, 44, 36, 39, 37, 43, 38, 35, 43, 39, 42, 36, 37, 36, 42, 44, 34,
   41, 37, 41, 40, 40, 43, 34, 41, 35, 44, 41, 40
-];
+]
 
 export const stats = [
   {
@@ -203,7 +203,7 @@ export const stats = [
     ],
     grid: { right: '0', left: '16px', bottom: '0', top: '0' }
   }
-];
+]
 
 export const topPagesTableData = [
   {
@@ -297,4 +297,4 @@ export const topPagesTableData = [
     time: '0m:54s',
     exitRate: '62.5%'
   }
-];
+]

@@ -1,16 +1,16 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { CandlestickChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { CandlestickChart } from 'echarts/charts'
 import {
   DataZoomComponent,
   DataZoomInsideComponent,
   GridComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 
 echarts.use([
   CandlestickChart,
@@ -18,18 +18,18 @@ echarts.use([
   GridComponent,
   DataZoomComponent,
   DataZoomInsideComponent
-]);
+])
 
 const splitData = rawData => {
-  let categoryData = [];
-  let values = [];
+  let categoryData = []
+  let values = []
 
   rawData.forEach(item => {
-    categoryData.push(item.slice(0, 1)[0]);
-    values.push(item.slice(1));
-  });
-  return { categoryData, values };
-};
+    categoryData.push(item.slice(0, 1)[0])
+    values.push(item.slice(1))
+  })
+  return { categoryData, values }
+}
 
 const getOptions = (data, zoomStart, zoomEnd) => ({
   tooltip: {
@@ -117,11 +117,11 @@ const getOptions = (data, zoomStart, zoomEnd) => ({
     top: '20px',
     containLabel: true
   }
-});
+})
 
 const CandleChartBody = forwardRef(
   ({ data, zoomStart, zoomEnd, ...rest }, ref) => {
-    const chartData = splitData(data);
+    const chartData = splitData(data)
 
     return (
       <ReactEChartsCore
@@ -130,14 +130,14 @@ const CandleChartBody = forwardRef(
         option={getOptions(chartData, zoomStart, zoomEnd)}
         {...rest}
       />
-    );
+    )
   }
-);
+)
 
 CandleChartBody.propTypes = {
   data: PropTypes.array.isRequired,
   zoomStart: PropTypes.number.isRequired,
   zoomEnd: PropTypes.number.isRequired
-};
+}
 
-export default CandleChartBody;
+export default CandleChartBody

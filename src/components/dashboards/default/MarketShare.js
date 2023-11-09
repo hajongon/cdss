@@ -1,19 +1,19 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import { PieChart } from 'echarts/charts';
-import * as echarts from 'echarts/core';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import { PieChart } from 'echarts/charts'
+import * as echarts from 'echarts/core'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
 
-import BasicECharts from 'components/common/BasicEChart';
+import BasicECharts from 'components/common/BasicEChart'
 import {
   GridComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   GridComponent,
   PieChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = (data, radius) => ({
   color: [
@@ -63,12 +63,12 @@ const getOptions = (data, radius) => ({
       data
     }
   ]
-});
+})
 
 const MarketShareItem = ({ item, index, total }) => {
-  const { name, color, value } = item;
+  const { name, color, value } = item
 
-  const percentage = ((value * 100) / total).toFixed(0);
+  const percentage = ((value * 100) / total).toFixed(0)
   return (
     <Flex
       alignItems="center"
@@ -84,11 +84,11 @@ const MarketShareItem = ({ item, index, total }) => {
       </p>
       <div className="d-xxl-none">{percentage}%</div>
     </Flex>
-  );
-};
+  )
+}
 
 const MarketShare = ({ data, radius }) => {
-  const total = data.reduce((acc, val) => val.value + acc, 0);
+  const total = data.reduce((acc, val) => val.value + acc, 0)
   return (
     <Card className="h-md-100">
       <Card.Body>
@@ -117,8 +117,8 @@ const MarketShare = ({ data, radius }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 MarketShareItem.propTypes = {
   item: PropTypes.shape({
@@ -128,11 +128,11 @@ MarketShareItem.propTypes = {
   }),
   index: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired
-};
+}
 
 MarketShare.propTypes = {
   data: PropTypes.array.isRequired,
   radius: PropTypes.array.isRequired
-};
+}
 
-export default MarketShare;
+export default MarketShare

@@ -1,22 +1,22 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Editor } from '@tinymce/tinymce-react';
-import AppContext from 'context/Context';
-import { getColor } from 'helpers/utils';
+import React, { useContext, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Editor } from '@tinymce/tinymce-react'
+import AppContext from 'context/Context'
+import { getColor } from 'helpers/utils'
 
 const TinymceEditor = ({ value, handleChange, height = '50vh' }) => {
   const {
     config: { isDark, isRTL }
-  } = useContext(AppContext);
-  const editorRef = useRef(null);
+  } = useContext(AppContext)
+  const editorRef = useRef(null)
 
   useEffect(() => {
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
         `body{color: ${getColor('white')} !important;}`
-      );
+      )
     }
-  }, [isDark]);
+  }, [isDark])
 
   return (
     <Editor
@@ -41,13 +41,13 @@ const TinymceEditor = ({ value, handleChange, height = '50vh' }) => {
         theme_advanced_toolbar_align: 'center'
       }}
     />
-  );
-};
+  )
+}
 
 TinymceEditor.propTypes = {
   value: PropTypes.string,
   handleChange: PropTypes.func,
   height: PropTypes.string
-};
+}
 
-export default TinymceEditor;
+export default TinymceEditor

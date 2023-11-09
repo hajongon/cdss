@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -20,7 +20,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   color: [
@@ -137,7 +137,7 @@ const getOptions = () => ({
     bottom: 0,
     top: '15%'
   }
-});
+})
 
 const TrafficSourceChart = () => {
   return (
@@ -146,7 +146,7 @@ const TrafficSourceChart = () => {
       option={getOptions()}
       style={{ height: '21.875rem' }}
     />
-  );
-};
+  )
+}
 
-export default TrafficSourceChart;
+export default TrafficSourceChart

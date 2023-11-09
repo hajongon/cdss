@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { useRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -20,11 +20,11 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const tooltipFormatter = params => {
   const percentage =
-    ((params[0].value - params[1].value) / params[1].value) * 100;
+    ((params[0].value - params[1].value) / params[1].value) * 100
   const perTemp = `
     <div class="d-flex align-items-center ms-2">
       <h6 class="fs--2 mb-0 ms-1 fw-semi-bold"> 
@@ -33,10 +33,10 @@ const tooltipFormatter = params => {
         };">${percentage < 0 ? '&#9660' : '&#9650'}</span> 
         ${Math.abs(percentage).toFixed(2)} %</h6>
     </div>
-  `;
+  `
 
-  const currentDate = new Date(params[0].axisValue);
-  const prevDate = new Date(new Date().setDate(currentDate.getDate() - 7));
+  const currentDate = new Date(params[0].axisValue)
+  const prevDate = new Date(new Date().setDate(currentDate.getDate() - 7))
   return `<div>
         <p class='mb-0 fs--2 text-600'>${dayjs(params[0].axisValue).format(
           'MMM DD'
@@ -49,8 +49,8 @@ const tooltipFormatter = params => {
           </p>
           ${perTemp}
         </div>
-      </div>`;
-};
+      </div>`
+}
 
 const getOptions = data => ({
   color: getColor('white'),
@@ -156,10 +156,10 @@ const getOptions = data => ({
     bottom: 0,
     top: '10px'
   }
-});
+})
 
 const AudienceChart = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   return (
     <ReactEChartsCore
@@ -168,11 +168,11 @@ const AudienceChart = ({ data }) => {
       option={getOptions(data)}
       style={{ height: '21.25rem' }}
     />
-  );
-};
+  )
+}
 
 AudienceChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array).isRequired
-};
+}
 
-export default AudienceChart;
+export default AudienceChart

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
 
 const PageHeader = () => {
   return (
@@ -31,7 +31,7 @@ const PageHeader = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default PageHeader;
+export default PageHeader

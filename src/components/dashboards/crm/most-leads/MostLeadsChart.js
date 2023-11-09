@@ -1,16 +1,16 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { useRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   color: [
@@ -37,7 +37,7 @@ const getOptions = () => ({
     borderWidth: 1,
     transitionDuration: 0,
     formatter: function (params) {
-      return `<strong>${params.data.name}:</strong> ${params.percent}%`;
+      return `<strong>${params.data.name}:</strong> ${params.percent}%`
     }
   },
   legend: { show: false },
@@ -66,10 +66,10 @@ const getOptions = () => ({
       ]
     }
   ]
-});
+})
 
 const MostLeadsChart = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   return (
     <div className="position-relative py-2">
@@ -84,11 +84,11 @@ const MostLeadsChart = ({ data }) => {
         <p className="fs-3 mb-0 font-sans-serif fw-medium mt-n2">15.6k</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
 MostLeadsChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array)
-};
+}
 
-export default MostLeadsChart;
+export default MostLeadsChart

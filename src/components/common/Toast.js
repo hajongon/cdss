@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { cssTransition } from 'react-toastify';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { cssTransition } from 'react-toastify'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const Fade = cssTransition({ enter: 'fadeIn', exit: 'fadeOut' });
+export const Fade = cssTransition({ enter: 'fadeIn', exit: 'fadeOut' })
 
 export const CloseButton = ({ closeToast }) => (
   <FontAwesomeIcon
@@ -12,6 +12,6 @@ export const CloseButton = ({ closeToast }) => (
     style={{ opacity: 0.5 }}
     onClick={closeToast}
   />
-);
+)
 
-CloseButton.propTypes = { closeToast: PropTypes.func };
+CloseButton.propTypes = { closeToast: PropTypes.func }

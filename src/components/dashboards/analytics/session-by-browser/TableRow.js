@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TableRow = ({ data }) => {
-  const { icon, label, value, color, progress, progressValue } = data;
+  const { icon, label, value, color, progress, progressValue } = data
   return (
     <tr>
       <td className="py-3">
@@ -32,8 +32,8 @@ const TableRow = ({ data }) => {
         </Flex>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 TableRow.propTypes = {
   data: PropTypes.shape({
@@ -44,6 +44,6 @@ TableRow.propTypes = {
     color: PropTypes.string.isRequired,
     progressValue: PropTypes.string.isRequired
   }).isRequired
-};
+}
 
-export default TableRow;
+export default TableRow

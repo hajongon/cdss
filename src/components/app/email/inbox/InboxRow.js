@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
   ButtonGroup,
@@ -8,16 +8,16 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import Avatar from 'components/common/Avatar';
-import { Link } from 'react-router-dom';
-import EmailAttachment from './EmailAttachment';
-import SoftBadge from 'components/common/SoftBadge';
-import { EmailContext } from 'context/Context';
-import { toast } from 'react-toastify';
+} from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import Avatar from 'components/common/Avatar'
+import { Link } from 'react-router-dom'
+import EmailAttachment from './EmailAttachment'
+import SoftBadge from 'components/common/SoftBadge'
+import { EmailContext } from 'context/Context'
+import { toast } from 'react-toastify'
 
 const ActionButton = ({ tooltip, icon, handleClick, variant = 'light' }) => (
   <OverlayTrigger
@@ -27,7 +27,7 @@ const ActionButton = ({ tooltip, icon, handleClick, variant = 'light' }) => (
       <FontAwesomeIcon icon={icon} />
     </Button>
   </OverlayTrigger>
-);
+)
 
 const InboxRow = ({ email, isSelectedItem, toggleSelectedItem }) => {
   const {
@@ -41,40 +41,40 @@ const InboxRow = ({ email, isSelectedItem, toggleSelectedItem }) => {
     description,
     badge,
     attachments
-  } = email;
+  } = email
 
-  const { emailDispatch } = useContext(EmailContext);
+  const { emailDispatch } = useContext(EmailContext)
 
-  const [marked, setMarked] = useState(star);
+  const [marked, setMarked] = useState(star)
 
   const handleActionButtonClick = type => {
     emailDispatch({
       type,
       payload: [id]
-    });
-    let action = '';
+    })
+    let action = ''
     switch (type) {
       case 'ARCHIVE':
-        action = 'archived';
-        break;
+        action = 'archived'
+        break
       case 'DELETE':
-        action = 'deleted';
-        break;
+        action = 'deleted'
+        break
       case 'READ':
-        action = read ? 'unread' : 'read';
-        break;
+        action = read ? 'unread' : 'read'
+        break
       case 'SNOOZE':
-        action = 'snoozed';
-        break;
+        action = 'snoozed'
+        break
 
       default:
-        break;
+        break
     }
 
     toast.success(`Conversation marked as ${action}`, {
       theme: 'colored'
-    });
-  };
+    })
+  }
 
   return (
     <Row
@@ -176,15 +176,15 @@ const InboxRow = ({ email, isSelectedItem, toggleSelectedItem }) => {
         <span className={classNames({ 'fw-bold': !read })}>{time}</span>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 ActionButton.propTypes = {
   tooltip: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   variant: PropTypes.string
-};
+}
 
 InboxRow.propTypes = {
   email: PropTypes.shape({
@@ -201,6 +201,6 @@ InboxRow.propTypes = {
   }),
   isSelectedItem: PropTypes.func,
   toggleSelectedItem: PropTypes.func.isRequired
-};
+}
 
-export default InboxRow;
+export default InboxRow

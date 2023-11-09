@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import { Button, Card, Col, Dropdown, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import Flex from 'components/common/Flex';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import { Button, Card, Col, Dropdown, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import Flex from 'components/common/Flex'
+import AppContext from 'context/Context'
 
 const CustomerDetailsHeader = () => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Card className="mb-3">
@@ -76,7 +76,7 @@ const CustomerDetailsHeader = () => {
         </Flex>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default CustomerDetailsHeader;
+export default CustomerDetailsHeader

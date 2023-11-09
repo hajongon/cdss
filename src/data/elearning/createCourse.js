@@ -1,6 +1,6 @@
-import intro from 'assets/img/e-learning/lessons/intro.png';
-import chapter1 from 'assets/img/e-learning/lessons/chapter1.png';
-import chapter2 from 'assets/img/e-learning/lessons/chapter2.png';
+import intro from 'assets/img/e-learning/lessons/intro.png'
+import chapter1 from 'assets/img/e-learning/lessons/chapter1.png'
+import chapter2 from 'assets/img/e-learning/lessons/chapter2.png'
 
 export const courseResourcesData = [
   {
@@ -39,4 +39,4 @@ export const courseResourcesData = [
     image: chapter2,
     isFulfilled: false
   }
-];
+]

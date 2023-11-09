@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const ModalMediaContent = ({
   children,
@@ -33,8 +33,8 @@ const ModalMediaContent = ({
         {isHr && <hr className="my-4" />}
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 ModalMediaContent.propTypes = {
   title: PropTypes.string.isRequired,
@@ -44,6 +44,6 @@ ModalMediaContent.propTypes = {
   headingContent: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   transform: PropTypes.string,
   isHr: PropTypes.bool
-};
+}
 
-export default ModalMediaContent;
+export default ModalMediaContent

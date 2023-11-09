@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Collapse } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Card, Collapse } from 'react-bootstrap'
 
 const ProfileIntro = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false)
   return (
     <Card className="mb-3">
       <Card.Header className="bg-light">
@@ -59,7 +59,7 @@ const ProfileIntro = () => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default ProfileIntro;
+export default ProfileIntro

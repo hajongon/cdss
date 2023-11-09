@@ -1,15 +1,15 @@
-import team1 from 'assets/img/team/1.jpg';
-import team2 from 'assets/img/team/2.jpg';
-import team3 from 'assets/img/team/3.jpg';
-import team4 from 'assets/img/team/4.jpg';
-import team5 from 'assets/img/team/5.jpg';
-import team6 from 'assets/img/team/6.jpg';
-import kanban1 from 'assets/img/kanban/1.jpg';
-import kanban2 from 'assets/img/kanban/2.jpg';
-import kanban3 from 'assets/img/kanban/3.jpg';
-import kanban4 from 'assets/img/kanban/4.jpg';
-import beach from 'assets/video/beach.jpg';
-import beachVideo from 'assets/video/beach.mp4';
+import team1 from 'assets/img/team/1.jpg'
+import team2 from 'assets/img/team/2.jpg'
+import team3 from 'assets/img/team/3.jpg'
+import team4 from 'assets/img/team/4.jpg'
+import team5 from 'assets/img/team/5.jpg'
+import team6 from 'assets/img/team/6.jpg'
+import kanban1 from 'assets/img/kanban/1.jpg'
+import kanban2 from 'assets/img/kanban/2.jpg'
+import kanban3 from 'assets/img/kanban/3.jpg'
+import kanban4 from 'assets/img/kanban/4.jpg'
+import beach from 'assets/video/beach.jpg'
+import beachVideo from 'assets/video/beach.mp4'
 
 export const members = [
   { id: 1, name: 'Anna Karinina', img: team1, role: 'Member' },
@@ -18,7 +18,7 @@ export const members = [
   { id: 4, name: 'John Doe', img: team4, role: 'Member' },
   { id: 5, name: 'Emily Rose', img: team5, role: 'Member' },
   { id: 6, name: 'Marry Jane', img: team6, role: 'Member' }
-];
+]
 
 export const labels = [
   { text: 'New', type: 'success' },
@@ -27,7 +27,7 @@ export const labels = [
   { text: 'Bug', type: 'danger' },
   { text: 'Documentation', type: 'secondary' },
   { text: 'Helper', type: 'warning' }
-];
+]
 
 export const attachments = [
   {
@@ -68,7 +68,7 @@ export const attachments = [
     date: '2020-05-10 3:40 pm',
     type: 'video'
   }
-];
+]
 
 export const kanbanItems = [
   {
@@ -260,7 +260,7 @@ export const kanbanItems = [
       }
     ]
   }
-];
+]
 
 export const comments = [
   {
@@ -281,7 +281,7 @@ export const comments = [
     text: 'We have more task to do',
     time: '2hour'
   }
-];
+]
 
 export const activities = [
   {
@@ -302,4 +302,4 @@ export const activities = [
     activity: 'attached final-pic.png to this card',
     time: '4 hours ago'
   }
-];
+]

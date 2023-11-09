@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
 
 const Rights = forwardRef((props, ref) => {
   return (
@@ -161,7 +161,7 @@ const Rights = forwardRef((props, ref) => {
         <p>Last update: 04 Nov 2020</p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Rights;
+export default Rights

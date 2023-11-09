@@ -1,20 +1,20 @@
-import React, { forwardRef } from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import React, { forwardRef } from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import * as echarts from 'echarts/core';
-import { getColor, getPastDates, getPosition } from 'helpers/utils';
-import AppContext from 'context/Context';
-import PropTypes from 'prop-types';
-import dayjs from 'dayjs';
-import { useContext } from 'react';
-import { tooltipFormatter } from 'helpers/echart-utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import * as echarts from 'echarts/core'
+import { getColor, getPastDates, getPosition } from 'helpers/utils'
+import AppContext from 'context/Context'
+import PropTypes from 'prop-types'
+import dayjs from 'dayjs'
+import { useContext } from 'react'
+import { tooltipFormatter } from 'helpers/echart-utils'
 
 echarts.use([
   TitleComponent,
@@ -23,7 +23,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOption = ({ isDark }) => ({
   color: [
@@ -89,7 +89,7 @@ const getOption = ({ isDark }) => ({
     borderWidth: 1,
     transitionDuration: 0,
     position(pos, params, dom, rect, size) {
-      return getPosition(pos, params, dom, rect, size);
+      return getPosition(pos, params, dom, rect, size)
     },
     formatter: tooltipFormatter
   },
@@ -150,11 +150,11 @@ const getOption = ({ isDark }) => ({
     bottom: '6%',
     top: '10%'
   }
-});
+})
 
 const TicketVolumeChart = forwardRef(({ data }, ref) => {
-  const { config } = useContext(AppContext);
-  const { isDark } = config;
+  const { config } = useContext(AppContext)
+  const { isDark } = config
   return (
     <ReactEChartsCore
       echarts={echarts}
@@ -162,11 +162,11 @@ const TicketVolumeChart = forwardRef(({ data }, ref) => {
       ref={ref}
       style={{ height: '21.81rem' }}
     />
-  );
-});
+  )
+})
 
 TicketVolumeChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array).isRequired
-};
+}
 
-export default TicketVolumeChart;
+export default TicketVolumeChart

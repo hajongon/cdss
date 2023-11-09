@@ -1,18 +1,18 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const data = [
@@ -163,7 +163,7 @@ const chartCode = `function ChartOptions() {
     />
   );
 }
-`;
+`
 
 const LineGradientChart = () => {
   return (
@@ -181,7 +181,7 @@ const LineGradientChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default LineGradientChart;
+export default LineGradientChart

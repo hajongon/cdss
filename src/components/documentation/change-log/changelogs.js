@@ -962,4 +962,4 @@ export default [
     publish: '12 August, 2021',
     children: 'Nothing to see here.'
   }
-];
+]

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Select from 'react-select';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Select from 'react-select'
 
 const singleSelectCode = `function SingleSelectExample() {
   const [value, setValue] = useState(null);
@@ -23,7 +23,7 @@ const singleSelectCode = `function SingleSelectExample() {
       onChange={value => setValue(value)}
     />
   );
-}`;
+}`
 
 const multipleSelectCode = `function MultipleSelectExample() {
   const [value, setValue] = useState(null);
@@ -44,7 +44,7 @@ const multipleSelectCode = `function MultipleSelectExample() {
       onChange={value => setValue(value)}
     />
   );
-}`;
+}`
 
 const Placeholder = () => (
   <>
@@ -83,6 +83,6 @@ const Placeholder = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Placeholder;
+export default Placeholder

@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Liability = forwardRef((props, ref) => {
   return (
@@ -129,7 +129,7 @@ const Liability = forwardRef((props, ref) => {
         </p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Liability;
+export default Liability

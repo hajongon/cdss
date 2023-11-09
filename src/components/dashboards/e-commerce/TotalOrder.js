@@ -1,18 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Badge, Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { getColor, rgbaColor } from 'helpers/utils';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Badge, Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { getColor, rgbaColor } from 'helpers/utils'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import BasicECharts from 'components/common/BasicEChart';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import BasicECharts from 'components/common/BasicEChart'
 
 echarts.use([
   TitleComponent,
@@ -20,7 +20,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = data => ({
   series: [
@@ -49,7 +49,7 @@ const getOptions = data => ({
     }
   ],
   grid: { bottom: '-10px' }
-});
+})
 
 const TotalOrder = ({ data }) => {
   return (
@@ -80,9 +80,9 @@ const TotalOrder = ({ data }) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-TotalOrder.propTypes = { data: PropTypes.array.isRequired };
+TotalOrder.propTypes = { data: PropTypes.array.isRequired }
 
-export default TotalOrder;
+export default TotalOrder

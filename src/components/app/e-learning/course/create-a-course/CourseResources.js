@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
   Card,
@@ -7,10 +7,10 @@ import {
   OverlayTrigger,
   Table,
   Tooltip
-} from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
+} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
 
 const CourseResources = ({ data }) => {
   return (
@@ -92,11 +92,11 @@ const CourseResources = ({ data }) => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 CourseResources.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default CourseResources;
+export default CourseResources

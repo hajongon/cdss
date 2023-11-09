@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import Bottombar from './Bottombar';
-import useVisibilityObserver from 'hooks/useVisibilityObserver';
+import React, { useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import Bottombar from './Bottombar'
+import useVisibilityObserver from 'hooks/useVisibilityObserver'
 
 const publishStatsSettings = [
   {
@@ -25,22 +25,20 @@ const publishStatsSettings = [
     value: 'Now',
     icon: 'clock'
   }
-];
+]
 
 const PublishCourse = () => {
-  const targetElRef = useRef();
+  const targetElRef = useRef()
   const { isVisible: inViewport, observer } = useVisibilityObserver(
     targetElRef,
     '0px'
-  );
+  )
 
   useEffect(() => {
     return () => {
-      observer &&
-        targetElRef.current &&
-        observer.unobserve(targetElRef.current);
-    };
-  }, [observer]);
+      observer && targetElRef.current && observer.unobserve(targetElRef.current)
+    }
+  }, [observer])
 
   return (
     <>
@@ -108,7 +106,7 @@ const PublishCourse = () => {
       </Card>
       <Bottombar inViewport={inViewport} />
     </>
-  );
-};
+  )
+}
 
-export default PublishCourse;
+export default PublishCourse

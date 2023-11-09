@@ -1,12 +1,12 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const gapCode = `<div className="d-grid gap-3">
   <div className="p-2 bg-light border">Grid item 1</div>
   <div className="p-2 bg-light border">Grid item 2</div>
   <div className="p-2 bg-light border">Grid item 3</div>
-</div>`;
+</div>`
 
 const Spacing = () => (
   <>
@@ -100,6 +100,6 @@ const Spacing = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Spacing;
+export default Spacing

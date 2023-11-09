@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
   Card,
@@ -8,18 +8,18 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import playIcon from 'assets/img/icons/play.svg';
-import Hoverbox from 'components/common/Hoverbox';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ModalVideoContent from '../ModalVideoContent';
-import { Link } from 'react-router-dom';
-import { CourseContext } from 'context/Context';
-import useCourses from 'hooks/useCourses';
+} from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import playIcon from 'assets/img/icons/play.svg'
+import Hoverbox from 'components/common/Hoverbox'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ModalVideoContent from '../ModalVideoContent'
+import { Link } from 'react-router-dom'
+import { CourseContext } from 'context/Context'
+import useCourses from 'hooks/useCourses'
 
 const CourseGrid = ({ course }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const {
     thumbnail: { image, video, videoPoster },
@@ -29,11 +29,11 @@ const CourseGrid = ({ course }) => {
     price,
     oldPrice,
     totalEnrolled
-  } = course;
+  } = course
 
-  const { isInFavouriteItems, isInCart } = useContext(CourseContext);
+  const { isInFavouriteItems, isInCart } = useContext(CourseContext)
 
-  const { handleAddToCart, handleFavouriteClick } = useCourses(course);
+  const { handleAddToCart, handleFavouriteClick } = useCourses(course)
   return (
     <>
       <ModalVideoContent
@@ -137,8 +137,8 @@ const CourseGrid = ({ course }) => {
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
 CourseGrid.propTypes = {
   course: PropTypes.shape({
@@ -155,6 +155,6 @@ CourseGrid.propTypes = {
     oldPrice: PropTypes.number.isRequired,
     rating: PropTypes.number
   })
-};
+}
 
-export default CourseGrid;
+export default CourseGrid

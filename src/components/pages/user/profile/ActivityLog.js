@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import Notification from 'components/notification/Notification';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import Notification from 'components/notification/Notification'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
 
 const ActivityLog = ({ activities, ...rest }) => {
   return (
@@ -30,12 +30,12 @@ const ActivityLog = ({ activities, ...rest }) => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 ActivityLog.propTypes = {
   activities: PropTypes.arrayOf(PropTypes.shape(Notification.propTypes))
     .isRequired
-};
+}
 
-export default ActivityLog;
+export default ActivityLog

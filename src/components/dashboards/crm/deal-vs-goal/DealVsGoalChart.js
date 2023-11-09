@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import * as echarts from 'echarts/core';
-import { getPosition, tooltipFormatter } from 'helpers/echart-utils';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import { useBreakpoints } from 'hooks/useBreakpoints';
-import PropTypes from 'prop-types';
-import React from 'react';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import * as echarts from 'echarts/core'
+import { getPosition, tooltipFormatter } from 'helpers/echart-utils'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import { useBreakpoints } from 'hooks/useBreakpoints'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const getOptions = data => ({
   color: [getColor('primary'), getColor('warning')],
@@ -19,7 +19,7 @@ const getOptions = data => ({
     formatter: tooltipFormatter,
     transitionDuration: 0,
     position(pos, params, dom, rect, size) {
-      return getPosition(pos, params, dom, rect, size);
+      return getPosition(pos, params, dom, rect, size)
     }
   },
 
@@ -85,7 +85,7 @@ const getOptions = data => ({
       show: true,
       color: getColor('gray-400'),
       formatter: function (value) {
-        return `$${value}`;
+        return `$${value}`
       },
       margin: 15
     },
@@ -133,24 +133,24 @@ const getOptions = data => ({
     top: 30,
     containLabel: true
   }
-});
+})
 
 const DealVSGoalChart = ({ data }) => {
-  const { breakpoints } = useBreakpoints();
+  const { breakpoints } = useBreakpoints()
   return (
     <ReactEChartsCore
       echarts={echarts}
       option={getOptions(data)}
       style={{ height: breakpoints.up('xxl') ? '14rem' : '15rem' }}
     />
-  );
-};
+  )
+}
 
 DealVSGoalChart.propTypes = {
   data: PropTypes.shape({
     closedAmount: PropTypes.array.isRequired,
     revenueGoal: PropTypes.array.isRequired
   }).isRequired
-};
+}
 
-export default DealVSGoalChart;
+export default DealVSGoalChart

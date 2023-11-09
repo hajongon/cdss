@@ -1,24 +1,24 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import {
   lmsStatistics,
   avgEnrollments,
   topCourses,
   courseEnrollments,
   marketingExpensesData
-} from 'data/dashboard/lms';
-import { countryData } from 'data/countryData';
+} from 'data/dashboard/lms'
+import { countryData } from 'data/countryData'
 
-import LmsStats from './lms-stats/LmsStats';
-import TrendingKeywords from './trending-keywords/TrendingKeywords';
-import AverageEnrollment from './average-enrollment/AverageEnrollment';
-import TopCourses from './top-courses/TopCourses';
-import UsersLocation from './users-location/UsersLocation';
-import MarketingExpenses from './marketing-expenses/MarketingExpenses';
-import CourseEnrollments from './course-enrollments/CourseEnrollments';
-import WeeklyGoals from './weekly-goals/WeeklyGoals';
-import LmsRevenue from './monthly-targets/LmsRevenue';
-import LmsVisitor from './monthly-targets/LmsVisitor';
+import LmsStats from './lms-stats/LmsStats'
+import TrendingKeywords from './trending-keywords/TrendingKeywords'
+import AverageEnrollment from './average-enrollment/AverageEnrollment'
+import TopCourses from './top-courses/TopCourses'
+import UsersLocation from './users-location/UsersLocation'
+import MarketingExpenses from './marketing-expenses/MarketingExpenses'
+import CourseEnrollments from './course-enrollments/CourseEnrollments'
+import WeeklyGoals from './weekly-goals/WeeklyGoals'
+import LmsRevenue from './monthly-targets/LmsRevenue'
+import LmsVisitor from './monthly-targets/LmsVisitor'
 
 const Lms = () => {
   return (
@@ -60,7 +60,7 @@ const Lms = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Lms;
+export default Lms

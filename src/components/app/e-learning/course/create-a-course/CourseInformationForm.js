@@ -1,9 +1,9 @@
-import React from 'react';
-import MultiSelect from 'components/common/MultiSelect';
-import TinymceEditor from 'components/common/TinymceEditor';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import { Controller } from 'react-hook-form';
+import React from 'react'
+import MultiSelect from 'components/common/MultiSelect'
+import TinymceEditor from 'components/common/TinymceEditor'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Controller } from 'react-hook-form'
 
 const CourseInformationForm = ({ register, setValue, control }) => {
   const tagOptions = [
@@ -11,7 +11,7 @@ const CourseInformationForm = ({ register, setValue, control }) => {
     { value: '2', label: 'Misc' },
     { value: '3', label: 'Design' },
     { value: '4', label: 'Painting' }
-  ];
+  ]
 
   return (
     <Card className="mb-3">
@@ -111,13 +111,13 @@ const CourseInformationForm = ({ register, setValue, control }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseInformationForm.propTypes = {
   register: PropTypes.func.isRequired,
   setValue: PropTypes.func.isRequired,
   control: PropTypes.object.isRequired
-};
+}
 
-export default CourseInformationForm;
+export default CourseInformationForm

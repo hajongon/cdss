@@ -1,6 +1,6 @@
-import React from 'react';
-import ConfirmMailContent from 'components/authentication/ConfirmMailContent';
-import AuthCardLayout from 'layouts/AuthCardLayout';
+import React from 'react'
+import ConfirmMailContent from 'components/authentication/ConfirmMailContent'
+import AuthCardLayout from 'layouts/AuthCardLayout'
 
 const ConfirmMail = () => (
   <AuthCardLayout>
@@ -8,6 +8,6 @@ const ConfirmMail = () => (
       <ConfirmMailContent layout="card" email="xyz@abc.com" titleTag="h3" />
     </div>
   </AuthCardLayout>
-);
+)
 
-export default ConfirmMail;
+export default ConfirmMail

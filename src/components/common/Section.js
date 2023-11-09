@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import Background from './Background';
-import { Container } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import Background from './Background'
+import { Container } from 'react-bootstrap'
 
 const Section = ({
   fluid,
@@ -16,16 +16,16 @@ const Section = ({
   children,
   ...rest
 }) => {
-  const bgProps = { image, overlay, position, video };
-  bgClassName && (bgProps.className = bgClassName);
+  const bgProps = { image, overlay, position, video }
+  bgClassName && (bgProps.className = bgClassName)
 
   return (
     <section className={classNames({ [`bg-${bg}`]: bg }, className)} {...rest}>
       {image && <Background {...bgProps} />}
       <Container fluid={fluid}>{children}</Container>
     </section>
-  );
-};
+  )
+}
 
 Section.propTypes = {
   fluid: PropTypes.bool,
@@ -43,10 +43,10 @@ Section.propTypes = {
   bgClassName: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node
-};
+}
 
 Section.defaultProps = {
   fluid: false
-};
+}
 
-export default Section;
+export default Section

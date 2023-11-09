@@ -1,8 +1,8 @@
-import React, { useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { ProductContext } from 'context/Context';
-import { productData } from 'data/ecommerce/productData';
-import { productReducer } from 'reducers/productReducer';
+import React, { useReducer } from 'react'
+import PropTypes from 'prop-types'
+import { ProductContext } from 'context/Context'
+import { productData } from 'data/ecommerce/productData'
+import { productReducer } from 'reducers/productReducer'
 
 const ProductProvider = ({ children }) => {
   const initData = {
@@ -29,18 +29,15 @@ const ProductProvider = ({ children }) => {
       quantity: 0,
       type: 'add'
     }
-  };
-  const [productsState, productsDispatch] = useReducer(
-    productReducer,
-    initData
-  );
+  }
+  const [productsState, productsDispatch] = useReducer(productReducer, initData)
 
   const isInShoppingCart = id =>
-    !!productsState.cartItems.find(cartItem => cartItem.id === id);
+    !!productsState.cartItems.find(cartItem => cartItem.id === id)
   const isInFavouriteItems = id =>
     !!productsState.favouriteItems.find(
       favouriteItem => favouriteItem.id === id
-    );
+    )
 
   return (
     <ProductContext.Provider
@@ -53,11 +50,11 @@ const ProductProvider = ({ children }) => {
     >
       {children}
     </ProductContext.Provider>
-  );
-};
+  )
+}
 
 ProductProvider.propTypes = {
   children: PropTypes.node.isRequired
-};
+}
 
-export default ProductProvider;
+export default ProductProvider

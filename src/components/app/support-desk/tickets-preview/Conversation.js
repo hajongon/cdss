@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import { messages } from 'data/support-desk/ticketsPreviewData';
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import { messages } from 'data/support-desk/ticketsPreviewData'
+import React from 'react'
 import {
   Button,
   Card,
@@ -12,11 +12,11 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
-import Compose from 'components/app/email/compose/Compose';
+} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { useState } from 'react'
+import Compose from 'components/app/email/compose/Compose'
 
 const File = ({ icon, title, action, actionIcon, className }) => {
   return (
@@ -37,8 +37,8 @@ const File = ({ icon, title, action, actionIcon, className }) => {
         </a>
       </OverlayTrigger>
     </div>
-  );
-};
+  )
+}
 
 File.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
@@ -47,7 +47,7 @@ File.propTypes = {
   actionIcon: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
     .isRequired,
   className: PropTypes.string
-};
+}
 
 const Mail = ({ message, index }) => {
   return (
@@ -150,8 +150,8 @@ const Mail = ({ message, index }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 Mail.propTypes = {
   message: PropTypes.shape({
@@ -169,10 +169,10 @@ Mail.propTypes = {
     attached: PropTypes.bool.isRequired
   }),
   index: PropTypes.number
-};
+}
 
 const Conversation = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false)
   return (
     <Card className="mt-3">
       <Card.Header className="bg-light">
@@ -223,7 +223,7 @@ const Conversation = () => {
         </Card.Footer>
       )}
     </Card>
-  );
-};
+  )
+}
 
-export default Conversation;
+export default Conversation

@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
 
 const calenderCode = `function fullCalendarExample() {  
   return (
@@ -20,7 +20,7 @@ const calenderCode = `function fullCalendarExample() {
       events= 'https://fullcalendar.io/demo-events.json'
     />
   );
-}`;
+}`
 
 const Figures = () => (
   <>
@@ -50,6 +50,6 @@ const Figures = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Figures;
+export default Figures

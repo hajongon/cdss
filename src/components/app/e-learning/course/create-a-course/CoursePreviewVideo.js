@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDropzone } from 'react-dropzone';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useDropzone } from 'react-dropzone'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Button,
   Card,
@@ -9,13 +9,13 @@ import {
   Form,
   OverlayTrigger,
   Tooltip
-} from 'react-bootstrap';
-import { getSize } from 'helpers/utils';
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
+} from 'react-bootstrap'
+import { getSize } from 'helpers/utils'
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
 const CoursePreviewVideo = ({ register }) => {
-  const [video, setVideo] = useState();
+  const [video, setVideo] = useState()
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'video/*',
@@ -24,9 +24,9 @@ const CoursePreviewVideo = ({ register }) => {
         Object.assign(acceptedFiles[0], {
           preview: URL.createObjectURL(acceptedFiles[0])
         })
-      );
+      )
     }
-  });
+  })
 
   return (
     <Card className="mb-3">
@@ -113,11 +113,11 @@ const CoursePreviewVideo = ({ register }) => {
         </Form.Group>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CoursePreviewVideo.propTypes = {
   register: PropTypes.func.isRequired
-};
+}
 
-export default CoursePreviewVideo;
+export default CoursePreviewVideo

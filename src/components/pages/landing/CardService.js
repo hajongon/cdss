@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import className from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import className from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Card } from 'react-bootstrap'
 
 const CardService = ({ media, title, description, children }) => (
   <Card className="card-span h-100">
@@ -21,7 +21,7 @@ const CardService = ({ media, title, description, children }) => (
       {children}
     </Card.Body>
   </Card>
-);
+)
 
 CardService.propTypes = {
   media: PropTypes.shape({
@@ -32,6 +32,6 @@ CardService.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   children: PropTypes.node
-};
+}
 
-export default CardService;
+export default CardService

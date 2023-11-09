@@ -1,11 +1,11 @@
-import React from 'react';
-import BillingCard from 'components/app/e-commerce/billing/BillingCard';
-import ShoppingCart from 'components/app/e-commerce/cart/ShoppingCart';
-import OrderSummary from 'components/app/e-commerce/checkout/OrderSummary';
-import BestSellingProducts from 'components/dashboards/e-commerce/BestSellingProducts';
-import { Card, Col, Row } from 'react-bootstrap';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import { products } from 'data/dashboard/ecom';
+import React from 'react'
+import BillingCard from 'components/app/e-commerce/billing/BillingCard'
+import ShoppingCart from 'components/app/e-commerce/cart/ShoppingCart'
+import OrderSummary from 'components/app/e-commerce/checkout/OrderSummary'
+import BestSellingProducts from 'components/dashboards/e-commerce/BestSellingProducts'
+import { Card, Col, Row } from 'react-bootstrap'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import { products } from 'data/dashboard/ecom'
 
 const ECommerceWidgets = () => {
   return (
@@ -45,7 +45,7 @@ const ECommerceWidgets = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ECommerceWidgets;
+export default ECommerceWidgets

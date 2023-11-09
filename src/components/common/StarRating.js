@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext } from 'react';
-import Rating from 'react-rating';
-import PropTypes from 'prop-types';
-import AppContext from 'context/Context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext } from 'react'
+import Rating from 'react-rating'
+import PropTypes from 'prop-types'
+import AppContext from 'context/Context'
 
 const StarRating = ({ fractions = 2, rating, handleChange, ...rest }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Rating
@@ -19,13 +19,13 @@ const StarRating = ({ fractions = 2, rating, handleChange, ...rest }) => {
       direction={isRTL ? 'rtl' : 'ltr'}
       {...rest}
     />
-  );
-};
+  )
+}
 
 StarRating.propTypes = {
   fractions: PropTypes.number,
   rating: PropTypes.number.isRequired,
   handleChange: PropTypes.func
-};
+}
 
-export default StarRating;
+export default StarRating

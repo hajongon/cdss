@@ -1,19 +1,19 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <Spinner animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
 </Spinner>
-`;
+`
 
 const growingCode = `
 <Spinner animation="grow" />
-`;
+`
 
 const variantsCode = `
 <>
@@ -34,7 +34,7 @@ const variantsCode = `
   <Spinner animation="grow" variant="light" />
   <Spinner animation="grow" variant="dark" />
 </>
-`;
+`
 const SizingCode = `
 <>
   <Spinner animation="border" size="sm" />
@@ -42,7 +42,7 @@ const SizingCode = `
   <Spinner animation="grow" size="sm" />
   <Spinner animation="grow" />
 </>
-`;
+`
 
 const buttonsCode = `
 <>
@@ -67,7 +67,7 @@ const buttonsCode = `
     Loading...
   </Button>
 </>
-`;
+`
 
 const Spinners = () => (
   <>
@@ -138,6 +138,6 @@ const Spinners = () => (
       <FalconComponentCard.Body code={buttonsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Spinners;
+export default Spinners

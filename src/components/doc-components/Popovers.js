@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 const popover = (
@@ -22,7 +22,7 @@ const Example = () => (
   </OverlayTrigger>
 );
 
-render(<Example />);`;
+render(<Example />);`
 
 const placementCode = `
 <>
@@ -43,7 +43,7 @@ const placementCode = `
     </OverlayTrigger>
   ))}
 </>
-`;
+`
 
 const disableElCode = `
 <OverlayTrigger overlay={<Tooltip style={{ position: 'fixed' }} id="tooltip-disabled">Tooltip!</Tooltip>}>
@@ -53,7 +53,7 @@ const disableElCode = `
     </Button>
   </span>
 </OverlayTrigger>
-`;
+`
 
 const changingContainersCode = `
 function Example() {
@@ -87,7 +87,7 @@ function Example() {
     </div>
   );
 }
-`;
+`
 
 const Popovers = () => (
   <>
@@ -169,6 +169,6 @@ const Popovers = () => (
       <FalconComponentCard.Body code={changingContainersCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Popovers;
+export default Popovers

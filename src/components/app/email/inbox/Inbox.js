@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import React, { useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import React, { useContext } from 'react'
 import {
   Alert,
   Button,
@@ -13,16 +13,16 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import InboxRow from './InboxRow';
-import useBulkSelect from 'hooks/useBulkSelect';
-import InboxFilterDropdown from './InboxFilterDropdown';
-import { EmailContext } from 'context/Context';
-import InboxFooter from './InboxFooter';
-import usePagination from 'hooks/usePagination';
-import EmailProvider from '../EmailProvider';
+} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import classNames from 'classnames'
+import InboxRow from './InboxRow'
+import useBulkSelect from 'hooks/useBulkSelect'
+import InboxFilterDropdown from './InboxFilterDropdown'
+import { EmailContext } from 'context/Context'
+import InboxFooter from './InboxFooter'
+import usePagination from 'hooks/usePagination'
+import EmailProvider from '../EmailProvider'
 
 const InboxTitle = ({ className, children, ...rest }) => (
   <h5
@@ -34,7 +34,7 @@ const InboxTitle = ({ className, children, ...rest }) => (
   >
     {children}
   </h5>
-);
+)
 
 const ActionButton = ({
   tooltip,
@@ -49,13 +49,13 @@ const ActionButton = ({
       <FontAwesomeIcon icon={icon} />
     </Button>
   </OverlayTrigger>
-);
+)
 
 const InboxElement = () => {
   const {
     emailState: { emails, filters, currentFilter },
     emailDispatch
-  } = useContext(EmailContext);
+  } = useContext(EmailContext)
   const {
     paginationState: {
       data: paginatedEmails,
@@ -67,11 +67,11 @@ const InboxElement = () => {
     },
     nextPage,
     prevPage
-  } = usePagination(emails, 10);
+  } = usePagination(emails, 10)
 
-  const unreadEmails = paginatedEmails.filter(email => !email.read);
-  const otherEmails = paginatedEmails.filter(email => email.read);
-  const emailIds = emails.map(email => email.id);
+  const unreadEmails = paginatedEmails.filter(email => !email.read)
+  const otherEmails = paginatedEmails.filter(email => email.read)
+  const emailIds = emails.map(email => email.id)
 
   const {
     selectedItems,
@@ -80,15 +80,15 @@ const InboxElement = () => {
     isIndeterminate,
     toggleSelectedItem,
     toggleIsAllSelected
-  } = useBulkSelect(emailIds);
+  } = useBulkSelect(emailIds)
 
   const handleActionButtonClick = type => {
     emailDispatch({
       type,
       payload: selectedItems
-    });
-    toggleIsAllSelected();
-  };
+    })
+    toggleIsAllSelected()
+  }
 
   return (
     <Card>
@@ -111,7 +111,7 @@ const InboxElement = () => {
                   className="ms-sm-1"
                   icon="redo"
                   onClick={() => {
-                    emailDispatch({ type: 'RESET' });
+                    emailDispatch({ type: 'RESET' })
                   }}
                 />
                 <InboxFilterDropdown
@@ -201,27 +201,27 @@ const InboxElement = () => {
         prevPage={prevPage}
       />
     </Card>
-  );
-};
+  )
+}
 
 const Inbox = () => {
   return (
     <EmailProvider>
       <InboxElement />
     </EmailProvider>
-  );
-};
+  )
+}
 
 InboxTitle.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string
-};
+}
 
 ActionButton.propTypes = {
   tooltip: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   variant: PropTypes.string
-};
+}
 
-export default Inbox;
+export default Inbox

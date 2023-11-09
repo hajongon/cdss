@@ -1,16 +1,16 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { useRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   tooltip: {
@@ -152,10 +152,10 @@ const getOptions = () => ({
       ]
     }
   ]
-});
+})
 
 const MarketingExpensesChart = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   return (
     <div className="position-relative py-2">
@@ -171,11 +171,11 @@ const MarketingExpensesChart = ({ data }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 MarketingExpensesChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array)
-};
+}
 
-export default MarketingExpensesChart;
+export default MarketingExpensesChart

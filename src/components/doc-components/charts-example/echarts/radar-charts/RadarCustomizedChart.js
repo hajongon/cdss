@@ -1,17 +1,17 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { RadarChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { RadarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, rgbaColor } from 'helpers/utils';
-import { useBreakpoints } from 'hooks/useBreakpoints';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, rgbaColor } from 'helpers/utils'
+import { useBreakpoints } from 'hooks/useBreakpoints'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -20,14 +20,14 @@ echarts.use([
   RadarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 function tooltipFormatter(params) {
   const indicators = [
     ['Marketing', 'Sales', 'Dev', 'Support', 'Tech', 'Admin'],
     ['Language', 'Math', 'English', 'Physics', 'Chemistry', 'Biology']
-  ];
-  const num = params.seriesIndex;
+  ]
+  const num = params.seriesIndex
   return `<strong > ${params.name} </strong>
   <div class="fs--1 text-600">
     <strong >${indicators[params.seriesIndex][0]}</strong>: ${
@@ -38,7 +38,7 @@ function tooltipFormatter(params) {
     <strong>${indicators[num][3]}</strong>: ${params.value[3]}  <br>
     <strong>${indicators[num][4]}</strong>: ${params.value[4]}  <br>
     <strong>${indicators[num][5]}</strong>: ${params.value[5]}  <br>
-  </div>`;
+  </div>`
 }
 
 const chartCode = `function ChartOptions() {
@@ -256,7 +256,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const RadarCustomizedChart = () => {
   return (
@@ -278,7 +278,7 @@ const RadarCustomizedChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default RadarCustomizedChart;
+export default RadarCustomizedChart

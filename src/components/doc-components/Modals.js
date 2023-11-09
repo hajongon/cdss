@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import FalconCloseButton from 'components/common/FalconCloseButton';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import FalconCloseButton from 'components/common/FalconCloseButton'
+import { Link } from 'react-router-dom'
 
 const exampleCode = `
 function DemoModal() {
@@ -42,7 +42,7 @@ function DemoModal() {
   );
 }
 
-`;
+`
 const customCloseBtnCode = `
 function CustomCloseButtonModal() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -81,7 +81,7 @@ function CustomCloseButtonModal() {
   );
 }
 
-`;
+`
 const staticBackdropCode = `
 function StaticBackdropModal() {
   const [show, setShow] = useState(false);
@@ -112,7 +112,7 @@ function StaticBackdropModal() {
       </Modal>
     </>
   );
-}`;
+}`
 
 const popoverCode = `
 function Example() {
@@ -173,7 +173,7 @@ function Example() {
       </Modal>
     </>
   );
-}`;
+}`
 
 const fullscreenCode = `
 function Example() {
@@ -206,7 +206,7 @@ function Example() {
       </Modal>
     </>
   );
-}`;
+}`
 
 const sizeCode = `
 function Example() {
@@ -247,7 +247,7 @@ function Example() {
       </Modal>
     </>
   );
-}`;
+}`
 
 const Modals = () => (
   <>
@@ -340,6 +340,6 @@ const Modals = () => (
       <FalconComponentCard.Body code={fullscreenCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Modals;
+export default Modals

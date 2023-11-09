@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import {
   Card,
   Modal,
@@ -8,17 +8,17 @@ import {
   OverlayTrigger,
   Tooltip,
   Dropdown
-} from 'react-bootstrap';
-import Login from 'components/authentication/simple/Login';
-import Registration from 'components/authentication/simple/Registration';
-import AppContext from 'context/Context';
+} from 'react-bootstrap'
+import Login from 'components/authentication/simple/Login'
+import Registration from 'components/authentication/simple/Registration'
+import AppContext from 'context/Context'
 
 const LandingRightSideNavItem = () => {
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false)
   const {
     config: { isDark, isRTL },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Nav navbar className="ms-auto">
@@ -91,7 +91,7 @@ const LandingRightSideNavItem = () => {
         </Modal>
       </Nav.Item>
     </Nav>
-  );
-};
+  )
+}
 
-export default LandingRightSideNavItem;
+export default LandingRightSideNavItem

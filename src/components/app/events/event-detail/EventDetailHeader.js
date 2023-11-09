@@ -1,10 +1,10 @@
-import React from 'react';
-import eventBanner from 'assets/img/generic/13.jpg';
-import { Card, Row, Col, Button } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import Calendar from 'components/common/Calendar';
-import { Link } from 'react-router-dom';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import eventBanner from 'assets/img/generic/13.jpg'
+import { Card, Row, Col, Button } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import Calendar from 'components/common/Calendar'
+import { Link } from 'react-router-dom'
+import IconButton from 'components/common/IconButton'
 
 const EventDetailHeader = () => {
   const eventInfo = {
@@ -12,7 +12,7 @@ const EventDetailHeader = () => {
     eventDate: { day: '31', month: 'Dec' },
     author: 'Boston Harbor Now',
     regFee: `$49.99 – $89.99`
-  };
+  }
   return (
     <Card className="p-0 mb-3">
       {!!eventBanner && (
@@ -68,7 +68,7 @@ const EventDetailHeader = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EventDetailHeader;
+export default EventDetailHeader

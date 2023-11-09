@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Nav, Navbar, Row, Col } from 'react-bootstrap';
-import { navbarBreakPoint, topNavbarBreakpoint } from 'config';
-import AppContext from 'context/Context';
-import Flex from 'components/common/Flex';
-import Logo from 'components/common/Logo';
-import NavbarVerticalMenu from './NavbarVerticalMenu';
-import ToggleButton from './ToggleButton';
-import routes from 'routes/siteMaps';
-import { capitalize } from 'helpers/utils';
-import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus';
-import PurchaseCard from './PurchaseCard';
-import bgNavbar from 'assets/img/generic/bg-navbar.png';
+import React, { useContext, useEffect, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Nav, Navbar, Row, Col } from 'react-bootstrap'
+import { navbarBreakPoint, topNavbarBreakpoint } from 'config'
+import AppContext from 'context/Context'
+import Flex from 'components/common/Flex'
+import Logo from 'components/common/Logo'
+import NavbarVerticalMenu from './NavbarVerticalMenu'
+import ToggleButton from './ToggleButton'
+import routes from 'routes/siteMaps'
+import { capitalize } from 'helpers/utils'
+import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus'
+import PurchaseCard from './PurchaseCard'
+import bgNavbar from 'assets/img/generic/bg-navbar.png'
 
 const NavbarVertical = () => {
   const {
@@ -22,34 +22,34 @@ const NavbarVertical = () => {
       isNavbarVerticalCollapsed,
       showBurgerMenu
     }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
-  const HTMLClassList = document.getElementsByTagName('html')[0].classList;
+  const HTMLClassList = document.getElementsByTagName('html')[0].classList
 
   useEffect(() => {
     if (isNavbarVerticalCollapsed) {
-      HTMLClassList.add('navbar-vertical-collapsed');
+      HTMLClassList.add('navbar-vertical-collapsed')
     } else {
-      HTMLClassList.remove('navbar-vertical-collapsed');
+      HTMLClassList.remove('navbar-vertical-collapsed')
     }
     return () => {
-      HTMLClassList.remove('navbar-vertical-collapsed-hover');
-    };
-  }, [isNavbarVerticalCollapsed, HTMLClassList]);
+      HTMLClassList.remove('navbar-vertical-collapsed-hover')
+    }
+  }, [isNavbarVerticalCollapsed, HTMLClassList])
 
   //Control mouseEnter event
-  let time = null;
+  let time = null
   const handleMouseEnter = () => {
     if (isNavbarVerticalCollapsed) {
       time = setTimeout(() => {
-        HTMLClassList.add('navbar-vertical-collapsed-hover');
-      }, 100);
+        HTMLClassList.add('navbar-vertical-collapsed-hover')
+      }, 100)
     }
-  };
+  }
   const handleMouseLeave = () => {
-    clearTimeout(time);
-    HTMLClassList.remove('navbar-vertical-collapsed-hover');
-  };
+    clearTimeout(time)
+    HTMLClassList.remove('navbar-vertical-collapsed-hover')
+  }
 
   const NavbarLabel = ({ label }) => (
     <Nav.Item as="li">
@@ -62,7 +62,7 @@ const NavbarVertical = () => {
         </Col>
       </Row>
     </Nav.Item>
-  );
+  )
 
   return (
     <Navbar
@@ -115,11 +115,11 @@ const NavbarVertical = () => {
         </div>
       </Navbar.Collapse>
     </Navbar>
-  );
-};
+  )
+}
 
 NavbarVertical.propTypes = {
   label: PropTypes.string
-};
+}
 
-export default NavbarVertical;
+export default NavbarVertical

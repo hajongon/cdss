@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 const useFakeFetch = (resolvedData, waitingTime = 500) => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    let isMounted = true;
+    let isMounted = true
     setTimeout(() => {
       if (isMounted) {
-        setData(resolvedData);
-        setLoading(false);
+        setData(resolvedData)
+        setLoading(false)
       }
-    }, waitingTime);
+    }, waitingTime)
 
-    return () => (isMounted = false);
-  }, [resolvedData, waitingTime]);
+    return () => (isMounted = false)
+  }, [resolvedData, waitingTime])
 
-  return { loading, setLoading, data, setData };
-};
+  return { loading, setLoading, data, setData }
+}
 
-export default useFakeFetch;
+export default useFakeFetch

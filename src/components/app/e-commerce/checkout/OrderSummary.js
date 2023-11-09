@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import React, { useContext } from 'react';
-import { Card, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { ProductContext } from 'context/Context';
-import { getDiscountPrice } from 'helpers/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import React, { useContext } from 'react'
+import { Card, Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { ProductContext } from 'context/Context'
+import { getDiscountPrice } from 'helpers/utils'
 
 const OrderSummary = ({
   shippingCost,
@@ -16,7 +16,7 @@ const OrderSummary = ({
 }) => {
   const {
     productsState: { cartItems, promo }
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   return (
     <Card {...rest}>
@@ -86,14 +86,14 @@ const OrderSummary = ({
         <div className="fw-bold">${payableTotal}</div>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 OrderSummary.propTypes = {
   subTotal: PropTypes.number.isRequired,
   shippingCost: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   payableTotal: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-};
+}
 
-export default OrderSummary;
+export default OrderSummary

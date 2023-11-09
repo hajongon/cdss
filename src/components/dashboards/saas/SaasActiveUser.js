@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import BasicECharts from 'components/common/BasicEChart';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import BasicECharts from 'components/common/BasicEChart'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import { getColor, rgbaColor } from 'helpers/utils'
 
-echarts.use([TitleComponent, TooltipComponent, GridComponent, LineChart]);
+echarts.use([TitleComponent, TooltipComponent, GridComponent, LineChart])
 
 const getOptions = data => ({
   xAxis: {
@@ -45,7 +45,7 @@ const getOptions = data => ({
     }
   ],
   grid: { right: '0px', left: '0px', bottom: '0px', top: '0px' }
-});
+})
 
 const SaasActiveUser = ({ data }) => {
   return (
@@ -66,11 +66,11 @@ const SaasActiveUser = ({ data }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 SaasActiveUser.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default SaasActiveUser;
+export default SaasActiveUser

@@ -1,51 +1,51 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { Col, Image, Row } from 'react-bootstrap';
-import waveBg from 'assets/img/illustrations/bg-wave.png';
-import AppContext, { CourseContext } from 'context/Context';
+import React, { useContext, useEffect, useRef } from 'react'
+import { Col, Image, Row } from 'react-bootstrap'
+import waveBg from 'assets/img/illustrations/bg-wave.png'
+import AppContext, { CourseContext } from 'context/Context'
 import {
   courseContents,
   courseFeatures,
   courseLessons,
   courseRequirements,
   courseReviews
-} from 'data/elearning/courseDetails';
-import CourseBanner from './CourseBanner';
-import CoursePricingPlan from './CoursePricingPlan';
-import CourseFeatures from './CourseFeatures';
-import CourseContents from './CourseContents';
-import CourseRequirements from './CourseRequirements';
-import CourseTrainer from './CourseTrainer';
-import CourseReviews from './CourseReviews';
-import SimilarCourses from './SimilarCourses';
-import CourseLessonPlan from './CourseLessonPlan';
-import { Navigate, useParams } from 'react-router-dom';
+} from 'data/elearning/courseDetails'
+import CourseBanner from './CourseBanner'
+import CoursePricingPlan from './CoursePricingPlan'
+import CourseFeatures from './CourseFeatures'
+import CourseContents from './CourseContents'
+import CourseRequirements from './CourseRequirements'
+import CourseTrainer from './CourseTrainer'
+import CourseReviews from './CourseReviews'
+import SimilarCourses from './SimilarCourses'
+import CourseLessonPlan from './CourseLessonPlan'
+import { Navigate, useParams } from 'react-router-dom'
 
 const Coursedetails = () => {
   const {
     config: { navbarPosition },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const {
     coursesState: { courses }
-  } = useContext(CourseContext);
+  } = useContext(CourseContext)
 
-  const { courseId } = useParams();
-  const prevNavbarPosition = useRef(navbarPosition);
+  const { courseId } = useParams()
+  const prevNavbarPosition = useRef(navbarPosition)
 
-  const course = courses.find(course => course.id === courseId);
+  const course = courses.find(course => course.id === courseId)
 
   useEffect(() => {
-    if (navbarPosition !== 'double-top') setConfig('navbarPosition', 'top');
-    setConfig('disabledNavbarPosition', ['vertical', 'combo']);
-  }, [navbarPosition]);
+    if (navbarPosition !== 'double-top') setConfig('navbarPosition', 'top')
+    setConfig('disabledNavbarPosition', ['vertical', 'combo'])
+  }, [navbarPosition])
 
   useEffect(() => {
     return () => {
-      setConfig('disabledNavbarPosition', []);
-      setConfig('navbarPosition', prevNavbarPosition.current);
-    };
-  }, []);
+      setConfig('disabledNavbarPosition', [])
+      setConfig('navbarPosition', prevNavbarPosition.current)
+    }
+  }, [])
 
   return course ? (
     <>
@@ -77,7 +77,7 @@ const Coursedetails = () => {
     </>
   ) : (
     <Navigate to={`/e-learning/course/course-details/${courses[0].id}`} />
-  );
-};
+  )
+}
 
-export default Coursedetails;
+export default Coursedetails

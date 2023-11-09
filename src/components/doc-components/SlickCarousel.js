@@ -1,15 +1,15 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import product1 from 'assets/img/products/1.jpg';
-import product12 from 'assets/img/products/1-2.jpg';
-import product13 from 'assets/img/products/1-3.jpg';
-import product14 from 'assets/img/products/1-4.jpg';
-import product15 from 'assets/img/products/1-5.jpg';
-import product16 from 'assets/img/products/1-6.jpg';
-import Slider from 'react-slick';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import product1 from 'assets/img/products/1.jpg'
+import product12 from 'assets/img/products/1-2.jpg'
+import product13 from 'assets/img/products/1-3.jpg'
+import product14 from 'assets/img/products/1-4.jpg'
+import product15 from 'assets/img/products/1-5.jpg'
+import product16 from 'assets/img/products/1-6.jpg'
+import Slider from 'react-slick'
 
 const exampleCode = `function slickSlider  ()  {
   const sliderSettings = {
@@ -61,7 +61,7 @@ const exampleCode = `function slickSlider  ()  {
       </Slider>
     </div>
   );
-};`;
+};`
 
 const SlickCarousel = () => (
   <>
@@ -99,6 +99,6 @@ const SlickCarousel = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default SlickCarousel;
+export default SlickCarousel

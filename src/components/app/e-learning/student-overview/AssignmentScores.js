@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Card, Col, Row } from 'react-bootstrap';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { PieChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Card, Col, Row } from 'react-bootstrap'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { PieChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import FalconLink from 'components/common/FalconLink';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import FalconLink from 'components/common/FalconLink'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 echarts.use([
   TitleComponent,
@@ -25,14 +25,14 @@ echarts.use([
   PieChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const data = [
   { value: 12, name: '90-100%' },
   { value: 16, name: '70-90%' },
   { value: 12, name: '40-70%' },
   { value: 2, name: '0-40%' }
-];
+]
 
 const getOptions = () => ({
   color: [
@@ -73,7 +73,7 @@ const getOptions = () => ({
       data
     }
   ]
-});
+})
 
 const AssignmentScores = ({ scoresData }) => {
   return (
@@ -128,11 +128,11 @@ const AssignmentScores = ({ scoresData }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 AssignmentScores.propTypes = {
   scoresData: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default AssignmentScores;
+export default AssignmentScores

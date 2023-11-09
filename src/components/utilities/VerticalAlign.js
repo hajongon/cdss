@@ -1,6 +1,6 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const baselineCode = `<>
   <span className="align-baseline">baseline</span>
@@ -9,7 +9,7 @@ const baselineCode = `<>
   <span className="align-bottom">bottom</span>
   <span className="align-text-top">text-top</span>
   <span className="align-text-bottom">text-bottom</span>
-</>`;
+</>`
 
 const tableCellsCode = `<Table bordered responsive style={{ height:'100px' }}>
   <tbody>
@@ -22,7 +22,7 @@ const tableCellsCode = `<Table bordered responsive style={{ height:'100px' }}>
       <td className="align-text-bottom text-nowrap">text-bottom</td>
     </tr>
   </tbody>
-</Table>`;
+</Table>`
 
 const VerticalAlign = () => (
   <>
@@ -64,6 +64,6 @@ const VerticalAlign = () => (
       <FalconComponentCard.Body code={tableCellsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default VerticalAlign;
+export default VerticalAlign

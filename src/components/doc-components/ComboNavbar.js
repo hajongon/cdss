@@ -1,21 +1,21 @@
-import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PageHeader from 'components/common/PageHeader';
-import AppContext from 'context/Context';
-import FalconEditor from 'components/common/FalconEditor';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React, { useContext } from 'react'
+import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PageHeader from 'components/common/PageHeader'
+import AppContext from 'context/Context'
+import FalconEditor from 'components/common/FalconEditor'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const comboCode = `settings:{
   // ...rest
   navbarPosition:'combo'
-}`;
+}`
 
 const ComboNavbar = () => {
   const {
     config: { navbarPosition },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <>
@@ -77,7 +77,7 @@ const ComboNavbar = () => {
         </FalconComponentCard.Body>
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default ComboNavbar;
+export default ComboNavbar

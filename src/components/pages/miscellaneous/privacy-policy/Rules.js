@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Rules = forwardRef((props, ref) => {
   return (
@@ -115,7 +115,7 @@ const Rules = forwardRef((props, ref) => {
         </ol>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Rules;
+export default Rules

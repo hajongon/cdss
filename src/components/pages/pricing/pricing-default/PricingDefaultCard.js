@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Button } from 'react-bootstrap';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SoftBadge from 'components/common/SoftBadge';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, Button } from 'react-bootstrap'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SoftBadge from 'components/common/SoftBadge'
 
 const PricingDefaultCard = ({
   pricing: {
@@ -65,8 +65,8 @@ const PricingDefaultCard = ({
         </div>
       </div>
     </Col>
-  );
-};
+  )
+}
 
 PricingDefaultCard.propTypes = {
   pricing: PropTypes.shape({
@@ -87,6 +87,6 @@ PricingDefaultCard.propTypes = {
       })
     )
   })
-};
+}
 
-export default PricingDefaultCard;
+export default PricingDefaultCard

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Table } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconEditor from 'components/common/FalconEditor';
-import PageHeader from 'components/common/PageHeader';
-import { version } from 'config';
+import React from 'react'
+import { Card, Table } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconEditor from 'components/common/FalconEditor'
+import PageHeader from 'components/common/PageHeader'
+import { version } from 'config'
 
 const configCode = `export const version = '${version}';
 export const navbarBreakPoint = 'xl'; // Vertical navbar breakpoint
@@ -19,7 +19,7 @@ export const settings = {
   navbarStyle: 'transparent'
 };
 
-export default { version, navbarBreakPoint, topNavbarBreakpoint, settings };`;
+export default { version, navbarBreakPoint, topNavbarBreakpoint, settings };`
 
 const Configuration = () => (
   <>
@@ -207,6 +207,6 @@ const Configuration = () => (
       </Card.Body>
     </Card>
   </>
-);
+)
 
-export default Configuration;
+export default Configuration

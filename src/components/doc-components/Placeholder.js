@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import generic1 from 'assets/img/generic/1.jpg';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import generic1 from 'assets/img/generic/1.jpg'
 
 const exampleCode = `<div className="d-flex justify-content-center flex-wrap gap-3">
   <Card style={{width: '20rem'}} className='overflow-hidden'>
@@ -42,12 +42,12 @@ const exampleCode = `<div className="d-flex justify-content-center flex-wrap gap
       <Placeholder.Button variant="primary" xs={6} />
     </Card.Body>
   </Card>
-</div>`;
+</div>`
 
 const widthCode = `<>
   <Placeholder xs={6} />
   <Placeholder className="w-75" /> <Placeholder style={{ width: '25%' }} />
-</>`;
+</>`
 
 const colorCode = `<>
   <Placeholder xs={12} />
@@ -59,14 +59,14 @@ const colorCode = `<>
   <Placeholder xs={12} bg="info" />
   <Placeholder xs={12} bg="light" />
   <Placeholder xs={12} bg="dark" />
-</>`;
+</>`
 
 const sizingCode = `<>
   <Placeholder xs={12} size="lg" />
   <Placeholder xs={12} />
   <Placeholder xs={12} size="sm" />
   <Placeholder xs={12} size="xs" />
-</>`;
+</>`
 
 const animationCode = `<>
   <Placeholder as="p" animation="glow">
@@ -75,7 +75,7 @@ const animationCode = `<>
   <Placeholder as="p" animation="wave">
     <Placeholder xs={12} />
   </Placeholder>
-</>`;
+</>`
 
 const Placeholder = () => (
   <>
@@ -154,6 +154,6 @@ const Placeholder = () => (
       <FalconComponentCard.Body code={animationCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Placeholder;
+export default Placeholder

@@ -1,14 +1,14 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
 
 const exampleCode = `
 <>
   <div className="visible">...</div>
   <div className="invisible">...</div>
 </>
-`;
+`
 
 const Visibility = () => (
   <>
@@ -36,6 +36,6 @@ const Visibility = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Visibility;
+export default Visibility

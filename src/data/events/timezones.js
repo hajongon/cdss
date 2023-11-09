@@ -371,4 +371,4 @@ export const timezones = [
     offset: 'GMT+14:00',
     name: 'Pacific/Kiritimati'
   }
-];
+]

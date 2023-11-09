@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Table } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Table } from 'react-bootstrap'
 
 const AdvanceTable = ({
   getTableProps,
@@ -44,7 +44,7 @@ const AdvanceTable = ({
         </thead>
         <tbody className={bodyClassName}>
           {page.map((row, i) => {
-            prepareRow(row);
+            prepareRow(row)
             return (
               <tr key={i} className={rowClassName} {...row.getRowProps()}>
                 {row.cells.map((cell, index) => {
@@ -55,16 +55,16 @@ const AdvanceTable = ({
                     >
                       {cell.render('Cell')}
                     </td>
-                  );
+                  )
                 })}
               </tr>
-            );
+            )
           })}
         </tbody>
       </Table>
     </div>
-  );
-};
+  )
+}
 AdvanceTable.propTypes = {
   getTableProps: PropTypes.func,
   headers: PropTypes.array,
@@ -74,6 +74,6 @@ AdvanceTable.propTypes = {
   bodyClassName: PropTypes.string,
   rowClassName: PropTypes.string,
   tableProps: PropTypes.object
-};
+}
 
-export default AdvanceTable;
+export default AdvanceTable

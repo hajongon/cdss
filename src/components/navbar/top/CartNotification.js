@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import { ProductContext } from 'context/Context';
-import { getProductsQuantity } from 'helpers/utils';
-import React, { useContext } from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import { ProductContext } from 'context/Context'
+import { getProductsQuantity } from 'helpers/utils'
+import React, { useContext } from 'react'
+import { Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const CartNotification = () => {
   const {
     productsState: { cartItems }
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   return (
     <Nav.Item as="li" className="d-none d-sm-block">
@@ -33,7 +33,7 @@ const CartNotification = () => {
         />
       </Nav.Link>
     </Nav.Item>
-  );
-};
+  )
+}
 
-export default CartNotification;
+export default CartNotification

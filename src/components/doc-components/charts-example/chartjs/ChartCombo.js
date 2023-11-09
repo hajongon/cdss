@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import { getColor, rgbaColor } from 'helpers/utils';
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import { getColor, rgbaColor } from 'helpers/utils'
+import React from 'react'
+import { Bar } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -57,7 +57,7 @@ const chartCode = `function ChartOptions() {
       <Bar data={data} options={options} height={500} width={1618}/>
     );
   }
-`;
+`
 const ChartCombo = () => {
   return (
     <FalconComponentCard>
@@ -73,7 +73,7 @@ const ChartCombo = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartCombo;
+export default ChartCombo

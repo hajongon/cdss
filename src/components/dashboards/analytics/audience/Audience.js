@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row, Tab, Nav, Form } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AudienceChart from './AudienceChart';
-import FalconLink from 'components/common/FalconLink';
-import SimpleBarReact from 'simplebar-react';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row, Tab, Nav, Form } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AudienceChart from './AudienceChart'
+import FalconLink from 'components/common/FalconLink'
+import SimpleBarReact from 'simplebar-react'
+import classNames from 'classnames'
 
 const TabTitle = ({ title, value, percentage, progress }) => (
   <div className="p-2 pe-4 text-start cursor-pointer">
@@ -26,7 +26,7 @@ const TabTitle = ({ title, value, percentage, progress }) => (
       </h6>
     </Flex>
   </div>
-);
+)
 
 const Audience = ({ chartData, className }) => {
   return (
@@ -112,15 +112,15 @@ const Audience = ({ chartData, className }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 TabTitle.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   percentage: PropTypes.string.isRequired,
   progress: PropTypes.bool
-};
+}
 
 Audience.propTypes = {
   chartData: PropTypes.shape({
@@ -130,6 +130,6 @@ Audience.propTypes = {
     duration: PropTypes.arrayOf(PropTypes.array)
   }).isRequired,
   className: PropTypes.string.isRequired
-};
+}
 
-export default Audience;
+export default Audience

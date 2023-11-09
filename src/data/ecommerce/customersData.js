@@ -1,11 +1,11 @@
-import person2 from 'assets/img/team/2.jpg';
-import person3 from 'assets/img/team/3.jpg';
-import person4 from 'assets/img/team/4.jpg';
-import person5 from 'assets/img/team/5.jpg';
-import person6 from 'assets/img/team/6.jpg';
-import person9 from 'assets/img/team/9.jpg';
-import person13 from 'assets/img/team/13.jpg';
-import person14 from 'assets/img/team/14.jpg';
+import person2 from 'assets/img/team/2.jpg'
+import person3 from 'assets/img/team/3.jpg'
+import person4 from 'assets/img/team/4.jpg'
+import person5 from 'assets/img/team/5.jpg'
+import person6 from 'assets/img/team/6.jpg'
+import person9 from 'assets/img/team/9.jpg'
+import person13 from 'assets/img/team/13.jpg'
+import person14 from 'assets/img/team/14.jpg'
 
 export const customersData = [
   {
@@ -258,4 +258,4 @@ export const customersData = [
     joined: '23/04/2019',
     address: 'Garry Brainstrow, 13572 Kurt Mews South Merritt, IA 52491'
   }
-];
+]

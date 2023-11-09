@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import React from 'react'
 import {
   Button,
   Col,
@@ -9,8 +9,8 @@ import {
   FormControl,
   InputGroup,
   Row
-} from 'react-bootstrap';
-import PropTypes from 'prop-types';
+} from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 const UnsolvedTicketsHeader = ({
   selectedRowIds,
@@ -151,8 +151,8 @@ const UnsolvedTicketsHeader = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 UnsolvedTicketsHeader.propTypes = {
   selectedRowIds: PropTypes.object,
@@ -160,6 +160,6 @@ UnsolvedTicketsHeader.propTypes = {
   setLayout: PropTypes.func,
   selectedItems: PropTypes.array,
   handleTicketsSearch: PropTypes.func
-};
+}
 
-export default UnsolvedTicketsHeader;
+export default UnsolvedTicketsHeader

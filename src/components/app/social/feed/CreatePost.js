@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
-import team1 from 'assets/img/team/1.jpg';
-import CreatePostForm from './CreatePostForm';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import Avatar from 'components/common/Avatar'
+import team1 from 'assets/img/team/1.jpg'
+import CreatePostForm from './CreatePostForm'
 
 const CreatePost = ({ ...rest }) => {
   return (
@@ -20,7 +20,7 @@ const CreatePost = ({ ...rest }) => {
         <CreatePostForm />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default CreatePost;
+export default CreatePost

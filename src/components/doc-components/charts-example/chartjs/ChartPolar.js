@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import { getColor, rgbaColor } from 'helpers/utils';
-import React from 'react';
-import { PolarArea } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import { getColor, rgbaColor } from 'helpers/utils'
+import React from 'react'
+import { PolarArea } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -44,7 +44,7 @@ const chartCode = `function ChartOptions() {
       <PolarArea data={data} options={options} height={350} />
     );
   }
-`;
+`
 const ChartPolar = () => {
   return (
     <FalconComponentCard>
@@ -60,7 +60,7 @@ const ChartPolar = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartPolar;
+export default ChartPolar

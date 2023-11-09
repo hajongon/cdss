@@ -1,17 +1,17 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   DatasetComponent,
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   CanvasRenderer,
   LegendComponent,
   DatasetComponent
-]);
+])
 
 const getOption = data => ({
   color: [getColor('primary'), getColor('gray-300')],
@@ -39,7 +39,7 @@ const getOption = data => ({
         params.seriesName
       }</div><div className="fs--1 text-600"><strong>${params.name}:</strong> ${
         params.value[params.componentIndex + 1]
-      }</div>`;
+      }</div>`
     }
   },
   legend: {
@@ -96,7 +96,7 @@ const getOption = data => ({
     }
   ],
   grid: { right: '0', left: '40px', bottom: '10%', top: '15%' }
-});
+})
 
 const ReportForThisWeekChart = forwardRef(({ data }, ref) => {
   return (
@@ -106,11 +106,11 @@ const ReportForThisWeekChart = forwardRef(({ data }, ref) => {
       option={getOption(data)}
       style={{ height: '17.625rem' }}
     />
-  );
-});
+  )
+})
 
 ReportForThisWeekChart.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default ReportForThisWeekChart;
+export default ReportForThisWeekChart

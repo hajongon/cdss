@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import BasicECharts from 'components/common/BasicEChart';
-import { rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import BasicECharts from 'components/common/BasicEChart'
+import { rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -17,7 +17,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = (color, data) => ({
   series: [
@@ -51,7 +51,7 @@ const getOptions = (color, data) => ({
     boundaryGap: false
   },
   grid: { right: 0, left: 0, bottom: 0, top: 0 }
-});
+})
 
 const StatsChart = ({ color, data }) => {
   return (
@@ -60,12 +60,12 @@ const StatsChart = ({ color, data }) => {
       options={getOptions(color, data)}
       style={{ height: '2rem' }}
     />
-  );
-};
+  )
+}
 
 StatsChart.propTypes = {
   color: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired
-};
+}
 
-export default StatsChart;
+export default StatsChart

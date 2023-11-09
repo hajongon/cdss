@@ -1,10 +1,10 @@
-import ecomBg from 'assets/img/illustrations/ecommerce-bg.png';
-import Background from 'components/common/Background';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import Notification from './Notification';
+import ecomBg from 'assets/img/illustrations/ecommerce-bg.png'
+import Background from 'components/common/Background'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import Notification from './Notification'
 
 const GreetingCard = ({ notifications }) => {
   return (
@@ -50,11 +50,11 @@ const GreetingCard = ({ notifications }) => {
         </ul>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 GreetingCard.propTypes = {
   notifications: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default GreetingCard;
+export default GreetingCard

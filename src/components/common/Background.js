@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const Background = ({ image, overlay, position, video, className, style }) => {
-  const bgStyle = { backgroundImage: `url(${image})`, ...style };
+  const bgStyle = { backgroundImage: `url(${image})`, ...style }
   if (typeof position === 'string') {
-    bgStyle.backgroundPosition = position;
+    bgStyle.backgroundPosition = position
   } else if (typeof position === 'object') {
-    position.x && (bgStyle.backgroundPositionX = position.x);
-    position.y && (bgStyle.backgroundPositionY = position.y);
+    position.x && (bgStyle.backgroundPositionX = position.x)
+    position.y && (bgStyle.backgroundPositionY = position.y)
   }
 
   return (
@@ -35,8 +35,8 @@ const Background = ({ image, overlay, position, video, className, style }) => {
         </video>
       )}
     </div>
-  );
-};
+  )
+}
 
 Background.propTypes = {
   image: PropTypes.string.isRequired,
@@ -51,6 +51,6 @@ Background.propTypes = {
   video: PropTypes.array,
   className: PropTypes.string,
   style: PropTypes.object
-};
+}
 
-export default Background;
+export default Background

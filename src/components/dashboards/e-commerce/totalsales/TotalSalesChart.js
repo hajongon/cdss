@@ -1,16 +1,16 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -18,7 +18,7 @@ echarts.use([
   GridComponent,
   LineChart,
   LegendComponent
-]);
+])
 
 const tooltipFormatter = params => {
   return params
@@ -29,8 +29,8 @@ const tooltipFormatter = params => {
                 index === 0 ? 'Last Month' : 'Previous Year'
               }: ${value}</span>`
     )
-    .join('<br/>');
-};
+    .join('<br/>')
+}
 
 const getOptions = data => ({
   color: getColor('gray-100'),
@@ -143,19 +143,19 @@ const getOptions = data => ({
     }
   ],
   grid: { right: '18px', left: '40px', bottom: '15%', top: '5%' }
-});
+})
 
 const TotalSalesChart = forwardRef(({ data }, ref) => {
   return (
     <ReactEChartsCore ref={ref} echarts={echarts} option={getOptions(data)} />
-  );
-});
+  )
+})
 
 TotalSalesChart.propTypes = {
   data: PropTypes.shape({
     lastMonth: PropTypes.array,
     previousYear: PropTypes.array
   })
-};
+}
 
-export default TotalSalesChart;
+export default TotalSalesChart

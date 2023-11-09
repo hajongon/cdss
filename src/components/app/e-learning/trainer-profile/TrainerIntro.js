@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
 
 const socials = [
   {
@@ -30,7 +30,7 @@ const socials = [
     icon: ['fab', 'pinterest'],
     url: '#!'
   }
-];
+]
 
 const TrainerIntro = () => {
   return (
@@ -86,7 +86,7 @@ const TrainerIntro = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default TrainerIntro;
+export default TrainerIntro

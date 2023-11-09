@@ -1,8 +1,8 @@
-import React from 'react';
-import educationData from 'data/educations';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Card } from 'react-bootstrap';
-import EducationItem from '../EducationItem';
+import React from 'react'
+import educationData from 'data/educations'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Card } from 'react-bootstrap'
+import EducationItem from '../EducationItem'
 
 const Education = () => {
   return (
@@ -18,7 +18,7 @@ const Education = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Education;
+export default Education

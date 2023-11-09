@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import HalfDoughnutChart from './HalfDoughnutChart';
-import CountUp from 'react-countup';
+import React, { useState } from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import HalfDoughnutChart from './HalfDoughnutChart'
+import CountUp from 'react-countup'
 
 const LmsRevenue = () => {
   const [stat] = useState({
     target: 1200000,
     reached: 823000
-  });
+  })
   return (
     <Card className="h-md-100">
       <Card.Header className="pb-0">
@@ -59,7 +59,7 @@ const LmsRevenue = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default LmsRevenue;
+export default LmsRevenue

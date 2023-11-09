@@ -1,8 +1,8 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import Section from 'components/common/Section';
-import Logo from 'components/common/Logo';
-import Wizard from 'components/wizard/Wizard';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import Section from 'components/common/Section'
+import Logo from 'components/common/Logo'
+import Wizard from 'components/wizard/Wizard'
 
 const WizardAuth = () => {
   return (
@@ -14,7 +14,7 @@ const WizardAuth = () => {
         </Col>
       </Row>
     </Section>
-  );
-};
+  )
+}
 
-export default WizardAuth;
+export default WizardAuth

@@ -1,11 +1,11 @@
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import Statistics from './Statistics';
-import ProjectTable from './ProjectTable';
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import Statistics from './Statistics'
+import ProjectTable from './ProjectTable'
 
 const ProjectStatistics = ({ progressBar, projectsTable, projectUsers }) => {
   return (
@@ -30,15 +30,15 @@ const ProjectStatistics = ({ progressBar, projectsTable, projectUsers }) => {
                 size="2xl"
                 className="border border-3 rounded-circle border-light"
               />
-            );
+            )
           })}
         </AvatarGroup>
 
         <ProjectTable data={projectsTable} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 ProjectStatistics.propTypes = {
   progressBar: PropTypes.array.isRequired,
@@ -50,6 +50,6 @@ ProjectStatistics.propTypes = {
       name: PropTypes.string
     })
   )
-};
+}
 
-export default ProjectStatistics;
+export default ProjectStatistics

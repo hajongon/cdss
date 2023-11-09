@@ -1,16 +1,16 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BasicLineChart from './BasicLineChart';
-import BasicAreaLineChart from './BasicAreaLineChart';
-import StackedLineChart from './StackedLineChart';
-import StackedAreaChart from './StackedAreaChart';
-import LineMarkerChart from './LineMarkerChart';
-import AreaPiecesChart from './AreaPiecesChart';
-import StepLineChart from './StepLineChart';
-import LineGradientChart from './LineGradientChart';
-import DynamicLineChart from './DynamicLIneChart';
-import LineLogChart from './LineLogChart';
-import LineShareDatasetChart from './LineShareDatasetChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BasicLineChart from './BasicLineChart'
+import BasicAreaLineChart from './BasicAreaLineChart'
+import StackedLineChart from './StackedLineChart'
+import StackedAreaChart from './StackedAreaChart'
+import LineMarkerChart from './LineMarkerChart'
+import AreaPiecesChart from './AreaPiecesChart'
+import StepLineChart from './StepLineChart'
+import LineGradientChart from './LineGradientChart'
+import DynamicLineChart from './DynamicLIneChart'
+import LineLogChart from './LineLogChart'
+import LineShareDatasetChart from './LineShareDatasetChart'
 
 const LineCharts = () => {
   return (
@@ -49,7 +49,7 @@ const LineCharts = () => {
         <LineShareDatasetChart />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default LineCharts;
+export default LineCharts

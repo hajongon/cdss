@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import CountUp from 'react-countup';
-import { Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import WeeklyGoalsChart from './WeeklyGoalsChart';
+import React, { useState } from 'react'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import CountUp from 'react-countup'
+import { Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import WeeklyGoalsChart from './WeeklyGoalsChart'
 
 const WeeklyGoals = () => {
   const [stats] = useState([
@@ -40,7 +40,7 @@ const WeeklyGoals = () => {
         color: 'danger'
       }
     }
-  ]);
+  ])
 
   return (
     <Card className="h-100">
@@ -95,7 +95,7 @@ const WeeklyGoals = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default WeeklyGoals;
+export default WeeklyGoals

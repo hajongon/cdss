@@ -76,4 +76,4 @@ export default [
     messagesId: 10,
     read: true
   }
-];
+]

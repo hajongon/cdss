@@ -1,7 +1,7 @@
-import React from 'react';
-import LogoutContent from 'components/authentication/LogoutContent';
-import bgImg from 'assets/img/generic/19.jpg';
-import AuthSplitLayout from 'layouts/AuthSplitLayout';
+import React from 'react'
+import LogoutContent from 'components/authentication/LogoutContent'
+import bgImg from 'assets/img/generic/19.jpg'
+import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const Logout = () => {
   return (
@@ -10,7 +10,7 @@ const Logout = () => {
         <LogoutContent layout="split" titleTag="h3" />
       </div>
     </AuthSplitLayout>
-  );
-};
+  )
+}
 
-export default Logout;
+export default Logout

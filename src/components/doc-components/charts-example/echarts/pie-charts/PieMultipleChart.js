@@ -1,16 +1,16 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { PieChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { PieChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -18,7 +18,7 @@ echarts.use([
   PieChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const chartRef = useRef(null)
@@ -183,7 +183,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const PieMultipleChart = () => {
   return (
@@ -202,7 +202,7 @@ const PieMultipleChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default PieMultipleChart;
+export default PieMultipleChart

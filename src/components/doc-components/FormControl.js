@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Tab } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Tab } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <>
@@ -16,7 +16,7 @@ const exampleCode = `
     <Form.Control as="textarea" rows={3} />
   </Form.Group>
 </>
-`;
+`
 const sizingCode = `
 <>
   <Form.Control size="lg" type="text" placeholder="Large text" />
@@ -25,10 +25,10 @@ const sizingCode = `
   <br />
   <Form.Control size="sm" type="text" placeholder="Small text" />
 </>
-`;
+`
 const readOnlyCode = `
 <Form.Control type="text" placeholder="Readonly input here..." readOnly />
-`;
+`
 
 const readOnlyTextCode = `
 <>
@@ -50,7 +50,7 @@ const readOnlyTextCode = `
     </Col>
   </Form.Group>
 </>
-`;
+`
 
 const fileInputCode = `
 <>
@@ -66,7 +66,7 @@ const fileInputCode = `
     <Form.Label>Multiple files input example</Form.Label>
     <Form.Control type="file" multiple />
   </Form.Group>
-</>`;
+</>`
 
 const fileInputSizingCode = `
 <>
@@ -79,7 +79,7 @@ const fileInputSizingCode = `
     <Form.Control type="file" size="lg" />
   </Form.Group>
 </>
-`;
+`
 
 const datalistCode = `
 <Form.Group className="mb-3">
@@ -95,7 +95,7 @@ const datalistCode = `
     <option value="Safari"></option>
   </datalist>
 </Form.Group>
-`;
+`
 
 const FormControl = () => (
   <>
@@ -171,6 +171,6 @@ const FormControl = () => (
       <FalconComponentCard.Body code={datalistCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FormControl;
+export default FormControl

@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import { Card } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import { Card } from 'react-bootstrap'
 
 const Account = forwardRef((props, ref) => {
   return (
@@ -65,7 +65,7 @@ const Account = forwardRef((props, ref) => {
         </p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Account;
+export default Account

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { v4 as uuid } from 'uuid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import { Controller } from 'react-hook-form';
-import MultiSelect from 'components/common/MultiSelect';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Form, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { v4 as uuid } from 'uuid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import { Controller } from 'react-hook-form'
+import MultiSelect from 'components/common/MultiSelect'
 
 const CourseGoals = ({ control }) => {
   const defaultGoals = [
@@ -17,31 +17,31 @@ const CourseGoals = ({ control }) => {
       id: uuid(),
       goal: 'How to take criticism and make best use of them.'
     }
-  ];
-  const [goals, setGoals] = useState(defaultGoals);
-  const [goal, setGoal] = useState('');
-  const [editingGoal, setEditingGoal] = useState({});
-  const [isEditing, setIsEditing] = useState(false);
+  ]
+  const [goals, setGoals] = useState(defaultGoals)
+  const [goal, setGoal] = useState('')
+  const [editingGoal, setEditingGoal] = useState({})
+  const [isEditing, setIsEditing] = useState(false)
 
   const handleGoalSubmit = () => {
     if (!isEditing) {
-      setGoals([...goals, { id: uuid(), goal: goal }]);
-      setGoal('');
+      setGoals([...goals, { id: uuid(), goal: goal }])
+      setGoal('')
     } else {
       const updatedGoals = goals.map(goal => {
         if (goal.id === editingGoal.id) {
           return {
             ...goal,
             goal: editingGoal.goal
-          };
+          }
         }
-        return goal;
-      });
-      setGoals(updatedGoals);
-      setEditingGoal({});
-      setIsEditing(false);
+        return goal
+      })
+      setGoals(updatedGoals)
+      setEditingGoal({})
+      setIsEditing(false)
     }
-  };
+  }
 
   const handleChange = value => {
     isEditing
@@ -49,8 +49,8 @@ const CourseGoals = ({ control }) => {
           ...editingGoal,
           goal: value
         })
-      : setGoal(value);
-  };
+      : setGoal(value)
+  }
 
   return (
     <Card className="mb-3 mb-lg-0">
@@ -85,8 +85,8 @@ const CourseGoals = ({ control }) => {
                       variant="link"
                       type="button"
                       onClick={() => {
-                        setEditingGoal(item);
-                        setIsEditing(true);
+                        setEditingGoal(item)
+                        setIsEditing(true)
                       }}
                       className="d-flex align-items-center fs--1 text-700 p-0 me-3"
                     >
@@ -170,11 +170,11 @@ const CourseGoals = ({ control }) => {
         </Form.Group>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseGoals.propTypes = {
   control: PropTypes.object.isRequired
-};
+}
 
-export default CourseGoals;
+export default CourseGoals

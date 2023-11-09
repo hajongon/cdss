@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
 
 const Instructions = forwardRef((props, ref) => {
   return (
@@ -120,7 +120,7 @@ const Instructions = forwardRef((props, ref) => {
         <p>Last update: 04 Nov 2020</p>
       </Card.Body>
     </Card>
-  );
-});
+  )
+})
 
-export default Instructions;
+export default Instructions

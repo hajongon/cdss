@@ -1,15 +1,15 @@
-import chatImg1 from 'assets/img/chat/1.jpg';
-import chatImg2 from 'assets/img/chat/2.jpg';
-import chatImg3 from 'assets/img/chat/3.jpg';
-import chatImg4 from 'assets/img/chat/4.jpg';
-import chatImg5 from 'assets/img/chat/5.jpg';
-import chatImg6 from 'assets/img/chat/6.jpg';
-import chatImg7 from 'assets/img/chat/7.jpg';
-import chatImg8 from 'assets/img/chat/8.jpg';
-import chatImg9 from 'assets/img/chat/9.jpg';
-import chatImg10 from 'assets/img/chat/10.jpg';
-import chatImg11 from 'assets/img/chat/11.jpg';
-import chatImg12 from 'assets/img/chat/12.jpg';
+import chatImg1 from 'assets/img/chat/1.jpg'
+import chatImg2 from 'assets/img/chat/2.jpg'
+import chatImg3 from 'assets/img/chat/3.jpg'
+import chatImg4 from 'assets/img/chat/4.jpg'
+import chatImg5 from 'assets/img/chat/5.jpg'
+import chatImg6 from 'assets/img/chat/6.jpg'
+import chatImg7 from 'assets/img/chat/7.jpg'
+import chatImg8 from 'assets/img/chat/8.jpg'
+import chatImg9 from 'assets/img/chat/9.jpg'
+import chatImg10 from 'assets/img/chat/10.jpg'
+import chatImg11 from 'assets/img/chat/11.jpg'
+import chatImg12 from 'assets/img/chat/12.jpg'
 
 export default [
   {
@@ -478,4 +478,4 @@ export default [
     id: 10,
     content: []
   }
-];
+]

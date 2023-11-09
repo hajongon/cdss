@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { getColor, rgbaColor } from 'helpers/utils';
-import { chartJsDefaultTooltip, getBubbleDataset } from 'helpers/chartjs-utils';
-import React from 'react';
-import { Bubble } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { getColor, rgbaColor } from 'helpers/utils'
+import { chartJsDefaultTooltip, getBubbleDataset } from 'helpers/chartjs-utils'
+import React from 'react'
+import { Bubble } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -54,7 +54,7 @@ const chartCode = `function ChartOptions() {
     <Bubble data={data} options={options}  width={200}/>
   );
 
-}`;
+}`
 
 const ChartBubble = () => {
   return (
@@ -74,7 +74,7 @@ const ChartBubble = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartBubble;
+export default ChartBubble

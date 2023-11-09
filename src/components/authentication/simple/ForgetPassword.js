@@ -1,5 +1,5 @@
-import React from 'react';
-import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm';
+import React from 'react'
+import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm'
 
 const ForgetPassword = () => {
   return (
@@ -8,7 +8,7 @@ const ForgetPassword = () => {
       <small>Enter your email and we'll send you a reset link.</small>
       <ForgetPasswordForm />
     </div>
-  );
-};
+  )
+}
 
-export default ForgetPassword;
+export default ForgetPassword

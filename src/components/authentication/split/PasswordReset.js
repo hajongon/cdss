@@ -1,7 +1,7 @@
-import React from 'react';
-import PasswordResetForm from 'components/authentication/PasswordResetForm';
-import bgImg from 'assets/img/generic/20.jpg';
-import AuthSplitLayout from 'layouts/AuthSplitLayout';
+import React from 'react'
+import PasswordResetForm from 'components/authentication/PasswordResetForm'
+import bgImg from 'assets/img/generic/20.jpg'
+import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const PasswordReset = () => {
   return (
@@ -11,7 +11,7 @@ const PasswordReset = () => {
       </div>
       <PasswordResetForm layout="split" hasLabel />
     </AuthSplitLayout>
-  );
-};
+  )
+}
 
-export default PasswordReset;
+export default PasswordReset

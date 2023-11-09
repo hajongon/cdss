@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import RealTimeUsersChart from './RealTimeUsersChart';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import RealTimeUsersChart from './RealTimeUsersChart'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SingleItem = ({ page, count }) => {
   return (
@@ -17,16 +17,16 @@ const SingleItem = ({ page, count }) => {
         <p className="mb-0">{count}</p>
       </Flex>
     </div>
-  );
-};
+  )
+}
 
 SingleItem.propTypes = {
   page: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired
-};
+}
 
 const RealTimeUsers = ({ data }) => {
-  const [userCount, setUserCount] = useState(0);
+  const [userCount, setUserCount] = useState(0)
   return (
     <Card className="h-100 bg-line-chart-gradient">
       <Card.Header className="bg-transparent light">
@@ -76,11 +76,11 @@ const RealTimeUsers = ({ data }) => {
         />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 RealTimeUsers.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(SingleItem.PropTypes)).isRequired
-};
+}
 
-export default RealTimeUsers;
+export default RealTimeUsers

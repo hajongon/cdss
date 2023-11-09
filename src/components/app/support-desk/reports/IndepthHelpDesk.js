@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { inDepthItems } from 'data/support-desk/reportsData';
-import React from 'react';
-import { Card, Col, Form, Nav, ProgressBar, Row, Tab } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
-import PropTypes from 'prop-types';
-import FalconLink from 'components/common/FalconLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { inDepthItems } from 'data/support-desk/reportsData'
+import React from 'react'
+import { Card, Col, Form, Nav, ProgressBar, Row, Tab } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
+import PropTypes from 'prop-types'
+import FalconLink from 'components/common/FalconLink'
 
 const InDepthItem = ({ item, status }) => {
   return (
@@ -50,8 +50,8 @@ const InDepthItem = ({ item, status }) => {
         </p>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 InDepthItem.propTypes = {
   item: PropTypes.shape({
@@ -59,7 +59,7 @@ InDepthItem.propTypes = {
     progressbarWidth: PropTypes.array.isRequired
   }),
   status: PropTypes.string.isRequired
-};
+}
 
 const TabItem = ({ status }) => {
   return (
@@ -99,12 +99,12 @@ const TabItem = ({ status }) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 TabItem.propTypes = {
   status: PropTypes.string.isRequired
-};
+}
 
 const IndepthHelpDesk = () => {
   return (
@@ -193,7 +193,7 @@ const IndepthHelpDesk = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default IndepthHelpDesk;
+export default IndepthHelpDesk

@@ -1,7 +1,7 @@
-import { version } from 'config';
-import packageInfo from '../../package.json';
+import { version } from 'config'
+import packageInfo from '../../package.json'
 
-const { homepage } = packageInfo;
+const { homepage } = packageInfo
 
 export const faqs = [
   {
@@ -49,7 +49,7 @@ export const faqs = [
     title: `What is your refund policy?`,
     description: `We do not offer refunds apart from exceptions listed below. If you cancel your plan before the next renewal cycle, you will retain access to paid features until the end of your subscription period. When your subscription expires, you will lose access to paid features and all data associated with those features. Exceptions to our refund policy: canceling within 48 hours of initial charge will result in a full refund. If you cancel within this timeframe, you will lose access to paid features and associated data immediately upon canceling.`
   }
-];
+]
 
 export const faqAccordions = [
   {
@@ -76,7 +76,7 @@ export const faqAccordions = [
     description:
       '<p class = "mb-0">There are no additional fees for using our mobile SDKs or to accept payments using consumer wallets like Apple Pay or Google Pay.</p>'
   }
-];
+]
 
 export const faqDoc = [
   {
@@ -167,4 +167,4 @@ export const faqDoc = [
     So, it would be better to start building applications with the Bootstrap 5 version of Falcon from scratch. You can include any components from your existing project to your current project. Bring the component and its required SCSS and place it into your current project.
     </p>`
   }
-];
+]

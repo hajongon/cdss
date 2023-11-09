@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const checksExampleCode = `
 <>
@@ -25,7 +25,7 @@ const checksExampleCode = `
     disabled
   />
 </>
-`;
+`
 const radioExampleCode = `
 <>
   <Form.Check 
@@ -49,7 +49,7 @@ const radioExampleCode = `
     name='radio'
   />
 </>
-`;
+`
 const switchesCode = `
 <>
   <Form.Check 
@@ -77,7 +77,7 @@ const switchesCode = `
     disabled
   />
 </>
-`;
+`
 const inlineCheckboxCode = `
 <>
   <Form.Check
@@ -101,7 +101,7 @@ const inlineCheckboxCode = `
     disabled
   />
 </>
-`;
+`
 const inlineRadioCode = `
 <>
   <Form.Check
@@ -128,7 +128,7 @@ const inlineRadioCode = `
     name='inline-radio'
   />
 </>
-`;
+`
 
 const customRenderCode = `
 <>
@@ -142,7 +142,7 @@ const customRenderCode = `
     </div>
   ))}
 </>
-`;
+`
 
 const Checks = () => (
   <>
@@ -205,6 +205,6 @@ const Checks = () => (
       <FalconComponentCard.Body code={customRenderCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Checks;
+export default Checks

@@ -1,8 +1,8 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WebpackRTLPlugin = require('webpack-rtl-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WebpackRTLPlugin = require('webpack-rtl-plugin')
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries')
 
 module.exports = {
   mode: 'development',
@@ -61,4 +61,4 @@ module.exports = {
       }
     ]
   }
-};
+}

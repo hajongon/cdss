@@ -1,8 +1,8 @@
-import Events from 'components/pages/user/profile/Events';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import events from 'data/events/events';
+import Events from 'components/pages/user/profile/Events'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import events from 'data/events/events'
 
 const EventDetailAside = () => {
   return (
@@ -32,7 +32,7 @@ const EventDetailAside = () => {
       </Card>
       <Events cardTitle="Events you may like" events={events.slice(2, 5)} />
     </div>
-  );
-};
+  )
+}
 
-export default EventDetailAside;
+export default EventDetailAside

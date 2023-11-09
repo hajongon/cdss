@@ -1,11 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
-import img1 from 'assets/img/support-desk/reports/1.png';
-import img2 from 'assets/img/support-desk/reports/2.png';
-import img3 from 'assets/img/support-desk/reports/3.png';
-import img4 from 'assets/img/support-desk/reports/4.png';
-import img5 from 'assets/img/support-desk/reports/5.png';
-import img6 from 'assets/img/support-desk/reports/6.png';
-import img7 from 'assets/img/support-desk/reports/7.png';
+import img1 from 'assets/img/support-desk/reports/1.png'
+import img2 from 'assets/img/support-desk/reports/2.png'
+import img3 from 'assets/img/support-desk/reports/3.png'
+import img4 from 'assets/img/support-desk/reports/4.png'
+import img5 from 'assets/img/support-desk/reports/5.png'
+import img6 from 'assets/img/support-desk/reports/6.png'
+import img7 from 'assets/img/support-desk/reports/7.png'
 import {
   FiAlertCircle,
   FiBriefcase,
@@ -19,7 +19,7 @@ import {
   FiUser,
   FiUserCheck,
   FiUsers
-} from 'react-icons/fi';
+} from 'react-icons/fi'
 
 export const reports = {
   analysis: [
@@ -63,7 +63,7 @@ export const reports = {
       img: img7
     }
   ]
-};
+}
 
 export const team = [
   {
@@ -105,7 +105,7 @@ export const team = [
     title: 'Agent Changes',
     description: 'Create and manage agent schedules all in one spot.'
   }
-];
+]
 
 export const account = [
   {
@@ -148,4 +148,4 @@ export const account = [
     title: 'Configure the Helpdesk',
     description: 'Your Falcon Support Tickets will be personalized.'
   }
-];
+]

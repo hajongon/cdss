@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import SoftBadge from 'components/common/SoftBadge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CountUp from 'react-countup';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import SoftBadge from 'components/common/SoftBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CountUp from 'react-countup'
 
 const SaasRevenue = () => {
   return (
@@ -31,7 +31,7 @@ const SaasRevenue = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default SaasRevenue;
+export default SaasRevenue

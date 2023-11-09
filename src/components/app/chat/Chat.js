@@ -1,10 +1,10 @@
-import Flex from 'components/common/Flex';
-import { ChatContext } from 'context/Context';
-import React, { useContext, useState } from 'react';
-import { Card, Tab } from 'react-bootstrap';
-import ChatProvider from './ChatProvider';
-import ChatContent from './content/ChatContent';
-import ChatSidebar from './sidebar/ChatSidebar';
+import Flex from 'components/common/Flex'
+import { ChatContext } from 'context/Context'
+import React, { useContext, useState } from 'react'
+import { Card, Tab } from 'react-bootstrap'
+import ChatProvider from './ChatProvider'
+import ChatContent from './content/ChatContent'
+import ChatSidebar from './sidebar/ChatSidebar'
 
 const ChatTab = () => {
   const {
@@ -13,21 +13,21 @@ const ChatTab = () => {
     threads,
     setCurrentThread,
     setScrollToBottom
-  } = useContext(ChatContext);
-  const [hideSidebar, setHideSidebar] = useState(false);
+  } = useContext(ChatContext)
+  const [hideSidebar, setHideSidebar] = useState(false)
 
   const handleSelect = e => {
-    setHideSidebar(false);
-    setIsOpenThreadInfo(false);
-    const thread = threads.find(thread => thread.id === parseInt(e));
-    setCurrentThread(thread);
+    setHideSidebar(false)
+    setIsOpenThreadInfo(false)
+    const thread = threads.find(thread => thread.id === parseInt(e))
+    setCurrentThread(thread)
     threadsDispatch({
       type: 'EDIT',
       id: thread.id,
       payload: { ...thread, read: true }
-    });
-    setScrollToBottom(true);
-  };
+    })
+    setScrollToBottom(true)
+  }
 
   return (
     <Tab.Container
@@ -42,15 +42,15 @@ const ChatTab = () => {
         </Card.Body>
       </Card>
     </Tab.Container>
-  );
-};
+  )
+}
 
 const Chat = () => {
   return (
     <ChatProvider>
       <ChatTab />
     </ChatProvider>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat

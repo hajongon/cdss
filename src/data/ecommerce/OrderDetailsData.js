@@ -20,4 +20,4 @@ export const orderedProductsData = [
     quantity: 8,
     rate: 500.0
   }
-];
+]

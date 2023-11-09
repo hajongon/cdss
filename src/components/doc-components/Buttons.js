@@ -1,15 +1,15 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import IconButton from 'components/common/IconButton';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import ButtonGroup from './ButtonGroup';
-import FalconCloseButton from 'components/common/FalconCloseButton';
-import Flex from 'components/common/Flex';
-import FalconEditor from 'components/common/FalconEditor';
-import dracula from 'prism-react-renderer/themes/dracula';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import IconButton from 'components/common/IconButton'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import ButtonGroup from './ButtonGroup'
+import FalconCloseButton from 'components/common/FalconCloseButton'
+import Flex from 'components/common/Flex'
+import FalconEditor from 'components/common/FalconEditor'
+import dracula from 'prism-react-renderer/themes/dracula'
 
 const faconBtnsCode = `
 <>
@@ -20,7 +20,7 @@ const faconBtnsCode = `
   <Button variant='falcon-danger' className='me-2 mb-1'>Danger</Button>
   <Button variant='falcon-default' className='me-2 mb-1'>Default</Button>
 </>
-`;
+`
 const solidBtnsCode = `
 <>
   <Button variant='primary' className='me-2 mb-1'>Primary</Button>
@@ -33,7 +33,7 @@ const solidBtnsCode = `
   <Button variant='dark' className='me-2 mb-1'>Dark</Button>
   <Button variant='link' className='me-2 mb-1'>Link</Button>
 </>
-`;
+`
 const outlineBtnsCode = `
 <>
   <Button variant="outline-primary" className="mb-1">Primary</Button>{' '}
@@ -45,14 +45,14 @@ const outlineBtnsCode = `
   <Button variant="outline-light" className="mb-1">Light</Button>{' '}
   <Button variant="outline-dark" className="mb-1">Dark</Button>
 </>
-`;
+`
 const btnSizesCode = `
 <>
   <Button variant="secondary" size="sm">Small</Button>{' '}
   <Button variant="secondary">Regular</Button>{' '}
   <Button variant="secondary" size="lg">Large</Button>{' '}
 </>
-`;
+`
 const iconBtnCode = `
 <>
   <IconButton
@@ -82,7 +82,7 @@ const iconBtnCode = `
     Delete
   </IconButton>
 </>
-`;
+`
 
 const roundedBtnCode = `
 <>
@@ -120,7 +120,7 @@ const roundedBtnCode = `
     Capsule large
   </Button>
 </>
-`;
+`
 
 const blockBtnCode = `
 <div className="d-grid gap-2">
@@ -131,7 +131,7 @@ const blockBtnCode = `
     Block button
   </Button>
 </div>
-`;
+`
 
 const activeStateCode = `
 <>
@@ -142,7 +142,7 @@ const activeStateCode = `
     Button
   </Button>
 </>
-`;
+`
 const disableStateCode = `
 <>
   <Button variant="primary" className='me-2' disabled>
@@ -152,7 +152,7 @@ const disableStateCode = `
     Button
   </Button>
 </>
-`;
+`
 const loadingStateCode = `
 function LoadingButton() {
   const [isLoading, setLoading] = useState(false);
@@ -172,17 +172,17 @@ function LoadingButton() {
       {isLoading ? 'Loading…' : 'Click to load'}
     </Button>
   );
-}`;
+}`
 
 const closeBtnCode = `<>
   <CloseButton aria-label="Hide"/>
   <CloseButton disabled aria-label="Hide"/>
-</>`;
+</>`
 
 const closeBtnWhiteCode = `<div className="bg-1000 light p-3">
   <CloseButton variant="white" aria-label="Hide"/>
   <CloseButton variant="white" disabled aria-label="Hide"/>
-</div>`;
+</div>`
 
 const falconCloseBtnCode = `
 <>
@@ -198,7 +198,7 @@ const falconCloseBtnCode = `
     size='sm'
   />
 </>
-`;
+`
 
 const closeBtnPropTypesCode = `
   FalconCloseButton.propTypes = {
@@ -208,7 +208,7 @@ const closeBtnPropTypesCode = `
     onClick: PropTypes.func,
     className: PropTypes.string
   };
-`;
+`
 
 const iconBtnPropTypesCode = `
   IconButton.propTypes = {
@@ -218,7 +218,7 @@ const iconBtnPropTypesCode = `
     iconClassName: PropTypes.string,
     transform: PropTypes.string
   };
-`;
+`
 
 const Buttons = () => (
   <>
@@ -386,6 +386,6 @@ const Buttons = () => (
     </FalconComponentCard>
     <ButtonGroup />
   </>
-);
+)
 
-export default Buttons;
+export default Buttons

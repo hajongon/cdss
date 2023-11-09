@@ -1,17 +1,17 @@
-import React from 'react';
-import { Card, Col, Row, Spinner } from 'react-bootstrap';
-import PricingAltHeader from './PricingAltHeader';
-import { Link } from 'react-router-dom';
-import useFakeFetch from 'hooks/useFakeFetch';
-import PricingAltCard from './PricingAltCard';
-import FaqAlt from 'components/pages/faq/faq-alt/FaqAlt';
-import { pricingAltData as pricingData } from 'data/pricing';
+import React from 'react'
+import { Card, Col, Row, Spinner } from 'react-bootstrap'
+import PricingAltHeader from './PricingAltHeader'
+import { Link } from 'react-router-dom'
+import useFakeFetch from 'hooks/useFakeFetch'
+import PricingAltCard from './PricingAltCard'
+import FaqAlt from 'components/pages/faq/faq-alt/FaqAlt'
+import { pricingAltData as pricingData } from 'data/pricing'
 
 const PricingAlt = () => {
   const { loading: pricingLoading, data: pricing } = useFakeFetch(
     pricingData,
     1000
-  );
+  )
   return (
     <>
       <Card className="mb-3">
@@ -47,7 +47,7 @@ const PricingAlt = () => {
       </Card>
       <FaqAlt />
     </>
-  );
-};
+  )
+}
 
-export default PricingAlt;
+export default PricingAlt

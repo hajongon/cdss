@@ -1,18 +1,18 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import {
   statusData,
   unresolvedTickets,
   numbersOfTickets,
   tickets
-} from 'data/dashboard/support-desk';
-import Greetings from './Greetings';
-import TicketStatus from './TicketStatus';
-import UnresolvedTickets from './unresolved-tickets/UnresolvedTickets';
-import NumberOfTickets from './number-of-tickets/NumberOfTickets';
-import CustomerSatisfaction from './customer-satisfaction/CustomerSatisfaction';
-import ToDoList from './ToDoList';
-import UnsolvedTickets from './unsolved-tickets/UnsolvedTickets';
+} from 'data/dashboard/support-desk'
+import Greetings from './Greetings'
+import TicketStatus from './TicketStatus'
+import UnresolvedTickets from './unresolved-tickets/UnresolvedTickets'
+import NumberOfTickets from './number-of-tickets/NumberOfTickets'
+import CustomerSatisfaction from './customer-satisfaction/CustomerSatisfaction'
+import ToDoList from './ToDoList'
+import UnsolvedTickets from './unsolved-tickets/UnsolvedTickets'
 
 const SupportDesk = () => {
   return (
@@ -47,7 +47,7 @@ const SupportDesk = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default SupportDesk;
+export default SupportDesk

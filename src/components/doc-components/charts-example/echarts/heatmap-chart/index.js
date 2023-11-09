@@ -1,7 +1,7 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BasicHeatmapChart from './BasicHeatmapChart';
-import HeatmapSingleSeriesChart from './HeatmapSingleSeriesChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BasicHeatmapChart from './BasicHeatmapChart'
+import HeatmapSingleSeriesChart from './HeatmapSingleSeriesChart'
 
 const HeatmapCharts = () => {
   return (
@@ -13,7 +13,7 @@ const HeatmapCharts = () => {
         <HeatmapSingleSeriesChart />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default HeatmapCharts;
+export default HeatmapCharts

@@ -1,6 +1,6 @@
-import logoG from 'assets/img/logos/g.png';
-import logoApple from 'assets/img/logos/apple.png';
-import logoNike from 'assets/img/logos/nike.png';
+import logoG from 'assets/img/logos/g.png'
+import logoApple from 'assets/img/logos/apple.png'
+import logoNike from 'assets/img/logos/nike.png'
 
 export default [
   {
@@ -39,4 +39,4 @@ export default [
     verified: true,
     url: '#!'
   }
-];
+]

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
 
 const ChatContentBodyIntro = ({ user, isGroup }) => (
   <Flex
@@ -26,11 +26,11 @@ const ChatContentBodyIntro = ({ user, isGroup }) => (
       </p>
     </div>
   </Flex>
-);
+)
 
 ChatContentBodyIntro.propTypes = {
   isGroup: PropTypes.bool,
   user: PropTypes.object.isRequired
-};
+}
 
-export default ChatContentBodyIntro;
+export default ChatContentBodyIntro

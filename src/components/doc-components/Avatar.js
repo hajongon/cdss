@@ -1,47 +1,47 @@
-import React from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import { Row, Col, Card } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import FalconEditor from 'components/common/FalconEditor'
 
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import user1 from 'assets/img/team/1.jpg';
-import user2 from 'assets/img/team/2.jpg';
-import user3 from 'assets/img/team/3.jpg';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import user1 from 'assets/img/team/1.jpg'
+import user2 from 'assets/img/team/2.jpg'
+import user3 from 'assets/img/team/3.jpg'
 
 const circularCode = `<Avatar
   src={user1}
   rounded="circle" 
   size="4xl" 
-/>`;
+/>`
 
 const squareCode = `<Avatar
   src={user2} 
   rounded="0" 
   size="4xl"  
-/>`;
+/>`
 
 const softCode = `<Avatar
   src={user3}
   rounded="soft"
   size="4xl"  
-/>`;
+/>`
 
 const contentCode = `<Avatar
   size="4xl" 
   name="12+"
   isExact
-/>`;
+/>`
 
 const nameCode = `<Avatar
   size="4xl" 
   name="Emma Watson"
-/>`;
+/>`
 
 const emojiCode = `<Avatar
   size="4xl"
   emoji="🎁"
-/>`;
+/>`
 
 const statusCode = `<Row>
   <Col xs="auto">
@@ -56,7 +56,7 @@ const statusCode = `<Row>
   <Col xs="auto">
     <Avatar src={user1} className="status-do-not-disturb" size="4xl"  />
   </Col>
-</Row>`;
+</Row>`
 
 const sizesCode = `<Row className="align-items-center" >
   <Col xs="auto">
@@ -83,7 +83,7 @@ const sizesCode = `<Row className="align-items-center" >
   <Col xs="auto">
     <Avatar src={user1} size="s" />
   </Col>
-</Row>`;
+</Row>`
 
 const groupCode = `
 function AvatarGroupExample() {
@@ -94,7 +94,7 @@ function AvatarGroupExample() {
       <Avatar className="flex-shrink-0" name="Emma Watson" size={size} />
     </AvatarGroup>
   ));
-}`;
+}`
 const groupDenseCode = `
 function AvatarGroupExample() {
   return ['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl'].map(size => (
@@ -104,7 +104,7 @@ function AvatarGroupExample() {
       <Avatar className="flex-shrink-0" name="Emma Watson" size={size} />
     </AvatarGroup>
   ));
-}`;
+}`
 
 const properties = `
 Avatar.propTypes = {
@@ -120,7 +120,7 @@ Avatar.propTypes = {
 
 AvatarGroup.propTypes = {
   dense: PropTypes.bool // default: false
-}`;
+}`
 
 const Avatars = () => {
   return (
@@ -250,7 +250,7 @@ const Avatars = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Avatars;
+export default Avatars

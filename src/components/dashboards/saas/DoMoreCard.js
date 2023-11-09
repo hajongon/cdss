@@ -1,7 +1,7 @@
-import React from 'react';
-import { Alert, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import { Alert, Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
 
 const moreItems = [
   {
@@ -20,7 +20,7 @@ const moreItems = [
     label: 'Lifetime free updates',
     icon: 'check'
   }
-];
+]
 
 const DoMoreCard = ({ ...rest }) => {
   return (
@@ -62,7 +62,7 @@ const DoMoreCard = ({ ...rest }) => {
         </IconButton>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DoMoreCard;
+export default DoMoreCard

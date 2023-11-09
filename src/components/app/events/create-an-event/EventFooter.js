@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Col, Button, Row } from 'react-bootstrap';
+import React from 'react'
+import { Card, Col, Button, Row } from 'react-bootstrap'
 
 const EventFooter = () => {
   return (
@@ -25,7 +25,7 @@ const EventFooter = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EventFooter;
+export default EventFooter

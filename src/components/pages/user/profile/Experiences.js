@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import experiences from 'data/experiences';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Experience from '../Experience';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import experiences from 'data/experiences'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Experience from '../Experience'
 
 const Experiences = () => {
   return (
@@ -18,7 +18,7 @@ const Experiences = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Experiences;
+export default Experiences

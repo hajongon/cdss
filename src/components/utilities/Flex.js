@@ -1,15 +1,15 @@
-import React from 'react';
-import { Tab } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Tab } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Flex from 'components/common/Flex'
 
 const flexCode = `<>
   <Flex className="p-2 bg-200 mb-2">Flexbox container!</Flex>
   <Flex inline className="p-2 bg-200">
     Inline flexbox container!
   </Flex>
-</>`;
+</>`
 
 const flexDirectionRowCode = `<>
   <Flex direction='row' className="p-2 bg-200 mb-2">  
@@ -27,7 +27,7 @@ const flexDirectionRowCode = `<>
       Flex Item (<code>flex-direction:row-reverse</code> in <code>lg</code> screen )
     </div>
   </Flex>
-</>`;
+</>`
 
 const flexDirectionColumnCode = `<>
   <Flex direction='column' className="p-2 mb-2">  
@@ -45,7 +45,7 @@ const flexDirectionColumnCode = `<>
     <div className="p-2 bg-300 border border-400">Flex item 2 (<code>column-reverse</code> in <code>lg</code> screen )</div>
     <div className="p-2 bg-300 border border-400">Flex item 3 (<code>column-reverse</code> in <code>lg</code> screen )</div>
   </Flex>
-</>`;
+</>`
 
 const justifyCode = `<>
   <Flex justifyContent='start' className="bg-200 p-2 mb-2">  
@@ -66,7 +66,7 @@ const justifyCode = `<>
   <Flex justifyContent='lg-center' className="bg-200 p-2 mb-2">  
     <div className="p-2 bg-300 border border-400">Flex item (<code>justify-content:center</code> in <code>lg</code> screen)</div>
   </Flex>
-</>`;
+</>`
 
 const alignItemsCode = `<>
   <Flex alignItems='start' className="bg-200 mb-2" style={{height:'5rem'}}>  
@@ -87,7 +87,7 @@ const alignItemsCode = `<>
   <Flex alignItems='lg-center' className="bg-200 mb-2" style={{height:'5rem'}}>  
     <div className="p-2 bg-300 border border-400">Flex item (<code>align-items:center</code> in <code>lg</code> screen)</div>
   </Flex>
-</>`;
+</>`
 
 const alignSelfCode = `<>
   <Flex className="bg-200 mb-2" style={{height:'5rem'}}>  
@@ -115,7 +115,7 @@ const alignSelfCode = `<>
     <div className="border border-400 p-2 bg-300 align-self-stretch">Align self stretch</div>
     <div className="border border-400 p-2 bg-300">Flex Item</div>
   </Flex>
-</>`;
+</>`
 
 const fillCode = `<>
   <Flex className="bg-200">
@@ -123,7 +123,7 @@ const fillCode = `<>
     <div className="p-2 flex-fill bg-300 border border-400">Flex item</div>
     <div className="p-2 flex-fill bg-300 border border-400">Flex item</div>
   </Flex>
-</>`;
+</>`
 
 const growCode = `<>
   <Flex className="bg-200">
@@ -131,14 +131,14 @@ const growCode = `<>
     <div className="p-2 bg-300 border border-400">Flex item</div>
     <div className="p-2 bg-300 border border-400">Third flex item</div>
   </Flex>
-</>`;
+</>`
 
 const shrinkCode = `<>
   <Flex className="bg-200">
     <div className="p-2 w-100 bg-300 border border-400">Flex item</div>
     <div className="p-2 flex-shrink-1 bg-300 border border-400">Flex item</div>
   </Flex>
-</>`;
+</>`
 
 const wrapCode = `<>
   <Flex wrap='nowrap' className="mb-3 bg-200 border border-300 py-3" style={{width: '8rem'}}>
@@ -180,7 +180,7 @@ const wrapCode = `<>
     <div className="p-2 bg-300 border border-400">Flex item</div>
     <div className="p-2 bg-300 border border-400">Flex item</div>
   </Flex>
-</>`;
+</>`
 
 const orderCode = `<>
   <Flex className="bg-200 p-2 mb-2">  
@@ -188,7 +188,7 @@ const orderCode = `<>
     <div className="order-2 p-2 bg-300 border border-400">Second flex item</div>
     <div className="order-1 p-2 bg-300 border border-400">Third flex item</div>
   </Flex>
-</>`;
+</>`
 
 const alignContentCode = `<>
   <Flex alignContent='start' wrap='wrap' className="bg-200 mb-3" style={{ height: '300px' }}>
@@ -287,7 +287,7 @@ const alignContentCode = `<>
     <div className="p-2 bg-300 border border-400">Flex item</div>
     <div className="p-2 bg-300 border border-400">Flex item</div>
   </Flex>
-</>`;
+</>`
 
 const Flexs = () => (
   <>
@@ -500,6 +500,6 @@ const Flexs = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Flexs;
+export default Flexs

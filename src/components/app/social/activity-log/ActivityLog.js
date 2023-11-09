@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import activities from 'data/activities';
-import Notification from 'components/notification/Notification';
-import classNames from 'classnames';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import activities from 'data/activities'
+import Notification from 'components/notification/Notification'
+import classNames from 'classnames'
 
 const ActivityLog = () => {
   return (
@@ -23,7 +23,7 @@ const ActivityLog = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ActivityLog;
+export default ActivityLog

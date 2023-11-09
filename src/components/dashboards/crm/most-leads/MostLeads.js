@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import CardDropdown from 'components/common/CardDropdown';
-import Flex from 'components/common/Flex';
-import { Card, Col, Row } from 'react-bootstrap';
-import MostLeadsChart from './MostLeadsChart';
-import { leadsData } from 'data/dashboard/crm';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import classNames from 'classnames';
-import FalconCardHeader from 'components/common/FalconCardHeader';
+import React from 'react'
+import PropTypes from 'prop-types'
+import CardDropdown from 'components/common/CardDropdown'
+import Flex from 'components/common/Flex'
+import { Card, Col, Row } from 'react-bootstrap'
+import MostLeadsChart from './MostLeadsChart'
+import { leadsData } from 'data/dashboard/crm'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import classNames from 'classnames'
+import FalconCardHeader from 'components/common/FalconCardHeader'
 
 const LeadItem = ({ item, isLast }) => {
   return (
@@ -25,8 +25,8 @@ const LeadItem = ({ item, isLast }) => {
       <p className="fs--1 text-500 mb-0 fw-semi-bold">{item.target}</p>
       <h6 className="text-700 mb-0">{item.amount}%</h6>
     </Flex>
-  );
-};
+  )
+}
 
 const MostLeads = () => {
   return (
@@ -54,8 +54,8 @@ const MostLeads = () => {
       </Card.Body>
       <FalconCardFooterLink title="Primary" size="sm" to="#!" />
     </Card>
-  );
-};
+  )
+}
 
 LeadItem.propTypes = {
   item: PropTypes.shape({
@@ -66,6 +66,6 @@ LeadItem.propTypes = {
     amount: PropTypes.number.isRequired
   }),
   isLast: PropTypes.bool.isRequired
-};
+}
 
-export default MostLeads;
+export default MostLeads

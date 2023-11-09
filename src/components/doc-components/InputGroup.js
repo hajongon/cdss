@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <>
@@ -44,7 +44,7 @@ const exampleCode = `
     <FormControl as="textarea" aria-label="With textarea" />
   </InputGroup>
 </>
-`;
+`
 
 const sizingCode = `
 <>
@@ -64,7 +64,7 @@ const sizingCode = `
     <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
   </InputGroup>
 </>
-`;
+`
 
 const checkboxesCode = `
 <>
@@ -77,7 +77,7 @@ const checkboxesCode = `
     <FormControl aria-label="Text input with radio button" />
   </InputGroup>
 </>
-`;
+`
 
 const multipleInputCode = `
 <InputGroup>
@@ -85,7 +85,7 @@ const multipleInputCode = `
   <FormControl aria-label="First name" />
   <FormControl aria-label="Last name" />
 </InputGroup>
-`;
+`
 const multipleAddonsCode = `
 <>
   <InputGroup className="mb-3">
@@ -99,7 +99,7 @@ const multipleAddonsCode = `
     <InputGroup.Text>0.00</InputGroup.Text>
   </InputGroup>
 </>
-`;
+`
 const buttonAddOnsCode = `
 <>
   <InputGroup className="mb-3">
@@ -138,7 +138,7 @@ const buttonAddOnsCode = `
     <Button variant="outline-secondary">Button</Button>
   </InputGroup>
 </>
-`;
+`
 
 const buttonsWithDropdowsCode = `
 <>
@@ -201,7 +201,7 @@ const buttonsWithDropdowsCode = `
     </DropdownButton>
   </InputGroup>
 </>
-`;
+`
 
 const segmentedButtonsCode = `
 <>
@@ -236,7 +236,7 @@ const segmentedButtonsCode = `
     </SplitButton>
   </InputGroup>
 </>
-`;
+`
 
 const InputGroup = () => (
   <>
@@ -327,6 +327,6 @@ const InputGroup = () => (
       <FalconComponentCard.Body code={segmentedButtonsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default InputGroup;
+export default InputGroup

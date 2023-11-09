@@ -1,9 +1,9 @@
-import Flex from 'components/common/Flex';
-import { notes } from 'data/support-desk/contactDetailsData';
-import React from 'react';
-import { Col, Dropdown, Form, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Flex from 'components/common/Flex'
+import { notes } from 'data/support-desk/contactDetailsData'
+import React from 'react'
+import { Col, Dropdown, Form, Row } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AgentSelect = ({ agent, className, style }) => {
   return (
@@ -17,20 +17,20 @@ const AgentSelect = ({ agent, className, style }) => {
         <option key={item}>{item}</option>
       ))}
     </Form.Select>
-  );
-};
+  )
+}
 
 AgentSelect.propTypes = {
   agent: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object
-};
+}
 
 const Notes = () => {
   return (
     <Flex direction="column" className="gap-3">
       {notes.map((note, index) => {
-        const { title, description, date, time, agent } = note;
+        const { title, description, date, time, agent } = note
         return (
           <div
             key={index}
@@ -87,10 +87,10 @@ const Notes = () => {
               {description}
             </p>
           </div>
-        );
+        )
       })}
     </Flex>
-  );
-};
+  )
+}
 
-export default Notes;
+export default Notes

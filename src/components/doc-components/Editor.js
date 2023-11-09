@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import TinymceEditor from 'components/common/TinymceEditor';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import TinymceEditor from 'components/common/TinymceEditor'
+import FalconEditor from 'components/common/FalconEditor'
 
 const exampleCode = `function SingleSelectExample() {
   const [value, setValue] = useState(null);
@@ -14,7 +14,7 @@ const exampleCode = `function SingleSelectExample() {
       handleChange={newValue => setFormData(newValue)}
     />
   )
-}`;
+}`
 
 const Editor = () => (
   <>
@@ -74,6 +74,6 @@ const Editor = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Editor;
+export default Editor

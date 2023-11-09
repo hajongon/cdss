@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import SalesPosLocationTable from './SalesPosLocationTable';
-import SalesPosLocationChart from './SalesPosLocationChart';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import SalesPosLocationTable from './SalesPosLocationTable'
+import SalesPosLocationChart from './SalesPosLocationChart'
 
 const SalesPosLocation = ({ ...rest }) => {
   return (
@@ -20,7 +20,7 @@ const SalesPosLocation = ({ ...rest }) => {
         <SalesPosLocationChart />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default SalesPosLocation;
+export default SalesPosLocation

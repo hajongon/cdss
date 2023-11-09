@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import {
   Card,
   Col,
@@ -8,31 +8,31 @@ import {
   Tooltip,
   Button,
   InputGroup
-} from 'react-bootstrap';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import ProductList from './ProductList';
-import ProductGrid from './ProductGrid';
-import { ProductContext } from 'context/Context';
-import CartModal from '../cart/CartModal';
-import usePagination from 'hooks/usePagination';
-import Flex from 'components/common/Flex';
+} from 'react-bootstrap'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import ProductList from './ProductList'
+import ProductGrid from './ProductGrid'
+import { ProductContext } from 'context/Context'
+import CartModal from '../cart/CartModal'
+import usePagination from 'hooks/usePagination'
+import Flex from 'components/common/Flex'
 
 const Products = () => {
   const {
     productsState: { products },
     productsDispatch
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
-  const [sortBy, setSortBy] = useState('price');
-  const [isAsc, setIsAsc] = useState(true);
-  const [productPerPage, setProductPerPage] = useState(4);
+  const [sortBy, setSortBy] = useState('price')
+  const [isAsc, setIsAsc] = useState(true)
+  const [productPerPage, setProductPerPage] = useState(4)
 
-  const { productLayout } = useParams();
-  const layout = productLayout.split(/-/)[1];
-  const isList = layout === 'list';
-  const isGrid = layout === 'grid';
+  const { productLayout } = useParams()
+  const layout = productLayout.split(/-/)[1]
+  const isList = layout === 'list'
+  const isGrid = layout === 'grid'
 
   const {
     paginationState: {
@@ -50,7 +50,7 @@ const Products = () => {
     prevPage,
     goToPage,
     setItemsPerPage
-  } = usePagination(products, productPerPage);
+  } = usePagination(products, productPerPage)
 
   useEffect(() => {
     productsDispatch({
@@ -59,13 +59,13 @@ const Products = () => {
         sortBy,
         order: isAsc ? 'asc' : 'desc'
       }
-    });
-  }, [sortBy, isAsc]);
-  const navigate = useNavigate();
+    })
+  }, [sortBy, isAsc])
+  const navigate = useNavigate()
 
   useEffect(() => {
-    isList || isGrid || navigate('/errors/404');
-  }, []);
+    isList || isGrid || navigate('/errors/404')
+  }, [])
 
   return (
     <>
@@ -82,8 +82,8 @@ const Products = () => {
                 size="sm"
                 value={itemsPerPage}
                 onChange={({ target }) => {
-                  setItemsPerPage(target.value);
-                  setProductPerPage(target.value);
+                  setItemsPerPage(target.value)
+                  setProductPerPage(target.value)
                 }}
                 style={{ maxWidth: '4.875rem' }}
               >
@@ -247,7 +247,7 @@ const Products = () => {
       </Card>
       <CartModal />
     </>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

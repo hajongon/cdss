@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PageHeader from 'components/common/PageHeader';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import AppContext from 'context/Context';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React, { useContext } from 'react'
+import { Button, Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PageHeader from 'components/common/PageHeader'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import AppContext from 'context/Context'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const NavbarDoubleTop = () => {
   const {
     config: { navbarPosition },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <>
@@ -88,7 +88,7 @@ const NavbarDoubleTop = () => {
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default NavbarDoubleTop;
+export default NavbarDoubleTop

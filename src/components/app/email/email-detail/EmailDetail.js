@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import Flex from 'components/common/Flex';
-import { Card, Button, Row, Col } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import EmailDetailHeader from './EmailDetailHeader';
-import Avatar from 'components/common/Avatar';
-import team1 from 'assets/img/team/1.jpg';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import womensDay from 'assets/img/icons/spot-illustrations/international-women-s-day-2.png';
-import IconGroup from 'components/common/icon/IconGroup';
-import socialIcons from 'data/socialIcons';
+import React, { useState } from 'react'
+import Flex from 'components/common/Flex'
+import { Card, Button, Row, Col } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import EmailDetailHeader from './EmailDetailHeader'
+import Avatar from 'components/common/Avatar'
+import team1 from 'assets/img/team/1.jpg'
+import { Link } from 'react-router-dom'
+import classNames from 'classnames'
+import womensDay from 'assets/img/icons/spot-illustrations/international-women-s-day-2.png'
+import IconGroup from 'components/common/icon/IconGroup'
+import socialIcons from 'data/socialIcons'
 
 const EmailDetail = () => {
-  const [marked, setMarked] = useState(true);
+  const [marked, setMarked] = useState(true)
   const [emailDetails] = useState({
     sender: {
       name: 'Emma Watson',
@@ -22,7 +22,7 @@ const EmailDetail = () => {
       email: 'emma@watson.com'
     },
     subject: 'Women work wonders… on your marketing skills'
-  });
+  })
   return (
     <>
       <EmailDetailHeader />
@@ -159,7 +159,7 @@ const EmailDetail = () => {
         </Card.Footer>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default EmailDetail;
+export default EmailDetail

@@ -1,25 +1,25 @@
-import React, { useContext } from 'react';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import AppContext from 'context/Context'
 
 const renderTooltip = props => (
   <Tooltip style={{ position: 'fixed' }} id="button-tooltip" {...props}>
     Toggle Navigation
   </Tooltip>
-);
+)
 
 const ToggleButton = () => {
   const {
     config: { isNavbarVerticalCollapsed, isFluid, isRTL },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleClick = () => {
     document
       .getElementsByTagName('html')[0]
-      .classList.toggle('navbar-vertical-collapsed');
-    setConfig('isNavbarVerticalCollapsed', !isNavbarVerticalCollapsed);
-  };
+      .classList.toggle('navbar-vertical-collapsed')
+    setConfig('isNavbarVerticalCollapsed', !isNavbarVerticalCollapsed)
+  }
 
   return (
     <OverlayTrigger
@@ -41,7 +41,7 @@ const ToggleButton = () => {
         </Button>
       </div>
     </OverlayTrigger>
-  );
-};
+  )
+}
 
-export default ToggleButton;
+export default ToggleButton

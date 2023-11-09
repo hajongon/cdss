@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useProductHook from '../product/useProductHook';
-import { ProductContext } from 'context/Context';
-import QuantityController from '../QuantityController';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import useProductHook from '../product/useProductHook'
+import { ProductContext } from 'context/Context'
+import QuantityController from '../QuantityController'
 
 const CartItem = ({ product }) => {
-  const { id, files, name, quantity, totalPrice } = product;
+  const { id, files, name, quantity, totalPrice } = product
 
-  const { handleAddToCart } = useProductHook(product);
+  const { handleAddToCart } = useProductHook(product)
 
-  const { productsDispatch } = useContext(ProductContext);
+  const { productsDispatch } = useContext(ProductContext)
 
   const handleRemove = () => {
     productsDispatch({
@@ -19,22 +19,22 @@ const CartItem = ({ product }) => {
       payload: {
         product
       }
-    });
-  };
+    })
+  }
 
   const handleIncrease = () => {
-    handleAddToCart(parseInt(quantity + 1));
-  };
+    handleAddToCart(parseInt(quantity + 1))
+  }
 
   const handleDecrease = () => {
     if (quantity > 1) {
-      handleAddToCart(parseInt(quantity - 1));
+      handleAddToCart(parseInt(quantity - 1))
     }
-  };
+  }
 
   const handleChange = e => {
-    handleAddToCart(parseInt(e.target.value < 1 ? 1 : e.target.value));
-  };
+    handleAddToCart(parseInt(e.target.value < 1 ? 1 : e.target.value))
+  }
 
   return (
     <Row className="gx-card mx-0 align-items-center border-bottom border-200">
@@ -97,8 +97,8 @@ const CartItem = ({ product }) => {
         </Row>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 CartItem.propTypes = {
   product: PropTypes.shape({
@@ -108,6 +108,6 @@ CartItem.propTypes = {
     quantity: PropTypes.number.isRequired,
     totalPrice: PropTypes.number.isRequired
   })
-};
+}
 
-export default CartItem;
+export default CartItem

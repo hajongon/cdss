@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { Card, Col, Nav, Offcanvas, Row, Tab } from 'react-bootstrap';
-import ContactDetailsHeader from './ContactDetailsHeader';
-import SimpleBar from 'simplebar-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Timeline from './Timeline';
-import Tickets from './Tickets';
-import Notes from './Notes';
-import ContactProfile from './ContactProfile';
-import { useBreakpoints } from 'hooks/useBreakpoints';
-import ToDoList from './ToDoList';
-import IconButton from 'components/common/IconButton';
+import React, { useState } from 'react'
+import { Card, Col, Nav, Offcanvas, Row, Tab } from 'react-bootstrap'
+import ContactDetailsHeader from './ContactDetailsHeader'
+import SimpleBar from 'simplebar-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Timeline from './Timeline'
+import Tickets from './Tickets'
+import Notes from './Notes'
+import ContactProfile from './ContactProfile'
+import { useBreakpoints } from 'hooks/useBreakpoints'
+import ToDoList from './ToDoList'
+import IconButton from 'components/common/IconButton'
 
 const ContactDetails = () => {
-  const [show, setShow] = useState(false);
-  const { breakpoints } = useBreakpoints();
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false)
+  const { breakpoints } = useBreakpoints()
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <>
       <ContactDetailsHeader handleShow={handleShow} />
@@ -112,7 +112,7 @@ const ContactDetails = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ContactDetails;
+export default ContactDetails

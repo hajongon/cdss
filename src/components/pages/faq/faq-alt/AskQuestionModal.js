@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Modal } from 'react-bootstrap';
-import FalconCloseButton from 'components/common/FalconCloseButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Form, Modal } from 'react-bootstrap'
+import FalconCloseButton from 'components/common/FalconCloseButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AskQuestionModal = ({ show, handleClose }) => (
   <Modal show={show} onHide={handleClose} contentClassName="border-0">
@@ -39,11 +39,11 @@ const AskQuestionModal = ({ show, handleClose }) => (
       </Form>
     </Modal.Body>
   </Modal>
-);
+)
 
 AskQuestionModal.propTypes = {
   show: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired
-};
+}
 
-export default AskQuestionModal;
+export default AskQuestionModal

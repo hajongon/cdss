@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
-import { Button, Col, Form, Row } from 'react-bootstrap';
-import classNames from 'classnames';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
+import { Button, Col, Form, Row } from 'react-bootstrap'
+import classNames from 'classnames'
 
 const LockScreenForm = ({ type, ...rest }) => {
   // State
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('')
 
   // Handler
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     // setRedirect(true);
     toast.success(`Logged in as Emma Watson`, {
       theme: 'colored'
-    });
-  };
+    })
+  }
 
   return (
     <Row
@@ -46,11 +46,11 @@ const LockScreenForm = ({ type, ...rest }) => {
         </Button>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 LockScreenForm.propTypes = {
   type: PropTypes.oneOf(['simple', 'split', 'card'])
-};
+}
 
-export default LockScreenForm;
+export default LockScreenForm

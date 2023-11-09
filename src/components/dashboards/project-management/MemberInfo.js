@@ -1,17 +1,17 @@
-import classNames from 'classnames';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import React from 'react';
-import { Card, Col, Form, Row, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import SoftBadge from 'components/common/SoftBadge';
-import PropTypes from 'prop-types';
-import BasicECharts from 'components/common/BasicEChart';
+import classNames from 'classnames'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import React from 'react'
+import { Card, Col, Form, Row, Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import SoftBadge from 'components/common/SoftBadge'
+import PropTypes from 'prop-types'
+import BasicECharts from 'components/common/BasicEChart'
 
-import * as echarts from 'echarts/core';
-import { getColor } from 'helpers/utils';
-import FalconLink from 'components/common/FalconLink';
-import SimpleBarReact from 'simplebar-react';
+import * as echarts from 'echarts/core'
+import { getColor } from 'helpers/utils'
+import FalconLink from 'components/common/FalconLink'
+import SimpleBarReact from 'simplebar-react'
 
 const MembersRow = ({
   name,
@@ -83,8 +83,8 @@ const MembersRow = ({
         </Row>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 const MemberInfo = ({ data }) => {
   return (
@@ -131,8 +131,8 @@ const MemberInfo = ({ data }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 MembersRow.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -156,10 +156,10 @@ MembersRow.propTypes = {
     time: PropTypes.string.isRequired
   }),
   data: PropTypes.array.isRequired
-};
+}
 
 MemberInfo.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default MemberInfo;
+export default MemberInfo

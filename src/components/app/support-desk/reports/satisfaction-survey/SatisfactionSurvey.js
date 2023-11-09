@@ -1,10 +1,10 @@
-import React from 'react';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import SimpleBarReact from 'simplebar-react';
-import { Card } from 'react-bootstrap';
-import SatisfactionSurveyChart from './SatisfactionSurveyChart';
-import FalconLink from 'components/common/FalconLink';
+import React from 'react'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import SimpleBarReact from 'simplebar-react'
+import { Card } from 'react-bootstrap'
+import SatisfactionSurveyChart from './SatisfactionSurveyChart'
+import FalconLink from 'components/common/FalconLink'
 
 const SatisfactionSurvey = () => {
   return (
@@ -24,7 +24,7 @@ const SatisfactionSurvey = () => {
         <FalconLink title="View all" className="px-0 fw-medium" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default SatisfactionSurvey;
+export default SatisfactionSurvey

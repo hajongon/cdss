@@ -1,11 +1,11 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import DoughnutChart from './DoughnutChart';
-import DoughnutRoundedChart from './DoughnutRoundedChart';
-import PieBasicChart from './PieBasicChart';
-import PieEdgeAlignChart from './PieEdgeAlignChart';
-import PieLabelAlignChart from './PieLabelAlignChart';
-import PieMultipleChart from './PieMultipleChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import DoughnutChart from './DoughnutChart'
+import DoughnutRoundedChart from './DoughnutRoundedChart'
+import PieBasicChart from './PieBasicChart'
+import PieEdgeAlignChart from './PieEdgeAlignChart'
+import PieLabelAlignChart from './PieLabelAlignChart'
+import PieMultipleChart from './PieMultipleChart'
 
 const PieCharts = () => {
   return (
@@ -29,7 +29,7 @@ const PieCharts = () => {
         <PieEdgeAlignChart />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default PieCharts;
+export default PieCharts

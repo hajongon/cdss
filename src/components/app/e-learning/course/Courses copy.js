@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import {
   Button,
   Card,
@@ -8,34 +8,34 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { useNavigate, useParams } from 'react-router-dom';
-import classNames from 'classnames';
-import AppContext, { CourseContext } from 'context/Context';
-import usePagination from 'hooks/usePagination';
-import CourseGrid from './CourseGrid';
-import CourseList from './CourseList';
-import CourseHeader from './CourseHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import CourseFilters from './CourseFilters';
-import { useBreakpoints } from 'hooks/useBreakpoints';
+} from 'react-bootstrap'
+import { useNavigate, useParams } from 'react-router-dom'
+import classNames from 'classnames'
+import AppContext, { CourseContext } from 'context/Context'
+import usePagination from 'hooks/usePagination'
+import CourseGrid from './CourseGrid'
+import CourseList from './CourseList'
+import CourseHeader from './CourseHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import CourseFilters from './CourseFilters'
+import { useBreakpoints } from 'hooks/useBreakpoints'
 
 const Courses = () => {
-  const [showFilterOffcanvas, setShowFilterOffcanvas] = useState(false);
-  const [coursePerPage, setCoursePerPage] = useState(6);
-  const navigate = useNavigate();
-  const { breakpoints } = useBreakpoints();
-  const { courseLayout } = useParams();
+  const [showFilterOffcanvas, setShowFilterOffcanvas] = useState(false)
+  const [coursePerPage, setCoursePerPage] = useState(6)
+  const navigate = useNavigate()
+  const { breakpoints } = useBreakpoints()
+  const { courseLayout } = useParams()
   const {
     coursesState: { courses }
-  } = useContext(CourseContext);
+  } = useContext(CourseContext)
 
   const {
     config: { isNavbarVerticalCollapsed },
     setConfig
-  } = useContext(AppContext);
-  const coursesNavbarVerticalCollapsed = useRef(isNavbarVerticalCollapsed);
+  } = useContext(AppContext)
+  const coursesNavbarVerticalCollapsed = useRef(isNavbarVerticalCollapsed)
 
   const {
     paginationState: {
@@ -51,26 +51,26 @@ const Courses = () => {
     prevPage,
     goToPage,
     setItemsPerPage
-  } = usePagination(courses, coursePerPage);
+  } = usePagination(courses, coursePerPage)
 
-  const layout = courseLayout.split(/-/)[1];
-  const isList = layout === 'list';
-  const isGrid = layout === 'grid';
-
-  useEffect(() => {
-    isList || isGrid || navigate('/errors/404');
-  }, []);
+  const layout = courseLayout.split(/-/)[1]
+  const isList = layout === 'list'
+  const isGrid = layout === 'grid'
 
   useEffect(() => {
-    setConfig('isNavbarVerticalCollapsed', true);
+    isList || isGrid || navigate('/errors/404')
+  }, [])
+
+  useEffect(() => {
+    setConfig('isNavbarVerticalCollapsed', true)
 
     return () => {
       setConfig(
         'isNavbarVerticalCollapsed',
         coursesNavbarVerticalCollapsed.current
-      );
-    };
-  }, []);
+      )
+    }
+  }, [])
 
   return (
     <>
@@ -128,8 +128,8 @@ const Courses = () => {
                       size="sm"
                       value={itemsPerPage}
                       onChange={({ target }) => {
-                        setItemsPerPage(target.value);
-                        setCoursePerPage(target.value);
+                        setItemsPerPage(target.value)
+                        setCoursePerPage(target.value)
                       }}
                       style={{ maxWidth: '4.875rem' }}
                     >
@@ -221,7 +221,7 @@ const Courses = () => {
         </Offcanvas>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Courses;
+export default Courses

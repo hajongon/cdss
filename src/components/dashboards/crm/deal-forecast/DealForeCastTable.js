@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SimpleBarReact from 'simplebar-react';
-import { Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import SimpleBarReact from 'simplebar-react'
+import { Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import classNames from 'classnames'
 
 const getTotal = (data, key) =>
-  data.reduce((acc, val) => acc + Number(val[key]), 0);
+  data.reduce((acc, val) => acc + Number(val[key]), 0)
 
 const DealForeCastTableRow = ({ item, isLast }) => {
   return (
@@ -50,8 +50,8 @@ const DealForeCastTableRow = ({ item, isLast }) => {
         {item.closedWon}
       </td>
     </tr>
-  );
-};
+  )
+}
 const DealForeCastTable = ({ data }) => {
   return (
     <SimpleBarReact>
@@ -85,8 +85,8 @@ const DealForeCastTable = ({ data }) => {
         </tfoot>
       </Table>
     </SimpleBarReact>
-  );
-};
+  )
+}
 
 DealForeCastTableRow.propTypes = {
   item: PropTypes.shape({
@@ -98,10 +98,10 @@ DealForeCastTableRow.propTypes = {
     contactSent: PropTypes.number.isRequired
   }),
   isLast: PropTypes.bool.isRequired
-};
+}
 
 DealForeCastTable.propTypes = {
   data: PropTypes.arrayOf(DealForeCastTableRow.propTypes.item)
-};
+}
 
-export default DealForeCastTable;
+export default DealForeCastTable

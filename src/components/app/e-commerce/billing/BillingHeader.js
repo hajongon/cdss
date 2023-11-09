@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import AppContext from 'context/Context'
 
 const BillingHeader = ({ ...rest }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <PageHeader
@@ -73,7 +73,7 @@ const BillingHeader = ({ ...rest }) => {
         </Dropdown.Menu>
       </Dropdown>
     </PageHeader>
-  );
-};
+  )
+}
 
-export default BillingHeader;
+export default BillingHeader

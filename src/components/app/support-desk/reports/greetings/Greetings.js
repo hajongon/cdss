@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import greetingsImg from 'assets/img/illustrations/reports-greeting.png';
-import GreetingsDate from './GreetingDate';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import greetingsImg from 'assets/img/illustrations/reports-greeting.png'
+import GreetingsDate from './GreetingDate'
 
 const Greetings = () => {
   return (
@@ -31,7 +31,7 @@ const Greetings = () => {
         </Row>
       </Card.Header>
     </Card>
-  );
-};
+  )
+}
 
-export default Greetings;
+export default Greetings

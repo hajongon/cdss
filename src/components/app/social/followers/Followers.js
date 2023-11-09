@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import people from 'data/people';
-import Follower from './Follower';
+import React, { useState } from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import people from 'data/people'
+import Follower from './Follower'
 
 const Followers = () => {
   const [options] = useState([
@@ -16,8 +16,8 @@ const Followers = () => {
     'Clubcem',
     'Brain Trust',
     'Other'
-  ]);
-  const [followers] = useState(people.slice(0, 24));
+  ])
+  const [followers] = useState(people.slice(0, 24))
   return (
     <Card>
       <Card.Header className="bg-light">
@@ -52,7 +52,7 @@ const Followers = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Followers;
+export default Followers

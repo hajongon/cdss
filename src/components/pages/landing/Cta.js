@@ -1,7 +1,7 @@
-import React from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
-import bg2 from 'assets/img/generic/bg-2.jpg';
-import Section from 'components/common/Section';
+import React from 'react'
+import { Row, Col, Button } from 'react-bootstrap'
+import bg2 from 'assets/img/generic/bg-2.jpg'
+import Section from 'components/common/Section'
 
 const Cta = () => (
   <Section overlay image={bg2} position="center top" className="light bg-dark">
@@ -21,6 +21,6 @@ const Cta = () => (
       </Col>
     </Row>
   </Section>
-);
+)
 
-export default Cta;
+export default Cta

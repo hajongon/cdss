@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import AppContext from 'context/Context';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import AppContext from 'context/Context'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
 
 const lightCode = `<Card bg='100' className="light">
   <Card.Body>
@@ -12,7 +12,7 @@ const lightCode = `<Card bg='100' className="light">
       <b>This element will retain it's color if you switch between light and dark mode.</b>
     </p>
   </Card.Body>
-</Card>`;
+</Card>`
 
 const darkCode = `<Card bg='100' className="dark">
   <Card.Body>
@@ -20,7 +20,7 @@ const darkCode = `<Card bg='100' className="dark">
       <b>This element will retain it's color if you switch between light and dark mode.</b>
     </p>
   </Card.Body>
-</Card>`;
+</Card>`
 
 const dark__Code = `<Card bg='light' className="dark__bg-primary">
   <Card.Body>
@@ -30,7 +30,7 @@ const dark__Code = `<Card bg='light' className="dark__bg-primary">
       </span>
     </p>
   </Card.Body>
-</Card>`;
+</Card>`
 
 const darkModeExampleCode = `function DarkModeExample(){
   const {
@@ -103,7 +103,7 @@ const darkModeExampleCode = `function DarkModeExample(){
       </Col>
     </Row>
   );
-};`;
+};`
 
 const DarkMode = () => (
   <>
@@ -216,6 +216,6 @@ const DarkMode = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default DarkMode;
+export default DarkMode

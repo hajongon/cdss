@@ -1,27 +1,27 @@
-import React from 'react';
-import { Button, Tab } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Tab } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const containerCode = `<Container>
   <Row className="p-2 bg-300 border border-400">
     <Col>1 of 1</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const fluidCode = `<Container fluid>
   <Row className="p-2 bg-300 border border-400">
     <Col>1 of 1</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const fluidBreakpointsCode = `<Container fluid='md'>
   <Row className="p-2 bg-300 border border-400">
     <Col>1 of 1</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const responsiveGridsCode = `<Container>
   <Row className="p-2 mb-2">
@@ -33,7 +33,7 @@ const responsiveGridsCode = `<Container>
     <Col sm className="p-2 bg-300 border border-400">sm=true</Col>
     <Col sm className="p-2 bg-300 border border-400">sm=true</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const columnWidthCode = `<Container>
   <Row className="p-2 mb-1">
@@ -65,7 +65,7 @@ const columnWidthCode = `<Container>
     <Col xs={5} className="p-2 bg-300 border border-400">2 of 3 (wider)</Col>
     <Col className="p-2 bg-300 border border-400">3 of 3</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const responsiveGridsMixCode = `<Container>
   {/* Stack the columns on mobile by making one full-width and the other half-width */}
@@ -96,7 +96,7 @@ const responsiveGridsMixCode = `<Container>
     <Col xs={6} className="p-2 bg-300 border border-400">xs=6</Col>
     <Col xs={6} className="p-2 bg-300 border border-400">xs=6</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const orderCode = `<Container>
   <Row className="p-2">
@@ -104,7 +104,7 @@ const orderCode = `<Container>
     <Col xs={{ order: 12 }} className="p-2 bg-300 border border-400">Second, but last</Col>
     <Col xs={{ order: 1 }} className="p-2 bg-300 border border-400">Third, but second</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const offsetCode = `<Container>
   <Row className="p-2">
@@ -118,7 +118,7 @@ const offsetCode = `<Container>
   <Row className="p-2">
     <Col md={{ span: 6, offset: 3 }} className="p-2 bg-300 border border-400">{"md={{ span: 6, offset: 3 }}"}</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const columnWidthInRowCode = `<Container>
   <Row xs={2} md={4} lg={6} className="p-2">
@@ -135,7 +135,7 @@ const columnWidthInRowCode = `<Container>
     <Col className="p-2 bg-300 border border-400">2 of 3</Col>
     <Col className="p-2 bg-300 border border-400">3 of 3</Col>
   </Row>
-</Container>`;
+</Container>`
 
 const widthAutoCode = `<Container>
   <Row className="justify-content-md-center mb-2">
@@ -154,7 +154,7 @@ const widthAutoCode = `<Container>
       3 of 3
     </Col>
   </Row>
-</Container>`;
+</Container>`
 
 const Grid = () => (
   <>
@@ -290,6 +290,6 @@ const Grid = () => (
       <FalconComponentCard.Body code={columnWidthInRowCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Grid;
+export default Grid

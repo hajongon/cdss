@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import EventScheduleItem from './EventScheduleItem';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import EventScheduleItem from './EventScheduleItem'
 
 const EventSchedule = ({ register, setValue }) => {
   const [items, setItems] = useState([
@@ -13,7 +13,7 @@ const EventSchedule = ({ register, setValue }) => {
       endDate: null,
       endTime: null
     }
-  ]);
+  ])
   const handleAddSchedule = () => {
     setItems([
       ...items,
@@ -24,20 +24,16 @@ const EventSchedule = ({ register, setValue }) => {
         endDate: null,
         endTime: null
       }
-    ]);
-  };
+    ])
+  }
   const handleRemoveItem = index => {
-    setItems(items.filter((item, ind) => index !== ind));
-  };
+    setItems(items.filter((item, ind) => index !== ind))
+  }
   const handleChange = (id, name, value) => {
-    const newItems = [...items];
-    const updatedItem = { ...newItems[id], [name]: value };
-    setItems([
-      ...newItems.slice(0, id),
-      updatedItem,
-      ...newItems.slice(id + 1)
-    ]);
-  };
+    const newItems = [...items]
+    const updatedItem = { ...newItems[id], [name]: value }
+    setItems([...newItems.slice(0, id), updatedItem, ...newItems.slice(id + 1)])
+  }
 
   return (
     <Card className="mb-3">
@@ -66,12 +62,12 @@ const EventSchedule = ({ register, setValue }) => {
         </IconButton>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 EventSchedule.propTypes = {
   register: PropTypes.func,
   setValue: PropTypes.func
-};
+}
 
-export default EventSchedule;
+export default EventSchedule

@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
-import classNames from 'classnames';
-import { Badge, Card, Col, Form, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NumberOfTicketsChart from './NumberOfTicketsChart';
+import React, { useRef } from 'react'
+import classNames from 'classnames'
+import { Badge, Card, Col, Form, Row } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NumberOfTicketsChart from './NumberOfTicketsChart'
 
 const FormCheck = ({ title, id, inputClass, checkBoxClass, handleLegend }) => {
   return (
@@ -27,8 +27,8 @@ const FormCheck = ({ title, id, inputClass, checkBoxClass, handleLegend }) => {
         {title}
       </Form.Check.Label>
     </Form.Check>
-  );
-};
+  )
+}
 
 FormCheck.propTypes = {
   title: PropTypes.string.isRequired,
@@ -36,7 +36,7 @@ FormCheck.propTypes = {
   inputClass: PropTypes.string,
   checkBoxClass: PropTypes.string,
   handleLegend: PropTypes.func
-};
+}
 
 const TicketsCategory = ({ title, number, percentage, icon, badgeColor }) => {
   return (
@@ -50,8 +50,8 @@ const TicketsCategory = ({ title, number, percentage, icon, badgeColor }) => {
       </h6>
       <h6 className="fs--2 text-600 mb-0 text-nowrap">{title}</h6>
     </div>
-  );
-};
+  )
+}
 
 TicketsCategory.propTypes = {
   title: PropTypes.string.isRequired,
@@ -59,16 +59,16 @@ TicketsCategory.propTypes = {
   percentage: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   badgeColor: PropTypes.string
-};
+}
 
 const NumberOfTickets = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   const handleLegend = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: name
-    });
-  };
+    })
+  }
   return (
     <Card className="h-100">
       <Card.Header className="d-md-flex justify-content-between border-bottom border-200 py-3 py-md-2">
@@ -184,11 +184,11 @@ const NumberOfTickets = ({ data }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 NumberOfTickets.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array).isRequired
-};
+}
 
-export default NumberOfTickets;
+export default NumberOfTickets

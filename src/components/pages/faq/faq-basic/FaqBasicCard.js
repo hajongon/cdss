@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
-import FaqBasicItem from './FaqBasicItem';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card } from 'react-bootstrap'
+import FaqBasicItem from './FaqBasicItem'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
 
 const FaqBasicCard = ({ faqs, header, headerText, bodyClass }) => {
   return (
@@ -37,14 +37,14 @@ const FaqBasicCard = ({ faqs, header, headerText, bodyClass }) => {
         </Flex>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 FaqBasicCard.propTypes = {
   faqs: PropTypes.array.isRequired,
   header: PropTypes.bool,
   headerText: PropTypes.string,
   bodyClass: PropTypes.string
-};
+}
 
-export default FaqBasicCard;
+export default FaqBasicCard

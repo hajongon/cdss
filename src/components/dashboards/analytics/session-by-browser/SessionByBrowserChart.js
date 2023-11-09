@@ -1,15 +1,15 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { PieChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { PieChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -18,13 +18,13 @@ echarts.use([
   PieChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const data = [
   { value: 50.3, name: 'Chrome' },
   { value: 20.6, name: 'Safari' },
   { value: 30.1, name: 'Mozilla' }
-];
+]
 
 const getOptions = () => ({
   color: [getColor('primary'), getColor('success'), getColor('info')],
@@ -59,7 +59,7 @@ const getOptions = () => ({
       data
     }
   ]
-});
+})
 
 const SessionByBrowserChart = () => {
   return (
@@ -68,7 +68,7 @@ const SessionByBrowserChart = () => {
       option={getOptions()}
       style={{ height: 200 }}
     />
-  );
-};
+  )
+}
 
-export default SessionByBrowserChart;
+export default SessionByBrowserChart

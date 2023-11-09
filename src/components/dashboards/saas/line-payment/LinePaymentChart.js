@@ -1,17 +1,17 @@
-import AppContext from 'context/Context';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import AppContext from 'context/Context'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef, useContext } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef, useContext } from 'react'
 
-echarts.use([LineChart, TooltipComponent, GridComponent, LegendComponent]);
+echarts.use([LineChart, TooltipComponent, GridComponent, LegendComponent])
 
 const getOption = (data, paymentStatus, isDark) => ({
   tooltip: {
@@ -135,12 +135,12 @@ const getOption = (data, paymentStatus, isDark) => ({
     }
   ],
   grid: { right: 15, left: 15, bottom: '15%', top: 0 }
-});
+})
 
 const LinePaymentChart = forwardRef(({ data, paymentStatus, style }, ref) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <ReactEChartsCore
@@ -149,8 +149,8 @@ const LinePaymentChart = forwardRef(({ data, paymentStatus, style }, ref) => {
       option={getOption(data, paymentStatus, isDark)}
       style={style}
     />
-  );
-});
+  )
+})
 
 LinePaymentChart.propTypes = {
   data: PropTypes.shape({
@@ -160,6 +160,6 @@ LinePaymentChart.propTypes = {
   }).isRequired,
   paymentStatus: PropTypes.oneOf(['all', 'successful', 'failed']).isRequired,
   style: PropTypes.object
-};
+}
 
-export default LinePaymentChart;
+export default LinePaymentChart

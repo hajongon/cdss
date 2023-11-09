@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card, Col, ProgressBar, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Card, Col, ProgressBar, Row } from 'react-bootstrap'
 
 const StorageStatus = ({ data, className }) => {
   const totalStorage = data
     .map(d => d.size)
-    .reduce((total, currentValue) => total + currentValue, 0);
-  const freeStorage = data.find(d => d.name === 'Free').size;
+    .reduce((total, currentValue) => total + currentValue, 0)
+  const freeStorage = data.find(d => d.name === 'Free').size
 
   return (
     <Card className={className}>
@@ -66,8 +66,8 @@ const StorageStatus = ({ data, className }) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 StorageStatus.propTypes = {
   data: PropTypes.arrayOf(
@@ -78,6 +78,6 @@ StorageStatus.propTypes = {
     }).isRequired
   ),
   className: PropTypes.string
-};
+}
 
-export default StorageStatus;
+export default StorageStatus

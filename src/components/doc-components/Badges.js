@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import SoftBadge from 'components/common/SoftBadge';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import SoftBadge from 'components/common/SoftBadge'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import React from 'react'
+import { Button } from 'react-bootstrap'
 
 const softBadgesCode = `<div>
   <SoftBadge bg='primary' className='me-2'>Primary</SoftBadge> 
@@ -15,7 +15,7 @@ const softBadgesCode = `<div>
   <SoftBadge bg='danger' className='me-2'>Danger</SoftBadge> 
   <SoftBadge bg='light' className='me-2'>Light</SoftBadge> 
   <SoftBadge bg='dark' className='me-2'>Dark</SoftBadge> 
-</div>`;
+</div>`
 
 const softPillBadgesCode = `<div>
   <SoftBadge pill bg='primary' className='me-2'>Primary</SoftBadge> 
@@ -26,7 +26,7 @@ const softPillBadgesCode = `<div>
   <SoftBadge pill bg='danger' className='me-2'>Danger</SoftBadge> 
   <SoftBadge pill bg='light' className='me-2'>Light</SoftBadge> 
   <SoftBadge pill bg='dark' className='me-2'>Dark</SoftBadge> 
-</div>`;
+</div>`
 
 const solidPillBagesCode = `<div>
   <Badge pill bg="primary" className="me-2">
@@ -53,7 +53,7 @@ const solidPillBagesCode = `<div>
   <Badge pill bg="dark" className="me-2 dark__bg-dark">
     Dark
   </Badge>
-</div>`;
+</div>`
 
 const solidBagesCode = `<div>
   <Badge bg="primary" className="me-2">Primary</Badge> 
@@ -68,7 +68,7 @@ const solidBagesCode = `<div>
     Light
   </Badge>
   <Badge bg="dark" className="me-2 dark__bg-dark">Dark</Badge>
-</div>`;
+</div>`
 
 const Badges = () => (
   <>
@@ -116,6 +116,6 @@ const Badges = () => (
       <FalconComponentCard.Body code={solidPillBagesCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Badges;
+export default Badges

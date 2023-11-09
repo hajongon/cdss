@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import LoginForm from 'components/authentication/LoginForm';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import LoginForm from 'components/authentication/LoginForm'
 
 const Login = () => (
   <>
@@ -13,6 +13,6 @@ const Login = () => (
     </Flex>
     <LoginForm />
   </>
-);
+)
 
-export default Login;
+export default Login

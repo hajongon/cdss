@@ -1,11 +1,11 @@
-import Avatar from 'components/common/Avatar';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import profileImg from 'assets/img/team/1.jpg';
-import { Link } from 'react-router-dom';
-import SoftBadge from 'components/common/SoftBadge';
+import Avatar from 'components/common/Avatar'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import profileImg from 'assets/img/team/1.jpg'
+import { Link } from 'react-router-dom'
+import SoftBadge from 'components/common/SoftBadge'
 
 const ContactInfo = () => {
   return (
@@ -72,7 +72,7 @@ const ContactInfo = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ContactInfo;
+export default ContactInfo

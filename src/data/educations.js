@@ -1,6 +1,6 @@
-import logoStanford from 'assets/img/logos/stanford.png';
-import logoStaten from 'assets/img/logos/staten.png';
-import logoTjHeighSchool from 'assets/img/logos/tj-heigh-school.png';
+import logoStanford from 'assets/img/logos/stanford.png'
+import logoStaten from 'assets/img/logos/staten.png'
+import logoTjHeighSchool from 'assets/img/logos/tj-heigh-school.png'
 
 export default [
   {
@@ -30,4 +30,4 @@ export default [
     location: 'Alexandria, USA',
     verified: true
   }
-];
+]

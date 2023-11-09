@@ -1,16 +1,16 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getPosition, tooltipFormatter } from 'helpers/echart-utils';
-import { getColor, rgbaColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getPosition, tooltipFormatter } from 'helpers/echart-utils'
+import { getColor, rgbaColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   color: [
@@ -91,7 +91,7 @@ const getOptions = () => ({
     borderWidth: 1,
     transitionDuration: 0,
     position(pos, params, dom, rect, size) {
-      return getPosition(pos, params, dom, rect, size);
+      return getPosition(pos, params, dom, rect, size)
     },
     formatter: tooltipFormatter
   },
@@ -133,7 +133,7 @@ const getOptions = () => ({
     top: 60,
     containLabel: true
   }
-});
+})
 
 const LeadConversationChart = () => {
   return (
@@ -142,7 +142,7 @@ const LeadConversationChart = () => {
       option={getOptions()}
       style={{ height: '19.1rem' }}
     />
-  );
-};
+  )
+}
 
-export default LeadConversationChart;
+export default LeadConversationChart

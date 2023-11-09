@@ -20,4 +20,4 @@ export default [
     date: 'Dec 23',
     read: '10min'
   }
-];
+]

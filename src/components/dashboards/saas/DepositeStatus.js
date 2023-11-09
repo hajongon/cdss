@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const DepositeStatus = () => {
   return (
@@ -20,7 +20,7 @@ const DepositeStatus = () => {
         </p>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DepositeStatus;
+export default DepositeStatus

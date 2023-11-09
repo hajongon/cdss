@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
   Button,
   Card,
@@ -6,58 +6,58 @@ import {
   Form,
   OverlayTrigger,
   Tooltip
-} from 'react-bootstrap';
-import 'tinymce/skins/ui/oxide/skin.css';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
-import IconButton from 'components/common/IconButton';
-import ComposeAttachment from './ComposeAttachment';
-import TinymceEditor from 'components/common/TinymceEditor';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import PropTypes from 'prop-types';
+} from 'react-bootstrap'
+import 'tinymce/skins/ui/oxide/skin.css'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
+import IconButton from 'components/common/IconButton'
+import ComposeAttachment from './ComposeAttachment'
+import TinymceEditor from 'components/common/TinymceEditor'
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
+import PropTypes from 'prop-types'
 
 const rawAttachments = [
   { id: 1, name: 'winter.jpg', size: 893952, type: 'image/jpg' },
   { id: 2, name: 'coffee.zip', size: 350208, type: 'application/zip' }
-];
+]
 
 const Compose = ({ setShowForm, title, bodyClassName }) => {
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue } = useForm()
 
-  const [attachments, setAttachments] = useState(rawAttachments);
+  const [attachments, setAttachments] = useState(rawAttachments)
 
   const handleAddAttachment = files => {
-    if (files.length === 0) return;
-    const fileArray = [];
+    if (files.length === 0) return
+    const fileArray = []
     Array.from(files).forEach(file => {
-      const { name, size, type } = file;
+      const { name, size, type } = file
 
       const newFile = {
         id: name + 1 + Date.now(),
         name,
         size,
         type
-      };
-      fileArray.push(newFile);
-    });
-    setAttachments([...attachments, ...fileArray]);
-  };
+      }
+      fileArray.push(newFile)
+    })
+    setAttachments([...attachments, ...fileArray])
+  }
 
   const handleDetachAttachment = id => {
-    setAttachments(attachments.filter(attachment => attachment.id !== id));
-  };
+    setAttachments(attachments.filter(attachment => attachment.id !== id))
+  }
 
   const onSubmitData = data => {
-    setAttachments([]);
+    setAttachments([])
     toast(
       <>
         <h6>Subject: {data.subject}</h6>
         <hr />
         <p className="mb-0">An email is successfully sent to recipient.</p>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <Card
@@ -205,8 +205,8 @@ const Compose = ({ setShowForm, title, bodyClassName }) => {
                   size="sm"
                   icon="trash"
                   onClick={() => {
-                    setAttachments([]);
-                    setShowForm && setShowForm(false);
+                    setAttachments([])
+                    setShowForm && setShowForm(false)
                   }}
                 />
               </div>
@@ -215,13 +215,13 @@ const Compose = ({ setShowForm, title, bodyClassName }) => {
         </Flex>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 Compose.propTypes = {
   setShowForm: PropTypes.func,
   title: PropTypes.string,
   bodyClassName: PropTypes.string
-};
+}
 
-export default Compose;
+export default Compose

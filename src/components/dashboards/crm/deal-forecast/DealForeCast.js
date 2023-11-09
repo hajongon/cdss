@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import DealForeCastTable from './DealForeCastTable';
-import { dealForecastByOwnerData } from 'data/dashboard/crm';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import DealForeCastTable from './DealForeCastTable'
+import { dealForecastByOwnerData } from 'data/dashboard/crm'
 
 const DealForeCast = () => {
   return (
@@ -12,7 +12,7 @@ const DealForeCast = () => {
         <DealForeCastTable data={dealForecastByOwnerData} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DealForeCast;
+export default DealForeCast

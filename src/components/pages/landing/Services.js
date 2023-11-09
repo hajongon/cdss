@@ -1,10 +1,10 @@
-import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import className from 'classnames';
-import serviceList from 'data/feature/serviceList';
-import Section from 'components/common/Section';
-import CardService from './CardService';
-import SectionHeader from './SectionHeader';
+import React from 'react'
+import { Row, Col } from 'react-bootstrap'
+import className from 'classnames'
+import serviceList from 'data/feature/serviceList'
+import Section from 'components/common/Section'
+import CardService from './CardService'
+import SectionHeader from './SectionHeader'
 
 const Services = () => (
   <Section bg="light" className="text-center">
@@ -24,6 +24,6 @@ const Services = () => (
       ))}
     </Row>
   </Section>
-);
+)
 
-export default Services;
+export default Services

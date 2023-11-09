@@ -1,18 +1,18 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart, CandlestickChart } from 'echarts/charts';
-import * as echarts from 'echarts/core';
-import { getColor, getPastDates } from 'helpers/utils';
-import React from 'react';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart, CandlestickChart } from 'echarts/charts'
+import * as echarts from 'echarts/core'
+import { getColor, getPastDates } from 'helpers/utils'
+import React from 'react'
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -21,7 +21,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   var colorList = [
@@ -298,7 +298,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const CandlestickMixedChart = () => {
   return (
@@ -319,7 +319,7 @@ const CandlestickMixedChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default CandlestickMixedChart;
+export default CandlestickMixedChart

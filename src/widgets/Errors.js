@@ -1,8 +1,8 @@
-import React from 'react';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import { Col, Row } from 'react-bootstrap';
-import Error404 from 'components/errors/Error404';
-import Error500 from 'components/errors/Error500';
+import React from 'react'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import { Col, Row } from 'react-bootstrap'
+import Error404 from 'components/errors/Error404'
+import Error500 from 'components/errors/Error500'
 
 const ErrorsWidgets = () => {
   return (
@@ -24,7 +24,7 @@ const ErrorsWidgets = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default ErrorsWidgets;
+export default ErrorsWidgets

@@ -1,8 +1,8 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import Background from 'components/common/Background';
-import corner6 from 'assets/img/illustrations/corner-6.png';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import Background from 'components/common/Background'
+import corner6 from 'assets/img/illustrations/corner-6.png'
 import {
   Button,
   Card,
@@ -12,13 +12,13 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useCourses from 'hooks/useCourses';
+} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import useCourses from 'hooks/useCourses'
 
 const CourseHeader = ({ layout, setShowFilterOffcanvas }) => {
   const { handleSearch, handleIsAscClick, handleSortByChange, isAsc } =
-    useCourses();
+    useCourses()
   return (
     <Card className="mb-3">
       <Card.Header className="position-relative">
@@ -147,8 +147,8 @@ const CourseHeader = ({ layout, setShowFilterOffcanvas }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseHeader.propTypes = {
   layout: PropTypes.string,
@@ -158,6 +158,6 @@ CourseHeader.propTypes = {
   setShowFilterOffcanvas: PropTypes.func,
   searchedText: PropTypes.string,
   handleSearch: PropTypes.func
-};
+}
 
-export default CourseHeader;
+export default CourseHeader

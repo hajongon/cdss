@@ -1,13 +1,13 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Card, Col, Image, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Card, Col, Image, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   VerticalTimelineData,
   ZigzagTimelineData
-} from 'data/timeline/timeline';
-import classNames from 'classnames';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+} from 'data/timeline/timeline'
+import classNames from 'classnames'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const Timeline = () => {
   return (
@@ -26,7 +26,7 @@ const Timeline = () => {
         <Card.Body className="px-sm-4 px-md-8 px-lg-6 px-xxl-8">
           <div className="timeline-vertical">
             {VerticalTimelineData.map((item, index) => {
-              const { year, date, title, description, icon } = item;
+              const { year, date, title, description, icon } = item
               return (
                 <div
                   key={index}
@@ -61,7 +61,7 @@ const Timeline = () => {
                     </Col>
                   </Row>
                 </div>
-              );
+              )
             })}
           </div>
         </Card.Body>
@@ -77,8 +77,8 @@ const Timeline = () => {
         <Card.Body className="px-xxl-8 px-md-8 px-lg-6">
           <div className="timeline-zigzag">
             {ZigzagTimelineData.map((item, index) => {
-              const { title, description, year } = item;
-              const { img, width, height } = item.img;
+              const { title, description, year } = item
+              const { img, width, height } = item.img
               return (
                 <Row
                   key={index}
@@ -108,13 +108,13 @@ const Timeline = () => {
                     </Row>
                   </Col>
                 </Row>
-              );
+              )
             })}
           </div>
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import Background from 'components/common/Background';
-import bgImage from 'assets/img/icons/spot-illustrations/corner-5.png';
-import connectCircle from 'assets/img/icons/connect-circle.png';
+import React from 'react'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import Background from 'components/common/Background'
+import bgImage from 'assets/img/icons/spot-illustrations/corner-5.png'
+import connectCircle from 'assets/img/icons/connect-circle.png'
 
 const ConnectCard = () => {
   return (
@@ -36,7 +36,7 @@ const ConnectCard = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ConnectCard;
+export default ConnectCard

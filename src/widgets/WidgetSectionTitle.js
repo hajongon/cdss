@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import { Col } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import { Col } from 'react-bootstrap'
 
 const WidgetSectionTitle = ({
   title,
@@ -30,8 +30,8 @@ const WidgetSectionTitle = ({
         <p className="mb-0">{subtitle}</p>
       </Col>
     </Flex>
-  );
-};
+  )
+}
 
 WidgetSectionTitle.propTypes = {
   title: PropTypes.string.isRequired,
@@ -39,6 +39,6 @@ WidgetSectionTitle.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   transform: PropTypes.string,
   className: PropTypes.string
-};
+}
 
-export default WidgetSectionTitle;
+export default WidgetSectionTitle

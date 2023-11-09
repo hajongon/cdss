@@ -1,33 +1,33 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import BillingHeader from 'components/app/e-commerce/billing/BillingHeader';
-import DepositeStatus from 'components/dashboards/saas/DepositeStatus';
-import EventFooter from 'components/app/events/create-an-event/EventFooter';
-import BirthdayNotice from 'components/app/social/feed/BirthdatNotice';
-import DangerZone from 'components/pages/user/settings/DangerZone';
-import GreetingCard from 'components/dashboards/e-commerce/greetings/GreetingCard';
-import { Card, Col, Row } from 'react-bootstrap';
-import { notifications } from 'data/dashboard/ecom';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import BillingHeader from 'components/app/e-commerce/billing/BillingHeader'
+import DepositeStatus from 'components/dashboards/saas/DepositeStatus'
+import EventFooter from 'components/app/events/create-an-event/EventFooter'
+import BirthdayNotice from 'components/app/social/feed/BirthdatNotice'
+import DangerZone from 'components/pages/user/settings/DangerZone'
+import GreetingCard from 'components/dashboards/e-commerce/greetings/GreetingCard'
+import { Card, Col, Row } from 'react-bootstrap'
+import { notifications } from 'data/dashboard/ecom'
 import {
   greetingItems,
   markers,
   managementEvents,
   discussionMembers
-} from 'data/dashboard/projectManagement';
-import { weather } from 'data/dashboard/default';
-import Greetings from 'components/dashboards/project-management/Greetings';
-import Weather from 'components/dashboards/default/Weather';
-import SpaceWarning from 'components/dashboards/default/SpaceWarning';
-import PageHeader from 'components/common/PageHeader';
-import SoftBadge from 'components/common/SoftBadge';
-import ProjectLocation from 'components/dashboards/project-management/project-location/ProjectLocation';
-import CalendarManagement from 'components/dashboards/project-management/calendar/CalendarManagement';
-import DoMoreCard from 'components/dashboards/saas/DoMoreCard';
-import TeamProgress from 'components/dashboards/project-management/TeamProgress';
-import Discussion from 'components/dashboards/project-management/Discussion';
-import LogoutContent from 'components/authentication/LogoutContent';
-import ConfirmMailContent from 'components/authentication/ConfirmMailContent';
+} from 'data/dashboard/projectManagement'
+import { weather } from 'data/dashboard/default'
+import Greetings from 'components/dashboards/project-management/Greetings'
+import Weather from 'components/dashboards/default/Weather'
+import SpaceWarning from 'components/dashboards/default/SpaceWarning'
+import PageHeader from 'components/common/PageHeader'
+import SoftBadge from 'components/common/SoftBadge'
+import ProjectLocation from 'components/dashboards/project-management/project-location/ProjectLocation'
+import CalendarManagement from 'components/dashboards/project-management/calendar/CalendarManagement'
+import DoMoreCard from 'components/dashboards/saas/DoMoreCard'
+import TeamProgress from 'components/dashboards/project-management/TeamProgress'
+import Discussion from 'components/dashboards/project-management/Discussion'
+import LogoutContent from 'components/authentication/LogoutContent'
+import ConfirmMailContent from 'components/authentication/ConfirmMailContent'
 
 const OthersWidgets = () => {
   return (
@@ -129,7 +129,7 @@ const OthersWidgets = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default OthersWidgets;
+export default OthersWidgets

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 function Example() {
@@ -29,7 +29,7 @@ function Example() {
       </Offcanvas>
     </>
   );
-}`;
+}`
 
 const placementCode = `
 function OffCanvasExample({ name, ...props }) {
@@ -65,7 +65,7 @@ function Example() {
     </>
   );
 }
-render(<Example />)`;
+render(<Example />)`
 
 const backdropCode = `
 const options = [
@@ -121,7 +121,7 @@ function Example() {
 }
 
 render(<Example />);
-`;
+`
 
 const Offcanvas = () => (
   <>
@@ -186,6 +186,6 @@ const Offcanvas = () => (
       <FalconComponentCard.Body code={backdropCode} language="jsx" noInline />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Offcanvas;
+export default Offcanvas

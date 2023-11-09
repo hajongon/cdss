@@ -1,14 +1,14 @@
-import React, { useRef } from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Card, Col, Nav, Row } from 'react-bootstrap';
-import Account from './Account';
-import Subscription from './Subscription';
-import Termination from './Termination';
-import Rules from './Rules';
-import Liability from './Liability';
-import Instructions from './Instructions';
-import Rights from './Rights';
-import useScrollSpy from 'react-use-scrollspy';
+import React, { useRef } from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Card, Col, Nav, Row } from 'react-bootstrap'
+import Account from './Account'
+import Subscription from './Subscription'
+import Termination from './Termination'
+import Rules from './Rules'
+import Liability from './Liability'
+import Instructions from './Instructions'
+import Rights from './Rights'
+import useScrollSpy from 'react-use-scrollspy'
 
 const PrivacyPolicy = () => {
   const sectionRefs = [
@@ -19,12 +19,12 @@ const PrivacyPolicy = () => {
     useRef(null),
     useRef(null),
     useRef(null)
-  ];
+  ]
 
   const activeSection = useScrollSpy({
     sectionElementRefs: sectionRefs,
     offsetPx: -150
-  });
+  })
 
   return (
     <>
@@ -124,7 +124,7 @@ const PrivacyPolicy = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default PrivacyPolicy;
+export default PrivacyPolicy

@@ -1,17 +1,17 @@
-import { getDates } from 'helpers/utils';
-import email from 'assets/img/icons/email.svg';
-import social from 'assets/img/icons/social.svg';
-import call from 'assets/img/icons/call.svg';
-import other from 'assets/img/icons/other.svg';
-import india from 'assets/img/country/india.png';
-import uae from 'assets/img/country/uae.png';
-import nepal from 'assets/img/country/nepal.png';
-import thailand from 'assets/img/country/thailand.png';
-import team1 from 'assets/img/team/1-thumb.png';
-import team2 from 'assets/img/team/2-thumb.png';
-import team3 from 'assets/img/team/3-thumb.png';
-import team4 from 'assets/img/team/4-thumb.png';
-import team5 from 'assets/img/team/5-thumb.png';
+import { getDates } from 'helpers/utils'
+import email from 'assets/img/icons/email.svg'
+import social from 'assets/img/icons/social.svg'
+import call from 'assets/img/icons/call.svg'
+import other from 'assets/img/icons/other.svg'
+import india from 'assets/img/country/india.png'
+import uae from 'assets/img/country/uae.png'
+import nepal from 'assets/img/country/nepal.png'
+import thailand from 'assets/img/country/thailand.png'
+import team1 from 'assets/img/team/1-thumb.png'
+import team2 from 'assets/img/team/2-thumb.png'
+import team3 from 'assets/img/team/3-thumb.png'
+import team4 from 'assets/img/team/4-thumb.png'
+import team5 from 'assets/img/team/5-thumb.png'
 
 export const statsData = [
   {
@@ -47,7 +47,7 @@ export const statsData = [
     caretColor: 'danger',
     data: [200, 150, 175, 130, 150, 115, 130, 100]
   }
-];
+]
 
 export const revenueChartData = {
   dates: getDates(
@@ -97,7 +97,7 @@ export const revenueChartData = {
       ]
     ]
   }
-};
+}
 
 export const leadsData = [
   {
@@ -128,7 +128,7 @@ export const leadsData = [
     img: other,
     amount: 53
   }
-];
+]
 
 export const dealForecastData = [
   {
@@ -155,12 +155,12 @@ export const dealForecastData = [
     amount: 12661,
     variant: 'info'
   }
-];
+]
 
 export const dealClosedVsGoalChart = {
   closedAmount: [0, 5000, 18000, 40000, 58000, 65000, 90000, 110000, 140000],
   revenueGoal: [0, 10000, 24000, 35000, 45000, 53000, 57000, 68000, 79000]
-};
+}
 
 export const dealForecastByOwnerData = [
   {
@@ -195,7 +195,7 @@ export const dealForecastByOwnerData = [
     contactSent: 3523,
     closedWon: 1511
   }
-];
+]
 
 export const locationBySessionTableData = [
   {
@@ -226,7 +226,7 @@ export const locationBySessionTableData = [
     users: '215,303',
     percentage: 42
   }
-];
+]
 
 export const toDoList = [
   {
@@ -254,7 +254,7 @@ export const toDoList = [
     task: 'Video Conference',
     completed: false
   }
-];
+]
 
 export const recentLeadsTableData = [
   {
@@ -292,4 +292,4 @@ export const recentLeadsTableData = [
     status: 'Won Lead',
     variant: 'success'
   }
-];
+]

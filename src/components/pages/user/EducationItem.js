@@ -1,12 +1,12 @@
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import VerifiedBadge from 'components/common/VerifiedBadge';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import VerifiedBadge from 'components/common/VerifiedBadge'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const EducationItem = ({ details, isLast }) => {
-  const { logo, institution, degree, duration, location, verified } = details;
+  const { logo, institution, degree, duration, location, verified } = details
   return (
     <Flex>
       <Link to="#!">
@@ -23,8 +23,8 @@ export const EducationItem = ({ details, isLast }) => {
         {!isLast && <div className="border-dashed border-bottom my-3"></div>}
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 EducationItem.propTypes = {
   details: PropTypes.shape({
@@ -36,6 +36,6 @@ EducationItem.propTypes = {
     verified: PropTypes.bool
   }),
   isLast: PropTypes.bool
-};
+}
 
-export default EducationItem;
+export default EducationItem

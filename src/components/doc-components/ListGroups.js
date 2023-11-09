@@ -1,12 +1,12 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import SoftBadge from 'components/common/SoftBadge';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import SoftBadge from 'components/common/SoftBadge'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
 
 const exampleCode = `<ListGroup>
   <ListGroup.Item>News Feed</ListGroup.Item>
@@ -14,7 +14,7 @@ const exampleCode = `<ListGroup>
   <ListGroup.Item>Events</ListGroup.Item>
   <ListGroup.Item>Groups</ListGroup.Item>
   <ListGroup.Item>Pages</ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const activeExampleCode = `<ListGroup as="ul">
   <ListGroup.Item as="li" active>
@@ -26,7 +26,7 @@ const activeExampleCode = `<ListGroup as="ul">
   </ListGroup.Item>
   <ListGroup.Item as="li">Groups</ListGroup.Item>
   <ListGroup.Item as="li">Pages</ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const actionableCode = `function ActionableListItems() {
   const alertClicked = () => {
@@ -52,14 +52,14 @@ const actionableCode = `function ActionableListItems() {
       </ListGroup.Item>
     </ListGroup>
   );
-}`;
+}`
 
 const flushCode = `<ListGroup variant="flush">
   <ListGroup.Item>Cras justo odio</ListGroup.Item>
   <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
   <ListGroup.Item>Morbi leo risus</ListGroup.Item>
   <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const badgeCode = `<ListGroup>
   <ListGroup.Item>
@@ -98,14 +98,14 @@ const badgeCode = `<ListGroup>
       <SoftBadge pill bg='primary' className='me-2'>11</SoftBadge>
     </Flex>
   </ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const horizontalCode = `<ListGroup horizontal>
   <ListGroup.Item>This</ListGroup.Item>
   <ListGroup.Item>ListGroup</ListGroup.Item>
   <ListGroup.Item>renders</ListGroup.Item>
   <ListGroup.Item>horizontally!</ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const responsiveHorizontalCode = `['sm', 'md', 'lg', 'xl', 'xxl'].map((breakpoint, idx) => (
   <ListGroup horizontal={breakpoint} className="my-2" key={idx}>
@@ -114,7 +114,7 @@ const responsiveHorizontalCode = `['sm', 'md', 'lg', 'xl', 'xxl'].map((breakpoin
     <ListGroup.Item>on {breakpoint}</ListGroup.Item>
     <ListGroup.Item>and above!</ListGroup.Item>
   </ListGroup>
-));`;
+));`
 
 const listGroupBackgroundCode = `<ListGroup>
   <ListGroup.Item className='py-3'>Example with background</ListGroup.Item>
@@ -126,7 +126,7 @@ const listGroupBackgroundCode = `<ListGroup>
   <ListGroup.Item className='py-3' variant="info">Info</ListGroup.Item>
   <ListGroup.Item className='py-3' variant="light">Light</ListGroup.Item>
   <ListGroup.Item className='py-3' variant="dark">Dark</ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const linkCode = `<ListGroup>
   <ListGroup.Item className='p-3 p-sm-4 light' as={Link} to='#!' action active>
@@ -164,7 +164,7 @@ const linkCode = `<ListGroup>
     </p>
     <small className="text-muted">An ordered list</small>
   </ListGroup.Item>
-</ListGroup>`;
+</ListGroup>`
 
 const ListGroups = () => (
   <>
@@ -305,6 +305,6 @@ const ListGroups = () => (
       </Col>
     </Row>
   </>
-);
+)
 
-export default ListGroups;
+export default ListGroups

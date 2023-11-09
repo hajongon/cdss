@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col, Image } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import SimpleBar from 'simplebar-react';
-import FalconLink from 'components/common/FalconLink';
-import Avatar from 'components/common/Avatar';
-import SoftBadge from 'components/common/SoftBadge';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col, Image } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import SimpleBar from 'simplebar-react'
+import FalconLink from 'components/common/FalconLink'
+import Avatar from 'components/common/Avatar'
+import SoftBadge from 'components/common/SoftBadge'
 
 const Activity = ({ activity: { name, avatar, activity } }) => {
   return (
@@ -28,8 +28,8 @@ const Activity = ({ activity: { name, avatar, activity } }) => {
         </Col>
       ))}
     </Row>
-  );
-};
+  )
+}
 
 const MembersActivity = ({ data }) => {
   return (
@@ -52,8 +52,8 @@ const MembersActivity = ({ data }) => {
         <FalconLink title="See all projects" className="d-block py-2" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 Activity.propTypes = {
   activity: PropTypes.shape({
@@ -70,10 +70,10 @@ Activity.propTypes = {
       })
     )
   })
-};
+}
 
 MembersActivity.propTypes = {
   data: PropTypes.arrayOf(Activity.propTypes.activity)
-};
+}
 
-export default MembersActivity;
+export default MembersActivity

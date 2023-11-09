@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import classNames from 'classnames';
-import Background from 'components/common/Background';
-import SoftBadge from 'components/common/SoftBadge';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CountUp from 'react-countup';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import classNames from 'classnames'
+import Background from 'components/common/Background'
+import SoftBadge from 'components/common/SoftBadge'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CountUp from 'react-countup'
 
 const StatisticsCard = ({ stat, ...rest }) => {
   const {
@@ -22,7 +22,7 @@ const StatisticsCard = ({ stat, ...rest }) => {
     badgeBg,
     image,
     className
-  } = stat;
+  } = stat
   return (
     <Card className={classNames(className, 'overflow-hidden')} {...rest}>
       <Background image={image} className="bg-card" />
@@ -62,8 +62,8 @@ const StatisticsCard = ({ stat, ...rest }) => {
         </Link>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 StatisticsCard.propTypes = {
   stat: PropTypes.shape({
@@ -80,6 +80,6 @@ StatisticsCard.propTypes = {
     image: PropTypes.string,
     className: PropTypes.string
   })
-};
+}
 
-export default StatisticsCard;
+export default StatisticsCard

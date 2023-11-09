@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col, Dropdown } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import { members } from 'data/kanban';
-import GroupMember from './GroupMember';
-import InviteToBoard from './InviteToBoard';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Row, Col, Dropdown } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import { members } from 'data/kanban'
+import GroupMember from './GroupMember'
+import InviteToBoard from './InviteToBoard'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const KanbanHeader = () => {
   return (
@@ -59,7 +59,7 @@ const KanbanHeader = () => {
         </Dropdown>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default KanbanHeader;
+export default KanbanHeader

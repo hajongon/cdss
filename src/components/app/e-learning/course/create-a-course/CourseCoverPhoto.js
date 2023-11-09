@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDropzone } from 'react-dropzone';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react'
+import { useDropzone } from 'react-dropzone'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Button,
   Card,
@@ -8,14 +8,14 @@ import {
   Image,
   OverlayTrigger,
   Tooltip
-} from 'react-bootstrap';
-import { getSize } from 'helpers/utils';
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
+} from 'react-bootstrap'
+import { getSize } from 'helpers/utils'
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
 
 const CourseCoverPhoto = () => {
-  const [cover, setCover] = useState();
+  const [cover, setCover] = useState()
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
@@ -24,9 +24,9 @@ const CourseCoverPhoto = () => {
         Object.assign(acceptedFiles[0], {
           preview: URL.createObjectURL(acceptedFiles[0])
         })
-      );
+      )
     }
-  });
+  })
 
   return (
     <Card className="mb-3">
@@ -102,6 +102,6 @@ const CourseCoverPhoto = () => {
         )}
       </Card.Body>
     </Card>
-  );
-};
-export default CourseCoverPhoto;
+  )
+}
+export default CourseCoverPhoto

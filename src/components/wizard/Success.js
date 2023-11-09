@@ -1,18 +1,18 @@
-import { AuthWizardContext } from 'context/Context';
-import Lottie from 'lottie-react';
-import PropTypes from 'prop-types';
-import React, { useContext } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
-import celebration from './lottie/celebration.json';
+import { AuthWizardContext } from 'context/Context'
+import Lottie from 'lottie-react'
+import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
+import { Button, Col, Row } from 'react-bootstrap'
+import celebration from './lottie/celebration.json'
 
 const Success = ({ reset }) => {
-  const { setStep, setUser } = useContext(AuthWizardContext);
+  const { setStep, setUser } = useContext(AuthWizardContext)
 
   const emptyData = () => {
-    setStep(1);
-    setUser({});
-    reset();
-  };
+    setStep(1)
+    setUser({})
+    reset()
+  }
 
   return (
     <>
@@ -31,11 +31,11 @@ const Success = ({ reset }) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 Success.propTypes = {
   reset: PropTypes.func.isRequired
-};
+}
 
-export default Success;
+export default Success

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import createMarkup from 'helpers/createMarkup';
-import Avatar from 'components/common/Avatar';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import createMarkup from 'helpers/createMarkup'
+import Avatar from 'components/common/Avatar'
 
 const Notification = ({
   avatar,
@@ -39,7 +39,7 @@ const Notification = ({
       </span>
     </div>
   </Link>
-);
+)
 
 Notification.propTypes = {
   avatar: PropTypes.shape(Avatar.propTypes),
@@ -49,8 +49,8 @@ Notification.propTypes = {
   flush: PropTypes.bool,
   emoji: PropTypes.string,
   children: PropTypes.node
-};
+}
 
-Notification.defaultProps = { unread: false, flush: false };
+Notification.defaultProps = { unread: false, flush: false }
 
-export default Notification;
+export default Notification

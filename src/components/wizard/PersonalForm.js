@@ -1,21 +1,21 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import WizardInput from './WizardInput';
-import FalconDropzone from 'components/common/FalconDropzone';
-import avatarImg from 'assets/img/team/avatar.png';
-import { isIterableArray } from 'helpers/utils';
-import Avatar from 'components/common/Avatar';
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
-import { AuthWizardContext } from 'context/Context';
-import Flex from 'components/common/Flex';
-import { Col, Row } from 'react-bootstrap';
+import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
+import WizardInput from './WizardInput'
+import FalconDropzone from 'components/common/FalconDropzone'
+import avatarImg from 'assets/img/team/avatar.png'
+import { isIterableArray } from 'helpers/utils'
+import Avatar from 'components/common/Avatar'
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
+import { AuthWizardContext } from 'context/Context'
+import Flex from 'components/common/Flex'
+import { Col, Row } from 'react-bootstrap'
 
 const PersonalForm = ({ register, errors, setValue }) => {
-  const { user } = useContext(AuthWizardContext);
+  const { user } = useContext(AuthWizardContext)
   const [avatar, setAvatar] = useState([
     ...(user.avater ? user.avater : []),
     { src: avatarImg }
-  ]);
+  ])
 
   return (
     <>
@@ -32,8 +32,8 @@ const PersonalForm = ({ register, errors, setValue }) => {
           <FalconDropzone
             files={avatar}
             onChange={files => {
-              setAvatar(files);
-              setValue('avatar', files);
+              setAvatar(files)
+              setValue('avatar', files)
             }}
             multiple={false}
             accept="image/*"
@@ -111,13 +111,13 @@ const PersonalForm = ({ register, errors, setValue }) => {
         }}
       />
     </>
-  );
-};
+  )
+}
 
 PersonalForm.propTypes = {
   register: PropTypes.func.isRequired,
   errors: PropTypes.object,
   setValue: PropTypes.func.isRequired
-};
+}
 
-export default PersonalForm;
+export default PersonalForm

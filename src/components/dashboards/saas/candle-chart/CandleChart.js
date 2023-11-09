@@ -1,23 +1,23 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row, ButtonGroup, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Stat from './Stat';
-import CandleChartBody from './CandleChartBody';
-import { candleChartStatsData } from 'data/dashboard/saas';
+import React, { useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row, ButtonGroup, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Stat from './Stat'
+import CandleChartBody from './CandleChartBody'
+import { candleChartStatsData } from 'data/dashboard/saas'
 
 const CandleChart = ({ data }) => {
-  const chartRef = useRef(null);
-  const [zoomStart] = useState(0);
-  const [zoomEnd, setZoomEnd] = useState(70);
+  const chartRef = useRef(null)
+  const [zoomStart] = useState(0)
+  const [zoomEnd, setZoomEnd] = useState(70)
 
   const zoomInAction = () => {
-    zoomEnd > 10 && setZoomEnd(zoomEnd - 10);
-  };
+    zoomEnd > 10 && setZoomEnd(zoomEnd - 10)
+  }
 
   const zoomOutAction = () => {
-    zoomEnd < 100 && setZoomEnd(zoomEnd + 10);
-  };
+    zoomEnd < 100 && setZoomEnd(zoomEnd + 10)
+  }
 
   return (
     <Card className="h-100" dir="ltr">
@@ -74,11 +74,11 @@ const CandleChart = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CandleChart.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default CandleChart;
+export default CandleChart

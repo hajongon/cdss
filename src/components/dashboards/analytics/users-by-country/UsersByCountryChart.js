@@ -1,16 +1,16 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = data => ({
   tooltip: {
@@ -94,7 +94,7 @@ const getOptions = data => ({
     bottom: 0,
     top: 15
   }
-});
+})
 
 const UsersByCountryChart = ({ data }) => {
   return (
@@ -103,11 +103,11 @@ const UsersByCountryChart = ({ data }) => {
       option={getOptions(data)}
       style={{ height: '13.125rem' }}
     />
-  );
-};
+  )
+}
 
 UsersByCountryChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array).isRequired
-};
+}
 
-export default UsersByCountryChart;
+export default UsersByCountryChart

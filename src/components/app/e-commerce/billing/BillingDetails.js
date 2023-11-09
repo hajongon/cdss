@@ -1,18 +1,18 @@
-import React from 'react';
-import { Col, Form, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
-import paypal from 'assets/img/icons/icon-paypal-full.png';
-import creditCard from 'assets/img/icons/icon-payment-methods.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import countries from 'data/countries';
+import React from 'react'
+import { Col, Form, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import paypal from 'assets/img/icons/icon-paypal-full.png'
+import creditCard from 'assets/img/icons/icon-payment-methods.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import countries from 'data/countries'
 
 const BillingDetails = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm()
 
   const onSubmit = data => {
-    console.log(data);
-  };
+    console.log(data)
+  }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -172,7 +172,7 @@ const BillingDetails = () => {
         </Col>
       </Row>
     </Form>
-  );
-};
+  )
+}
 
-export default BillingDetails;
+export default BillingDetails

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useDropzone } from 'react-dropzone';
-import Flex from 'components/common/Flex';
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
-import CardDropdown from 'components/common/CardDropdown';
-import { getSize } from 'helpers/utils';
-import { Card, Dropdown } from 'react-bootstrap';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useDropzone } from 'react-dropzone'
+import Flex from 'components/common/Flex'
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
+import CardDropdown from 'components/common/CardDropdown'
+import { getSize } from 'helpers/utils'
+import { Card, Dropdown } from 'react-bootstrap'
 
 const EventUpload = ({ setValue }) => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState([])
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
@@ -20,13 +20,13 @@ const EventUpload = ({ setValue }) => {
             preview: URL.createObjectURL(file)
           })
         )
-      ]);
+      ])
     }
-  });
+  })
 
   const handleRemove = path => {
-    setFiles(files.filter(file => file.path !== path));
-  };
+    setFiles(files.filter(file => file.path !== path))
+  }
 
   return (
     <Card className="mb-3">
@@ -87,11 +87,11 @@ const EventUpload = ({ setValue }) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 EventUpload.propTypes = {
   setValue: PropTypes.func
-};
+}
 
-export default EventUpload;
+export default EventUpload

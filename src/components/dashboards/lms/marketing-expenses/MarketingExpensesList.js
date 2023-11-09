@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, Row } from 'react-bootstrap'
 
 const ItemList = ({ data }) => {
   return (
@@ -22,8 +22,8 @@ const ItemList = ({ data }) => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
 const MarketingExpensesList = ({ data }) => {
   return (
@@ -47,18 +47,18 @@ const MarketingExpensesList = ({ data }) => {
         </div>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 MarketingExpensesList.propTypes = {
   data: PropTypes.shape({
     digitalMarketing: PropTypes.arrayOf(PropTypes.object),
     offlineMarketing: PropTypes.arrayOf(PropTypes.object)
   }).isRequired
-};
+}
 
 ItemList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default MarketingExpensesList;
+export default MarketingExpensesList

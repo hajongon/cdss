@@ -1,10 +1,10 @@
-import React from 'react';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import BubbleChart from './BubbleChart';
-import { trendingKeywords } from 'data/dashboard/lms';
+import React from 'react'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import BubbleChart from './BubbleChart'
+import { trendingKeywords } from 'data/dashboard/lms'
 
 const TrendingKeywords = ({ ...rest }) => {
   return (
@@ -36,9 +36,9 @@ const TrendingKeywords = ({ ...rest }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-TrendingKeywords.propTypes = {};
+TrendingKeywords.propTypes = {}
 
-export default TrendingKeywords;
+export default TrendingKeywords

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
-import { Link } from 'react-router-dom';
-import createMarkup from 'helpers/createMarkup';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import Avatar from 'components/common/Avatar'
+import { Link } from 'react-router-dom'
+import createMarkup from 'helpers/createMarkup'
 
 const Comments = ({ comments, loadComment }) => {
   return (
@@ -37,12 +37,12 @@ const Comments = ({ comments, loadComment }) => {
         </a>
       )}
     </>
-  );
-};
+  )
+}
 
 Comments.propTypes = {
   comments: PropTypes.array,
   loadComment: PropTypes.string
-};
+}
 
-export default Comments;
+export default Comments

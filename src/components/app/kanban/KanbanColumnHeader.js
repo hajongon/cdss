@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { KanbanContext } from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { KanbanContext } from 'context/Context'
 
 const KanbanColumnHeader = ({ id, title, itemCount }) => {
-  const { kanbanDispatch } = useContext(KanbanContext);
+  const { kanbanDispatch } = useContext(KanbanContext)
 
   const handleRemoveColumn = () => {
     kanbanDispatch({
       type: 'REMOVE_KANBAN_COLUMN',
       payload: { id }
-    });
-  };
+    })
+  }
 
   return (
     <div className="kanban-column-header">
@@ -39,13 +39,13 @@ const KanbanColumnHeader = ({ id, title, itemCount }) => {
         </Dropdown.Menu>
       </Dropdown>
     </div>
-  );
-};
+  )
+}
 
 KanbanColumnHeader.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   itemCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
+}
 
-export default KanbanColumnHeader;
+export default KanbanColumnHeader

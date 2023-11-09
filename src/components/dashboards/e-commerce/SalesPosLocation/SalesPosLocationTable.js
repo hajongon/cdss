@@ -1,6 +1,6 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Table } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SalesPosLocationTable = () => {
   return (
@@ -42,7 +42,7 @@ const SalesPosLocationTable = () => {
         </tr>
       </tbody>
     </Table>
-  );
-};
+  )
+}
 
-export default SalesPosLocationTable;
+export default SalesPosLocationTable

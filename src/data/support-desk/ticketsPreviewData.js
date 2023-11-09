@@ -1,5 +1,5 @@
-import image1 from 'assets/img/team/1-thumb.png';
-import image2 from 'assets/img/team/2-thumb.png';
+import image1 from 'assets/img/team/1-thumb.png'
+import image2 from 'assets/img/team/2-thumb.png'
 
 export const messages = [
   {
@@ -92,4 +92,4 @@ export const messages = [
     sender: 'Emma Watson',
     attached: false
   }
-];
+]

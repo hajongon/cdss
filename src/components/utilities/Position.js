@@ -1,14 +1,14 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
 
 const commonCode = `.position-static
 .position-relative
 .position-absolute
 .position-sticky
 .fixed-top
-.fixed-bottom`;
+.fixed-bottom`
 
 const arrangElementsCode = `<>
   <div className="position-relative bg-200 mb-4" style={{ height: '200px' }}>
@@ -24,14 +24,14 @@ const arrangElementsCode = `<>
       .all-0
     </div>
   </div>
-</>`;
+</>`
 const centerElementsCode = `<div className="position-relative bg-200" style={{height: '200px'}}>
   <div className="light p-3 bg-900 rounded-1 position-absolute top-0 start-50 translate-middle-x"></div>
   <div className="light p-3 bg-900 rounded-1 position-absolute top-50 start-0 translate-middle-y"></div>
   <div className="light p-3 bg-900 rounded-1 position-absolute top-50 start-50 translate-middle"></div>
   <div className="light p-3 bg-900 rounded-1 position-absolute top-50 end-0 translate-middle-y"></div>
   <div className="light p-3 bg-900 rounded-1 position-absolute bottom-0 start-50 translate-middle-x"></div>
-</div>`;
+</div>`
 
 const Position = () => (
   <>
@@ -89,6 +89,6 @@ const Position = () => (
       <FalconComponentCard.Body code={centerElementsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Position;
+export default Position

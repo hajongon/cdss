@@ -1,20 +1,20 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
-import { BarChart } from 'echarts/charts';
+import { BarChart } from 'echarts/charts'
 
-import * as echarts from 'echarts/core';
+import * as echarts from 'echarts/core'
 
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -22,7 +22,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const months = [
@@ -106,7 +106,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const BarNegativeChart = () => {
   return (
@@ -126,7 +126,7 @@ const BarNegativeChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default BarNegativeChart;
+export default BarNegativeChart

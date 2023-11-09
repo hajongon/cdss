@@ -1,27 +1,27 @@
-import React, { useState, useRef } from 'react';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import FalconLink from 'components/common/FalconLink';
-import { monthsShort } from 'data/common';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReturningCustomerChart from './ReturningCustomerChart';
-import { returningCustomerData } from 'data/dashboard/ecom';
-import classNames from 'classnames';
+import React, { useState, useRef } from 'react'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import FalconLink from 'components/common/FalconLink'
+import { monthsShort } from 'data/common'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReturningCustomerChart from './ReturningCustomerChart'
+import { returningCustomerData } from 'data/dashboard/ecom'
+import classNames from 'classnames'
 
 const ReturningCustomer = () => {
-  const [month, setMonth] = useState(0);
-  const [isNew, setIsNew] = useState(true);
-  const [isReturning, setIsReturning] = useState(true);
-  const chartRef = useRef(null);
+  const [month, setMonth] = useState(0)
+  const [isNew, setIsNew] = useState(true)
+  const [isReturning, setIsReturning] = useState(true)
+  const chartRef = useRef(null)
 
   const handleLegend = seriesName => {
-    seriesName === 'New' && setIsNew(!isNew);
-    seriesName === 'Returning' && setIsReturning(!isReturning);
+    seriesName === 'New' && setIsNew(!isNew)
+    seriesName === 'Returning' && setIsReturning(!isReturning)
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: seriesName
-    });
-  };
+    })
+  }
 
   return (
     <Card className="h-100">
@@ -103,7 +103,7 @@ const ReturningCustomer = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default ReturningCustomer;
+export default ReturningCustomer

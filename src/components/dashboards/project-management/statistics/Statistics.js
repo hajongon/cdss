@@ -1,7 +1,7 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { statsData } from 'data/dashboard/saas';
-import StatisticsCard from 'components/dashboards/saas/stats-cards/StatisticsCard';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import { statsData } from 'data/dashboard/saas'
+import StatisticsCard from 'components/dashboards/saas/stats-cards/StatisticsCard'
 
 const Statistics = () => {
   return (
@@ -12,9 +12,9 @@ const Statistics = () => {
         </Col>
       ))}
     </Row>
-  );
-};
+  )
+}
 
-Statistics.propTypes = {};
+Statistics.propTypes = {}
 
-export default Statistics;
+export default Statistics

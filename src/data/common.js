@@ -11,7 +11,7 @@ export const months = [
   'October',
   'November',
   'December'
-];
+]
 
 export const monthsShort = [
   'Jan',
@@ -26,4 +26,4 @@ export const monthsShort = [
   'Oct',
   'Nov',
   'Dec'
-];
+]

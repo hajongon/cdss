@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Card } from 'react-bootstrap';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import Event from 'components/app/events/event-list/Event';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Card } from 'react-bootstrap'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import Event from 'components/app/events/event-list/Event'
 
 const Events = ({ cardTitle, events, ...rest }) => {
   return (
@@ -25,12 +25,12 @@ const Events = ({ cardTitle, events, ...rest }) => {
         size="sm"
       />
     </Card>
-  );
-};
+  )
+}
 
 Events.propTypes = {
   cardTitle: PropTypes.string.isRequired,
   events: PropTypes.arrayOf(PropTypes.shape(Event.propTypes))
-};
+}
 
-export default Events;
+export default Events

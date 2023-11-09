@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Background from 'components/common/Background';
-import Flex from 'components/common/Flex';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import corner1 from 'assets/img/icons/spot-illustrations/corner-3.png';
-import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Background from 'components/common/Background'
+import Flex from 'components/common/Flex'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import corner1 from 'assets/img/icons/spot-illustrations/corner-3.png'
+import PropTypes from 'prop-types'
 
 const Greetings = ({ data }) => {
   return (
@@ -32,13 +32,13 @@ const Greetings = ({ data }) => {
                   </div>
                 </Flex>
               </Col>
-            );
+            )
           })}
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 Greetings.propTypes = {
   data: PropTypes.arrayOf(
@@ -49,6 +49,6 @@ Greetings.propTypes = {
       color: PropTypes.string.isRequired
     })
   )
-};
+}
 
-export default Greetings;
+export default Greetings

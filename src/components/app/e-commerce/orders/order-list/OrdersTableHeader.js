@@ -1,7 +1,7 @@
-import IconButton from 'components/common/IconButton';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Col, Form, Row, Button } from 'react-bootstrap';
+import IconButton from 'components/common/IconButton'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Col, Form, Row, Button } from 'react-bootstrap'
 
 const CustomersTableHeader = ({ selectedRowIds }) => {
   return (
@@ -58,11 +58,11 @@ const CustomersTableHeader = ({ selectedRowIds }) => {
         )}
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 CustomersTableHeader.propTypes = {
   selectedRowIds: PropTypes.object
-};
+}
 
-export default CustomersTableHeader;
+export default CustomersTableHeader

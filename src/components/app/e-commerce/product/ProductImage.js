@@ -1,9 +1,9 @@
-import React from 'react';
-import { Badge, Image } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-import classNames from 'classnames';
+import React from 'react'
+import { Badge, Image } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import Slider from 'react-slick'
+import classNames from 'classnames'
 
 const sliderSettings = {
   autoplay: false,
@@ -11,7 +11,7 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1
-};
+}
 
 const ProductSingleImage = ({ id, image, name, layout }) => {
   return (
@@ -29,8 +29,8 @@ const ProductSingleImage = ({ id, image, name, layout }) => {
         alt={name}
       />
     </Link>
-  );
-};
+  )
+}
 
 const ProductImage = ({ name, id, isNew, files, layout }) => {
   return (
@@ -73,8 +73,8 @@ const ProductImage = ({ name, id, isNew, files, layout }) => {
         </Badge>
       )}
     </div>
-  );
-};
+  )
+}
 
 ProductSingleImage.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -84,7 +84,7 @@ ProductSingleImage.propTypes = {
   }),
   name: PropTypes.string.isRequired,
   layout: PropTypes.string.isRequired
-};
+}
 
 ProductImage.propTypes = {
   name: PropTypes.string.isRequired,
@@ -92,6 +92,6 @@ ProductImage.propTypes = {
   isNew: PropTypes.bool,
   files: PropTypes.arrayOf(PropTypes.object).isRequired,
   layout: PropTypes.string.isRequired
-};
+}
 
-export default ProductImage;
+export default ProductImage

@@ -1,38 +1,38 @@
-import { courseResourcesData } from 'data/elearning/createCourse';
-import React, { useState } from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import CourseCoverPhoto from './CourseCoverPhoto';
-import CourseGoals from './CourseGoals';
-import CourseInformationForm from './CourseInformationForm';
-import CoursePreviewVideo from './CoursePreviewVideo';
-import CoursePricing from './CoursePricing';
-import CourseRequirements from './CourseRequirements';
-import CourseResources from './CourseResources';
-import CreateCourseHeader from './CreateCourseHeader';
-import PublishCourse from './PublishCourse';
-import ScheduleDiscountModal from './ScheduleDiscountModal';
+import { courseResourcesData } from 'data/elearning/createCourse'
+import React, { useState } from 'react'
+import { Col, Form, Row } from 'react-bootstrap'
+import { useForm } from 'react-hook-form'
+import CourseCoverPhoto from './CourseCoverPhoto'
+import CourseGoals from './CourseGoals'
+import CourseInformationForm from './CourseInformationForm'
+import CoursePreviewVideo from './CoursePreviewVideo'
+import CoursePricing from './CoursePricing'
+import CourseRequirements from './CourseRequirements'
+import CourseResources from './CourseResources'
+import CreateCourseHeader from './CreateCourseHeader'
+import PublishCourse from './PublishCourse'
+import ScheduleDiscountModal from './ScheduleDiscountModal'
 
 const CreateCourse = () => {
-  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false);
+  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false)
   const defaultValues = {
     timeZone: 'GMT-12:00/Etc/GMT-12'
-  };
-  const submittedValues = {};
+  }
+  const submittedValues = {}
   const { register, handleSubmit, setValue, control, reset } = useForm({
     defaultValues
-  });
+  })
 
   const onSubmit = data => {
-    console.log(data);
+    console.log(data)
     // ------- Get all object keys form data and set empty values to reset ------------
-    const keys = Object.keys(data);
+    const keys = Object.keys(data)
     for (const key of keys) {
-      submittedValues[key] = '';
+      submittedValues[key] = ''
     }
-    const allValues = { ...submittedValues, ...defaultValues };
-    reset({ ...allValues });
-  };
+    const allValues = { ...submittedValues, ...defaultValues }
+    reset({ ...allValues })
+  }
 
   return (
     <>
@@ -69,7 +69,7 @@ const CreateCourse = () => {
         setIsOpenScheduleModal={setIsOpenScheduleModal}
       />
     </>
-  );
-};
+  )
+}
 
-export default CreateCourse;
+export default CreateCourse

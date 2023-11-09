@@ -1,16 +1,16 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, getRandomNumber, rgbaColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { useEffect, useRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, getRandomNumber, rgbaColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { useEffect, useRef } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -19,13 +19,13 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const data = [
   921, 950, 916, 913, 909, 962, 926, 936, 977, 976, 999, 981, 998, 1000, 900,
   906, 973, 911, 994, 982, 917, 972, 952, 963, 991
-];
-const axisData = Array.from(Array(25).keys());
+]
+const axisData = Array.from(Array(25).keys())
 
 const tooltipFormatter = params => {
   return `
@@ -37,8 +37,8 @@ const tooltipFormatter = params => {
         Users : ${params[0].value}
       </h6>
     </div>
-  `;
-};
+  `
+}
 
 const getOptions = () => ({
   tooltip: {
@@ -93,20 +93,20 @@ const getOptions = () => ({
     }
   ],
   grid: { right: '0px', left: '0px', bottom: 0, top: 0 }
-});
+})
 
 const RealTimeUsersChart = ({ setUserCount }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const rndData = getRandomNumber(900, 1000);
-      data.shift();
-      data.push(rndData);
-      axisData.shift();
-      axisData.push(getRandomNumber(100, 500));
+      const rndData = getRandomNumber(900, 1000)
+      data.shift()
+      data.push(rndData)
+      axisData.shift()
+      axisData.push(getRandomNumber(100, 500))
 
-      setUserCount(rndData);
+      setUserCount(rndData)
 
       chartRef.current.getEchartsInstance().setOption({
         xAxis: {
@@ -117,12 +117,12 @@ const RealTimeUsersChart = ({ setUserCount }) => {
             data
           }
         ]
-      });
-    }, 2000);
+      })
+    }, 2000)
     return () => {
-      clearInterval(interval);
-    };
-  }, []);
+      clearInterval(interval)
+    }
+  }, [])
 
   return (
     <ReactEChartsCore
@@ -131,11 +131,11 @@ const RealTimeUsersChart = ({ setUserCount }) => {
       option={getOptions()}
       style={{ height: '9.375rem' }}
     />
-  );
-};
+  )
+}
 
 RealTimeUsersChart.propTypes = {
   setUserCount: PropTypes.func
-};
+}
 
-export default RealTimeUsersChart;
+export default RealTimeUsersChart

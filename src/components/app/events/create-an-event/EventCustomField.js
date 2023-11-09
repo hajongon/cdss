@@ -1,61 +1,61 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col, Form } from 'react-bootstrap';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col, Form } from 'react-bootstrap'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import IconButton from 'components/common/IconButton'
 
-import { v4 as uuid } from 'uuid';
-import EventCustomFieldItem from './EventCustomFieldItem';
+import { v4 as uuid } from 'uuid'
+import EventCustomFieldItem from './EventCustomFieldItem'
 
 const EventCustomField = ({ register, setValue }) => {
-  const [name, setName] = useState('');
-  const [type, setType] = useState('text');
-  const [options, setOptions] = useState('');
-  const [hasOptions, setHasOptions] = useState(false);
-  const [disabled, setDisabled] = useState(true);
-  const [customFields, setCustomFields] = useState([]);
+  const [name, setName] = useState('')
+  const [type, setType] = useState('text')
+  const [options, setOptions] = useState('')
+  const [hasOptions, setHasOptions] = useState(false)
+  const [disabled, setDisabled] = useState(true)
+  const [customFields, setCustomFields] = useState([])
 
   const handleRemove = id => {
-    const items = customFields.filter(fields => fields.id !== id);
-    setCustomFields(items);
-  };
+    const items = customFields.filter(fields => fields.id !== id)
+    setCustomFields(items)
+  }
 
   const handleSubmit = () => {
     if (hasOptions) {
-      const updatedOptions = options.split(',');
+      const updatedOptions = options.split(',')
       setCustomFields([
         ...customFields,
         { name, type, options: updatedOptions, id: uuid() }
-      ]);
+      ])
     } else {
-      setCustomFields([...customFields, { name, type, id: uuid() }]);
+      setCustomFields([...customFields, { name, type, id: uuid() }])
     }
 
-    setName('');
-    setType('text');
-    setOptions('');
-    setHasOptions(false);
-    setDisabled(true);
-  };
+    setName('')
+    setType('text')
+    setOptions('')
+    setHasOptions(false)
+    setDisabled(true)
+  }
 
   // Handler
   useEffect(() => {
     setHasOptions(
       type === 'select' || type === 'checkboxes' || type === 'radio'
-    );
-  }, [type]);
+    )
+  }, [type])
 
   useEffect(() => {
-    let disableState = true;
+    let disableState = true
     if (!hasOptions && name.length) {
-      disableState = false;
+      disableState = false
     }
     if (hasOptions && options.length && name.length) {
-      disableState = false;
+      disableState = false
     }
-    setDisabled(disableState);
-  }, [name, type, hasOptions, options]);
+    setDisabled(disableState)
+  }, [name, type, hasOptions, options])
 
   return (
     <Card>
@@ -145,12 +145,12 @@ const EventCustomField = ({ register, setValue }) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 EventCustomField.propTypes = {
   register: PropTypes.func.isRequired,
   setValue: PropTypes.func.isRequired
-};
+}
 
-export default EventCustomField;
+export default EventCustomField

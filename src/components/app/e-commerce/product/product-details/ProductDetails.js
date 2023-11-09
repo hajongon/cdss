@@ -1,22 +1,22 @@
-import React, { useContext } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import { Card, Col, Row } from 'react-bootstrap';
-import ProductDetailsMedia from './ProductDetailsMedia';
-import ProductDetailsMain from './ProductDetailsMain';
-import ProductDetailsFooter from './ProductDetailsFooter';
-import { ProductContext } from 'context/Context';
-import CartModal from '../../cart/CartModal';
-import Flex from 'components/common/Flex';
+import React, { useContext } from 'react'
+import { Navigate, useParams } from 'react-router-dom'
+import { Card, Col, Row } from 'react-bootstrap'
+import ProductDetailsMedia from './ProductDetailsMedia'
+import ProductDetailsMain from './ProductDetailsMain'
+import ProductDetailsFooter from './ProductDetailsFooter'
+import { ProductContext } from 'context/Context'
+import CartModal from '../../cart/CartModal'
+import Flex from 'components/common/Flex'
 
 const ProductDetails = () => {
-  const { productId } = useParams();
+  const { productId } = useParams()
 
   const {
     productsState: { products },
     productsDispatch
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
-  const product = products.find(product => product.id === productId);
+  const product = products.find(product => product.id === productId)
 
   return product ? (
     <>
@@ -47,7 +47,7 @@ const ProductDetails = () => {
     </>
   ) : (
     <Navigate to={`/e-commerce/product/product-details/${products[0].id}`} />
-  );
-};
+  )
+}
 
-export default ProductDetails;
+export default ProductDetails

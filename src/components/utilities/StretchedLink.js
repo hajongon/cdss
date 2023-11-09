@@ -1,9 +1,9 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import generic1 from 'assets/img/generic/1.jpg';
-import generic2 from 'assets/img/generic/2.jpg';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import generic1 from 'assets/img/generic/1.jpg'
+import generic2 from 'assets/img/generic/2.jpg'
+import { Link } from 'react-router-dom'
 
 const stretchedLinkCode = `
 <Card style={{width: '20rem'}}>
@@ -21,7 +21,7 @@ const stretchedLinkCode = `
       Go somewhere
     </Button>
   </Card.Body>
-</Card>`;
+</Card>`
 const containingBlockCode = `
 <Card style={{width: '18rem'}} className='shadow-lg'>
   <Card.Img src={generic2} variant='top' />
@@ -49,7 +49,7 @@ const containingBlockCode = `
         will only be spread over the <code>p</code>-tag, because a transform is applied to it.
     </Card.Text>
   </Card.Body>
-</Card>`;
+</Card>`
 
 const StretchedLink = () => (
   <>
@@ -127,6 +127,6 @@ const StretchedLink = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default StretchedLink;
+export default StretchedLink

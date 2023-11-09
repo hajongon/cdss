@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Button,
   Card,
@@ -7,35 +7,35 @@ import {
   Table,
   Form,
   ProgressBar
-} from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import SimpleBarReact from 'simplebar-react';
+} from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import SimpleBarReact from 'simplebar-react'
 
 const getTotalPrice = items =>
   items
     .map(({ unit, price }) => unit * price)
-    .reduce((total, currentValue) => total + currentValue, 0);
+    .reduce((total, currentValue) => total + currentValue, 0)
 
 const getTotalOrder = items =>
   items
     .map(({ unit }) => unit)
-    .reduce((total, currentValue) => total + currentValue, 0);
+    .reduce((total, currentValue) => total + currentValue, 0)
 
 const getProductItemCalculatedData = (unit, price, totalPrice) => {
-  const productTotalPrice = unit * price;
-  const percentage = ((productTotalPrice * 100) / totalPrice).toFixed(0);
-  return { productTotalPrice, percentage };
-};
+  const productTotalPrice = unit * price
+  const percentage = ((productTotalPrice * 100) / totalPrice).toFixed(0)
+  return { productTotalPrice, percentage }
+}
 
 const BestSellingTableRow = ({ product, totalPrice, totalOrder }) => {
-  const { img, title, type, unit, price } = product;
+  const { img, title, type, unit, price } = product
   const { productTotalPrice, percentage } = getProductItemCalculatedData(
     unit,
     price,
     totalPrice
-  );
+  )
 
   return (
     <tr className="border-top border-200">
@@ -78,12 +78,12 @@ const BestSellingTableRow = ({ product, totalPrice, totalOrder }) => {
         </Flex>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 const BestSellingProducts = ({ products }) => {
-  const totalPrice = getTotalPrice(products);
-  const totalOrder = getTotalOrder(products);
+  const totalPrice = getTotalPrice(products)
+  const totalOrder = getTotalOrder(products)
 
   return (
     <Card className="h-lg-100 overflow-hidden">
@@ -131,8 +131,8 @@ const BestSellingProducts = ({ products }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 BestSellingTableRow.propTypes = {
   totalPrice: PropTypes.number.isRequired,
@@ -145,10 +145,10 @@ BestSellingTableRow.propTypes = {
     unit: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired
   }).isRequired
-};
+}
 
 BestSellingProducts.propTypes = {
   products: PropTypes.arrayOf(BestSellingTableRow.propTypes.product).isRequired
-};
+}
 
-export default BestSellingProducts;
+export default BestSellingProducts

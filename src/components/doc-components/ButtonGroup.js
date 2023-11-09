@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <ButtonGroup aria-label="Basic example">
@@ -11,7 +11,7 @@ const exampleCode = `
 <Button variant="secondary">Middle</Button>
 <Button variant="secondary">Right</Button>
 </ButtonGroup>
-`;
+`
 const btnToolbarCode = `
 <ButtonToolbar aria-label="Toolbar with button groups">
   <ButtonGroup className="me-2 mb-1" aria-label="First group">
@@ -29,7 +29,7 @@ const btnToolbarCode = `
     <Button variant="secondary">8</Button>
   </ButtonGroup>
 </ButtonToolbar>
-`;
+`
 
 const inputGroupExampleCode = `
 <>
@@ -72,7 +72,7 @@ const inputGroupExampleCode = `
     </InputGroup>
   </ButtonToolbar>
 </>
-`;
+`
 
 const sizingCode = `
 <>
@@ -92,7 +92,7 @@ const sizingCode = `
     <Button variant="secondary">Right</Button>
   </ButtonGroup>
 </>
-`;
+`
 
 const nestingCode = `
 <ButtonGroup>
@@ -104,7 +104,7 @@ const nestingCode = `
     <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
   </DropdownButton>
 </ButtonGroup>
-`;
+`
 const verticalVariationCode = `
 <ButtonGroup vertical>
   <Button variant="secondary">Button</Button>
@@ -128,7 +128,7 @@ const verticalVariationCode = `
     <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
   </DropdownButton>
 </ButtonGroup>
-`;
+`
 
 const toggleBtnCode = `
 function ToggleButtonExample() {
@@ -204,7 +204,7 @@ function ToggleButtonExample() {
     </>
   );
 }
-`;
+`
 
 const unControlledCode = `
 <>
@@ -232,7 +232,7 @@ const unControlledCode = `
     </ToggleButton>
   </ToggleButtonGroup>
 </>
-`;
+`
 const controlledCode = `
 function ToggleButtonGroupControlled() {
   const [value, setValue] = useState([1, 3]);
@@ -253,7 +253,7 @@ function ToggleButtonGroupControlled() {
     </ToggleButtonGroup>
   );
 }
-`;
+`
 
 const ButtonGroup = () => (
   <>
@@ -373,6 +373,6 @@ const ButtonGroup = () => (
       <FalconComponentCard.Body code={controlledCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default ButtonGroup;
+export default ButtonGroup

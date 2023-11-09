@@ -1,7 +1,7 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BasicCandlestickChart from './BasicCandlestickChart';
-import CandlestickMixedChart from './CandlestickMixedChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BasicCandlestickChart from './BasicCandlestickChart'
+import CandlestickMixedChart from './CandlestickMixedChart'
 
 const CandlestickCharts = () => {
   return (
@@ -15,7 +15,7 @@ const CandlestickCharts = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default CandlestickCharts;
+export default CandlestickCharts

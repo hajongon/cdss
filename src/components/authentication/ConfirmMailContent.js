@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import envelope from 'assets/img/icons/spot-illustrations/16.png';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import envelope from 'assets/img/icons/spot-illustrations/16.png'
 
 const ConfirmMailContent = ({ email, layout, titleTag: TitleTag }) => (
   <>
@@ -33,14 +33,14 @@ const ConfirmMailContent = ({ email, layout, titleTag: TitleTag }) => (
       Return to login
     </Button>
   </>
-);
+)
 
 ConfirmMailContent.propTypes = {
   email: PropTypes.string.isRequired,
   layout: PropTypes.string,
   titleTag: PropTypes.string
-};
+}
 
-ConfirmMailContent.defaultProps = { layout: 'simple', titleTag: 'h4' };
+ConfirmMailContent.defaultProps = { layout: 'simple', titleTag: 'h4' }
 
-export default ConfirmMailContent;
+export default ConfirmMailContent

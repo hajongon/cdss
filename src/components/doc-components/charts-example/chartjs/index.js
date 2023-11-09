@@ -1,17 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import ChartBar from './ChartBar';
-import ChartBubble from './ChartBubble';
-import ChartCombo from './ChartCombo';
-import ChartDoughnut from './ChartDoughnut';
-import ChartLine from './ChartLine';
-import ChartPie from './ChartPie';
-import ChartPolar from './ChartPolar';
-import ChartRadar from './ChartRadar';
-import ChartScatter from './ChartScatter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import ChartBar from './ChartBar'
+import ChartBubble from './ChartBubble'
+import ChartCombo from './ChartCombo'
+import ChartDoughnut from './ChartDoughnut'
+import ChartLine from './ChartLine'
+import ChartPie from './ChartPie'
+import ChartPolar from './ChartPolar'
+import ChartRadar from './ChartRadar'
+import ChartScatter from './ChartScatter'
 
 const Chartjs = () => {
   return (
@@ -62,7 +62,7 @@ const Chartjs = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Chartjs;
+export default Chartjs

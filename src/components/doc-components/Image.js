@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import user1 from 'assets/img/team/1.jpg';
-import user2 from 'assets/img/team/2.jpg';
-import user3 from 'assets/img/team/3.jpg';
-import user24 from 'assets/img/team/24.jpg';
-import user25 from 'assets/img/team/25.jpg';
-import generic3 from 'assets/img/generic/9.jpg';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import user1 from 'assets/img/team/1.jpg'
+import user2 from 'assets/img/team/2.jpg'
+import user3 from 'assets/img/team/3.jpg'
+import user24 from 'assets/img/team/24.jpg'
+import user25 from 'assets/img/team/25.jpg'
+import generic3 from 'assets/img/generic/9.jpg'
+import Flex from 'components/common/Flex'
 
 const shapeCode = `
 <Container>
@@ -26,17 +26,17 @@ const shapeCode = `
     </Col>
   </Row>
 </Container>
-`;
+`
 
 const fluidCode = `
 <Image src={generic3} fluid />
-`;
+`
 const aligningCode = `
   <Flex justifyContent="between">
     <Image src={user24} rounded className="w-25" />
     <Image src={user25} rounded className="w-25" />
   </Flex>
-`;
+`
 
 const Images = () => (
   <>
@@ -94,6 +94,6 @@ const Images = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Images;
+export default Images

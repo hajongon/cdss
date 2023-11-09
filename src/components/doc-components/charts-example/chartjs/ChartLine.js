@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { getColor, rgbaColor } from 'helpers/utils';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { getColor, rgbaColor } from 'helpers/utils'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import React from 'react'
+import { Line } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -44,7 +44,7 @@ const chartCode = `function ChartOptions() {
       <Line data={data} options={options}  height={1000} width={1618} />
     );  
   }
-`;
+`
 const ChartLine = () => {
   return (
     <FalconComponentCard>
@@ -60,7 +60,7 @@ const ChartLine = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartLine;
+export default ChartLine

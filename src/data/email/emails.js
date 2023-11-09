@@ -1,17 +1,17 @@
-import github from 'assets/img/logos/github.png';
-import team17 from 'assets/img/team/17.jpg';
-import coursera from 'assets/img/logos/coursera.png';
-import spectrum from 'assets/img/logos/spectrum.jpg';
-import pinterest from 'assets/img/logos/pinterest.png';
-import medium from 'assets/img/logos/medium.png';
-import unsplash from 'assets/img/logos/unsplash.png';
-import stripe from 'assets/img/logos/stripe.png';
-import team4 from 'assets/img/team/4.jpg';
-import youtube from 'assets/img/logos/youtube.png';
-import team5 from 'assets/img/team/5.jpg';
-import goodreads from 'assets/img/logos/goodreads.png';
-import generic1 from 'assets/img/generic/1.jpg';
-import generic8 from 'assets/img/generic/8.jpg';
+import github from 'assets/img/logos/github.png'
+import team17 from 'assets/img/team/17.jpg'
+import coursera from 'assets/img/logos/coursera.png'
+import spectrum from 'assets/img/logos/spectrum.jpg'
+import pinterest from 'assets/img/logos/pinterest.png'
+import medium from 'assets/img/logos/medium.png'
+import unsplash from 'assets/img/logos/unsplash.png'
+import stripe from 'assets/img/logos/stripe.png'
+import team4 from 'assets/img/team/4.jpg'
+import youtube from 'assets/img/logos/youtube.png'
+import team5 from 'assets/img/team/5.jpg'
+import goodreads from 'assets/img/logos/goodreads.png'
+import generic1 from 'assets/img/generic/1.jpg'
+import generic8 from 'assets/img/generic/8.jpg'
 
 export default [
   {
@@ -210,4 +210,4 @@ export default [
     archive: true,
     read: false
   }
-];
+]

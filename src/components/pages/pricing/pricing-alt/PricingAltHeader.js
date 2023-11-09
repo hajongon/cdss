@@ -1,6 +1,6 @@
-import React from 'react';
-import { Col, Form, FormCheck } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Col, Form, FormCheck } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
 
 const PricingAltHeader = () => {
   return (
@@ -24,7 +24,7 @@ const PricingAltHeader = () => {
         <Form.Check.Label className="ms-2 align-top">Yearly</Form.Check.Label>
       </Flex>
     </Col>
-  );
-};
+  )
+}
 
-export default PricingAltHeader;
+export default PricingAltHeader

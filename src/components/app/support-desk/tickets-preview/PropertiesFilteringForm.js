@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import React from 'react'
+import { Button, Card, Form } from 'react-bootstrap'
 
 const PropertiesFilteringForm = () => {
   return (
@@ -69,7 +69,7 @@ const PropertiesFilteringForm = () => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default PropertiesFilteringForm;
+export default PropertiesFilteringForm

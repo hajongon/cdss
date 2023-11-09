@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Form, Modal } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Form, Modal } from 'react-bootstrap'
 
 const InvitePeopleModal = ({ show, setShow }) => {
-  const [copyLinkText] = useState('https://falcon.com/invited');
-  const copyRef = useRef(null);
+  const [copyLinkText] = useState('https://falcon.com/invited')
+  const copyRef = useRef(null)
 
   useEffect(() => {
     if (show) {
-      copyRef.current.select();
+      copyRef.current.select()
     }
-  }, [show]);
+  }, [show])
   return (
     <Modal
       show={show}
@@ -34,12 +34,12 @@ const InvitePeopleModal = ({ show, setShow }) => {
         </Form>
       </Modal.Body>
     </Modal>
-  );
-};
+  )
+}
 
 InvitePeopleModal.propTypes = {
   show: PropTypes.bool.isRequired,
   setShow: PropTypes.func.isRequired
-};
+}
 
-export default InvitePeopleModal;
+export default InvitePeopleModal

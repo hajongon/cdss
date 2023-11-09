@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import React from 'react';
-import { Card, Col, Row, Button } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import React from 'react'
+import { Card, Col, Row, Button } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 const Discussion = ({ data }) => {
   return (
@@ -54,15 +54,15 @@ const Discussion = ({ data }) => {
                     isExact
                     className="border border-3 rounded-circle border-light"
                   />
-                );
+                )
               })}
             </AvatarGroup>
           </Col>
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 Discussion.propTypes = {
   data: PropTypes.arrayOf(
@@ -73,6 +73,6 @@ Discussion.propTypes = {
       size: PropTypes.string
     })
   )
-};
+}
 
-export default Discussion;
+export default Discussion

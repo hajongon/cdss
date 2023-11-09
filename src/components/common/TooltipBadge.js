@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TooltipBadge = ({
   placement = 'top',
@@ -22,14 +22,14 @@ const TooltipBadge = ({
         />
       </span>
     </OverlayTrigger>
-  );
-};
+  )
+}
 
 TooltipBadge.propTypes = {
   placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
   tooltip: PropTypes.string.isRequired,
   icon: PropTypes.string,
   color: PropTypes.string
-};
+}
 
-export default TooltipBadge;
+export default TooltipBadge

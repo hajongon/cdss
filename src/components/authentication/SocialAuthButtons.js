@@ -1,6 +1,6 @@
-import React from 'react';
-import { Form, Button, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Form, Button, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SocialAuthButtons = () => (
   <Form.Group className="mb-0">
@@ -35,6 +35,6 @@ const SocialAuthButtons = () => (
       </Col>
     </Row>
   </Form.Group>
-);
+)
 
-export default SocialAuthButtons;
+export default SocialAuthButtons

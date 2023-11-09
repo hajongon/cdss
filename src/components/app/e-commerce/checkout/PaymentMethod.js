@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import cards from 'assets/img/icons/icon-payment-methods-grid.png';
-import paypal from 'assets/img/icons/icon-paypal-full.png';
-import shield from 'assets/img/icons/shield.png';
-import { ProductContext } from 'context/Context';
-import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import cards from 'assets/img/icons/icon-payment-methods-grid.png'
+import paypal from 'assets/img/icons/icon-paypal-full.png'
+import shield from 'assets/img/icons/shield.png'
+import { ProductContext } from 'context/Context'
+import PropTypes from 'prop-types'
+import React, { useContext, useState } from 'react'
 import {
   Button,
   Card,
@@ -13,20 +13,20 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+} from 'react-bootstrap'
+import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const PaymentMethod = ({ payableTotal }) => {
-  const [method, setMethod] = useState('credit-card');
-  const { productsDispatch } = useContext(ProductContext);
-  const { register, handleSubmit } = useForm();
+  const [method, setMethod] = useState('credit-card')
+  const { productsDispatch } = useContext(ProductContext)
+  const { register, handleSubmit } = useForm()
 
   const onSubmit = data => {
     productsDispatch({
       type: 'CHECKOUT'
-    });
+    })
     toast(
       <div className="text-700">
         <h5 className="text-success fs-0 mb-0">Payment success!</h5>
@@ -38,11 +38,11 @@ const PaymentMethod = ({ payableTotal }) => {
           {method.split('-').join(' ')}
         </strong>
       </div>
-    );
+    )
     method === 'credit-card'
       ? console.log(data)
-      : console.log('Calling paypal api');
-  };
+      : console.log('Calling paypal api')
+  }
 
   return (
     <Card>
@@ -219,11 +219,11 @@ const PaymentMethod = ({ payableTotal }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 PaymentMethod.propTypes = {
   payableTotal: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-};
+}
 
-export default PaymentMethod;
+export default PaymentMethod

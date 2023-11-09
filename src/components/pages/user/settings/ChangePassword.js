@@ -1,24 +1,24 @@
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React, { useState } from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React, { useState } from 'react'
+import { Button, Card, Form } from 'react-bootstrap'
 
 const ChangePassword = () => {
   const [formData, setFormData] = useState({
     oldPassword: '',
     newPassword: '',
     confirmPassword: ''
-  });
+  })
 
   const handleChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   return (
     <Card className="mb-3">
@@ -58,7 +58,7 @@ const ChangePassword = () => {
         </Form>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ChangePassword;
+export default ChangePassword

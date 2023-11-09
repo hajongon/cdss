@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Row, Col } from 'react-bootstrap'
 
 const SectionHeader = ({ title, subtitle, ...rest }) => {
   return (
@@ -10,12 +10,12 @@ const SectionHeader = ({ title, subtitle, ...rest }) => {
         <p className="lead">{subtitle}</p>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired
-};
+}
 
-export default SectionHeader;
+export default SectionHeader

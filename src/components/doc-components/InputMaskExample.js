@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import MaskedInput from 'react-text-mask';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import MaskedInput from 'react-text-mask'
 
 const exampleCode = `
   <>
@@ -68,7 +68,7 @@ const exampleCode = `
       />
     </Form.Group>
   </>
-`;
+`
 
 const InputMaskExample = () => (
   <>
@@ -98,6 +98,6 @@ const InputMaskExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default InputMaskExample;
+export default InputMaskExample

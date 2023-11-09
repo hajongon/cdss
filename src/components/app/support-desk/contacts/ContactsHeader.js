@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox';
-import IconButton from 'components/common/IconButton';
-import React from 'react';
-import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox'
+import IconButton from 'components/common/IconButton'
+import React from 'react'
+import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 const ContactsHeader = ({
   selectedRowIds,
@@ -115,14 +115,14 @@ const ContactsHeader = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 ContactsHeader.propTypes = {
   selectedRowIds: PropTypes.object,
   globalFilter: PropTypes.string,
   setGlobalFilter: PropTypes.func,
   handleShow: PropTypes.func
-};
+}
 
-export default ContactsHeader;
+export default ContactsHeader

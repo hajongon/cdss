@@ -1,19 +1,19 @@
-import { v4 as uuid } from 'uuid';
-import eventImg1 from 'assets/img/generic/13.jpg';
-import team15 from 'assets/img/team/15.jpg';
-import user1 from 'assets/img/team/17.jpg';
-import user4 from 'assets/img/team/4.jpg';
-import user13 from 'assets/img/team/13.jpg';
-import user10 from 'assets/img/team/10.jpg';
-import user8 from 'assets/img/team/8.jpg';
-import generic11 from 'assets/img/generic/11.jpg';
-import generic12 from 'assets/img/generic/12.jpg';
-import av4 from 'assets/img/team/4.jpg';
-import img1 from 'assets/img/generic/4.jpg';
-import img2 from 'assets/img/generic/5.jpg';
-import img3 from 'assets/img/gallery/4.jpg';
-import img4 from 'assets/img/gallery/5.jpg';
-import img5 from 'assets/img/gallery/3.jpg';
+import { v4 as uuid } from 'uuid'
+import eventImg1 from 'assets/img/generic/13.jpg'
+import team15 from 'assets/img/team/15.jpg'
+import user1 from 'assets/img/team/17.jpg'
+import user4 from 'assets/img/team/4.jpg'
+import user13 from 'assets/img/team/13.jpg'
+import user10 from 'assets/img/team/10.jpg'
+import user8 from 'assets/img/team/8.jpg'
+import generic11 from 'assets/img/generic/11.jpg'
+import generic12 from 'assets/img/generic/12.jpg'
+import av4 from 'assets/img/team/4.jpg'
+import img1 from 'assets/img/generic/4.jpg'
+import img2 from 'assets/img/generic/5.jpg'
+import img3 from 'assets/img/gallery/4.jpg'
+import img4 from 'assets/img/gallery/5.jpg'
+import img5 from 'assets/img/gallery/3.jpg'
 
 export default [
   {
@@ -218,4 +218,4 @@ export default [
       }
     }
   }
-];
+]

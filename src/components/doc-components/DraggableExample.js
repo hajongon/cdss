@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { Link } from 'react-router-dom';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { Link } from 'react-router-dom'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 const data = [
   {
@@ -50,7 +50,7 @@ const data = [
       }
     ]
   }
-];
+]
 
 const draggableCode = `DraggableComponent = () => {
   const [draggableData, setDraggableData] = useState(data);
@@ -195,22 +195,22 @@ const draggableCode = `DraggableComponent = () => {
       </Row>
     </DragDropContext>
   );
-};`;
+};`
 
 const StrictModeDroppable = ({ children, ...props }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(false)
   useEffect(() => {
-    const animation = requestAnimationFrame(() => setEnabled(true));
+    const animation = requestAnimationFrame(() => setEnabled(true))
     return () => {
-      cancelAnimationFrame(animation);
-      setEnabled(false);
-    };
-  }, []);
+      cancelAnimationFrame(animation)
+      setEnabled(false)
+    }
+  }, [])
   if (!enabled) {
-    return null;
+    return null
   }
-  return <Droppable {...props}>{children}</Droppable>;
-};
+  return <Droppable {...props}>{children}</Droppable>
+}
 
 const DraggableExample = () => (
   <>
@@ -248,10 +248,10 @@ const DraggableExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
 StrictModeDroppable.propTypes = {
   children: PropTypes.any
-};
+}
 
-export default DraggableExample;
+export default DraggableExample

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
-import Section from 'components/common/Section';
-import Slider from 'react-slick';
-import { isIterableArray } from 'helpers/utils';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import testimonials from 'data/testimonial/testimonialList';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Row, Col } from 'react-bootstrap'
+import Section from 'components/common/Section'
+import Slider from 'react-slick'
+import { isIterableArray } from 'helpers/utils'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import testimonials from 'data/testimonial/testimonialList'
 
 const TestimonialItem = ({
   description,
@@ -23,8 +23,8 @@ const TestimonialItem = ({
       </p>
       <img className="w-auto mx-auto" src={companyImage} alt="" height={size} />
     </div>
-  );
-};
+  )
+}
 
 const settings = {
   infinite: true,
@@ -32,7 +32,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true
-};
+}
 
 const Testimonial = () => (
   <Section className="text-center bg-200">
@@ -47,7 +47,7 @@ const Testimonial = () => (
       </Col>
     </Row>
   </Section>
-);
+)
 
 TestimonialItem.propTypes = {
   description: PropTypes.string.isRequired,
@@ -55,6 +55,6 @@ TestimonialItem.propTypes = {
   designation: PropTypes.string.isRequired,
   companyImage: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired
-};
+}
 
-export default Testimonial;
+export default Testimonial

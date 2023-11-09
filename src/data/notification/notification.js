@@ -1,16 +1,16 @@
-import team1 from 'assets/img/team/1.jpg';
-import team2 from 'assets/img/team/2.jpg';
-import team3 from 'assets/img/team/3.jpg';
-import team4 from 'assets/img/team/4.jpg';
-import team5 from 'assets/img/team/5.jpg';
-import logosHarvard from 'assets/img/logos/harvard.png';
-import team7 from 'assets/img/team/7.jpg';
-import team8 from 'assets/img/team/8.jpg';
-import team9 from 'assets/img/team/9.jpg';
-import team10 from 'assets/img/team/10.jpg';
-import logosOxford from 'assets/img/logos/oxford.png';
-import weather from 'assets/img/icons/weather.jpg';
-import oxford from 'assets/img/logos/oxford.png';
+import team1 from 'assets/img/team/1.jpg'
+import team2 from 'assets/img/team/2.jpg'
+import team3 from 'assets/img/team/3.jpg'
+import team4 from 'assets/img/team/4.jpg'
+import team5 from 'assets/img/team/5.jpg'
+import logosHarvard from 'assets/img/logos/harvard.png'
+import team7 from 'assets/img/team/7.jpg'
+import team8 from 'assets/img/team/8.jpg'
+import team9 from 'assets/img/team/9.jpg'
+import team10 from 'assets/img/team/10.jpg'
+import logosOxford from 'assets/img/logos/oxford.png'
+import weather from 'assets/img/icons/weather.jpg'
+import oxford from 'assets/img/logos/oxford.png'
 
 export const notifications = [
   {
@@ -161,7 +161,7 @@ export const notifications = [
     unread: true,
     to: '#!'
   }
-];
+]
 
 export const activities = [
   {
@@ -229,7 +229,7 @@ export const activities = [
     time: 'October 28, 12:00 PM',
     to: '#!'
   }
-];
+]
 
 export const rawNewNotifications = [
   {
@@ -261,7 +261,7 @@ export const rawNewNotifications = [
     to: '#!',
     unread: true
   }
-];
+]
 
 export const rawEarlierNotifications = [
   {
@@ -304,4 +304,4 @@ export const rawEarlierNotifications = [
     className: 'rounded-0 border-x-0 border-300 border-bottom-0',
     to: '#!'
   }
-];
+]

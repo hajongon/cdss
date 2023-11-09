@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 // import PropTypes from 'prop-types';
-import { Card, Col, Row, Table } from 'react-bootstrap';
-import { orderedProductsData } from 'data/ecommerce/OrderDetailsData';
-import { getPercentage } from 'helpers/utils';
+import { Card, Col, Row, Table } from 'react-bootstrap'
+import { orderedProductsData } from 'data/ecommerce/OrderDetailsData'
+import { getPercentage } from 'helpers/utils'
 
 const OrderedProducts = () => {
   const subtotal = orderedProductsData.reduce(
     (acc, curr) => curr.quantity * curr.rate + acc,
     0
-  );
+  )
 
-  const tax = getPercentage(subtotal, 5);
+  const tax = getPercentage(subtotal, 5)
 
   return (
     <Card className="mb-3">
@@ -94,9 +94,9 @@ const OrderedProducts = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-OrderedProducts.propTypes = {};
+OrderedProducts.propTypes = {}
 
-export default OrderedProducts;
+export default OrderedProducts

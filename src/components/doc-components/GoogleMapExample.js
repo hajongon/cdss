@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
-import PageHeader from 'components/common/PageHeader';
-import GoogleMap from 'components/map/GoogleMap';
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
+import PageHeader from 'components/common/PageHeader'
+import GoogleMap from 'components/map/GoogleMap'
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 
 const exampleCode = `<GoogleMap
   initialCenter={{
@@ -20,7 +20,7 @@ const exampleCode = `<GoogleMap
     Gustave Eiffel's iconic, wrought-iron 1889 tower,
     <br /> with steps and elevators to observation decks.
   </p>
-</GoogleMap>`;
+</GoogleMap>`
 const colorScehemCode = `<GoogleMap
   initialCenter={{
     lat: 48.8583736,
@@ -29,7 +29,7 @@ const colorScehemCode = `<GoogleMap
   mapStyle="AssassianCreed"
   darkStyle="Cobalt"
   className="vh-50"
-/>`;
+/>`
 
 const propertiesCode = `GoogleMap.propTypes = {
   mapStyle: PropTypes.oneOf([
@@ -60,7 +60,7 @@ const propertiesCode = `GoogleMap.propTypes = {
     lat: PropTypes.number,
     lng: PropTypes.number
   })
-};`;
+};`
 
 const GoogleMapExample = () => {
   return (
@@ -149,7 +149,7 @@ const GoogleMapExample = () => {
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default GoogleMapExample;
+export default GoogleMapExample

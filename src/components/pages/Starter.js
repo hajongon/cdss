@@ -1,7 +1,7 @@
-import React from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import editing from 'assets/img/icons/spot-illustrations/21.png';
+import React from 'react'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import editing from 'assets/img/icons/spot-illustrations/21.png'
 
 const Starter = () => {
   return (
@@ -25,7 +25,7 @@ const Starter = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Starter;
+export default Starter

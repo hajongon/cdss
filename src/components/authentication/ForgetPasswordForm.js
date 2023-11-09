@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { Button, Form } from 'react-bootstrap';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { Button, Form } from 'react-bootstrap'
 
 const ForgetPasswordForm = () => {
   // State
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('')
 
   // Handler
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     if (email) {
       toast.success(`An email is sent to ${email} with password reset link`, {
         theme: 'colored'
-      });
+      })
     }
-  };
+  }
 
   return (
     <Form className="mt-4" onSubmit={handleSubmit}>
@@ -41,13 +41,13 @@ const ForgetPasswordForm = () => {
         <span className="d-inline-block ms-1"> &rarr;</span>
       </Link>
     </Form>
-  );
-};
+  )
+}
 
 ForgetPasswordForm.propTypes = {
   layout: PropTypes.string
-};
+}
 
-ForgetPasswordForm.defaultProps = { layout: 'simple' };
+ForgetPasswordForm.defaultProps = { layout: 'simple' }
 
-export default ForgetPasswordForm;
+export default ForgetPasswordForm

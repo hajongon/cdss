@@ -59,7 +59,7 @@ export const dashboardRoutes = {
       ]
     }
   ]
-};
+}
 export const appRoutes = {
   label: 'app',
   children: [
@@ -316,7 +316,7 @@ export const appRoutes = {
       ]
     }
   ]
-};
+}
 
 export const pagesRoutes = {
   label: 'pages',
@@ -570,7 +570,7 @@ export const pagesRoutes = {
       ]
     }
   ]
-};
+}
 
 export const modulesRoutes = {
   label: 'Modules',
@@ -1241,7 +1241,7 @@ export const modulesRoutes = {
       ]
     }
   ]
-};
+}
 
 export const documentationRoutes = {
   label: 'documentation',
@@ -1298,7 +1298,7 @@ export const documentationRoutes = {
       active: true
     }
   ]
-};
+}
 
 export default [
   dashboardRoutes,
@@ -1306,4 +1306,4 @@ export default [
   pagesRoutes,
   modulesRoutes,
   documentationRoutes
-];
+]

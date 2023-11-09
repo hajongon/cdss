@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import HalfDoughnutChart from './HalfDoughnutChart';
-import CountUp from 'react-countup';
+import React, { useState } from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import HalfDoughnutChart from './HalfDoughnutChart'
+import CountUp from 'react-countup'
 
 const LmsVisitor = () => {
   const [stat] = useState({
     target: 7500000,
     reached: 4800000
-  });
+  })
   return (
     <Card className="h-md-100">
       <Card.Header className="pb-0">
@@ -59,7 +59,7 @@ const LmsVisitor = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default LmsVisitor;
+export default LmsVisitor

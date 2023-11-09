@@ -1,7 +1,7 @@
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const DangerZone = () => {
   return (
@@ -26,7 +26,7 @@ const DangerZone = () => {
         </Button>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DangerZone;
+export default DangerZone

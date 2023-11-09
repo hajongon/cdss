@@ -1,17 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BasicECharts from 'components/common/BasicEChart';
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Badge, Card, Col, Row } from 'react-bootstrap';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import BasicECharts from 'components/common/BasicEChart'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Badge, Card, Col, Row } from 'react-bootstrap'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   ToolboxComponent,
   TitleComponent
-} from 'echarts/components';
+} from 'echarts/components'
 
-import { CanvasRenderer } from 'echarts/renderers';
+import { CanvasRenderer } from 'echarts/renderers'
 
 echarts.use([
   GridComponent,
@@ -19,7 +19,7 @@ echarts.use([
   TitleComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = data => ({
   tooltip: {
@@ -79,7 +79,7 @@ const getOptions = data => ({
     right: '0',
     left: '0px'
   }
-});
+})
 
 const SingleItem = ({ singleData }) => {
   return (
@@ -109,8 +109,8 @@ const SingleItem = ({ singleData }) => {
         </Col>
       </Row>
     </Col>
-  );
-};
+  )
+}
 
 SingleItem.propTypes = {
   singleData: PropTypes.shape({
@@ -124,7 +124,7 @@ SingleItem.propTypes = {
     dataArray: PropTypes.array,
     className: PropTypes.string
   })
-};
+}
 
 const TicketStatus = ({ data }) => {
   return (
@@ -137,11 +137,11 @@ const TicketStatus = ({ data }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 TicketStatus.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default TicketStatus;
+export default TicketStatus

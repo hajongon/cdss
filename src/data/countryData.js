@@ -178,4 +178,4 @@ export const countryData = [
   { name: 'South Africa', value: 51452.352 },
   { name: 'Zambia', value: 13216.985 },
   { name: 'Zimbabwe', value: 13076.978 }
-];
+]

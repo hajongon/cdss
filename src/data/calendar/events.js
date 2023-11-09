@@ -1,11 +1,11 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid'
 
-const today = new Date().getDate().toString().padStart(2, '0');
+const today = new Date().getDate().toString().padStart(2, '0')
 
-let currentMonth = (new Date().getMonth() + 1).toString().padStart(2, '0');
-const nextMonth = (currentMonth + 1).toString().padStart(2, '0');
-const prevMonth = (currentMonth - 1).toString().padStart(2, '0');
-const currentYear = new Date().getUTCFullYear();
+let currentMonth = (new Date().getMonth() + 1).toString().padStart(2, '0')
+const nextMonth = (currentMonth + 1).toString().padStart(2, '0')
+const prevMonth = (currentMonth - 1).toString().padStart(2, '0')
+const currentYear = new Date().getUTCFullYear()
 
 const events = [
   {
@@ -125,6 +125,6 @@ const events = [
       'Applications are open for the New Media Writing Prize 2020. The New Media Writing Prize (NMWP) showcases exciting and inventive stories and poetry that integrate a variety of formats, platforms, and digital media.',
     className: 'bg-soft-primary'
   }
-];
+]
 
-export default events;
+export default events

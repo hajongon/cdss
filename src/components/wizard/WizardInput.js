@@ -1,7 +1,7 @@
-import React, { useState, forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import { Form } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
+import React, { useState, forwardRef } from 'react'
+import PropTypes from 'prop-types'
+import { Form } from 'react-bootstrap'
+import DatePicker from 'react-datepicker'
 
 const CustomDateInput = forwardRef(
   (
@@ -22,9 +22,9 @@ const CustomDateInput = forwardRef(
           {errorMessage}
         </Form.Control.Feedback>
       </>
-    );
+    )
   }
-);
+)
 
 const WizardInput = ({
   label,
@@ -38,7 +38,7 @@ const WizardInput = ({
   setValue,
   datepickerProps
 }) => {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState(null)
 
   if (type === 'date') {
     return (
@@ -48,8 +48,8 @@ const WizardInput = ({
         <DatePicker
           selected={date}
           onChange={date => {
-            setDate(date);
-            setValue(name, date);
+            setDate(date)
+            setValue(name, date)
           }}
           customInput={
             <CustomDateInput
@@ -62,7 +62,7 @@ const WizardInput = ({
           {...datepickerProps}
         />
       </Form.Group>
-    );
+    )
   }
 
   if (type === 'checkbox' || type === 'switch' || type === 'radio') {
@@ -79,7 +79,7 @@ const WizardInput = ({
           {errors[name]?.message}
         </Form.Control.Feedback>
       </Form.Check>
-    );
+    )
   }
   if (type === 'select') {
     return (
@@ -102,7 +102,7 @@ const WizardInput = ({
           {errors[name]?.message}
         </Form.Control.Feedback>
       </Form.Group>
-    );
+    )
   }
   if (type === 'textarea') {
     return (
@@ -120,7 +120,7 @@ const WizardInput = ({
           {errors[name]?.message}
         </Form.Control.Feedback>
       </Form.Group>
-    );
+    )
   }
   return (
     <Form.Group {...formGroupProps}>
@@ -136,8 +136,8 @@ const WizardInput = ({
         {errors[name]?.message}
       </Form.Control.Feedback>
     </Form.Group>
-  );
-};
+  )
+}
 
 CustomDateInput.propTypes = {
   value: PropTypes.string,
@@ -146,7 +146,7 @@ CustomDateInput.propTypes = {
   isValid: PropTypes.bool,
   formControlProps: PropTypes.object,
   errorMessage: PropTypes.string
-};
+}
 
 WizardInput.propTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -160,8 +160,8 @@ WizardInput.propTypes = {
   formGroupProps: PropTypes.object,
   setValue: PropTypes.func,
   datepickerProps: PropTypes.object
-};
+}
 
-WizardInput.defaultProps = { required: false };
+WizardInput.defaultProps = { required: false }
 
-export default WizardInput;
+export default WizardInput

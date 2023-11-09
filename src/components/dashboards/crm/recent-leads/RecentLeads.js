@@ -1,16 +1,16 @@
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import Avatar from 'components/common/Avatar';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import IconItem from 'components/common/icon/IconItem';
-import SoftBadge from 'components/common/SoftBadge';
-import { recentLeadsTableData } from 'data/dashboard/crm';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import Avatar from 'components/common/Avatar'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import IconItem from 'components/common/icon/IconItem'
+import SoftBadge from 'components/common/SoftBadge'
+import { recentLeadsTableData } from 'data/dashboard/crm'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -30,7 +30,7 @@ const columns = [
             <h6 className="mb-0 ps-2">{rowData.row.original.name}</h6>
           </Flex>
         </Link>
-      );
+      )
     }
   },
   {
@@ -41,7 +41,7 @@ const columns = [
         <a href={`mailto:${rowData.row.original.email}`} className="mb-0">
           {rowData.row.original.email}
         </a>
-      );
+      )
     }
   },
   {
@@ -52,7 +52,7 @@ const columns = [
         <SoftBadge pill bg={rowData.row.original.variant} className="me-2">
           {rowData.row.original.status}
         </SoftBadge>
-      );
+      )
     }
   },
   {
@@ -85,7 +85,7 @@ const columns = [
       </div>
     )
   }
-];
+]
 
 const RecentLeads = () => {
   return (
@@ -120,7 +120,7 @@ const RecentLeads = () => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
-export default RecentLeads;
+export default RecentLeads

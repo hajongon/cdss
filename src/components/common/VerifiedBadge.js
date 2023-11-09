@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const VerifiedBadge = ({ placement = 'top' }) => {
   return (
@@ -17,11 +17,11 @@ const VerifiedBadge = ({ placement = 'top' }) => {
         />
       </span>
     </OverlayTrigger>
-  );
-};
+  )
+}
 
 VerifiedBadge.propTypes = {
   placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left'])
-};
+}
 
-export default VerifiedBadge;
+export default VerifiedBadge

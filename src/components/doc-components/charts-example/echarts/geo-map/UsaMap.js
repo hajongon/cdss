@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import usa from 'assets/json/usa.json';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { MapChart } from 'echarts/charts';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import usa from 'assets/json/usa.json'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { MapChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
@@ -11,11 +11,11 @@ import {
   ToolboxComponent,
   TooltipComponent,
   VisualMapComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor, rgbaColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor, rgbaColor } from 'helpers/utils'
+import React from 'react'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -25,7 +25,7 @@ echarts.use([
   ToolboxComponent,
   LegendComponent,
   VisualMapComponent
-]);
+])
 
 const chartCode = `function ChartOptions() {
   const chartRef = useRef(null);
@@ -191,7 +191,7 @@ const chartCode = `function ChartOptions() {
   );
 
 }
-`;
+`
 
 const UsaMap = () => {
   return (
@@ -211,7 +211,7 @@ const UsaMap = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default UsaMap;
+export default UsaMap

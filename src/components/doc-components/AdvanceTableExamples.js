@@ -1,14 +1,14 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import IconButton from 'components/common/IconButton';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter';
-import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import IconButton from 'components/common/IconButton'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter'
+import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
 
 const data = `const columns = [
   {
@@ -101,7 +101,7 @@ const data = [
     email: 'rowen@example.com',
     age: 39
   }
-];`;
+];`
 
 const exampleCode = `${data}
 
@@ -139,7 +139,7 @@ function AdvanceTableExample() {
 }
 
 render(<AdvanceTableExample />)
-`;
+`
 
 const paginationNumberingCode = `${data}
 
@@ -173,7 +173,7 @@ function AdvanceTableExample() {
 }
 
 render(<AdvanceTableExample />)
-`;
+`
 
 const selectionCode = `const columns = [
   {
@@ -313,7 +313,7 @@ function AdvanceTableExample() {
 }
 
 render(<AdvanceTableExample />)
-`;
+`
 
 const customCellCode = `const columns = [
   {
@@ -392,7 +392,7 @@ function AdvanceTableExample() {
 }
 
 render(<AdvanceTableExample />)
-`;
+`
 
 const searchableTableCode = `${data}
 
@@ -434,7 +434,7 @@ function AdvanceTableExample() {
   );
 }
 
-render(<AdvanceTableExample />)`;
+render(<AdvanceTableExample />)`
 
 const AdvanceTableExamples = () => (
   <>
@@ -548,6 +548,6 @@ const AdvanceTableExamples = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default AdvanceTableExamples;
+export default AdvanceTableExamples

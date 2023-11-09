@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { Col, Modal, Row, Button, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import AppContext, { ProductContext } from 'context/Context';
+import React, { useContext } from 'react'
+import { Col, Modal, Row, Button, Image } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import AppContext, { ProductContext } from 'context/Context'
 
 const CartModal = () => {
   const {
@@ -12,17 +12,17 @@ const CartModal = () => {
       cartModal: { show, product, type, quantity }
     },
     productsDispatch
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleClose = () => {
     productsDispatch({
       type: 'TOGGLE_CART_MODAL'
-    });
-  };
+    })
+  }
 
   return (
     <Modal show={show} onHide={handleClose} size="lg">
@@ -99,7 +99,7 @@ const CartModal = () => {
         </Modal.Footer>
       )}
     </Modal>
-  );
-};
+  )
+}
 
-export default CartModal;
+export default CartModal

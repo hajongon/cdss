@@ -1,13 +1,13 @@
-import classNames from 'classnames';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Badge, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap';
+import classNames from 'classnames'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Badge, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap'
 
 const Project = ({ project, isLast }) => {
-  const { color, progress, duration, title } = project;
+  const { color, progress, duration, title } = project
   return (
     <Row
       className={classNames('position-relative align-items-center py-2', {
@@ -46,8 +46,8 @@ const Project = ({ project, isLast }) => {
         </Row>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 Project.propTypes = {
   project: PropTypes.shape({
@@ -57,7 +57,7 @@ Project.propTypes = {
     title: PropTypes.string.isRequired
   }),
   isLast: PropTypes.bool
-};
+}
 
 const RunningProjects = ({ data }) => {
   return (
@@ -87,11 +87,11 @@ const RunningProjects = ({ data }) => {
 
       <FalconCardFooterLink title="Show all projects" size="sm" />
     </Card>
-  );
-};
+  )
+}
 
 RunningProjects.propTypes = {
   data: PropTypes.arrayOf(Project.propTypes.project).isRequired
-};
+}
 
-export default RunningProjects;
+export default RunningProjects

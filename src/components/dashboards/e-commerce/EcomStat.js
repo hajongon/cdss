@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const EcomStatItem = ({ stat }) => {
   return (
@@ -25,8 +25,8 @@ const EcomStatItem = ({ stat }) => {
         </h6>
       </div>
     </Col>
-  );
-};
+  )
+}
 
 EcomStatItem.propTypes = {
   stat: PropTypes.shape({
@@ -39,7 +39,7 @@ EcomStatItem.propTypes = {
   }),
   index: PropTypes.number,
   lastIndex: PropTypes.number
-};
+}
 
 const EcomStat = ({ data }) => {
   return (
@@ -57,11 +57,11 @@ const EcomStat = ({ data }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 EcomStat.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default EcomStat;
+export default EcomStat

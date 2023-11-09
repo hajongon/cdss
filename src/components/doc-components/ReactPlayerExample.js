@@ -1,21 +1,21 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { Button } from 'react-bootstrap';
-import ReactYoutubePlayer from 'react-player/youtube';
-import ReactVimeoPlayer from 'react-player/vimeo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { Button } from 'react-bootstrap'
+import ReactYoutubePlayer from 'react-player/youtube'
+import ReactVimeoPlayer from 'react-player/vimeo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const youtubeCode = `<ReactYoutubePlayer
   url="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
   controls={true}
   className="react-player"
-/>`;
+/>`
 const vimeoCode = `<ReactVimeoPlayer
   url="https://vimeo.com/90509568"
   controls={true}
   className="react-player"
-/>`;
+/>`
 
 const ReactPlayerExample = () => (
   <>
@@ -54,6 +54,6 @@ const ReactPlayerExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default ReactPlayerExample;
+export default ReactPlayerExample

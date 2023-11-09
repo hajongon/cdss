@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import user24 from 'assets/img/team/24.jpg';
-import user25 from 'assets/img/team/25.jpg';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import user24 from 'assets/img/team/24.jpg'
+import user25 from 'assets/img/team/25.jpg'
 
 const exampleCode = `
 <Figure>
@@ -17,7 +17,7 @@ const exampleCode = `
    A caption for the above image.
   </Figure.Caption>
 </Figure>
-`;
+`
 
 const captionAlignCode = `
 <Figure>
@@ -30,7 +30,7 @@ const captionAlignCode = `
    A caption for the above image.
   </Figure.Caption>
 </Figure>
-`;
+`
 
 const Figures = () => (
   <>
@@ -74,6 +74,6 @@ const Figures = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Figures;
+export default Figures

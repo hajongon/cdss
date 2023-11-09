@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logoutImg from 'assets/img/icons/spot-illustrations/45.png';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import logoutImg from 'assets/img/icons/spot-illustrations/45.png'
 
 const LogoutContent = ({ layout, titleTag: TitleTag }) => {
   return (
@@ -34,17 +34,17 @@ const LogoutContent = ({ layout, titleTag: TitleTag }) => {
         Return to Login
       </Button>
     </>
-  );
-};
+  )
+}
 
 LogoutContent.propTypes = {
   layout: PropTypes.string,
   titleTag: PropTypes.string
-};
+}
 
 LogoutContent.defaultProps = {
   layout: 'simple',
   titleTag: 'h4'
-};
+}
 
-export default LogoutContent;
+export default LogoutContent

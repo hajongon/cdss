@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SimpleBarReact from 'simplebar-react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SimpleBarReact from 'simplebar-react'
 
 const Activity = ({
   activity: { title, text, icon, time, status },
@@ -40,8 +40,8 @@ const Activity = ({
         </Row>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 const RecentActivity = ({ data }) => {
   return (
@@ -59,8 +59,8 @@ const RecentActivity = ({ data }) => {
         </Card.Body>
       </SimpleBarReact>
     </Card>
-  );
-};
+  )
+}
 
 Activity.propTypes = {
   activity: PropTypes.shape({
@@ -72,10 +72,10 @@ Activity.propTypes = {
     status: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
   }),
   isLast: PropTypes.bool
-};
+}
 
 RecentActivity.propTypes = {
   data: PropTypes.arrayOf(Activity.propTypes.activity)
-};
+}
 
-export default RecentActivity;
+export default RecentActivity

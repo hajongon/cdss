@@ -1,15 +1,15 @@
-import React from 'react';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { shoppingCartItems } from 'data/dashboard/ecom';
-import createMarkup from 'helpers/createMarkup';
-import { Card, Col, ProgressBar, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { shoppingCartItems } from 'data/dashboard/ecom'
+import createMarkup from 'helpers/createMarkup'
+import { Card, Col, ProgressBar, Row } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const ShoppingCartItem = ({ item, index }) => {
-  const { id, title, amount, barWidth, items, variant, icon, iconColor } = item;
+  const { id, title, amount, barWidth, items, variant, icon, iconColor } = item
   return (
     <Row
       className={classNames('g-0 align-items-center pb-3', {
@@ -39,8 +39,8 @@ const ShoppingCartItem = ({ item, index }) => {
         />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 const ShoppingCart = () => {
   return (
@@ -59,8 +59,8 @@ const ShoppingCart = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 ShoppingCartItem.propTypes = {
   item: PropTypes.shape({
@@ -74,6 +74,6 @@ ShoppingCartItem.propTypes = {
     icon: PropTypes.string.isRequired
   }),
   index: PropTypes.number.isRequired
-};
+}
 
-export default ShoppingCart;
+export default ShoppingCart

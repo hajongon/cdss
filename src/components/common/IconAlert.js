@@ -1,8 +1,8 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert, CloseButton } from 'react-bootstrap';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Alert, CloseButton } from 'react-bootstrap'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 const IconAlert = ({
   variant,
@@ -17,7 +17,7 @@ const IconAlert = ({
     info: 'info-circle',
     warning: 'exclamation-circle',
     danger: 'times-circle'
-  };
+  }
   return (
     <Alert
       variant={variant}
@@ -33,8 +33,8 @@ const IconAlert = ({
       <div className="flex-1">{children}</div>
       {dismissible && <CloseButton onClick={onClose} />}
     </Alert>
-  );
-};
+  )
+}
 
 IconAlert.propTypes = {
   variant: PropTypes.oneOf(['success', 'danger', 'warning', 'info']).isRequired,
@@ -42,6 +42,6 @@ IconAlert.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   onClose: PropTypes.func
-};
+}
 
-export default IconAlert;
+export default IconAlert

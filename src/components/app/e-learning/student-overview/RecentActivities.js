@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SimpleBarReact from 'simplebar-react';
-import CardDropdown from 'components/common/CardDropdown';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SimpleBarReact from 'simplebar-react'
+import CardDropdown from 'components/common/CardDropdown'
+import { Link } from 'react-router-dom'
 
 const Activity = ({ activity: { title, description, icon, time }, isLast }) => {
   return (
@@ -30,8 +30,8 @@ const Activity = ({ activity: { title, description, icon, time }, isLast }) => {
         </Col>
       </Row>
     </div>
-  );
-};
+  )
+}
 
 const RecentActivities = ({ data }) => {
   return (
@@ -73,8 +73,8 @@ const RecentActivities = ({ data }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 Activity.propTypes = {
   activity: PropTypes.shape({
@@ -86,10 +86,10 @@ Activity.propTypes = {
       .isRequired
   }),
   isLast: PropTypes.bool
-};
+}
 
 RecentActivities.propTypes = {
   data: PropTypes.arrayOf(Activity.propTypes.activity)
-};
+}
 
-export default RecentActivities;
+export default RecentActivities

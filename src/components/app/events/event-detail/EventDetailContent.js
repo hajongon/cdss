@@ -1,9 +1,9 @@
-import IconGroup from 'components/common/icon/IconGroup';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import EventDetailsGmap from './EventDetailsGmap';
-import socialIcons from 'data/socialIcons';
+import IconGroup from 'components/common/icon/IconGroup'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import EventDetailsGmap from './EventDetailsGmap'
+import socialIcons from 'data/socialIcons'
 
 const EventDetailContent = () => {
   return (
@@ -60,7 +60,7 @@ const EventDetailContent = () => {
         <EventDetailsGmap />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EventDetailContent;
+export default EventDetailContent

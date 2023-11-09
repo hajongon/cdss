@@ -1,7 +1,7 @@
-import React from 'react';
-import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm';
-import bgImg from 'assets/img/generic/17.jpg';
-import AuthSplitLayout from 'layouts/AuthSplitLayout';
+import React from 'react'
+import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm'
+import bgImg from 'assets/img/generic/17.jpg'
+import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const ForgetPassword = () => {
   return (
@@ -14,7 +14,7 @@ const ForgetPassword = () => {
         <ForgetPasswordForm layout="split" />
       </div>
     </AuthSplitLayout>
-  );
-};
+  )
+}
 
-export default ForgetPassword;
+export default ForgetPassword

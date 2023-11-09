@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
-import experiences from 'data/experiences';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Experience from '../Experience';
-import ExperienceForm from './ExperienceForm';
+import React, { useState } from 'react'
+import { Card } from 'react-bootstrap'
+import experiences from 'data/experiences'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Experience from '../Experience'
+import ExperienceForm from './ExperienceForm'
 
 const ExperiencesSettings = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false)
   return (
     <Card className="mt-3">
       <FalconCardHeader title="Experiences" />
@@ -21,7 +21,7 @@ const ExperiencesSettings = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ExperiencesSettings;
+export default ExperiencesSettings

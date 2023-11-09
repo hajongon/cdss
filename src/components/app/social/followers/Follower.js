@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Image } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
 
 const Follower = ({ follower }) => {
-  const { avatarSrc, name, institution } = follower;
+  const { avatarSrc, name, institution } = follower
   return (
     <div className="bg-white dark__bg-1100 p-3 h-100">
       <Link to="/user/profile">
@@ -26,8 +26,8 @@ const Follower = ({ follower }) => {
         </Link>
       </p>
     </div>
-  );
-};
+  )
+}
 
 Follower.propTypes = {
   follower: PropTypes.shape({
@@ -35,6 +35,6 @@ Follower.propTypes = {
     name: PropTypes.string,
     institution: PropTypes.string
   })
-};
+}
 
-export default Follower;
+export default Follower

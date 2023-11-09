@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
   Card,
@@ -7,46 +7,46 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import AppContext from 'context/Context';
-import AddScheduleModal from 'components/app/calendar/AddScheduleModal';
-import CalendarEventModal from 'components/app/calendar/CalendarEventModal';
-import Flex from 'components/common/Flex';
+} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin from '@fullcalendar/interaction'
+import AppContext from 'context/Context'
+import AddScheduleModal from 'components/app/calendar/AddScheduleModal'
+import CalendarEventModal from 'components/app/calendar/CalendarEventModal'
+import Flex from 'components/common/Flex'
 
 const CalendarManagement = ({ data }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
-  const calendarRef = useRef();
-  const [title, setTitle] = useState('');
-  const [day, setDay] = useState('');
-  const [calendarApi, setCalendarApi] = useState({});
-  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false);
-  const [isOpenEventModal, setIsOpenEventModal] = useState(false);
-  const [modalEventContent, setModalEventContent] = useState({});
-  const [scheduleStartDate, setScheduleStartDate] = useState();
-  const [scheduleEndDate, setScheduleEndDate] = useState();
+  } = useContext(AppContext)
+  const calendarRef = useRef()
+  const [title, setTitle] = useState('')
+  const [day, setDay] = useState('')
+  const [calendarApi, setCalendarApi] = useState({})
+  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false)
+  const [isOpenEventModal, setIsOpenEventModal] = useState(false)
+  const [modalEventContent, setModalEventContent] = useState({})
+  const [scheduleStartDate, setScheduleStartDate] = useState()
+  const [scheduleEndDate, setScheduleEndDate] = useState()
 
   const handleEventClick = eventsInfo => {
-    setModalEventContent({ event: calendarApi.getEventById(eventsInfo.id) });
-    setIsOpenEventModal(true);
-  };
+    setModalEventContent({ event: calendarApi.getEventById(eventsInfo.id) })
+    setIsOpenEventModal(true)
+  }
 
   useEffect(() => {
-    setCalendarApi(calendarRef.current.getApi());
-  }, []);
+    setCalendarApi(calendarRef.current.getApi())
+  }, [])
 
   const getDate = () => {
     return calendarApi.getCurrentData().currentDate.toLocaleString('en-us', {
       weekday: 'long'
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -69,9 +69,9 @@ const CalendarManagement = ({ data }) => {
                         size="sm"
                         className="me-1"
                         onClick={() => {
-                          calendarApi.prev();
-                          setTitle(calendarApi.getCurrentData().viewTitle);
-                          setDay(getDate);
+                          calendarApi.prev()
+                          setTitle(calendarApi.getCurrentData().viewTitle)
+                          setDay(getDate)
                         }}
                       >
                         <FontAwesomeIcon icon="chevron-left" />
@@ -81,9 +81,9 @@ const CalendarManagement = ({ data }) => {
                       size="sm"
                       variant="falcon-default"
                       onClick={() => {
-                        calendarApi.today();
-                        setTitle(calendarApi.getCurrentData().viewTitle);
-                        setDay(getDate);
+                        calendarApi.today()
+                        setTitle(calendarApi.getCurrentData().viewTitle)
+                        setDay(getDate)
                       }}
                       className="px-sm-4"
                     >
@@ -101,9 +101,9 @@ const CalendarManagement = ({ data }) => {
                         size="sm"
                         className="ms-1"
                         onClick={() => {
-                          calendarApi.next();
-                          setTitle(calendarApi.getCurrentData().viewTitle);
-                          setDay(getDate);
+                          calendarApi.next()
+                          setTitle(calendarApi.getCurrentData().viewTitle)
+                          setDay(getDate)
                         }}
                       >
                         <FontAwesomeIcon icon="chevron-right" />
@@ -117,7 +117,7 @@ const CalendarManagement = ({ data }) => {
                     icon="plus"
                     size="sm"
                     onClick={() => {
-                      setIsOpenScheduleModal(!isOpenScheduleModal);
+                      setIsOpenScheduleModal(!isOpenScheduleModal)
                     }}
                   >
                     New <span className="d-none d-sm-inline">Schedule</span>
@@ -133,8 +133,8 @@ const CalendarManagement = ({ data }) => {
                   direction={isRTL ? 'rtl' : 'ltr'}
                   height={360}
                   dateClick={info => {
-                    setIsOpenScheduleModal(true);
-                    setScheduleStartDate(info.date);
+                    setIsOpenScheduleModal(true)
+                    setScheduleStartDate(info.date)
                   }}
                   events={data}
                 />
@@ -197,8 +197,8 @@ const CalendarManagement = ({ data }) => {
         modalEventContent={modalEventContent}
       />
     </>
-  );
-};
+  )
+}
 CalendarManagement.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -210,6 +210,6 @@ CalendarManagement.propTypes = {
       classNames: PropTypes.string
     })
   )
-};
+}
 
-export default CalendarManagement;
+export default CalendarManagement

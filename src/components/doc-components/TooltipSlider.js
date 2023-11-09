@@ -1,8 +1,8 @@
-import * as React from 'react';
-import 'rc-tooltip/assets/bootstrap.css';
-import Slider from 'rc-slider';
-import raf from 'rc-util/lib/raf';
-import Tooltip from 'rc-tooltip';
+import * as React from 'react'
+import 'rc-tooltip/assets/bootstrap.css'
+import Slider from 'rc-slider'
+import raf from 'rc-util/lib/raf'
+import Tooltip from 'rc-tooltip'
 
 const HandleTooltip = props => {
   const {
@@ -11,30 +11,30 @@ const HandleTooltip = props => {
     visible,
     tipFormatter = val => `${val} %`,
     ...restProps
-  } = props;
+  } = props
 
-  const tooltipRef = React.useRef();
-  const rafRef = React.useRef(null);
+  const tooltipRef = React.useRef()
+  const rafRef = React.useRef(null)
 
   function cancelKeepAlign() {
-    raf.cancel(rafRef.current);
+    raf.cancel(rafRef.current)
   }
 
   function keepAlign() {
     rafRef.current = raf(() => {
-      tooltipRef.current?.forcePopupAlign();
-    });
+      tooltipRef.current?.forcePopupAlign()
+    })
   }
 
   React.useEffect(() => {
     if (visible) {
-      keepAlign();
+      keepAlign()
     } else {
-      cancelKeepAlign();
+      cancelKeepAlign()
     }
 
-    return cancelKeepAlign;
-  }, [value, visible]);
+    return cancelKeepAlign
+  }, [value, visible])
 
   return (
     <Tooltip
@@ -48,16 +48,16 @@ const HandleTooltip = props => {
     >
       {children}
     </Tooltip>
-  );
-};
+  )
+}
 
 export const handleRender = (node, props) => {
   return (
     <HandleTooltip value={props.value} visible={props.dragging}>
       {node}
     </HandleTooltip>
-  );
-};
+  )
+}
 
 const TooltipSlider = ({ tipFormatter, tipProps, ...props }) => {
   const tipHandleRender = (node, handleProps) => {
@@ -70,10 +70,10 @@ const TooltipSlider = ({ tipFormatter, tipProps, ...props }) => {
       >
         {node}
       </HandleTooltip>
-    );
-  };
+    )
+  }
 
-  return <Slider {...props} handleRender={tipHandleRender} />;
-};
+  return <Slider {...props} handleRender={tipHandleRender} />
+}
 
-export default TooltipSlider;
+export default TooltipSlider

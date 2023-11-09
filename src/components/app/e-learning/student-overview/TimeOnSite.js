@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { getColor, rgbaColor } from 'helpers/utils';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { getColor, rgbaColor } from 'helpers/utils'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import BasicECharts from 'components/common/BasicEChart';
-import SoftBadge from 'components/common/SoftBadge';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import BasicECharts from 'components/common/BasicEChart'
+import SoftBadge from 'components/common/SoftBadge'
 
 echarts.use([
   TitleComponent,
@@ -22,7 +22,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = data => ({
   tooltip: {
@@ -77,7 +77,7 @@ const getOptions = data => ({
     right: '0px',
     left: '10px'
   }
-});
+})
 
 const TimeOnSite = ({ data }) => {
   return (
@@ -108,9 +108,9 @@ const TimeOnSite = ({ data }) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-TimeOnSite.propTypes = { data: PropTypes.array.isRequired };
+TimeOnSite.propTypes = { data: PropTypes.array.isRequired }
 
-export default TimeOnSite;
+export default TimeOnSite

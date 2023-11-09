@@ -1,7 +1,7 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 
 const additiveBorderCode = `
 <>
@@ -10,7 +10,7 @@ const additiveBorderCode = `
   <span className="border-end" />
   <span className="border-bottom" />
   <span className="border-start" />
-</>`;
+</>`
 
 const subtrativeBorderCode = `
 <>
@@ -19,7 +19,7 @@ const subtrativeBorderCode = `
   <span className="border border-right-0" />
   <span className="border border-bottom-0" />
   <span className="border border-left-0" />
-</>`;
+</>`
 
 const borderColorCode = `
 <>
@@ -53,7 +53,7 @@ const borderColorCode = `
   <span className="border-end border-end-2"></span>
   <span className="border-bottom border-bottom-2"></span>
   <span className="border-start border-start-2"></span>
-</>`;
+</>`
 
 const borderSizesCode = `
 <>
@@ -66,7 +66,7 @@ const borderSizesCode = `
   <span className="rounded-start"></span>
   <span className="rounded-start-lg"></span>
 </>
-`;
+`
 
 const borderRadiusCode = `
 <>
@@ -76,7 +76,7 @@ const borderRadiusCode = `
   <span className="rounded-3"></span>
   <span className="rounded-circle"></span>
   <span className="rounded-pill" style={{ height:'75px',width:'150px' }}></span>
-</>`;
+</>`
 
 const borderStyleCode = `
 <>
@@ -86,7 +86,7 @@ const borderStyleCode = `
   <span className="border-dashed border-bottom"></span>
   <span className="border-dashed border-left"></span>
 </>
-`;
+`
 
 const borderWidthCode = `
 <>
@@ -101,7 +101,7 @@ const borderWidthCode = `
   <span className="border border-bottom-2"></span>
   <span className="border border-start-2"></span>
 </>
-`;
+`
 
 const Borders = () => (
   <>
@@ -276,6 +276,6 @@ const Borders = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Borders;
+export default Borders

@@ -1,37 +1,37 @@
-import React from 'react';
-import EventDetails from './EventDetails';
-import EventTicket from './EventTicket';
-import EventSchedule from './EventSchedule';
-import EventHeader from './EventHeader';
-import EventUpload from './EventUpload';
-import EventFooter from './EventFooter';
-import { Col, Form, Row } from 'react-bootstrap';
-import EventOtherInfo from './EventOtherInfo';
-import EventBanner from './EventBanner';
-import { useForm } from 'react-hook-form';
-import EventCustomField from './EventCustomField';
+import React from 'react'
+import EventDetails from './EventDetails'
+import EventTicket from './EventTicket'
+import EventSchedule from './EventSchedule'
+import EventHeader from './EventHeader'
+import EventUpload from './EventUpload'
+import EventFooter from './EventFooter'
+import { Col, Form, Row } from 'react-bootstrap'
+import EventOtherInfo from './EventOtherInfo'
+import EventBanner from './EventBanner'
+import { useForm } from 'react-hook-form'
+import EventCustomField from './EventCustomField'
 
 const CreateEvent = () => {
   const defaultValues = {
     timeZone: 'GMT-12:00/Etc/GMT-12',
     selectType: '1',
     selectTopic: '1'
-  };
-  const submittedValues = {};
+  }
+  const submittedValues = {}
   const { register, handleSubmit, setValue, control, reset } = useForm({
     defaultValues
-  });
+  })
 
   const onSubmit = data => {
-    console.log(data);
+    console.log(data)
     // ------- Get all object keys form data and set empty values to reset ------------
-    const keys = Object.keys(data);
+    const keys = Object.keys(data)
     for (const key of keys) {
-      submittedValues[key] = '';
+      submittedValues[key] = ''
     }
-    const allValues = { ...submittedValues, ...defaultValues };
-    reset({ ...allValues });
-  };
+    const allValues = { ...submittedValues, ...defaultValues }
+    reset({ ...allValues })
+  }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -67,7 +67,7 @@ const CreateEvent = () => {
         </Col>
       </Row>
     </Form>
-  );
-};
+  )
+}
 
-export default CreateEvent;
+export default CreateEvent

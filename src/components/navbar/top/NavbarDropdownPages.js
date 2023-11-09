@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Nav, Row, Col } from 'react-bootstrap';
-import { getFlatRoutes } from 'helpers/utils';
-import NavbarNavLink from './NavbarNavLink';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Nav, Row, Col } from 'react-bootstrap'
+import { getFlatRoutes } from 'helpers/utils'
+import NavbarNavLink from './NavbarNavLink'
 
 const NavbarDropdownPages = ({ items }) => {
-  const routes = getFlatRoutes(items);
+  const routes = getFlatRoutes(items)
 
   return (
     <>
@@ -82,8 +82,8 @@ const NavbarDropdownPages = ({ items }) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 NavbarDropdownPages.propTypes = {
   items: PropTypes.arrayOf(
@@ -94,6 +94,6 @@ NavbarDropdownPages.propTypes = {
       children: PropTypes.array
     }).isRequired
   ).isRequired
-};
+}
 
-export default NavbarDropdownPages;
+export default NavbarDropdownPages

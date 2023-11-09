@@ -1,5 +1,5 @@
 export const kanbanReducer = (state, action) => {
-  const { type, payload } = action;
+  const { type, payload } = action
   switch (type) {
     case 'OPEN_KANBAN_MODAL':
       return {
@@ -12,7 +12,7 @@ export const kanbanReducer = (state, action) => {
           },
           show: true
         }
-      };
+      }
 
     case 'TOGGLE_KANBAN_MODAL':
       return {
@@ -21,13 +21,13 @@ export const kanbanReducer = (state, action) => {
           ...state.kanbanModal,
           show: !state.kanbanModal.show
         }
-      };
+      }
 
     case 'ADD_KANBAN_COLUMN':
       return {
         ...state,
         kanbanItems: [...state.kanbanItems, payload]
-      };
+      }
 
     case 'ADD_TASK_CARD':
       return {
@@ -37,7 +37,7 @@ export const kanbanReducer = (state, action) => {
             ? { ...kanbanItem, items: [...kanbanItem.items, payload.newCard] }
             : kanbanItem
         )
-      };
+      }
 
     case 'REMOVE_TASK_CARD':
       return {
@@ -46,9 +46,9 @@ export const kanbanReducer = (state, action) => {
           return {
             ...kanbanItem,
             items: kanbanItem.items.filter(item => item.id !== payload.id)
-          };
+          }
         })
-      };
+      }
 
     case 'UPDATE_SINGLE_COLUMN':
       return {
@@ -61,7 +61,7 @@ export const kanbanReducer = (state, action) => {
               }
             : kanbanItem
         )
-      };
+      }
 
     case 'UPDATE_DUAL_COLUMN':
       return {
@@ -79,7 +79,7 @@ export const kanbanReducer = (state, action) => {
               }
             : kanbanItem
         )
-      };
+      }
 
     case 'REMOVE_KANBAN_COLUMN':
       return {
@@ -87,9 +87,9 @@ export const kanbanReducer = (state, action) => {
         kanbanItems: state.kanbanItems.filter(
           kanbanItem => kanbanItem.id !== payload.id
         )
-      };
+      }
 
     default:
-      return state;
+      return state
   }
-};
+}

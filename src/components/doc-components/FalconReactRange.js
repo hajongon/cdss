@@ -1,8 +1,8 @@
-import { getColor } from 'helpers/utils';
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Range, getTrackBackground } from 'react-range';
-import AppContext from 'context/Context';
+import { getColor } from 'helpers/utils'
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Range, getTrackBackground } from 'react-range'
+import AppContext from 'context/Context'
 
 const FalconReactRange = ({
   step = 0.1,
@@ -19,7 +19,7 @@ const FalconReactRange = ({
 }) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const Track = ({ props: properties, children }) => (
     <div
@@ -54,7 +54,7 @@ const FalconReactRange = ({
         {children}
       </div>
     </div>
-  );
+  )
 
   Track.propTypes = {
     props: PropTypes.shape({
@@ -64,7 +64,7 @@ const FalconReactRange = ({
       ref: PropTypes.object
     }),
     children: PropTypes.node
-  };
+  }
 
   const Thumb = ({ props: properties, isDragged, index }) => (
     <div
@@ -84,7 +84,7 @@ const FalconReactRange = ({
           : values[index].toFixed(1)}
       </div>
     </div>
-  );
+  )
 
   Thumb.propTypes = {
     props: PropTypes.shape({
@@ -94,7 +94,7 @@ const FalconReactRange = ({
     }),
     isDragged: PropTypes.bool,
     index: PropTypes.number
-  };
+  }
 
   const Mark = ({ props: properties, index }) => {
     return (
@@ -115,15 +115,15 @@ const FalconReactRange = ({
               : getColor('gray-300')
         }}
       ></div>
-    );
-  };
+    )
+  }
 
   Mark.propTypes = {
     props: PropTypes.shape({
       style: PropTypes.object
     }),
     index: PropTypes.number
-  };
+  }
 
   return (
     <Range
@@ -138,8 +138,8 @@ const FalconReactRange = ({
       renderThumb={Thumb}
       renderMark={marks && Mark}
     />
-  );
-};
+  )
+}
 
 FalconReactRange.propTypes = {
   step: PropTypes.number,
@@ -160,6 +160,6 @@ FalconReactRange.propTypes = {
   trackHeight: PropTypes.string,
   alwaysShowTooltip: PropTypes.bool,
   marks: PropTypes.bool
-};
+}
 
-export default FalconReactRange;
+export default FalconReactRange

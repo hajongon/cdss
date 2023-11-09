@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Lightbox from 'react-18-image-lightbox';
-import 'react-18-image-lightbox/style.css';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import Lightbox from 'react-18-image-lightbox'
+import 'react-18-image-lightbox/style.css'
 
 const FalconLightBoxGallery = ({ images, children }) => {
-  const [imgIndex, setImgIndex] = useState(null);
+  const [imgIndex, setImgIndex] = useState(null)
   return (
     <div>
       {children(setImgIndex)}
@@ -17,7 +17,7 @@ const FalconLightBoxGallery = ({ images, children }) => {
           prevSrc={imgIndex - 1 < 0 ? undefined : images[imgIndex - 1]}
           onCloseRequest={() => setImgIndex(null)}
           onImageLoad={() => {
-            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new Event('resize'))
           }}
           onMovePrevRequest={() =>
             setImgIndex((imgIndex + images.length - 1) % images.length)
@@ -27,12 +27,12 @@ const FalconLightBoxGallery = ({ images, children }) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
 FalconLightBoxGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   children: PropTypes.func.isRequired
-};
+}
 
-export default FalconLightBoxGallery;
+export default FalconLightBoxGallery

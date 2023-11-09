@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
-import BasicBarChart from 'components/doc-components/charts-example/echarts/bar-charts/BasicBarChart';
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
+import BasicBarChart from 'components/doc-components/charts-example/echarts/bar-charts/BasicBarChart'
 
 const structureCode = `// import the core library.
 import ReactEChartsCore from 'echarts-for-react/lib/core';
@@ -41,7 +41,7 @@ echarts.use([
   echarts={echarts}
   option={getOption()}
   style={{ height: '18.75rem' }}
-/>`;
+/>`
 
 const Placeholder = () => (
   <>
@@ -70,6 +70,6 @@ const Placeholder = () => (
     </Card>
     <BasicBarChart title="Basic Example" />
   </>
-);
+)
 
-export default Placeholder;
+export default Placeholder

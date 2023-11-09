@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import AppContext from 'context/Context'
 
 const CardDropdown = ({
   btnRevealClass,
@@ -13,7 +13,7 @@ const CardDropdown = ({
 }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Dropdown
@@ -44,14 +44,14 @@ const CardDropdown = ({
         )}
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 CardDropdown.propTypes = {
   btnRevealClass: PropTypes.string,
   drop: PropTypes.string,
   children: PropTypes.node,
   icon: PropTypes.string
-};
+}
 
-export default CardDropdown;
+export default CardDropdown

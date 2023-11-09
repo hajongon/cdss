@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconReactRange from './FalconReactRange';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconReactRange from './FalconReactRange'
+import FalconEditor from 'components/common/FalconEditor'
 
 const defaultExampleCode = `
   function DefaultExample() {
@@ -17,7 +17,7 @@ const defaultExampleCode = `
       />
     )
   }
-`;
+`
 const rangeExampleCode = `
   function RangeExample() {
     const [values, setValues] = useState([20, 70]);
@@ -29,7 +29,7 @@ const rangeExampleCode = `
       />
     )
   }
-`;
+`
 const draggableTrackExampleCode = `
   function RangeExample() {
     const [values, setValues] = useState([10, 55]);
@@ -42,7 +42,7 @@ const draggableTrackExampleCode = `
       />
     )
   }
-`;
+`
 const marksExampleCode = `
   function MarksExample() {
     const [values, setValues] = useState([20, 80]);
@@ -56,7 +56,7 @@ const marksExampleCode = `
       />
     )
   }
-`;
+`
 const reactRangePropTypesCode = `
   ReactRange.propTypes = {
     step: PropTypes.number,
@@ -78,7 +78,7 @@ const reactRangePropTypesCode = `
     alwaysShowTooltip: PropTypes.bool,
     marks: PropTypes.bool
   };
-`;
+`
 const variantExampleCode = `
   function RangeExample() {
     const [values, setValues] = useState({
@@ -124,7 +124,7 @@ const variantExampleCode = `
       </>
     )
   }
-`;
+`
 
 const RangeSlider = () => {
   return (
@@ -201,7 +201,7 @@ const RangeSlider = () => {
         ></FalconComponentCard.Body>
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default RangeSlider;
+export default RangeSlider

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import SoftBadge from 'components/common/SoftBadge';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import SoftBadge from 'components/common/SoftBadge'
 
 const columns = [
   {
@@ -12,8 +12,8 @@ const columns = [
     cellProps: { className: 'py-3' },
     headerProps: { style: { width: '40%' } },
     Cell: rowData => {
-      const { country } = rowData.row.original;
-      return <Link to="#!">{country}</Link>;
+      const { country } = rowData.row.original
+      return <Link to="#!">{country}</Link>
     }
   },
   {
@@ -42,10 +42,10 @@ const columns = [
         >
           {rowData.row.original.status}
         </SoftBadge>
-      );
+      )
     }
   }
-];
+]
 
 const UsersLocationTable = ({ data }) => {
   return (
@@ -67,11 +67,11 @@ const UsersLocationTable = ({ data }) => {
         />
       </div>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 UsersLocationTable.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default UsersLocationTable;
+export default UsersLocationTable

@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Row, Col, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import users from 'data/people';
-import FalconLightBox from 'components/common/FalconLightBox';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
-import ChatMessageOptions from './ChatMessageOptions';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Row, Col, Image } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import users from 'data/people'
+import FalconLightBox from 'components/common/FalconLightBox'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
+import ChatMessageOptions from './ChatMessageOptions'
 
 const Message = ({ message, senderUserId, status, time, isGroup }) => {
-  const user = users.find(({ id }) => id === senderUserId);
-  const name = user?.name.split(' ')[0];
-  const isLeft = senderUserId !== 3;
+  const user = users.find(({ id }) => id === senderUserId)
+  const name = user?.name.split(' ')[0]
+  const isLeft = senderUserId !== 3
 
   return (
     <Flex className={classNames('p-3', { 'd-block': !isLeft })}>
@@ -67,7 +67,7 @@ const Message = ({ message, senderUserId, status, time, isGroup }) => {
                               onClick={() => setImgIndex(index)}
                             />
                           </Col>
-                        );
+                        )
                       })}
                     </Row>
                   )}
@@ -129,16 +129,16 @@ const Message = ({ message, senderUserId, status, time, isGroup }) => {
         </div>
       </div>
     </Flex>
-  );
-};
+  )
+}
 Message.propTypes = {
   message: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   senderUserId: PropTypes.number.isRequired,
   status: PropTypes.string,
   time: PropTypes.object.isRequired,
   isGroup: PropTypes.bool
-};
+}
 
-Message.defaultProps = { status: '' };
+Message.defaultProps = { status: '' }
 
-export default Message;
+export default Message

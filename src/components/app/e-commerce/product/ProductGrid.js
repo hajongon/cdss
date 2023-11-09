@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import { Button, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import classNames from 'classnames';
-import { ProductContext } from 'context/Context';
-import useProductHook from './useProductHook';
-import ProductImage from './ProductImage';
-import StarRating from 'components/common/StarRating';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import { Button, Col, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import classNames from 'classnames'
+import { ProductContext } from 'context/Context'
+import useProductHook from './useProductHook'
+import ProductImage from './ProductImage'
+import StarRating from 'components/common/StarRating'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ProductGrid = ({ product, ...rest }) => {
   const {
@@ -23,11 +23,11 @@ const ProductGrid = ({ product, ...rest }) => {
     isInStock,
     isNew,
     files
-  } = product;
+  } = product
 
-  const { isInFavouriteItems } = useContext(ProductContext);
+  const { isInFavouriteItems } = useContext(ProductContext)
 
-  const { handleAddToCart, handleFavouriteClick } = useProductHook(product);
+  const { handleAddToCart, handleFavouriteClick } = useProductHook(product)
   return (
     <Col className="mb-4" {...rest}>
       <Flex
@@ -116,8 +116,8 @@ const ProductGrid = ({ product, ...rest }) => {
         </Flex>
       </Flex>
     </Col>
-  );
-};
+  )
+}
 
 ProductGrid.propTypes = {
   product: PropTypes.shape({
@@ -135,6 +135,6 @@ ProductGrid.propTypes = {
     isNew: PropTypes.bool,
     files: PropTypes.arrayOf(PropTypes.object).isRequired
   })
-};
+}
 
-export default ProductGrid;
+export default ProductGrid

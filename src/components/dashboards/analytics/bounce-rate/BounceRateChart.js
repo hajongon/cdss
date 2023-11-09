@@ -1,18 +1,18 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor, getPastDates } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor, getPastDates } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = data => ({
   color: getColor('white'),
@@ -105,7 +105,7 @@ const getOptions = data => ({
     }
   ],
   grid: { right: '10px', left: '40px', bottom: '10%', top: '13%' }
-});
+})
 
 const BounceRateChart = ({ data }) => {
   return (
@@ -114,11 +114,11 @@ const BounceRateChart = ({ data }) => {
       option={getOptions(data)}
       style={{ height: '20rem' }}
     />
-  );
-};
+  )
+}
 
 BounceRateChart.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default BounceRateChart;
+export default BounceRateChart

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button, Tab, Alert } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import IconAlert from 'components/common/IconAlert';
+import React from 'react'
+import { Button, Tab, Alert } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import IconAlert from 'components/common/IconAlert'
 
 const alertCode = `
   function BasicExample() {
@@ -24,7 +24,7 @@ const alertCode = `
         </Alert>
       ))
     );
-  }`;
+  }`
 
 const linkCode = `
 function linkExample() {
@@ -46,7 +46,7 @@ function linkExample() {
       </Alert>
     ))
   )
-}`;
+}`
 
 const iconAlertCode = `function IconAlertDemo({ variant }) {
   const [show, setShow] = useState(true);
@@ -73,7 +73,7 @@ function Example() {
   );
 }
 
-render(<Example />)`;
+render(<Example />)`
 
 const dismissCodeOne = `function AlertDismissibleExample() {
   const [show, setShow] = useState(true);
@@ -91,7 +91,7 @@ const dismissCodeOne = `function AlertDismissibleExample() {
       );
     }
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-  }`;
+  }`
 
 const dismissCodeTwo = `
 function AlertDismissible() {
@@ -118,7 +118,7 @@ function AlertDismissible() {
     </>
   );
 }
-`;
+`
 const additionalContentCode = `
 <Alert variant="success">
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
@@ -132,7 +132,7 @@ const additionalContentCode = `
     Whenever you need to, be sure to use margin utilities to keep things nice
     and tidy.
   </p>
-</Alert>`;
+</Alert>`
 
 const Alerts = () => (
   <>
@@ -223,6 +223,6 @@ const Alerts = () => (
       </Tab.Container>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Alerts;
+export default Alerts

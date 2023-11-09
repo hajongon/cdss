@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Nav } from 'react-bootstrap';
-import ChatThread from './ChatThread';
-import SimpleBarReact from 'simplebar-react';
-import ChatContactsSearch from './ChatContactSearch';
-import classNames from 'classnames';
-import { ChatContext } from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Nav } from 'react-bootstrap'
+import ChatThread from './ChatThread'
+import SimpleBarReact from 'simplebar-react'
+import ChatContactsSearch from './ChatContactSearch'
+import classNames from 'classnames'
+import { ChatContext } from 'context/Context'
 
 const ChatSidebar = ({ hideSidebar }) => {
-  const { threads } = useContext(ChatContext);
+  const { threads } = useContext(ChatContext)
   return (
     <div className={classNames('chat-sidebar', { 'start-0': hideSidebar })}>
       <div className="contacts-list">
@@ -22,11 +22,11 @@ const ChatSidebar = ({ hideSidebar }) => {
       </div>
       <ChatContactsSearch />
     </div>
-  );
-};
+  )
+}
 
 ChatSidebar.propTypes = {
   hideSidebar: PropTypes.bool
-};
+}
 
-export default ChatSidebar;
+export default ChatSidebar

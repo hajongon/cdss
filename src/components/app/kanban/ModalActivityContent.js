@@ -1,8 +1,8 @@
-import React from 'react';
-import { activities } from 'data/kanban';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import Avatar from 'components/common/Avatar';
+import React from 'react'
+import { activities } from 'data/kanban'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import Avatar from 'components/common/Avatar'
 
 const ModalActivityContent = () => {
   return (
@@ -27,7 +27,7 @@ const ModalActivityContent = () => {
         </Flex>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default ModalActivityContent;
+export default ModalActivityContent

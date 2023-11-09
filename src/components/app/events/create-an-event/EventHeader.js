@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Col, Button, Row } from 'react-bootstrap';
+import React from 'react'
+import { Card, Col, Button, Row } from 'react-bootstrap'
 
 const EventHeader = () => {
   return (
@@ -25,7 +25,7 @@ const EventHeader = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EventHeader;
+export default EventHeader

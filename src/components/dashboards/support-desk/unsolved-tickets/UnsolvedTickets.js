@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import { Button, Card } from 'react-bootstrap';
-import UnsolvedTicketsHeader from './UnsolvedTicketsHeader';
-import { columns, CardLayout } from './TicketsLayout';
-import PropTypes from 'prop-types';
-import useBulkSelect from 'hooks/useBulkSelect';
-import usePagination from 'hooks/usePagination';
-import Flex from 'components/common/Flex';
+import React, { useState } from 'react'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import { Button, Card } from 'react-bootstrap'
+import UnsolvedTicketsHeader from './UnsolvedTicketsHeader'
+import { columns, CardLayout } from './TicketsLayout'
+import PropTypes from 'prop-types'
+import useBulkSelect from 'hooks/useBulkSelect'
+import usePagination from 'hooks/usePagination'
+import Flex from 'components/common/Flex'
 
 const UnsolvedTickets = ({ data }) => {
-  const [layout, setLayout] = useState('tableView');
-  const ticketIds = data.map(ticket => ticket.id);
+  const [layout, setLayout] = useState('tableView')
+  const ticketIds = data.map(ticket => ticket.id)
   const { selectedItems, isSelectedItem, toggleSelectedItem } =
-    useBulkSelect(ticketIds);
-  const [tickets] = useState(data.slice(0, 12));
-  const [primaryTickets, setPrimaryTickets] = useState(tickets);
+    useBulkSelect(ticketIds)
+  const [tickets] = useState(data.slice(0, 12))
+  const [primaryTickets, setPrimaryTickets] = useState(tickets)
   const {
     paginationState: {
       data: paginatedTicket,
@@ -27,16 +27,16 @@ const UnsolvedTickets = ({ data }) => {
     },
     nextPage,
     prevPage
-  } = usePagination(primaryTickets, 6);
+  } = usePagination(primaryTickets, 6)
 
   const handleTicketsSearch = text => {
     const filteredTickets = tickets.filter(
       ticket =>
         ticket.name.toLowerCase().includes(text.toLowerCase()) ||
         ticket.subject.toLowerCase().includes(text.toLowerCase())
-    );
-    setPrimaryTickets(filteredTickets);
-  };
+    )
+    setPrimaryTickets(filteredTickets)
+  }
   return (
     <AdvanceTableWrapper
       columns={columns}
@@ -104,11 +104,11 @@ const UnsolvedTickets = ({ data }) => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 UnsolvedTickets.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default UnsolvedTickets;
+export default UnsolvedTickets

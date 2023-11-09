@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { faqs as faqsData } from 'data/faqs';
-import AskQuestionModal from './AskQuestionModal';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import { faqs as faqsData } from 'data/faqs'
+import AskQuestionModal from './AskQuestionModal'
 
 const FaqAltItem = ({ faq }) => {
   return (
@@ -10,15 +10,15 @@ const FaqAltItem = ({ faq }) => {
       <h5 className="fs-0">{faq.title}</h5>
       <p className="fs--1">{faq.description}</p>
     </>
-  );
-};
+  )
+}
 
 const FaqAlt = () => {
-  const [faqs] = useState(faqsData);
-  const [showModal, setShowModal] = useState(false);
+  const [faqs] = useState(faqsData)
+  const [showModal, setShowModal] = useState(false)
 
-  const handleModalClose = () => setShowModal(false);
-  const handleModalShow = () => setShowModal(true);
+  const handleModalClose = () => setShowModal(false)
+  const handleModalShow = () => setShowModal(true)
 
   return (
     <Card>
@@ -50,8 +50,8 @@ const FaqAlt = () => {
         <AskQuestionModal show={showModal} handleClose={handleModalClose} />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 FaqAltItem.propTypes = {
   faq: PropTypes.shape({
@@ -59,6 +59,6 @@ FaqAltItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   })
-};
+}
 
-export default FaqAlt;
+export default FaqAlt

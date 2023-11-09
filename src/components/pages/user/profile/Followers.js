@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import Follower from 'components/app/social/followers/Follower';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import Follower from 'components/app/social/followers/Follower'
 
 const Followers = ({
   totalFollowers,
@@ -30,13 +30,13 @@ const Followers = ({
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 Followers.propTypes = {
   totalFollowers: PropTypes.number,
   followers: PropTypes.arrayOf(Follower.propTypes.follower),
   colBreakpoints: PropTypes.object
-};
+}
 
-export default Followers;
+export default Followers

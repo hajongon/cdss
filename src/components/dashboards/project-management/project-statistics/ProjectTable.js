@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ProjectTable = ({ data }) => {
   return (
@@ -37,11 +37,11 @@ const ProjectTable = ({ data }) => {
               </Link>
             </>
           </Flex>
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
 ProjectTable.propTypes = {
   data: PropTypes.arrayOf(
@@ -52,6 +52,6 @@ ProjectTable.propTypes = {
       iconColor: PropTypes.string.isRequired
     })
   )
-};
+}
 
-export default ProjectTable;
+export default ProjectTable

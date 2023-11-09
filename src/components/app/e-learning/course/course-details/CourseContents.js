@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import corner6 from 'assets/img/icons/spot-illustrations/corner-6.png';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import IconButton from 'components/common/IconButton';
-import Background from 'components/common/Background';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import corner6 from 'assets/img/icons/spot-illustrations/corner-6.png'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import IconButton from 'components/common/IconButton'
+import Background from 'components/common/Background'
 
 const CourseContents = ({ data }) => {
   return (
@@ -42,11 +42,11 @@ const CourseContents = ({ data }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseContents.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default CourseContents;
+export default CourseContents

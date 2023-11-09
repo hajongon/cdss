@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Typewriter } from 'react-simple-typewriter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import { Typewriter } from 'react-simple-typewriter'
 
 const exampleCode = ` <h3 className="text-success fw-light">
   A smarter way to tell{' '}
@@ -18,7 +18,7 @@ const exampleCode = ` <h3 className="text-success fw-light">
       delaySpeed={1000}
     />
   </span>
-  </h3>`;
+  </h3>`
 
 const TypedText = () => (
   <>
@@ -48,6 +48,6 @@ const TypedText = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default TypedText;
+export default TypedText

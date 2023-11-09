@@ -1,34 +1,34 @@
-import React, { useContext } from 'react';
-import NavbarDropdown from './NavbarDropdown';
+import React, { useContext } from 'react'
+import NavbarDropdown from './NavbarDropdown'
 import {
   dashboardRoutes,
   appRoutes,
   pagesRoutes,
   modulesRoutes,
   documentationRoutes
-} from 'routes/siteMaps';
-import { Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { flatRoutes } from 'helpers/utils';
-import NavbarDropdownApp from './NavbarDropdownApp';
-import NavbarDropdownPages from './NavbarDropdownPages';
-import NavbarDropdownModules from './NavbarDropdownModules';
-import AppContext from 'context/Context';
+} from 'routes/siteMaps'
+import { Dropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { flatRoutes } from 'helpers/utils'
+import NavbarDropdownApp from './NavbarDropdownApp'
+import NavbarDropdownPages from './NavbarDropdownPages'
+import NavbarDropdownModules from './NavbarDropdownModules'
+import AppContext from 'context/Context'
 
 const NavbarTopDropDownMenus = () => {
   const {
     config: { navbarCollapsed, showBurgerMenu },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleDropdownItemClick = () => {
     if (navbarCollapsed) {
-      setConfig('navbarCollapsed', !navbarCollapsed);
+      setConfig('navbarCollapsed', !navbarCollapsed)
     }
     if (showBurgerMenu) {
-      setConfig('showBurgerMenu', !showBurgerMenu);
+      setConfig('showBurgerMenu', !showBurgerMenu)
     }
-  };
+  }
   return (
     <>
       <NavbarDropdown title="dashboard">
@@ -70,7 +70,7 @@ const NavbarTopDropDownMenus = () => {
         ))}
       </NavbarDropdown>
     </>
-  );
-};
+  )
+}
 
-export default NavbarTopDropDownMenus;
+export default NavbarTopDropDownMenus

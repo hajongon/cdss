@@ -1,12 +1,12 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import LinePaymentChart from './LinePaymentChart';
+import React, { useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import LinePaymentChart from './LinePaymentChart'
 
 const LinePayment = ({ data }) => {
-  const chartRef = useRef(null);
-  const [paymentStatus, setPaymentStatus] = useState('successful');
+  const chartRef = useRef(null)
+  const [paymentStatus, setPaymentStatus] = useState('successful')
 
   return (
     <Card className="rounded-3 overflow-hidden h-100 shadow-none">
@@ -44,8 +44,8 @@ const LinePayment = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 LinePayment.propTypes = {
   data: PropTypes.shape({
@@ -53,6 +53,6 @@ LinePayment.propTypes = {
     successful: PropTypes.array,
     failed: PropTypes.array
   })
-};
+}
 
-export default LinePayment;
+export default LinePayment

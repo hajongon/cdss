@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Link } from 'react-router-dom';
-import { Card, Col, Row, Spinner } from 'react-bootstrap';
-import PricingDefaultHeader from './PricingDefaultHeader';
-import PricingDefaultCard from './PricingDefaultCard';
-import useFakeFetch from 'hooks/useFakeFetch';
-import { pricingData } from 'data/pricing';
-import FaqBasicCard from 'components/pages/faq/faq-basic/FaqBasicCard';
-import { faqs as faqsData } from 'data/faqs';
+import React, { useState } from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Link } from 'react-router-dom'
+import { Card, Col, Row, Spinner } from 'react-bootstrap'
+import PricingDefaultHeader from './PricingDefaultHeader'
+import PricingDefaultCard from './PricingDefaultCard'
+import useFakeFetch from 'hooks/useFakeFetch'
+import { pricingData } from 'data/pricing'
+import FaqBasicCard from 'components/pages/faq/faq-basic/FaqBasicCard'
+import { faqs as faqsData } from 'data/faqs'
 
 const PricingDefault = () => {
-  const [faqs] = useState(faqsData);
+  const [faqs] = useState(faqsData)
   const { loading: priceLoading, data: pricing } = useFakeFetch(
     pricingData,
     1000
-  );
+  )
 
   return (
     <>
@@ -63,7 +63,7 @@ const PricingDefault = () => {
         bodyClass="bg-light"
       />
     </>
-  );
-};
+  )
+}
 
-export default PricingDefault;
+export default PricingDefault

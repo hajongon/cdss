@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import { useContext } from 'react';
-import AppContext from 'context/Context';
-import { BarChart } from 'echarts/charts';
+import React from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import { useContext } from 'react'
+import AppContext from 'context/Context'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import dayjs from 'dayjs';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import dayjs from 'dayjs'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = isDark => ({
   color: [getColor('primary'), isDark ? '#236EA1' : '#7DD7FE'],
@@ -115,18 +115,18 @@ const getOptions = isDark => ({
     right: 0,
     containLabel: true
   }
-});
+})
 
 const DistributionOfPerformanceChart = () => {
-  const { config } = useContext(AppContext);
-  const { isDark } = config;
+  const { config } = useContext(AppContext)
+  const { isDark } = config
   return (
     <ReactEChartsCore
       echarts={echarts}
       option={getOptions(isDark)}
       style={{ height: '21.875rem' }}
     />
-  );
-};
+  )
+}
 
-export default DistributionOfPerformanceChart;
+export default DistributionOfPerformanceChart

@@ -1,12 +1,12 @@
-import holdTicket from 'assets/img/support-desk/hold-tickets.png';
-import openTicket from 'assets/img/support-desk/open-tickets.png';
-import dueTicket from 'assets/img/support-desk/due-tickets.png';
-import unassigned from 'assets/img/support-desk/unassigned.png';
+import holdTicket from 'assets/img/support-desk/hold-tickets.png'
+import openTicket from 'assets/img/support-desk/open-tickets.png'
+import dueTicket from 'assets/img/support-desk/due-tickets.png'
+import unassigned from 'assets/img/support-desk/unassigned.png'
 
-import person1 from 'assets/img/team/1-thumb.png';
-import person2 from 'assets/img/team/25-thumb.png';
-import person3 from 'assets/img/team/14-thumb.png';
-import person4 from 'assets/img/team/3-thumb.png';
+import person1 from 'assets/img/team/1-thumb.png'
+import person2 from 'assets/img/team/25-thumb.png'
+import person3 from 'assets/img/team/14-thumb.png'
+import person4 from 'assets/img/team/3-thumb.png'
 
 export const statusData = [
   {
@@ -55,21 +55,21 @@ export const statusData = [
     icon: 'caret-up',
     className: 'ps-md-x1 pt-x1'
   }
-];
+]
 
 export const unresolvedTickets = [
   [20, 18, 15, 20, 12, 15, 10],
   [30, 20, 20, 25, 20, 15, 10],
   [35, 32, 40, 50, 30, 25, 15],
   [15, 25, 20, 18, 10, 15, 25]
-];
+]
 
 export const numbersOfTickets = [
   [45, 35, 55, 55, 55, 45],
   [58, 42, 65, 65, 65, 30],
   [38, 25, 42, 42, 42, 45],
   [62, 45, 75, 75, 75, 55]
-];
+]
 
 export const todoList = [
   {
@@ -117,7 +117,7 @@ export const todoList = [
       'Sending attachments automatically attaches them to the notification email that the client receives as well as making them accessible through.',
     completed: false
   }
-];
+]
 
 const ticketsBadges = [
   { content: 'Recent', type: 'success' },
@@ -125,7 +125,7 @@ const ticketsBadges = [
   { content: 'Remaining', type: 'warning' },
   { content: 'Responded', type: 'info' },
   { content: 'Closed', type: 'secondary' }
-];
+]
 
 export const tickets = [
   {
@@ -710,4 +710,4 @@ export const tickets = [
     agent: 'Khalid',
     date: '2d ago'
   }
-];
+]

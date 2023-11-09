@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import img1 from 'assets/img/generic/4.jpg';
-import img2 from 'assets/img/generic/5.jpg';
-import img11 from 'assets/img/generic/11.jpg';
-import img3 from 'assets/img/gallery/4.jpg';
-import img4 from 'assets/img/gallery/5.jpg';
-import img5 from 'assets/img/gallery/3.jpg';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
-import FalconLightBox from 'components/common/FalconLightBox';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import img1 from 'assets/img/generic/4.jpg'
+import img2 from 'assets/img/generic/5.jpg'
+import img11 from 'assets/img/generic/11.jpg'
+import img3 from 'assets/img/gallery/4.jpg'
+import img4 from 'assets/img/gallery/5.jpg'
+import img5 from 'assets/img/gallery/3.jpg'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
+import FalconLightBox from 'components/common/FalconLightBox'
 
 const galleryCode = `<FalconLightBoxGallery images={images}>
   {setImgIndex => (
@@ -62,15 +62,15 @@ const galleryCode = `<FalconLightBoxGallery images={images}>
       </Col>
     </Row>
   )}
-</FalconLightBoxGallery>`;
+</FalconLightBoxGallery>`
 
 const simpleImageCode = ` <FalconLightBox image={image}>
   <Image src={image} fluid rounded width={300} />
-</FalconLightBox>`;
+</FalconLightBox>`
 
 const Lightbox = () => {
-  const images = [img1, img2, img3, img4, img5];
-  const image = img11;
+  const images = [img1, img2, img3, img4, img5]
+  const image = img11
 
   return (
     <>
@@ -109,7 +109,7 @@ const Lightbox = () => {
         />
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default Lightbox;
+export default Lightbox

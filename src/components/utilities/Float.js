@@ -1,6 +1,6 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const exampleCode = `
 <>
@@ -10,7 +10,7 @@ const exampleCode = `
   <br />
   <div className="float-none">Don't float on all viewport sizes</div>
 </>
-`;
+`
 
 const Float = () => (
   <>
@@ -36,6 +36,6 @@ const Float = () => (
       <FalconComponentCard.Body code={exampleCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Float;
+export default Float

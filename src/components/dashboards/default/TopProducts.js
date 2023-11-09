@@ -1,22 +1,22 @@
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   DatasetComponent,
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 echarts.use([
   TitleComponent,
@@ -26,7 +26,7 @@ echarts.use([
   CanvasRenderer,
   LegendComponent,
   DatasetComponent
-]);
+])
 
 const getOption = data => ({
   color: [getColor('primary'), getColor('gray-300')],
@@ -44,7 +44,7 @@ const getOption = data => ({
         params.seriesName
       }</div><div className="fs--1 text-600"><strong>${params.name}:</strong> ${
         params.value[params.componentIndex + 1]
-      }</div>`;
+      }</div>`
     }
   },
   legend: {
@@ -105,7 +105,7 @@ const getOption = data => ({
     }
   ],
   grid: { right: '0', left: '30px', bottom: '10%', top: '20%' }
-});
+})
 
 const TopProducts = ({ data }) => {
   return (
@@ -132,11 +132,11 @@ const TopProducts = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 TopProducts.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default TopProducts;
+export default TopProducts

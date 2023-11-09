@@ -1,18 +1,18 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TimelineComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   BarChart,
@@ -22,7 +22,7 @@ echarts.use([
   CanvasRenderer,
   LegendComponent,
   TimelineComponent
-]);
+])
 const chartCode = `function ChartOptions() {
   const months = [
     'January',
@@ -336,7 +336,7 @@ const chartCode = `function ChartOptions() {
       />
     );
   }
-`;
+`
 
 const BarTimelineChart = () => {
   return (
@@ -353,7 +353,7 @@ const BarTimelineChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default BarTimelineChart;
+export default BarTimelineChart

@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import { labels } from 'data/kanban';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { Dropdown, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import { labels } from 'data/kanban'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { Dropdown, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AppContext from 'context/Context'
 
 const ModalLabelContent = () => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Flex>
@@ -54,7 +54,7 @@ const ModalLabelContent = () => {
         </Dropdown.Menu>
       </Dropdown>
     </Flex>
-  );
-};
+  )
+}
 
-export default ModalLabelContent;
+export default ModalLabelContent

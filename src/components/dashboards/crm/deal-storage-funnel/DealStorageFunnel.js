@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import DealStorageFunnelChart from './DealStorageFunnelChart';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import DealStorageFunnelChart from './DealStorageFunnelChart'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
 
 const DealStorageFunnel = () => {
   return (
@@ -27,7 +27,7 @@ const DealStorageFunnel = () => {
         <DealStorageFunnelChart />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default DealStorageFunnel;
+export default DealStorageFunnel

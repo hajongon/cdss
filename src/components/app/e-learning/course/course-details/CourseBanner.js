@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Image, Row } from 'react-bootstrap';
-import CourseDetailsBg from 'assets/img/e-learning/course-details-bg.png';
-import playicon from 'assets/img/icons/play.svg';
-import beach from 'assets/video/beach.mp4';
-import beachPoster from 'assets/video/beach.jpg';
-import Background from 'components/common/Background';
-import { Link } from 'react-router-dom';
-import StarRating from 'components/common/StarRating';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ModalVideoContent from '../../ModalVideoContent';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Image, Row } from 'react-bootstrap'
+import CourseDetailsBg from 'assets/img/e-learning/course-details-bg.png'
+import playicon from 'assets/img/icons/play.svg'
+import beach from 'assets/video/beach.mp4'
+import beachPoster from 'assets/video/beach.jpg'
+import Background from 'components/common/Background'
+import { Link } from 'react-router-dom'
+import StarRating from 'components/common/StarRating'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ModalVideoContent from '../../ModalVideoContent'
 
 const CourseBanner = ({ course }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [showExcerpt, setShowExcerpt] = useState(false);
+  const [showModal, setShowModal] = useState(false)
+  const [showExcerpt, setShowExcerpt] = useState(false)
   return (
     <Card className="overflow-hidden light mb-3">
       <Card.Body className="bg-black">
@@ -106,8 +106,8 @@ const CourseBanner = ({ course }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseBanner.propTypes = {
   course: PropTypes.shape({
@@ -119,6 +119,6 @@ CourseBanner.propTypes = {
       image: PropTypes.string
     })
   })
-};
+}
 
-export default CourseBanner;
+export default CourseBanner

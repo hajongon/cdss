@@ -1,29 +1,29 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react'
 import {
   Dropdown,
   Form,
   OverlayTrigger,
   Tooltip,
   Button
-} from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import { copyToClipBoard } from 'helpers/utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AppContext from 'context/Context';
+} from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import { copyToClipBoard } from 'helpers/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AppContext from 'context/Context'
 
 const InviteToBoard = () => {
-  const [tooltipText, setTooltipText] = useState('Copy link to invite');
-  const copyTextRef = useRef(null);
-  const copyBtnRef = useRef(null);
+  const [tooltipText, setTooltipText] = useState('Copy link to invite')
+  const copyTextRef = useRef(null)
+  const copyBtnRef = useRef(null)
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleCopyText = () => {
-    copyToClipBoard(copyTextRef);
-    setTooltipText('Copied to Clipboard!');
-  };
+    copyToClipBoard(copyTextRef)
+    setTooltipText('Copied to Clipboard!')
+  }
 
   return (
     <Dropdown>
@@ -103,7 +103,7 @@ const InviteToBoard = () => {
         </div>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
-export default InviteToBoard;
+export default InviteToBoard

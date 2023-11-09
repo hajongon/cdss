@@ -1,21 +1,21 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
-import { LineChart } from 'echarts/charts';
+import { LineChart } from 'echarts/charts'
 
-import * as echarts from 'echarts/core';
+import * as echarts from 'echarts/core'
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
 echarts.use([
   TitleComponent,
   TooltipComponent,
@@ -23,7 +23,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const chartCode = `function chartOptions(){
   const chartRef = useRef(null);
@@ -140,7 +140,7 @@ const chartCode = `function chartOptions(){
       style={{ height: '18.75rem' }}
     />
   )
-}`;
+}`
 
 const DynamicLineChart = () => {
   return (
@@ -158,7 +158,7 @@ const DynamicLineChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default DynamicLineChart;
+export default DynamicLineChart

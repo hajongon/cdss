@@ -1,34 +1,34 @@
-import classNames from 'classnames';
-import AppContext from 'context/Context';
-import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
-import { Collapse, Nav } from 'react-bootstrap';
-import { NavLink, useLocation } from 'react-router-dom';
-import NavbarVerticalMenuItem from './NavbarVerticalMenuItem';
+import classNames from 'classnames'
+import AppContext from 'context/Context'
+import PropTypes from 'prop-types'
+import React, { useContext, useState } from 'react'
+import { Collapse, Nav } from 'react-bootstrap'
+import { NavLink, useLocation } from 'react-router-dom'
+import NavbarVerticalMenuItem from './NavbarVerticalMenuItem'
 
 const CollapseItems = ({ route }) => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   const openCollapse = childrens => {
     const checkLink = children => {
       if (children.to === pathname) {
-        return true;
+        return true
       }
       return (
         Object.prototype.hasOwnProperty.call(children, 'children') &&
         children.children.some(checkLink)
-      );
-    };
-    return childrens.some(checkLink);
-  };
+      )
+    }
+    return childrens.some(checkLink)
+  }
 
-  const [open, setOpen] = useState(openCollapse(route.children));
+  const [open, setOpen] = useState(openCollapse(route.children))
 
   return (
     <Nav.Item as="li">
       <Nav.Link
         onClick={() => {
-          setOpen(!open);
+          setOpen(!open)
         }}
         className={classNames('dropdown-indicator cursor-pointer', {
           'text-500': !route.active
@@ -44,8 +44,8 @@ const CollapseItems = ({ route }) => {
         </Nav>
       </Collapse>
     </Nav.Item>
-  );
-};
+  )
+}
 
 CollapseItems.propTypes = {
   route: PropTypes.shape({
@@ -54,19 +54,19 @@ CollapseItems.propTypes = {
     children: PropTypes.array.isRequired,
     active: PropTypes.bool
   }).isRequired
-};
+}
 
 const NavbarVerticalMenu = ({ routes }) => {
   const {
     config: { showBurgerMenu },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleNavItemClick = () => {
     if (showBurgerMenu) {
-      setConfig('showBurgerMenu', !showBurgerMenu);
+      setConfig('showBurgerMenu', !showBurgerMenu)
     }
-  };
+  }
   return routes.map(route => {
     if (!route.children) {
       return (
@@ -82,15 +82,15 @@ const NavbarVerticalMenu = ({ routes }) => {
             <NavbarVerticalMenuItem route={route} />
           </NavLink>
         </Nav.Item>
-      );
+      )
     }
-    return <CollapseItems route={route} key={route.name} />;
-  });
-};
+    return <CollapseItems route={route} key={route.name} />
+  })
+}
 
 NavbarVerticalMenu.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.shape(NavbarVerticalMenuItem.propTypes))
     .isRequired
-};
+}
 
-export default NavbarVerticalMenu;
+export default NavbarVerticalMenu

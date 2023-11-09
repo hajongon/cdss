@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import React, { useState } from 'react'
 import {
   Button,
   Card,
@@ -8,9 +8,9 @@ import {
   FormControl,
   InputGroup,
   Table
-} from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import SimpleBarReact from 'simplebar-react';
+} from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import SimpleBarReact from 'simplebar-react'
 
 const TicketRow = ({
   name,
@@ -58,38 +58,38 @@ const TicketRow = ({
         </Button>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 const EventTicket = () => {
   const [tickets, setTickets] = useState([
     { name: 'Front desks', price: 0.0, checked: true },
     { name: 'Green gallery', price: 5.0 },
     { name: 'VIP', price: 20.0 }
-  ]);
+  ])
 
   // Change Ticket
   const changeTicket = (id, name, value) => {
     const updatedTickets =
       name === 'checked'
         ? tickets.map(ticket => ({ ...ticket, checked: false }))
-        : [...tickets];
-    const updatedTicket = { ...tickets[id], [name]: value };
+        : [...tickets]
+    const updatedTicket = { ...tickets[id], [name]: value }
 
     setTickets([
       ...updatedTickets.slice(0, id),
       updatedTicket,
       ...updatedTickets.slice(id + 1)
-    ]);
-  };
+    ])
+  }
 
   // Remove Ticket
   const removeTicket = id =>
-    setTickets([...tickets.slice(0, id), ...tickets.slice(id + 1)]);
+    setTickets([...tickets.slice(0, id), ...tickets.slice(id + 1)])
 
   const handleAddTicket = () => {
-    setTickets([...tickets, { name: '', price: 0 }]);
-  };
+    setTickets([...tickets, { name: '', price: 0 }])
+  }
 
   return (
     <Card className="mb-3">
@@ -154,8 +154,8 @@ const EventTicket = () => {
         </IconButton>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 TicketRow.propTypes = {
   name: PropTypes.string.isRequired,
@@ -164,6 +164,6 @@ TicketRow.propTypes = {
   id: PropTypes.number.isRequired,
   handleRemove: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired
-};
+}
 
-export default EventTicket;
+export default EventTicket

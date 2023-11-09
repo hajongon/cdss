@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Table } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Table } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
 
 const PerfomanceTableRow = ({ campaigns, cost, revenue }) => {
   return (
@@ -10,14 +10,14 @@ const PerfomanceTableRow = ({ campaigns, cost, revenue }) => {
       <td className="text-truncate text-end">${cost}</td>
       <td className="text-truncate text-end">${revenue}</td>
     </tr>
-  );
-};
+  )
+}
 
 PerfomanceTableRow.propTypes = {
   campaigns: PropTypes.string.isRequired,
   cost: PropTypes.number.isRequired,
   revenue: PropTypes.number.isRequired
-};
+}
 
 const PerfomanceTable = ({ data }) => {
   return (
@@ -42,12 +42,12 @@ const PerfomanceTable = ({ data }) => {
         </tbody>
       </Table>
     </SimpleBarReact>
-  );
-};
+  )
+}
 
 PerfomanceTable.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(PerfomanceTableRow.propTypes))
     .isRequired
-};
+}
 
-export default PerfomanceTable;
+export default PerfomanceTable

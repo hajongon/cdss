@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import CardDropdown from 'components/common/CardDropdown';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Dropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import CardDropdown from 'components/common/CardDropdown'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
 
 const columns = [
   {
@@ -12,8 +12,8 @@ const columns = [
     Header: 'Course Title',
     headerProps: { className: 'pe-1 fw-medium' },
     Cell: rowData => {
-      const { title } = rowData.row.original;
-      return <Link to="/e-learning/course/course-details">{title}</Link>;
+      const { title } = rowData.row.original
+      return <Link to="/e-learning/course/course-details">{title}</Link>
     }
   },
   {
@@ -23,12 +23,12 @@ const columns = [
       className: 'pe-7 fw-medium'
     },
     Cell: rowData => {
-      const { trainer } = rowData.row.original;
+      const { trainer } = rowData.row.original
       return (
         <Link to="/e-learning/trainer-profile" className="text-800">
           {trainer}
         </Link>
-      );
+      )
     }
   },
   {
@@ -84,13 +84,13 @@ const columns = [
             </Dropdown.Item>
           </div>
         </CardDropdown>
-      );
+      )
     }
   }
-];
+]
 
 const TopCoursesTable = ({ tableData }) => {
-  const [data] = useState(tableData);
+  const [data] = useState(tableData)
   return (
     <AdvanceTableWrapper
       columns={columns}
@@ -107,11 +107,11 @@ const TopCoursesTable = ({ tableData }) => {
         }}
       />
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 TopCoursesTable.propTypes = {
   tableData: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default TopCoursesTable;
+export default TopCoursesTable

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Accordion, Card } from 'react-bootstrap';
-import FaqAccordionItem from './FaqAccordionItem';
-import { faqAccordions as faqsData } from 'data/faqs';
+import React, { useState } from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Accordion, Card } from 'react-bootstrap'
+import FaqAccordionItem from './FaqAccordionItem'
+import { faqAccordions as faqsData } from 'data/faqs'
 
 const FaqAccordion = () => {
-  const [faqs] = useState(faqsData);
+  const [faqs] = useState(faqsData)
   return (
     <>
       <PageHeader
@@ -31,7 +31,7 @@ const FaqAccordion = () => {
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default FaqAccordion;
+export default FaqAccordion

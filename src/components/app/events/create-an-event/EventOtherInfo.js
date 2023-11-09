@@ -1,9 +1,9 @@
-import Flex from 'components/common/Flex';
-import MultiSelect from 'components/common/MultiSelect';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
-import { Controller } from 'react-hook-form';
+import Flex from 'components/common/Flex'
+import MultiSelect from 'components/common/MultiSelect'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Button, Card, Form } from 'react-bootstrap'
+import { Controller } from 'react-hook-form'
 
 const EventOtherInfo = ({ register, control }) => {
   const organizerOptions = [
@@ -11,17 +11,17 @@ const EventOtherInfo = ({ register, control }) => {
     { value: '2', label: 'University of Chicago' },
     { value: '3', label: 'GSAS Open Labs At Harvard' },
     { value: '4', label: 'California Institute of Technology' }
-  ];
+  ]
   const sponsorsOptions = [
     { value: '1', label: 'Microsoft Corporation' },
     { value: '2', label: 'Technext Limited' },
     { value: '3', label: ' Hewlett-Packard' }
-  ];
+  ]
   const tagOptions = [
     { value: '1', label: 'Concert' },
     { value: '2', label: 'New Year' },
     { value: '3', label: 'Party' }
-  ];
+  ]
   return (
     <Card>
       <Card.Header as="h5">Other Info</Card.Header>
@@ -165,11 +165,11 @@ const EventOtherInfo = ({ register, control }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 EventOtherInfo.propTypes = {
   register: PropTypes.func.isRequired,
   control: PropTypes.object.isRequired
-};
+}
 
-export default EventOtherInfo;
+export default EventOtherInfo

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row, Tab, Nav, Form } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TopCoursesTable from './TopCoursesTable';
-import FalconLink from 'components/common/FalconLink';
-import SimpleBarReact from 'simplebar-react';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row, Tab, Nav, Form } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TopCoursesTable from './TopCoursesTable'
+import FalconLink from 'components/common/FalconLink'
+import SimpleBarReact from 'simplebar-react'
+import classNames from 'classnames'
 
 const TabTitle = ({ title, isPaid, icon }) => (
   <Flex className="p-3 ps-2 text-start cursor-pointer gap-1">
@@ -25,7 +25,7 @@ const TabTitle = ({ title, isPaid, icon }) => (
       <h5 className="mb-0 lh-1">{isPaid ? 'Paid' : 'Free'}</h5>
     </div>
   </Flex>
-);
+)
 
 const TopCourses = ({ tableData, className }) => {
   return (
@@ -111,19 +111,19 @@ const TopCourses = ({ tableData, className }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 TabTitle.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   isPaid: PropTypes.bool,
   isActive: PropTypes.bool
-};
+}
 
 TopCourses.propTypes = {
   tableData: PropTypes.arrayOf(PropTypes.object).isRequired,
   className: PropTypes.string
-};
+}
 
-export default TopCourses;
+export default TopCourses

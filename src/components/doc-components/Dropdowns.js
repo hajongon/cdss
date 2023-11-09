@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <Dropdown>
@@ -18,7 +18,7 @@ const exampleCode = `
     <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
-`;
+`
 const dropdownBtnCode = `
 <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant='falcon-default'>
   <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -27,7 +27,7 @@ const dropdownBtnCode = `
   <Dropdown.Divider />
   <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
 </DropdownButton>
-`;
+`
 
 const btnVariantCode = `
 <>
@@ -52,7 +52,7 @@ const btnVariantCode = `
     ),
   )}
 </>
-`;
+`
 
 const splitBtnCode = `
 <>
@@ -77,7 +77,7 @@ const splitBtnCode = `
     ),
   )}
 </>
-`;
+`
 
 const sizingCode = `
 <>
@@ -161,7 +161,7 @@ const sizingCode = `
     </SplitButton>
   </div>
 </>
-`;
+`
 
 const directionCode = `
 <>
@@ -202,7 +202,7 @@ const directionCode = `
     ))}
   </div>
 </>
-`;
+`
 
 const dropdownItemsCode = `
 <DropdownButton id="dropdown-item-button" title="Dropdown button">
@@ -211,7 +211,7 @@ const dropdownItemsCode = `
   <Dropdown.Item as="button">Another action</Dropdown.Item>
   <Dropdown.Item as="button">Something else</Dropdown.Item>
 </DropdownButton>
-`;
+`
 
 const menuAlignMentCode = `
 <DropdownButton
@@ -225,7 +225,7 @@ const menuAlignMentCode = `
   <Dropdown.Divider />
   <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
 </DropdownButton>
-`;
+`
 
 const headerCode = `
 <DropdownButton id="dropdown-item-button" title="Dropdown button">
@@ -234,7 +234,7 @@ const headerCode = `
   <Dropdown.Item as="button">Another action</Dropdown.Item>
   <Dropdown.Item as="button">Something else</Dropdown.Item>
 </DropdownButton>
-`;
+`
 const dividerCode = `
 <DropdownButton id="dropdown-item-button" title="Dropdown button">
   <Dropdown.Item as="button">Action</Dropdown.Item>
@@ -242,7 +242,7 @@ const dividerCode = `
   <Dropdown.Divider />
   <Dropdown.Item as="button">Something else</Dropdown.Item>
 </DropdownButton>
-`;
+`
 
 const responsiveAlignmentCode = `
 <>
@@ -269,7 +269,7 @@ const responsiveAlignmentCode = `
     </SplitButton>
   </div>
 </>
-`;
+`
 
 const Dropdowns = () => (
   <>
@@ -383,6 +383,6 @@ const Dropdowns = () => (
       </Col>
     </Row>
   </>
-);
+)
 
-export default Dropdowns;
+export default Dropdowns

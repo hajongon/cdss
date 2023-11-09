@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import eventBanner from 'assets/img/generic/13.jpg';
-import React from 'react';
-import { Card, Form, Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import eventBanner from 'assets/img/generic/13.jpg'
+import React from 'react'
+import { Card, Form, Image } from 'react-bootstrap'
 
 const EventBanner = () => {
   return (
@@ -15,7 +15,7 @@ const EventBanner = () => {
         <Form.Control type="file" className="d-none" />
       </Form.Group>
     </Card>
-  );
-};
+  )
+}
 
-export default EventBanner;
+export default EventBanner

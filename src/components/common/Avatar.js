@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { isIterableArray } from 'helpers/utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from './Flex';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { isIterableArray } from 'helpers/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from './Flex'
+import classNames from 'classnames'
 
 const Avatar = ({
   size,
@@ -16,11 +16,11 @@ const Avatar = ({
   isExact,
   icon
 }) => {
-  const classNames = ['avatar', `avatar-${size}`, className].join(' ');
+  const classNames = ['avatar', `avatar-${size}`, className].join(' ')
   const mediaClasses = [
     rounded ? `rounded-${rounded}` : 'rounded',
     mediaClass
-  ].join(' ');
+  ].join(' ')
 
   const getAvatar = () => {
     if (src) {
@@ -35,9 +35,9 @@ const Avatar = ({
               <img src={src[2]} alt="" className="h-50" />
             </div>
           </div>
-        );
+        )
       } else {
-        return <img className={mediaClasses} src={src} alt="" />;
+        return <img className={mediaClasses} src={src} alt="" />
       }
     }
 
@@ -46,7 +46,7 @@ const Avatar = ({
         <div className={`avatar-name ${mediaClasses}`}>
           <span>{isExact ? name : name.match(/\b\w/g).join('')}</span>
         </div>
-      );
+      )
     }
 
     if (icon) {
@@ -54,7 +54,7 @@ const Avatar = ({
         <Flex className={`avatar-name ${mediaClasses}`}>
           <FontAwesomeIcon icon={icon} />
         </Flex>
-      );
+      )
     }
 
     return (
@@ -63,11 +63,11 @@ const Avatar = ({
           {emoji}
         </span>
       </div>
-    );
-  };
+    )
+  }
 
-  return <div className={classNames}>{getAvatar()}</div>;
-};
+  return <div className={classNames}>{getAvatar()}</div>
+}
 
 export const AvatarGroup = ({ children, dense, className }) => {
   return (
@@ -78,8 +78,8 @@ export const AvatarGroup = ({ children, dense, className }) => {
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
 Avatar.propTypes = {
   size: PropTypes.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl']),
@@ -91,19 +91,19 @@ Avatar.propTypes = {
   mediaClass: PropTypes.string,
   isExact: PropTypes.bool,
   icon: PropTypes.string
-};
+}
 
 Avatar.defaultProps = {
   size: 'xl',
   rounded: 'circle',
   emoji: '😊',
   isExact: false
-};
+}
 
 AvatarGroup.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   dense: PropTypes.bool
-};
+}
 
-export default Avatar;
+export default Avatar

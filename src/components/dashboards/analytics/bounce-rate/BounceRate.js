@@ -1,8 +1,8 @@
-import FalconLink from 'components/common/FalconLink';
-import { bounceRate } from 'data/dashboard/analytics';
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import BounceRateChart from './BounceRateChart';
+import FalconLink from 'components/common/FalconLink'
+import { bounceRate } from 'data/dashboard/analytics'
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import BounceRateChart from './BounceRateChart'
 
 const BounceRate = ({ ...rest }) => {
   return (
@@ -28,7 +28,7 @@ const BounceRate = ({ ...rest }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default BounceRate;
+export default BounceRate

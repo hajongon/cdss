@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { Button, Form, Row, Col } from 'react-bootstrap';
-import Divider from 'components/common/Divider';
-import SocialAuthButtons from './SocialAuthButtons';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { Button, Form, Row, Col } from 'react-bootstrap'
+import Divider from 'components/common/Divider'
+import SocialAuthButtons from './SocialAuthButtons'
 
 const RegistrationForm = ({ hasLabel }) => {
   // State
@@ -14,22 +14,22 @@ const RegistrationForm = ({ hasLabel }) => {
     password: '',
     confirmPassword: '',
     isAccepted: false
-  });
+  })
 
   // Handler
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     toast.success(`Successfully registered as ${formData.name}`, {
       theme: 'colored'
-    });
-  };
+    })
+  }
 
   const handleFieldChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -117,11 +117,11 @@ const RegistrationForm = ({ hasLabel }) => {
 
       <SocialAuthButtons />
     </Form>
-  );
-};
+  )
+}
 
 RegistrationForm.propTypes = {
   hasLabel: PropTypes.bool
-};
+}
 
-export default RegistrationForm;
+export default RegistrationForm

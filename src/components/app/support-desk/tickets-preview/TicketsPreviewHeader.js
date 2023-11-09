@@ -1,12 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import React from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import React from 'react'
+import { Card, Dropdown } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const TicketsPreviewHeader = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <Card>
       <Card.Header className="d-flex flex-between-center">
@@ -76,7 +76,7 @@ const TicketsPreviewHeader = () => {
         </Flex>
       </Card.Header>
     </Card>
-  );
-};
+  )
+}
 
-export default TicketsPreviewHeader;
+export default TicketsPreviewHeader

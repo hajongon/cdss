@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const FalconCardFooterLink = ({
   title,
@@ -30,7 +30,7 @@ const FalconCardFooterLink = ({
       <FontAwesomeIcon icon="chevron-right" className="ms-1 fs--2" />
     </Button>
   </Card.Footer>
-);
+)
 
 FalconCardFooterLink.propTypes = {
   title: PropTypes.string.isRequired,
@@ -38,8 +38,8 @@ FalconCardFooterLink.propTypes = {
   borderTop: PropTypes.bool,
   to: PropTypes.string,
   className: PropTypes.string
-};
+}
 
-FalconCardFooterLink.defaultProps = { to: '#!', bg: 'light' };
+FalconCardFooterLink.defaultProps = { to: '#!', bg: 'light' }
 
-export default FalconCardFooterLink;
+export default FalconCardFooterLink

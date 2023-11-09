@@ -1,55 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { Card, Dropdown, ListGroup } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { Card, Dropdown, ListGroup } from 'react-bootstrap'
 import {
   rawEarlierNotifications,
   rawNewNotifications
-} from 'data/notification/notification';
-import { isIterableArray } from 'helpers/utils';
-import useFakeFetch from 'hooks/useFakeFetch';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Notification from 'components/notification/Notification';
+} from 'data/notification/notification'
+import { isIterableArray } from 'helpers/utils'
+import useFakeFetch from 'hooks/useFakeFetch'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Notification from 'components/notification/Notification'
 
 const NotificationDropdown = () => {
   // State
   const { data: newNotifications, setData: setNewNotifications } =
-    useFakeFetch(rawNewNotifications);
+    useFakeFetch(rawNewNotifications)
   const { data: earlierNotifications, setData: setEarlierNotifications } =
-    useFakeFetch(rawEarlierNotifications);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAllRead, setIsAllRead] = useState(false);
+    useFakeFetch(rawEarlierNotifications)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isAllRead, setIsAllRead] = useState(false)
 
   // Handler
   const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      window.innerWidth < 1200 && setIsOpen(false);
-    });
-  }, []);
+      window.innerWidth < 1200 && setIsOpen(false)
+    })
+  }, [])
 
   const markAsRead = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const updatedNewNotifications = newNotifications.map(notification =>
       Object.prototype.hasOwnProperty.call(notification, 'unread')
         ? { ...notification, unread: false }
         : notification
-    );
+    )
     const updatedEarlierNotifications = earlierNotifications.map(notification =>
       Object.prototype.hasOwnProperty.call(notification, 'unread')
         ? { ...notification, unread: false }
         : notification
-    );
+    )
 
-    setIsAllRead(true);
-    setNewNotifications(updatedNewNotifications);
-    setEarlierNotifications(updatedEarlierNotifications);
-  };
+    setIsAllRead(true)
+    setNewNotifications(updatedNewNotifications)
+    setEarlierNotifications(updatedEarlierNotifications)
+  }
 
   return (
     <Dropdown navbar={true} as="li" show={isOpen} onToggle={handleToggle}>
@@ -115,7 +115,7 @@ const NotificationDropdown = () => {
         </Card>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
-export default NotificationDropdown;
+export default NotificationDropdown

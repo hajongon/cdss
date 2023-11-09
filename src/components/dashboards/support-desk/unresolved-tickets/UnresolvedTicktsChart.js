@@ -1,17 +1,17 @@
-import React, { useContext, forwardRef } from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import React, { useContext, forwardRef } from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import * as echarts from 'echarts/core';
-import { getColor, rgbaColor } from 'helpers/utils';
-import AppContext from 'context/Context';
-import PropTypes from 'prop-types';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import * as echarts from 'echarts/core'
+import { getColor, rgbaColor } from 'helpers/utils'
+import AppContext from 'context/Context'
+import PropTypes from 'prop-types'
 
 echarts.use([
   TitleComponent,
@@ -20,7 +20,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOption = (data, isDark) => ({
   color: [
@@ -134,12 +134,12 @@ const getOption = (data, isDark) => ({
     right: 2,
     containLabel: true
   }
-});
+})
 
 const UnresolvedTicktsChart = forwardRef(({ data }, ref) => {
-  const { config } = useContext(AppContext);
+  const { config } = useContext(AppContext)
 
-  const { isDark } = config;
+  const { isDark } = config
   return (
     <ReactEChartsCore
       echarts={echarts}
@@ -147,11 +147,11 @@ const UnresolvedTicktsChart = forwardRef(({ data }, ref) => {
       option={getOption(data, isDark)}
       style={{ height: '21rem' }}
     />
-  );
-});
+  )
+})
 
 UnresolvedTicktsChart.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default UnresolvedTicktsChart;
+export default UnresolvedTicktsChart

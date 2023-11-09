@@ -1,10 +1,10 @@
-import FalconCloseButton from 'components/common/FalconCloseButton';
-import Flex from 'components/common/Flex';
-import Lottie from 'lottie-react';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Modal } from 'react-bootstrap';
-import animationData from './lottie/warning-light.json';
+import FalconCloseButton from 'components/common/FalconCloseButton'
+import Flex from 'components/common/Flex'
+import Lottie from 'lottie-react'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Modal } from 'react-bootstrap'
+import animationData from './lottie/warning-light.json'
 
 const WizardModal = ({ modal, setModal }) => {
   return (
@@ -28,12 +28,12 @@ const WizardModal = ({ modal, setModal }) => {
         </Flex>
       </Modal.Body>
     </Modal>
-  );
-};
+  )
+}
 
 WizardModal.propTypes = {
   modal: PropTypes.bool.isRequired,
   setModal: PropTypes.func.isRequired
-};
+}
 
-export default WizardModal;
+export default WizardModal

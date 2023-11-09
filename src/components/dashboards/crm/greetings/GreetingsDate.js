@@ -1,8 +1,8 @@
-import React, { forwardRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Form } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { forwardRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Form } from 'react-bootstrap'
+import DatePicker from 'react-datepicker'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const GreetingsDateInput = forwardRef(({ value, onClick }, ref) => (
   <div className="position-relative">
@@ -13,7 +13,7 @@ const GreetingsDateInput = forwardRef(({ value, onClick }, ref) => (
       value={value}
       className="ps-4"
       onChange={e => {
-        console.log({ e });
+        console.log({ e })
       }}
     />
     <FontAwesomeIcon
@@ -21,17 +21,17 @@ const GreetingsDateInput = forwardRef(({ value, onClick }, ref) => (
       className="text-primary position-absolute top-50 translate-middle-y ms-2"
     />
   </div>
-));
+))
 
 const GreetingsDate = () => {
-  const date = new Date();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(date.setDate(date.getDate() + 7));
+  const date = new Date()
+  const [startDate, setStartDate] = useState(new Date())
+  const [endDate, setEndDate] = useState(date.setDate(date.getDate() + 7))
   const onChange = dates => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  };
+    const [start, end] = dates
+    setStartDate(start)
+    setEndDate(end)
+  }
   return (
     <DatePicker
       selected={startDate}
@@ -43,12 +43,12 @@ const GreetingsDate = () => {
       dateFormat="MMM dd"
       customInput={<GreetingsDateInput />}
     />
-  );
-};
+  )
+}
 
 GreetingsDateInput.propTypes = {
   value: PropTypes.string,
   onClick: PropTypes.func
-};
+}
 
-export default GreetingsDate;
+export default GreetingsDate

@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React from 'react';
-import { Badge, Card, Col, Row } from 'react-bootstrap';
-import CustomerSatisfactionChart from './CustomerSatisfactionChart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React from 'react'
+import { Badge, Card, Col, Row } from 'react-bootstrap'
+import CustomerSatisfactionChart from './CustomerSatisfactionChart'
 
 const CustomerSatisfaction = () => {
   return (
@@ -60,7 +60,7 @@ const CustomerSatisfaction = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default CustomerSatisfaction;
+export default CustomerSatisfaction

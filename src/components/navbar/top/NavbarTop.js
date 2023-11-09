@@ -1,49 +1,49 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Navbar, Nav } from 'react-bootstrap';
-import classNames from 'classnames';
-import AppContext from 'context/Context';
-import Logo from 'components/common/Logo';
-import SearchBox from './SearchBox';
-import NavbarTopDropDownMenus from './NavbarTopDropDownMenus';
-import { navbarBreakPoint, topNavbarBreakpoint } from 'config';
-import autoCompleteInitialItem from 'data/autocomplete/autocomplete';
-import TopNavRightSideNavItem from './TopNavRightSideNavItem';
-import { useLocation } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Navbar, Nav } from 'react-bootstrap'
+import classNames from 'classnames'
+import AppContext from 'context/Context'
+import Logo from 'components/common/Logo'
+import SearchBox from './SearchBox'
+import NavbarTopDropDownMenus from './NavbarTopDropDownMenus'
+import { navbarBreakPoint, topNavbarBreakpoint } from 'config'
+import autoCompleteInitialItem from 'data/autocomplete/autocomplete'
+import TopNavRightSideNavItem from './TopNavRightSideNavItem'
+import { useLocation } from 'react-router-dom'
 
 const NavbarTop = () => {
   const {
     config: { showBurgerMenu, navbarPosition, navbarCollapsed },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
-  const { pathname } = useLocation();
-  const isChat = pathname.includes('chat');
+  const { pathname } = useLocation()
+  const isChat = pathname.includes('chat')
 
-  const [showDropShadow, setShowDropShadow] = useState(false);
+  const [showDropShadow, setShowDropShadow] = useState(false)
 
   const handleBurgerMenu = () => {
-    (navbarPosition === 'top' || navbarPosition === 'double-top') &&
-      setConfig('navbarCollapsed', !navbarCollapsed);
-    (navbarPosition === 'vertical' || navbarPosition === 'combo') &&
-      setConfig('showBurgerMenu', !showBurgerMenu);
-  };
+    ;(navbarPosition === 'top' || navbarPosition === 'double-top') &&
+      setConfig('navbarCollapsed', !navbarCollapsed)
+    ;(navbarPosition === 'vertical' || navbarPosition === 'combo') &&
+      setConfig('showBurgerMenu', !showBurgerMenu)
+  }
 
   const setDropShadow = () => {
-    const el = document.documentElement;
+    const el = document.documentElement
     if (el.scrollTop > 0) {
-      setShowDropShadow(true);
+      setShowDropShadow(true)
     } else {
-      setShowDropShadow(false);
+      setShowDropShadow(false)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', setDropShadow);
-    return () => window.removeEventListener('scroll', setDropShadow);
-  }, []);
+    window.addEventListener('scroll', setDropShadow)
+    return () => window.removeEventListener('scroll', setDropShadow)
+  }, [])
 
-  const burgerMenuRef = useRef();
+  const burgerMenuRef = useRef()
 
   return (
     <Navbar
@@ -85,15 +85,15 @@ const NavbarTop = () => {
         />
       )}
     </Navbar>
-  );
-};
+  )
+}
 
 const NavbarTopElements = ({
   navbarPosition,
   handleBurgerMenu,
   navbarCollapsed
 }) => {
-  const burgerMenuRef = useRef();
+  const burgerMenuRef = useRef()
   return (
     <>
       <Navbar.Toggle
@@ -141,12 +141,12 @@ const NavbarTopElements = ({
       )}
       <TopNavRightSideNavItem />
     </>
-  );
-};
+  )
+}
 
 NavbarTopElements.propTypes = {
   navbarPosition: PropTypes.string,
   handleBurgerMenu: PropTypes.func,
   navbarCollapsed: PropTypes.bool
-};
-export default NavbarTop;
+}
+export default NavbarTop

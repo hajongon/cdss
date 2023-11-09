@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const IconButton = ({
   icon,
@@ -24,7 +24,7 @@ const IconButton = ({
     />
     {iconAlign === 'left' || iconAlign === 'middle' ? children : false}
   </Button>
-);
+)
 
 IconButton.propTypes = {
   ...Button.propTypes,
@@ -33,6 +33,6 @@ IconButton.propTypes = {
   iconAlign: PropTypes.oneOf(['left', 'right', 'middle']),
   iconClassName: PropTypes.string,
   transform: PropTypes.string
-};
+}
 
-export default IconButton;
+export default IconButton

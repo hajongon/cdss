@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import { Form } from 'react-bootstrap';
+import React, { forwardRef } from 'react'
+import PropTypes from 'prop-types'
+import { Form } from 'react-bootstrap'
 
 const CustomDateInput = forwardRef(
   (
@@ -21,9 +21,9 @@ const CustomDateInput = forwardRef(
           {errorMessage}
         </Form.Control.Feedback>
       </>
-    );
+    )
   }
-);
+)
 
 CustomDateInput.propTypes = {
   value: PropTypes.string,
@@ -32,6 +32,6 @@ CustomDateInput.propTypes = {
   isValid: PropTypes.bool,
   formControlProps: PropTypes.object,
   errorMessage: PropTypes.string
-};
+}
 
-export default CustomDateInput;
+export default CustomDateInput

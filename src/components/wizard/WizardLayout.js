@@ -1,21 +1,21 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Form, Nav, ProgressBar } from 'react-bootstrap';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useForm } from 'react-hook-form';
-import AccountForm from './AccountForm';
-import PersonalForm from './PersonalForm';
-import BillingForm from './BillingForm';
-import Success from './Success';
-import AppContext, { AuthWizardContext } from 'context/Context';
-import IconButton from 'components/common/IconButton';
-import WizardModal from './WizardModal';
-import Flex from 'components/common/Flex';
+import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Form, Nav, ProgressBar } from 'react-bootstrap'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useForm } from 'react-hook-form'
+import AccountForm from './AccountForm'
+import PersonalForm from './PersonalForm'
+import BillingForm from './BillingForm'
+import Success from './Success'
+import AppContext, { AuthWizardContext } from 'context/Context'
+import IconButton from 'components/common/IconButton'
+import WizardModal from './WizardModal'
+import Flex from 'components/common/Flex'
 
 const WizardLayout = ({ variant, validation, progressBar }) => {
-  const { isRTL } = useContext(AppContext);
-  const { user, setUser, step, setStep } = useContext(AuthWizardContext);
+  const { isRTL } = useContext(AppContext)
+  const { user, setUser, step, setStep } = useContext(AuthWizardContext)
   const {
     register,
     handleSubmit,
@@ -24,9 +24,9 @@ const WizardLayout = ({ variant, validation, progressBar }) => {
     setValue,
     reset,
     clearErrors
-  } = useForm();
+  } = useForm()
 
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false)
 
   const navItems = [
     {
@@ -45,32 +45,32 @@ const WizardLayout = ({ variant, validation, progressBar }) => {
       icon: 'thumbs-up',
       label: 'Done'
     }
-  ];
+  ]
 
   const onSubmitData = data => {
-    setUser({ ...user, ...data });
-    setStep(step + 1);
-  };
+    setUser({ ...user, ...data })
+    setStep(step + 1)
+  }
   const onError = () => {
     if (!validation) {
-      clearErrors();
-      setStep(step + 1);
+      clearErrors()
+      setStep(step + 1)
     }
-  };
+  }
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => setModal(!modal)
 
   const handleNavs = targetStep => {
     if (step !== 4) {
       if (targetStep < step) {
-        setStep(targetStep);
+        setStep(targetStep)
       } else {
-        handleSubmit(onSubmitData, onError)();
+        handleSubmit(onSubmitData, onError)()
       }
     } else {
-      toggle();
+      toggle()
     }
-  };
+  }
 
   return (
     <>
@@ -147,7 +147,7 @@ const WizardLayout = ({ variant, validation, progressBar }) => {
               'd-none': step === 1
             })}
             onClick={() => {
-              setStep(step - 1);
+              setStep(step - 1)
             }}
           >
             Prev
@@ -166,8 +166,8 @@ const WizardLayout = ({ variant, validation, progressBar }) => {
         </Card.Footer>
       </Card>
     </>
-  );
-};
+  )
+}
 
 const NavItem = ({ index, step, handleNavs, icon, label }) => {
   return (
@@ -187,8 +187,8 @@ const NavItem = ({ index, step, handleNavs, icon, label }) => {
         <span className="d-none d-md-block mt-1 fs--1">{label}</span>
       </Nav.Link>
     </Nav.Item>
-  );
-};
+  )
+}
 
 const NavItemPill = ({ index, step, handleNavs, icon, label }) => {
   return (
@@ -206,14 +206,14 @@ const NavItemPill = ({ index, step, handleNavs, icon, label }) => {
         </Flex>
       </Nav.Link>
     </Nav.Item>
-  );
-};
+  )
+}
 
 WizardLayout.propTypes = {
   variant: PropTypes.oneOf(['pills']),
   validation: PropTypes.bool,
   progressBar: PropTypes.bool
-};
+}
 
 NavItemPill.propTypes = {
   index: PropTypes.number.isRequired,
@@ -221,8 +221,8 @@ NavItemPill.propTypes = {
   handleNavs: PropTypes.func.isRequired,
   icon: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired
-};
+}
 
-NavItem.propTypes = NavItemPill.propTypes;
+NavItem.propTypes = NavItemPill.propTypes
 
-export default WizardLayout;
+export default WizardLayout

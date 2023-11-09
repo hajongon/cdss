@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import classNames from 'classnames';
-import { Button, Form } from 'react-bootstrap';
+import classNames from 'classnames'
+import { Button, Form } from 'react-bootstrap'
 
 const RadioItem = ({ name, label, active = false, onChange, image }) => {
   return (
@@ -22,8 +22,8 @@ const RadioItem = ({ name, label, active = false, onChange, image }) => {
         checked={active}
       />
     </Button>
-  );
-};
+  )
+}
 
 RadioItem.propTypes = {
   name: PropTypes.string.isRequired,
@@ -31,6 +31,6 @@ RadioItem.propTypes = {
   active: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   image: PropTypes.string.isRequired
-};
+}
 
-export default RadioItem;
+export default RadioItem

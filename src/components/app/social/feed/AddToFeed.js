@@ -1,14 +1,14 @@
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import rawPeople from 'data/people';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import rawPeople from 'data/people'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const AddToFeed = () => {
-  const people = rawPeople.slice(0, 8);
+  const people = rawPeople.slice(0, 8)
 
   return (
     <Card className="mb-3">
@@ -33,12 +33,12 @@ const AddToFeed = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 AddToFeed.propTypes = {
   peoples: PropTypes.number
-};
+}
 
 const SingleItem = ({ avatarSrc, name, mutual, divider }) => (
   <Flex>
@@ -63,13 +63,13 @@ const SingleItem = ({ avatarSrc, name, mutual, divider }) => (
       {!divider && <div className="border-dashed border-bottom my-3" />}
     </div>
   </Flex>
-);
+)
 
 SingleItem.propTypes = {
   avatarSrc: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   mutual: PropTypes.number,
   divider: PropTypes.bool
-};
+}
 
-export default AddToFeed;
+export default AddToFeed

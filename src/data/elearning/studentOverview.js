@@ -1,13 +1,13 @@
-import course1 from 'assets/img/e-learning/courses/course1.png';
-import course2 from 'assets/img/e-learning/courses/course2.png';
-import course3 from 'assets/img/e-learning/courses/course3.png';
-import course5 from 'assets/img/e-learning/courses/course5.png';
-import course7 from 'assets/img/e-learning/courses/course7.png';
-import course8 from 'assets/img/e-learning/courses/course8.png';
+import course1 from 'assets/img/e-learning/courses/course1.png'
+import course2 from 'assets/img/e-learning/courses/course2.png'
+import course3 from 'assets/img/e-learning/courses/course3.png'
+import course5 from 'assets/img/e-learning/courses/course5.png'
+import course7 from 'assets/img/e-learning/courses/course7.png'
+import course8 from 'assets/img/e-learning/courses/course8.png'
 
-export const spendingsData = [85, 60, 120, 70, 100, 15, 65, 80, 60, 75, 45];
+export const spendingsData = [85, 60, 120, 70, 100, 15, 65, 80, 60, 75, 45]
 
-export const timeOnSiteData = [55, 60, 40, 120, 70, 80, 35, 80, 85];
+export const timeOnSiteData = [55, 60, 40, 120, 70, 80, 35, 80, 85]
 
 export const assignmentScores = [
   {
@@ -53,7 +53,7 @@ export const assignmentScores = [
       icon: 'plus'
     }
   }
-];
+]
 
 export const courseStatusData = [
   {
@@ -99,7 +99,7 @@ export const courseStatusData = [
       icon: 'caret-down'
     }
   }
-];
+]
 
 export const payments = [
   {
@@ -158,7 +158,7 @@ export const payments = [
     status: 'Pending',
     color: 'warning'
   }
-];
+]
 
 export const recentActivities = [
   {
@@ -196,7 +196,7 @@ export const recentActivities = [
     time: '5h ago',
     icon: 'file-upload'
   }
-];
+]
 
 export const enrolledCoursesData = [
   {
@@ -253,4 +253,4 @@ export const enrolledCoursesData = [
     progress: 15,
     price: 99.99
   }
-];
+]

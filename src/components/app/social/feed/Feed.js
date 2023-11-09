@@ -1,11 +1,11 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import events from 'data/events/events';
-import BirthdayNotice from './BirthdatNotice';
-import AddToFeed from './AddToFeed';
-import Events from 'components/pages/user/profile/Events';
-import FeedProvider from './FeedProvider';
-import FeedContent from './FeedContent';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import events from 'data/events/events'
+import BirthdayNotice from './BirthdatNotice'
+import AddToFeed from './AddToFeed'
+import Events from 'components/pages/user/profile/Events'
+import FeedProvider from './FeedProvider'
+import FeedContent from './FeedContent'
 
 const Feed = () => {
   return (
@@ -25,7 +25,7 @@ const Feed = () => {
         </Col>
       </Row>
     </FeedProvider>
-  );
-};
+  )
+}
 
-export default Feed;
+export default Feed

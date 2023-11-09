@@ -1,25 +1,25 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import { CardLayout } from 'components/dashboards/support-desk/unsolved-tickets/TicketsLayout';
-import { tickets } from 'data/dashboard/support-desk';
-import { useBreakpoints } from 'hooks/useBreakpoints';
-import useBulkSelect from 'hooks/useBulkSelect';
-import usePagination from 'hooks/usePagination';
-import React, { useState } from 'react';
-import { Button, Card, Col, Offcanvas, Row } from 'react-bootstrap';
-import AllTicketsHeader from './AllTicketsHeader';
-import TicketFilteringForm from './TicketFilteringForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import { CardLayout } from 'components/dashboards/support-desk/unsolved-tickets/TicketsLayout'
+import { tickets } from 'data/dashboard/support-desk'
+import { useBreakpoints } from 'hooks/useBreakpoints'
+import useBulkSelect from 'hooks/useBulkSelect'
+import usePagination from 'hooks/usePagination'
+import React, { useState } from 'react'
+import { Button, Card, Col, Offcanvas, Row } from 'react-bootstrap'
+import AllTicketsHeader from './AllTicketsHeader'
+import TicketFilteringForm from './TicketFilteringForm'
 
 const CardView = () => {
-  const [show, setShow] = useState(false);
-  const { breakpoints } = useBreakpoints();
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const ticketIds = tickets.map(ticket => ticket.id);
+  const [show, setShow] = useState(false)
+  const { breakpoints } = useBreakpoints()
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  const ticketIds = tickets.map(ticket => ticket.id)
   const { selectedItems, isSelectedItem, toggleSelectedItem } =
-    useBulkSelect(ticketIds);
-  const [allTickets] = useState(tickets.slice(0, 21));
-  const [primaryTickets, setPrimaryTickets] = useState(allTickets);
+    useBulkSelect(ticketIds)
+  const [allTickets] = useState(tickets.slice(0, 21))
+  const [primaryTickets, setPrimaryTickets] = useState(allTickets)
   const {
     paginationState: {
       data: paginatedTicket,
@@ -31,16 +31,16 @@ const CardView = () => {
     nextPage,
     prevPage,
     goToPage
-  } = usePagination(primaryTickets, 7);
+  } = usePagination(primaryTickets, 7)
 
   const handleTicketsSearch = text => {
     const filteredTickets = allTickets.filter(
       ticket =>
         ticket.name.toLowerCase().includes(text.toLowerCase()) ||
         ticket.subject.toLowerCase().includes(text.toLowerCase())
-    );
-    setPrimaryTickets(filteredTickets);
-  };
+    )
+    setPrimaryTickets(filteredTickets)
+  }
 
   return (
     <Row className="gx-3">
@@ -121,7 +121,7 @@ const CardView = () => {
         )}
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default CardView;
+export default CardView

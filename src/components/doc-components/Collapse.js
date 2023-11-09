@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `function Example() {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ const exampleCode = `function Example() {
       </Collapse>
     </>
   );
-}`;
+}`
 
 const fadeCode = `function Example() {
   const [open, setOpen] = useState(false);
@@ -53,7 +53,7 @@ const fadeCode = `function Example() {
       </Fade>
     </>
   );
-}`;
+}`
 
 const Collapse = () => (
   <>
@@ -92,6 +92,6 @@ const Collapse = () => (
       <FalconComponentCard.Body code={fadeCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Collapse;
+export default Collapse

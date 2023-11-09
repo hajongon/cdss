@@ -1,10 +1,10 @@
-import React from 'react';
-import Flex from 'components/common/Flex';
-import { members, comments } from 'data/kanban';
-import Avatar from 'components/common/Avatar';
-import { Form, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Flex from 'components/common/Flex'
+import { members, comments } from 'data/kanban'
+import Avatar from 'components/common/Avatar'
+import { Form, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 
 const ModalCommentContent = () => {
   return (
@@ -81,7 +81,7 @@ const ModalCommentContent = () => {
         </Flex>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default ModalCommentContent;
+export default ModalCommentContent

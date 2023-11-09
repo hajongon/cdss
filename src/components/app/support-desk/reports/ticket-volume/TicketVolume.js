@@ -1,12 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import React, { useRef } from 'react';
-import { Badge, Card, Col, Form, Row } from 'react-bootstrap';
-import TicketVolumeChart from './TicketVolumeChart';
-import { ticketVolume } from 'data/support-desk/reportsData';
-import PropTypes from 'prop-types';
-import FalconLink from 'components/common/FalconLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import React, { useRef } from 'react'
+import { Badge, Card, Col, Form, Row } from 'react-bootstrap'
+import TicketVolumeChart from './TicketVolumeChart'
+import { ticketVolume } from 'data/support-desk/reportsData'
+import PropTypes from 'prop-types'
+import FalconLink from 'components/common/FalconLink'
 
 const FormCheck = ({ title, id, inputClass, checkBoxClass, handleLegend }) => {
   return (
@@ -30,8 +30,8 @@ const FormCheck = ({ title, id, inputClass, checkBoxClass, handleLegend }) => {
         {title}
       </Form.Check.Label>
     </Form.Check>
-  );
-};
+  )
+}
 
 FormCheck.propTypes = {
   title: PropTypes.string.isRequired,
@@ -39,7 +39,7 @@ FormCheck.propTypes = {
   inputClass: PropTypes.string,
   checkBoxClass: PropTypes.string,
   handleLegend: PropTypes.func
-};
+}
 
 const TicketsCategory = ({ title, number, percentage, icon, badgeColor }) => {
   return (
@@ -53,8 +53,8 @@ const TicketsCategory = ({ title, number, percentage, icon, badgeColor }) => {
       </h6>
       <h6 className="fs--2 text-600 mb-0 text-nowrap">{title}</h6>
     </div>
-  );
-};
+  )
+}
 
 TicketsCategory.propTypes = {
   title: PropTypes.string.isRequired,
@@ -62,16 +62,16 @@ TicketsCategory.propTypes = {
   percentage: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   badgeColor: PropTypes.string
-};
+}
 
 const TicketVolume = () => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   const handleLegend = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: name
-    });
-  };
+    })
+  }
   return (
     <Card className="mt-3">
       <Card.Header className="border-bottom">
@@ -183,7 +183,7 @@ const TicketVolume = () => {
         <FalconLink title="View all report" className="px-0 fw-medium" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default TicketVolume;
+export default TicketVolume

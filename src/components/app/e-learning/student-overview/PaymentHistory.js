@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import { Link } from 'react-router-dom';
-import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import { Link } from 'react-router-dom'
+import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter'
+import IconButton from 'components/common/IconButton'
 
 const columns = [
   {
@@ -63,7 +63,7 @@ const columns = [
       </span>
     )
   }
-];
+]
 
 const PaymentHistory = ({ tableData, perPage = 5 }) => {
   return (
@@ -118,8 +118,8 @@ const PaymentHistory = ({ tableData, perPage = 5 }) => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 PaymentHistory.propTypes = {
   tableData: PropTypes.arrayOf(
@@ -133,6 +133,6 @@ PaymentHistory.propTypes = {
     })
   ).isRequired,
   perPage: PropTypes.number
-};
+}
 
-export default PaymentHistory;
+export default PaymentHistory

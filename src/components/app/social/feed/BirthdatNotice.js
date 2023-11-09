@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
 
 const BirthdayNotice = ({ name, profileLink, className }) => {
   return (
@@ -20,13 +20,13 @@ const BirthdayNotice = ({ name, profileLink, className }) => {
         </Flex>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 BirthdayNotice.propTypes = {
   name: PropTypes.string.isRequired,
   profileLink: PropTypes.string.isRequired,
   className: PropTypes.string
-};
+}
 
-export default BirthdayNotice;
+export default BirthdayNotice

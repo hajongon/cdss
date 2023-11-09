@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import { getColor, rgbaColor } from 'helpers/utils';
-import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import { getColor, rgbaColor } from 'helpers/utils'
+import React from 'react'
+import { Pie } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -36,7 +36,7 @@ const chartCode = `function ChartOptions() {
       <Pie data={data} options={options} height={350} width={350}/>
     );
   }
-`;
+`
 const ChartPie = () => {
   return (
     <FalconComponentCard>
@@ -52,7 +52,7 @@ const ChartPie = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartPie;
+export default ChartPie

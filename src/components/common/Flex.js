@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 const Flex = ({
   justifyContent,
@@ -33,8 +33,8 @@ const Flex = ({
     >
       {children}
     </Tag>
-  );
-};
+  )
+}
 
 Flex.propTypes = {
   children: PropTypes.node.isRequired,
@@ -47,6 +47,6 @@ Flex.propTypes = {
   tag: PropTypes.string,
   breakpoint: PropTypes.string,
   direction: PropTypes.string
-};
+}
 
-export default Flex;
+export default Flex

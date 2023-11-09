@@ -1,49 +1,49 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import KanbanColumnHeader from './KanbanColumnHeader';
-import TaskCard from './TaskCard';
-import AddAnotherForm from './AddAnotherForm';
-import IconButton from 'components/common/IconButton';
-import classNames from 'classnames';
-import { KanbanContext } from 'context/Context';
-import StrictModeDroppable from './StrictModeDroppable';
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import KanbanColumnHeader from './KanbanColumnHeader'
+import TaskCard from './TaskCard'
+import AddAnotherForm from './AddAnotherForm'
+import IconButton from 'components/common/IconButton'
+import classNames from 'classnames'
+import { KanbanContext } from 'context/Context'
+import StrictModeDroppable from './StrictModeDroppable'
 
 const KanbanColumn = ({ kanbanColumnItem }) => {
-  const { id, name, items } = kanbanColumnItem;
-  const [showForm, setShowForm] = useState(false);
-  const formViewRef = useRef(null);
+  const { id, name, items } = kanbanColumnItem
+  const [showForm, setShowForm] = useState(false)
+  const formViewRef = useRef(null)
   const {
     kanbanState: { kanbanItems },
     kanbanDispatch
-  } = useContext(KanbanContext);
+  } = useContext(KanbanContext)
 
   const handleSubmit = cardData => {
-    const targetList = kanbanItems.find(item => item.id === id);
+    const targetList = kanbanItems.find(item => item.id === id)
     const cardId = targetList.items.length
       ? Math.max(...targetList.items.map(item => item.id)) + 1
-      : Number(`${targetList.id}0`);
+      : Number(`${targetList.id}0`)
     const newCard = {
       id: cardId,
       title: cardData.title
-    };
-    const isEmpty = !Object.keys(cardData).length;
+    }
+    const isEmpty = !Object.keys(cardData).length
 
     if (!isEmpty) {
       kanbanDispatch({
         type: 'ADD_TASK_CARD',
         payload: { targetListId: id, newCard }
-      });
-      setShowForm(false);
+      })
+      setShowForm(false)
     }
-  };
+  }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      formViewRef.current.scrollIntoView({ behavior: 'smooth' });
-    }, 500);
+      formViewRef.current.scrollIntoView({ behavior: 'smooth' })
+    }, 500)
 
-    return clearTimeout(timeout);
-  }, [showForm]);
+    return clearTimeout(timeout)
+  }, [showForm])
 
   return (
     <div className={classNames('kanban-column', { 'form-added': showForm })}>
@@ -89,8 +89,8 @@ const KanbanColumn = ({ kanbanColumnItem }) => {
         )}
       </StrictModeDroppable>
     </div>
-  );
-};
+  )
+}
 
 KanbanColumn.propTypes = {
   kanbanColumnItem: PropTypes.shape({
@@ -98,6 +98,6 @@ KanbanColumn.propTypes = {
     name: PropTypes.string,
     items: PropTypes.arrayOf(TaskCard.propTypes.task)
   })
-};
+}
 
-export default KanbanColumn;
+export default KanbanColumn

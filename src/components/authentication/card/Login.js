@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginForm from 'components/authentication/LoginForm';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import LoginForm from 'components/authentication/LoginForm'
 
-import AuthCardLayout from 'layouts/AuthCardLayout';
+import AuthCardLayout from 'layouts/AuthCardLayout'
 
 const Login = () => {
   return (
@@ -23,7 +23,7 @@ const Login = () => {
       <h3>Account Login</h3>
       <LoginForm layout="card" hasLabel />
     </AuthCardLayout>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Col } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Col } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const PricingAltCard = ({
   pricing: { title, price, period, icon, buttonText, isFeatured, features }
@@ -53,8 +53,8 @@ const PricingAltCard = ({
         </div>
       </div>
     </Col>
-  );
-};
+  )
+}
 
 PricingAltCard.propTypes = {
   pricing: PropTypes.shape({
@@ -66,6 +66,6 @@ PricingAltCard.propTypes = {
     isFeatured: PropTypes.bool,
     features: PropTypes.array
   })
-};
+}
 
-export default PricingAltCard;
+export default PricingAltCard

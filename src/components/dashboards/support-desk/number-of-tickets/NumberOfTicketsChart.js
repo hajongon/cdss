@@ -1,19 +1,19 @@
-import React, { forwardRef } from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import React, { forwardRef } from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import * as echarts from 'echarts/core';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import AppContext from 'context/Context';
-import PropTypes from 'prop-types';
-import dayjs from 'dayjs';
-import { useContext } from 'react';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import * as echarts from 'echarts/core'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import AppContext from 'context/Context'
+import PropTypes from 'prop-types'
+import dayjs from 'dayjs'
+import { useContext } from 'react'
 
 echarts.use([
   TitleComponent,
@@ -22,7 +22,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOption = (data, isDark) => ({
   color: [
@@ -52,7 +52,7 @@ const getOption = (data, isDark) => ({
         <span>${dayjs(params.name).format('MMM DD')} : </span> 
         </div>
       <strong>${params.value}</strong>
-      </div>`;
+      </div>`
     }
   },
   legend: {
@@ -145,11 +145,11 @@ const getOption = (data, isDark) => ({
     right: 0,
     containLabel: true
   }
-});
+})
 
 const NumberOfTicketsChart = forwardRef(({ data }, ref) => {
-  const { config } = useContext(AppContext);
-  const { isDark } = config;
+  const { config } = useContext(AppContext)
+  const { isDark } = config
   return (
     <ReactEChartsCore
       echarts={echarts}
@@ -157,11 +157,11 @@ const NumberOfTicketsChart = forwardRef(({ data }, ref) => {
       ref={ref}
       style={{ height: '18.5rem', minWidth: '40rem' }}
     />
-  );
-});
+  )
+})
 
 NumberOfTicketsChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array).isRequired
-};
+}
 
-export default NumberOfTicketsChart;
+export default NumberOfTicketsChart

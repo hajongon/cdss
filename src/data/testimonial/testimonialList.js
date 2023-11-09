@@ -1,6 +1,6 @@
-import google from 'assets/img/logos/google.png';
-import netflix from 'assets/img/logos/netflix.png';
-import amazon from 'assets/img/logos/paypal.png';
+import google from 'assets/img/logos/google.png'
+import netflix from 'assets/img/logos/netflix.png'
+import amazon from 'assets/img/logos/paypal.png'
 
 export default [
   {
@@ -27,4 +27,4 @@ export default [
     companyImage: amazon,
     size: 45
   }
-];
+]

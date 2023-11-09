@@ -1,8 +1,8 @@
-import React from 'react';
-import { Tab, Nav, Row, Col, Table, Form, Button } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import StarRating from 'components/common/StarRating';
-import createMarkup from 'helpers/createMarkup';
+import React from 'react'
+import { Tab, Nav, Row, Col, Table, Form, Button } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import StarRating from 'components/common/StarRating'
+import createMarkup from 'helpers/createMarkup'
 
 const ProductDetailsFooter = ({
   product: { desc, specification, reviews }
@@ -109,8 +109,8 @@ const ProductDetailsFooter = ({
         </Tab.Content>
       </Tab.Container>
     </div>
-  );
-};
+  )
+}
 
 ProductDetailsFooter.propTypes = {
   product: PropTypes.shape({
@@ -118,6 +118,6 @@ ProductDetailsFooter.propTypes = {
     specification: PropTypes.object,
     reviews: PropTypes.arrayOf(PropTypes.object)
   })
-};
+}
 
-export default ProductDetailsFooter;
+export default ProductDetailsFooter

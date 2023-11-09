@@ -1,10 +1,10 @@
-import React from 'react';
-import Avatar from 'components/common/Avatar';
-import LockScreenForm from 'components/authentication/LockScreenForm';
-import team1 from 'assets/img/team/1.jpg';
-import AuthCardLayout from 'layouts/AuthCardLayout';
-import Flex from 'components/common/Flex';
-import { Row, Col } from 'react-bootstrap';
+import React from 'react'
+import Avatar from 'components/common/Avatar'
+import LockScreenForm from 'components/authentication/LockScreenForm'
+import team1 from 'assets/img/team/1.jpg'
+import AuthCardLayout from 'layouts/AuthCardLayout'
+import Flex from 'components/common/Flex'
+import { Row, Col } from 'react-bootstrap'
 
 const LockScreen = () => {
   return (
@@ -25,7 +25,7 @@ const LockScreen = () => {
         </Col>
       </Row>
     </AuthCardLayout>
-  );
-};
+  )
+}
 
-export default LockScreen;
+export default LockScreen

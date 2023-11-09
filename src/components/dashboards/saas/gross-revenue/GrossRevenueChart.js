@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor, getDates } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor, getDates } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { forwardRef } from 'react'
 
-echarts.use([LineChart, TooltipComponent, GridComponent, LegendComponent]);
+echarts.use([LineChart, TooltipComponent, GridComponent, LegendComponent])
 
 const months = [
   'Jan',
@@ -26,7 +26,7 @@ const months = [
   'Oct',
   'Nov',
   'Dec'
-];
+]
 
 const dates = month => {
   return getDates(
@@ -35,13 +35,13 @@ const dates = month => {
       .month(Number(months.indexOf(month)) + 1)
       .date(0),
     1000 * 60 * 60 * 24 * 3
-  );
-};
+  )
+}
 
 const tooltipFormatter = (params, selectedMonth, previousMonth) => {
-  let tooltipItem = ``;
+  let tooltipItem = ``
   params.forEach(el => {
-    const currentDate = dayjs(el.axisValue);
+    const currentDate = dayjs(el.axisValue)
     tooltipItem =
       tooltipItem +
       `<h6 class="fs--1 text-700 d-flex align-items-center">
@@ -49,12 +49,12 @@ const tooltipFormatter = (params, selectedMonth, previousMonth) => {
         ${
           el.seriesName === 'prevMonth' ? previousMonth : selectedMonth
         } ${currentDate.format('DD')} : ${el.value}
-      </h6>`;
-  });
+      </h6>`
+  })
   return `<div class='ms-1'>
             ${tooltipItem}
-          </div>`;
-};
+          </div>`
+}
 
 const getOption = (data, selectedMonth, previousMonth) => ({
   title: {
@@ -160,7 +160,7 @@ const getOption = (data, selectedMonth, previousMonth) => ({
     }
   ],
   grid: { right: '8px', left: '40px', bottom: '15%', top: '20%' }
-});
+})
 
 const GrossRevenueChart = forwardRef(
   ({ data, selectedMonth, previousMonth, ...rest }, ref) => {
@@ -171,9 +171,9 @@ const GrossRevenueChart = forwardRef(
         option={getOption(data, selectedMonth, previousMonth)}
         {...rest}
       />
-    );
+    )
   }
-);
+)
 
 GrossRevenueChart.propTypes = {
   data: PropTypes.shape({
@@ -192,6 +192,6 @@ GrossRevenueChart.propTypes = {
   }).isRequired,
   selectedMonth: PropTypes.string,
   previousMonth: PropTypes.string
-};
+}
 
-export default GrossRevenueChart;
+export default GrossRevenueChart

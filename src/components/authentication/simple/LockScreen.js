@@ -1,7 +1,7 @@
-import React from 'react';
-import Avatar from 'components/common/Avatar';
-import LockScreenForm from 'components/authentication/LockScreenForm';
-import team1 from 'assets/img/team/1.jpg';
+import React from 'react'
+import Avatar from 'components/common/Avatar'
+import LockScreenForm from 'components/authentication/LockScreenForm'
+import team1 from 'assets/img/team/1.jpg'
 
 const LockScreen = () => {
   return (
@@ -11,7 +11,7 @@ const LockScreen = () => {
       <small>Enter your password to access the admin.</small>
       <LockScreenForm className="mt-4 mx-sm-4" type="simple" />
     </div>
-  );
-};
+  )
+}
 
-export default LockScreen;
+export default LockScreen

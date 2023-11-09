@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 const IconItem = ({
   tag: Tag = 'a',
@@ -26,7 +26,7 @@ const IconItem = ({
   >
     <FontAwesomeIcon icon={icon} transform={transform} className={iconClass} />
   </Tag>
-);
+)
 
 IconItem.propTypes = {
   tag: PropTypes.string,
@@ -39,6 +39,6 @@ IconItem.propTypes = {
   iconClass: PropTypes.string,
   transform: PropTypes.string,
   onClick: PropTypes.func
-};
+}
 
-export default IconItem;
+export default IconItem

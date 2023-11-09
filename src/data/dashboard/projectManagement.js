@@ -1,36 +1,36 @@
-import user1 from 'assets/img/team/1.jpg';
-import user2 from 'assets/img/team/2.jpg';
-import user3 from 'assets/img/team/3.jpg';
-import user4 from 'assets/img/team/4.jpg';
-import user5 from 'assets/img/team/5.jpg';
-import user7 from 'assets/img/team/7.jpg';
-import user10 from 'assets/img/team/10.jpg';
-import user12 from 'assets/img/team/12.jpg';
-import user13 from 'assets/img/team/13.jpg';
-import user16 from 'assets/img/team/16.jpg';
-import user25 from 'assets/img/team/25.jpg';
-import user18 from 'assets/img/team/18.jpg';
-import dayjs from 'dayjs';
-import { v4 as uuid } from 'uuid';
+import user1 from 'assets/img/team/1.jpg'
+import user2 from 'assets/img/team/2.jpg'
+import user3 from 'assets/img/team/3.jpg'
+import user4 from 'assets/img/team/4.jpg'
+import user5 from 'assets/img/team/5.jpg'
+import user7 from 'assets/img/team/7.jpg'
+import user10 from 'assets/img/team/10.jpg'
+import user12 from 'assets/img/team/12.jpg'
+import user13 from 'assets/img/team/13.jpg'
+import user16 from 'assets/img/team/16.jpg'
+import user25 from 'assets/img/team/25.jpg'
+import user18 from 'assets/img/team/18.jpg'
+import dayjs from 'dayjs'
+import { v4 as uuid } from 'uuid'
 
-import member1 from 'assets/img/team/7.jpg';
-import member2 from 'assets/img/team/9.jpg';
-import member3 from 'assets/img/team/12.jpg';
-import member4 from 'assets/img/team/avatar.png';
-import member5 from 'assets/img/team/16.jpg';
-import member6 from 'assets/img/team/25.jpg';
-import memberImg1 from 'assets/img/team/4-thumb.png';
-import memberImg2 from 'assets/img/team/5-thumb.png';
-import memberImg3 from 'assets/img/team/16.jpg';
-import activity1 from 'assets/img/management/activity-1.png';
-import activity2 from 'assets/img/management/activity-2.png';
-import activity3 from 'assets/img/management/activity-3.png';
-import activity4 from 'assets/img/management/activity-4.png';
-import activity5 from 'assets/img/management/activity-5.png';
-import activity6 from 'assets/img/management/activity-6.png';
-import activity7 from 'assets/img/management/activity-7.png';
-import activity8 from 'assets/img/management/activity-8.png';
-import activity9 from 'assets/img/management/activity-9.png';
+import member1 from 'assets/img/team/7.jpg'
+import member2 from 'assets/img/team/9.jpg'
+import member3 from 'assets/img/team/12.jpg'
+import member4 from 'assets/img/team/avatar.png'
+import member5 from 'assets/img/team/16.jpg'
+import member6 from 'assets/img/team/25.jpg'
+import memberImg1 from 'assets/img/team/4-thumb.png'
+import memberImg2 from 'assets/img/team/5-thumb.png'
+import memberImg3 from 'assets/img/team/16.jpg'
+import activity1 from 'assets/img/management/activity-1.png'
+import activity2 from 'assets/img/management/activity-2.png'
+import activity3 from 'assets/img/management/activity-3.png'
+import activity4 from 'assets/img/management/activity-4.png'
+import activity5 from 'assets/img/management/activity-5.png'
+import activity6 from 'assets/img/management/activity-6.png'
+import activity7 from 'assets/img/management/activity-7.png'
+import activity8 from 'assets/img/management/activity-8.png'
+import activity9 from 'assets/img/management/activity-9.png'
 
 export const greetingItems = [
   {
@@ -57,7 +57,7 @@ export const greetingItems = [
     icon: 'user',
     color: 'info'
   }
-];
+]
 export const discussionMembers = [
   {
     id: 1,
@@ -79,7 +79,7 @@ export const discussionMembers = [
     name: '+50',
     size: 'xl'
   }
-];
+]
 
 export const projectUsers = [
   {
@@ -106,7 +106,7 @@ export const projectUsers = [
     id: 6,
     name: '+50'
   }
-];
+]
 
 export const projectsTable = [
   {
@@ -133,7 +133,7 @@ export const projectsTable = [
     team: 'Falcon Team',
     iconColor: 'text-info'
   }
-];
+]
 
 export const progressBar = [
   {
@@ -156,18 +156,18 @@ export const progressBar = [
     amount: 15,
     variant: 'info'
   }
-];
+]
 
 // ----------- Calendar Management events ------------------------
-const date = new Date();
-const thisDay = dayjs(date).format('DD');
-const plus2Day = dayjs(date).add(2, 'day').format('DD');
-const thisMonthNumber = dayjs(date).format('MM');
-const thisMonthName = dayjs(date).format('MMM');
-const upcomingMonthNumber = dayjs(date).add(1, 'month').format('MM');
-const upcomingMonthName = dayjs(date).format('MMM');
+const date = new Date()
+const thisDay = dayjs(date).format('DD')
+const plus2Day = dayjs(date).add(2, 'day').format('DD')
+const thisMonthNumber = dayjs(date).format('MM')
+const thisMonthName = dayjs(date).format('MMM')
+const upcomingMonthNumber = dayjs(date).add(1, 'month').format('MM')
+const upcomingMonthName = dayjs(date).format('MMM')
 
-const thisYear = dayjs().format('YYYY');
+const thisYear = dayjs().format('YYYY')
 export const managementEvents = [
   {
     id: uuid(),
@@ -256,7 +256,7 @@ export const managementEvents = [
     color: 'warning',
     classNames: `border border-2 border-warning bg-100`
   }
-];
+]
 
 export const todoList = [
   {
@@ -289,7 +289,7 @@ export const todoList = [
     task: 'Meeting at 10',
     color: 'info'
   }
-];
+]
 
 export const weeklyReport = [
   ['product', 'This Week', 'Last Week'],
@@ -300,7 +300,7 @@ export const weeklyReport = [
   ['Thu', 80, 50],
   ['Fri', 50, 70],
   ['Sat', 80, 90]
-];
+]
 export const membersInfo = [
   {
     id: 1,
@@ -434,7 +434,7 @@ export const membersInfo = [
     },
     data: [30, 22, 18, 30, 20, 35]
   }
-];
+]
 
 export const runningProjects = [
   {
@@ -617,7 +617,7 @@ export const runningProjects = [
     duration: '12h:30m:30s',
     date: '08/01/22'
   }
-];
+]
 export const recentActivities = [
   {
     id: 0,
@@ -659,7 +659,7 @@ export const recentActivities = [
     time: '4h ago',
     status: false
   }
-];
+]
 
 export const membersActivities = [
   {
@@ -737,7 +737,7 @@ export const membersActivities = [
       }
     ]
   }
-];
+]
 
 export const markers = [
   {
@@ -2039,4 +2039,4 @@ export const markers = [
     long: -72.099998,
     name: '299'
   }
-];
+]

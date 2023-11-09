@@ -1,24 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
 
 const getIcon = type => {
-  const icon = ['far'];
+  const icon = ['far']
   if (type.includes('image')) {
-    icon.push('file-image');
+    icon.push('file-image')
   }
   if (type.includes('video')) {
-    icon.push('file-video');
+    icon.push('file-video')
   }
   if (type.includes('audio')) {
-    icon.push('file-audio');
+    icon.push('file-audio')
   }
   if (type.includes('zip')) {
-    icon.push('file-archive');
+    icon.push('file-archive')
   }
   if (type.includes('pdf')) {
-    icon.push('file-pdf');
+    icon.push('file-pdf')
   }
   if (
     type.includes('html') ||
@@ -26,18 +26,18 @@ const getIcon = type => {
     type.includes('json') ||
     type.includes('javascript')
   ) {
-    icon.push('file-code');
+    icon.push('file-code')
   }
   if (icon.length === 1) {
-    icon.push('file');
+    icon.push('file')
   }
-  return icon;
-};
+  return icon
+}
 
 const getName = name => {
-  const [fileName, extension] = name.split('.');
-  return `${fileName.slice(0, 24)}.${extension}`;
-};
+  const [fileName, extension] = name.split('.')
+  return `${fileName.slice(0, 24)}.${extension}`
+}
 
 const ComposeAttachment = ({
   id,
@@ -62,7 +62,7 @@ const ComposeAttachment = ({
       <FontAwesomeIcon icon="times" />
     </span>
   </Flex>
-);
+)
 
 ComposeAttachment.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -70,6 +70,6 @@ ComposeAttachment.propTypes = {
   size: PropTypes.number.isRequired,
   handleDetachAttachment: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired
-};
+}
 
-export default ComposeAttachment;
+export default ComposeAttachment

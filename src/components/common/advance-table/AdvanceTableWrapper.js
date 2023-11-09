@@ -1,24 +1,24 @@
 /* eslint-disable react/prop-types */
-import classNames from 'classnames';
-import React from 'react';
-import { Form } from 'react-bootstrap';
+import classNames from 'classnames'
+import React from 'react'
+import { Form } from 'react-bootstrap'
 import {
   useTable,
   useSortBy,
   usePagination,
   useRowSelect,
   useGlobalFilter
-} from 'react-table';
+} from 'react-table'
 
 export const IndeterminateCheckbox = React.forwardRef(
   ({ indeterminate, className, ...rest }, ref) => {
-    const defaultRef = React.useRef();
+    const defaultRef = React.useRef()
 
-    const resolvedRef = ref || defaultRef;
+    const resolvedRef = ref || defaultRef
 
     React.useEffect(() => {
-      resolvedRef.current.indeterminate = indeterminate;
-    }, [resolvedRef, indeterminate]);
+      resolvedRef.current.indeterminate = indeterminate
+    }, [resolvedRef, indeterminate])
 
     return (
       <Form.Check
@@ -27,9 +27,9 @@ export const IndeterminateCheckbox = React.forwardRef(
       >
         <Form.Check.Input type="checkbox" ref={resolvedRef} {...rest} />
       </Form.Check>
-    );
+    )
   }
-);
+)
 
 const AdvanceTableWrapper = ({
   children,
@@ -91,17 +91,17 @@ const AdvanceTableWrapper = ({
             )
           },
           ...columns
-        ]);
+        ])
       }
     }
-  );
+  )
 
   const recursiveMap = children => {
     return React.Children.map(children, child => {
       if (child.props?.children) {
         return React.cloneElement(child, {
           children: recursiveMap(child.props.children)
-        });
+        })
       } else {
         if (child.props?.table) {
           return React.cloneElement(child, {
@@ -122,13 +122,13 @@ const AdvanceTableWrapper = ({
             setPageSize,
             globalFilter,
             setGlobalFilter
-          });
+          })
         } else {
-          return child;
+          return child
         }
       }
-    });
-  };
+    })
+  }
 
   return (
     // <>
@@ -157,7 +157,7 @@ const AdvanceTableWrapper = ({
     //   })}
     // </>
     <>{recursiveMap(children)}</>
-  );
-};
+  )
+}
 
-export default AdvanceTableWrapper;
+export default AdvanceTableWrapper

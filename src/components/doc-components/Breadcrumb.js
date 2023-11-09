@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <div>
@@ -24,7 +24,7 @@ const exampleCode = `
     <Breadcrumb.Item active>Data</Breadcrumb.Item>
   </Breadcrumb>
 </div>
-`;
+`
 
 const Breadcrumb = () => (
   <>
@@ -50,6 +50,6 @@ const Breadcrumb = () => (
       <FalconComponentCard.Body code={exampleCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Breadcrumb;
+export default Breadcrumb

@@ -1,5 +1,5 @@
-import { ProductContext } from 'context/Context';
-import { useContext } from 'react';
+import { ProductContext } from 'context/Context'
+import { useContext } from 'react'
 
 const useProductHook = product => {
   const {
@@ -7,11 +7,11 @@ const useProductHook = product => {
     productsDispatch,
     isInShoppingCart,
     isInFavouriteItems
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   const handleAddToCart = (quantity, showModal, add) => {
     if (isInShoppingCart(product.id)) {
-      const cartProduct = cartItems.find(item => item.id === product.id);
+      const cartProduct = cartItems.find(item => item.id === product.id)
       productsDispatch({
         type: 'UPDATE_CART_ITEM',
         payload: {
@@ -23,7 +23,7 @@ const useProductHook = product => {
           showModal,
           quantity
         }
-      });
+      })
     } else {
       productsDispatch({
         type: 'ADD_TO_CART',
@@ -34,9 +34,9 @@ const useProductHook = product => {
             totalPrice: quantity * product.price
           }
         }
-      });
+      })
     }
-  };
+  }
 
   const handleFavouriteClick = () => {
     productsDispatch({
@@ -44,9 +44,9 @@ const useProductHook = product => {
         ? 'REMOVE_FROM_FAVOURITES'
         : 'ADD_TO_FAVOURITES',
       payload: { product }
-    });
-  };
-  return { handleAddToCart, handleFavouriteClick };
-};
+    })
+  }
+  return { handleAddToCart, handleFavouriteClick }
+}
 
-export default useProductHook;
+export default useProductHook

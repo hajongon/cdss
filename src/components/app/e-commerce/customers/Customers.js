@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
-import { customersData } from 'data/ecommerce/customersData';
-import CardDropdown from 'components/common/CardDropdown';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import CustomersTableHeader from './CustomersTableHeader';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
+import React, { useState } from 'react'
+import { Card, Dropdown } from 'react-bootstrap'
+import { customersData } from 'data/ecommerce/customersData'
+import CardDropdown from 'components/common/CardDropdown'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import Avatar from 'components/common/Avatar'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import CustomersTableHeader from './CustomersTableHeader'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
 
 const columns = [
   {
@@ -19,7 +19,7 @@ const columns = [
       className: 'py-2'
     },
     Cell: rowData => {
-      const { name, avatar } = rowData.row.original;
+      const { name, avatar } = rowData.row.original
       return (
         <Link to="/e-commerce/customer-details">
           <Flex alignItems="center">
@@ -33,23 +33,23 @@ const columns = [
             </div>
           </Flex>
         </Link>
-      );
+      )
     }
   },
   {
     accessor: 'email',
     Header: 'Email',
     Cell: rowData => {
-      const { email } = rowData.row.original;
-      return <a href={`mailto:${email}`}>{email}</a>;
+      const { email } = rowData.row.original
+      return <a href={`mailto:${email}`}>{email}</a>
     }
   },
   {
     accessor: 'phone',
     Header: 'Phone',
     Cell: rowData => {
-      const { phone } = rowData.row.original;
-      return <a href={`tel:${phone}`}>{phone}</a>;
+      const { phone } = rowData.row.original
+      return <a href={`tel:${phone}`}>{phone}</a>
     }
   },
   {
@@ -77,13 +77,13 @@ const columns = [
             <Dropdown.Item href="#!">Delete</Dropdown.Item>
           </div>
         </CardDropdown>
-      );
+      )
     }
   }
-];
+]
 
 const Customers = () => {
-  const [customers] = useState(customersData);
+  const [customers] = useState(customersData)
   return (
     <AdvanceTableWrapper
       columns={columns}
@@ -114,7 +114,7 @@ const Customers = () => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
-export default Customers;
+export default Customers

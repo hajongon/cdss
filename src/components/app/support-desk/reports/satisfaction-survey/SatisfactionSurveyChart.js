@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import { BarChart } from 'echarts/charts';
+import React from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import dayjs from 'dayjs';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import dayjs from 'dayjs'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   color: [getColor('primary'), getColor('gray-200')],
@@ -115,7 +115,7 @@ const getOptions = () => ({
     right: 0,
     containLabel: true
   }
-});
+})
 
 const SatisfactionSurveyChart = () => {
   return (
@@ -124,7 +124,7 @@ const SatisfactionSurveyChart = () => {
       option={getOptions()}
       style={{ height: '24.625rem', minWidth: '40rem' }}
     />
-  );
-};
+  )
+}
 
-export default SatisfactionSurveyChart;
+export default SatisfactionSurveyChart

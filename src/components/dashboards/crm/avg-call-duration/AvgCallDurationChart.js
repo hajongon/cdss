@@ -1,14 +1,14 @@
-import React from 'react';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import BasicECharts from 'components/common/BasicEChart';
-import { getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import BasicECharts from 'components/common/BasicEChart'
+import { getColor, rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -16,7 +16,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = () => ({
   series: [
@@ -42,7 +42,7 @@ const getOptions = () => ({
   ],
 
   grid: { bottom: '-10px', right: 0 }
-});
+})
 
 const AvgCallDurationChart = () => {
   return (
@@ -51,7 +51,7 @@ const AvgCallDurationChart = () => {
       options={getOptions()}
       style={{ height: '3rem', width: '12rem' }}
     />
-  );
-};
+  )
+}
 
-export default AvgCallDurationChart;
+export default AvgCallDurationChart

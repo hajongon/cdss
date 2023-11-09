@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Col, Row, Form } from 'react-bootstrap';
-import events from 'data/events/events';
-import Event from './Event';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Card, Col, Row, Form } from 'react-bootstrap'
+import events from 'data/events/events'
+import Event from './Event'
+import Flex from 'components/common/Flex'
 
 const EventList = () => {
   return (
@@ -41,7 +41,7 @@ const EventList = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EventList;
+export default EventList

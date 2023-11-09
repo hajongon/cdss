@@ -1,18 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import checkPrimaryLight from 'assets/img/animated-icons/check-primary-light.json';
-import heart from 'assets/img/animated-icons/heart.json';
-import infiniteLoop from 'assets/img/animated-icons/infinite-loop.json';
-import loadingSquare from 'assets/img/animated-icons/loading-square.json';
-import loading from 'assets/img/animated-icons/loading.json';
-import shoppingList from 'assets/img/animated-icons/shopping-list.json';
-import sleeping404 from 'assets/img/animated-icons/sleeping-404.json';
-import starFeedback from 'assets/img/animated-icons/star-feedback.json';
-import warningLight from 'assets/img/animated-icons/warning-light.json';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import Lottie from 'lottie-react';
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import checkPrimaryLight from 'assets/img/animated-icons/check-primary-light.json'
+import heart from 'assets/img/animated-icons/heart.json'
+import infiniteLoop from 'assets/img/animated-icons/infinite-loop.json'
+import loadingSquare from 'assets/img/animated-icons/loading-square.json'
+import loading from 'assets/img/animated-icons/loading.json'
+import shoppingList from 'assets/img/animated-icons/shopping-list.json'
+import sleeping404 from 'assets/img/animated-icons/sleeping-404.json'
+import starFeedback from 'assets/img/animated-icons/star-feedback.json'
+import warningLight from 'assets/img/animated-icons/warning-light.json'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import Lottie from 'lottie-react'
+import React from 'react'
+import { Button } from 'react-bootstrap'
 
 const exampleCode = `function Animated (){
 
@@ -29,7 +29,7 @@ const exampleCode = `function Animated (){
       </Col>
     </Row>
   );
-};`;
+};`
 
 const loadingCode = `function Animated (){
 
@@ -46,7 +46,7 @@ const loadingCode = `function Animated (){
       </Col>
     </Row>
   );
-};`;
+};`
 
 const featuredAnimationCode = `function Animated (){
   
@@ -63,7 +63,7 @@ const featuredAnimationCode = `function Animated (){
       </Col>
     </Row>
   );
-};`;
+};`
 
 const AnimatedIcons = () => (
   <>
@@ -154,6 +154,6 @@ const AnimatedIcons = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default AnimatedIcons;
+export default AnimatedIcons

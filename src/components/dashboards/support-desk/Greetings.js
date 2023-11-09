@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import greetingImage from '../../../assets/img/illustrations/ticket-greetings.png';
-import greetingsBg from '../../../assets/img/illustrations/ticket-greetings-bg.png';
-import Background from 'components/common/Background';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import greetingImage from '../../../assets/img/illustrations/ticket-greetings.png'
+import greetingsBg from '../../../assets/img/illustrations/ticket-greetings-bg.png'
+import Background from 'components/common/Background'
 
 function Greetings() {
   return (
@@ -19,7 +19,7 @@ function Greetings() {
         </div>
       </Card.Header>
     </Card>
-  );
+  )
 }
 
-export default Greetings;
+export default Greetings

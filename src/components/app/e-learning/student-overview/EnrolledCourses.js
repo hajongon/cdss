@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { Card, Dropdown, ProgressBar } from 'react-bootstrap';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import IconButton from 'components/common/IconButton';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { Card, Dropdown, ProgressBar } from 'react-bootstrap'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import IconButton from 'components/common/IconButton'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
 
 const columns = [
   {
@@ -108,10 +108,10 @@ const columns = [
             </Dropdown.Item>
           </div>
         </CardDropdown>
-      );
+      )
     }
   }
-];
+]
 
 const EnrolledCourses = ({ tableData, perPage = 6 }) => {
   return (
@@ -156,8 +156,8 @@ const EnrolledCourses = ({ tableData, perPage = 6 }) => {
         <FalconCardFooterLink title="Show all enrollments" size="sm" />
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 EnrolledCourses.propTypes = {
   tableData: PropTypes.arrayOf(
@@ -171,6 +171,6 @@ EnrolledCourses.propTypes = {
     })
   ).isRequired,
   perPage: PropTypes.number
-};
+}
 
-export default EnrolledCourses;
+export default EnrolledCourses

@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import React, { useEffect, useRef, useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import React, { useEffect, useRef, useState } from 'react'
+import { Button, Col, Form, Row } from 'react-bootstrap'
 
 const AddAnotherForm = ({
   onSubmit: handleSubmit,
@@ -9,14 +9,14 @@ const AddAnotherForm = ({
   showForm,
   setShowForm
 }) => {
-  const [formData, setFormData] = useState({});
-  const inputRef = useRef(null);
+  const [formData, setFormData] = useState({})
+  const inputRef = useRef(null)
 
   useEffect(() => {
     if (showForm) {
-      inputRef.current.focus();
+      inputRef.current.focus()
     }
-  }, [showForm]);
+  }, [showForm])
 
   return (
     <>
@@ -29,8 +29,8 @@ const AddAnotherForm = ({
         >
           <Form
             onSubmit={e => {
-              e.preventDefault();
-              return handleSubmit(formData);
+              e.preventDefault()
+              return handleSubmit(formData)
             }}
           >
             <Form.Control
@@ -74,14 +74,14 @@ const AddAnotherForm = ({
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
 AddAnotherForm.propTypes = {
   onSubmit: PropTypes.func,
   type: PropTypes.string,
   showForm: PropTypes.bool,
   setShowForm: PropTypes.func
-};
+}
 
-export default AddAnotherForm;
+export default AddAnotherForm

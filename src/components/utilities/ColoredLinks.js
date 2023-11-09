@@ -1,7 +1,7 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { Link } from 'react-router-dom'
 
 const exampleCode = `
 ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'].map(
@@ -10,7 +10,7 @@ const exampleCode = `
       {color} link
     </Link>
   )
-)`;
+)`
 const graysCode = `
 [
   'black',
@@ -32,7 +32,7 @@ const graysCode = `
       Link {color}
     </Link>
   )
-)`;
+)`
 
 const ColoredLinks = () => (
   <>
@@ -74,6 +74,6 @@ const ColoredLinks = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default ColoredLinks;
+export default ColoredLinks

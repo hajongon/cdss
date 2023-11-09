@@ -1,26 +1,26 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import LinePayment from './line-payment/LinePayment';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import LinePayment from './line-payment/LinePayment'
 import {
   payment,
   activeUser,
   transactionSummary,
   grossRevenue,
   candleChartData
-} from 'data/dashboard/saas';
-import SaasActiveUser from './SaasActiveUser';
-import SaasRevenue from './SaasRevenue';
-import SaasConversion from './SaasConversion';
-import DepositeStatus from './DepositeStatus';
-import StatisticsCards from './stats-cards/StatisticsCards';
-import { users, files } from 'data/dashboard/default';
-import ActiveUsers from '../default/ActiveUsers';
-import SharedFiles from '../default/SharedFiles';
-import BandwidthSaved from '../default/BandwidthSaved';
-import DoMoreCard from './DoMoreCard';
-import TransactionSummary from './TransactionSummary';
-import GrossRevenue from './gross-revenue/GrossRevenue';
-import CandleChart from './candle-chart/CandleChart';
+} from 'data/dashboard/saas'
+import SaasActiveUser from './SaasActiveUser'
+import SaasRevenue from './SaasRevenue'
+import SaasConversion from './SaasConversion'
+import DepositeStatus from './DepositeStatus'
+import StatisticsCards from './stats-cards/StatisticsCards'
+import { users, files } from 'data/dashboard/default'
+import ActiveUsers from '../default/ActiveUsers'
+import SharedFiles from '../default/SharedFiles'
+import BandwidthSaved from '../default/BandwidthSaved'
+import DoMoreCard from './DoMoreCard'
+import TransactionSummary from './TransactionSummary'
+import GrossRevenue from './gross-revenue/GrossRevenue'
+import CandleChart from './candle-chart/CandleChart'
 
 const Saas = () => {
   return (
@@ -78,7 +78,7 @@ const Saas = () => {
       </Row>
       <TransactionSummary data={transactionSummary} />
     </>
-  );
-};
+  )
+}
 
-export default Saas;
+export default Saas

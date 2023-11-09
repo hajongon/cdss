@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Image, Row, Table } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import SoftBadge from 'components/common/SoftBadge';
-import SimpleBarReact from 'simplebar-react';
-import FalconLink from 'components/common/FalconLink';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Image, Row, Table } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import SoftBadge from 'components/common/SoftBadge'
+import SimpleBarReact from 'simplebar-react'
+import FalconLink from 'components/common/FalconLink'
 
 const TransactionItem = ({
   summary: { img, title, subtitle, status, amount, date },
@@ -66,8 +66,8 @@ const TransactionItem = ({
         </Form.Select>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 const TransactionSummary = ({ data: transactions }) => {
   return (
@@ -110,8 +110,8 @@ const TransactionSummary = ({ data: transactions }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 TransactionItem.propTypes = {
   summary: PropTypes.shape({
@@ -124,10 +124,10 @@ TransactionItem.propTypes = {
     date: PropTypes.string.isRequired
   }),
   isLast: PropTypes.bool.isRequired
-};
+}
 
 TransactionSummary.propTypes = {
   data: PropTypes.arrayOf(TransactionItem.propTypes.summary)
-};
+}
 
-export default TransactionSummary;
+export default TransactionSummary

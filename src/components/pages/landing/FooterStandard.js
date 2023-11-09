@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import createMarkup from 'helpers/createMarkup';
-import Section from 'components/common/Section';
-import IconGroup from 'components/common/icon/IconGroup';
-import { Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { blogPostList, menuList1, menuList2 } from 'data/footer';
-import { bgWhiteIcons } from 'data/socialIcons';
-import { version } from 'config';
+import React from 'react'
+import PropTypes from 'prop-types'
+import createMarkup from 'helpers/createMarkup'
+import Section from 'components/common/Section'
+import IconGroup from 'components/common/icon/IconGroup'
+import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { blogPostList, menuList1, menuList2 } from 'data/footer'
+import { bgWhiteIcons } from 'data/socialIcons'
+import { version } from 'config'
 
 const FooterTitle = ({ children }) => (
   <h5 className="text-uppercase text-white opacity-85 mb-3">{children}</h5>
-);
+)
 
-FooterTitle.propTypes = { children: PropTypes.node.isRequired };
+FooterTitle.propTypes = { children: PropTypes.node.isRequired }
 
 const FooterList = ({ list }) => (
   <ul className="list-unstyled">
@@ -26,9 +26,9 @@ const FooterList = ({ list }) => (
       </li>
     ))}
   </ul>
-);
+)
 
-FooterList.propTypes = { list: PropTypes.array.isRequired };
+FooterList.propTypes = { list: PropTypes.array.isRequired }
 
 const FooterBlogList = ({ list }) => (
   <ul className="list-unstyled">
@@ -48,9 +48,9 @@ const FooterBlogList = ({ list }) => (
       </li>
     ))}
   </ul>
-);
+)
 
-FooterBlogList.propTypes = { list: PropTypes.array.isRequired };
+FooterBlogList.propTypes = { list: PropTypes.array.isRequired }
 
 const FooterStandard = () => {
   const scrollToTop = () => {
@@ -58,8 +58,8 @@ const FooterStandard = () => {
       top: 0,
       left: 0,
       behavior: 'smooth'
-    });
-  };
+    })
+  }
   return (
     <>
       <Section bg="dark" className="pt-8 pb-4 light">
@@ -131,7 +131,7 @@ const FooterStandard = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default FooterStandard;
+export default FooterStandard

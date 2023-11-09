@@ -1,7 +1,7 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox'
+import IconButton from 'components/common/IconButton'
 import {
   Button,
   Col,
@@ -10,10 +10,10 @@ import {
   FormControl,
   InputGroup,
   Row
-} from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+} from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import classNames from 'classnames'
 
 const AllTicketsHeader = ({
   selectedRowIds,
@@ -168,8 +168,8 @@ const AllTicketsHeader = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 AllTicketsHeader.propTypes = {
   selectedRowIds: PropTypes.object,
@@ -179,6 +179,6 @@ AllTicketsHeader.propTypes = {
   layout: PropTypes.string,
   selectedItems: PropTypes.array,
   handleTicketsSearch: PropTypes.func
-};
+}
 
-export default AllTicketsHeader;
+export default AllTicketsHeader

@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { BarChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { BarChart } from 'echarts/charts'
 import {
   DatasetComponent,
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { Card, Form } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { Card, Form } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { getColor, rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -23,7 +23,7 @@ echarts.use([
   CanvasRenderer,
   LegendComponent,
   DatasetComponent
-]);
+])
 
 const getOption = data => ({
   color: [
@@ -45,7 +45,7 @@ const getOption = data => ({
         params.seriesName
       }</div><div className="fs--1 text-600"><strong>${params.name}:</strong> ${
         params.value[params.componentIndex + 1]
-      }</div>`;
+      }</div>`
     }
   },
   legend: {
@@ -137,7 +137,7 @@ const getOption = data => ({
     }
   ],
   grid: { right: '0', left: '30px', bottom: '10%', top: '20%' }
-});
+})
 
 const CourseEnrollments = ({ data }) => {
   return (
@@ -163,11 +163,11 @@ const CourseEnrollments = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseEnrollments.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default CourseEnrollments;
+export default CourseEnrollments

@@ -1,12 +1,12 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const fontFamilyCode = `<>
   <div className="text-sans-serif">Poppins</div>
   <div className="text-base">Open Sans</div>
   <code className="text-monospace">Monospace</code>
-</>`;
+</>`
 
 const headingCode = `<>
   <h1>Heading 1</h1>
@@ -15,7 +15,7 @@ const headingCode = `<>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
-</>`;
+</>`
 
 const headingWithClassesCode = `<>
   <p className="h1">h1. Heading</p>
@@ -24,9 +24,9 @@ const headingWithClassesCode = `<>
   <p className="h4">h4. Heading</p>
   <p className="h5">h5. Heading</p>
   <p className="h6">h6. Heading</p>
-</>`;
+</>`
 
-const customizingHeadingCode = `<h3>Fancy display heading<small className="text-muted"> With faded secondary text</small></h3>`;
+const customizingHeadingCode = `<h3>Fancy display heading<small className="text-muted"> With faded secondary text</small></h3>`
 
 const fontWeightCode = `<>
   <div className="fw-light">Hello World 300</div>
@@ -36,7 +36,7 @@ const fontWeightCode = `<>
   <div className="fw-bold">Hello World 700</div>
   <div className="fw-bolder">Hello World 800</div>
   <div className="fw-black">Hello World 900</div>
-</>`;
+</>`
 
 const displayCode = `<>
   <h1 className="display-1 mb-3">Display 1</h1>
@@ -45,7 +45,7 @@ const displayCode = `<>
   <h1 className="display-4 mb-3">Display 4</h1>
   <h1 className="display-5 mb-3">Display 5</h1>
   <h1 className="display-6 mb-3">Display 6</h1>
-</>`;
+</>`
 
 const textColorsCode = `<>
   <h5 className="text-primary">.text-primary</h5>
@@ -66,7 +66,7 @@ const textColorsCode = `<>
   <h5 className="text-200"><span className="bg-dark">.text-200</span></h5>
   <h5 className="text-light"><span className="bg-1000">.text-light</span></h5>
   <h5 className="text-white"><span className="bg-900">.text-white</span></h5>
-</>`;
+</>`
 
 const fontSizeCode = `<>
   <h6 className="fs--2">.fs--2</h6>
@@ -80,17 +80,17 @@ const fontSizeCode = `<>
   <h6 className="fs-6">.fs-6</h6>
   <h6 className="fs-7">.fs-7</h6>
   <h6 className="fs-8">.fs-8</h6>
-</>`;
+</>`
 
 const tranformationCode = `<>
   <div className="text-lowercase">Lowercased text</div>
   <div className="text-uppercase">Uppercased text</div>
   <div className="text-capitalize">Capitalized text</div>
-</>`;
+</>`
 
-const leadCode = `<p className="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>`;
+const leadCode = `<p className="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>`
 
-const dropCapCode = `<p className="dropcap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius porro hic ex. Earum similique laudantium esse nostrum sed corporis. Libero omnis quos deleniti amet aliquam nam. Natus voluptas reiciendis eligendi reprehenderit, facere tenetur distinctio sunt officia, temporibus aperiam voluptatum quo ducimus illum incidunt adipisci doloremque rem est magnam in, molestiae excepturi odit. Reprehenderit ullam.</p>`;
+const dropCapCode = `<p className="dropcap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius porro hic ex. Earum similique laudantium esse nostrum sed corporis. Libero omnis quos deleniti amet aliquam nam. Natus voluptas reiciendis eligendi reprehenderit, facere tenetur distinctio sunt officia, temporibus aperiam voluptatum quo ducimus illum incidunt adipisci doloremque rem est magnam in, molestiae excepturi odit. Reprehenderit ullam.</p>`
 
 const Typography = () => (
   <>
@@ -203,6 +203,6 @@ const Typography = () => (
       <FalconComponentCard.Body code={dropCapCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Typography;
+export default Typography

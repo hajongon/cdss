@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Row } from 'react-bootstrap';
-import Logo from 'components/common/Logo';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, Row } from 'react-bootstrap'
+import Logo from 'components/common/Logo'
+import { Outlet } from 'react-router-dom'
 
-import Section from 'components/common/Section';
+import Section from 'components/common/Section'
 
 const ErrorLayout = () => {
   return (
@@ -16,11 +16,11 @@ const ErrorLayout = () => {
         </Col>
       </Row>
     </Section>
-  );
-};
+  )
+}
 
 ErrorLayout.propTypes = {
   match: PropTypes.object
-};
+}
 
-export default ErrorLayout;
+export default ErrorLayout

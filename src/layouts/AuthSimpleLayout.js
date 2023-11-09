@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import Logo from 'components/common/Logo';
-import Section from 'components/common/Section';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import Logo from 'components/common/Logo'
+import Section from 'components/common/Section'
+import { Outlet } from 'react-router-dom'
 
 const AuthSimpleLayout = () => {
   return (
@@ -18,7 +18,7 @@ const AuthSimpleLayout = () => {
         </Col>
       </Row>
     </Section>
-  );
-};
+  )
+}
 
-export default AuthSimpleLayout;
+export default AuthSimpleLayout

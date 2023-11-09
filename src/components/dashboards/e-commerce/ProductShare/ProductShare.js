@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import SoftBadge from 'components/common/SoftBadge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import ProductShareChart from './ProductShareChart';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import SoftBadge from 'components/common/SoftBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import ProductShareChart from './ProductShareChart'
 
 const ProductShare = () => {
   return (
@@ -30,7 +30,7 @@ const ProductShare = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ProductShare;
+export default ProductShare

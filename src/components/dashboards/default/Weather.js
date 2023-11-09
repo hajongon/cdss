@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import weatherIcon from 'assets/img/icons/weather-icon.png';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import weatherIcon from 'assets/img/icons/weather-icon.png'
+import Flex from 'components/common/Flex'
 
 const Weather = ({
   data: {
@@ -48,11 +48,11 @@ const Weather = ({
       </Row>
     </Card.Body>
   </Card>
-);
+)
 
 Weather.propTypes = {
   data: PropTypes.object.isRequired,
   className: PropTypes.string
-};
+}
 
-export default Weather;
+export default Weather

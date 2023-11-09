@@ -1,23 +1,23 @@
-import classNames from 'classnames';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import handleNavbarTransparency from 'helpers/handleNavbarTransparency';
-import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus';
-import LandingRightSideNavItem from './LandingRightSideNavItem';
-import { topNavbarBreakpoint } from 'config';
-import AppContext from 'context/Context';
+import classNames from 'classnames'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Container, Nav, Navbar } from 'react-bootstrap'
+import handleNavbarTransparency from 'helpers/handleNavbarTransparency'
+import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus'
+import LandingRightSideNavItem from './LandingRightSideNavItem'
+import { topNavbarBreakpoint } from 'config'
+import AppContext from 'context/Context'
 
 const NavbarStandard = () => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
-  const [navbarCollapsed, setNavbarCollapsed] = useState(true);
+  } = useContext(AppContext)
+  const [navbarCollapsed, setNavbarCollapsed] = useState(true)
 
   useEffect(() => {
-    window.addEventListener('scroll', handleNavbarTransparency);
-    return () => window.removeEventListener('scroll', handleNavbarTransparency);
-  }, []);
+    window.addEventListener('scroll', handleNavbarTransparency)
+    return () => window.removeEventListener('scroll', handleNavbarTransparency)
+  }, [])
 
   return (
     <Navbar
@@ -42,7 +42,7 @@ const NavbarStandard = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-};
+  )
+}
 
-export default NavbarStandard;
+export default NavbarStandard

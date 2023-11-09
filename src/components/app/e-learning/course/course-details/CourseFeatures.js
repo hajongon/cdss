@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Image, Row } from 'react-bootstrap'
 
 const CourseFeatures = ({ data }) => {
   return (
@@ -17,11 +17,11 @@ const CourseFeatures = ({ data }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseFeatures.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default CourseFeatures;
+export default CourseFeatures

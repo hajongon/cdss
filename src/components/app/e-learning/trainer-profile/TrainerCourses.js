@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import {
   Button,
   Card,
@@ -8,23 +8,23 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import { CourseContext } from 'context/Context';
-import usePagination from 'hooks/usePagination';
-import CourseGrid from '../course/CourseGrid';
-import Flex from 'components/common/Flex';
+} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import { CourseContext } from 'context/Context'
+import usePagination from 'hooks/usePagination'
+import CourseGrid from '../course/CourseGrid'
+import Flex from 'components/common/Flex'
 
 const TrainerCourses = () => {
   const {
     coursesState: { courses },
     coursesDispatch
-  } = useContext(CourseContext);
+  } = useContext(CourseContext)
 
-  const [sortBy, setSortBy] = useState('price');
-  const [isAsc, setIsAsc] = useState(true);
-  const [coursePerPage] = useState(6);
+  const [sortBy, setSortBy] = useState('price')
+  const [isAsc, setIsAsc] = useState(true)
+  const [coursePerPage] = useState(6)
 
   const {
     paginationState: {
@@ -37,7 +37,7 @@ const TrainerCourses = () => {
     nextPage,
     prevPage,
     goToPage
-  } = usePagination(courses, coursePerPage);
+  } = usePagination(courses, coursePerPage)
 
   useEffect(() => {
     coursesDispatch({
@@ -46,8 +46,8 @@ const TrainerCourses = () => {
         sortBy,
         order: isAsc ? 'asc' : 'desc'
       }
-    });
-  }, [sortBy, isAsc]);
+    })
+  }, [sortBy, isAsc])
 
   return (
     <Card>
@@ -145,7 +145,7 @@ const TrainerCourses = () => {
         </div>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default TrainerCourses;
+export default TrainerCourses

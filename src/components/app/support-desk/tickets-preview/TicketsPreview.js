@@ -1,10 +1,10 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import Conversation from './Conversation';
-import PropertiesFilteringForm from './PropertiesFilteringForm';
-import TicketsPreviewHeader from './TicketsPreviewHeader';
-import ToDoList from 'components/dashboards/support-desk/ToDoList';
-import ContactInfo from './ContactInfo';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import Conversation from './Conversation'
+import PropertiesFilteringForm from './PropertiesFilteringForm'
+import TicketsPreviewHeader from './TicketsPreviewHeader'
+import ToDoList from 'components/dashboards/support-desk/ToDoList'
+import ContactInfo from './ContactInfo'
 const TicketsPreview = () => {
   return (
     <Row className="g-3">
@@ -26,7 +26,7 @@ const TicketsPreview = () => {
         </Row>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default TicketsPreview;
+export default TicketsPreview

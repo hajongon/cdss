@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import { ProductContext } from 'context/Context';
-import useProductHook from './useProductHook';
-import ProductImage from './ProductImage';
-import StarRating from 'components/common/StarRating';
-import Flex from 'components/common/Flex';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import { ProductContext } from 'context/Context'
+import useProductHook from './useProductHook'
+import ProductImage from './ProductImage'
+import StarRating from 'components/common/StarRating'
+import Flex from 'components/common/Flex'
 
 const ProductList = ({ product, index }) => {
   const {
@@ -26,11 +26,11 @@ const ProductList = ({ product, index }) => {
     isInStock,
     isNew,
     files
-  } = product;
+  } = product
 
-  const { isInFavouriteItems } = useContext(ProductContext);
+  const { isInFavouriteItems } = useContext(ProductContext)
 
-  const { handleAddToCart, handleFavouriteClick } = useProductHook(product);
+  const { handleAddToCart, handleFavouriteClick } = useProductHook(product)
 
   return (
     <>
@@ -139,8 +139,8 @@ const ProductList = ({ product, index }) => {
         </Row>
       </Col>
     </>
-  );
-};
+  )
+}
 
 ProductList.propTypes = {
   product: PropTypes.shape({
@@ -159,6 +159,6 @@ ProductList.propTypes = {
     files: PropTypes.arrayOf(PropTypes.object).isRequired
   }),
   index: PropTypes.number
-};
+}
 
-export default ProductList;
+export default ProductList

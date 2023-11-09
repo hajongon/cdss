@@ -1,14 +1,14 @@
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import React, { useState } from 'react';
-import { Card, Col, Form, Nav, Row, Tab } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { topCustomerData } from 'data/support-desk/reportsData';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SoftBadge from 'components/common/SoftBadge';
-import TopCustomerChart from './TopCustomerChart';
-import FalconLink from 'components/common/FalconLink';
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import React, { useState } from 'react'
+import { Card, Col, Form, Nav, Row, Tab } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { topCustomerData } from 'data/support-desk/reportsData'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SoftBadge from 'components/common/SoftBadge'
+import TopCustomerChart from './TopCustomerChart'
+import FalconLink from 'components/common/FalconLink'
 
 const NavItem = ({ item, index }) => {
   return (
@@ -17,13 +17,13 @@ const NavItem = ({ item, index }) => {
         {item}
       </Nav.Link>
     </Nav.Item>
-  );
-};
+  )
+}
 
 NavItem.propTypes = {
   item: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired
-};
+}
 
 const TabItem = ({ percentage, count, data }) => {
   return (
@@ -37,26 +37,18 @@ const TabItem = ({ percentage, count, data }) => {
       </Flex>
       <TopCustomerChart data={data} />
     </>
-  );
-};
+  )
+}
 
 TabItem.propTypes = {
   percentage: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
   count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   data: PropTypes.array.isRequired
-};
+}
 
 const TopCustomers = () => {
-  const [navItems] = useState([
-    'MON',
-    'TUE',
-    'WED',
-    'THU',
-    'FRI',
-    'SAT',
-    'SUN'
-  ]);
+  const [navItems] = useState(['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'])
   return (
     <Card className="mt-3">
       <FalconCardHeader
@@ -145,7 +137,7 @@ const TopCustomers = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default TopCustomers;
+export default TopCustomers

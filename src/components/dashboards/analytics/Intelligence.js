@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import signalImg from 'assets/img/icons/signal.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import FalconLink from 'components/common/FalconLink';
-import SimpleBarReact from 'simplebar-react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import signalImg from 'assets/img/icons/signal.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import FalconLink from 'components/common/FalconLink'
+import SimpleBarReact from 'simplebar-react'
 
 const SingleItem = ({ icon, title, description }) => {
   return (
@@ -19,14 +19,14 @@ const SingleItem = ({ icon, title, description }) => {
       </Flex>
       <h5 className="fs--1 text-800">{description}</h5>
     </div>
-  );
-};
+  )
+}
 
 SingleItem.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
-};
+}
 
 const Intelligence = ({ data }) => {
   return (
@@ -55,11 +55,11 @@ const Intelligence = ({ data }) => {
         <FalconLink title="More Insights" className="px-0 fw-medium" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 Intelligence.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(SingleItem.propTypes)).isRequired
-};
+}
 
-export default Intelligence;
+export default Intelligence

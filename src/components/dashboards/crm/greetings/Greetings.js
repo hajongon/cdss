@@ -1,9 +1,9 @@
-import React from 'react';
-import Flex from 'components/common/Flex';
-import { Card, Col, Row } from 'react-bootstrap';
-import barChart from 'assets/img/illustrations/crm-bar-chart.png';
-import lineChart from 'assets/img/illustrations/crm-line-chart.png';
-import GreetingsDate from './GreetingsDate';
+import React from 'react'
+import Flex from 'components/common/Flex'
+import { Card, Col, Row } from 'react-bootstrap'
+import barChart from 'assets/img/illustrations/crm-bar-chart.png'
+import lineChart from 'assets/img/illustrations/crm-line-chart.png'
+import GreetingsDate from './GreetingsDate'
 
 const Greetings = () => {
   return (
@@ -41,7 +41,7 @@ const Greetings = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Greetings;
+export default Greetings

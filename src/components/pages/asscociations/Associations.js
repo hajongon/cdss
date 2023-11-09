@@ -1,8 +1,8 @@
-import Association from 'components/pages/asscociations/Association';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import associationsData from 'data/associations';
+import Association from 'components/pages/asscociations/Association'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import associationsData from 'data/associations'
 
 const Associations = ({
   associations = associationsData,
@@ -29,12 +29,12 @@ const Associations = ({
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 Associations.propTypes = {
   associations: PropTypes.arrayOf(PropTypes.shape(Association.propTypes)),
   colBreakpoints: PropTypes.object
-};
+}
 
-export default Associations;
+export default Associations

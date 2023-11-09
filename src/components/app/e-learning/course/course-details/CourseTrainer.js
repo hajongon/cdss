@@ -1,14 +1,14 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import trainer from 'assets/img/team/5-thumb.png';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import IconButton from 'components/common/IconButton';
-import FalconLink from 'components/common/FalconLink';
-import SoftBadge from 'components/common/SoftBadge';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import trainer from 'assets/img/team/5-thumb.png'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import IconButton from 'components/common/IconButton'
+import FalconLink from 'components/common/FalconLink'
+import SoftBadge from 'components/common/SoftBadge'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
 
 const tags = [
   {
@@ -35,7 +35,7 @@ const tags = [
     icon: 'map-pin',
     class: 'rounded-pill border py-2 px-3'
   }
-];
+]
 
 const CourseTrainer = () => {
   return (
@@ -107,7 +107,7 @@ const CourseTrainer = () => {
         />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default CourseTrainer;
+export default CourseTrainer

@@ -1,13 +1,13 @@
-import classNames from 'classnames';
-import IconButton from 'components/common/IconButton';
-import React, { useContext, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { ProductContext } from 'context/Context';
-import useProductHook from '../useProductHook';
-import StarRating from 'components/common/StarRating';
-import QuantityController from '../../QuantityController';
+import classNames from 'classnames'
+import IconButton from 'components/common/IconButton'
+import React, { useContext, useState } from 'react'
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { ProductContext } from 'context/Context'
+import useProductHook from '../useProductHook'
+import StarRating from 'components/common/StarRating'
+import QuantityController from '../../QuantityController'
 
 const ProductDetailsMain = ({ product }) => {
   const {
@@ -24,24 +24,24 @@ const ProductDetailsMain = ({ product }) => {
     shippingCost,
     isInStock,
     tags
-  } = product;
-  const { isInFavouriteItems } = useContext(ProductContext);
+  } = product
+  const { isInFavouriteItems } = useContext(ProductContext)
 
-  const [productCount, setProductCount] = useState(1);
+  const [productCount, setProductCount] = useState(1)
 
-  const { handleAddToCart, handleFavouriteClick } = useProductHook(product);
+  const { handleAddToCart, handleFavouriteClick } = useProductHook(product)
 
   const handleQuantityChange = e => {
-    setProductCount(parseInt(e.target.value < 1 ? 1 : e.target.value));
-  };
+    setProductCount(parseInt(e.target.value < 1 ? 1 : e.target.value))
+  }
 
   const handleQuantityIncrease = () => {
-    setProductCount(productCount + 1);
-  };
+    setProductCount(productCount + 1)
+  }
 
   const handleQuantityDecrease = () => {
-    productCount > 1 && setProductCount(productCount - 1);
-  };
+    productCount > 1 && setProductCount(productCount - 1)
+  }
 
   return (
     <>
@@ -133,8 +133,8 @@ const ProductDetailsMain = ({ product }) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
 ProductDetailsMain.propTypes = {
   product: PropTypes.shape({
@@ -152,6 +152,6 @@ ProductDetailsMain.propTypes = {
     tags: PropTypes.array,
     favorite: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   })
-};
+}
 
-export default ProductDetailsMain;
+export default ProductDetailsMain

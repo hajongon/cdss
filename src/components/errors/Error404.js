@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 const Error404 = () => {
   return (
@@ -27,7 +27,7 @@ const Error404 = () => {
         </Link>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Error404;
+export default Error404

@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <>
   <Form.Label>Example Range</Form.Label>
   <Form.Range />
 </>
-`;
+`
 const minmaxCode = `
 <>
   <Form.Label>Example Range</Form.Label>
@@ -19,7 +19,7 @@ const minmaxCode = `
     max='5'
   />
 </>
-`;
+`
 const stepsCode = `
 <>
   <Form.Label>Example Range</Form.Label>
@@ -29,7 +29,7 @@ const stepsCode = `
     step="0.5"
   />
 </>
-`;
+`
 
 const Range = () => (
   <>
@@ -87,6 +87,6 @@ const Range = () => (
       <FalconComponentCard.Body code={stepsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Range;
+export default Range

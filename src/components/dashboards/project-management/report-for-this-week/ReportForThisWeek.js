@@ -1,20 +1,20 @@
-import React, { useRef } from 'react';
-import { Card, Col, Row, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReportForThisWeekChart from './ReportForThisWeekChart';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react'
+import { Card, Col, Row, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReportForThisWeekChart from './ReportForThisWeekChart'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
 
 const ReportForThisWeek = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   const handleLegend = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: name
-    });
-    event.target.closest('button').classList.toggle('opacity-50');
-  };
+    })
+    event.target.closest('button').classList.toggle('opacity-50')
+  }
   return (
     <Card>
       <Card.Header className="pb-0">
@@ -52,11 +52,11 @@ const ReportForThisWeek = ({ data }) => {
       </Card.Body>
       <FalconCardFooterLink title="See all projects" size="sm" />
     </Card>
-  );
-};
+  )
+}
 
 ReportForThisWeek.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default ReportForThisWeek;
+export default ReportForThisWeek

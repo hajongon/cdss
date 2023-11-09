@@ -1,10 +1,10 @@
-import IconButton from 'components/common/IconButton';
-import React, { useState } from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
-import { todoList } from 'data/dashboard/support-desk';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import IconButton from 'components/common/IconButton'
+import React, { useState } from 'react'
+import { Button, Card, Form } from 'react-bootstrap'
+import { todoList } from 'data/dashboard/support-desk'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 const ToDoItems = ({ item, index, length, handleChange }) => {
   return (
@@ -43,8 +43,8 @@ const ToDoItems = ({ item, index, length, handleChange }) => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 ToDoItems.propTypes = {
   item: PropTypes.shape({
@@ -56,16 +56,16 @@ ToDoItems.propTypes = {
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   length: PropTypes.number.isRequired
-};
+}
 
 const ToDoList = ({ previewClassName }) => {
-  const [todoItems, setTodoItems] = useState(todoList);
+  const [todoItems, setTodoItems] = useState(todoList)
   const handleChange = (id, completed) => {
     const updatedTodos = todoItems.map(item =>
       item.id === id ? { ...item, completed } : item
-    );
-    setTodoItems(updatedTodos);
-  };
+    )
+    setTodoItems(updatedTodos)
+  }
   return (
     <Card className={classNames('h-100', previewClassName)}>
       <Card.Header className="d-flex flex-between-center bg-light">
@@ -97,11 +97,11 @@ const ToDoList = ({ previewClassName }) => {
         </a>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 ToDoList.propTypes = {
   previewClassName: PropTypes.string
-};
+}
 
-export default ToDoList;
+export default ToDoList

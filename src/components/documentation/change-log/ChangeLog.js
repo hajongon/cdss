@@ -1,11 +1,11 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { Alert, Card } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import changeLogs from './changelogs';
-import Logs from './Logs';
-import FalconEditor from 'components/common/FalconEditor';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { Alert, Card } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import changeLogs from './changelogs'
+import Logs from './Logs'
+import FalconEditor from 'components/common/FalconEditor'
 
 const Changelog = () => (
   <>
@@ -78,6 +78,6 @@ const Changelog = () => (
       <Logs {...logs} index={index} key={index} />
     ))}
   </>
-);
+)
 
-export default Changelog;
+export default Changelog

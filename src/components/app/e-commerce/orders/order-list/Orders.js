@@ -1,15 +1,15 @@
-import React from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
-import { orderList } from 'data/ecommerce/orderList';
-import CardDropdown from 'components/common/CardDropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SoftBadge from 'components/common/SoftBadge';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import OrdersTableHeader from './OrdersTableHeader';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
+import React from 'react'
+import { Card, Dropdown } from 'react-bootstrap'
+import { orderList } from 'data/ecommerce/orderList'
+import CardDropdown from 'components/common/CardDropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SoftBadge from 'components/common/SoftBadge'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import OrdersTableHeader from './OrdersTableHeader'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
 
 const columns = [
   {
@@ -20,7 +20,7 @@ const columns = [
       className: 'py-2'
     },
     Cell: rowData => {
-      const { id, name, email } = rowData.row.original;
+      const { id, name, email } = rowData.row.original
       return (
         <>
           <Link to="/e-commerce/orders/order-details">
@@ -29,7 +29,7 @@ const columns = [
           by <strong>{name}</strong> <br />
           <a href={`mailto:${email}`}>{email}</a>
         </>
-      );
+      )
     }
   },
   {
@@ -41,13 +41,13 @@ const columns = [
     accessor: 'address',
     Header: 'Ship To',
     Cell: rowData => {
-      const { address, shippingType } = rowData.row.original;
+      const { address, shippingType } = rowData.row.original
       return (
         <>
           {address}
           <p className="mb-0 text-500">{shippingType}</p>
         </>
-      );
+      )
     }
   },
   {
@@ -60,7 +60,7 @@ const columns = [
       className: 'fs-0'
     },
     Cell: rowData => {
-      const { status } = rowData.row.original;
+      const { status } = rowData.row.original
       return (
         <SoftBadge
           pill
@@ -89,7 +89,7 @@ const columns = [
             className="ms-1"
           />
         </SoftBadge>
-      );
+      )
     }
   },
   {
@@ -124,10 +124,10 @@ const columns = [
             </Dropdown.Item>
           </div>
         </CardDropdown>
-      );
+      )
     }
   }
-];
+]
 
 const Orders = () => {
   return (
@@ -160,7 +160,7 @@ const Orders = () => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
-export default Orders;
+export default Orders

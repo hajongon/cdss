@@ -1,6 +1,6 @@
-import illustration1 from 'assets/img/icons/spot-illustrations/50.png';
-import illustration2 from 'assets/img/icons/spot-illustrations/49.png';
-import illustration3 from 'assets/img/icons/spot-illustrations/48.png';
+import illustration1 from 'assets/img/icons/spot-illustrations/50.png'
+import illustration2 from 'assets/img/icons/spot-illustrations/49.png'
+import illustration3 from 'assets/img/icons/spot-illustrations/48.png'
 
 export default [
   {
@@ -31,4 +31,4 @@ export default [
       'From IE to iOS, rigorously tested and optimized Falcon will give the near perfect finishing to your webapp; from the landing page to the logout screen.',
     image: illustration3
   }
-];
+]

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import { courseData } from 'data/elearning/courseData';
-import Slider from 'react-slick';
-import CourseGrid from '../CourseGrid';
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import { courseData } from 'data/elearning/courseData'
+import Slider from 'react-slick'
+import CourseGrid from '../CourseGrid'
 
 const sliderSettings = {
   infinite: true,
@@ -29,7 +29,7 @@ const sliderSettings = {
       }
     }
   ]
-};
+}
 
 const SimilarCourses = () => {
   return (
@@ -54,7 +54,7 @@ const SimilarCourses = () => {
         />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default SimilarCourses;
+export default SimilarCourses

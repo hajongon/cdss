@@ -1,18 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import team13 from 'assets/img/team/13.jpg';
-import team2 from 'assets/img/team/2.jpg';
-import team3 from 'assets/img/team/3.jpg';
-import team4 from 'assets/img/team/4.jpg';
-import ActionButton from 'components/common/ActionButton';
-import Avatar from 'components/common/Avatar';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import SoftBadge from 'components/common/SoftBadge';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import React from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import team13 from 'assets/img/team/13.jpg'
+import team2 from 'assets/img/team/2.jpg'
+import team3 from 'assets/img/team/3.jpg'
+import team4 from 'assets/img/team/4.jpg'
+import ActionButton from 'components/common/ActionButton'
+import Avatar from 'components/common/Avatar'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import SoftBadge from 'components/common/SoftBadge'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import React from 'react'
+import { Button, Col, Row } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
 
 const basicTableCode = `
 <Table responsive>
@@ -66,7 +66,7 @@ const basicTableCode = `
     </tr>
   </tbody>
 </Table>
-`;
+`
 const stripedCode = `
 <Table striped responsive>
   <thead>
@@ -139,7 +139,7 @@ const stripedCode = `
     </tr>
   </tbody>
 </Table>
-`;
+`
 const hoverableCode = `const Actions = () => (
   <div className="end-0 top-50 pe-3 translate-middle-y hover-actions">
     <Button variant="light" size="sm" className="border-300 me-1 text-600">
@@ -204,7 +204,7 @@ const HoverableActionsExample = () => {
 };
 
 render(<HoverableActionsExample />)
-`;
+`
 
 const borderedCode = `<Table bordered responsive>
   <thead>
@@ -235,7 +235,7 @@ const borderedCode = `<Table bordered responsive>
       <td>jennifer@example.com</td>
     </tr>
   </tbody>
-</Table>`;
+</Table>`
 
 const borderlessCode = `
 <Table borderless responsive>
@@ -268,7 +268,7 @@ const borderlessCode = `
     </tr>
   </tbody>
 </Table>
-`;
+`
 const darkCode = `<Table variant="dark">
   <thead>
     <tr>
@@ -298,7 +298,7 @@ const darkCode = `<Table variant="dark">
       <td>jennifer@example.com</td>
     </tr>
   </tbody>
-</Table>`;
+</Table>`
 
 const smallTableCode = `<Table size='sm'>
   <thead>
@@ -337,7 +337,7 @@ const smallTableCode = `<Table size='sm'>
       <td>tony@example.com</td>
     </tr>
   </tbody>
-</Table>`;
+</Table>`
 
 const highlightColumnCode = `
 <SimpleBarReact>
@@ -397,7 +397,7 @@ const highlightColumnCode = `
       </tr>
     </tbody>
   </Table>
-</SimpleBarReact>`;
+</SimpleBarReact>`
 
 const activeTableCode = ` <SimpleBarReact>
 <Table bordered >
@@ -451,7 +451,7 @@ const activeTableCode = ` <SimpleBarReact>
     </tr>
   </tbody>
 </Table>
-</SimpleBarReact>`;
+</SimpleBarReact>`
 
 const variantCode = `<Table responsive>
   <thead>
@@ -482,7 +482,7 @@ const variantCode = `<Table responsive>
       <td>jennifer@example.com</td>
     </tr>
   </tbody>
-</Table>`;
+</Table>`
 
 const responsiveTableCode = `const TableRow = ({ data }) => (
   <tr className="align-middle">
@@ -577,7 +577,7 @@ const ResponsiveTableExample = () => {
 };
 
 render(<ResponsiveTableExample />)
-`;
+`
 
 const Tables = () => (
   <>
@@ -815,6 +815,6 @@ const Tables = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Tables;
+export default Tables

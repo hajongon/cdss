@@ -1,8 +1,8 @@
-import Notification from 'components/notification/Notification';
-import { notifications } from 'data/notification/notification';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Notification from 'components/notification/Notification'
+import { notifications } from 'data/notification/notification'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Notifications = () => {
   return (
@@ -26,7 +26,7 @@ const Notifications = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

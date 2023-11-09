@@ -1,6 +1,6 @@
-import React from 'react';
-import PasswordResetForm from 'components/authentication/PasswordResetForm';
-import AuthCardLayout from 'layouts/AuthCardLayout';
+import React from 'react'
+import PasswordResetForm from 'components/authentication/PasswordResetForm'
+import AuthCardLayout from 'layouts/AuthCardLayout'
 
 const PasswordReset = () => {
   return (
@@ -8,7 +8,7 @@ const PasswordReset = () => {
       <h3>Reset password</h3>
       <PasswordResetForm layout="card" hasLabel />
     </AuthCardLayout>
-  );
-};
+  )
+}
 
-export default PasswordReset;
+export default PasswordReset

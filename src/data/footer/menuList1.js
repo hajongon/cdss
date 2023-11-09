@@ -6,4 +6,4 @@ export default [
   { title: 'Terms', to: '#!' },
   { title: 'Privacy', to: '#!' },
   { title: 'Imprint', to: '#!' }
-];
+]

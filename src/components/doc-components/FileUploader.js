@@ -1,14 +1,14 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { getSize } from 'helpers/utils';
-import Flex from 'components/common/Flex';
-import { useDropzone } from 'react-dropzone';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { getSize } from 'helpers/utils'
+import Flex from 'components/common/Flex'
+import { useDropzone } from 'react-dropzone'
 
-import cloudUpload from 'assets/img/icons/cloud-upload.svg';
-import CardDropdown from 'components/common/CardDropdown';
+import cloudUpload from 'assets/img/icons/cloud-upload.svg'
+import CardDropdown from 'components/common/CardDropdown'
 
 const exampleCode = `import { useDropzone } from 'react-dropzone';
 import Flex from 'components/common/Flex';
@@ -42,7 +42,7 @@ function Example() {
       </div>
     </>
   );
-}`;
+}`
 
 const singleFileCode = `import { useDropzone } from 'react-dropzone';
 import Flex from 'components/common/Flex';
@@ -76,7 +76,7 @@ function SingleFileExample() {
       </div>
     </>
   );
-}`;
+}`
 
 const previewCode = `import { useDropzone } from 'react-dropzone';
 import Flex from 'components/common/Flex';
@@ -149,7 +149,7 @@ function PreviewExample() {
       </div>
     </>
   );
-}`;
+}`
 
 const FileUploader = () => (
   <>
@@ -197,6 +197,6 @@ const FileUploader = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FileUploader;
+export default FileUploader

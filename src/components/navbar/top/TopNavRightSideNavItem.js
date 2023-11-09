@@ -1,17 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CartNotification from 'components/navbar/top/CartNotification';
-import NotificationDropdown from 'components/navbar/top/NotificationDropdown';
-import ProfileDropdown from 'components/navbar/top/ProfileDropdown';
-import AppContext from 'context/Context';
-import React, { useContext } from 'react';
-import { Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import NineDotMenu from './NineDotMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CartNotification from 'components/navbar/top/CartNotification'
+import NotificationDropdown from 'components/navbar/top/NotificationDropdown'
+import ProfileDropdown from 'components/navbar/top/ProfileDropdown'
+import AppContext from 'context/Context'
+import React, { useContext } from 'react'
+import { Nav, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import NineDotMenu from './NineDotMenu'
 
 const TopNavRightSideNavItem = () => {
   const {
     config: { isDark, isRTL },
     setConfig
-  } = useContext(AppContext);
+  } = useContext(AppContext)
   return (
     <Nav
       navbar
@@ -47,7 +47,7 @@ const TopNavRightSideNavItem = () => {
       <NineDotMenu />
       <ProfileDropdown />
     </Nav>
-  );
-};
+  )
+}
 
-export default TopNavRightSideNavItem;
+export default TopNavRightSideNavItem

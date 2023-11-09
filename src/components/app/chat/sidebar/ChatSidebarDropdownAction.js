@@ -1,6 +1,6 @@
-import React from 'react';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ChatSidebarDropdownAction = () => (
   <Dropdown className="dropdown-active-trigger dropdown-chat">
@@ -29,6 +29,6 @@ const ChatSidebarDropdownAction = () => (
       <Dropdown.Item className="cursor-pointer">Block Messages</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>
-);
+)
 
-export default ChatSidebarDropdownAction;
+export default ChatSidebarDropdownAction

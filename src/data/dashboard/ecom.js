@@ -1,10 +1,10 @@
-import product1 from 'assets/img/products/ecommerce/1.jpg';
-import product2 from 'assets/img/products/ecommerce/2.jpg';
-import product3 from 'assets/img/products/ecommerce/3.jpg';
-import product4 from 'assets/img/products/ecommerce/4.jpg';
-import product5 from 'assets/img/products/ecommerce/5.jpg';
-import product6 from 'assets/img/products/ecommerce/6.jpg';
-import product7 from 'assets/img/products/ecommerce/7.jpg';
+import product1 from 'assets/img/products/ecommerce/1.jpg'
+import product2 from 'assets/img/products/ecommerce/2.jpg'
+import product3 from 'assets/img/products/ecommerce/3.jpg'
+import product4 from 'assets/img/products/ecommerce/4.jpg'
+import product5 from 'assets/img/products/ecommerce/5.jpg'
+import product6 from 'assets/img/products/ecommerce/6.jpg'
+import product7 from 'assets/img/products/ecommerce/7.jpg'
 
 export const notifications = [
   {
@@ -23,7 +23,7 @@ export const notifications = [
     title: '<strong>50+ orders</strong> need to be fulfilled',
     linkFor: 'orders'
   }
-];
+]
 
 export const saleItems = [
   {
@@ -76,12 +76,12 @@ export const saleItems = [
     percent: 21.8,
     className: 'pb-0 pt-4 ps-3'
   }
-];
+]
 
 export const totalSale = {
   lastMonth: [50, 80, 60, 80, 65, 90, 130, 90, 30, 40, 30, 70],
   previousYear: [110, 30, 40, 50, 80, 70, 50, 40, 110, 90, 60, 60]
-};
+}
 
 export const topProducts = [
   ['product', '2019', '2018'],
@@ -92,13 +92,13 @@ export const topProducts = [
   ['Sparrow', 80, 50],
   ['Hideaway', 50, 70],
   ['Freya', 80, 90]
-];
+]
 
 const recentPurchaseTableBadge = [
   { content: 'Success', type: 'success', icon: 'check' },
   { content: 'Blocked', type: 'secondary', icon: 'ban' },
   { content: 'Pending', type: 'warning', icon: 'stream' }
-];
+]
 export const recentPurchaseTableData = [
   {
     customer: 'Sylvia Plath',
@@ -198,15 +198,15 @@ export const recentPurchaseTableData = [
     status: recentPurchaseTableBadge[1],
     amount: '$999'
   }
-];
+]
 
 export const marketShare = [
   { id: 1, value: 53000000, name: 'Falcon', color: 'primary' },
   { id: 2, value: 19000000, name: 'Sparrow', color: 'info' },
   { id: 3, value: 20000000, name: 'Phoenix', color: 'warning' }
-];
+]
 
-export const totalOrder = [110, 100, 250, 210, 530, 480, 320, 325];
+export const totalOrder = [110, 100, 250, 210, 530, 480, 320, 325]
 
 export const shoppingCartItems = [
   {
@@ -259,7 +259,7 @@ export const shoppingCartItems = [
     iconColor: 'success',
     icon: 'caret-up'
   }
-];
+]
 
 export const returningCustomerData = {
   newData: [
@@ -290,7 +290,7 @@ export const returningCustomerData = {
     [60, 90, 60, 70, 40, 70, 100, 140, 30, 40, 30, 70],
     [20, 40, 20, 80, 50, 80, 120, 80, 50, 120, 110, 110]
   ]
-};
+}
 
 export const products = [
   {
@@ -350,4 +350,4 @@ export const products = [
     unit: 15,
     price: 24
   }
-];
+]

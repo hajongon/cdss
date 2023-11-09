@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import IconButton from 'components/common/IconButton';
-import { logs } from 'data/ecommerce/customerDetailsData';
-import classNames from 'classnames';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import IconButton from 'components/common/IconButton'
+import { logs } from 'data/ecommerce/customerDetailsData'
+import classNames from 'classnames'
 
 const CustomerLog = () => {
   return (
@@ -55,7 +55,7 @@ const CustomerLog = () => {
         </IconButton>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default CustomerLog;
+export default CustomerLog

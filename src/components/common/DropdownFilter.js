@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from './Flex';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from './Flex'
+import classNames from 'classnames'
 
 const DropdownItemFilter = ({
   filter,
@@ -26,8 +26,8 @@ const DropdownItemFilter = ({
         <FontAwesomeIcon icon="check" transform="down-4 shrink-4" />
       )}
     </Dropdown.Item>
-  );
-};
+  )
+}
 
 const DropdownFilter = ({ filters, handleFilter, currentFilter, icon }) => {
   return (
@@ -49,7 +49,7 @@ const DropdownFilter = ({ filters, handleFilter, currentFilter, icon }) => {
           <DropdownItemFilter
             currentFilter={currentFilter}
             onClick={() => {
-              handleFilter(filter);
+              handleFilter(filter)
             }}
             filter={filter}
             className="text-capitalize"
@@ -60,21 +60,21 @@ const DropdownFilter = ({ filters, handleFilter, currentFilter, icon }) => {
         ))}
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 DropdownItemFilter.propTypes = {
   filter: PropTypes.string.isRequired,
   currentFilter: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   children: PropTypes.node
-};
+}
 
 DropdownFilter.propTypes = {
   filters: PropTypes.array,
   handleFilter: PropTypes.func.isRequired,
   currentFilter: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired
-};
+}
 
-export default DropdownFilter;
+export default DropdownFilter

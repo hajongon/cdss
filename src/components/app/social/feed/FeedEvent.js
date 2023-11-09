@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Calendar from 'components/common/Calendar';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Calendar from 'components/common/Calendar'
+import Flex from 'components/common/Flex'
 
 const FeedEvent = ({ title, calender, author, regFee, eventImg }) => (
   <Card className="p-0 shadow-none">
@@ -32,7 +32,7 @@ const FeedEvent = ({ title, calender, author, regFee, eventImg }) => (
       </Row>
     </Card.Body>
   </Card>
-);
+)
 
 FeedEvent.propTypes = {
   title: PropTypes.string.isRequired,
@@ -40,6 +40,6 @@ FeedEvent.propTypes = {
   author: PropTypes.string.isRequired,
   regFee: PropTypes.string.isRequired,
   eventImg: PropTypes.string
-};
+}
 
-export default FeedEvent;
+export default FeedEvent

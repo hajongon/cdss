@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 const ChatMessageOptions = () => {
   const [actions] = useState([
@@ -21,7 +21,7 @@ const ChatMessageOptions = () => {
       tooltip: 'Remove',
       icon: 'trash-alt'
     }
-  ]);
+  ])
 
   return (
     <ul className="hover-actions position-relative list-inline mb-0 text-400 mx-2">
@@ -42,11 +42,11 @@ const ChatMessageOptions = () => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
 ChatMessageOptions.propTypes = {
   id: PropTypes.string
-};
+}
 
-export default ChatMessageOptions;
+export default ChatMessageOptions

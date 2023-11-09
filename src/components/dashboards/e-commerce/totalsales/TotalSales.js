@@ -1,19 +1,19 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import CardDropdown from 'components/common/CardDropdown';
-import TotalSalesChart from './TotalSalesChart';
-import Flex from 'components/common/Flex';
+import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import CardDropdown from 'components/common/CardDropdown'
+import TotalSalesChart from './TotalSalesChart'
+import Flex from 'components/common/Flex'
 
 const TotalSales = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   const handleLegendToggle = name => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name
-    });
-  };
+    })
+  }
 
   return (
     <Card>
@@ -71,14 +71,14 @@ const TotalSales = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 TotalSales.propTypes = {
   data: PropTypes.shape({
     lastMonth: PropTypes.array,
     previousYear: PropTypes.array
   })
-};
+}
 
-export default TotalSales;
+export default TotalSales

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import cloudDownload from 'assets/img/icons/cloud-download.svg';
-import editAlt from 'assets/img/icons/edit-alt.svg';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import cloudDownload from 'assets/img/icons/cloud-download.svg'
+import editAlt from 'assets/img/icons/edit-alt.svg'
 
 const SharedFiles = ({ files, className }) => {
   return (
@@ -32,11 +32,11 @@ const SharedFiles = ({ files, className }) => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 const SharedFile = ({ file, isLast }) => {
-  const { img, name, user, time, border } = file;
+  const { img, name, user, time, border } = file
   return (
     <>
       <Flex alignItems="center" className="mb-3 hover-actions-trigger">
@@ -94,8 +94,8 @@ const SharedFile = ({ file, isLast }) => {
       </Flex>
       {!isLast && <hr className="text-200" />}
     </>
-  );
-};
+  )
+}
 
 SharedFile.propTypes = {
   file: PropTypes.shape({
@@ -106,11 +106,11 @@ SharedFile.propTypes = {
     border: PropTypes.bool
   }),
   isLast: PropTypes.bool
-};
+}
 
 SharedFiles.propTypes = {
   files: PropTypes.arrayOf(SharedFile.propTypes.file),
   className: PropTypes.string
-};
+}
 
-export default SharedFiles;
+export default SharedFiles

@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor, rgbaColor } from 'helpers/utils';
-import * as echarts from 'echarts/core';
+import React from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor, rgbaColor } from 'helpers/utils'
+import * as echarts from 'echarts/core'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import { PieChart } from 'echarts/charts';
-import { CanvasRenderer } from 'echarts/renderers';
-import { useContext } from 'react';
-import AppContext from 'context/Context';
+} from 'echarts/components'
+import { PieChart } from 'echarts/charts'
+import { CanvasRenderer } from 'echarts/renderers'
+import { useContext } from 'react'
+import AppContext from 'context/Context'
 
 echarts.use([
   TitleComponent,
@@ -20,7 +20,7 @@ echarts.use([
   PieChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOption = isDark => ({
   legend: {
@@ -82,18 +82,18 @@ const getOption = isDark => ({
       type: 'none'
     }
   }
-});
+})
 
 const CustomerSatisfactionChart = () => {
-  const { config } = useContext(AppContext);
-  const { isDark } = config;
+  const { config } = useContext(AppContext)
+  const { isDark } = config
   return (
     <ReactEChartsCore
       echarts={echarts}
       option={getOption(isDark)}
       className="h-100 w-100"
     />
-  );
-};
+  )
+}
 
-export default CustomerSatisfactionChart;
+export default CustomerSatisfactionChart

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <Form.Select aria-label="Default select example">
@@ -12,7 +12,7 @@ const exampleCode = `
   <option value="2">Two</option>
   <option value="3">Three</option>
 </Form.Select>
-`;
+`
 const sizingCode = `
 <>
   <Form.Select size="lg" className='mb-3'>
@@ -25,7 +25,7 @@ const sizingCode = `
     <option>Small select</option>
   </Form.Select>
 </>
-`;
+`
 
 const Select = () => (
   <>
@@ -61,6 +61,6 @@ const Select = () => (
       <FalconComponentCard.Body code={sizingCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Select;
+export default Select

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const basicFormCode = `
 <Form>
@@ -78,7 +78,7 @@ const basicFormCode = `
     Submit
   </Button>
 </Form>
-`;
+`
 
 const horizontalFormCode = `
 <Form>
@@ -138,7 +138,7 @@ const horizontalFormCode = `
     </Col>
   </Form.Group>
 </Form>
-`;
+`
 
 const formGridLayout = `
 <Form>
@@ -192,7 +192,7 @@ const formGridLayout = `
     Submit
   </Button>
 </Form>
-`;
+`
 
 const horizontalSizingCode = `
 <>
@@ -224,7 +224,7 @@ const horizontalSizingCode = `
   </Row>
   
 </>
-`;
+`
 
 const columnSizingCode = `
 <Form>
@@ -240,7 +240,7 @@ const columnSizingCode = `
     </Col>
   </Row>
 </Form>
-`;
+`
 
 const autoSizingCode = `
 <Form>
@@ -287,7 +287,7 @@ const autoSizingCode = `
     </Col>
   </Row>
 </Form>
-`;
+`
 
 const guttersCode = `
 <Form>
@@ -314,7 +314,7 @@ const guttersCode = `
     </Col>
   </Row>
 </Form>
-`;
+`
 
 const FormLayout = () => (
   <>
@@ -405,6 +405,6 @@ const FormLayout = () => (
       <FalconComponentCard.Body code={guttersCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FormLayout;
+export default FormLayout

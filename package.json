@@ -3,17 +3,6 @@
   "name": "falcon-react",
   "version": "4.1.0",
   "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "npx prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@emoji-mart/react": "^1.0.1",
@@ -100,7 +89,8 @@
     "deploy:beta": "echo frlive.prium.me > ./build/CNAME && gh-pages -d build -r git@github.com:prium/falcon-react-alpha2.git",
     "deploy:eighteen": "echo falconreact18.prium.me > ./build/CNAME && gh-pages -d build -r git@github.com:prium/falcon-react18.git",
     "build:css": "webpack --config webpack.config.js",
-    "watch:css": "webpack --config webpack.config.js --watch"
+    "watch:css": "webpack --config webpack.config.js --watch",
+    "prettier": "prettier --write --config ./.prettierrc ./src/**/*.js"
   },
   "eslintConfig": {
     "extends": [

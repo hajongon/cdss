@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Tab } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Tab } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const overlayExampleCode = `
 function Example() {
@@ -25,7 +25,7 @@ function Example() {
     </>
   );
 }
-`;
+`
 const overlayTriggerCode = `
 <OverlayTrigger
   overlay={
@@ -36,7 +36,7 @@ const overlayTriggerCode = `
 >
   <Button>Click me!</Button>
 </OverlayTrigger>
-`;
+`
 
 const placementCode = `
 <>
@@ -54,7 +54,7 @@ const placementCode = `
     </OverlayTrigger>
   ))}
 </>
-`;
+`
 
 const Tooltips = () => (
   <>
@@ -127,6 +127,6 @@ const Tooltips = () => (
       <FalconComponentCard.Body code={placementCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Tooltips;
+export default Tooltips

@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
-import StarRating from 'components/common/StarRating';
-import Rating from 'react-rating';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
+import StarRating from 'components/common/StarRating'
+import Rating from 'react-rating'
 
 const defaultRatingCode = `function DefaultRatingExample() {
   return (
@@ -13,7 +13,7 @@ const defaultRatingCode = `function DefaultRatingExample() {
       initialRating={2}
     />
   );
-}`;
+}`
 const customIconCode = `function DefaultRatingExample() {
   return (
     <Rating
@@ -26,7 +26,7 @@ const customIconCode = `function DefaultRatingExample() {
       }
     />
   );
-}`;
+}`
 
 const readOnlyCode = `function ReadOnlyExample() {
   return (
@@ -41,7 +41,7 @@ const readOnlyCode = `function ReadOnlyExample() {
       }
     />
   );
-}`;
+}`
 
 const fractionalRatingCode = `function FractionalRatingExample() {
   return (
@@ -56,7 +56,7 @@ const fractionalRatingCode = `function FractionalRatingExample() {
       }
     />
   );
-}`;
+}`
 
 const oneToTenCode = `function Example() {
   return (
@@ -72,7 +72,7 @@ const oneToTenCode = `function Example() {
       }
     />
   );
-}`;
+}`
 
 const placeholderCode = `function PlaceholderExample() {
   return (
@@ -83,7 +83,7 @@ const placeholderCode = `function PlaceholderExample() {
       fullSymbol={<FontAwesomeIcon icon="star" className="text-warning fs-2 me-1" />}
     />
   );
-}`;
+}`
 
 const starRatingPropTypesCode = `
   StarRating.propTypes = {
@@ -92,7 +92,7 @@ const starRatingPropTypesCode = `
     handleChange: PropTypes.func
     // Pass any other Rating props
   };
-`;
+`
 
 const starRatingCode = `function StarRatingExample() {
   return (
@@ -101,7 +101,7 @@ const starRatingCode = `function StarRatingExample() {
       rating={3}
     />
   );
-}`;
+}`
 
 const RatingExample = () => (
   <>
@@ -213,6 +213,6 @@ const RatingExample = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default RatingExample;
+export default RatingExample

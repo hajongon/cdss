@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as reactBootstrap from 'react-bootstrap';
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
-import { defaultProps } from 'prism-react-renderer';
-import dracula from 'prism-react-renderer/themes/dracula';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import * as reactBootstrap from 'react-bootstrap'
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
+import { defaultProps } from 'prism-react-renderer'
+import dracula from 'prism-react-renderer/themes/dracula'
+import classNames from 'classnames'
 
 const FalconEditor = ({
   code,
@@ -15,34 +15,34 @@ const FalconEditor = ({
   className
 }) => {
   const importRegex =
-    /import(?:["'\s]*([\w*{}\n, ]+)from\s*)["'\s]*([@\w/_-]+)["'\s]*;?/gm;
+    /import(?:["'\s]*([\w*{}\n, ]+)from\s*)["'\s]*([@\w/_-]+)["'\s]*;?/gm
   const requireRegex =
-    /(const|let|var)\s*([\w{}\n, ]+\s*)=\s*require\s*\(["'\s]*([@\w/_-]+)["'\s]*\s*\);?/gm;
+    /(const|let|var)\s*([\w{}\n, ]+\s*)=\s*require\s*\(["'\s]*([@\w/_-]+)["'\s]*\s*\);?/gm
   const imports = {
     CardDropdown: 'CardDropdown '
-  };
+  }
 
   const transformCode = code => {
     return code
       .replace(importRegex, (match, p1, p2) => {
-        const matchingImport = imports[p2];
+        const matchingImport = imports[p2]
         if (!matchingImport) {
           // leave it alone if we don't have a matching import
-          return match;
+          return match
         }
 
-        return 'var ' + p1 + ' = ' + matchingImport + ';';
+        return 'var ' + p1 + ' = ' + matchingImport + ';'
       })
       .replace(requireRegex, (match, p1, p2, p3) => {
-        const matchingImport = imports[p3];
+        const matchingImport = imports[p3]
         if (!matchingImport) {
           // leave it alone if we don't have a matching import
-          return match;
+          return match
         }
 
-        return p1 + ' ' + p2 + ' = ' + matchingImport + ';';
-      });
-  };
+        return p1 + ' ' + p2 + ' = ' + matchingImport + ';'
+      })
+  }
 
   return (
     <LiveProvider
@@ -63,8 +63,8 @@ const FalconEditor = ({
       />
       {!hidePreview && <LiveError />}
     </LiveProvider>
-  );
-};
+  )
+}
 
 FalconEditor.propTypes = {
   code: PropTypes.string.isRequired,
@@ -73,11 +73,11 @@ FalconEditor.propTypes = {
   hidePreview: PropTypes.bool,
   theme: PropTypes.object,
   className: PropTypes.string
-};
+}
 
 FalconEditor.defaultProps = {
   language: 'markup',
   hidePreview: false
-};
+}
 
-export default FalconEditor;
+export default FalconEditor

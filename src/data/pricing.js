@@ -1,5 +1,5 @@
-import freeIcon from 'assets/img/icons/free.svg';
-import proIcon from 'assets/img/icons/pro.svg';
+import freeIcon from 'assets/img/icons/free.svg'
+import proIcon from 'assets/img/icons/pro.svg'
 
 export const pricingData = [
   {
@@ -53,7 +53,7 @@ export const pricingData = [
       { id: 4, title: 'Resource Management' }
     ]
   }
-];
+]
 
 export const pricingAltData = [
   {
@@ -96,4 +96,4 @@ export const pricingAltData = [
       { id: 7, title: 'Custom Fields', isActive: true }
     ]
   }
-];
+]

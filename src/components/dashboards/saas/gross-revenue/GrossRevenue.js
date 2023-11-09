@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row, Table, Button } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import GrossRevenueChart from './GrossRevenueChart';
-import FalconLink from 'components/common/FalconLink';
+import React, { useState, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row, Table, Button } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import GrossRevenueChart from './GrossRevenueChart'
+import FalconLink from 'components/common/FalconLink'
 
 const months = [
   'Jan',
@@ -21,7 +21,7 @@ const months = [
   'Oct',
   'Nov',
   'Dec'
-];
+]
 
 const grossTableRows = [
   {
@@ -51,29 +51,29 @@ const grossTableRows = [
       value: ''
     }
   }
-];
+]
 
 const GrossRevenue = ({ data }) => {
-  const [selectedMonth, setSelectedMonth] = useState(months[0]);
-  const [previousMonth, setPreviousMonth] = useState(months[11]);
-  const chartRef = useRef(null);
+  const [selectedMonth, setSelectedMonth] = useState(months[0])
+  const [previousMonth, setPreviousMonth] = useState(months[11])
+  const chartRef = useRef(null)
 
   useEffect(() => {
     if (selectedMonth) {
-      const monthIndex = months.indexOf(selectedMonth) - 1;
-      const prevMon = monthIndex >= 0 ? months[monthIndex] : months[11];
+      const monthIndex = months.indexOf(selectedMonth) - 1
+      const prevMon = monthIndex >= 0 ? months[monthIndex] : months[11]
 
-      setPreviousMonth(prevMon);
+      setPreviousMonth(prevMon)
     }
-  }, [selectedMonth]);
+  }, [selectedMonth])
 
   const handleLegend = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name: name
-    });
-    event.target.closest('button').classList.toggle('opacity-50');
-  };
+    })
+    event.target.closest('button').classList.toggle('opacity-50')
+  }
 
   return (
     <Card className="h-100">
@@ -175,8 +175,8 @@ const GrossRevenue = ({ data }) => {
         <FalconLink title="View report" className="px-0" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 GrossRevenue.propTypes = {
   data: PropTypes.shape({
@@ -193,6 +193,6 @@ GrossRevenue.propTypes = {
     Nov: PropTypes.array.isRequired,
     Dec: PropTypes.array.isRequired
   }).isRequired
-};
+}
 
-export default GrossRevenue;
+export default GrossRevenue

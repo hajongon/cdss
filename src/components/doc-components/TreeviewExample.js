@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Treeview from 'components/common/Treeview';
-import FalconEditor from 'components/common/FalconEditor';
+import React, { useState } from 'react'
+import { Card } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Treeview from 'components/common/Treeview'
+import FalconEditor from 'components/common/FalconEditor'
 
 const treeviewItems = [
   {
@@ -178,7 +178,7 @@ const treeviewItems = [
     iconClass: 'text-primary',
     id: '27'
   }
-];
+]
 
 const treeviewItemsCode = `
 const treeviewItems = [
@@ -354,7 +354,7 @@ const treeviewItems = [
     iconClass: 'text-primary',
     id: '27'
   }
-];`;
+];`
 
 const propTypessCode = `
 Treeview.propTypes = {
@@ -363,7 +363,7 @@ Treeview.propTypes = {
   expanded: PropTypes.array, // Default expanded children ids.
   selectedItems: PropTypes.array, // Selected item ids..
   setSelectedItems: PropTypes.func // Setter to select items
-};`;
+};`
 
 const objectCode = `{
   name: 'public',
@@ -384,7 +384,7 @@ const objectCode = `{
     }
   ]
 }
-`;
+`
 
 const exampleCode = `function TreeviewExample(){
   ${treeviewItemsCode}
@@ -394,7 +394,7 @@ const exampleCode = `function TreeviewExample(){
       expanded={['1', '2', '3', '7', '18']}
     />
   )
-}`;
+}`
 
 const selectionCode = `function TreeviewExample(){
   ${treeviewItemsCode}
@@ -406,10 +406,10 @@ const selectionCode = `function TreeviewExample(){
       expanded={['1', '2', '3', '7', '18']}
     />
   )
-}`;
+}`
 
 const TreeviewExample = () => {
-  const [selectedItems, setSelectedItems] = useState(['4']);
+  const [selectedItems, setSelectedItems] = useState(['4'])
   return (
     <>
       <PageHeader
@@ -466,7 +466,7 @@ const TreeviewExample = () => {
         </FalconComponentCard.Body>
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default TreeviewExample;
+export default TreeviewExample

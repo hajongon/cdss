@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, ProgressBar } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import { Link } from 'react-router-dom';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, ProgressBar } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import { Link } from 'react-router-dom'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
 
 const columns = [
   {
     accessor: 'title',
     Header: 'Projects',
     Cell: rowData => {
-      const { avatar, color, title, projectName } = rowData.row.original;
+      const { avatar, color, title, projectName } = rowData.row.original
       return (
         <Flex alignItems="center" className="position-relative">
           <Avatar
@@ -32,7 +32,7 @@ const columns = [
             <p className="fs--2 mb-0 text-500">{projectName}</p>
           </div>
         </Flex>
-      );
+      )
     }
   },
   {
@@ -92,13 +92,13 @@ const columns = [
                 isExact
                 className="border border-3 rounded-circle border-light"
               />
-            );
+            )
           })}
         </AvatarGroup>
-      );
+      )
     }
   }
-];
+]
 
 const RunningProjects = ({ data }) => {
   return (
@@ -125,8 +125,8 @@ const RunningProjects = ({ data }) => {
         <FalconCardFooterLink title="Show all projects" size="sm" />
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 RunningProjects.propTypes = {
   data: PropTypes.arrayOf(
@@ -151,6 +151,6 @@ RunningProjects.propTypes = {
       isLast: PropTypes.bool
     })
   )
-};
+}
 
-export default RunningProjects;
+export default RunningProjects

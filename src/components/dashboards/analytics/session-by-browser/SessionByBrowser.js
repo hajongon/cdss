@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Row, Table } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import Flex from 'components/common/Flex';
-import FalconLink from 'components/common/FalconLink';
-import SessionByBrowserChart from './SessionByBrowserChart';
-import TableRow from './TableRow';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Row, Table } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import Flex from 'components/common/Flex'
+import FalconLink from 'components/common/FalconLink'
+import SessionByBrowserChart from './SessionByBrowserChart'
+import TableRow from './TableRow'
 
 const SessionByBrowser = ({ data }) => {
   return (
@@ -53,11 +53,11 @@ const SessionByBrowser = ({ data }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 SessionByBrowser.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(TableRow.propTypes.data)).isRequired
-};
+}
 
-export default SessionByBrowser;
+export default SessionByBrowser

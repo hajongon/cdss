@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import Flex from '../Flex';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import Flex from '../Flex'
 
 export const AdvanceTablePagination = ({
   canPreviousPage,
@@ -49,7 +49,7 @@ export const AdvanceTablePagination = ({
         <FontAwesomeIcon icon="chevron-right" />
       </Button>
     </Flex>
-  );
-};
+  )
+}
 
-export default AdvanceTablePagination;
+export default AdvanceTablePagination

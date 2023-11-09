@@ -1,37 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import vibrantImg from 'assets/img/generic/vibrant.png';
-import invertedImg from 'assets/img/generic/inverted.png';
-import cardImg from 'assets/img/generic/card.png';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
-import createMarkup from 'helpers/createMarkup';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import vibrantImg from 'assets/img/generic/vibrant.png'
+import invertedImg from 'assets/img/generic/inverted.png'
+import cardImg from 'assets/img/generic/card.png'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
+import createMarkup from 'helpers/createMarkup'
+import Flex from 'components/common/Flex'
 
 const responsiveCode = `<Navbar variant="light" expand="lg">
   // content
-</Navbar>`;
+</Navbar>`
 
 const collapsingCode = `settings:{
   // ...rest
   isNavbarVerticalCollapsed: false
-}`;
+}`
 
 const invertedCode = `settings:{
   // ...rest
   navbarStyle:'inverted'
-}`;
+}`
 const vibrantCode = `settings:{
   // ...rest
   navbarStyle:'vibrant'
-}`;
+}`
 const cardCode = `settings:{
   // ...rest
   navbarStyle:'card'
-}`;
+}`
 
 const SpinnersExample = () => {
   return (
@@ -496,10 +496,10 @@ const SpinnersExample = () => {
         </FalconComponentCard>
       </>
     </>
-  );
-};
+  )
+}
 
-export default SpinnersExample;
+export default SpinnersExample
 
 const VariableValue = ({ title, description, code }) => {
   return (
@@ -508,11 +508,11 @@ const VariableValue = ({ title, description, code }) => {
       <p dangerouslySetInnerHTML={createMarkup(description)} />
       <FalconEditor code={code} language="scss" hidePreview />
     </div>
-  );
-};
+  )
+}
 
 VariableValue.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired
-};
+}

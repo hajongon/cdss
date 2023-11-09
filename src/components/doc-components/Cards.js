@@ -1,16 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import generic1 from 'assets/img/generic/1.jpg';
-import generic10 from 'assets/img/generic/10.jpg';
-import generic11 from 'assets/img/generic/11.jpg';
-import generic12 from 'assets/img/generic/12.jpg';
-import generic3 from 'assets/img/generic/3.jpg';
-import team1 from 'assets/img/team/1.jpg';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import PageHeader from 'components/common/PageHeader';
-import Notification from 'components/notification/Notification';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import React from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import generic1 from 'assets/img/generic/1.jpg'
+import generic10 from 'assets/img/generic/10.jpg'
+import generic11 from 'assets/img/generic/11.jpg'
+import generic12 from 'assets/img/generic/12.jpg'
+import generic3 from 'assets/img/generic/3.jpg'
+import team1 from 'assets/img/team/1.jpg'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import PageHeader from 'components/common/PageHeader'
+import Notification from 'components/notification/Notification'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import React from 'react'
+import { Button, Col, Row } from 'react-bootstrap'
 
 const exampleCode = `
 <Card style={{width: '20rem'}}>
@@ -29,7 +29,7 @@ const exampleCode = `
     </Button>
   </Card.Body>
 </Card>
-`;
+`
 
 const cardWithImageCode = `
 <Card style={{width: '20rem'}}>
@@ -50,7 +50,7 @@ const cardWithImageCode = `
     </Card.Body>
   </ListGroup>
 </Card>
-`;
+`
 
 const cardStylesCode = `
 <Row className="g-4">
@@ -74,7 +74,7 @@ const cardStylesCode = `
     )
   )}
 </Row>
-`;
+`
 
 const cardWithBgCode = `
 <PageHeader
@@ -93,7 +93,7 @@ const cardWithBgCode = `
     <FontAwesomeIcon icon="chevron-right" className="ms-1 fs--2" />
   </Button>
 </PageHeader>
-`;
+`
 
 const notificationCode = `
   <div style={{maxWidth:'25rem'}}>
@@ -109,7 +109,7 @@ const notificationCode = `
       emoji="💬"
     />
   </div>
-`;
+`
 
 const backgroundCode = `
 <Card className="bg-dark text-white light" style={{ maxWidth: '30rem' }}>
@@ -124,7 +124,7 @@ const backgroundCode = `
     </Card.Text>
   </Card.ImgOverlay>
 </Card>
-`;
+`
 
 const cardGroupCode = `
 <CardGroup>
@@ -165,7 +165,7 @@ const cardGroupCode = `
     </Card.Body>
   </Card>
 </CardGroup>
-`;
+`
 
 const Card = () => {
   return (
@@ -263,7 +263,7 @@ const Card = () => {
         />
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

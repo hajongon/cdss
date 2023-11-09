@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { Card, Col, Dropdown, Row } from 'react-bootstrap';
-import SimpleBarReact from 'simplebar-react';
-import Avatar from 'components/common/Avatar';
-import { useEffect } from 'react';
-import { quickLinks } from 'data/quickLinks';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { Card, Col, Dropdown, Row } from 'react-bootstrap'
+import SimpleBarReact from 'simplebar-react'
+import Avatar from 'components/common/Avatar'
+import { useEffect } from 'react'
+import { quickLinks } from 'data/quickLinks'
 
 const NineDotMenu = () => {
-  const [show, setShow] = useState(null);
+  const [show, setShow] = useState(null)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      window.innerWidth < 1200 && setShow(false);
-    });
-  }, []);
+      window.innerWidth < 1200 && setShow(false)
+    })
+  }, [])
 
   return (
     <Dropdown navbar={true} as="li" show={show} onToggle={() => setShow(!show)}>
@@ -67,8 +67,8 @@ const NineDotMenu = () => {
         </Card>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 const QuickLinkItem = ({ avatar, avatarText, img, title, link, hr }) => {
   return (
@@ -109,8 +109,8 @@ const QuickLinkItem = ({ avatar, avatarText, img, title, link, hr }) => {
         </Col>
       )}
     </>
-  );
-};
+  )
+}
 
 QuickLinkItem.propTypes = {
   avatar: PropTypes.string,
@@ -119,6 +119,6 @@ QuickLinkItem.propTypes = {
   title: PropTypes.string,
   link: PropTypes.string,
   hr: PropTypes.bool
-};
+}
 
-export default NineDotMenu;
+export default NineDotMenu

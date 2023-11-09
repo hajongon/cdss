@@ -1,7 +1,7 @@
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import React from 'react';
-import { Col, Form, FormCheck, Row } from 'react-bootstrap';
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import React from 'react'
+import { Col, Form, FormCheck, Row } from 'react-bootstrap'
 
 const PricingDefaultHeader = () => {
   return (
@@ -33,7 +33,7 @@ const PricingDefaultHeader = () => {
         </Col>
       </Row>
     </Col>
-  );
-};
+  )
+}
 
-export default PricingDefaultHeader;
+export default PricingDefaultHeader

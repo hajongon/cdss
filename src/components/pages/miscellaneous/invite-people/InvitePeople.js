@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import invite from 'assets/img/icons/spot-illustrations/41.png';
-import gmail from 'assets/img/logos/gmail.png';
-import { Link } from 'react-router-dom';
-import IconButton from 'components/common/IconButton';
-import InvitePeopleModal from './InvitePeopleModal';
+import React, { useState } from 'react'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import invite from 'assets/img/icons/spot-illustrations/41.png'
+import gmail from 'assets/img/logos/gmail.png'
+import { Link } from 'react-router-dom'
+import IconButton from 'components/common/IconButton'
+import InvitePeopleModal from './InvitePeopleModal'
 
 const InvitePeople = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const handleCopy = () => {
-    setShowModal(true);
-  };
+    setShowModal(true)
+  }
 
   return (
     <>
@@ -102,7 +102,7 @@ const InvitePeople = () => {
       </Card>
       <InvitePeopleModal show={showModal} setShow={setShowModal} />
     </>
-  );
-};
+  )
+}
 
-export default InvitePeople;
+export default InvitePeople

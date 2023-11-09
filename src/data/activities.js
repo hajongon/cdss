@@ -89,4 +89,4 @@ export default [
       '<strong>Massachusetts Institute of Technology</strong> invited <strong>Anthony Hopkin</strong> to an event',
     time: 'October 28, 12:00 PM'
   }
-];
+]

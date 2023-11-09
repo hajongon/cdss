@@ -1,7 +1,7 @@
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import { getColor } from 'helpers/utils';
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import { getColor } from 'helpers/utils'
+import React from 'react'
+import { Doughnut } from 'react-chartjs-2'
 
 const ProductShareChart = () => {
   const options = {
@@ -15,7 +15,7 @@ const ProductShareChart = () => {
       },
       tooltip: chartJsDefaultTooltip()
     }
-  };
+  }
   const data = {
     labels: ['Falcon', 'Sparrow'],
     datasets: [
@@ -25,8 +25,8 @@ const ProductShareChart = () => {
         borderColor: [getColor('primary'), getColor('gray-300')]
       }
     ]
-  };
-  return <Doughnut data={data} options={options} width="112" />;
-};
+  }
+  return <Doughnut data={data} options={options} width="112" />
+}
 
-export default ProductShareChart;
+export default ProductShareChart

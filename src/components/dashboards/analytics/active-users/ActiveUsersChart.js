@@ -1,18 +1,18 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { tooltipFormatter } from 'helpers/echart-utils';
-import { getColor, getPastDates } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { tooltipFormatter } from 'helpers/echart-utils'
+import { getColor, getPastDates } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -21,7 +21,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = data => ({
   color: [getColor('primary'), getColor('success'), getColor('info')],
@@ -140,7 +140,7 @@ const getOptions = data => ({
     bottom: 0,
     top: 10
   }
-});
+})
 
 const ActiveUsersChart = ({ data }) => {
   return (
@@ -149,8 +149,8 @@ const ActiveUsersChart = ({ data }) => {
       option={getOptions(data)}
       style={{ height: '16.25rem' }}
     />
-  );
-};
+  )
+}
 
 ActiveUsersChart.propTypes = {
   data: PropTypes.shape({
@@ -158,6 +158,6 @@ ActiveUsersChart.propTypes = {
     desktop: PropTypes.array,
     tablet: PropTypes.array
   })
-};
+}
 
-export default ActiveUsersChart;
+export default ActiveUsersChart

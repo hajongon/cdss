@@ -1,12 +1,12 @@
-import logoApple from 'assets/img/logos/apple.png';
-import logoG from 'assets/img/logos/g.png';
-import logoIntel from 'assets/img/logos/intel.png';
-import logofacebook from 'assets/img/logos/facebook.png';
-import mailblusterLogo from 'assets/img/logos/mailbluster.png';
-import logoDigitalocean from 'assets/img/logos/digitalocean.png';
-import logoNvidia from 'assets/img/logos/nvidia.png';
-import logoHP from 'assets/img/logos/hp.png';
-import logoSpotify from 'assets/img/logos/spotify.png';
+import logoApple from 'assets/img/logos/apple.png'
+import logoG from 'assets/img/logos/g.png'
+import logoIntel from 'assets/img/logos/intel.png'
+import logofacebook from 'assets/img/logos/facebook.png'
+import mailblusterLogo from 'assets/img/logos/mailbluster.png'
+import logoDigitalocean from 'assets/img/logos/digitalocean.png'
+import logoNvidia from 'assets/img/logos/nvidia.png'
+import logoHP from 'assets/img/logos/hp.png'
+import logoSpotify from 'assets/img/logos/spotify.png'
 
 export default [
   {
@@ -50,4 +50,4 @@ export default [
     title: 'Spotify',
     description: '2345 associates'
   }
-];
+]

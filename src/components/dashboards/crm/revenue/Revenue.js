@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Form, Nav, Row, Tab } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import RevenueChart from './RevenueChart';
-import { revenueChartData } from 'data/dashboard/crm';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Form, Nav, Row, Tab } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import RevenueChart from './RevenueChart'
+import { revenueChartData } from 'data/dashboard/crm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NavItem = ({ item }) => {
   return (
@@ -16,11 +16,11 @@ const NavItem = ({ item }) => {
         {item}
       </Nav.Link>
     </Nav.Item>
-  );
-};
+  )
+}
 
 const Revenue = () => {
-  const [navItems] = useState(['Revenue', 'Users', 'Deals', 'Profit']);
+  const [navItems] = useState(['Revenue', 'Users', 'Deals', 'Profit'])
   return (
     <Card className="mt-3">
       <Tab.Container id="audience-tab" defaultActiveKey="users">
@@ -120,11 +120,11 @@ const Revenue = () => {
         </Card.Body>
       </Tab.Container>
     </Card>
-  );
-};
+  )
+}
 
 NavItem.propTypes = {
   item: PropTypes.string.isRequired
-};
+}
 
-export default Revenue;
+export default Revenue

@@ -1,6 +1,6 @@
-import React from 'react';
-import Reports from './Reports';
-import { Account, Team } from './Admin';
+import React from 'react'
+import Reports from './Reports'
+import { Account, Team } from './Admin'
 
 const QuickLinks = () => {
   return (
@@ -9,7 +9,7 @@ const QuickLinks = () => {
       <Team />
       <Account />
     </>
-  );
-};
+  )
+}
 
-export default QuickLinks;
+export default QuickLinks

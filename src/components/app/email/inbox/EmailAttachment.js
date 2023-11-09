@@ -1,29 +1,29 @@
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import Lightbox from 'react-18-image-lightbox';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import Lightbox from 'react-18-image-lightbox'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const getIconClassNames = type => {
   switch (type) {
     case 'youtube':
-      return 'text-youtube';
+      return 'text-youtube'
     case 'zip':
-      return 'text-warning';
+      return 'text-warning'
     case 'doc':
-      return 'text-primary';
+      return 'text-primary'
     case 'img':
-      return 'text-danger';
+      return 'text-danger'
     case 'pdf':
-      return 'text-danger';
+      return 'text-danger'
     default:
-      return 'text-primary';
+      return 'text-primary'
   }
-};
+}
 
 const EmailAttachment = ({ attachment }) => {
-  const { fileName, icon, type, src } = attachment;
-  const [isOpen, setIsOpen] = useState(false);
+  const { fileName, icon, type, src } = attachment
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <Flex
       inline
@@ -45,8 +45,8 @@ const EmailAttachment = ({ attachment }) => {
       />
       <span className="ms-2">{fileName}</span>
     </Flex>
-  );
-};
+  )
+}
 EmailAttachment.propTypes = {
   attachment: PropTypes.shape({
     fileName: PropTypes.string.isRequired,
@@ -54,5 +54,5 @@ EmailAttachment.propTypes = {
     type: PropTypes.string.isRequired,
     src: PropTypes.string
   })
-};
-export default EmailAttachment;
+}
+export default EmailAttachment

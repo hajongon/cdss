@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import SimpleBarReact from 'simplebar-react';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import SimpleBarReact from 'simplebar-react'
 
 const exampleCode = `<Card>
   <SimpleBarReact style={{ maxHeight: '10rem' }}>
@@ -33,7 +33,7 @@ const exampleCode = `<Card>
     </Card.Body>
   </SimpleBarReact>
   </Card>
-`;
+`
 
 const Scrollbar = () => (
   <>
@@ -63,6 +63,6 @@ const Scrollbar = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Scrollbar;
+export default Scrollbar

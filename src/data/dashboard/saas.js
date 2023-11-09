@@ -1,21 +1,21 @@
-import atlassian from 'assets/img/logos/atlassian.png';
-import hubstaff from 'assets/img/logos/hubstaff.png';
-import bootstrap from 'assets/img/logos/bs-5.png';
-import asana from 'assets/img/logos/asana-logo.png';
-import adobe from 'assets/img/logos/adobe-creative-cloud.png';
-import coursera from 'assets/img/logos/coursera.png';
-import medium from 'assets/img/logos/medium.png';
-import bg1 from 'assets/img/icons/spot-illustrations/corner-1.png';
-import bg2 from 'assets/img/icons/spot-illustrations/corner-2.png';
-import bg3 from 'assets/img/icons/spot-illustrations/corner-3.png';
+import atlassian from 'assets/img/logos/atlassian.png'
+import hubstaff from 'assets/img/logos/hubstaff.png'
+import bootstrap from 'assets/img/logos/bs-5.png'
+import asana from 'assets/img/logos/asana-logo.png'
+import adobe from 'assets/img/logos/adobe-creative-cloud.png'
+import coursera from 'assets/img/logos/coursera.png'
+import medium from 'assets/img/logos/medium.png'
+import bg1 from 'assets/img/icons/spot-illustrations/corner-1.png'
+import bg2 from 'assets/img/icons/spot-illustrations/corner-2.png'
+import bg3 from 'assets/img/icons/spot-illustrations/corner-3.png'
 
 export const payment = {
   all: [4, 1, 6, 2, 7, 12, 4, 6, 5, 4, 5, 10],
   successful: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8],
   failed: [1, 0, 2, 1, 2, 1, 1, 0, 0, 1, 0, 2]
-};
+}
 
-export const activeUser = [3, 7, 6, 8, 5, 12, 11];
+export const activeUser = [3, 7, 6, 8, 5, 12, 11]
 
 export const statsData = [
   {
@@ -57,7 +57,7 @@ export const statsData = [
     linkText: 'Statistics',
     image: bg3
   }
-];
+]
 
 export const candleChartStatsData = [
   {
@@ -90,7 +90,7 @@ export const candleChartStatsData = [
     },
     amount: '$256,489'
   }
-];
+]
 
 export const transactionSummary = [
   {
@@ -156,7 +156,7 @@ export const transactionSummary = [
     amount: '$290.00 USD',
     date: '15 March, 2020'
   }
-];
+]
 
 export const grossRevenue = {
   Jan: [20, 40, 20, 80, 50, 80, 120, 80, 50, 120, 110, 110],
@@ -171,7 +171,7 @@ export const grossRevenue = {
   Oct: [90, 90, 40, 60, 40, 110, 90, 110, 60, 80, 60, 70],
   Nov: [50, 80, 50, 80, 50, 80, 120, 80, 50, 120, 110, 110],
   Dec: [60, 90, 60, 70, 40, 70, 100, 140, 30, 40, 30, 70]
-};
+}
 
 export const candleChartData = [
   ['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
@@ -224,4 +224,4 @@ export const candleChartData = [
   ['2013/4/10', 2224.93, 2226.13, 2212.56, 2233.04],
   ['2013/4/11', 2236.98, 2219.55, 2217.26, 2242.48],
   ['2013/4/12', 2218.09, 2206.78, 2204.44, 2226.26]
-];
+]

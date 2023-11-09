@@ -1,15 +1,15 @@
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import React, { forwardRef } from 'react'
+import PropTypes from 'prop-types'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor, rgbaColor } from 'helpers/utils';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor, rgbaColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -17,7 +17,7 @@ echarts.use([
   GridComponent,
   LineChart,
   LegendComponent
-]);
+])
 
 const tooltipFormatter = params => {
   return params
@@ -26,8 +26,8 @@ const tooltipFormatter = params => {
         `<div class="dot me-1 fs--2 d-inline-block" style="background-color: ${borderColor}"></div>
               <span class='text-600'>${seriesName}: ${value}</span>`
     )
-    .join('<br/>');
-};
+    .join('<br/>')
+}
 
 const getOptions = data => ({
   color: getColor('gray-100'),
@@ -83,7 +83,7 @@ const getOptions = data => ({
       axisLabel: {
         color: getColor('gray-500'),
         formatter(value) {
-          return value;
+          return value
         },
         interval: 3,
         margin: 15,
@@ -129,7 +129,7 @@ const getOptions = data => ({
       axisLabel: {
         color: getColor('gray-500'),
         formatter(value) {
-          return value;
+          return value
         },
         interval: 200,
         margin: 15,
@@ -216,19 +216,19 @@ const getOptions = data => ({
     bottom: '15%',
     top: '5%'
   }
-});
+})
 
 const AverageEnrollmentChart = forwardRef(({ data }, ref) => {
   return (
     <ReactEChartsCore ref={ref} echarts={echarts} option={getOptions(data)} />
-  );
-});
+  )
+})
 
 AverageEnrollmentChart.propTypes = {
   data: PropTypes.shape({
     onSaleCourse: PropTypes.array,
     regularPaidCourse: PropTypes.array
   })
-};
+}
 
-export default AverageEnrollmentChart;
+export default AverageEnrollmentChart

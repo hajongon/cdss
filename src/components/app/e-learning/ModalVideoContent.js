@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { CloseButton, Modal } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { CloseButton, Modal } from 'react-bootstrap'
 
 const ModalVideoContent = ({ show, setShow, attachment }) => {
   return (
@@ -31,8 +31,8 @@ const ModalVideoContent = ({ show, setShow, attachment }) => {
         </video>
       </Modal.Body>
     </Modal>
-  );
-};
+  )
+}
 
 ModalVideoContent.propTypes = {
   show: PropTypes.bool.isRequired,
@@ -45,6 +45,6 @@ ModalVideoContent.propTypes = {
     date: PropTypes.string,
     type: PropTypes.string
   })
-};
+}
 
-export default ModalVideoContent;
+export default ModalVideoContent

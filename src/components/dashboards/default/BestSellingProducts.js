@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React from 'react';
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React from 'react'
 import {
   Button,
   Card,
@@ -10,27 +10,27 @@ import {
   ProgressBar,
   Row,
   Table
-} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const getTotalPrice = items =>
   items
     .map(({ unit, price }) => unit * price)
-    .reduce((total, currentValue) => total + currentValue, 0);
+    .reduce((total, currentValue) => total + currentValue, 0)
 
 const getProductItemCalculatedData = (unit, price, totalPrice) => {
-  const productTotalPrice = unit * price;
-  const percentage = ((productTotalPrice * 100) / totalPrice).toFixed(0);
-  return { productTotalPrice, percentage };
-};
+  const productTotalPrice = unit * price
+  const percentage = ((productTotalPrice * 100) / totalPrice).toFixed(0)
+  return { productTotalPrice, percentage }
+}
 
 const BestSellingProduct = ({ product, totalPrice, isLast }) => {
-  const { img, title, type, unit, price } = product;
+  const { img, title, type, unit, price } = product
   const { productTotalPrice, percentage } = getProductItemCalculatedData(
     unit,
     price,
     totalPrice
-  );
+  )
 
   return (
     <tr className={classNames({ 'border-bottom border-200': !isLast })}>
@@ -62,8 +62,8 @@ const BestSellingProduct = ({ product, totalPrice, isLast }) => {
         </Flex>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 BestSellingProduct.propTypes = {
   totalPrice: PropTypes.number.isRequired,
@@ -76,11 +76,11 @@ BestSellingProduct.propTypes = {
     unit: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired
   }).isRequired
-};
+}
 
 const BestSellingProducts = ({ products }) => {
-  const totalPrice = getTotalPrice(products);
-  const noOfProducts = products.length;
+  const totalPrice = getTotalPrice(products)
+  const noOfProducts = products.length
 
   return (
     <Card className="h-lg-100 overflow-hidden">
@@ -124,11 +124,11 @@ const BestSellingProducts = ({ products }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 BestSellingProducts.propTypes = {
   products: PropTypes.arrayOf(BestSellingProduct.propTypes.product).isRequired
-};
+}
 
-export default BestSellingProducts;
+export default BestSellingProducts

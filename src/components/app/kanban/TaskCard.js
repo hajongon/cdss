@@ -1,26 +1,26 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Dropdown, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import Background from 'components/common/Background';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SoftBadge from 'components/common/SoftBadge';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import { Draggable } from 'react-beautiful-dnd';
-import AppContext, { KanbanContext } from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Dropdown, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import Background from 'components/common/Background'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SoftBadge from 'components/common/SoftBadge'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import { Draggable } from 'react-beautiful-dnd'
+import AppContext, { KanbanContext } from 'context/Context'
 
 const TaskDropMenu = ({ id }) => {
-  const { kanbanDispatch } = useContext(KanbanContext);
+  const { kanbanDispatch } = useContext(KanbanContext)
 
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleRemoveTaskCard = () => {
     kanbanDispatch({
       type: 'REMOVE_TASK_CARD',
       payload: { id }
-    });
-  };
+    })
+  }
 
   return (
     <Dropdown
@@ -46,25 +46,25 @@ const TaskDropMenu = ({ id }) => {
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 const TaskCard = ({
   task: { id, title, members, attachments, labels, checklist },
   index
 }) => {
-  const { kanbanDispatch, currentUser } = useContext(KanbanContext);
-  const image = attachments && attachments.find(item => item.type === 'image');
+  const { kanbanDispatch, currentUser } = useContext(KanbanContext)
+  const image = attachments && attachments.find(item => item.type === 'image')
 
   const handleModalOpen = () => {
-    kanbanDispatch({ type: 'OPEN_KANBAN_MODAL', payload: { image: image } });
-  };
+    kanbanDispatch({ type: 'OPEN_KANBAN_MODAL', payload: { image: image } })
+  }
 
   // styles we need to apply on draggables
   const getItemStyle = isDragging => ({
     cursor: isDragging ? 'grabbing' : 'pointer',
     transform: isDragging ? 'rotate(-2deg)' : ''
-  });
+  })
 
   return (
     <Draggable draggableId={`task${id}`} index={index}>
@@ -203,12 +203,12 @@ const TaskCard = ({
         </div>
       )}
     </Draggable>
-  );
-};
+  )
+}
 
 TaskDropMenu.propTypes = {
   id: PropTypes.number.isRequired
-};
+}
 
 TaskCard.propTypes = {
   task: PropTypes.shape({
@@ -238,6 +238,6 @@ TaskCard.propTypes = {
     })
   }),
   index: PropTypes.number
-};
+}
 
-export default TaskCard;
+export default TaskCard

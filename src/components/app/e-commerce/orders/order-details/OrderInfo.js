@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 // import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import visa from '../../../../../assets/img/icons/visa.png';
+import { Card, Col, Row } from 'react-bootstrap'
+import visa from '../../../../../assets/img/icons/visa.png'
 
 const OrderInfo = () => {
   return (
@@ -52,9 +52,9 @@ const OrderInfo = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-OrderInfo.propTypes = {};
+OrderInfo.propTypes = {}
 
-export default OrderInfo;
+export default OrderInfo

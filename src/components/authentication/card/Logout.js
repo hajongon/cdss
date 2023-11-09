@@ -1,7 +1,7 @@
-import React from 'react';
-import LogoutContent from 'components/authentication/LogoutContent';
+import React from 'react'
+import LogoutContent from 'components/authentication/LogoutContent'
 
-import AuthCardLayout from 'layouts/AuthCardLayout';
+import AuthCardLayout from 'layouts/AuthCardLayout'
 
 const Logout = () => {
   return (
@@ -10,7 +10,7 @@ const Logout = () => {
         <LogoutContent layout="card" titleTag="h3" />
       </div>
     </AuthCardLayout>
-  );
-};
+  )
+}
 
-export default Logout;
+export default Logout

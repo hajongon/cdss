@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import {
   assignmentScores,
   courseStatusData,
@@ -8,19 +8,19 @@ import {
   timeOnSiteData,
   recentActivities,
   enrolledCoursesData
-} from 'data/elearning/studentOverview';
-import PageHeader from './PageHeader';
-import Spendings from './Spendings';
-import StudentInfo from './StudentInfo';
-import TimeOnSite from './TimeOnSite';
-import AssignmentScores from './AssignmentScores';
-import BrowsedCourses from './BrowsedCourses';
-import PaymentMethods from './PaymentMethods';
-import PaymentHistory from './PaymentHistory';
-import CourseStatus from './CourseStatus';
-import BillingAddress from './BillingAddress';
-import RecentActivities from './RecentActivities';
-import EnrolledCourses from './EnrolledCourses';
+} from 'data/elearning/studentOverview'
+import PageHeader from './PageHeader'
+import Spendings from './Spendings'
+import StudentInfo from './StudentInfo'
+import TimeOnSite from './TimeOnSite'
+import AssignmentScores from './AssignmentScores'
+import BrowsedCourses from './BrowsedCourses'
+import PaymentMethods from './PaymentMethods'
+import PaymentHistory from './PaymentHistory'
+import CourseStatus from './CourseStatus'
+import BillingAddress from './BillingAddress'
+import RecentActivities from './RecentActivities'
+import EnrolledCourses from './EnrolledCourses'
 
 const StudentOverview = () => {
   return (
@@ -67,7 +67,7 @@ const StudentOverview = () => {
 
       <EnrolledCourses tableData={enrolledCoursesData} />
     </>
-  );
-};
+  )
+}
 
-export default StudentOverview;
+export default StudentOverview

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Col, Image, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import images from 'data/gallery';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
+import React from 'react'
+import { Card, Col, Image, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import images from 'data/gallery'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
 
 const Photos = () => {
   return (
@@ -62,7 +62,7 @@ const Photos = () => {
         </FalconLightBoxGallery>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Photos;
+export default Photos

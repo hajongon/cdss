@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
-import { Col, Row, Button } from 'react-bootstrap';
-import GeoWorldMap from './GeoWorldMap';
-import UsaMap from './UsaMap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
+import { Col, Row, Button } from 'react-bootstrap'
+import GeoWorldMap from './GeoWorldMap'
+import UsaMap from './UsaMap'
 
 const GeoMaps = () => {
   return (
@@ -34,7 +34,7 @@ const GeoMaps = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default GeoMaps;
+export default GeoMaps

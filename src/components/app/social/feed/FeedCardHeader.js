@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import FeedDropdown from './FeedDropdown';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import Avatar from 'components/common/Avatar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import FeedDropdown from './FeedDropdown'
 
 const FeedCardHeader = ({
   status,
@@ -55,8 +55,8 @@ const FeedCardHeader = ({
         </Col>
       </Row>
     </Card.Header>
-  );
-};
+  )
+}
 
 FeedCardHeader.propTypes = {
   status: PropTypes.string,
@@ -66,6 +66,6 @@ FeedCardHeader.propTypes = {
   share: PropTypes.string,
   location: PropTypes.string,
   privacy: PropTypes.string
-};
+}
 
-export default FeedCardHeader;
+export default FeedCardHeader

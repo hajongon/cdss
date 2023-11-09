@@ -1,23 +1,23 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { GaugeChart } from 'echarts/charts';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { GaugeChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 echarts.use([
   TitleComponent,
@@ -26,7 +26,7 @@ echarts.use([
   GaugeChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = data => ({
   series: [
@@ -81,11 +81,11 @@ const getOptions = data => ({
       }
     }
   ]
-});
+})
 
 const BandwidthSaved = ({ bodyClassName }) => {
-  const [total] = useState(38.44);
-  const [saved] = useState(35.75);
+  const [total] = useState(38.44)
+  const [saved] = useState(35.75)
 
   return (
     <Card className="h-100">
@@ -136,11 +136,11 @@ const BandwidthSaved = ({ bodyClassName }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 BandwidthSaved.propTypes = {
   bodyClassName: PropTypes.string
-};
+}
 
-export default BandwidthSaved;
+export default BandwidthSaved

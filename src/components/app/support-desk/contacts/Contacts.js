@@ -1,16 +1,16 @@
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { contacts } from 'data/support-desk/contactsData';
-import React, { useState } from 'react';
-import { Card, Col, Offcanvas, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import ContactsHeader from './ContactsHeader';
-import ContactsFilteringForm from './ContactsFilteringForm';
-import { useBreakpoints } from 'hooks/useBreakpoints';
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { contacts } from 'data/support-desk/contactsData'
+import React, { useState } from 'react'
+import { Card, Col, Offcanvas, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import ContactsHeader from './ContactsHeader'
+import ContactsFilteringForm from './ContactsFilteringForm'
+import { useBreakpoints } from 'hooks/useBreakpoints'
 
 const columns = [
   {
@@ -21,7 +21,7 @@ const columns = [
       className: 'white-space-nowrap pe-5 ps-2 py-2'
     },
     Cell: rowData => {
-      const { name, avatar } = rowData.row.original;
+      const { name, avatar } = rowData.row.original
       return (
         <Flex alignItems="center" className="position-relative py-1">
           {avatar.img ? (
@@ -38,7 +38,7 @@ const columns = [
             </Link>
           </h6>
         </Flex>
-      );
+      )
     }
   },
   {
@@ -47,12 +47,12 @@ const columns = [
     headerProps: { className: 'pe-5 white-space-nowrap' },
     cellProps: { className: 'font-sans-serif white-space-nowrap' },
     Cell: rowData => {
-      const { phone } = rowData.row.original;
+      const { phone } = rowData.row.original
       return (
         <a className="text-700" href={`tel:${phone.replace(/\s+/g, '')}`}>
           {phone}
         </a>
-      );
+      )
     }
   },
   {
@@ -62,8 +62,8 @@ const columns = [
       className: 'white-space-nowrap pe-5'
     },
     Cell: rowData => {
-      const { report } = rowData.row.original;
-      return <Link to="#!">{report}</Link>;
+      const { report } = rowData.row.original
+      return <Link to="#!">{report}</Link>
     }
   },
   {
@@ -74,12 +74,12 @@ const columns = [
       className: 'font-sans-serif fs-0 text-end'
     },
     Cell: rowData => {
-      const { subscription } = rowData.row.original;
+      const { subscription } = rowData.row.original
       return subscription ? (
         <SoftBadge bg={subscription.type}>{subscription.content}</SoftBadge>
       ) : (
         <p className="mb-0 text-500 font-sans-serif fs--1">N/A</p>
-      );
+      )
     }
   },
   {
@@ -88,21 +88,21 @@ const columns = [
     headerProps: { className: 'text-end' },
     cellProps: { className: 'ps-4 text-end' },
     Cell: rowData => {
-      const { social } = rowData.row.original;
+      const { social } = rowData.row.original
       return social ? (
         <a href="#!">{social}</a>
       ) : (
         <p className="mb-0 text-500">N/A</p>
-      );
+      )
     }
   }
-];
+]
 
 const Contacts = () => {
-  const [show, setShow] = useState(false);
-  const { breakpoints } = useBreakpoints();
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false)
+  const { breakpoints } = useBreakpoints()
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <Row className="gx-3">
       <Col xxl={10} xl={9}>
@@ -155,7 +155,7 @@ const Contacts = () => {
         )}
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default Contacts;
+export default Contacts

@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { GaugeChart } from 'echarts/charts';
+import React, { useRef } from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { GaugeChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -18,7 +18,7 @@ echarts.use([
   GaugeChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   tooltip: {
@@ -150,10 +150,10 @@ const getOptions = () => ({
       animationDuration: 2000
     }
   ]
-});
+})
 
 const WeeklyGoalsChart = () => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   return (
     <ReactEChartsCore
       ref={chartRef}
@@ -161,7 +161,7 @@ const WeeklyGoalsChart = () => {
       option={getOptions()}
       style={{ height: '15.625rem' }}
     />
-  );
-};
+  )
+}
 
-export default WeeklyGoalsChart;
+export default WeeklyGoalsChart

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import BasicRadarChart from './BasicRadarChart';
-import RadarCustomizedChart from './RadarCustomizedChart';
-import RadarMultipleChart from './RadarMultipleChart';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import BasicRadarChart from './BasicRadarChart'
+import RadarCustomizedChart from './RadarCustomizedChart'
+import RadarMultipleChart from './RadarMultipleChart'
 
 const RadarCharts = () => {
   return (
@@ -17,7 +17,7 @@ const RadarCharts = () => {
         <RadarMultipleChart />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default RadarCharts;
+export default RadarCharts

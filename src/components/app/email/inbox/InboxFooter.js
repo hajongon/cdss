@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import { Button, Card } from 'react-bootstrap';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import { Button, Card } from 'react-bootstrap'
+import AppContext from 'context/Context'
 
 const InboxFooter = ({
   totalItems,
@@ -16,7 +16,7 @@ const InboxFooter = ({
 }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Card.Footer as={Flex} justifyContent="between" alignItems="center">
@@ -48,8 +48,8 @@ const InboxFooter = ({
         </Button>
       </div>
     </Card.Footer>
-  );
-};
+  )
+}
 
 InboxFooter.propTypes = {
   totalItems: PropTypes.number.isRequired,
@@ -59,6 +59,6 @@ InboxFooter.propTypes = {
   canPreviousPage: PropTypes.bool.isRequired,
   nextPage: PropTypes.func.isRequired,
   prevPage: PropTypes.func.isRequired
-};
+}
 
-export default InboxFooter;
+export default InboxFooter

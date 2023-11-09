@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import image from 'assets/img/icons/spot-illustrations/navbar-vertical.png';
-import FalconCloseButton from 'components/common/FalconCloseButton';
+import React, { useState } from 'react'
+import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import image from 'assets/img/icons/spot-illustrations/navbar-vertical.png'
+import FalconCloseButton from 'components/common/FalconCloseButton'
 
 const PurchaseCard = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true)
   return (
     show && (
       <div className="settings my-3">
@@ -43,7 +43,7 @@ const PurchaseCard = () => {
         </Card>
       </div>
     )
-  );
-};
+  )
+}
 
-export default PurchaseCard;
+export default PurchaseCard

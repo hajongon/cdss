@@ -1,10 +1,10 @@
-import React from 'react';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
+import React from 'react'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
 // import SimpleBarReact from 'simplebar-react';
-import DistributionOfPerformanceChart from './DistributionOfPerformanceChart';
-import { Link } from 'react-router-dom';
+import DistributionOfPerformanceChart from './DistributionOfPerformanceChart'
+import { Link } from 'react-router-dom'
 
 const DistributionOfPerformance = () => {
   return (
@@ -43,7 +43,7 @@ const DistributionOfPerformance = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default DistributionOfPerformance;
+export default DistributionOfPerformance

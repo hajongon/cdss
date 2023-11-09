@@ -1,6 +1,6 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
 
 const exampleCode = `<>
   <Row>
@@ -11,7 +11,7 @@ const exampleCode = `<>
   <span className="d-inline-block text-truncate" style={{ maxWidth: '150px' }}>
     Praeterea iter est quasdam res quas ex communi.
   </span>
-</>`;
+</>`
 
 const TextTruncation = () => (
   <>
@@ -33,6 +33,6 @@ const TextTruncation = () => (
       <FalconComponentCard.Body code={exampleCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default TextTruncation;
+export default TextTruncation

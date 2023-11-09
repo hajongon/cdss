@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const lightCode = `
 <Navbar bg="light" expand="lg">
@@ -36,7 +36,7 @@ const lightCode = `
     </Form>
   </Navbar.Collapse>
 </Navbar>
-`;
+`
 
 const darkCode = `
 <Navbar bg="dark" variant="dark" expand="lg" className='light'>
@@ -69,7 +69,7 @@ const darkCode = `
     </Form>
   </Navbar.Collapse>
 </Navbar>
-`;
+`
 
 const Navbars = () => (
   <>
@@ -100,6 +100,6 @@ const Navbars = () => (
       <FalconComponentCard.Body code={darkCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Navbars;
+export default Navbars

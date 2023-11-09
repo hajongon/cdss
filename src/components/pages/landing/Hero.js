@@ -1,18 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import bg1 from 'assets/img/generic/bg-1.jpg';
-import dashboardDark from 'assets/img/generic/dashboard-alt-dark.png';
-import dashboard from 'assets/img/generic/dashboard-alt.png';
-import Section from 'components/common/Section';
-import AppContext from 'context/Context';
-import React, { useContext } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { Typewriter } from 'react-simple-typewriter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import bg1 from 'assets/img/generic/bg-1.jpg'
+import dashboardDark from 'assets/img/generic/dashboard-alt-dark.png'
+import dashboard from 'assets/img/generic/dashboard-alt.png'
+import Section from 'components/common/Section'
+import AppContext from 'context/Context'
+import React, { useContext } from 'react'
+import { Button, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
   const {
     config: { isDark, isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   return (
     <Section
@@ -84,7 +84,7 @@ const Hero = () => {
         </Col>
       </Row>
     </Section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

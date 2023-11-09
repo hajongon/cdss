@@ -4,7 +4,7 @@ const timelineBadges = [
   { content: 'Remaining', type: 'warning' },
   { content: 'Responded', type: 'info' },
   { content: 'Closed', type: 'secondary' }
-];
+]
 
 export const timeline = [
   {
@@ -90,7 +90,7 @@ export const timeline = [
     year: '2022',
     day: '20 August'
   }
-];
+]
 
 export const tickets = [
   {
@@ -159,7 +159,7 @@ export const tickets = [
     },
     agent: 'Shajeeb'
   }
-];
+]
 
 export const notes = [
   {
@@ -218,4 +218,4 @@ export const notes = [
     time: '10:21 AM',
     agent: 'Khalid'
   }
-];
+]

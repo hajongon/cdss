@@ -1,6 +1,6 @@
-import GoogleMap from 'components/map/GoogleMap';
-import AppContext from 'context/Context';
-import React, { useContext } from 'react';
+import GoogleMap from 'components/map/GoogleMap'
+import AppContext from 'context/Context'
+import React, { useContext } from 'react'
 
 const MapDark = () => {
   return (
@@ -12,8 +12,8 @@ const MapDark = () => {
       mapStyle="Cobalt"
       className="vh-50 rounded-soft mt-5"
     />
-  );
-};
+  )
+}
 const MapLight = () => {
   return (
     <GoogleMap
@@ -24,14 +24,14 @@ const MapLight = () => {
       mapStyle="Default"
       className="vh-50 rounded-soft mt-5"
     ></GoogleMap>
-  );
-};
+  )
+}
 const EventDetailsGmap = () => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
-  return <>{isDark ? <MapDark /> : <MapLight />}</>;
-};
+  return <>{isDark ? <MapDark /> : <MapLight />}</>
+}
 
-export default EventDetailsGmap;
+export default EventDetailsGmap

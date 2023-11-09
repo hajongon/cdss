@@ -1,15 +1,15 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import L from 'leaflet';
-import 'leaflet.tilelayer.colorfilter';
-import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import AppContext from 'context/Context';
-import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
-import { markers } from 'data/dashboard/projectManagement';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import L from 'leaflet'
+import 'leaflet.tilelayer.colorfilter'
+import 'leaflet/dist/leaflet.css'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import AppContext from 'context/Context'
+import MarkerClusterGroup from '@changey/react-leaflet-markercluster'
+import { markers } from 'data/dashboard/projectManagement'
 
 const exampleCode = `
 function LayerComponent() {
@@ -96,7 +96,7 @@ function LeafletMap() {
   );
 }
 render(<LeafletMap/>)
-`;
+`
 
 const LeafletMapExample = () => {
   return (
@@ -138,7 +138,7 @@ const LeafletMapExample = () => {
         />
       </FalconComponentCard>
     </>
-  );
-};
+  )
+}
 
-export default LeafletMapExample;
+export default LeafletMapExample

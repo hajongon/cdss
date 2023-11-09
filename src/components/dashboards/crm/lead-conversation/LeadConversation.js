@@ -1,10 +1,10 @@
-import React from 'react';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import { Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import LeadConversationChart from './LeadConversationChart';
-import FalconCardFooterLink from 'components/common/FalconCardFooterLink';
+import React from 'react'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import { Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LeadConversationChart from './LeadConversationChart'
+import FalconCardFooterLink from 'components/common/FalconCardFooterLink'
 
 const LeadConversation = () => {
   return (
@@ -41,7 +41,7 @@ const LeadConversation = () => {
 
       <FalconCardFooterLink title="View Details" size="sm" />
     </Card>
-  );
-};
+  )
+}
 
-export default LeadConversation;
+export default LeadConversation

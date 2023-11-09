@@ -1,8 +1,8 @@
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import UsersAtTimeChart from './UsersAtTimeChart';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import UsersAtTimeChart from './UsersAtTimeChart'
 
 const UsersAtTime = () => {
   return (
@@ -32,7 +32,7 @@ const UsersAtTime = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default UsersAtTime;
+export default UsersAtTime

@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import educationData from 'data/educations';
-import experiences from 'data/experiences';
-import React, { useState } from 'react';
-import { Card, Collapse } from 'react-bootstrap';
-import EducationItem from '../EducationItem';
-import EducationForm from './EducationForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import educationData from 'data/educations'
+import experiences from 'data/experiences'
+import React, { useState } from 'react'
+import { Card, Collapse } from 'react-bootstrap'
+import EducationItem from '../EducationItem'
+import EducationForm from './EducationForm'
 
 const EducationSettings = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false)
   return (
     <Card className="mt-3">
       <FalconCardHeader title="Education" />
@@ -19,7 +19,7 @@ const EducationSettings = () => {
             alignItems="center"
             className="mb-4 text-primary cursor-pointer fs-0"
             onClick={() => {
-              setCollapsed(!collapsed);
+              setCollapsed(!collapsed)
             }}
           >
             <span className="circle-dashed">
@@ -43,7 +43,7 @@ const EducationSettings = () => {
         ))}
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default EducationSettings;
+export default EducationSettings

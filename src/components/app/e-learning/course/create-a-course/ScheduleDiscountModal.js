@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import { timezones } from 'data/events/timezones';
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AppContext from 'context/Context';
-import DatePicker from 'react-datepicker';
-import { useForm } from 'react-hook-form';
-import CustomDateInput from 'components/common/CustomDateInput';
+import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
+import { timezones } from 'data/events/timezones'
+import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AppContext from 'context/Context'
+import DatePicker from 'react-datepicker'
+import { useForm } from 'react-hook-form'
+import CustomDateInput from 'components/common/CustomDateInput'
 
 const ScheduleDiscountModal = ({
   setIsOpenScheduleModal,
@@ -14,7 +14,7 @@ const ScheduleDiscountModal = ({
 }) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const [formData, setFormData] = useState({
     startDate: null,
@@ -22,34 +22,34 @@ const ScheduleDiscountModal = ({
     timeZone: null,
     startTime: null,
     endTime: null
-  });
+  })
 
   const defaultValues = {
     timeZone: 'GMT-12:00/Etc/GMT-12'
-  };
-  const submittedValues = {};
+  }
+  const submittedValues = {}
   const { register, handleSubmit, setValue, reset } = useForm({
     defaultValues
-  });
+  })
 
   const handleChange = (name, value) => {
     setFormData({
       ...formData,
       [name]: value
-    });
-  };
+    })
+  }
   const onSubmit = data => {
-    console.log(data);
-    const keys = Object.keys(data);
+    console.log(data)
+    const keys = Object.keys(data)
     for (const key of keys) {
-      submittedValues[key] = '';
+      submittedValues[key] = ''
     }
-    const allValues = { ...submittedValues, ...defaultValues };
-    reset({ ...allValues });
-  };
+    const allValues = { ...submittedValues, ...defaultValues }
+    reset({ ...allValues })
+  }
   const handleClose = () => {
-    setIsOpenScheduleModal(!isOpenScheduleModal);
-  };
+    setIsOpenScheduleModal(!isOpenScheduleModal)
+  }
 
   return (
     <Modal
@@ -95,8 +95,8 @@ const ScheduleDiscountModal = ({
                 <DatePicker
                   selected={formData.startDate}
                   onChange={newDate => {
-                    handleChange('startDate', newDate);
-                    setValue('startDate', newDate);
+                    handleChange('startDate', newDate)
+                    setValue('startDate', newDate)
                   }}
                   customInput={
                     <CustomDateInput
@@ -120,8 +120,8 @@ const ScheduleDiscountModal = ({
                   timeCaption="Time"
                   dateFormat="h:mm"
                   onChange={newDate => {
-                    handleChange('startTime', newDate);
-                    setValue('startTime', newDate);
+                    handleChange('startTime', newDate)
+                    setValue('startTime', newDate)
                   }}
                   customInput={
                     <CustomDateInput
@@ -142,8 +142,8 @@ const ScheduleDiscountModal = ({
                 <DatePicker
                   selected={formData.endDate}
                   onChange={newDate => {
-                    handleChange('endDate', newDate);
-                    setValue('endDate', newDate);
+                    handleChange('endDate', newDate)
+                    setValue('endDate', newDate)
                   }}
                   customInput={
                     <CustomDateInput
@@ -169,8 +169,8 @@ const ScheduleDiscountModal = ({
                   timeCaption="Time"
                   dateFormat="h:mm"
                   onChange={newDate => {
-                    handleChange('endTime', newDate);
-                    setValue('endTime', newDate);
+                    handleChange('endTime', newDate)
+                    setValue('endTime', newDate)
                   }}
                   customInput={
                     <CustomDateInput
@@ -208,12 +208,12 @@ const ScheduleDiscountModal = ({
         </Modal.Footer>
       </Form>
     </Modal>
-  );
-};
+  )
+}
 
 ScheduleDiscountModal.propTypes = {
   setIsOpenScheduleModal: PropTypes.func.isRequired,
   isOpenScheduleModal: PropTypes.bool.isRequired
-};
+}
 
-export default ScheduleDiscountModal;
+export default ScheduleDiscountModal

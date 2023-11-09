@@ -1,28 +1,28 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import EcomStat from './EcomStat';
-import GreetingCard from './greetings/GreetingCard';
-import TotalSales from './totalsales/TotalSales';
-import { totalSale } from 'data/dashboard/ecom';
-import TopProducts from '../default/TopProducts';
-import { topProducts } from 'data/dashboard/ecom';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import EcomStat from './EcomStat'
+import GreetingCard from './greetings/GreetingCard'
+import TotalSales from './totalsales/TotalSales'
+import { totalSale } from 'data/dashboard/ecom'
+import TopProducts from '../default/TopProducts'
+import { topProducts } from 'data/dashboard/ecom'
 import {
   notifications,
   products,
   saleItems,
   totalOrder
-} from 'data/dashboard/ecom';
-import { weeklySalesData } from 'data/dashboard/default';
-import { marketShare } from 'data/dashboard/ecom';
-import WeeklySales from 'components/dashboards/default/WeeklySales';
-import MarketShare from 'components/dashboards/default/MarketShare';
-import TotalOrder from 'components/dashboards/e-commerce/TotalOrder';
-import ShoppingCart from './ShoppingCart';
-import ReturningCustomer from './ReturningCustomer/ReturningCustomer';
-import SalesPosLocation from './SalesPosLocation/SalesPosLocation';
-import ProductShare from './ProductShare/ProductShare';
-import BestSellingProducts from './BestSellingProducts';
-import RecentPurchases from 'components/dashboards/e-commerce/recent-purchases/RecentPurchases';
+} from 'data/dashboard/ecom'
+import { weeklySalesData } from 'data/dashboard/default'
+import { marketShare } from 'data/dashboard/ecom'
+import WeeklySales from 'components/dashboards/default/WeeklySales'
+import MarketShare from 'components/dashboards/default/MarketShare'
+import TotalOrder from 'components/dashboards/e-commerce/TotalOrder'
+import ShoppingCart from './ShoppingCart'
+import ReturningCustomer from './ReturningCustomer/ReturningCustomer'
+import SalesPosLocation from './SalesPosLocation/SalesPosLocation'
+import ProductShare from './ProductShare/ProductShare'
+import BestSellingProducts from './BestSellingProducts'
+import RecentPurchases from 'components/dashboards/e-commerce/recent-purchases/RecentPurchases'
 
 const Ecommerce = () => {
   return (
@@ -84,7 +84,7 @@ const Ecommerce = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Ecommerce;
+export default Ecommerce

@@ -1,7 +1,7 @@
-import { account, team } from 'data/support-desk/quickLinksData';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import { account, team } from 'data/support-desk/quickLinksData'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 const AdminItem = ({ item }) => {
   return (
@@ -20,8 +20,8 @@ const AdminItem = ({ item }) => {
         <h6 className="w-75 mx-auto text-600 mb-x1">{item.description}</h6>
       </div>
     </Col>
-  );
-};
+  )
+}
 
 AdminItem.propTypes = {
   item: PropTypes.shape({
@@ -30,7 +30,7 @@ AdminItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   })
-};
+}
 
 export const Team = () => {
   return (
@@ -46,8 +46,8 @@ export const Team = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const Account = () => {
   return (
@@ -63,5 +63,5 @@ export const Account = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}

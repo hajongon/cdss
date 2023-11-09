@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import AppContext from 'context/Context';
-import googleMapStyles from 'helpers/googleMapStyles';
+import React, { useContext, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import AppContext from 'context/Context'
+import googleMapStyles from 'helpers/googleMapStyles'
 import {
   GoogleMap as ReactGoogleMap,
   Marker,
   InfoWindow,
   useJsApiLoader
-} from '@react-google-maps/api';
-import mapMarker from '../../../src/assets/img/icons/map-marker.png';
+} from '@react-google-maps/api'
+import mapMarker from '../../../src/assets/img/icons/map-marker.png'
 
 const GoogleMap = ({
   mapStyle,
@@ -20,28 +20,28 @@ const GoogleMap = ({
 }) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY
-  });
+  })
 
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
-  const [showInfoWindow, setShowInfoWindow] = useState(false);
-  const [mapStyles, setMapStyles] = useState(mapStyle);
+  const [showInfoWindow, setShowInfoWindow] = useState(false)
+  const [mapStyles, setMapStyles] = useState(mapStyle)
 
   const options = {
     mapTypeControl: true,
     streetViewControl: true,
     fullscreenControl: true,
     styles: googleMapStyles[mapStyles]
-  };
+  }
 
   useEffect(() => {
-    if (darkStyle && isDark) setMapStyles(darkStyle);
-    else setMapStyles(mapStyle);
-  }, [isDark]);
+    if (darkStyle && isDark) setMapStyles(darkStyle)
+    else setMapStyles(mapStyle)
+  }, [isDark])
 
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded) return <div>Loading...</div>
 
   return (
     <div className={`h-100 ${className}`} {...rest}>
@@ -70,8 +70,8 @@ const GoogleMap = ({
         </Marker>
       </ReactGoogleMap>
     </div>
-  );
-};
+  )
+}
 
 GoogleMap.propTypes = {
   mapStyle: PropTypes.oneOf([
@@ -102,6 +102,6 @@ GoogleMap.propTypes = {
     lat: PropTypes.number,
     lng: PropTypes.number
   })
-};
+}
 
-export default GoogleMap;
+export default GoogleMap

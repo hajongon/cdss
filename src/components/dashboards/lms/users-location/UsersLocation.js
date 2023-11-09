@@ -1,46 +1,46 @@
-import React, { useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { countryData } from 'data/countryData';
-import { UsersLocationTableData } from 'data/dashboard/lms';
-import { Button, Card } from 'react-bootstrap';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import Flex from 'components/common/Flex';
-import WorldMap from 'components/dashboards/analytics/users-by-country/WorldMap';
-import UsersLocationTable from './UsersLocationTable';
+import React, { useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { countryData } from 'data/countryData'
+import { UsersLocationTableData } from 'data/dashboard/lms'
+import { Button, Card } from 'react-bootstrap'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import Flex from 'components/common/Flex'
+import WorldMap from 'components/dashboards/analytics/users-by-country/WorldMap'
+import UsersLocationTable from './UsersLocationTable'
 
 const UsersLocation = () => {
-  const chartRef = useRef(null);
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const [maxZoomLevel] = useState(5);
-  const [minZoomLevel] = useState(1);
+  const chartRef = useRef(null)
+  const [zoomLevel, setZoomLevel] = useState(1)
+  const [maxZoomLevel] = useState(5)
+  const [minZoomLevel] = useState(1)
 
   const handleMapReset = () => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'restore'
-    });
-  };
+    })
+  }
   const handleZoomIn = () => {
     if (zoomLevel < maxZoomLevel) {
-      setZoomLevel(zoomLevel + 1);
+      setZoomLevel(zoomLevel + 1)
     }
     chartRef.current.getEchartsInstance().setOption({
       series: {
         zoom: zoomLevel + 1
       }
-    });
-  };
+    })
+  }
   const handleZoomOut = () => {
     if (zoomLevel > minZoomLevel) {
-      setZoomLevel(zoomLevel - 1);
+      setZoomLevel(zoomLevel - 1)
     }
     chartRef.current.getEchartsInstance().setOption({
       series: {
         zoom: zoomLevel - 1
       }
-    });
-  };
+    })
+  }
 
   return (
     <Card className="h-100">
@@ -107,7 +107,7 @@ const UsersLocation = () => {
         <FalconLink title="View all" className="px-0 fw-medium" />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default UsersLocation;
+export default UsersLocation

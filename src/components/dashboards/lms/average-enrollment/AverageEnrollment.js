@@ -1,21 +1,21 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import CardDropdown from 'components/common/CardDropdown';
-import Flex from 'components/common/Flex';
-import AverageEnrollmentChart from './AverageEnrollmentChart';
+import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import CardDropdown from 'components/common/CardDropdown'
+import Flex from 'components/common/Flex'
+import AverageEnrollmentChart from './AverageEnrollmentChart'
 
 const AverageEnrollment = ({ data }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   const handleLegendToggle = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name
-    });
-    event.target.closest('button').classList.toggle('opacity-50');
-  };
+    })
+    event.target.closest('button').classList.toggle('opacity-50')
+  }
 
   return (
     <Card>
@@ -69,14 +69,14 @@ const AverageEnrollment = ({ data }) => {
         />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 AverageEnrollment.propTypes = {
   data: PropTypes.shape({
     onSaleCourse: PropTypes.array,
     regularPaidCourse: PropTypes.array
   })
-};
+}
 
-export default AverageEnrollment;
+export default AverageEnrollment

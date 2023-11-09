@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <>
@@ -18,7 +18,7 @@ const exampleCode = `
     <Form.Control type="password" placeholder="Password" />
   </FloatingLabel>
 </>
-`;
+`
 const textAreaCodes = `
 <>
   <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
@@ -32,7 +32,7 @@ const textAreaCodes = `
     />
   </FloatingLabel>
 </>
-`;
+`
 const selectsCode = `
 <FloatingLabel controlId="floatingSelect" label="Works with selects">
   <Form.Select aria-label="Floating label select example">
@@ -42,7 +42,7 @@ const selectsCode = `
     <option value="3">Three</option>
   </Form.Select>
 </FloatingLabel>
-`;
+`
 const layoutCode = `
 <Row className="g-2">
   <Col md>
@@ -61,7 +61,7 @@ const layoutCode = `
     </FloatingLabel>
   </Col>
 </Row>
-`;
+`
 
 const customizingRenderCode = `
 <>
@@ -82,7 +82,7 @@ const customizingRenderCode = `
     <label htmlFor="floatingPasswordCustom">Password</label>
   </Form.Floating>
 </>
-`;
+`
 
 const validationCode = `
 <>
@@ -105,7 +105,7 @@ const validationCode = `
     <label htmlFor="floatingPasswordCustom">Email address</label>
   </Form.Floating>
 </>
-`;
+`
 
 const FloatingLabels = () => (
   <>
@@ -197,6 +197,6 @@ const FloatingLabels = () => (
       <FalconComponentCard.Body code={customizingRenderCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default FloatingLabels;
+export default FloatingLabels

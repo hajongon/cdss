@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as echarts from 'echarts/core';
-import { LineChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import * as echarts from 'echarts/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   TitleComponent
-} from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-import BasicECharts from 'components/common/BasicEChart';
-import { getColor } from 'helpers/utils';
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
+import BasicECharts from 'components/common/BasicEChart'
+import { getColor } from 'helpers/utils'
 
 echarts.use([
   TitleComponent,
@@ -17,7 +17,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const getOptions = (data, grid) => ({
   tooltip: {
@@ -35,7 +35,7 @@ const getOptions = (data, grid) => ({
     }
   ],
   grid
-});
+})
 
 const StatsChart = ({ data, grid }) => {
   return (
@@ -44,8 +44,8 @@ const StatsChart = ({ data, grid }) => {
       options={getOptions(data, grid)}
       style={{ height: '1.875rem' }}
     />
-  );
-};
+  )
+}
 
 StatsChart.propTypes = {
   data: PropTypes.array.isRequired,
@@ -55,6 +55,6 @@ StatsChart.propTypes = {
     top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     bottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   })
-};
+}
 
-export default StatsChart;
+export default StatsChart

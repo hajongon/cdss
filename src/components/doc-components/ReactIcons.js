@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { BsFillAlarmFill, BsFacebook } from 'react-icons/bs';
-import { FiActivity } from 'react-icons/fi';
-import { MdAddShoppingCart } from 'react-icons/md';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { BsFillAlarmFill, BsFacebook } from 'react-icons/bs'
+import { FiActivity } from 'react-icons/fi'
+import { MdAddShoppingCart } from 'react-icons/md'
 
 const exampleCode = `<div>
   <div>
@@ -18,7 +18,7 @@ const exampleCode = `<div>
     <BsFillAlarmFill className="text-twitter fs-3 me-3" />
     <BsFillAlarmFill className="text-youtube fs-3" />
   </div>
- </div>`;
+ </div>`
 
 const featherIconCode = `<div>
   <div>
@@ -31,7 +31,7 @@ const featherIconCode = `<div>
     <FiActivity className="text-twitter fs-3 me-3"/>
     <FiActivity className="text-youtube fs-3 me-3"/>
   </div>
-</div>`;
+</div>`
 
 const materialIconCode = `<div>
   <div>
@@ -44,7 +44,7 @@ const materialIconCode = `<div>
     <MdAddShoppingCart className="text-twitter fs-3 me-3"/>
     <MdAddShoppingCart className="text-youtube fs-3 me-3"/>
   </div>
-</div>`;
+</div>`
 
 const ReactIcons = () => (
   <>
@@ -92,6 +92,6 @@ const ReactIcons = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default ReactIcons;
+export default ReactIcons

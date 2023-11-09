@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, Modal } from 'react-bootstrap';
-import { v4 as uuid } from 'uuid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import AppContext from 'context/Context';
-import DatePicker from 'react-datepicker';
+import React, { useContext, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Form, Modal } from 'react-bootstrap'
+import { v4 as uuid } from 'uuid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import AppContext from 'context/Context'
+import DatePicker from 'react-datepicker'
 
 const AddScheduleModal = ({
   setIsOpenScheduleModal,
@@ -19,24 +19,24 @@ const AddScheduleModal = ({
 }) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({})
 
   const handleClose = () => {
-    setIsOpenScheduleModal(!isOpenScheduleModal);
-  };
+    setIsOpenScheduleModal(!isOpenScheduleModal)
+  }
 
   const handleChange = ({ target }) => {
-    let name = target.name;
-    let value = name === 'allDay' ? target.checked : target.value;
-    setFormData({ ...formData, [name]: value });
-  };
+    let name = target.name
+    let value = name === 'allDay' ? target.checked : target.value
+    setFormData({ ...formData, [name]: value })
+  }
   const handleSubmit = e => {
-    e.preventDefault();
-    setInitialEvents([...initialEvents, { id: uuid(), ...formData }]);
-    setIsOpenScheduleModal(false);
-  };
+    e.preventDefault()
+    setInitialEvents([...initialEvents, { id: uuid(), ...formData }])
+    setIsOpenScheduleModal(false)
+  }
 
   useEffect(() => {
     if (isOpenScheduleModal) {
@@ -44,12 +44,12 @@ const AddScheduleModal = ({
         ...formData,
         start: scheduleStartDate,
         end: scheduleEndDate
-      });
+      })
     } else {
-      setScheduleStartDate(null);
-      setScheduleEndDate(null);
+      setScheduleStartDate(null)
+      setScheduleEndDate(null)
     }
-  }, [isOpenScheduleModal, scheduleStartDate, scheduleEndDate]);
+  }, [isOpenScheduleModal, scheduleStartDate, scheduleEndDate])
 
   return (
     <Modal
@@ -80,8 +80,8 @@ const AddScheduleModal = ({
             <DatePicker
               selected={scheduleStartDate}
               onChange={date => {
-                setScheduleStartDate(date);
-                setFormData({ ...formData, start: date });
+                setScheduleStartDate(date)
+                setFormData({ ...formData, start: date })
               }}
               className="form-control"
               placeholderText="MM-DD-YYYY H:M"
@@ -94,8 +94,8 @@ const AddScheduleModal = ({
             <DatePicker
               selected={scheduleEndDate}
               onChange={date => {
-                setScheduleEndDate(date);
-                setFormData({ ...formData, end: date });
+                setScheduleEndDate(date)
+                setFormData({ ...formData, end: date })
               }}
               className="form-control"
               placeholderText="MM-DD-YYYY H:M"
@@ -164,8 +164,8 @@ const AddScheduleModal = ({
         </Modal.Footer>
       </Form>
     </Modal>
-  );
-};
+  )
+}
 
 AddScheduleModal.propTypes = {
   setIsOpenScheduleModal: PropTypes.func.isRequired,
@@ -176,6 +176,6 @@ AddScheduleModal.propTypes = {
   setScheduleStartDate: PropTypes.func.isRequired,
   scheduleEndDate: PropTypes.instanceOf(Date),
   setScheduleEndDate: PropTypes.func.isRequired
-};
+}
 
-export default AddScheduleModal;
+export default AddScheduleModal

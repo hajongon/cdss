@@ -1,20 +1,20 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext, useState } from 'react';
-import { Offcanvas, Button, ButtonGroup, Form } from 'react-bootstrap';
-import defaultModeImg from 'assets/img/generic/falcon-mode-default.jpg';
-import darkModeImg from 'assets/img/generic/falcon-mode-dark.jpg';
-import invertedImg from 'assets/img/generic/inverted.png';
-import cardImg from 'assets/img/generic/card.png';
-import vibrantImg from 'assets/img/generic/vibrant.png';
-import transparentImg from 'assets/img/generic/default.png';
-import leftArrowFromLeft from 'assets/img/icons/left-arrow-from-left.svg';
-import arrowsH from 'assets/img/icons/arrows-h.svg';
-import paragraph from 'assets/img/icons/paragraph.svg';
-import settings from 'assets/img/icons/spot-illustrations/settings.png';
-import Flex from 'components/common/Flex';
-import AppContext from 'context/Context';
-import RadioItem from './RadioItem';
-import SoftBadge from 'components/common/SoftBadge';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext, useState } from 'react'
+import { Offcanvas, Button, ButtonGroup, Form } from 'react-bootstrap'
+import defaultModeImg from 'assets/img/generic/falcon-mode-default.jpg'
+import darkModeImg from 'assets/img/generic/falcon-mode-dark.jpg'
+import invertedImg from 'assets/img/generic/inverted.png'
+import cardImg from 'assets/img/generic/card.png'
+import vibrantImg from 'assets/img/generic/vibrant.png'
+import transparentImg from 'assets/img/generic/default.png'
+import leftArrowFromLeft from 'assets/img/icons/left-arrow-from-left.svg'
+import arrowsH from 'assets/img/icons/arrows-h.svg'
+import paragraph from 'assets/img/icons/paragraph.svg'
+import settings from 'assets/img/icons/spot-illustrations/settings.png'
+import Flex from 'components/common/Flex'
+import AppContext from 'context/Context'
+import RadioItem from './RadioItem'
+import SoftBadge from 'components/common/SoftBadge'
 
 const SettingsPanel = () => {
   const {
@@ -29,7 +29,7 @@ const SettingsPanel = () => {
     },
     setConfig,
     configDispatch
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const [navbars] = useState([
     {
@@ -48,7 +48,7 @@ const SettingsPanel = () => {
       name: 'vibrant',
       image: vibrantImg
     }
-  ]);
+  ])
 
   return (
     <Offcanvas
@@ -75,7 +75,7 @@ const SettingsPanel = () => {
               className="rounded-pill mt-0 mb-0"
               style={{ fontSize: '12px' }}
               onClick={() => {
-                configDispatch({ type: 'RESET' });
+                configDispatch({ type: 'RESET' })
               }}
             >
               <FontAwesomeIcon
@@ -230,7 +230,7 @@ const SettingsPanel = () => {
       </Offcanvas.Body>
       {/* </ScrollBarCustom> */}
     </Offcanvas>
-  );
-};
+  )
+}
 
-export default SettingsPanel;
+export default SettingsPanel

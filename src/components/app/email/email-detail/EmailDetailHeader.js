@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import { Card, OverlayTrigger, Tooltip, Dropdown } from 'react-bootstrap';
-import IconButton from 'components/common/IconButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import { Card, OverlayTrigger, Tooltip, Dropdown } from 'react-bootstrap'
+import IconButton from 'components/common/IconButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useNavigate } from 'react-router-dom'
 
 const ItemButton = ({ tootltip, icon, className, onClick }) => {
   return (
@@ -25,11 +25,11 @@ const ItemButton = ({ tootltip, icon, className, onClick }) => {
         />
       </div>
     </OverlayTrigger>
-  );
-};
+  )
+}
 
 const EmailDetailHeader = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <Card className="mb-3">
@@ -39,7 +39,7 @@ const EmailDetailHeader = () => {
             tootltip="Back to inbox"
             icon="arrow-left"
             onClick={() => {
-              navigate('/email/inbox');
+              navigate('/email/inbox')
             }}
           />
           <span className="mx-1 mx-sm-2 text-300">|</span>
@@ -98,14 +98,14 @@ const EmailDetailHeader = () => {
         </Flex>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 ItemButton.propTypes = {
   tootltip: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   className: PropTypes.string,
   onClick: PropTypes.func
-};
+}
 
-export default EmailDetailHeader;
+export default EmailDetailHeader

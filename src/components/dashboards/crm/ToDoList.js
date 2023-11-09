@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { toDoList } from 'data/dashboard/crm';
-import CardDropdown from 'components/common/CardDropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconItem from 'components/common/icon/IconItem';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { toDoList } from 'data/dashboard/crm'
+import CardDropdown from 'components/common/CardDropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconItem from 'components/common/icon/IconItem'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 
 const ToDoListItem = ({ item, index, handleChange }) => {
   return (
@@ -55,17 +55,17 @@ const ToDoListItem = ({ item, index, handleChange }) => {
         />
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 const ToDoList = () => {
-  const [todoItems, setTodoItems] = useState(toDoList);
+  const [todoItems, setTodoItems] = useState(toDoList)
   const handleChange = (id, completed) => {
     const updatedTodos = todoItems.map(item =>
       item.id === id ? { ...item, completed } : item
-    );
-    setTodoItems(updatedTodos);
-  };
+    )
+    setTodoItems(updatedTodos)
+  }
   return (
     <Card className="h-100">
       <Card.Header className="border-bottom">
@@ -110,8 +110,8 @@ const ToDoList = () => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 ToDoListItem.propTypes = {
   item: PropTypes.shape({
@@ -121,6 +121,6 @@ ToDoListItem.propTypes = {
   }),
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired
-};
+}
 
-export default ToDoList;
+export default ToDoList

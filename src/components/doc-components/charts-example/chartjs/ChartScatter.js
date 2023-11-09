@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { getColor, rgbaColor } from 'helpers/utils';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import React from 'react';
-import { Scatter } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { getColor, rgbaColor } from 'helpers/utils'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import React from 'react'
+import { Scatter } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -141,7 +141,7 @@ const chartCode = `function ChartOptions() {
     <Scatter data={data} options={options}  width={200}/>
   );
 
-}`;
+}`
 
 const ChartScatter = () => {
   return (
@@ -158,7 +158,7 @@ const ChartScatter = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartScatter;
+export default ChartScatter

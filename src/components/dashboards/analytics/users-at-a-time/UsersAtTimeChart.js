@@ -1,21 +1,21 @@
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { HeatmapChart } from 'echarts/charts';
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { HeatmapChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
 import {
   getColor,
   getPastDates,
   getRandomNumber,
   rgbaColor
-} from 'helpers/utils';
-import React from 'react';
+} from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -24,7 +24,7 @@ echarts.use([
   HeatmapChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const hours = [
   '12 AM',
@@ -51,12 +51,12 @@ const hours = [
   '9 PM',
   '10 PM',
   '11 PM'
-];
+]
 
-const data = [];
+const data = []
 for (let i = 0; i < 24; i += 1) {
   for (let j = 0; j < 7; j += 1) {
-    data.push([j, i, getRandomNumber(20, 300)]);
+    data.push([j, i, getRandomNumber(20, 300)])
   }
 }
 
@@ -74,8 +74,8 @@ const tooltipFormatter = params => {
   }</span>
           </p>
         </div>
-      </div>`;
-};
+      </div>`
+}
 
 const getOptions = () => ({
   gradientColor: [getColor('info'), getColor('primary')],
@@ -170,7 +170,7 @@ const getOptions = () => ({
     bottom: '15%',
     top: 0
   }
-});
+})
 
 const UsersAtTimeChart = () => {
   return (
@@ -179,7 +179,7 @@ const UsersAtTimeChart = () => {
       option={getOptions()}
       style={{ height: '24.75rem' }}
     />
-  );
-};
+  )
+}
 
-export default UsersAtTimeChart;
+export default UsersAtTimeChart

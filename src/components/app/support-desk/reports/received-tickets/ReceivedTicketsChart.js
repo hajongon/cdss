@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { getColor, getPastDates, rgbaColor } from 'helpers/utils';
-import { BarChart } from 'echarts/charts';
+import React from 'react'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { getColor, getPastDates, rgbaColor } from 'helpers/utils'
+import { BarChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import dayjs from 'dayjs';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import dayjs from 'dayjs'
 
 echarts.use([
   TitleComponent,
@@ -19,7 +19,7 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const getOptions = () => ({
   color: [getColor('primary'), getColor('info'), getColor('gray-300')],
@@ -130,7 +130,7 @@ const getOptions = () => ({
     right: 0,
     containLabel: true
   }
-});
+})
 
 const ReceivedTicketsChart = () => {
   return (
@@ -139,7 +139,7 @@ const ReceivedTicketsChart = () => {
       option={getOptions()}
       style={{ height: '23.5rem', minWidth: '52rem' }}
     />
-  );
-};
+  )
+}
 
-export default ReceivedTicketsChart;
+export default ReceivedTicketsChart

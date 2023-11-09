@@ -1,6 +1,6 @@
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Form, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ChatContactsSearch = () => (
   <Form className="contacts-search-wrapper" onSubmit={e => e.preventDefault()}>
@@ -21,6 +21,6 @@ const ChatContactsSearch = () => (
       <FontAwesomeIcon icon="search" className="fs--1" />
     </Button>
   </Form>
-);
+)
 
-export default ChatContactsSearch;
+export default ChatContactsSearch

@@ -1,24 +1,24 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
   <ProgressBar now={60} />
-`;
+`
 
 const labelCode = `
   <ProgressBar now={60} label='60%' />;
-`;
+`
 const heightCode = `
   <>
     <ProgressBar now={60} style={{ height:'1px' }} className='mb-3' />
     <ProgressBar now={60} style={{ height:'10px' }} className='mb-3' />
     <ProgressBar now={60} style={{ height:'20px' }} className='mb-3' />
   </>
-`;
+`
 const bgCode = `
   <>
     <ProgressBar variant="success" now={30} className='mb-3' />
@@ -26,7 +26,7 @@ const bgCode = `
     <ProgressBar variant="warning" now={50} className='mb-3' />
     <ProgressBar variant="danger" now={60} className='mb-3' />
   </>
-`;
+`
 const stripedCode = `
   <>
     <ProgressBar striped  variant="success" now={30} className='mb-3' />
@@ -34,14 +34,14 @@ const stripedCode = `
     <ProgressBar striped  variant="warning" now={50} className='mb-3' />
     <ProgressBar striped  variant="danger" now={60} className='mb-3' />
   </>
-`;
+`
 const stackedCode = `
   <ProgressBar>
     <ProgressBar variant="primary" now={35} key={1} />
     <ProgressBar variant="success" now={20} key={2} />
     <ProgressBar variant="info" now={10} key={3} />
   </ProgressBar>
-`;
+`
 const animatedCode = `
 function AnimatedProgressBar() {
   const [animated, setAnimated] = useState(true);
@@ -53,7 +53,7 @@ function AnimatedProgressBar() {
       </Button>
     </>
   );
-}`;
+}`
 
 const Progress = () => (
   <>
@@ -122,6 +122,6 @@ const Progress = () => (
       <FalconComponentCard.Body code={animatedCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Progress;
+export default Progress

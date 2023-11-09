@@ -1,8 +1,8 @@
-import React from 'react';
-import { reports } from 'data/support-desk/quickLinksData';
-import { Card, Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { reports } from 'data/support-desk/quickLinksData'
+import { Card, Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
 
 const ReportsItem = ({ report }) => {
   return (
@@ -22,8 +22,8 @@ const ReportsItem = ({ report }) => {
         </div>
       </Flex>
     </Col>
-  );
-};
+  )
+}
 
 ReportsItem.propTypes = {
   report: PropTypes.shape({
@@ -31,7 +31,7 @@ ReportsItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   })
-};
+}
 
 const Reports = () => {
   return (
@@ -60,7 +60,7 @@ const Reports = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Reports;
+export default Reports

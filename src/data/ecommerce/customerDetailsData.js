@@ -30,7 +30,7 @@ export const accountInfo = [
     value: 'No VAT number',
     active: false
   }
-];
+]
 
 export const billingInfo = [
   {
@@ -61,7 +61,7 @@ export const billingInfo = [
     active: true,
     important: true
   }
-];
+]
 
 export const logs = [
   {
@@ -118,4 +118,4 @@ export const logs = [
     date: '2019/02/01',
     time: '12:29:34'
   }
-];
+]

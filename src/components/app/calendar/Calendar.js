@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import {
   Button,
   Card,
@@ -6,33 +6,33 @@ import {
   OverlayTrigger,
   Row,
   Tooltip
-} from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from 'components/common/IconButton';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
-import interactionPlugin from '@fullcalendar/interaction';
-import events from 'data/calendar/events';
-import AddScheduleModal from './AddScheduleModal';
-import CalendarEventModal from './CalendarEventModal';
-import DropdownFilter from 'components/common/DropdownFilter';
-import AppContext from 'context/Context';
+} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconButton from 'components/common/IconButton'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import listPlugin from '@fullcalendar/list'
+import interactionPlugin from '@fullcalendar/interaction'
+import events from 'data/calendar/events'
+import AddScheduleModal from './AddScheduleModal'
+import CalendarEventModal from './CalendarEventModal'
+import DropdownFilter from 'components/common/DropdownFilter'
+import AppContext from 'context/Context'
 
 const Calendar = () => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
-  const calendarRef = useRef();
-  const [title, setTitle] = useState('');
-  const [calendarApi, setCalendarApi] = useState({});
-  const [currentFilter, setCurrentFilter] = useState('Month View');
-  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false);
-  const [isOpenEventModal, setIsOpenEventModal] = useState(false);
-  const [modalEventContent, setModalEventContent] = useState({});
-  const [scheduleStartDate, setScheduleStartDate] = useState();
-  const [scheduleEndDate, setScheduleEndDate] = useState();
+  } = useContext(AppContext)
+  const calendarRef = useRef()
+  const [title, setTitle] = useState('')
+  const [calendarApi, setCalendarApi] = useState({})
+  const [currentFilter, setCurrentFilter] = useState('Month View')
+  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false)
+  const [isOpenEventModal, setIsOpenEventModal] = useState(false)
+  const [modalEventContent, setModalEventContent] = useState({})
+  const [scheduleStartDate, setScheduleStartDate] = useState()
+  const [scheduleEndDate, setScheduleEndDate] = useState()
 
   const eventList = events.reduce(
     (acc, event) =>
@@ -40,62 +40,62 @@ const Calendar = () => {
         ? acc.concat(event.schedules.concat(event))
         : acc.concat(event),
     []
-  );
+  )
 
   const eventTimeFormat = {
     hour: 'numeric',
     minute: '2-digit',
     omitZeroMinute: true,
     meridiem: true
-  };
+  }
 
   const handleEventClick = info => {
     if (info.event.url) {
-      window.open(info.event.url);
-      info.jsEvent.preventDefault();
+      window.open(info.event.url)
+      info.jsEvent.preventDefault()
     } else {
-      setModalEventContent(info);
-      setIsOpenEventModal(true);
+      setModalEventContent(info)
+      setIsOpenEventModal(true)
     }
-  };
+  }
 
-  const [initialEvents, setInitialEvents] = useState(eventList);
+  const [initialEvents, setInitialEvents] = useState(eventList)
   const viewName = [
     'Month View',
     'Week View',
     'Day View',
     'List View',
     'Year View'
-  ];
+  ]
 
   const handleFilter = filter => {
-    setCurrentFilter(filter);
+    setCurrentFilter(filter)
     switch (filter) {
       case 'Month View':
-        calendarApi.changeView('dayGridMonth');
-        setTitle(calendarApi.getCurrentData().viewTitle);
-        break;
+        calendarApi.changeView('dayGridMonth')
+        setTitle(calendarApi.getCurrentData().viewTitle)
+        break
       case 'Week View':
-        calendarApi.changeView('timeGridWeek');
-        setTitle(calendarApi.getCurrentData().viewTitle);
-        break;
+        calendarApi.changeView('timeGridWeek')
+        setTitle(calendarApi.getCurrentData().viewTitle)
+        break
       case 'Day View':
-        calendarApi.changeView('timeGridDay');
-        setTitle(calendarApi.getCurrentData().viewTitle);
-        break;
+        calendarApi.changeView('timeGridDay')
+        setTitle(calendarApi.getCurrentData().viewTitle)
+        break
       case 'List View':
-        calendarApi.changeView('listWeek');
-        setTitle(calendarApi.getCurrentData().viewTitle);
-        break;
+        calendarApi.changeView('listWeek')
+        setTitle(calendarApi.getCurrentData().viewTitle)
+        break
       default:
-        calendarApi.changeView('listYear');
-        setTitle(calendarApi.getCurrentData().viewTitle);
+        calendarApi.changeView('listYear')
+        setTitle(calendarApi.getCurrentData().viewTitle)
     }
-  };
+  }
 
   useEffect(() => {
-    setCalendarApi(calendarRef.current.getApi());
-  }, []);
+    setCalendarApi(calendarRef.current.getApi())
+  }, [])
 
   return (
     <>
@@ -115,8 +115,8 @@ const Calendar = () => {
                   variant="link"
                   className="icon-item icon-item-sm icon-item-hover shadow-none p-0 me-1 ms-md-2"
                   onClick={() => {
-                    calendarApi.prev();
-                    setTitle(calendarApi.getCurrentData().viewTitle);
+                    calendarApi.prev()
+                    setTitle(calendarApi.getCurrentData().viewTitle)
                   }}
                 >
                   <FontAwesomeIcon icon="arrow-left" />
@@ -134,8 +134,8 @@ const Calendar = () => {
                   variant="link"
                   className="icon-item icon-item-sm icon-item-hover shadow-none p-0 me-lg-2"
                   onClick={() => {
-                    calendarApi.next();
-                    setTitle(calendarApi.getCurrentData().viewTitle);
+                    calendarApi.next()
+                    setTitle(calendarApi.getCurrentData().viewTitle)
                   }}
                 >
                   <FontAwesomeIcon icon="arrow-right" />
@@ -152,8 +152,8 @@ const Calendar = () => {
                 size="sm"
                 variant="falcon-primary"
                 onClick={() => {
-                  calendarApi.today();
-                  setTitle(calendarApi.getCurrentData().viewTitle);
+                  calendarApi.today()
+                  setTitle(calendarApi.getCurrentData().viewTitle)
                 }}
               >
                 Today
@@ -170,7 +170,7 @@ const Calendar = () => {
                 // transform="shrink-3"
                 size="sm"
                 onClick={() => {
-                  setIsOpenScheduleModal(!isOpenScheduleModal);
+                  setIsOpenScheduleModal(!isOpenScheduleModal)
                 }}
               >
                 Add Schedule
@@ -208,9 +208,9 @@ const Calendar = () => {
             selectable
             selectMirror
             select={info => {
-              setIsOpenScheduleModal(true);
-              setScheduleStartDate(info.start);
-              setScheduleEndDate(info.end);
+              setIsOpenScheduleModal(true)
+              setScheduleStartDate(info.start)
+              setScheduleEndDate(info.end)
             }}
             eventTimeFormat={eventTimeFormat}
             eventClick={handleEventClick}
@@ -236,7 +236,7 @@ const Calendar = () => {
         modalEventContent={modalEventContent}
       />
     </>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

@@ -1,9 +1,9 @@
-import React from 'react';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import OrderInfo from './OrderInfo';
-import OrderedProducts from './OrderedProducts';
-import SoftBadge from 'components/common/SoftBadge';
+import React from 'react'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import OrderInfo from './OrderInfo'
+import OrderedProducts from './OrderedProducts'
+import SoftBadge from 'components/common/SoftBadge'
 
 const OrderDetails = () => {
   return (
@@ -26,7 +26,7 @@ const OrderDetails = () => {
       <OrderInfo />
       <OrderedProducts />
     </>
-  );
-};
+  )
+}
 
-export default OrderDetails;
+export default OrderDetails

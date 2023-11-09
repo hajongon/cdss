@@ -1,9 +1,9 @@
-import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
+import React from 'react'
+import { Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
 
 const Colors = () => (
   <>
@@ -237,6 +237,6 @@ const Colors = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Colors;
+export default Colors

@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import createMarkup from 'helpers/createMarkup';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import createMarkup from 'helpers/createMarkup'
+import { Link } from 'react-router-dom'
 
 const Notification = ({ notification: { title, linkFor, type }, isLast }) => {
   return (
@@ -40,8 +40,8 @@ const Notification = ({ notification: { title, linkFor, type }, isLast }) => {
         </Col>
       </Row>
     </li>
-  );
-};
+  )
+}
 
 Notification.propTypes = {
   notification: PropTypes.shape({
@@ -50,6 +50,6 @@ Notification.propTypes = {
     type: PropTypes.string
   }),
   isLast: PropTypes.bool.isRequired
-};
+}
 
-export default Notification;
+export default Notification

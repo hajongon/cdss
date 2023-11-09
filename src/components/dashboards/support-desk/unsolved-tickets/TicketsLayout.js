@@ -1,12 +1,12 @@
-import React from 'react';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 const PrioritySelect = ({ title, color, data, className, style }) => {
   return (
@@ -44,8 +44,8 @@ const PrioritySelect = ({ title, color, data, className, style }) => {
       </div>
       <h6 className="mb-0 text-700">{title}</h6>
     </div>
-  );
-};
+  )
+}
 
 PrioritySelect.propTypes = {
   title: PropTypes.string,
@@ -53,7 +53,7 @@ PrioritySelect.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   data: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-};
+}
 
 const AgentSelect = ({ agent, className, style }) => {
   return (
@@ -67,14 +67,14 @@ const AgentSelect = ({ agent, className, style }) => {
         <option key={item}>{item}</option>
       ))}
     </Form.Select>
-  );
-};
+  )
+}
 
 AgentSelect.propTypes = {
   agent: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object
-};
+}
 
 export const columns = [
   {
@@ -85,7 +85,7 @@ export const columns = [
       className: 'py-2 white-space-nowrap pe-3 pe-xxl-4 ps-2'
     },
     Cell: rowData => {
-      const { name, avatar } = rowData.row.original;
+      const { name, avatar } = rowData.row.original
       return (
         <Flex alignItems="center" className="position-relative py-1">
           {avatar.img ? (
@@ -102,7 +102,7 @@ export const columns = [
             </Link>
           </h6>
         </Flex>
-      );
+      )
     }
   },
   {
@@ -113,12 +113,12 @@ export const columns = [
       className: 'py-2 pe-4'
     },
     Cell: rowData => {
-      const { subject } = rowData.row.original;
+      const { subject } = rowData.row.original
       return (
         <Link to="/support-desk/tickets-preview" className="fw-semi-bold">
           {subject}
         </Link>
-      );
+      )
     }
   },
   {
@@ -128,12 +128,12 @@ export const columns = [
       className: 'fs-0 pe-4'
     },
     Cell: rowData => {
-      const { status } = rowData.row.original;
+      const { status } = rowData.row.original
       return (
         <SoftBadge bg={status.type} className="me-2">
           {status.content}
         </SoftBadge>
-      );
+      )
     }
   },
   {
@@ -143,14 +143,14 @@ export const columns = [
       className: 'pe-4'
     },
     Cell: rowData => {
-      const { priority } = rowData.row.original;
+      const { priority } = rowData.row.original
       return (
         <PrioritySelect
           title={priority.title}
           color={priority.color}
           data={priority.data}
         />
-      );
+      )
     }
   },
   {
@@ -158,11 +158,11 @@ export const columns = [
     Header: 'Agent',
     headerProps: { className: 'text-end' },
     Cell: rowData => {
-      const { agent } = rowData.row.original;
-      return <AgentSelect agent={agent} className="w-auto ms-auto" />;
+      const { agent } = rowData.row.original
+      return <AgentSelect agent={agent} className="w-auto ms-auto" />
     }
   }
-];
+]
 
 export const CardLayout = ({ data, isSelectedItem, toggleSelectedItem }) => {
   return (
@@ -235,11 +235,11 @@ export const CardLayout = ({ data, isSelectedItem, toggleSelectedItem }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
 CardLayout.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   isSelectedItem: PropTypes.func,
   toggleSelectedItem: PropTypes.func
-};
+}

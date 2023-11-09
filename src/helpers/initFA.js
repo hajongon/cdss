@@ -1,4 +1,4 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faFacebook,
   faFacebookF,
@@ -18,7 +18,7 @@ import {
   faTrello,
   faTwitter,
   faYoutube
-} from '@fortawesome/free-brands-svg-icons';
+} from '@fortawesome/free-brands-svg-icons'
 import {
   faCircle as farCircle,
   faClock as farClock,
@@ -42,7 +42,7 @@ import {
   faSmileBeam as farSmileBeam,
   faStar as farStar,
   faEdit as farEdit
-} from '@fortawesome/free-regular-svg-icons';
+} from '@fortawesome/free-regular-svg-icons'
 import {
   faAlignLeft,
   faAlignRight,
@@ -229,7 +229,7 @@ import {
   faHandHoldingWater,
   faCameraRetro,
   faUtensils
-} from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   // Solid
@@ -464,4 +464,4 @@ library.add(
   faHandHoldingWater,
   faCameraRetro,
   faUtensils
-);
+)

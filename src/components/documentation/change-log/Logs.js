@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Alert, Card } from 'react-bootstrap';
-import changeLogs from './changelogs';
-import createMarkup from 'helpers/createMarkup';
-import SoftBadge from 'components/common/SoftBadge';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Alert, Card } from 'react-bootstrap'
+import changeLogs from './changelogs'
+import createMarkup from 'helpers/createMarkup'
+import SoftBadge from 'components/common/SoftBadge'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Logs = ({
   version,
@@ -83,11 +83,11 @@ const Logs = ({
               ))}
             </ul>
           </div>
-        );
+        )
       })}
     </Card.Body>
   </Card>
-);
+)
 
 Logs.propTypes = {
   version: PropTypes.string.isRequired,
@@ -102,8 +102,8 @@ Logs.propTypes = {
     text: PropTypes.string,
     link: PropTypes.string
   })
-};
+}
 
-Logs.defaultProps = { logs: {} };
+Logs.defaultProps = { logs: {} }
 
-export default Logs;
+export default Logs

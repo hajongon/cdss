@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardDropdown from 'components/common/CardDropdown';
-import { statsData } from 'data/dashboard/crm';
-import classNames from 'classnames';
-import IconItem from 'components/common/icon/IconItem';
-import StatsChart from './StatsChart';
-import { getColor } from 'helpers/utils';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardDropdown from 'components/common/CardDropdown'
+import { statsData } from 'data/dashboard/crm'
+import classNames from 'classnames'
+import IconItem from 'components/common/icon/IconItem'
+import StatsChart from './StatsChart'
+import { getColor } from 'helpers/utils'
 
 const StatsItem = ({ stat }) => {
-  const { icon, color, title, amount, caret, caretColor, target, data } = stat;
+  const { icon, color, title, amount, caret, caretColor, target, data } = stat
   return (
     <>
       <Flex
@@ -47,11 +47,11 @@ const StatsItem = ({ stat }) => {
         </div>
       </Flex>
     </>
-  );
-};
+  )
+}
 
 const CrmStats = () => {
-  const [stats] = useState(statsData);
+  const [stats] = useState(statsData)
   return (
     <Card>
       <Card.Body>
@@ -74,8 +74,8 @@ const CrmStats = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 StatsItem.propTypes = {
   stat: PropTypes.shape({
@@ -89,10 +89,10 @@ StatsItem.propTypes = {
     target: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   })
-};
+}
 
 CrmStats.propTypes = {
   stats: PropTypes.arrayOf(PropTypes.shape(StatsItem.propTypes.stat))
-};
+}
 
-export default CrmStats;
+export default CrmStats

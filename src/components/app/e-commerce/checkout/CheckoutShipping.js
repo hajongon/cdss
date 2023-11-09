@@ -1,8 +1,8 @@
-import IconButton from 'components/common/IconButton';
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { shippingAddress } from 'data/ecommerce/checkoutData';
+import IconButton from 'components/common/IconButton'
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { shippingAddress } from 'data/ecommerce/checkoutData'
 
 const CheckoutShipping = () => {
   return (
@@ -58,7 +58,7 @@ const CheckoutShipping = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default CheckoutShipping;
+export default CheckoutShipping

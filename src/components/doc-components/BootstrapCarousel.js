@@ -1,15 +1,15 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
-import generic6 from 'assets/img/generic/6.jpg';
-import generic7 from 'assets/img/generic/7.jpg';
-import generic8 from 'assets/img/generic/8.jpg';
-import generic5 from 'assets/img/generic/5.jpg';
-import generic9 from 'assets/img/generic/9.jpg';
-import chat8 from 'assets/img/chat/8.jpg';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
+import generic6 from 'assets/img/generic/6.jpg'
+import generic7 from 'assets/img/generic/7.jpg'
+import generic8 from 'assets/img/generic/8.jpg'
+import generic5 from 'assets/img/generic/5.jpg'
+import generic9 from 'assets/img/generic/9.jpg'
+import chat8 from 'assets/img/chat/8.jpg'
 
 const exampleCode = `
 <Carousel>
@@ -35,7 +35,7 @@ const exampleCode = `
     />
   </Carousel.Item>
 </Carousel>
-`;
+`
 const customStyledCode = `
 <Carousel
   className='theme-slider'
@@ -68,7 +68,7 @@ const customStyledCode = `
     />
   </Carousel.Item>
 </Carousel>
-`;
+`
 
 const controlledCode = `
 function ControlledCarousel() {
@@ -104,7 +104,7 @@ function ControlledCarousel() {
     </Carousel>
   );
 }
-`;
+`
 
 const withCaptionsCode = `
 <Carousel className='light'>
@@ -144,7 +144,7 @@ const withCaptionsCode = `
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-`;
+`
 
 const fadeCode = `
 <Carousel fade>
@@ -170,7 +170,7 @@ const fadeCode = `
     />
   </Carousel.Item>
 </Carousel>
-`;
+`
 const intervalCode = `
 <Carousel className='light'>
   <Carousel.Item interval={1000}>
@@ -209,7 +209,7 @@ const intervalCode = `
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-`;
+`
 
 const darkCode = `
 <Carousel variant="dark">
@@ -249,7 +249,7 @@ const darkCode = `
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-`;
+`
 
 const Carousel = () => (
   <>
@@ -357,6 +357,6 @@ const Carousel = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Carousel;
+export default Carousel

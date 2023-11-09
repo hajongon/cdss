@@ -1,12 +1,12 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import StatisticsCards from 'components/dashboards/saas/stats-cards/StatisticsCards';
-import WeeklySales from 'components/dashboards/default/WeeklySales';
-import TotalOrder from 'components/dashboards/default/TotalOrder';
-import MarketShare from 'components/dashboards/default/MarketShare';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import StatisticsCards from 'components/dashboards/saas/stats-cards/StatisticsCards'
+import WeeklySales from 'components/dashboards/default/WeeklySales'
+import TotalOrder from 'components/dashboards/default/TotalOrder'
+import MarketShare from 'components/dashboards/default/MarketShare'
 
-import ProductShare from 'components/dashboards/e-commerce/ProductShare/ProductShare';
+import ProductShare from 'components/dashboards/e-commerce/ProductShare/ProductShare'
 import {
   marketShare,
   totalOrder,
@@ -14,52 +14,52 @@ import {
   weeklySalesData,
   storageStatus,
   topProducts
-} from 'data/dashboard/default';
+} from 'data/dashboard/default'
 import {
   payment,
   activeUser,
   grossRevenue,
   candleChartData
-} from 'data/dashboard/saas';
-import { saleItems, totalSale } from 'data/dashboard/ecom';
+} from 'data/dashboard/saas'
+import { saleItems, totalSale } from 'data/dashboard/ecom'
 
 import {
   audienceChart,
   realTimeUsers,
   sessionByBrowser,
   sessionByCountry
-} from 'data/dashboard/analytics';
+} from 'data/dashboard/analytics'
 import {
   progressBar,
   projectsTable,
   projectUsers
-} from 'data/dashboard/projectManagement';
-import { countryData } from 'data/countryData';
-import StorageStatus from 'components/dashboards/default/StorageStatus';
-import SaasActiveUser from 'components/dashboards/saas/SaasActiveUser';
-import SaasRevenue from 'components/dashboards/saas/SaasRevenue';
-import SaasConversion from 'components/dashboards/saas/SaasConversion';
-import EcomStat from 'components/dashboards/e-commerce/EcomStat';
-import LinePayment from 'components/dashboards/saas/line-payment/LinePayment';
-import BandwidthSaved from 'components/dashboards/default/BandwidthSaved';
-import RealTimeUsers from 'components/dashboards/analytics/real-time-users/RealTimeUsers';
-import TopProducts from 'components/dashboards/default/TopProducts';
-import TotalSales from 'components/dashboards/default/TotalSales';
-import TotalSalesEcommerce from 'components/dashboards/e-commerce/totalsales/TotalSales';
-import Audience from 'components/dashboards/analytics/audience/Audience';
-import SessionByBrowser from 'components/dashboards/analytics/session-by-browser/SessionByBrowser';
-import UsersByCountry from 'components/dashboards/analytics/users-by-country/UsersByCountry';
-import ActiveUsers from 'components/dashboards/analytics/active-users/ActiveUsers';
-import Stats from 'components/dashboards/analytics/stats/Stats';
-import BounceRate from 'components/dashboards/analytics/bounce-rate/BounceRate';
-import UsersAtTime from 'components/dashboards/analytics/users-at-a-time/UsersAtTime';
-import TrafficSource from 'components/dashboards/analytics/traffic-source/TrafficSource';
-import ReturningCustomer from 'components/dashboards/e-commerce/ReturningCustomer/ReturningCustomer';
-import SalesPosLocation from 'components/dashboards/e-commerce/SalesPosLocation/SalesPosLocation';
-import ShoppingCart from 'components/dashboards/e-commerce/ShoppingCart';
-import GrossRevenue from 'components/dashboards/saas/gross-revenue/GrossRevenue';
-import ProjectStatistics from 'components/dashboards/project-management/project-statistics/ProjectStatistics';
-import CandleChart from 'components/dashboards/saas/candle-chart/CandleChart';
+} from 'data/dashboard/projectManagement'
+import { countryData } from 'data/countryData'
+import StorageStatus from 'components/dashboards/default/StorageStatus'
+import SaasActiveUser from 'components/dashboards/saas/SaasActiveUser'
+import SaasRevenue from 'components/dashboards/saas/SaasRevenue'
+import SaasConversion from 'components/dashboards/saas/SaasConversion'
+import EcomStat from 'components/dashboards/e-commerce/EcomStat'
+import LinePayment from 'components/dashboards/saas/line-payment/LinePayment'
+import BandwidthSaved from 'components/dashboards/default/BandwidthSaved'
+import RealTimeUsers from 'components/dashboards/analytics/real-time-users/RealTimeUsers'
+import TopProducts from 'components/dashboards/default/TopProducts'
+import TotalSales from 'components/dashboards/default/TotalSales'
+import TotalSalesEcommerce from 'components/dashboards/e-commerce/totalsales/TotalSales'
+import Audience from 'components/dashboards/analytics/audience/Audience'
+import SessionByBrowser from 'components/dashboards/analytics/session-by-browser/SessionByBrowser'
+import UsersByCountry from 'components/dashboards/analytics/users-by-country/UsersByCountry'
+import ActiveUsers from 'components/dashboards/analytics/active-users/ActiveUsers'
+import Stats from 'components/dashboards/analytics/stats/Stats'
+import BounceRate from 'components/dashboards/analytics/bounce-rate/BounceRate'
+import UsersAtTime from 'components/dashboards/analytics/users-at-a-time/UsersAtTime'
+import TrafficSource from 'components/dashboards/analytics/traffic-source/TrafficSource'
+import ReturningCustomer from 'components/dashboards/e-commerce/ReturningCustomer/ReturningCustomer'
+import SalesPosLocation from 'components/dashboards/e-commerce/SalesPosLocation/SalesPosLocation'
+import ShoppingCart from 'components/dashboards/e-commerce/ShoppingCart'
+import GrossRevenue from 'components/dashboards/saas/gross-revenue/GrossRevenue'
+import ProjectStatistics from 'components/dashboards/project-management/project-statistics/ProjectStatistics'
+import CandleChart from 'components/dashboards/saas/candle-chart/CandleChart'
 
 const NumberStatsAndChart = () => {
   return (
@@ -174,7 +174,7 @@ const NumberStatsAndChart = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default NumberStatsAndChart;
+export default NumberStatsAndChart

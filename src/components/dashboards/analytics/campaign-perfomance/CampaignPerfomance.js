@@ -1,12 +1,12 @@
-import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconLink from 'components/common/FalconLink';
-import PerfomanceTable from './PerfomanceTable';
-import { campaignTable, campaignChart } from 'data/dashboard/analytics';
-import CampaignChart from './CampaignChart';
-import { getColor } from 'helpers/utils';
+import React from 'react'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconLink from 'components/common/FalconLink'
+import PerfomanceTable from './PerfomanceTable'
+import { campaignTable, campaignChart } from 'data/dashboard/analytics'
+import CampaignChart from './CampaignChart'
+import { getColor } from 'helpers/utils'
 
 const CampaignPerfomance = () => {
   return (
@@ -57,7 +57,7 @@ const CampaignPerfomance = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
-export default CampaignPerfomance;
+export default CampaignPerfomance

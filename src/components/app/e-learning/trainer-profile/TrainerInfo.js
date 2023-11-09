@@ -1,10 +1,10 @@
-import React from 'react';
-import CountUp from 'react-countup';
-import { Card, Col, Image, Row } from 'react-bootstrap';
-import trainer from 'assets/img/e-learning/avatar/trainer.png';
-import userPlus from 'assets/img/icons/user-plus.svg';
-import users from 'assets/img/icons/users.svg';
-import IconButton from 'components/common/IconButton';
+import React from 'react'
+import CountUp from 'react-countup'
+import { Card, Col, Image, Row } from 'react-bootstrap'
+import trainer from 'assets/img/e-learning/avatar/trainer.png'
+import userPlus from 'assets/img/icons/user-plus.svg'
+import users from 'assets/img/icons/users.svg'
+import IconButton from 'components/common/IconButton'
 
 const TrainerInfo = () => {
   return (
@@ -78,7 +78,7 @@ const TrainerInfo = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default TrainerInfo;
+export default TrainerInfo

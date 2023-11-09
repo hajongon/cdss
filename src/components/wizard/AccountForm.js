@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import WizardInput from './WizardInput';
-import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import WizardInput from './WizardInput'
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const AccountForm = ({ register, errors, watch }) => {
   return (
@@ -85,13 +85,13 @@ const AccountForm = ({ register, errors, watch }) => {
         }}
       />
     </>
-  );
-};
+  )
+}
 
 AccountForm.propTypes = {
   register: PropTypes.func.isRequired,
   errors: PropTypes.object,
   watch: PropTypes.func
-};
+}
 
-export default AccountForm;
+export default AccountForm

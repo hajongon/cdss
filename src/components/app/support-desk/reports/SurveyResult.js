@@ -1,15 +1,15 @@
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import React from 'react';
-import { surveyResults } from 'data/support-desk/reportsData';
-import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
-import { Link } from 'react-router-dom';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
-import PropTypes from 'prop-types';
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import React from 'react'
+import { surveyResults } from 'data/support-desk/reportsData'
+import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import Avatar from 'components/common/Avatar'
+import { Link } from 'react-router-dom'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
+import PropTypes from 'prop-types'
 
 const columns = [
   {
@@ -20,7 +20,7 @@ const columns = [
       className: 'white-space-nowrap pe-4 w-lg-25 py-3'
     },
     Cell: rowData => {
-      const { name, avatar } = rowData.row.original;
+      const { name, avatar } = rowData.row.original
       return (
         <Flex alignItems="center" className="gap-2 position-relative py-2">
           {avatar.img ? (
@@ -34,7 +34,7 @@ const columns = [
             </Link>
           </h6>
         </Flex>
-      );
+      )
     }
   },
   {
@@ -44,7 +44,7 @@ const columns = [
       className: 'white-space-nowrap pe-5 pe-xxl-8'
     },
     Cell: rowData => {
-      const { satisfied } = rowData.row.original;
+      const { satisfied } = rowData.row.original
       return (
         <Flex alignItems="center">
           <div>
@@ -79,7 +79,7 @@ const columns = [
             />
           </div>
         </Flex>
-      );
+      )
     }
   },
   {
@@ -89,7 +89,7 @@ const columns = [
       className: 'white-space-nowrap'
     },
     Cell: rowData => {
-      const { dissatisfied } = rowData.row.original;
+      const { dissatisfied } = rowData.row.original
       return (
         <Flex alignItems="center">
           <div>
@@ -124,10 +124,10 @@ const columns = [
             />
           </div>
         </Flex>
-      );
+      )
     }
   }
-];
+]
 
 const BulkAction = ({ selectedRowIds }) => {
   return (
@@ -158,12 +158,12 @@ const BulkAction = ({ selectedRowIds }) => {
         </Form.Select>
       )}
     </>
-  );
-};
+  )
+}
 
 BulkAction.propTypes = {
   selectedRowIds: PropTypes.object
-};
+}
 
 const SurveyResult = () => {
   return (
@@ -204,7 +204,7 @@ const SurveyResult = () => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
-export default SurveyResult;
+export default SurveyResult

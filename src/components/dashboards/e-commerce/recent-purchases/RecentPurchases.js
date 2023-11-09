@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
-import CardDropdown from 'components/common/CardDropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SoftBadge from 'components/common/SoftBadge';
-import { Link } from 'react-router-dom';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import { recentPurchaseTableData } from 'data/dashboard/ecom';
-import RecentPurchasesHeader from './RecentPurchasesHeader';
-import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter';
+import React, { useState } from 'react'
+import { Card, Dropdown } from 'react-bootstrap'
+import CardDropdown from 'components/common/CardDropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SoftBadge from 'components/common/SoftBadge'
+import { Link } from 'react-router-dom'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import { recentPurchaseTableData } from 'data/dashboard/ecom'
+import RecentPurchasesHeader from './RecentPurchasesHeader'
+import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter'
 
 const columns = [
   {
@@ -19,8 +19,8 @@ const columns = [
       className: 'fw-semi-bold'
     },
     Cell: rowData => {
-      const { customer } = rowData.row.original;
-      return <Link to="/e-commerce/customer-details">{customer}</Link>;
+      const { customer } = rowData.row.original
+      return <Link to="/e-commerce/customer-details">{customer}</Link>
     }
   },
   {
@@ -41,7 +41,7 @@ const columns = [
       className: 'fs-0'
     },
     Cell: rowData => {
-      const { status } = rowData.row.original;
+      const { status } = rowData.row.original
       return (
         <SoftBadge pill bg={status.type} className="d-block">
           {status.content}
@@ -51,7 +51,7 @@ const columns = [
             className="ms-1"
           />
         </SoftBadge>
-      );
+      )
     }
   },
   {
@@ -87,13 +87,13 @@ const columns = [
             </Dropdown.Item>
           </div>
         </CardDropdown>
-      );
+      )
     }
   }
-];
+]
 
 const RecentPurchases = () => {
-  const [data] = useState(recentPurchaseTableData);
+  const [data] = useState(recentPurchaseTableData)
   return (
     <AdvanceTableWrapper
       columns={columns}
@@ -124,7 +124,7 @@ const RecentPurchases = () => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
-export default RecentPurchases;
+export default RecentPurchases

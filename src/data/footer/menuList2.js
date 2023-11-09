@@ -7,4 +7,4 @@ export default [
   { title: 'System Status', to: '#!' },
   { title: 'Agencies', to: '#!' },
   { title: 'Enterprise', to: '#!' }
-];
+]

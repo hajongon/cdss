@@ -1,23 +1,23 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import calendar from 'assets/img/icons/spot-illustrations/calendar.svg';
-import image from 'assets/img/icons/spot-illustrations/image.svg';
-import location from 'assets/img/icons/spot-illustrations/location.svg';
-import team3 from 'assets/img/team/3.jpg';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import { FeedContext } from 'context/Context';
-import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
-import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap';
-import { v4 as uuid } from 'uuid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import calendar from 'assets/img/icons/spot-illustrations/calendar.svg'
+import image from 'assets/img/icons/spot-illustrations/image.svg'
+import location from 'assets/img/icons/spot-illustrations/location.svg'
+import team3 from 'assets/img/team/3.jpg'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import { FeedContext } from 'context/Context'
+import PropTypes from 'prop-types'
+import React, { useContext, useState } from 'react'
+import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap'
+import { v4 as uuid } from 'uuid'
 
 const CreatePostForm = () => {
-  const { feedDispatch } = useContext(FeedContext);
-  const [privacy, setPrivacy] = useState('public');
-  const [status, setStatus] = useState('');
+  const { feedDispatch } = useContext(FeedContext)
+  const [privacy, setPrivacy] = useState('public')
+  const [status, setStatus] = useState('')
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const feed = {
       id: uuid(),
@@ -31,12 +31,12 @@ const CreatePostForm = () => {
       },
       content: { status },
       details: { countLCS: { like: 0, share: 0 } }
-    };
+    }
 
-    !!status && feedDispatch({ type: 'ADD', payload: feed });
+    !!status && feedDispatch({ type: 'ADD', payload: feed })
 
-    setStatus('');
-  };
+    setStatus('')
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -104,8 +104,8 @@ const CreatePostForm = () => {
         </Col>
       </Row>
     </Form>
-  );
-};
+  )
+}
 
 const PostButton = ({ image, title }) => (
   <Button
@@ -116,10 +116,10 @@ const PostButton = ({ image, title }) => (
     <img src={image} alt="" width={17} />
     <span className="ms-2 d-none d-md-inline-block">{title}</span>
   </Button>
-);
+)
 PostButton.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
-};
+}
 
-export default CreatePostForm;
+export default CreatePostForm

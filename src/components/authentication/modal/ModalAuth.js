@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { CloseButton, Modal } from 'react-bootstrap';
-import { useNavigate, useLocation } from 'react-router-dom';
-import RegistrationForm from 'components/authentication/RegistrationForm';
+import React, { useState } from 'react'
+import { CloseButton, Modal } from 'react-bootstrap'
+import { useNavigate, useLocation } from 'react-router-dom'
+import RegistrationForm from 'components/authentication/RegistrationForm'
 
 export default function Example() {
   let {
     state: { open }
-  } = useLocation();
-  const navigate = useNavigate();
+  } = useLocation()
+  const navigate = useNavigate()
 
-  const [show, setShow] = useState(open);
+  const [show, setShow] = useState(open)
 
   const handleClose = () => {
-    setShow(false);
-    navigate(-1);
-  };
+    setShow(false)
+    navigate(-1)
+  }
 
   return (
     <Modal show={show} onHide={handleClose} className="mt-4">
@@ -37,5 +37,5 @@ export default function Example() {
         <RegistrationForm layout="split" hasLabel />
       </Modal.Body>
     </Modal>
-  );
+  )
 }

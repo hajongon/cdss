@@ -1,8 +1,8 @@
-import Calendar from 'components/common/Calendar';
-import Flex from 'components/common/Flex';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Calendar from 'components/common/Calendar'
+import Flex from 'components/common/Flex'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Event = ({ details, isLast }) => {
   const {
@@ -15,7 +15,7 @@ const Event = ({ details, isLast }) => {
     location,
     duration,
     interested
-  } = details;
+  } = details
   return (
     <Flex>
       <Calendar {...calendar} />
@@ -46,8 +46,8 @@ const Event = ({ details, isLast }) => {
         {!isLast && <div className="border-dashed border-bottom my-3"></div>}
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 Event.propTypes = {
   details: PropTypes.shape({
@@ -62,6 +62,6 @@ Event.propTypes = {
     badge: PropTypes.object
   }),
   isLast: PropTypes.bool
-};
+}
 
-export default Event;
+export default Event

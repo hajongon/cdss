@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Form } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import CardDropdown from 'components/common/CardDropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconItem from 'components/common/icon/IconItem';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { todoList } from 'data/dashboard/projectManagement';
-import FalconCardHeader from 'components/common/FalconCardHeader';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Form } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import CardDropdown from 'components/common/CardDropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconItem from 'components/common/icon/IconItem'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { todoList } from 'data/dashboard/projectManagement'
+import FalconCardHeader from 'components/common/FalconCardHeader'
 
 const ToDoListItem = ({ item, index, handleChange }) => {
   return (
@@ -57,17 +57,17 @@ const ToDoListItem = ({ item, index, handleChange }) => {
         />
       </div>
     </Flex>
-  );
-};
+  )
+}
 
 const ToDoList = () => {
-  const [todoItems, setTodoItems] = useState(todoList);
+  const [todoItems, setTodoItems] = useState(todoList)
   const handleChange = (id, completed) => {
     const updatedTodos = todoItems.map(item =>
       item.id === id ? { ...item, completed } : item
-    );
-    setTodoItems(updatedTodos);
-  };
+    )
+    setTodoItems(updatedTodos)
+  }
   return (
     <Card className="h-100">
       <FalconCardHeader title="To Do List" titleTag="h6" />
@@ -96,8 +96,8 @@ const ToDoList = () => {
         </Button>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 ToDoListItem.propTypes = {
   item: PropTypes.shape({
@@ -109,6 +109,6 @@ ToDoListItem.propTypes = {
   length: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired
-};
+}
 
-export default ToDoList;
+export default ToDoList

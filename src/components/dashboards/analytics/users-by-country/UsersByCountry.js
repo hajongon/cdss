@@ -1,21 +1,21 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import UsersByCountryChart from './UsersByCountryChart';
-import WorldMap from './WorldMap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
+import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import UsersByCountryChart from './UsersByCountryChart'
+import WorldMap from './WorldMap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
 
 const UsersByCountry = ({ chartData, mapData }) => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
   const handleMapReset = () => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'restore'
-    });
-  };
+    })
+  }
   return (
     <Card className="h-100">
       <FalconCardHeader
@@ -60,12 +60,12 @@ const UsersByCountry = ({ chartData, mapData }) => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 UsersByCountry.propTypes = {
   chartData: PropTypes.arrayOf(PropTypes.array).isRequired,
   mapData: WorldMap.propTypes.data.isRequired
-};
+}
 
-export default UsersByCountry;
+export default UsersByCountry

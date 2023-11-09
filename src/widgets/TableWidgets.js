@@ -1,29 +1,29 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import WidgetSectionTitle from './WidgetSectionTitle';
-import RecentPurchases from 'components/dashboards/e-commerce/recent-purchases/RecentPurchases';
-import Customers from 'components/app/e-commerce/customers/Customers';
-import SharedFiles from 'components/dashboards/default/SharedFiles';
-import TopPages from 'components/dashboards/analytics/top-pages/TopPages';
-import { topPagesTableData, intelligence } from 'data/dashboard/analytics';
-import { files } from 'data/dashboard/default';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import WidgetSectionTitle from './WidgetSectionTitle'
+import RecentPurchases from 'components/dashboards/e-commerce/recent-purchases/RecentPurchases'
+import Customers from 'components/app/e-commerce/customers/Customers'
+import SharedFiles from 'components/dashboards/default/SharedFiles'
+import TopPages from 'components/dashboards/analytics/top-pages/TopPages'
+import { topPagesTableData, intelligence } from 'data/dashboard/analytics'
+import { files } from 'data/dashboard/default'
 import {
   membersActivities,
   recentActivities,
   membersInfo,
   runningProjects
-} from 'data/dashboard/projectManagement';
-import { transactionSummary } from 'data/dashboard/saas';
-import Experience from 'components/pages/user/Experience';
-import experiences from 'data/experiences';
-import ToDoList from 'components/dashboards/project-management/ToDoList';
-import MemberInfo from 'components/dashboards/project-management/MemberInfo';
-import MembersActivity from 'components/dashboards/project-management/MembersActivity';
-import Intelligence from 'components/dashboards/analytics/Intelligence';
-import CampaignPerfomance from 'components/dashboards/analytics/campaign-perfomance/CampaignPerfomance';
-import RunningProjects from 'components/dashboards/project-management/RunningProjects';
-import TransactionSummary from 'components/dashboards/saas/TransactionSummary';
-import RecentActivity from 'components/dashboards/project-management/RecentActivity';
+} from 'data/dashboard/projectManagement'
+import { transactionSummary } from 'data/dashboard/saas'
+import Experience from 'components/pages/user/Experience'
+import experiences from 'data/experiences'
+import ToDoList from 'components/dashboards/project-management/ToDoList'
+import MemberInfo from 'components/dashboards/project-management/MemberInfo'
+import MembersActivity from 'components/dashboards/project-management/MembersActivity'
+import Intelligence from 'components/dashboards/analytics/Intelligence'
+import CampaignPerfomance from 'components/dashboards/analytics/campaign-perfomance/CampaignPerfomance'
+import RunningProjects from 'components/dashboards/project-management/RunningProjects'
+import TransactionSummary from 'components/dashboards/saas/TransactionSummary'
+import RecentActivity from 'components/dashboards/project-management/RecentActivity'
 
 const TableWidgets = () => {
   return (
@@ -101,7 +101,7 @@ const TableWidgets = () => {
       </Row>
       <RunningProjects data={runningProjects} />
     </>
-  );
-};
+  )
+}
 
-export default TableWidgets;
+export default TableWidgets

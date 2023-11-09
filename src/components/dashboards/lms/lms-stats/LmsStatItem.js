@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CountUp from 'react-countup';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CountUp from 'react-countup'
 
 const LmsStatItem = ({ stat }) => {
   return (
@@ -29,8 +29,8 @@ const LmsStatItem = ({ stat }) => {
         <span className="text-600 fw-normal">last month</span>
       </p>
     </Col>
-  );
-};
+  )
+}
 
 LmsStatItem.propTypes = {
   stat: PropTypes.shape({
@@ -41,6 +41,6 @@ LmsStatItem.propTypes = {
     icon: PropTypes.string,
     className: PropTypes.string
   })
-};
+}
 
-export default LmsStatItem;
+export default LmsStatItem

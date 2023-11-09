@@ -1,8 +1,8 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { getColor, rgbaColor } from 'helpers/utils';
-import { chartJsDefaultTooltip } from 'helpers/chartjs-utils';
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { getColor, rgbaColor } from 'helpers/utils'
+import { chartJsDefaultTooltip } from 'helpers/chartjs-utils'
+import React from 'react'
+import { Doughnut } from 'react-chartjs-2'
 
 const chartCode = `function ChartOptions() {
  
@@ -42,7 +42,7 @@ const chartCode = `function ChartOptions() {
       <Doughnut data={data} options={options} height={350} width={350}/>
     );
   }
-`;
+`
 const ChartDoughnut = () => {
   return (
     <FalconComponentCard>
@@ -58,7 +58,7 @@ const ChartDoughnut = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default ChartDoughnut;
+export default ChartDoughnut

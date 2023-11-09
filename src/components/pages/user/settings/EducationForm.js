@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
-import InputField from '../InputField';
+import React, { useState } from 'react'
+import { Button, Col, Form, Row } from 'react-bootstrap'
+import InputField from '../InputField'
 
 const EducationForm = () => {
   const [formData, setFormData] = useState({
@@ -9,18 +9,18 @@ const EducationForm = () => {
     field: '',
     from: '',
     to: ''
-  });
+  })
 
   const handleChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ const EducationForm = () => {
         label="From"
         name="from"
         onChange={value => {
-          setFormData({ ...formData, from: value });
+          setFormData({ ...formData, from: value })
         }}
       />
 
@@ -59,7 +59,7 @@ const EducationForm = () => {
         label="To"
         name="to"
         onChange={value => {
-          setFormData({ ...formData, to: value });
+          setFormData({ ...formData, to: value })
         }}
       />
 
@@ -69,7 +69,7 @@ const EducationForm = () => {
         </Col>
       </Form.Group>
     </Form>
-  );
-};
+  )
+}
 
-export default EducationForm;
+export default EducationForm

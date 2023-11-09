@@ -1,15 +1,15 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
 echarts.use([
   TitleComponent,
@@ -17,7 +17,7 @@ echarts.use([
   GridComponent,
   LineChart,
   CanvasRenderer
-]);
+])
 
 const tooltipFormatter = params => {
   return `
@@ -29,8 +29,8 @@ const tooltipFormatter = params => {
       ${params[0].name} : ${params[0].value}
     </h6>
 </div>
-`;
-};
+`
+}
 
 const chartCode = `function ChartOptions() {
   const months = [
@@ -132,7 +132,7 @@ const chartCode = `function ChartOptions() {
     />
   );
 }
-`;
+`
 
 const BasicLineChart = () => {
   return (
@@ -149,7 +149,7 @@ const BasicLineChart = () => {
         }}
       />
     </FalconComponentCard>
-  );
-};
+  )
+}
 
-export default BasicLineChart;
+export default BasicLineChart

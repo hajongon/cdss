@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Row, Col } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const exampleCode = `
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -25,7 +25,7 @@ const exampleCode = `
     </p>
   </Tab>
 </Tabs>
-`;
+`
 const NoAnimationCode = `
 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" transition={false}>
   <Tab eventKey="home" title="Home" className='border-bottom border-x p-3'>
@@ -46,7 +46,7 @@ const NoAnimationCode = `
     </p>
   </Tab>
 </Tabs>
-`;
+`
 const pillsCode = `
 <Tabs variant='pills' defaultActiveKey="profile" id="uncontrolled-tab-example" className='mb-3'>
   <Tab eventKey="home" title="Home" className='border p-3'>
@@ -67,7 +67,7 @@ const pillsCode = `
     </p>
   </Tab>
 </Tabs>
-`;
+`
 
 const controlledCode = `
 function ControlledTabs() {
@@ -99,7 +99,7 @@ function ControlledTabs() {
     </Tabs>
   );
 }
-`;
+`
 
 const customLayoutCode = `
 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -130,7 +130,7 @@ const customLayoutCode = `
     </Col>
   </Row>
 </Tab.Container>
-`;
+`
 
 const Tabs = () => (
   <>
@@ -209,6 +209,6 @@ const Tabs = () => (
       <FalconComponentCard.Body code={customLayoutCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Tabs;
+export default Tabs

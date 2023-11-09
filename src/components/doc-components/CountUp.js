@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import CountUp from 'react-countup';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import CountUp from 'react-countup'
 
 const exampleCode = `<Row className="g-3">
   <Col xl xs={6} md={4} className="text-center">
@@ -42,7 +42,7 @@ const exampleCode = `<Row className="g-3">
     </h4>
     <h6>(Prefix)</h6>
   </Col>
-</Row>`;
+</Row>`
 
 const Countup = () => (
   <>
@@ -72,6 +72,6 @@ const Countup = () => (
       />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Countup;
+export default Countup

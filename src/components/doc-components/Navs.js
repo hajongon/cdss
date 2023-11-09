@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button, Tab } from 'react-bootstrap';
-import PageHeader from 'components/common/PageHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import { reactBootstrapDocsUrl } from 'helpers/utils';
+import React from 'react'
+import { Button, Tab } from 'react-bootstrap'
+import PageHeader from 'components/common/PageHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import { reactBootstrapDocsUrl } from 'helpers/utils'
 
 const horizontalCode = `
 <Nav
@@ -24,7 +24,7 @@ const horizontalCode = `
     </Nav.Link>
   </Nav.Item>
 </Nav>
-`;
+`
 
 const alignmentCode = `
 <>
@@ -62,7 +62,7 @@ const alignmentCode = `
     </Nav.Item>
   </Nav>
 </>
-`;
+`
 
 const verticalCode = `
 <Nav defaultActiveKey="/home" className="flex-column">
@@ -73,7 +73,7 @@ const verticalCode = `
     Disabled
   </Nav.Link>
 </Nav>
-`;
+`
 
 const pillsCode = `
 <Nav variant="pills" defaultActiveKey="link-1">
@@ -89,7 +89,7 @@ const pillsCode = `
     </Nav.Link>
   </Nav.Item>
 </Nav>
-`;
+`
 
 const fillsCode = `
 <Nav fill variant="pills" defaultActiveKey="link-1">
@@ -108,7 +108,7 @@ const fillsCode = `
     </Nav.Link>
   </Nav.Item>
 </Nav>
-`;
+`
 
 const justifyCode = `
 <Nav justify variant="pills" defaultActiveKey="link-1">
@@ -127,7 +127,7 @@ const justifyCode = `
     </Nav.Link>
   </Nav.Item>
 </Nav>
-`;
+`
 
 const dropdownsCode = `
 function NavDropdownExample() {
@@ -160,7 +160,7 @@ function NavDropdownExample() {
     </Nav>
   );
 }
-`;
+`
 
 const Navs = () => (
   <>
@@ -250,6 +250,6 @@ const Navs = () => (
       <FalconComponentCard.Body code={dropdownsCode} language="jsx" />
     </FalconComponentCard>
   </>
-);
+)
 
-export default Navs;
+export default Navs

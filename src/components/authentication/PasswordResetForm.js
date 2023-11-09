@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
-import { Button, Form } from 'react-bootstrap';
-import classNames from 'classnames';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
+import { Button, Form } from 'react-bootstrap'
+import classNames from 'classnames'
 
 const PasswordResetForm = ({ hasLabel }) => {
   // State
   const [formData, setFormData] = useState({
     password: '',
     confirmPassword: ''
-  });
+  })
 
   // Handler
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     toast.success('Login with your new password', {
       theme: 'colored'
-    });
-  };
+    })
+  }
 
   const handleFieldChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   return (
     <Form
@@ -61,11 +61,11 @@ const PasswordResetForm = ({ hasLabel }) => {
         Set password
       </Button>
     </Form>
-  );
-};
+  )
+}
 
 PasswordResetForm.propTypes = {
   hasLabel: PropTypes.bool
-};
+}
 
-export default PasswordResetForm;
+export default PasswordResetForm

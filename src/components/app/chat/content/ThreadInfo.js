@@ -1,29 +1,29 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Dropdown, Nav, Button, Collapse, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
-import classNames from 'classnames';
-import MediaImg1 from 'assets/img/chat/1.jpg';
-import MediaImg2 from 'assets/img/chat/2.jpg';
-import MediaImg3 from 'assets/img/chat/3.jpg';
-import MediaImg4 from 'assets/img/chat/4.jpg';
-import MediaImg5 from 'assets/img/chat/5.jpg';
-import MediaImg6 from 'assets/img/chat/6.jpg';
-import users from 'data/people';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
-import SimpleBarReact from 'simplebar-react';
-import { ChatContext } from 'context/Context';
+import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Dropdown, Nav, Button, Collapse, Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
+import classNames from 'classnames'
+import MediaImg1 from 'assets/img/chat/1.jpg'
+import MediaImg2 from 'assets/img/chat/2.jpg'
+import MediaImg3 from 'assets/img/chat/3.jpg'
+import MediaImg4 from 'assets/img/chat/4.jpg'
+import MediaImg5 from 'assets/img/chat/5.jpg'
+import MediaImg6 from 'assets/img/chat/6.jpg'
+import users from 'data/people'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
+import SimpleBarReact from 'simplebar-react'
+import { ChatContext } from 'context/Context'
 
 const ThreadInfo = ({ thread }) => {
-  const [isOpenMemberCollapse, setIsOpenMemberCollapse] = useState(false);
+  const [isOpenMemberCollapse, setIsOpenMemberCollapse] = useState(false)
   const [isOpenSharedMediaCollapse, setIsOpenSharedMediaCollapse] =
-    useState(false);
+    useState(false)
 
-  const { getUser, isOpenThreadInfo, groups } = useContext(ChatContext);
-  const user = getUser(thread);
+  const { getUser, isOpenThreadInfo, groups } = useContext(ChatContext)
+  const user = getUser(thread)
 
   const groupMembers =
     thread.type === 'group'
@@ -33,7 +33,7 @@ const ThreadInfo = ({ thread }) => {
             ...users.find(user => user.id === member.userId),
             designation: member.designation
           }))
-      : [];
+      : []
 
   const [conversationOptions] = useState([
     {
@@ -61,7 +61,7 @@ const ThreadInfo = ({ thread }) => {
       icon: 'bell',
       link: '#!'
     }
-  ]);
+  ])
 
   const images = [
     MediaImg1,
@@ -70,7 +70,7 @@ const ThreadInfo = ({ thread }) => {
     MediaImg4,
     MediaImg5,
     MediaImg6
-  ];
+  ]
 
   return (
     <div
@@ -228,7 +228,7 @@ const ThreadInfo = ({ thread }) => {
                               alt=""
                               className="img-fluid rounded mb-2 cursor-pointer "
                               onClick={() => {
-                                setImgIndex(index);
+                                setImgIndex(index)
                               }}
                             />
                           </Col>
@@ -243,11 +243,11 @@ const ThreadInfo = ({ thread }) => {
         </SimpleBarReact>
       </div>
     </div>
-  );
-};
+  )
+}
 
 ThreadInfo.propTypes = {
   thread: PropTypes.object.isRequired
-};
+}
 
-export default ThreadInfo;
+export default ThreadInfo

@@ -1,7 +1,7 @@
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import React from 'react';
-import { Card, ProgressBar } from 'react-bootstrap';
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import React from 'react'
+import { Card, ProgressBar } from 'react-bootstrap'
 
 const TeamProgress = () => {
   return (
@@ -26,7 +26,7 @@ const TeamProgress = () => {
         <p className="mb-0 fs--2 text-500">Jan 1st to 30th</p>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default TeamProgress;
+export default TeamProgress

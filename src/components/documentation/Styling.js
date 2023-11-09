@@ -1,7 +1,7 @@
-import FalconComponentCard from 'components/common/FalconComponentCard';
-import FalconEditor from 'components/common/FalconEditor';
-import PageHeader from 'components/common/PageHeader';
-import React from 'react';
+import FalconComponentCard from 'components/common/FalconComponentCard'
+import FalconEditor from 'components/common/FalconEditor'
+import PageHeader from 'components/common/PageHeader'
+import React from 'react'
 
 const style = `
 //*-----------------------------------------------
@@ -14,7 +14,7 @@ $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
-$dark: $gray-1100 !default; `;
+$dark: $gray-1100 !default; `
 
 const cssVariables = `
 /*-----------------------------------------------
@@ -36,7 +36,7 @@ $danger: #e63757;
     --falcon-card-bg: #{$success};
   }
 }
-`;
+`
 
 const darkStyle = `
 /*-----------------------------------------------
@@ -68,7 +68,7 @@ $dark-grays: (
   '1100': $gray-100,
   'white': $black,
 ) !default;
-`;
+`
 
 const Styling = () => (
   <>
@@ -164,6 +164,6 @@ const Styling = () => (
       </FalconComponentCard.Body>
     </FalconComponentCard>
   </>
-);
+)
 
-export default Styling;
+export default Styling

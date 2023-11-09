@@ -1,8 +1,8 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import EventDetailAside from './EventDetailAside';
-import EventDetailContent from './EventDetailContent';
-import EventDetailHeader from './EventDetailHeader';
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
+import EventDetailAside from './EventDetailAside'
+import EventDetailContent from './EventDetailContent'
+import EventDetailHeader from './EventDetailHeader'
 
 const EventDetail = () => {
   return (
@@ -17,7 +17,7 @@ const EventDetail = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default EventDetail;
+export default EventDetail

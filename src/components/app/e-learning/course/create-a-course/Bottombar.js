@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import AppContext from 'context/Context';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import AppContext from 'context/Context'
 
 const Bottombar = ({ inViewport }) => {
   const {
     config: { navbarCollapsed }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
   return (
     <Card
       className={`bottom-bar rounded-0 d-lg-none ${
@@ -39,11 +39,11 @@ const Bottombar = ({ inViewport }) => {
         </Container>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 Bottombar.propTypes = {
   inViewport: PropTypes.bool
-};
+}
 
-export default Bottombar;
+export default Bottombar

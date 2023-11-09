@@ -1,9 +1,9 @@
-import CustomDateInput from 'components/common/CustomDateInput';
-import { timezones } from 'data/events/timezones';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
+import CustomDateInput from 'components/common/CustomDateInput'
+import { timezones } from 'data/events/timezones'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import DatePicker from 'react-datepicker'
 
 const EventDetails = ({ register, setValue }) => {
   const [formData, setFormData] = useState({
@@ -12,14 +12,14 @@ const EventDetails = ({ register, setValue }) => {
     regDate: null,
     startTime: null,
     endTime: null
-  });
+  })
 
   const handleChange = (name, value) => {
     setFormData({
       ...formData,
       [name]: value
-    });
-  };
+    })
+  }
 
   return (
     <Card className="mb-3">
@@ -43,8 +43,8 @@ const EventDetails = ({ register, setValue }) => {
               <DatePicker
                 selected={formData.startDate}
                 onChange={newDate => {
-                  handleChange('startDate', newDate);
-                  setValue('startDate', newDate);
+                  handleChange('startDate', newDate)
+                  setValue('startDate', newDate)
                 }}
                 customInput={
                   <CustomDateInput
@@ -68,8 +68,8 @@ const EventDetails = ({ register, setValue }) => {
                 timeCaption="Time"
                 dateFormat="h:mm"
                 onChange={newDate => {
-                  handleChange('startTime', newDate);
-                  setValue('startTime', newDate);
+                  handleChange('startTime', newDate)
+                  setValue('startTime', newDate)
                 }}
                 customInput={
                   <CustomDateInput
@@ -90,8 +90,8 @@ const EventDetails = ({ register, setValue }) => {
               <DatePicker
                 selected={formData.endDate}
                 onChange={newDate => {
-                  handleChange('endDate', newDate);
-                  setValue('endDate', newDate);
+                  handleChange('endDate', newDate)
+                  setValue('endDate', newDate)
                 }}
                 customInput={
                   <CustomDateInput
@@ -117,8 +117,8 @@ const EventDetails = ({ register, setValue }) => {
                 timeCaption="Time"
                 dateFormat="h:mm"
                 onChange={newDate => {
-                  handleChange('endTime', newDate);
-                  setValue('endTime', newDate);
+                  handleChange('endTime', newDate)
+                  setValue('endTime', newDate)
                 }}
                 customInput={
                   <CustomDateInput
@@ -138,8 +138,8 @@ const EventDetails = ({ register, setValue }) => {
               <DatePicker
                 selected={formData.regDate}
                 onChange={newDate => {
-                  handleChange('regDate', newDate);
-                  setValue('regDate', newDate);
+                  handleChange('regDate', newDate)
+                  setValue('regDate', newDate)
                 }}
                 customInput={
                   <CustomDateInput
@@ -248,11 +248,11 @@ const EventDetails = ({ register, setValue }) => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 EventDetails.propTypes = {
   register: PropTypes.func.isRequired,
   setValue: PropTypes.func.isRequired
-};
-export default EventDetails;
+}
+export default EventDetails

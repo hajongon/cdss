@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useVisibilityObserver from 'hooks/useVisibilityObserver';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import Flex from 'components/common/Flex';
-import Bottombar from './Bottombar';
+import React, { useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useVisibilityObserver from 'hooks/useVisibilityObserver'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import Flex from 'components/common/Flex'
+import Bottombar from './Bottombar'
 
 const courseContents = [
   {
@@ -38,7 +38,7 @@ const courseContents = [
     text: 'Lifetime permission to access',
     icon: 'infinity'
   }
-];
+]
 
 const socialShares = [
   {
@@ -61,22 +61,20 @@ const socialShares = [
     icon: 'linkedin-in',
     color: 'info'
   }
-];
+]
 
 const CoursePricingPlan = ({ course }) => {
-  const targetElRef = useRef();
+  const targetElRef = useRef()
   const { isVisible: inViewport, observer } = useVisibilityObserver(
     targetElRef,
     '-100px'
-  );
+  )
 
   useEffect(() => {
     return () => {
-      observer &&
-        targetElRef.current &&
-        observer.unobserve(targetElRef.current);
-    };
-  }, [observer]);
+      observer && targetElRef.current && observer.unobserve(targetElRef.current)
+    }
+  }, [observer])
 
   return (
     <>
@@ -147,14 +145,14 @@ const CoursePricingPlan = ({ course }) => {
       </Card>
       <Bottombar inViewport={inViewport} />
     </>
-  );
-};
+  )
+}
 
 CoursePricingPlan.propTypes = {
   course: PropTypes.shape({
     price: PropTypes.number,
     oldPrice: PropTypes.number
   })
-};
+}
 
-export default CoursePricingPlan;
+export default CoursePricingPlan

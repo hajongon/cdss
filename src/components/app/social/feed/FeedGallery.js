@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Image, Row } from 'react-bootstrap';
-import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Col, Image, Row } from 'react-bootstrap'
+import FalconLightBoxGallery from 'components/common/FalconLightBoxGallery'
 
 const FeedGallery = ({ images }) => {
   return (
@@ -51,11 +51,11 @@ const FeedGallery = ({ images }) => {
         </Row>
       )}
     </FalconLightBoxGallery>
-  );
-};
+  )
+}
 
 FeedGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string)
-};
+}
 
-export default FeedGallery;
+export default FeedGallery

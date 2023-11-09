@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Nav } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 
 const ModalSidebar = () => {
   const [addToCardMenu] = useState([
@@ -9,13 +9,13 @@ const ModalSidebar = () => {
     { icon: 'tag', title: 'Label', link: '#!' },
     { icon: 'paperclip', title: 'Attachments', link: '#!' },
     { icon: 'check', title: 'Checklists', link: '#!' }
-  ]);
+  ])
 
   const [actionMenu] = useState([
     { icon: ['far', 'copy'], title: 'Copy', link: '#!' },
     { icon: 'arrow-right', title: 'Move', link: '#!' },
     { icon: 'trash-alt', title: 'Remove', link: '#!' }
-  ]);
+  ])
   return (
     <>
       <h6 className="mt-5 mt-lg-0">Add To Card</h6>
@@ -42,7 +42,7 @@ const ModalSidebar = () => {
         </Nav>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default ModalSidebar;
+export default ModalSidebar

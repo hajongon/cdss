@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import StatsChart from './StatsChart';
-import classNames from 'classnames';
-import { stats } from 'data/dashboard/analytics';
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import StatsChart from './StatsChart'
+import classNames from 'classnames'
+import { stats } from 'data/dashboard/analytics'
 
 const Stats = () => {
   return (
@@ -27,7 +27,7 @@ const Stats = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

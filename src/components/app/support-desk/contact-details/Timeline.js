@@ -1,11 +1,11 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import { timeline } from 'data/support-desk/contactDetailsData';
-import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import { timeline } from 'data/support-desk/contactDetailsData'
+import { Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Timeline = () => {
   return (
@@ -20,7 +20,7 @@ const Timeline = () => {
           day,
           priority,
           status
-        } = item;
+        } = item
         return (
           <div
             key={index}
@@ -87,10 +87,10 @@ const Timeline = () => {
               </Col>
             </Row>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

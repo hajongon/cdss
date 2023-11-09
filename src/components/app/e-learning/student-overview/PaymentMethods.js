@@ -1,13 +1,13 @@
-import React from 'react';
-import { Card, Col, Image, Row, Table } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import corner2 from 'assets/img/icons/spot-illustrations/corner-2.png';
-import chip from 'assets/img/icons/chip.png';
-import mastercard from 'assets/img/icons/master-card.png';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import CardDropdown from 'components/common/CardDropdown';
-import Background from 'components/common/Background';
-import SoftBadge from 'components/common/SoftBadge';
+import React from 'react'
+import { Card, Col, Image, Row, Table } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import corner2 from 'assets/img/icons/spot-illustrations/corner-2.png'
+import chip from 'assets/img/icons/chip.png'
+import mastercard from 'assets/img/icons/master-card.png'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import CardDropdown from 'components/common/CardDropdown'
+import Background from 'components/common/Background'
+import SoftBadge from 'components/common/SoftBadge'
 
 const PaymentMethods = () => {
   return (
@@ -94,7 +94,7 @@ const PaymentMethods = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default PaymentMethods;
+export default PaymentMethods

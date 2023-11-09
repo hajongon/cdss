@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Badge, Image } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import Slider from 'react-slick';
+import React, { useEffect, useState } from 'react'
+import { Badge, Image } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import Slider from 'react-slick'
 
 const sliderSettings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1
-};
+}
 
 const ProductDetailsMedia = ({ product: { files, isNew } }) => {
-  let slider1;
-  let slider2;
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
+  let slider1
+  let slider2
+  const [nav1, setNav1] = useState(null)
+  const [nav2, setNav2] = useState(null)
 
   useEffect(() => {
-    setNav1(slider1);
-    setNav2(slider2);
-  }, [slider1, slider2]);
+    setNav1(slider1)
+    setNav2(slider2)
+  }, [slider1, slider2])
 
   return (
     <div className="position-relative h-sm-100 overflow-hidden">
@@ -86,14 +86,14 @@ const ProductDetailsMedia = ({ product: { files, isNew } }) => {
         </Badge>
       )}
     </div>
-  );
-};
+  )
+}
 
 ProductDetailsMedia.propTypes = {
   product: PropTypes.shape({
     files: PropTypes.arrayOf(PropTypes.object),
     isNew: PropTypes.bool
   })
-};
+}
 
-export default ProductDetailsMedia;
+export default ProductDetailsMedia

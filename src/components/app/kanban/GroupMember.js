@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import Avatar, { AvatarGroup } from 'components/common/Avatar';
-import { Dropdown, Form, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import classNames from 'classnames';
-import Flex from 'components/common/Flex';
-import { Link } from 'react-router-dom';
-import AppContext from 'context/Context';
+import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
+import Avatar, { AvatarGroup } from 'components/common/Avatar'
+import { Dropdown, Form, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import classNames from 'classnames'
+import Flex from 'components/common/Flex'
+import { Link } from 'react-router-dom'
+import AppContext from 'context/Context'
 
 const GroupMember = ({
   avatarSize = 'l',
@@ -16,8 +16,8 @@ const GroupMember = ({
 }) => {
   const {
     config: { isRTL }
-  } = useContext(AppContext);
-  const [searchTerm, setSearchTerm] = useState('');
+  } = useContext(AppContext)
+  const [searchTerm, setSearchTerm] = useState('')
 
   return (
     <div className={className}>
@@ -126,13 +126,13 @@ const GroupMember = ({
                     {users
                       .filter(user => {
                         if (!searchTerm) {
-                          return user;
+                          return user
                         } else if (
                           user.name
                             .toLowerCase()
                             .includes(searchTerm.toLowerCase().trim())
                         ) {
-                          return user;
+                          return user
                         }
                       })
                       .map(user => (
@@ -162,8 +162,8 @@ const GroupMember = ({
         )}
       </AvatarGroup>
     </div>
-  );
-};
+  )
+}
 
 GroupMember.propTypes = {
   avatarSize: PropTypes.string,
@@ -178,6 +178,6 @@ GroupMember.propTypes = {
   showMember: PropTypes.number,
   addMember: PropTypes.bool,
   className: PropTypes.string
-};
+}
 
-export default GroupMember;
+export default GroupMember

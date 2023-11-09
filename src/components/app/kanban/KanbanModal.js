@@ -1,30 +1,30 @@
-import React, { useContext } from 'react';
-import { CloseButton, Col, Modal, Row, Dropdown } from 'react-bootstrap';
-import Background from 'components/common/Background';
-import { Link } from 'react-router-dom';
-import ModalMediaContent from './ModalMediaContent';
-import GroupMember from './GroupMember';
-import { members } from 'data/kanban';
-import ModalLabelContent from './ModalLabelContent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ModalAttachmentContent from './ModalAttachmentContent';
-import ModalCommentContent from './ModalCommentContent';
-import ModalActivityContent from './ModalActivityContent';
-import AppContext, { KanbanContext } from 'context/Context';
-import ModalSidebar from './ModalSidebar';
+import React, { useContext } from 'react'
+import { CloseButton, Col, Modal, Row, Dropdown } from 'react-bootstrap'
+import Background from 'components/common/Background'
+import { Link } from 'react-router-dom'
+import ModalMediaContent from './ModalMediaContent'
+import GroupMember from './GroupMember'
+import { members } from 'data/kanban'
+import ModalLabelContent from './ModalLabelContent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ModalAttachmentContent from './ModalAttachmentContent'
+import ModalCommentContent from './ModalCommentContent'
+import ModalActivityContent from './ModalActivityContent'
+import AppContext, { KanbanContext } from 'context/Context'
+import ModalSidebar from './ModalSidebar'
 
 const KanbanModal = () => {
   const {
     kanbanState: { kanbanModal },
     kanbanDispatch
-  } = useContext(KanbanContext);
+  } = useContext(KanbanContext)
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleClose = () => {
-    kanbanDispatch({ type: 'TOGGLE_KANBAN_MODAL' });
-  };
+    kanbanDispatch({ type: 'TOGGLE_KANBAN_MODAL' })
+  }
 
   return (
     <Modal
@@ -134,7 +134,7 @@ const KanbanModal = () => {
         </div>
       </Modal.Body>
     </Modal>
-  );
-};
+  )
+}
 
-export default KanbanModal;
+export default KanbanModal

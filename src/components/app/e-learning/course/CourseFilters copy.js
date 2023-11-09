@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import SimpleBarReact from 'simplebar-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Collapse, Form, Image, Card } from 'react-bootstrap';
-import { courseFilters } from 'data/elearning/courseData';
-import { slugifyText } from 'helpers/utils';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import SimpleBarReact from 'simplebar-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Collapse, Form, Image, Card } from 'react-bootstrap'
+import { courseFilters } from 'data/elearning/courseData'
+import { slugifyText } from 'helpers/utils'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
 
 const CourseFilters = ({ setShow, isOffcanvas }) => {
-  const [filterOptions, setFilterOptions] = useState([]);
+  const [filterOptions, setFilterOptions] = useState([])
 
   const handleFilterOptions = e => {
-    const { type, name, value, checked } = e.target;
+    const { type, name, value, checked } = e.target
     if (type === 'checkbox') {
-      let options = [...filterOptions];
-      options = options.filter(option => option.value !== value);
+      let options = [...filterOptions]
+      options = options.filter(option => option.value !== value)
 
-      checked && options.push({ name, value });
-      setFilterOptions(options);
+      checked && options.push({ name, value })
+      setFilterOptions(options)
     }
 
     if (type === 'radio') {
-      const isExists = filterOptions.some(el => el.name === name);
+      const isExists = filterOptions.some(el => el.name === name)
       isExists
         ? setFilterOptions(
             filterOptions.map(el => (el.name === name ? { ...el, value } : el))
           )
-        : setFilterOptions([...filterOptions, { name, value }]);
+        : setFilterOptions([...filterOptions, { name, value }])
     }
-  };
+  }
 
   return (
     <Card className="course-filter">
@@ -100,16 +100,16 @@ const CourseFilters = ({ setShow, isOffcanvas }) => {
         </Card.Body>
       </SimpleBarReact>
     </Card>
-  );
-};
+  )
+}
 
 CourseFilters.propTypes = {
   setShow: PropTypes.func,
   isOffcanvas: PropTypes.bool
-};
+}
 
 const FilterItem = ({ filter, index, filterOptions, handleFilterOptions }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <li className={`${courseFilters.length - 1 !== index && 'border-bottom'}`}>
@@ -181,8 +181,8 @@ const FilterItem = ({ filter, index, filterOptions, handleFilterOptions }) => {
         </ul>
       </Collapse>
     </li>
-  );
-};
+  )
+}
 
 FilterItem.propTypes = {
   index: PropTypes.number,
@@ -199,6 +199,6 @@ FilterItem.propTypes = {
   }),
   handleFilterOptions: PropTypes.func,
   filterOptions: PropTypes.array
-};
+}
 
-export default CourseFilters;
+export default CourseFilters

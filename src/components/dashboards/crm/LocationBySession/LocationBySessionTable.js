@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ProgressBar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Flex from 'components/common/Flex';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ProgressBar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Flex from 'components/common/Flex'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
 
 const columns = [
   {
@@ -57,7 +57,7 @@ const columns = [
       </Flex>
     )
   }
-];
+]
 
 const LocationBySessionTable = ({ data }) => {
   return (
@@ -79,11 +79,11 @@ const LocationBySessionTable = ({ data }) => {
         />
       </div>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 LocationBySessionTable.propTypes = {
   data: PropTypes.array.isRequired
-};
+}
 
-export default LocationBySessionTable;
+export default LocationBySessionTable

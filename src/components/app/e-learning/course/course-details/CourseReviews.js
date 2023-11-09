@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import IconButton from 'components/common/IconButton';
-import StarRating from 'components/common/StarRating';
-import FalconLink from 'components/common/FalconLink';
-import Avatar from 'components/common/Avatar';
-import Flex from 'components/common/Flex';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import IconButton from 'components/common/IconButton'
+import StarRating from 'components/common/StarRating'
+import FalconLink from 'components/common/FalconLink'
+import Avatar from 'components/common/Avatar'
+import Flex from 'components/common/Flex'
 
 const CourseReviews = ({ data }) => {
   return (
@@ -117,11 +117,11 @@ const CourseReviews = ({ data }) => {
         />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 CourseReviews.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
-export default CourseReviews;
+export default CourseReviews

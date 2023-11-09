@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import AvgCallDurationChart from './AvgCallDurationChart';
+import React from 'react'
+import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import AvgCallDurationChart from './AvgCallDurationChart'
 
 const AvgCallDuration = () => {
   return (
@@ -36,7 +36,7 @@ const AvgCallDuration = () => {
         <AvgCallDurationChart />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default AvgCallDuration;
+export default AvgCallDuration

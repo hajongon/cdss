@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import React from 'react';
-import { Card, Dropdown } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import React from 'react'
+import { Card, Dropdown } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 
 const ContactDetailsHeader = ({ handleShow }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <Card className="mb-3">
       <Card.Header className="d-flex flex-between-center">
@@ -112,11 +112,11 @@ const ContactDetailsHeader = ({ handleShow }) => {
         </Flex>
       </Card.Header>
     </Card>
-  );
-};
+  )
+}
 
 ContactDetailsHeader.propTypes = {
   handleShow: PropTypes.func
-};
+}
 
-export default ContactDetailsHeader;
+export default ContactDetailsHeader

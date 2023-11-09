@@ -1,19 +1,19 @@
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import React, { useState } from 'react';
-import { Card, Col, Offcanvas, Row } from 'react-bootstrap';
-import { tickets } from 'data/dashboard/support-desk';
-import { columns } from 'components/dashboards/support-desk/unsolved-tickets/TicketsLayout';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination';
-import AllTicketsHeader from './AllTicketsHeader';
-import TicketFilteringForm from './TicketFilteringForm';
-import { useBreakpoints } from 'hooks/useBreakpoints';
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import React, { useState } from 'react'
+import { Card, Col, Offcanvas, Row } from 'react-bootstrap'
+import { tickets } from 'data/dashboard/support-desk'
+import { columns } from 'components/dashboards/support-desk/unsolved-tickets/TicketsLayout'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import AdvanceTablePagination from 'components/common/advance-table/AdvanceTablePagination'
+import AllTicketsHeader from './AllTicketsHeader'
+import TicketFilteringForm from './TicketFilteringForm'
+import { useBreakpoints } from 'hooks/useBreakpoints'
 
 const TableView = () => {
-  const [show, setShow] = useState(false);
-  const { breakpoints } = useBreakpoints();
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false)
+  const { breakpoints } = useBreakpoints()
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <Row className="gx-3">
       <Col xxl={10} xl={9}>
@@ -70,7 +70,7 @@ const TableView = () => {
         )}
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default TableView;
+export default TableView

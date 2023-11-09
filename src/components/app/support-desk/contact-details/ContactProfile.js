@@ -1,15 +1,15 @@
-import Background from 'components/common/Background';
-import CardDropdown from 'components/common/CardDropdown';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import cornerBg from 'assets/img/illustrations/corner-2.png';
-import profileImg from 'assets/img/team/5-thumb.png';
-import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import Flex from 'components/common/Flex';
-import IconButton from 'components/common/IconButton';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import Background from 'components/common/Background'
+import CardDropdown from 'components/common/CardDropdown'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import cornerBg from 'assets/img/illustrations/corner-2.png'
+import profileImg from 'assets/img/team/5-thumb.png'
+import React from 'react'
+import { Card, Col, Row } from 'react-bootstrap'
+import Flex from 'components/common/Flex'
+import IconButton from 'components/common/IconButton'
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const InfoItem = ({ title, content, className }) => {
   return (
@@ -35,14 +35,14 @@ const InfoItem = ({ title, content, className }) => {
         <p className="mb-0 text-700 fs--1">{content}</p>
       )}
     </div>
-  );
-};
+  )
+}
 
 InfoItem.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   className: PropTypes.string
-};
+}
 
 const ContactProfile = () => {
   return (
@@ -133,7 +133,7 @@ const ContactProfile = () => {
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default ContactProfile;
+export default ContactProfile

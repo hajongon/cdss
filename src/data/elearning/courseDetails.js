@@ -1,17 +1,17 @@
-import target from 'assets/img/icons/target.svg';
-import discount from 'assets/img/icons/discount.svg';
-import networking from 'assets/img/icons/networking.svg';
-import reviewer1 from 'assets/img/team/11.jpg';
-import reviewer2 from 'assets/img/team/2-thumb.png';
-import reviewer3 from 'assets/img/team/7.jpg';
-import reviewer4 from 'assets/img/team/4-thumb.png';
-import reviewer5 from 'assets/img/team/10.jpg';
-import beachVideo from 'assets/video/beach.mp4';
-import intro from 'assets/img/e-learning/lessons/intro.png';
-import chapter1 from 'assets/img/e-learning/lessons/chapter1.png';
-import chapter2 from 'assets/img/e-learning/lessons/chapter2.png';
-import chapter3 from 'assets/img/e-learning/lessons/chapter3.png';
-import chapter4 from 'assets/img/e-learning/lessons/chapter4.png';
+import target from 'assets/img/icons/target.svg'
+import discount from 'assets/img/icons/discount.svg'
+import networking from 'assets/img/icons/networking.svg'
+import reviewer1 from 'assets/img/team/11.jpg'
+import reviewer2 from 'assets/img/team/2-thumb.png'
+import reviewer3 from 'assets/img/team/7.jpg'
+import reviewer4 from 'assets/img/team/4-thumb.png'
+import reviewer5 from 'assets/img/team/10.jpg'
+import beachVideo from 'assets/video/beach.mp4'
+import intro from 'assets/img/e-learning/lessons/intro.png'
+import chapter1 from 'assets/img/e-learning/lessons/chapter1.png'
+import chapter2 from 'assets/img/e-learning/lessons/chapter2.png'
+import chapter3 from 'assets/img/e-learning/lessons/chapter3.png'
+import chapter4 from 'assets/img/e-learning/lessons/chapter4.png'
 
 export const courseFeatures = [
   {
@@ -35,7 +35,7 @@ export const courseFeatures = [
       'Learn, work together and connect with other learners tools like a common purpose Discord and Slack channel and showcase your works.',
     icon: networking
   }
-];
+]
 
 export const courseContents = [
   { id: 0, content: 'Which tool is preferred for what kind of work.' },
@@ -53,7 +53,7 @@ export const courseContents = [
     content: 'The Advantage and Disadvantage that comes with each software.'
   },
   { id: 5, content: 'Trials of Premium and Free programs and promo codes.' }
-];
+]
 
 export const courseRequirements = [
   {
@@ -70,7 +70,7 @@ export const courseRequirements = [
       { id: 3, obligation: 'Digital Drawing Experience' }
     ]
   }
-];
+]
 
 export const courseReviews = [
   {
@@ -123,7 +123,7 @@ export const courseReviews = [
     liked: 0,
     date: '8 days ago'
   }
-];
+]
 
 export const courseLessons = [
   {
@@ -181,4 +181,4 @@ export const courseLessons = [
       type: 'image'
     }
   }
-];
+]

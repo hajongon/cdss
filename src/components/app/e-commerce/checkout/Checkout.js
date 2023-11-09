@@ -1,24 +1,24 @@
-import React, { useContext } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import CheckoutShipping from './CheckoutShipping';
-import OrderSummary from './OrderSummary';
-import PaymentMethod from './PaymentMethod';
-import { ProductContext } from 'context/Context';
-import { getSubtotal, getDiscountPrice } from 'helpers/utils';
+import React, { useContext } from 'react'
+import { Col, Row } from 'react-bootstrap'
+import CheckoutShipping from './CheckoutShipping'
+import OrderSummary from './OrderSummary'
+import PaymentMethod from './PaymentMethod'
+import { ProductContext } from 'context/Context'
+import { getSubtotal, getDiscountPrice } from 'helpers/utils'
 
 const Checkout = () => {
   const {
     productsState: { cartItems, promo }
-  } = useContext(ProductContext);
+  } = useContext(ProductContext)
 
   const shippingCost = parseFloat(
     cartItems.reduce((acc, product) => acc + product.shippingCost, 0)
-  );
-  const subTotal = parseFloat(getSubtotal(cartItems).toFixed(2));
-  const total = shippingCost + subTotal;
+  )
+  const subTotal = parseFloat(getSubtotal(cartItems).toFixed(2))
+  const total = shippingCost + subTotal
   const payableTotal = parseFloat(
     promo ? total - getDiscountPrice(total, promo.discount) : total
-  ).toFixed(2);
+  ).toFixed(2)
 
   return (
     <Row className="g-3">
@@ -36,7 +36,7 @@ const Checkout = () => {
         <PaymentMethod payableTotal={payableTotal} />
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default Checkout;
+export default Checkout

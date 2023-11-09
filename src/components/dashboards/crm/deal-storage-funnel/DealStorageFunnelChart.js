@@ -1,7 +1,7 @@
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import * as echarts from 'echarts/core';
-import { getColor } from 'helpers/utils';
-import React from 'react';
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import * as echarts from 'echarts/core'
+import { getColor } from 'helpers/utils'
+import React from 'react'
 
 const getOptions = () => ({
   yAxis: [
@@ -91,7 +91,7 @@ const getOptions = () => ({
     }
   ],
   grid: { right: '65px', left: '0', bottom: '0', top: '0' }
-});
+})
 
 const DealStorageFunnelChart = () => {
   return (
@@ -100,7 +100,7 @@ const DealStorageFunnelChart = () => {
       option={getOptions()}
       style={{ height: '10rem' }}
     />
-  );
-};
+  )
+}
 
-export default DealStorageFunnelChart;
+export default DealStorageFunnelChart

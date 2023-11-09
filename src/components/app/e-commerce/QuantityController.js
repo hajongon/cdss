@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, Form, InputGroup } from 'react-bootstrap';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Form, InputGroup } from 'react-bootstrap'
+import classNames from 'classnames'
 
 const QuantityController = ({
   quantity,
@@ -37,8 +37,8 @@ const QuantityController = ({
         +
       </Button>
     </InputGroup>
-  );
-};
+  )
+}
 
 QuantityController.propTypes = {
   quantity: PropTypes.number.isRequired,
@@ -46,6 +46,6 @@ QuantityController.propTypes = {
   handleIncrease: PropTypes.func.isRequired,
   handleDecrease: PropTypes.func.isRequired,
   btnClassName: PropTypes.string
-};
+}
 
-export default QuantityController;
+export default QuantityController

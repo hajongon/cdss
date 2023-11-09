@@ -1,10 +1,10 @@
-import cart1 from '../../assets/img/products/1.jpg';
-import cart2 from '../../assets/img/products/2.jpg';
-import cart3 from '../../assets/img/products/4.jpg';
-import cart4 from '../../assets/img/products/3.jpg';
-import cart5 from '../../assets/img/products/5.jpg';
-import cart6 from '../../assets/img/products/7.jpg';
-import cart7 from '../../assets/img/products/8.jpg';
+import cart1 from '../../assets/img/products/1.jpg'
+import cart2 from '../../assets/img/products/2.jpg'
+import cart3 from '../../assets/img/products/4.jpg'
+import cart4 from '../../assets/img/products/3.jpg'
+import cart5 from '../../assets/img/products/5.jpg'
+import cart6 from '../../assets/img/products/7.jpg'
+import cart7 from '../../assets/img/products/8.jpg'
 
 export const carts = [
   {
@@ -58,4 +58,4 @@ export const carts = [
     price: 400,
     img: cart7
   }
-];
+]

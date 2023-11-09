@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Modal } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import AppContext from 'context/Context';
-import Flex from 'components/common/Flex';
-import dayjs from 'dayjs';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { Button, Modal } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import AppContext from 'context/Context'
+import Flex from 'components/common/Flex'
+import dayjs from 'dayjs'
 
 const getCircleStackIcon = (icon, transform) => (
   <span className="fa-stack ms-n1 me-3">
@@ -17,7 +17,7 @@ const getCircleStackIcon = (icon, transform) => (
       inverse
     />
   </span>
-);
+)
 
 const EventModalMediaContent = ({ icon, heading, content, children }) => (
   <Flex className="mt-3">
@@ -27,7 +27,7 @@ const EventModalMediaContent = ({ icon, heading, content, children }) => (
       {children || <p className="mb-0 text-justify">{content}</p>}
     </div>
   </Flex>
-);
+)
 
 const CalendarEventModal = ({
   setIsOpenEventModal,
@@ -36,15 +36,15 @@ const CalendarEventModal = ({
 }) => {
   const {
     config: { isDark }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleClose = () => {
-    setIsOpenEventModal(!isOpenEventModal);
-  };
+    setIsOpenEventModal(!isOpenEventModal)
+  }
 
-  const { title, end, start } = isOpenEventModal && modalEventContent.event;
+  const { title, end, start } = isOpenEventModal && modalEventContent.event
   const { description, location, organizer, schedules } =
-    isOpenEventModal && modalEventContent.event.extendedProps;
+    isOpenEventModal && modalEventContent.event.extendedProps
 
   return (
     <Modal
@@ -127,20 +127,20 @@ const CalendarEventModal = ({
         </Button>
       </Modal.Footer>
     </Modal>
-  );
-};
+  )
+}
 
 EventModalMediaContent.propTypes = {
   icon: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   content: PropTypes.string,
   children: PropTypes.node
-};
+}
 
 CalendarEventModal.propTypes = {
   setIsOpenEventModal: PropTypes.func.isRequired,
   isOpenEventModal: PropTypes.bool.isRequired,
   modalEventContent: PropTypes.object.isRequired
-};
+}
 
-export default CalendarEventModal;
+export default CalendarEventModal

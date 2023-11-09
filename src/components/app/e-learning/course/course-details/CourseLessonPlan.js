@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Image } from 'react-bootstrap';
-import beach from 'assets/video/beach.mp4';
-import beachPoster from 'assets/video/beach.jpg';
-import FalconCardHeader from 'components/common/FalconCardHeader';
-import FalconLink from 'components/common/FalconLink';
-import Flex from 'components/common/Flex';
-import Hoverbox from 'components/common/Hoverbox';
-import IconButton from 'components/common/IconButton';
-import ModalVideoContent from '../../ModalVideoContent';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Card, Image } from 'react-bootstrap'
+import beach from 'assets/video/beach.mp4'
+import beachPoster from 'assets/video/beach.jpg'
+import FalconCardHeader from 'components/common/FalconCardHeader'
+import FalconLink from 'components/common/FalconLink'
+import Flex from 'components/common/Flex'
+import Hoverbox from 'components/common/Hoverbox'
+import IconButton from 'components/common/IconButton'
+import ModalVideoContent from '../../ModalVideoContent'
 
 const CourseLessonPlan = ({ data }) => {
   return (
@@ -34,15 +34,15 @@ const CourseLessonPlan = ({ data }) => {
         />
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 CourseLessonPlan.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object)
-};
+}
 
 const LessonItem = ({ lesson, isLast }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
   return (
     <>
       <ModalVideoContent
@@ -102,12 +102,12 @@ const LessonItem = ({ lesson, isLast }) => {
         )}
       </Flex>
     </>
-  );
-};
+  )
+}
 
 LessonItem.propTypes = {
   lesson: PropTypes.object,
   isLast: PropTypes.bool
-};
+}
 
-export default CourseLessonPlan;
+export default CourseLessonPlan

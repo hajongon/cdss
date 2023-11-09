@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card } from 'react-bootstrap';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { PieChart } from 'echarts/charts';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Card } from 'react-bootstrap'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { PieChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { getColor } from 'helpers/utils';
-import Flex from 'components/common/Flex';
-import SoftBadge from 'components/common/SoftBadge';
-import FalconLink from 'components/common/FalconLink';
-import FalconCardHeader from 'components/common/FalconCardHeader';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { getColor } from 'helpers/utils'
+import Flex from 'components/common/Flex'
+import SoftBadge from 'components/common/SoftBadge'
+import FalconLink from 'components/common/FalconLink'
+import FalconCardHeader from 'components/common/FalconCardHeader'
 
 echarts.use([
   TitleComponent,
@@ -25,7 +25,7 @@ echarts.use([
   PieChart,
   CanvasRenderer,
   LegendComponent
-]);
+])
 
 const data = [
   {
@@ -44,7 +44,7 @@ const data = [
     value: 7,
     name: 'Refunded'
   }
-];
+]
 
 const getOptions = () => ({
   color: [
@@ -85,7 +85,7 @@ const getOptions = () => ({
       data
     }
   ]
-});
+})
 
 const CourseStatus = ({ data }) => {
   return (
@@ -133,11 +133,11 @@ const CourseStatus = ({ data }) => {
         </Flex>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 CourseStatus.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default CourseStatus;
+export default CourseStatus

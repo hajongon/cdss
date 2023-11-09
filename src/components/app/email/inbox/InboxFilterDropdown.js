@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import Flex from 'components/common/Flex';
-import AppContext, { EmailContext } from 'context/Context';
-import React, { useContext } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import Flex from 'components/common/Flex'
+import AppContext, { EmailContext } from 'context/Context'
+import React, { useContext } from 'react'
+import { Dropdown } from 'react-bootstrap'
 
 const InboxFilterDropdownItem = ({ active, children, ...rest }) => (
   <Dropdown.Item
@@ -16,24 +16,24 @@ const InboxFilterDropdownItem = ({ active, children, ...rest }) => (
     {children}
     {active && <FontAwesomeIcon icon="check" transform="down-4 shrink-4" />}
   </Dropdown.Item>
-);
+)
 
 const InboxFilterDropdown = () => {
   const {
     emailState: { filters, currentFilter },
     emailDispatch
-  } = useContext(EmailContext);
+  } = useContext(EmailContext)
 
   const {
     config: { isRTL }
-  } = useContext(AppContext);
+  } = useContext(AppContext)
 
   const handleSelect = filter => {
     emailDispatch({
       type: 'FILTER',
       payload: filter
-    });
-  };
+    })
+  }
   return (
     <Dropdown className="font-sans-serif">
       <Dropdown.Toggle
@@ -55,12 +55,12 @@ const InboxFilterDropdown = () => {
         ))}
       </Dropdown.Menu>
     </Dropdown>
-  );
-};
+  )
+}
 
 InboxFilterDropdownItem.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node.isRequired
-};
+}
 
-export default InboxFilterDropdown;
+export default InboxFilterDropdown

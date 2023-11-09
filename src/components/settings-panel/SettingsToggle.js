@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { Card } from 'react-bootstrap';
-import AppContext from '../../context/Context';
+import React, { useContext } from 'react'
+import { Card } from 'react-bootstrap'
+import AppContext from '../../context/Context'
 
 const SettingsToggle = () => {
-  const { setConfig } = useContext(AppContext);
+  const { setConfig } = useContext(AppContext)
 
   const handleClick = () => {
-    setConfig('showSettingPanel', true);
-  };
+    setConfig('showSettingPanel', true)
+  }
 
   return (
     <Card className="setting-toggle" onClick={handleClick}>
@@ -42,7 +42,7 @@ const SettingsToggle = () => {
         </small>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default SettingsToggle;
+export default SettingsToggle

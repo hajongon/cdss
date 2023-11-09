@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Form, Button } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import CustomDateInput from 'components/common/CustomDateInput';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Form, Button } from 'react-bootstrap'
+import DatePicker from 'react-datepicker'
+import CustomDateInput from 'components/common/CustomDateInput'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CustomButton = ({ handleRemove, id }) => {
   return (
@@ -21,8 +21,8 @@ const CustomButton = ({ handleRemove, id }) => {
         <FontAwesomeIcon className="text-danger" icon="times-circle" />
       </Button>
     </div>
-  );
-};
+  )
+}
 
 const EventCustomFieldItem = ({
   name,
@@ -34,8 +34,8 @@ const EventCustomFieldItem = ({
   id,
   handleRemove
 }) => {
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
+  const [date, setDate] = useState(null)
+  const [time, setTime] = useState(null)
 
   {
     switch (type) {
@@ -55,7 +55,7 @@ const EventCustomFieldItem = ({
               {...register(`customField${index}`)}
             />
           </Form.Group>
-        );
+        )
       case 'password':
         return (
           <Form.Group
@@ -72,7 +72,7 @@ const EventCustomFieldItem = ({
               {...register(`customField${index}`)}
             />
           </Form.Group>
-        );
+        )
 
       case 'email':
         return (
@@ -90,7 +90,7 @@ const EventCustomFieldItem = ({
               {...register(`customField${index}`)}
             />
           </Form.Group>
-        );
+        )
 
       case 'checkboxes':
         return (
@@ -113,7 +113,7 @@ const EventCustomFieldItem = ({
               </Form.Check>
             ))}
           </Form.Group>
-        );
+        )
       case 'radio':
         return (
           <Form.Group
@@ -135,7 +135,7 @@ const EventCustomFieldItem = ({
               </Form.Check>
             ))}
           </Form.Group>
-        );
+        )
 
       case 'select':
         return (
@@ -157,7 +157,7 @@ const EventCustomFieldItem = ({
               ))}
             </Form.Select>
           </Form.Group>
-        );
+        )
 
       case 'textarea':
         return (
@@ -176,7 +176,7 @@ const EventCustomFieldItem = ({
               {...register(`CustomField${index}`)}
             />
           </Form.Group>
-        );
+        )
 
       case 'file':
         return (
@@ -190,7 +190,7 @@ const EventCustomFieldItem = ({
             <Form.Label>{name}</Form.Label>
             <Form.Control type="file" {...register(`CustomField${index}`)} />
           </Form.Group>
-        );
+        )
 
       case 'time':
         return (
@@ -210,8 +210,8 @@ const EventCustomFieldItem = ({
               timeCaption="Time"
               dateFormat="h:mm"
               onChange={newDate => {
-                setTime(newDate);
-                setValue(`customField${index}`, newDate);
+                setTime(newDate)
+                setValue(`customField${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -223,7 +223,7 @@ const EventCustomFieldItem = ({
               }
             />
           </Form.Group>
-        );
+        )
       case 'date':
         return (
           <Form.Group
@@ -237,8 +237,8 @@ const EventCustomFieldItem = ({
             <DatePicker
               selected={date}
               onChange={newDate => {
-                setDate(newDate);
-                setValue(`customField${index}`, newDate);
+                setDate(newDate)
+                setValue(`customField${index}`, newDate)
               }}
               customInput={
                 <CustomDateInput
@@ -250,7 +250,7 @@ const EventCustomFieldItem = ({
               }
             />
           </Form.Group>
-        );
+        )
 
       default:
         return (
@@ -268,16 +268,16 @@ const EventCustomFieldItem = ({
               {...register('customField' + index)}
             />
           </Form.Group>
-        );
+        )
     }
   }
-};
+}
 
 CustomButton.propTypes = {
   id: PropTypes.string,
   show: PropTypes.bool,
   handleRemove: PropTypes.func
-};
+}
 
 EventCustomFieldItem.propTypes = {
   name: PropTypes.string,
@@ -288,6 +288,6 @@ EventCustomFieldItem.propTypes = {
   setValue: PropTypes.func,
   id: PropTypes.string,
   handleRemove: PropTypes.func
-};
+}
 
-export default EventCustomFieldItem;
+export default EventCustomFieldItem

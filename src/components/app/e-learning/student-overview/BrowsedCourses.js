@@ -1,20 +1,20 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Col, Row, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import dayjs from 'dayjs';
-import ReactEChartsCore from 'echarts-for-react/lib/core';
-import { LineChart } from 'echarts/charts';
+import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+import { Card, Col, Row, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import dayjs from 'dayjs'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import { LineChart } from 'echarts/charts'
 import {
   GridComponent,
   LegendComponent,
   TitleComponent,
   TooltipComponent
-} from 'echarts/components';
-import * as echarts from 'echarts/core';
-import { getColor, rgbaColor } from 'helpers/utils';
-import FalconLink from 'components/common/FalconLink';
-import Flex from 'components/common/Flex';
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import { getColor, rgbaColor } from 'helpers/utils'
+import FalconLink from 'components/common/FalconLink'
+import Flex from 'components/common/Flex'
 
 echarts.use([
   TitleComponent,
@@ -22,7 +22,7 @@ echarts.use([
   GridComponent,
   LineChart,
   LegendComponent
-]);
+])
 
 const tooltipFormatter = params => `
     <div>
@@ -42,7 +42,7 @@ const tooltipFormatter = params => `
             </span>`
         )
         .join('<br />')}
-    </div>`;
+    </div>`
 
 const getOptions = () => ({
   color: getColor('gray-100'),
@@ -89,8 +89,8 @@ const getOptions = () => ({
     axisLabel: {
       color: getColor('gray-600'),
       formatter: value => {
-        const date = new Date(value);
-        return `${dayjs(date).format('MMM')}`;
+        const date = new Date(value)
+        return `${dayjs(date).format('MMM')}`
       },
       interval: 2
     }
@@ -111,7 +111,7 @@ const getOptions = () => ({
     borderWidth: 1,
     transitionDuration: 0,
     formatter(params) {
-      return tooltipFormatter(params);
+      return tooltipFormatter(params)
     }
   },
   series: [
@@ -162,18 +162,18 @@ const getOptions = () => ({
     bottom: '10%',
     top: '15%'
   }
-});
+})
 
 const BrowsedCourses = () => {
-  const chartRef = useRef(null);
+  const chartRef = useRef(null)
 
   const handleLegendToggle = (event, name) => {
     chartRef.current.getEchartsInstance().dispatchAction({
       type: 'legendToggleSelect',
       name
-    });
-    event.target.closest('button').classList.toggle('opacity-50');
-  };
+    })
+    event.target.closest('button').classList.toggle('opacity-50')
+  }
 
   return (
     <Card className="mb-3">
@@ -230,14 +230,14 @@ const BrowsedCourses = () => {
         </Row>
       </Card.Footer>
     </Card>
-  );
-};
+  )
+}
 
 BrowsedCourses.propTypes = {
   data: PropTypes.shape({
     onSaleCourse: PropTypes.array,
     regularPaidCourse: PropTypes.array
   })
-};
+}
 
-export default BrowsedCourses;
+export default BrowsedCourses
