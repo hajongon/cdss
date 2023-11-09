@@ -38,7 +38,7 @@ export const lmsStatistics = [
     color: 'warning',
     className: 'pt-4 p-xxl-0 pb-0 pe-md-0'
   }
-];
+]
 
 export const trendingKeywords = [
   { name: 'Banan Tab 100mg', v: 5587, color: '#2A7BE4' },
@@ -46,8 +46,8 @@ export const trendingKeywords = [
   { name: 'CYCin Tab 250mg', v: 1986, color: '#195099' },
   { name: 'Levokacin Tab 750mg', v: 1054, color: '#2A7BE4' },
   { name: 'Suprax Cap 100mg', v: 1012, color: '#2A7BE4' },
-  { name: 'Cravit Tab 500mg', v: 985, color: '#1956A6' },
-];
+  { name: 'Cravit Tab 500mg', v: 985, color: '#1956A6' }
+]
 
 export const avgEnrollments = {
   onSaleCourse: [
@@ -56,7 +56,7 @@ export const avgEnrollments = {
   regularPaidCourse: [
     1700, 1200, 500, 700, 1500, 1100, 700, 1100, 2600, 2050, 1050, 600, 700
   ]
-};
+}
 
 export const topCourses = [
   {
@@ -171,7 +171,7 @@ export const topCourses = [
     enrolled: '7,658',
     price: '$19.99'
   }
-];
+]
 
 export const UsersLocationTableData = [
   {
@@ -202,7 +202,7 @@ export const UsersLocationTableData = [
     status: 'Available',
     variant: 'success'
   }
-];
+]
 
 export const marketingExpensesData = {
   digitalMarketing: [
@@ -265,7 +265,7 @@ export const marketingExpensesData = {
       color: 'primary'
     }
   ]
-};
+}
 
 export const courseEnrollments = [
   ['course', 'Free Course', 'Paid Course', 'On sale Course'],
@@ -276,4 +276,4 @@ export const courseEnrollments = [
   ['Thu', 8000, 5000, 2600],
   ['Fri', 5000, 7000, 8800],
   ['Sat', 8000, 9000, 6000]
-];
+]

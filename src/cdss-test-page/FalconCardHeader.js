@@ -19,10 +19,8 @@ const Title = ({ titleTag: TitleTag, className, breakPoint, children }) => (
 
 const FalconCardHeader = ({
   title,
-  light,
   titleTag,
   titleClass,
-  className,
   breakPoint,
   endEl,
   children

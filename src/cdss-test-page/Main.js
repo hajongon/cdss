@@ -12,7 +12,6 @@ import './Main.css'
 import axios from 'axios'
 
 import AppContext from 'context/Context'
-import AntiSensrslt from './AntiSensrslt'
 import Flex from './Flex'
 import transformData from './transformData'
 

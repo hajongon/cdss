@@ -8,7 +8,7 @@ import AppContext from 'context/Context'
 import { formatDate } from './timeDateFunction'
 
 const AntiSensrslt = () => {
-  const { snsrsltData, setSnsrsltData, noDataError } = useContext(AppContext)
+  const { snsrsltData, noDataError } = useContext(AppContext)
 
   return (
     <Card className="h-100 fs--1">

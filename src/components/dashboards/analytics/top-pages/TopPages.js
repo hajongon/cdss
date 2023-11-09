@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Row, Col } from 'react-bootstrap';
-import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper';
-import AdvanceTable from 'components/common/advance-table/AdvanceTable';
-import { Link } from 'react-router-dom';
-import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox';
-import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Row, Col } from 'react-bootstrap'
+import AdvanceTableWrapper from 'components/common/advance-table/AdvanceTableWrapper'
+import AdvanceTable from 'components/common/advance-table/AdvanceTable'
+import { Link } from 'react-router-dom'
+import AdvanceTableSearchBox from 'components/common/advance-table/AdvanceTableSearchBox'
+import AdvanceTableFooter from 'components/common/advance-table/AdvanceTableFooter'
 
 const columns = [
   {
@@ -47,7 +47,7 @@ const columns = [
       className: 'text-end'
     }
   }
-];
+]
 
 const TopPages = ({ tableData, perPage = 8 }) => {
   return (
@@ -91,8 +91,8 @@ const TopPages = ({ tableData, perPage = 8 }) => {
         </Card.Footer>
       </Card>
     </AdvanceTableWrapper>
-  );
-};
+  )
+}
 
 TopPages.propTypes = {
   tableData: PropTypes.arrayOf(
@@ -105,6 +105,6 @@ TopPages.propTypes = {
     })
   ).isRequired,
   perPage: PropTypes.number
-};
+}
 
-export default TopPages;
+export default TopPages

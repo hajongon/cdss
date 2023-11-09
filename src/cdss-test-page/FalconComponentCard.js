@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { Card, Tab, Row, Col, Nav, Button } from 'react-bootstrap'
+import { Card, Tab, Row, Col } from 'react-bootstrap'
 import FalconCardBody from './FalconCardBody'
 import classNames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
@@ -9,26 +9,26 @@ import { useLocation } from 'react-router-dom'
 import { camelize } from './utils'
 import AppContext from 'context/Context'
 
-const PreviewCode = () => {
-  return (
-    <Row className="d-inline-block">
-      <Col>
-        <Nav variant="pills" className="nav-pills-falcon m-0">
-          <Nav.Item>
-            <Nav.Link as={Button} size="sm" eventKey="preview">
-              Preview
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link as={Button} size="sm" eventKey="code">
-              Code
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Col>
-    </Row>
-  )
-}
+// const PreviewCode = () => {
+//   return (
+//     <Row className="d-inline-block">
+//       <Col>
+//         <Nav variant="pills" className="nav-pills-falcon m-0">
+//           <Nav.Item>
+//             <Nav.Link as={Button} size="sm" eventKey="preview">
+//               Preview
+//             </Nav.Link>
+//           </Nav.Item>
+//           <Nav.Item>
+//             <Nav.Link as={Button} size="sm" eventKey="code">
+//               Code
+//             </Nav.Link>
+//           </Nav.Item>
+//         </Nav>
+//       </Col>
+//     </Row>
+//   )
+// }
 
 const FalconComponentCardHeader = ({
   light,
@@ -134,7 +134,8 @@ FalconComponentCardHeader.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   children: PropTypes.node,
-  noPreview: PropTypes.bool
+  noPreview: PropTypes.bool,
+  charts: PropTypes.bool
 }
 
 export default FalconComponentCard

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState, useEffect, useContext } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
@@ -140,6 +141,10 @@ const TestResults = () => {
       </Card.Body>
     </Card>
   )
+}
+
+TestResults.propTypes = {
+  handleCheckboxChange: PropTypes.func.isRequired
 }
 
 export default TestResults

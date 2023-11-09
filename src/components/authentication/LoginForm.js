@@ -1,10 +1,8 @@
-import Divider from 'components/common/Divider'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import SocialAuthButtons from './SocialAuthButtons'
 
 const LoginForm = ({ hasLabel, layout }) => {
   const navigate = useNavigate()

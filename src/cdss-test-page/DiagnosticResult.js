@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { Button, Card, Row, Col } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './DiagnosticResult.css'
-import { Table } from 'react-bootstrap'
-import TopPages from './FrbdnAntiSens'
-import { topPagesTableData } from './dummyData'
 import RcmndAntiSens from './RcmndAntiSens'
 import FrbdnAntiSens from './FrbdnAntiSens'
+import { topPagesTableData } from './dummyData'
 
 const DiagnosticResult = ({ setShowResult }) => {
   return (
@@ -69,6 +68,11 @@ const DiagnosticResult = ({ setShowResult }) => {
       </Card.Body>
     </Card>
   )
+}
+
+// Add PropTypes validation
+DiagnosticResult.propTypes = {
+  setShowResult: PropTypes.func.isRequired
 }
 
 export default DiagnosticResult

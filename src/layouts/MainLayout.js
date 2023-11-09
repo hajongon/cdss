@@ -4,7 +4,6 @@ import AppContext from 'context/Context'
 import classNames from 'classnames'
 import NavbarTop from 'components/navbar/top/NavbarTop'
 import NavbarVertical from 'components/navbar/vertical/NavbarVertical'
-import Footer from 'components/footer/Footer'
 import ProductProvider from 'components/app/e-commerce/ProductProvider'
 import CourseProvider from 'components/app/e-learning/CourseProvider'
 

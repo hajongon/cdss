@@ -1,11 +1,12 @@
-import SplitLogin from 'components/authentication/split/Login';
+import React from 'react'
+import SplitLogin from 'components/authentication/split/Login'
 
 const Test = () => {
-    return (
-      <>
+  return (
+    <>
       <SplitLogin />
-      </>
-    );
-  };
+    </>
+  )
+}
 
-  export default Test
+export default Test

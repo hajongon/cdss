@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Card, Row } from 'react-bootstrap'
 import AdvanceTableWrapper from './advance-table/AdvanceTableWrapper'
 import AdvanceTable from './advance-table/AdvanceTable'
 import { Link } from 'react-router-dom'
@@ -91,7 +91,8 @@ FrbdnAntiSens.propTypes = {
       exitRate: PropTypes.string.isRequired
     })
   ).isRequired,
-  perPage: PropTypes.number
+  perPage: PropTypes.number,
+  title: PropTypes.string.isRequired
 }
 
 export default FrbdnAntiSens

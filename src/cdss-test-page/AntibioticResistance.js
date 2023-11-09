@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import React from 'react'
+import { Card } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientSymptom.css'
-import { Dropdown } from 'react-bootstrap'
 import { Table } from 'react-bootstrap'
 
 const AntibioticResistance = () => {

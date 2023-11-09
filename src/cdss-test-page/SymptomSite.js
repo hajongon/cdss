@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, Col, Form, Row } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientSymptom.css'

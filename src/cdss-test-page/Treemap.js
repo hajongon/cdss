@@ -1,11 +1,12 @@
+import PropTypes from 'prop-types'
+import React from 'react'
 import { useState, useRef, useEffect, useContext } from 'react'
 import * as d3 from 'd3'
 import FalconComponentCard from './FalconComponentCard'
 import FalconCardBody from './FalconCardBody'
 import AppContext from 'context/Context'
-import Flex from './Flex'
 
-export default function Treemap({ data, height }) {
+function Treemap({ data, height }) {
   const svgRef = useRef(null)
   const legendRef = useRef(null)
   const { noDataError } = useContext(AppContext)
@@ -38,7 +39,7 @@ export default function Treemap({ data, height }) {
       .attr('transform', d => `translate(${d.x0},${d.y0})`)
 
     // create color scheme and fader
-    const fader = color => d3.interpolateRgb(color, '#fff')(0.4)
+    // const fader = color => d3.interpolateRgb(color, '#fff')(0.4)
     const colorScale = d3.scaleOrdinal(['#2c7be5', '#1956A6'])
 
     // add treemap rects
@@ -167,3 +168,11 @@ export default function Treemap({ data, height }) {
     </FalconComponentCard>
   )
 }
+
+// Add PropTypes validation for 'data' and 'height' props
+Treemap.propTypes = {
+  data: PropTypes.object.isRequired, // Adjust the PropTypes type as needed
+  height: PropTypes.number.isRequired // Adjust the PropTypes type as needed
+}
+
+export default Treemap

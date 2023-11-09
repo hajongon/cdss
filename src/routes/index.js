@@ -111,11 +111,6 @@ import Products from 'components/app/e-commerce/product/Products'
 import ProductDetails from 'components/app/e-commerce/product/product-details/ProductDetails'
 import Orders from 'components/app/e-commerce/orders/order-list/Orders'
 import Customers from 'components/app/e-commerce/customers/Customers'
-import Courses from 'components/app/e-learning/course/Courses'
-import CourseDetails from 'components/app/e-learning/course/course-details'
-import CreateCourse from 'components/app/e-learning/course/create-a-course'
-import TrainerProfile from 'components/app/e-learning/trainer-profile'
-import StudentOverview from 'components/app/e-learning/student-overview'
 import CreateEvent from 'components/app/events/create-an-event/CreateEvent'
 import EventList from 'components/app/events/event-list/EventList'
 import EventDetail from 'components/app/events/event-detail/EventDetail'
@@ -180,11 +175,8 @@ import SplitForgetPassword from 'components/authentication/split/ForgetPassword'
 import SplitPasswordReset from 'components/authentication/split/PasswordReset'
 import SplitConfirmMail from 'components/authentication/split/ConfirmMail'
 import SplitLockScreen from 'components/authentication/split/LockScreen'
-
 import Wizard from 'components/wizard/Wizard'
-import Dashboard from 'components/dashboards/default'
 import Faq from 'components/documentation/Faq'
-
 import SupportDesk from 'components/dashboards/support-desk'
 import TableView from 'components/app/support-desk/tickets-layout/TableView'
 import CardView from 'components/app/support-desk/tickets-layout/CardView'
@@ -197,8 +189,6 @@ import InputMaskExample from 'components/doc-components/InputMaskExample'
 import RangeSlider from 'components/doc-components/RangeSlider'
 
 import Test from 'components/pages/test-page/Test'
-import Cdss from 'components/pages/test-page/Cdss'
-import CdssMain from 'components/cdss/CdssMain'
 import Main from 'cdss-test-page/Main'
 
 const FalconRoutes = () => {
@@ -344,26 +334,6 @@ const FalconRoutes = () => {
         />
 
         <Route path="e-commerce/invoice" element={<Invoice />} />
-
-        {/* E Learning */}
-        <Route path="e-learning/course/:courseLayout" element={<Courses />} />
-        <Route
-          path="e-learning/course/course-details"
-          element={<CourseDetails />}
-        />
-        <Route
-          path="e-learning/course/course-details/:courseId"
-          element={<CourseDetails />}
-        />
-        <Route
-          path="e-learning/course/create-a-course"
-          element={<CreateCourse />}
-        />
-        <Route path="e-learning/trainer-profile" element={<TrainerProfile />} />
-        <Route
-          path="e-learning/student-overview"
-          element={<StudentOverview />}
-        />
 
         {/*icons*/}
         <Route path="icons/font-awesome" element={<FontAwesome />} />
@@ -582,8 +552,6 @@ const FalconRoutes = () => {
 
       {/* 최초 화면 */}
       <Route path="/" element={<Test />} />
-
-      <Route path="/cdssmain" element={<CdssMain />} />
     </Routes>
   )
 }

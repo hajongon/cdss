@@ -1,18 +1,16 @@
 import React, { useState, useContext } from 'react'
-import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { Card, Col, Form, Row } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './PatientInfo.css'
-import Flex from './Flex'
 import axios from 'axios'
-import corner1 from 'assets/img/icons/spot-illustrations/corner-3.png'
 import AppContext from 'context/Context'
-import { formatDate, sortByTimestamp } from './timeDateFunction'
+import { sortByTimestamp } from './timeDateFunction'
 import transformData from './transformData'
-import Background from 'components/common/Background'
+import PropTypes from 'prop-types'
 
-const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
+const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   const { setNoDataError } = useContext(AppContext)
-  const [isMedicated, setIsMedicated] = useState(false)
+  // const [isMedicated, setIsMedicated] = useState(false)
   const [patInfoData, setPatInfoData] = useState({
     birthday: '',
     medicineName: '',
@@ -304,7 +302,7 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                 />
               </Flex>
             </Form.Group> */}
-            {isMedicated ? (
+            {/* {isMedicated ? (
               <Form.Group as={Col} lg={2} controlId="medicineName">
                 <Form.Label className="fs--1 mb-0">항생제 성분명</Form.Label>
                 <Form.Control
@@ -316,12 +314,18 @@ const PatientInfo = ({ showResult, setShowResult, setIsPatientSelected }) => {
                   onChange={handleChange}
                 />
               </Form.Group>
-            ) : null}
+            ) : null} */}
           </Row>
         </Form>
       </Card.Body>
     </Card>
   )
+}
+
+// Add PropTypes validation
+PatientInfo.propTypes = {
+  setShowResult: PropTypes.func.isRequired,
+  setIsPatientSelected: PropTypes.func.isRequired
 }
 
 export default PatientInfo
