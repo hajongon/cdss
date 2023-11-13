@@ -6400,8 +6400,8 @@ fieldset:disabled .tox .tox-menu__footer .tox-button:last-child {
   display: block;
 }
 .navbar {
-  --falcon-navbar-padding-x: 1rem;
-  --falcon-navbar-padding-y: 0.5rem;
+  --falcon-navbar-padding-x: 1.6rem;
+  --falcon-navbar-padding-y: 0.8rem;
   --falcon-navbar-color: var(--falcon-navbar-light-color);
   --falcon-navbar-hover-color: var(--falcon-navbar-light-hover-color);
   --falcon-navbar-disabled-color: var(--falcon-navbar-light-disabled-color);

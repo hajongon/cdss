@@ -5,7 +5,6 @@ import PatientSymptom from './PatientSymptom'
 import SymptomSite from './SymptomSite'
 import TestResults from './TestResults'
 import AdrHistory from './AdrHistory'
-import AntibioticResistance from './AntibioticResistance'
 import SideChartBar from './SideChartBar'
 import DiagnosticResult from './DiagnosticResult'
 import './Main.css'
@@ -13,20 +12,20 @@ import axios from 'axios'
 
 import AppContext from 'context/Context'
 import Flex from './Flex'
-import transformData from './transformData'
+import { transformData, transformArrayToCounts } from './transformData'
+import AntiSensrslt from './AntiSensrslt'
 
 const Main = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
-  const { setAllOrdCount } = useContext(AppContext)
 
-  // AppContext에서 patientsInfo와 setPatientsInfo를 가져옵니다.
-  const { setPatientsInfo } = useContext(AppContext)
+  const { setPatientsInfo, setAllOrdCount, setBarChartEntireData } =
+    useContext(AppContext)
 
   useEffect(() => {
     // GET 요청을 보내고 데이터를 콘솔에 출력
     axios
-      .get('http://100.100.100.108:8080/patients')
+      .get(`${process.env.REACT_APP_API_URL}/patients`)
       .then(response => {
         const fetchedData = response.data
         setPatientsInfo([...fetchedData])
@@ -36,13 +35,15 @@ const Main = () => {
       })
 
     axios
-      .get('http://100.100.100.108:8080/get-ord-count')
+      .get(`${process.env.REACT_APP_API_URL}/get-ord-count`)
       .then(response => {
         const fetchedData = response.data
         // Initialize an empty array to store the transformed data
         // Set the transformed data in your state
         const transformedData = transformData(fetchedData)
         setAllOrdCount(transformedData)
+        const transformedCountsObj = transformArrayToCounts(fetchedData)
+        setBarChartEntireData(transformedCountsObj)
       })
       .catch(error => {
         console.error('에러 발생:', error)
@@ -99,7 +100,7 @@ const Main = () => {
                     <AdrHistory />
                   </Col>
                   <Col md={6} xs={12}>
-                    <AntibioticResistance />
+                    <AntiSensrslt />
                   </Col>
                 </Row>
               </>
@@ -119,7 +120,7 @@ const Main = () => {
           </Flex>
         </Col>
         <Col xl={3}>
-          <SideChartBar showResult={showResult} />
+          <SideChartBar isPatientSelected={isPatientSelected} />
         </Col>
       </Row>
     </div>

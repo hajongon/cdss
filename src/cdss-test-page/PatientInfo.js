@@ -5,11 +5,11 @@ import './PatientInfo.css'
 import axios from 'axios'
 import AppContext from 'context/Context'
 import { sortByTimestamp } from './timeDateFunction'
-import transformData from './transformData'
+import { transformArrayToCounts, transformData } from './transformData'
 import PropTypes from 'prop-types'
+import transformPrscData from './transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
-  const { setNoDataError } = useContext(AppContext)
   // const [isMedicated, setIsMedicated] = useState(false)
   const [patInfoData, setPatInfoData] = useState({
     birthday: '',
@@ -21,11 +21,14 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   })
 
   const {
+    setNoDataError,
     patientsInfo,
     setTestResultData,
     setSnsrsltData,
     setTreemapDataRange,
-    setOrdCount
+    setOrdCount,
+    setPrescriptions,
+    setBarChartPersonalData
   } = useContext(AppContext)
 
   const handleChange = e => {
@@ -62,7 +65,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       try {
         const urineResponse = await axios.post(
-          'http://100.100.100.108:8080/urine/get-by-pt-sbst-no',
+          `${process.env.REACT_APP_API_URL}/urine/get-by-pt-sbst-no`,
           sbstNo,
           {
             headers: {
@@ -91,7 +94,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       try {
         const serumResponse = await axios.post(
-          'http://100.100.100.108:8080/serum/get-by-pt-sbst-no',
+          `${process.env.REACT_APP_API_URL}/serum/get-by-pt-sbst-no`,
           sbstNo,
           {
             headers: {
@@ -120,7 +123,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       try {
         const snsrsltResponse = await axios.post(
-          'http://100.100.100.108:8080/snsrslt/get-by-pt-sbst-no',
+          `${process.env.REACT_APP_API_URL}/snsrslt/get-by-pt-sbst-no`,
           sbstNo,
           {
             headers: {
@@ -157,12 +160,15 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       try {
         const ordCountResponse = await axios.request({
           method: 'get',
-          url: `http://100.100.100.108:8080/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
+          url: `${process.env.REACT_APP_API_URL}/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
         })
         if (ordCountResponse.data) {
           const fetchedData = ordCountResponse.data
           const transformedData = transformData(fetchedData)
+          const transformedBarData = transformArrayToCounts(fetchedData)
+
           setOrdCount(transformedData)
+          setBarChartPersonalData(transformedBarData)
           setNoDataError(prevState => ({
             ...prevState,
             hist: false
@@ -173,6 +179,31 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
           setNoDataError(prevState => ({
             ...prevState,
             hist: true
+          }))
+        } else {
+          console.error('오류 발생:', error.message)
+        }
+      }
+
+      try {
+        const prescriptionResponse = await axios.request({
+          method: 'get',
+          url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
+        })
+        if (prescriptionResponse.data) {
+          const fetchedData = prescriptionResponse.data
+          const transformedData = transformPrscData(fetchedData)
+          setPrescriptions(transformedData)
+          setNoDataError(prevState => ({
+            ...prevState,
+            prescription: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            prescription: true
           }))
         } else {
           console.error('오류 발생:', error.message)

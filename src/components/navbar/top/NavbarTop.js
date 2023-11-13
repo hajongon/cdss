@@ -4,10 +4,10 @@ import { Navbar, Nav } from 'react-bootstrap'
 import classNames from 'classnames'
 import AppContext from 'context/Context'
 import Logo from 'components/common/Logo'
-import SearchBox from './SearchBox'
+// import SearchBox from './SearchBox'
 import NavbarTopDropDownMenus from './NavbarTopDropDownMenus'
 import { navbarBreakPoint, topNavbarBreakpoint } from 'config'
-import autoCompleteInitialItem from 'data/autocomplete/autocomplete'
+// import autoCompleteInitialItem from 'data/autocomplete/autocomplete'
 import TopNavRightSideNavItem from './TopNavRightSideNavItem'
 import { useLocation } from 'react-router-dom'
 
@@ -47,7 +47,7 @@ const NavbarTop = () => {
 
   return (
     <Navbar
-      className={classNames('navbar-glass fs--1 navbar-top sticky-kit', {
+      className={classNames('navbar-glass fs--1 navbar-top sticky-kit mb-1', {
         // 'navbar-glass-shadow': showDropShadow
         'navbar-glass-shadow': showDropShadow && !isChat
       })}
@@ -88,11 +88,7 @@ const NavbarTop = () => {
   )
 }
 
-const NavbarTopElements = ({
-  navbarPosition,
-  handleBurgerMenu,
-  navbarCollapsed
-}) => {
+const NavbarTopElements = ({ navbarPosition, handleBurgerMenu }) => {
   const burgerMenuRef = useRef()
   return (
     <>
@@ -118,7 +114,7 @@ const NavbarTopElements = ({
       </Navbar.Toggle>
 
       <Logo at="navbar-top" width={40} id="topLogo" />
-
+      {/* 
       {navbarPosition === 'top' || navbarPosition === 'combo' ? (
         <Navbar.Collapse
           in={navbarCollapsed}
@@ -138,7 +134,7 @@ const NavbarTopElements = ({
             <SearchBox autoCompleteItem={autoCompleteInitialItem} />
           </Nav.Item>
         </Nav>
-      )}
+      )} */}
       <TopNavRightSideNavItem />
     </>
   )

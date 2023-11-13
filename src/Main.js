@@ -82,8 +82,14 @@ const Main = props => {
     urine: false,
     serum: false,
     sensrslt: false,
-    hist: false
+    hist: false,
+    prescription: false
   })
+
+  // 처방 이력 데이터
+  const [prescriptions, setPrescriptions] = useState([])
+  const [barChartEntireData, setBarChartEntireData] = useState({})
+  const [barChartPersonalData, setBarChartPersonalData] = useState({})
 
   if (!isLoaded) {
     return (
@@ -123,7 +129,13 @@ const Main = props => {
         allOrdCount,
         setAllOrdCount,
         noDataError,
-        setNoDataError
+        setNoDataError,
+        prescriptions,
+        setPrescriptions,
+        barChartEntireData,
+        setBarChartEntireData,
+        barChartPersonalData,
+        setBarChartPersonalData
       }}
     >
       {props.children}

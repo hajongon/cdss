@@ -1,4 +1,4 @@
-function transformData(inputData) {
+export function transformData(inputData) {
   const transformedData = {
     name: '환자 전체 처방 목록',
     children: []
@@ -55,4 +55,19 @@ function transformData(inputData) {
   return transformedData
 }
 
-export default transformData
+export function transformArrayToCounts(arr) {
+  const result = {}
+
+  arr.forEach(item => {
+    const ordname = item.ordnameTyp1 || item.ordnameTyp2
+    const count = item.count
+
+    if (result[ordname]) {
+      result[ordname] += count
+    } else {
+      result[ordname] = count
+    }
+  })
+
+  return result
+}

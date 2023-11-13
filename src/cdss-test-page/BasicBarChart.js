@@ -23,105 +23,96 @@ echarts.use([
   LegendComponent
 ])
 
-const chartCode = `function ChartOptions() {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
+const BasicBarChart = ({ title, chartData }) => {
+  // barChartData를 배열로 변환하고 내림차순으로 정렬
+  const sortedData = Object.entries(chartData).sort((a, b) => a[1] - b[1])
 
-  const data = [1272, 1301, 1402, 1216, 1086, 1236, 1219, 1330, 1367, 1416, 1297, 1204];
+  // 정렬된 데이터에서 레이블과 카운트를 추출
+  const antibioticLabels = JSON.stringify(sortedData.map(item => item[0]))
+  const antibioticCounts = JSON.stringify(sortedData.map(item => item[1]))
 
-  const getOption = () => ({
-     tooltip: {
-        trigger: 'axis',
-        padding: [7, 10],
-        backgroundColor: getColor('gray-100'),
-        borderColor: getColor('gray-300'),
-        textStyle: { color: getColor('dark') },
-        borderWidth: 1,
-        formatter: tooltipFormatter,
-        transitionDuration: 0,
-        axisPointer: {
-          type: 'none'
-        }
-      },
-      xAxis: {
-        type: 'category',
-        data: months,
-        axisLine: {
-          lineStyle: {
-            color: getColor('gray-300'),
-            type: 'solid'
+  const chartCode = `function ChartOptions() {
+
+    const getOption = () => ({
+       tooltip: {
+          trigger: 'axis',
+          padding: [7, 10],
+          backgroundColor: getColor('gray-100'),
+          borderColor: getColor('gray-300'),
+          textStyle: { color: getColor('dark') },
+          borderWidth: 1,
+          formatter: tooltipFormatter,
+          transitionDuration: 0,
+          axisPointer: {
+            type: 'none'
           }
         },
-        axisTick: { show: false },
-        axisLabel: {
-          color: getColor('gray-400'),
-          formatter: value => value.substring(0, 3),
-          margin: 15
-        },
-        splitLine: {
-          show: false
-        }
-      },
-      yAxis: {
-        type: 'value',
-        axisLabel: {
-          show: true,
-          color: getColor('gray-400'),
-          margin: 15
-        },
-        splitLine: {
-          show: true,
-          lineStyle: {
-            color: getColor('gray-200')
-          }
-        },
-        axisTick: { show: false },
-        axisLine: { show: false },
-        min: 600
-      },
-      series: [
-        {
-          type: 'bar',
-          name: 'Total',
-          data,
-          lineStyle: { color: getColor('primary') },
-          itemStyle: {
-            color: getColor('primary'),
-            borderRadius: [3, 3, 0, 0]
+        yAxis: {
+          type: 'category',
+          data: ${antibioticLabels},
+          axisLine: {
+            lineStyle: {
+              color: getColor('gray-300'),
+              type: 'solid'
+            }
           },
-          showSymbol: false,
-          symbol: 'circle',
-          smooth: false,
-          emphasis: {
-            scale: true
+          axisTick: { show: false },
+          axisLabel: {
+            color: getColor('gray-400'),
+            formatter: value => value.substring(0, 3),
+            margin: 15
+          },
+          splitLine: {
+            show: false
           }
-        }
-      ],
-      grid: { right: '3%', left: '10%', bottom: '10%', top: '5%' }
-    });
-    return (
-      <ReactEChartsCore
-        echarts={echarts}
-        option={getOption()}
-        style={{ height: '18.75rem' }}
-      />
-    );
-  }
-`
+        },
+        xAxis: {
+          type: 'value',
+          axisLabel: {
+            show: true,
+            color: getColor('gray-400'),
+            margin: 15
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: getColor('gray-200')
+            }
+          },
+          axisTick: { show: false },
+          axisLine: { show: false },
+          min: 0
+        },
+        series: [
+          {
+            type: 'bar',
+            name: 'Total',
+            data: ${antibioticCounts},
+            lineStyle: { color: getColor('primary') },
+            itemStyle: {
+              color: getColor('primary'),
+              borderRadius: [3, 3, 0, 0]
+            },
+            showSymbol: false,
+            symbol: 'circle',
+            smooth: false,
+            emphasis: {
+              scale: true
+            }
+          }
+        ],
+        grid: { right: '3%', left: '15%', bottom: '10%', top: '5%' }
+      });
+      return (
+        <ReactEChartsCore
+          echarts={echarts}
+          option={getOption()}
+          style={{ height: '18.75rem' }}
+        />
+      );
+    }
+  `
 
-const BasicBarChart = ({ title }) => {
   return (
     <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">
       <FalconComponentCard.Header
@@ -146,7 +137,8 @@ const BasicBarChart = ({ title }) => {
 }
 
 BasicBarChart.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired,
+  chartData: PropTypes.array.isRequired
 }
 
 export default BasicBarChart

@@ -133,7 +133,7 @@ function Treemap({ data, height }) {
   }
 
   useEffect(() => {
-    renderTreemap(svgRef.current.clientWidth)
+    if (svgRef.current.clientWidth) renderTreemap(svgRef.current.clientWidth)
   }, [data, height, windowWidth])
 
   // Add a window resize event listener to update windowWidth
@@ -159,10 +159,7 @@ function Treemap({ data, height }) {
         {noDataError.hist ? (
           <div>해당 환자의 처방 이력이 없습니다.</div>
         ) : (
-          <>
-            <svg ref={svgRef} />
-            <svg ref={legendRef} style={{ marginTop: '10px ' }} />
-          </>
+          <svg ref={svgRef} />
         )}
       </FalconCardBody>
     </FalconComponentCard>

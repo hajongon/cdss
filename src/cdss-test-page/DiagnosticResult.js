@@ -37,16 +37,10 @@ const DiagnosticResult = ({ setShowResult }) => {
         </Row>
         <Row className="mb-3 g-3">
           <Col xs={12} md={6}>
-            <RcmndAntiSens
-              title="권장 항생제 형태 및 기간"
-              tableData={topPagesTableData}
-            />
+            <RcmndAntiSens title="권장 항생제" tableData={topPagesTableData} />
           </Col>{' '}
           <Col xs={12} md={6}>
-            <FrbdnAntiSens
-              title="제외 항생제 목록 (무슨 기준으로??)"
-              tableData={topPagesTableData}
-            />
+            <FrbdnAntiSens title="제외 항생제" tableData={topPagesTableData} />
           </Col>
         </Row>
 

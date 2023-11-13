@@ -11,6 +11,7 @@ import { faVial } from '@fortawesome/free-solid-svg-icons'
 import AppContext from 'context/Context'
 import Flex from './Flex'
 import { formatDate } from './timeDateFunction'
+import './TestResult.css'
 
 const SpcnameCheckbox = ({ handleCheckboxChange }) => {
   const [urineChecked, setUrineChecked] = useState(true)
@@ -94,57 +95,71 @@ const TestResults = () => {
         titleClass="fs-0 fw-bold"
         endEl={<SpcnameCheckbox handleCheckboxChange={handleCheckboxChange} />}
       />
-      <Card.Body
-        className="bg-white"
-        style={{
-          maxHeight: '15dvh',
-          overflowY: 'scroll'
-        }}
-      >
+      <Card.Body className="bg-white">
         {noDataError.urine && noDataError.serum ? (
           <div>해당 환자의 검사 내역이 없습니다.</div>
         ) : (
-          <Table borderless responsive size="sm">
-            <tbody>
-              {filteredResult.map((data, idx) => {
-                return (
-                  <tr key={idx}>
-                    <td>
-                      {data.spcname === 'R.Urine' ? (
-                        <FontAwesomeIcon
-                          icon={faVial}
-                          style={{ color: '#c2b62e' }}
-                        />
-                      ) : (
-                        <FontAwesomeIcon
-                          icon={faVial}
-                          style={{ color: '#ff5252' }}
-                        />
-                      )}
-                    </td>
-                    <td>{formatDate(data.orddate)}</td>
-                    <td className="text-info">
-                      {data.spcname === 'R.Urine'
-                        ? data.examcode
-                        : data.ordcode}
-                    </td>
-                    <td>{data.spcname}</td>
-                    <td>{data.normalfg}</td>
-                    <td>{data.procstat}</td>
-                    <td>{data.examtyp}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </Table>
+          <div
+            className="scrollbar"
+            style={{
+              overflow: 'auto',
+              height: '15dvh'
+            }}
+          >
+            <Table borderless size="sm">
+              <thead className="customFixedHeader text-600">
+                <tr>
+                  <th></th>
+                  <th>orddate</th>
+                  <th>ordname</th>
+                  <th>spcname</th>
+                  <th>normalfg</th>
+                  <th>procstat</th>
+                  <th>rslttype</th>
+                  <th>rsltnum</th>
+                  <th>examtyp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="sticky-border"></tr>
+                {filteredResult.map((data, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td>
+                        {data.spcname === 'R.Urine' ? (
+                          <FontAwesomeIcon
+                            icon={faVial}
+                            style={{ color: '#c2b62e' }}
+                          />
+                        ) : (
+                          <FontAwesomeIcon
+                            icon={faVial}
+                            style={{ color: '#ff5252' }}
+                          />
+                        )}
+                      </td>
+                      <td>{formatDate(data.orddate)}</td>
+                      <td className="text-info">{data.ordname}</td>
+                      <td>{data.spcname}</td>
+                      <td>{data.normalfg}</td>
+                      <td>{data.procstat}</td>
+                      <td>{data.rslttype}</td>
+                      <td>{data.rsltnum}</td>
+                      <td>{data.examtyp}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </Table>
+          </div>
         )}
       </Card.Body>
     </Card>
   )
 }
 
-TestResults.propTypes = {
-  handleCheckboxChange: PropTypes.func.isRequired
+SpcnameCheckbox.propTypes = {
+  handleCheckboxChange: PropTypes.func
 }
 
 export default TestResults
