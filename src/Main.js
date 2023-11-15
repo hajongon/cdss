@@ -66,7 +66,8 @@ const Main = props => {
   const [serumData, setSerumData] = useState([])
 
   // Anti Sensrslt
-  const [snsrsltData, setSnsrsltData] = useState([])
+  const [sensBeforeAdm, setSensBeforeAdm] = useState([])
+  const [sensAfterAdm, setSensAfterAdm] = useState([])
 
   // treemap 전체 or 개별
   const [treemapDataRange, setTreemapDataRange] = useState('entire')
@@ -83,13 +84,18 @@ const Main = props => {
     serum: false,
     sensrslt: false,
     hist: false,
-    prescription: false
+    prescription: false,
+    adrs: false
   })
 
   // 처방 이력 데이터
   const [prescriptions, setPrescriptions] = useState([])
   const [barChartEntireData, setBarChartEntireData] = useState({})
   const [barChartPersonalData, setBarChartPersonalData] = useState({})
+
+  // adr 데이터
+
+  const [adrs, setAdrs] = useState([])
 
   if (!isLoaded) {
     return (
@@ -120,8 +126,10 @@ const Main = props => {
         setSerumData,
         testResultData,
         setTestResultData,
-        snsrsltData,
-        setSnsrsltData,
+        sensBeforeAdm,
+        setSensBeforeAdm,
+        sensAfterAdm,
+        setSensAfterAdm,
         treemapDataRange,
         setTreemapDataRange,
         ordCount,
@@ -135,7 +143,9 @@ const Main = props => {
         barChartEntireData,
         setBarChartEntireData,
         barChartPersonalData,
-        setBarChartPersonalData
+        setBarChartPersonalData,
+        adrs,
+        setAdrs
       }}
     >
       {props.children}

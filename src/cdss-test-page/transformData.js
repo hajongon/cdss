@@ -71,3 +71,43 @@ export function transformArrayToCounts(arr) {
 
   return result
 }
+
+export const groupByMicname = data => {
+  return data.reduce((acc, item) => {
+    // Group initialization
+    if (!acc[item.micname]) {
+      acc[item.micname] = []
+    }
+
+    // Grouping
+    acc[item.micname].push(item)
+    return acc
+  }, {})
+}
+
+export function splitByAdmDate(data, admtime) {
+  // 입력 날짜를 Date 객체로 변환하고 시간 부분 초기화
+  const targetDate = new Date(admtime)
+  targetDate.setHours(0, 0, 0, 0) // 시간을 00:00:00으로 설정
+
+  // 결과를 저장할 배열 초기화
+  let beforeAdmData = []
+  let afterAdmData = []
+
+  // 배열의 각 요소에 대해 반복
+  data.forEach(item => {
+    // 객체의 spcdate를 Date 객체로 변환하고 시간 부분 초기화
+    const spcDate = new Date(item.spcdate)
+    spcDate.setHours(0, 0, 0, 0) // 시간을 00:00:00으로 설정
+
+    // 날짜 비교 후 적절한 배열에 추가
+    // 같은 날짜인 경우 afterAdmData 배열에 추가
+    if (spcDate < targetDate) {
+      beforeAdmData.push(item)
+    } else {
+      afterAdmData.push(item)
+    }
+  })
+
+  return { beforeAdmData, afterAdmData }
+}

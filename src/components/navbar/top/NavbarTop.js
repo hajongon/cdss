@@ -88,7 +88,11 @@ const NavbarTop = () => {
   )
 }
 
-const NavbarTopElements = ({ navbarPosition, handleBurgerMenu }) => {
+const NavbarTopElements = ({
+  navbarPosition,
+  handleBurgerMenu,
+  navbarCollapsed
+}) => {
   const burgerMenuRef = useRef()
   return (
     <>
@@ -114,7 +118,7 @@ const NavbarTopElements = ({ navbarPosition, handleBurgerMenu }) => {
       </Navbar.Toggle>
 
       <Logo at="navbar-top" width={40} id="topLogo" />
-      {/* 
+
       {navbarPosition === 'top' || navbarPosition === 'combo' ? (
         <Navbar.Collapse
           in={navbarCollapsed}
@@ -130,11 +134,11 @@ const NavbarTopElements = ({ navbarPosition, handleBurgerMenu }) => {
           className={`align-items-center d-none d-${topNavbarBreakpoint}-block`}
           as="ul"
         >
-          <Nav.Item as="li">
+          {/* <Nav.Item as="li">
             <SearchBox autoCompleteItem={autoCompleteInitialItem} />
-          </Nav.Item>
+          </Nav.Item> */}
         </Nav>
-      )} */}
+      )}
       <TopNavRightSideNavItem />
     </>
   )

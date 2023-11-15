@@ -4,31 +4,30 @@ import FalconCardHeader from './FalconCardHeader'
 import './PatientInfo.css'
 import axios from 'axios'
 import AppContext from 'context/Context'
-import { sortByTimestamp } from './timeDateFunction'
-import { transformArrayToCounts, transformData } from './transformData'
+import { formatDateForPatientInfo, sortByTimestamp } from './timeDateFunction'
+import { splitByAdmDate } from './transformData'
 import PropTypes from 'prop-types'
-import transformPrscData from './transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   // const [isMedicated, setIsMedicated] = useState(false)
   const [patInfoData, setPatInfoData] = useState({
     birthday: '',
-    medicineName: '',
     admtime: '',
     dschtime: '',
     sex: '',
-    bodytemp: 0
+    bodytemp: 0,
+    patnoid: ''
   })
 
   const {
+    setUrineData,
+    setSerumData,
     setNoDataError,
     patientsInfo,
-    setTestResultData,
-    setSnsrsltData,
+    setSensBeforeAdm,
+    setSensAfterAdm,
     setTreemapDataRange,
-    setOrdCount,
-    setPrescriptions,
-    setBarChartPersonalData
+    setAdrs
   } = useContext(AppContext)
 
   const handleChange = e => {
@@ -44,10 +43,13 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       setIsPatientSelected(false)
       // treemap 크기 결정
       setTreemapDataRange('entire')
+      setNoDataError(prevState => ({
+        ...prevState,
+        adrs: true
+      }))
     } else {
       setIsPatientSelected(true)
       setTreemapDataRange('personal')
-
       // patnoid가 입력받은 값과 같은 데이터만 필터링
       const selectedData = patientsInfo.filter(
         pat => pat.patnoid === e.target.value
@@ -56,17 +58,16 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       setPatInfoData({ ...selectedData })
 
       // 해당 데이터의 ptSbstNo를 저장
-      const sbstNo = JSON.stringify({
+      const sbstNoJson = JSON.stringify({
         pt_sbst_no: selectedData.ptSbstNo
       })
 
-      // urine, serum test 결과 모을 배열 정의
-      const entireTestResult = []
+      // urine fecthing
 
       try {
         const urineResponse = await axios.post(
           `${process.env.REACT_APP_API_URL}/urine/get-by-pt-sbst-no`,
-          sbstNo,
+          sbstNoJson,
           {
             headers: {
               'Content-Type': 'application/json'
@@ -74,7 +75,8 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
           }
         )
         if (urineResponse.data) {
-          entireTestResult.push(...urineResponse.data)
+          const sortedUrineData = sortByTimestamp(urineResponse.data)
+          setUrineData(sortedUrineData)
           setNoDataError(prevState => ({
             ...prevState,
             urine: false
@@ -92,10 +94,12 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
+      // serum fecthing
+
       try {
         const serumResponse = await axios.post(
           `${process.env.REACT_APP_API_URL}/serum/get-by-pt-sbst-no`,
-          sbstNo,
+          sbstNoJson,
           {
             headers: {
               'Content-Type': 'application/json'
@@ -103,7 +107,8 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
           }
         )
         if (serumResponse.data) {
-          entireTestResult.push(...serumResponse.data)
+          const sortedSerumData = sortByTimestamp(serumResponse.data)
+          setSerumData(sortedSerumData)
           setNoDataError(prevState => ({
             ...prevState,
             serum: false
@@ -121,10 +126,12 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
+      // 과거 항생제 내성 이력 fecthing
+
       try {
         const snsrsltResponse = await axios.post(
           `${process.env.REACT_APP_API_URL}/snsrslt/get-by-pt-sbst-no`,
-          sbstNo,
+          sbstNoJson,
           {
             headers: {
               'Content-Type': 'application/json'
@@ -132,7 +139,12 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
           }
         )
         if (snsrsltResponse.data) {
-          setSnsrsltData([...snsrsltResponse.data])
+          const { beforeAdmData, afterAdmData } = splitByAdmDate(
+            snsrsltResponse.data,
+            selectedData.admtime
+          )
+          setSensBeforeAdm(beforeAdmData)
+          setSensAfterAdm(afterAdmData)
           setNoDataError(prevState => ({
             ...prevState,
             sensrslt: false
@@ -150,60 +162,81 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
-      if (entireTestResult.length) {
-        const dateSortedEntireTestResult = sortByTimestamp(entireTestResult)
-        setTestResultData([...dateSortedEntireTestResult])
-      }
+      // try {
+      //   const ordCountResponse = await axios.request({
+      //     method: 'get',
+      //     url: `${process.env.REACT_APP_API_URL}/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
+      //   })
+      //   if (ordCountResponse.data) {
+      //     const fetchedData = ordCountResponse.data
+      //     const transformedData = transformData(fetchedData)
+      //     const transformedBarData = transformArrayToCounts(fetchedData)
 
-      // treemap data fetching
+      //     setOrdCount(transformedData)
+      //     setBarChartPersonalData(transformedBarData)
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       hist: false
+      //     }))
+      //   }
+      // } catch (error) {
+      //   if (error.response && error.response.status === 404) {
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       hist: true
+      //     }))
+      //   } else {
+      //     console.error('오류 발생:', error.message)
+      //   }
+      // }
+
+      // // 처방 이력 fetching
+
+      // try {
+      //   const prescriptionResponse = await axios.request({
+      //     method: 'get',
+      //     url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
+      //   })
+      //   if (prescriptionResponse.data) {
+      //     const fetchedData = prescriptionResponse.data
+      //     const transformedData = transformPrscData(fetchedData)
+      //     setPrescriptions(transformedData)
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       prescription: false
+      //     }))
+      //   }
+      // } catch (error) {
+      //   if (error.response && error.response.status === 404) {
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       prescription: true
+      //     }))
+      //   } else {
+      //     console.error('오류 발생:', error.message)
+      //   }
+      // }
+
+      // adr fetching
 
       try {
-        const ordCountResponse = await axios.request({
+        const adrResponse = await axios.request({
           method: 'get',
-          url: `${process.env.REACT_APP_API_URL}/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
+          url: `${process.env.REACT_APP_API_URL}/adr?ptSbstNo=${selectedData.ptSbstNo}`
         })
-        if (ordCountResponse.data) {
-          const fetchedData = ordCountResponse.data
-          const transformedData = transformData(fetchedData)
-          const transformedBarData = transformArrayToCounts(fetchedData)
-
-          setOrdCount(transformedData)
-          setBarChartPersonalData(transformedBarData)
+        if (adrResponse.data) {
+          const fetchedData = adrResponse.data
+          setAdrs(fetchedData)
           setNoDataError(prevState => ({
             ...prevState,
-            hist: false
+            adrs: false
           }))
         }
       } catch (error) {
         if (error.response && error.response.status === 404) {
           setNoDataError(prevState => ({
             ...prevState,
-            hist: true
-          }))
-        } else {
-          console.error('오류 발생:', error.message)
-        }
-      }
-
-      try {
-        const prescriptionResponse = await axios.request({
-          method: 'get',
-          url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
-        })
-        if (prescriptionResponse.data) {
-          const fetchedData = prescriptionResponse.data
-          const transformedData = transformPrscData(fetchedData)
-          setPrescriptions(transformedData)
-          setNoDataError(prevState => ({
-            ...prevState,
-            prescription: false
-          }))
-        }
-      } catch (error) {
-        if (error.response && error.response.status === 404) {
-          setNoDataError(prevState => ({
-            ...prevState,
-            prescription: true
+            adrs: true
           }))
         } else {
           console.error('오류 발생:', error.message)
@@ -222,7 +255,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   }
 
   return (
-    <Card>
+    <Card style={window.innerWidth >= 576 ? { height: '150px' } : {}}>
       <FalconCardHeader title="환자 기본 정보" titleClass="fs-0 fw-semi-bold" />
       <Card.Body className="bg-white pb-2 pt-2">
         {/* <Background image={corner1} className="rounded-soft bg-card" /> */}
@@ -239,12 +272,15 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               >
                 <option>이름 선택</option>
                 {patientsInfo.map(pat => (
-                  <option key={pat.patnoid}>{pat.patnoid}</option>
+                  // 각 옵션에 patnoid 를 value로 추가
+                  <option key={pat.patnoid} value={pat.patnoid}>
+                    {pat.ptSbstNo}
+                  </option>
                 ))}
               </Form.Select>
             </Form.Group>
 
-            <Form.Group as={Col} md={1} lg={1} xs={12} controlId="gender">
+            <Form.Group as={Col} md={2} lg={2} xs={12} controlId="gender">
               <Form.Label className="fs--1 mb-0 text-600">성별</Form.Label>
               <Form.Select
                 size="m"
@@ -268,7 +304,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 placeholder="생년월일"
                 value={
                   patInfoData.birthday.length
-                    ? patInfoData.birthday.slice(0, 10)
+                    ? formatDateForPatientInfo(patInfoData.birthday)
                     : ''
                 }
                 name="birthday"
@@ -295,7 +331,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                   placeholder="내원일"
                   value={
                     patInfoData.admtime.length
-                      ? patInfoData.admtime.slice(0, 10)
+                      ? formatDateForPatientInfo(patInfoData.admtime)
                       : ''
                   }
                   name="admtime"

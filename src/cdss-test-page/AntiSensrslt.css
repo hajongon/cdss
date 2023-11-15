@@ -1,0 +1,11 @@
+.column-date {
+  width: 30%; /* 또는 원하는 너비 값 */
+}
+
+.column-antiname {
+  width: 50%; /* 또는 원하는 너비 값 */
+}
+
+.column-result {
+  width: 20%; /* 또는 원하는 너비 값 */
+}

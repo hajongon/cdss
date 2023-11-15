@@ -13,6 +13,7 @@ const Flex = ({
   children,
   breakpoint,
   direction,
+  gap,
   ...rest
 }) => {
   return (
@@ -25,7 +26,8 @@ const Flex = ({
           [`justify-content-${justifyContent}`]: justifyContent,
           [`align-items-${alignItems}`]: alignItems,
           [`align-content-${alignContent}`]: alignContent,
-          [`flex-${wrap}`]: wrap
+          [`flex-${wrap}`]: wrap,
+          [`gap-${gap}`]: gap
         },
         className
       )}
@@ -46,7 +48,8 @@ Flex.propTypes = {
   className: PropTypes.string,
   tag: PropTypes.string,
   breakpoint: PropTypes.string,
-  direction: PropTypes.string
+  direction: PropTypes.string,
+  gap: PropTypes.string
 }
 
 export default Flex

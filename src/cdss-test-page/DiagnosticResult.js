@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Button, Card, Row, Col } from 'react-bootstrap'
+import { Button, Card, Row, Col, Table } from 'react-bootstrap'
 import FalconCardHeader from './FalconCardHeader'
 import './DiagnosticResult.css'
-import RcmndAntiSens from './RcmndAntiSens'
-import FrbdnAntiSens from './FrbdnAntiSens'
-import { topPagesTableData } from './dummyData'
 
 const DiagnosticResult = ({ setShowResult }) => {
+  5
   return (
     <Card>
-      <FalconCardHeader title="Result" titleClass="fs-0 fw-bold" />
+      <FalconCardHeader title="추천 항생제" titleClass="fs-0 fw-bold" />
       <Card.Body className="bg-white fs--1">
-        <Row className="mb-3 g-3">
+        {/* <Row className="mb-3 g-3">
           <Col xs={1} md={4}>
             <div className="mb-2">감염 예상 부위</div>
             <ul className="fs--1 text-info">
@@ -35,6 +33,7 @@ const DiagnosticResult = ({ setShowResult }) => {
             </ul>
           </Col>
         </Row>
+
         <Row className="mb-3 g-3">
           <Col xs={12} md={6}>
             <RcmndAntiSens title="권장 항생제" tableData={topPagesTableData} />
@@ -42,11 +41,42 @@ const DiagnosticResult = ({ setShowResult }) => {
           <Col xs={12} md={6}>
             <FrbdnAntiSens title="제외 항생제" tableData={topPagesTableData} />
           </Col>
-        </Row>
+        </Row> */}
+        <Table size="m">
+          <thead>
+            <tr>
+              <th></th>
+              <th>항생제명</th>
+              <th>특이사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Trimethoprim 80mg+Sulfamethoxazole 400mg /5ml/A</td>
+              <td>none</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ceftriaxone Na</td>
+              <td>none</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Ampicillin sodium + Sulbactam sodium</td>
+              <td className="text-youtube">항생제 감수성 결과 내성 있음</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Colistimethate sodium</td>
+              <td>none</td>
+            </tr>
+          </tbody>
+        </Table>
 
         <Row className="mb-3 g-3">
-          <Col xs={1} md={8} className="text-end"></Col>
-          <Col xs={1} md={4} className="text-end">
+          <Col md={8} className="text-end"></Col>
+          <Col xs={12} md={4} className="text-end">
             <Button
               className="fs--1"
               variant="primary"

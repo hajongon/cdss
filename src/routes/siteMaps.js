@@ -1300,10 +1300,29 @@ export const documentationRoutes = {
   ]
 }
 
+export const systemRoutes = {
+  label: 'system',
+  children: [
+    {
+      name: 'ExampleA',
+      icon: 'rocket',
+      to: '/system/ExampleA',
+      active: true
+    },
+    {
+      name: 'ExampleB',
+      icon: 'rocket',
+      to: '/system/ExampleB',
+      active: true
+    }
+  ]
+}
+
 export default [
   dashboardRoutes,
   appRoutes,
   pagesRoutes,
   modulesRoutes,
-  documentationRoutes
+  documentationRoutes,
+  systemRoutes
 ]

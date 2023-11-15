@@ -190,6 +190,8 @@ import RangeSlider from 'components/doc-components/RangeSlider'
 
 import Test from 'components/pages/test-page/Test'
 import Main from 'cdss-test-page/Main'
+import ExampleA from 'components/system/ExampleA'
+import ExampleB from 'components/system/ExampleB'
 
 const FalconRoutes = () => {
   return (
@@ -543,6 +545,9 @@ const FalconRoutes = () => {
         <Route path="documentation/design-file" element={<DesignFile />} />
         <Route path="changelog" element={<Changelog />} />
         <Route path="authentication-modal" element={<ModalAuth />} />
+
+        <Route path="system/ExampleA" element={<ExampleA />} />
+        <Route path="system/ExampleB" element={<ExampleB />} />
       </Route>
 
       {/* //--- MainLayout end  */}

@@ -5,7 +5,7 @@ import './PatientSymptom.css'
 
 const SymptomSite = () => {
   return (
-    <Card className="h-100 fs--1">
+    <Card className="fs--1 h-100">
       <FalconCardHeader title="증상 위치" titleClass="fs-0 fw-semi-bold" />
       <Card.Body className="bg-white text-black">
         <Form>
