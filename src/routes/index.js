@@ -187,11 +187,10 @@ import QuickLinks from 'components/app/support-desk/quick-links/QuickLinks'
 import Reports from 'components/app/support-desk/reports/Reports'
 import InputMaskExample from 'components/doc-components/InputMaskExample'
 import RangeSlider from 'components/doc-components/RangeSlider'
-
-import Test from 'components/pages/test-page/Test'
-import Main from 'cdss-test-page/Main'
+import CdssMain from 'components/cdss/CdssMain'
 import ExampleA from 'components/system/ExampleA'
 import ExampleB from 'components/system/ExampleB'
+import CdssLogin from 'components/cdss/login/CdssLogin'
 
 const FalconRoutes = () => {
   return (
@@ -301,9 +300,6 @@ const FalconRoutes = () => {
           element={<ProjectManagement />}
         />
         <Route path="dashboard/support-desk" element={<SupportDesk />} />
-
-        {/* cdss test */}
-        <Route path="dashboard/cdss" element={<Main />} />
 
         {/* E Commerce */}
         <Route
@@ -555,8 +551,13 @@ const FalconRoutes = () => {
       {/* <Navigate to="/errors/404" /> */}
       <Route path="*" element={<Navigate to="/errors/404" replace />} />
 
-      {/* 최초 화면 */}
-      <Route path="/" element={<Test />} />
+      <Route element={<MainLayout />}>
+        {/* cdss 화면 */}
+        <Route path="/" element={<CdssMain />} />
+      </Route>
+
+      {/* cdss login 화면 */}
+      <Route path="/cdss-login" element={<CdssLogin />} />
     </Routes>
   )
 }

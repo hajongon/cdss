@@ -66,8 +66,8 @@ const Main = props => {
   const [serumData, setSerumData] = useState([])
 
   // Anti Sensrslt
-  const [sensBeforeAdm, setSensBeforeAdm] = useState([])
-  const [sensAfterAdm, setSensAfterAdm] = useState([])
+  const [antiSensBeforeAdm, setAntiSensBeforeAdm] = useState([])
+  const [antiSensAfterAdm, setAntiSensAfterAdm] = useState([])
 
   // treemap 전체 or 개별
   const [treemapDataRange, setTreemapDataRange] = useState('entire')
@@ -126,10 +126,10 @@ const Main = props => {
         setSerumData,
         testResultData,
         setTestResultData,
-        sensBeforeAdm,
-        setSensBeforeAdm,
-        sensAfterAdm,
-        setSensAfterAdm,
+        antiSensBeforeAdm,
+        setAntiSensBeforeAdm,
+        antiSensAfterAdm,
+        setAntiSensAfterAdm,
         treemapDataRange,
         setTreemapDataRange,
         ordCount,
