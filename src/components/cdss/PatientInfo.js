@@ -43,6 +43,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   }
 
   const onNameChange = async e => {
+    setShowResult(false)
     if (e.target.value === '이름 선택') {
       // 환자 선택 여부
       setIsPatientSelected(false)
@@ -52,6 +53,14 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         ...prevState,
         adrs: true
       }))
+      setPatInfoData({
+        birthday: '',
+        admtime: '',
+        dschtime: '',
+        sex: '',
+        bodytemp: 0,
+        patnoid: ''
+      })
     } else {
       setIsPatientSelected(true)
       setTreemapDataRange('personal')

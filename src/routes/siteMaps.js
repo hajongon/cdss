@@ -1304,6 +1304,12 @@ export const systemRoutes = {
   label: 'system',
   children: [
     {
+      name: 'CDSS',
+      icon: 'rocket',
+      to: '/system/CdssMain',
+      active: true
+    },
+    {
       name: 'ExampleA',
       icon: 'rocket',
       to: '/system/ExampleA',

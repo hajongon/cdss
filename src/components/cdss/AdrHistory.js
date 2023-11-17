@@ -10,12 +10,12 @@ const AdrHistory = () => {
   const { adrs, noDataError } = useContext(AppContext)
   return (
     <Card className="h-100 fs--2">
-      <FalconCardHeader title="ADR" titleClass="fs-0 fw-bold" />
+      <FalconCardHeader title="과거 ADR 이력" titleClass="fs-0 fw-bold" />
       <Card.Body
         className="bg-white scrollbar"
         style={{
           overflow: 'hidden',
-          height: '20dvh'
+          height: window.innerWidth >= 576 ? '20dvh' : '20rem'
         }}
       >
         {noDataError.adrs ? (
@@ -25,11 +25,15 @@ const AdrHistory = () => {
             className="scrollbar"
             style={{
               overflow: 'auto',
-              height: '30dvh'
+              height: '30dvh',
+              fontSize: window.innerWidth >= 576 ? '0.694444rem' : '0.6rem'
             }}
           >
             <Table borderless size="sm">
-              <thead className="customFixedHeader text-600">
+              <thead
+                className="customFixedHeader text-600 sticky-top"
+                style={{ top: '0', backgroundColor: 'white' }}
+              >
                 <tr>
                   <th>의뢰날짜</th>
                   <th>의심약제</th>
@@ -40,7 +44,7 @@ const AdrHistory = () => {
                 </tr>
               </thead>
               <tbody className="text-black">
-                <tr className="sticky-border"></tr>
+                {/* <tr className="sticky-border"></tr> */}
                 {adrs.map((adr, idx) => (
                   <tr key={idx}>
                     <td>{formatDate(adr.orddate)}</td>

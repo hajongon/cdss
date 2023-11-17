@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Card, Col, Row } from 'react-bootstrap'
 import FalconCardHeader from './utils/FalconCardHeader'
@@ -7,13 +7,19 @@ import { Table } from 'react-bootstrap'
 
 import AppContext from 'context/Context'
 import { formatDate } from './utils/timeDateFunction'
-import { groupByMicname } from './utils/transformData'
+import { splitDataByCategory } from './utils/transformData'
 
 import './AntiSensrslt.css'
 
 const AntiSensrsltAfterAdm = ({ isPatientSelected }) => {
   const { antiSensAfterAdm, noDataError } = useContext(AppContext)
-  const groupedData = groupByMicname(antiSensAfterAdm)
+  const groupedData = splitDataByCategory(antiSensAfterAdm)
+
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [antiSensAfterAdm])
 
   return (
     <Card className="fs--1">
@@ -27,34 +33,45 @@ const AntiSensrsltAfterAdm = ({ isPatientSelected }) => {
           overflow: 'auto',
           height: '23dvh'
         }}
+        ref={scrollRef}
       >
         {noDataError.sensrslt ||
         !isPatientSelected ||
-        Object.keys(groupedData).length === 0 ? (
+        groupedData.length === 0 ? (
           <div>해당 환자의 검사 내역이 없습니다.</div>
         ) : (
-          Object.keys(groupedData).map(micname => {
+          groupedData.map((group, groupIndex) => {
+            // Assuming each group has at least one item and all items have the same spcname, micname, and cntfgnm
+            const { spcname, micname, cntfgnm } = group[0]
+
             return (
-              <div key={micname}>
-                <div className="badge badge-soft-secondary w-100 fs--2">
+              <div key={groupIndex}>
+                <div
+                  className="badge badge-soft-secondary w-100 sticky-top"
+                  style={{
+                    top: '-1.29rem',
+                    fontSize:
+                      window.innerWidth >= 576 ? '0.694444rem' : '0.6rem'
+                  }}
+                >
                   <Row>
-                    <Col lg={2} xs={2}>
-                      <span>{groupedData[micname][0].spcname}</span>
+                    <Col lg={2} xs={12}>
+                      <span>{spcname}</span>
                     </Col>
-                    <Col lg={6} xs={6}>
+                    <Col lg={6} xs={12}>
                       <span>{micname}</span>
                     </Col>
-                    <Col lg={4} xs={4}>
-                      <span>{groupedData[micname][0].cntfgnm}</span>
+                    <Col lg={4} xs={12}>
+                      <span>{cntfgnm}</span>
                     </Col>
                   </Row>
                 </div>
                 <div
-                  className="mb-3 fs--2 border-bottom-1"
-                  // style={{
-                  //   overflow: 'auto',
-                  //   height: '18dvh'
-                  // }}
+                  className="mb-3 border-bottom-1"
+                  style={{
+                    fontSize:
+                      window.innerWidth >= 576 ? '0.694444rem' : '0.6rem'
+                  }}
                 >
                   <Table size="sm">
                     <thead className="text-600">
@@ -65,8 +82,7 @@ const AntiSensrsltAfterAdm = ({ isPatientSelected }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {/* <tr className="sticky-border"></tr> */}
-                      {groupedData[micname].map((data, idx) => (
+                      {group.map((data, idx) => (
                         <tr
                           key={idx}
                           style={
@@ -77,7 +93,7 @@ const AntiSensrsltAfterAdm = ({ isPatientSelected }) => {
                         >
                           <td>{formatDate(data.spcdate)}</td>
                           <td>{data.antiname}</td>
-                          <td>{data.sensrslt ? data.sensrslt : '없음'}</td>
+                          <td>{data.sensrslt ? data.sensrslt : ''}</td>
                         </tr>
                       ))}
                     </tbody>

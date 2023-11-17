@@ -22,3 +22,21 @@
   background-color: rgb(237, 242, 249);
   z-index: -1;
 }
+
+.sticky-border-sm {
+  position: sticky;
+  top: 23px; /* 이 값을 `thead`의 높이만큼 조정해야 할 수도 있습니다. */
+  /* display: table-row-group; */
+  z-index: 1000;
+}
+
+.sticky-border-sm::before {
+  content: '';
+  position: absolute;
+  top: -1px; /* 이 값을 조정하여 border의 위치를 조정할 수 있습니다. */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgb(237, 242, 249);
+  z-index: -1;
+}

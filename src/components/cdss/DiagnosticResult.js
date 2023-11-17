@@ -9,7 +9,7 @@ const DiagnosticResult = ({ setShowResult }) => {
   return (
     <Card>
       <FalconCardHeader title="추천 항생제" titleClass="fs-0 fw-bold" />
-      <Card.Body className="bg-white fs--1">
+      <Card.Body className={'bg-white fs--1'}>
         {/* <Row className="mb-3 g-3">
           <Col xs={1} md={4}>
             <div className="mb-2">감염 예상 부위</div>
@@ -42,7 +42,7 @@ const DiagnosticResult = ({ setShowResult }) => {
             <FrbdnAntiSens title="제외 항생제" tableData={topPagesTableData} />
           </Col>
         </Row> */}
-        <Table size="m">
+        <Table size={window.innerWidth >= 576 ? 'm' : 's'}>
           <thead>
             <tr>
               <th></th>

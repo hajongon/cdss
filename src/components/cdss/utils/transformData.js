@@ -134,3 +134,35 @@ export const processPatientsData = data => {
   // Convert the Map values back to an array
   return Array.from(mostRecentEntries.values())
 }
+
+export function splitDataByCategory(data) {
+  // Check if data is empty
+  if (!data || data.length === 0) {
+    return []
+  }
+
+  // Initialize the result array with the first element
+  let result = [[]]
+  let currentArray = 0
+  result[currentArray].push(data[0])
+
+  // Iterate through the data, starting from the second element
+  for (let i = 1; i < data.length; i++) {
+    // Check if the current item differs in spcname, micname, or cntfgnm from the last item in the current array
+    if (
+      data[i].spcname !== result[currentArray][0].spcname ||
+      data[i].micname !== result[currentArray][0].micname ||
+      data[i].cntfgnm !== result[currentArray][0].cntfgnm ||
+      data[i].spcdate !== result[currentArray][0].spcdate
+    ) {
+      // If it differs, create a new array
+      currentArray++
+      result[currentArray] = []
+    }
+
+    // Add the current item to the current array
+    result[currentArray].push(data[i])
+  }
+
+  return result
+}
