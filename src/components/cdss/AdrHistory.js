@@ -6,6 +6,7 @@ import { Table } from 'react-bootstrap'
 import AppContext from 'context/Context'
 import { formatDate } from './utils/timeDateFunction'
 
+// 과거 ADR 이력 컴포넌트 -- jsha
 const AdrHistory = () => {
   const { adrs, noDataError } = useContext(AppContext)
   return (
@@ -15,6 +16,7 @@ const AdrHistory = () => {
         className="bg-white scrollbar"
         style={{
           overflow: 'hidden',
+          // 모바일 기기에서 보일 카드 높이 설정 -- jsha
           height: window.innerWidth >= 576 ? '20dvh' : '20rem'
         }}
       >

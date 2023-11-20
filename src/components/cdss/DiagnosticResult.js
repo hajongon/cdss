@@ -94,7 +94,7 @@ const DiagnosticResult = ({ setShowResult }) => {
   )
 }
 
-// Add PropTypes validation
+// Add PropTypes validation -- jsha
 DiagnosticResult.propTypes = {
   setShowResult: PropTypes.func.isRequired
 }

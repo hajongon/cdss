@@ -14,7 +14,7 @@ import AntiSensrsltBeforeAdm from './AntiSensrsltBeformAdm'
 import { getPatientsInfo } from './apis/Patients'
 import { processPatientsData } from './utils/transformData'
 
-const Main = () => {
+const CdssMain = () => {
   const [showResult, setShowResult] = useState(false)
   const [isPatientSelected, setIsPatientSelected] = useState(false)
 
@@ -27,10 +27,10 @@ const Main = () => {
       setIsLargeScreen(window.innerWidth >= 576)
     }
 
-    // 리사이즈 이벤트 리스너 등록
+    // 리사이즈 이벤트 리스너 등록 -- jsha
     window.addEventListener('resize', handleResize)
 
-    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거 -- jsha
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
@@ -44,10 +44,10 @@ const Main = () => {
   useEffect(() => {
     if (scrollRef.current) {
       if (showResult) {
-        // 결과가 표시될 때 스크롤을 맨 아래로 이동
+        // 결과가 표시될 때 스크롤을 맨 아래로 이동 -- jsha
         scrollRef.current.scrollTop = scrollRef.current.scrollHeight
       } else {
-        // 결과가 숨겨질 때 스크롤을 맨 위로 이동
+        // 결과가 숨겨질 때 스크롤을 맨 위로 이동 -- jsha
         scrollRef.current.scrollTop = 0
       }
     }
@@ -58,7 +58,7 @@ const Main = () => {
       const fetchedPatientsInfo = await getPatientsInfo()
 
       if (fetchedPatientsInfo.status === 'success') {
-        // Process the data to remove duplicates and keep only the most recent entries
+        // Process the data to remove duplicates and keep only the most recent entries -- jsha
         const processedData = processPatientsData(fetchedPatientsInfo.data)
         setPatientsInfo(processedData)
       } else {
@@ -165,11 +165,10 @@ const Main = () => {
               <AdrHistory />
             </Col>
           </Row>
-          {/* <SideChartBar isPatientSelected={isPatientSelected} /> */}
         </Col>
       </Row>
     </div>
   )
 }
 
-export default Main
+export default CdssMain

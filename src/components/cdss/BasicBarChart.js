@@ -24,10 +24,10 @@ echarts.use([
 ])
 
 const BasicBarChart = ({ title, chartData }) => {
-  // barChartData를 배열로 변환하고 내림차순으로 정렬
+  // barChartData를 배열로 변환하고 내림차순으로 정렬 -- jsha
   const sortedData = Object.entries(chartData).sort((a, b) => a[1] - b[1])
 
-  // 정렬된 데이터에서 레이블과 카운트를 추출
+  // 정렬된 데이터에서 레이블과 카운트를 추출 -- jsha
   const antibioticLabels = JSON.stringify(sortedData.map(item => item[0]))
   const antibioticCounts = JSON.stringify(sortedData.map(item => item[1]))
 
@@ -107,22 +107,17 @@ const BasicBarChart = ({ title, chartData }) => {
         <ReactEChartsCore
           echarts={echarts}
           option={getOption()}
-          style={{ height: '18.75rem' }}
+          style={{ height: '30.75rem' }}
         />
       );
     }
   `
 
   return (
-    <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">
-      <FalconComponentCard.Header
-        title={title}
-        light={false}
-        charts={true}
-        className="bg-transparent"
-      />
+    <FalconComponentCard className="mb-3 g-3 h-100">
+      <FalconComponentCard.Header title={title} className="bg-light" />
       <FalconComponentCard.Body
-        className="bg-transparent"
+        className="bg-white"
         code={chartCode}
         language="jsx"
         scope={{

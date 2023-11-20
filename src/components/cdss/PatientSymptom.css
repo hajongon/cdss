@@ -1,13 +1,11 @@
 .formControlBox {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3열로 나눔 */
-    grid-gap: 10px; /* 각 요소 사이의 간격 설정 */
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열로 나눔 -- jsha */
+  grid-gap: 10px; /* 각 요소 사이의 간격 설정 -- jsha */
+  align-items: center;
 }
 
 .custom-label .form-check-label {
-    font-size: .8333333333rem!important;
-    font-weight: 400!important;
+  font-size: 0.8333333333rem !important;
+  font-weight: 400 !important;
 }
-
-  

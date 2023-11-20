@@ -1310,6 +1310,12 @@ export const systemRoutes = {
       active: true
     },
     {
+      name: 'Charts',
+      icon: 'rocket',
+      to: '/system/CdssCharts',
+      active: true
+    },
+    {
       name: 'ExampleA',
       icon: 'rocket',
       to: '/system/ExampleA',

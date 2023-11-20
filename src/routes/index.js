@@ -191,6 +191,7 @@ import CdssMain from 'components/cdss/CdssMain'
 import ExampleA from 'components/system/ExampleA'
 import ExampleB from 'components/system/ExampleB'
 import CdssLogin from 'components/cdss/login/CdssLogin'
+import CdssCharts from 'components/cdss/CdssCharts'
 
 const FalconRoutes = () => {
   return (
@@ -545,6 +546,7 @@ const FalconRoutes = () => {
         <Route path="system/ExampleA" element={<ExampleA />} />
         <Route path="system/ExampleB" element={<ExampleB />} />
         <Route path="system/CdssMain" element={<CdssMain />} />
+        <Route path="system/CdssCharts" element={<CdssCharts />} />
       </Route>
 
       {/* //--- MainLayout end  */}

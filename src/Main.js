@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import AppContext from 'context/Context'
 import { settings } from './config'
@@ -7,6 +7,12 @@ import { configReducer } from './reducers/configReducer'
 import useToggleStyle from './hooks/useToggleStyle'
 
 import { Chart as ChartJS, registerables } from 'chart.js'
+import {
+  convertDataToEChartsFormat,
+  transformArrayToCounts,
+  transformData
+} from 'components/cdss/utils/transformData'
+import axios from 'axios'
 ChartJS.register(...registerables)
 
 const Main = props => {
@@ -93,9 +99,49 @@ const Main = props => {
   const [barChartEntireData, setBarChartEntireData] = useState({})
   const [barChartPersonalData, setBarChartPersonalData] = useState({})
 
+  const [eChartsTreemapData, setEChartsTreemapData] = useState({})
+
   // adr 데이터
 
   const [adrs, setAdrs] = useState([])
+
+  // treemap data fetching
+
+  useEffect(() => {
+    const fetchOrdCount = async () => {
+      try {
+        const ordCountResponse = await axios.request({
+          method: 'get',
+          url: `${process.env.REACT_APP_API_URL}/get-ord-count`
+        })
+        if (ordCountResponse.data) {
+          const fetchedData = ordCountResponse.data
+
+          const transformedData = transformData(fetchedData)
+          const transformedBarData = transformArrayToCounts(fetchedData)
+          const eChartsFormetData = convertDataToEChartsFormat(fetchedData)
+
+          setAllOrdCount(transformedData)
+          setBarChartPersonalData(transformedBarData)
+          setEChartsTreemapData(eChartsFormetData)
+          setNoDataError(prevState => ({
+            ...prevState,
+            hist: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            hist: true
+          }))
+        } else {
+          console.error('오류 발생:', error.message)
+        }
+      }
+    }
+    fetchOrdCount()
+  }, [])
 
   if (!isLoaded) {
     return (
@@ -145,7 +191,9 @@ const Main = props => {
         barChartPersonalData,
         setBarChartPersonalData,
         adrs,
-        setAdrs
+        setAdrs,
+        eChartsTreemapData,
+        setEChartsTreemapData
       }}
     >
       {props.children}

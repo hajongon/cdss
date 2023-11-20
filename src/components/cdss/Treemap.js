@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { useState, useRef, useEffect, useContext } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import * as d3 from 'd3'
 import FalconComponentCard from './utils/FalconComponentCard'
-import FalconCardBody from './utils/FalconCardBody'
-import AppContext from 'context/Context'
+import './Treemap.css'
+
+import { Card } from 'react-bootstrap'
 
 function Treemap({ data, height }) {
   const svgRef = useRef(null)
   const legendRef = useRef(null)
-  const { noDataError } = useContext(AppContext)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   function renderTreemap(width) {
@@ -21,16 +21,16 @@ function Treemap({ data, height }) {
 
     svg.attr('width', '100%').attr('height', height)
 
-    // create root node
+    // create root node -- jsha
     const root = d3
       .hierarchy(data)
       .sum(d => d.value)
       .sort((a, b) => b.value - a.value)
 
-    // create treemap layout
+    // create treemap layout -- jsha
     const treemapRoot = d3.treemap().size([width, height]).padding(1)(root)
 
-    // create 'g' element nodes based on data
+    // create 'g' element nodes based on data -- jsha
 
     const nodes = svg
       .selectAll('g')
@@ -38,11 +38,11 @@ function Treemap({ data, height }) {
       .join('g')
       .attr('transform', d => `translate(${d.x0},${d.y0})`)
 
-    // create color scheme and fader
-    // const fader = color => d3.interpolateRgb(color, '#fff')(0.4)
+    // create color scheme and fader -- jsha
+    // const fader = color => d3.interpolateRgb(color, '#fff')(0.4) -- jsha
     const colorScale = d3.scaleOrdinal(['#2c7be5', '#1956A6'])
 
-    // add treemap rects
+    // add treemap rects -- jsha
     nodes
       .append('rect')
       .attr('width', d => d.x1 - d.x0)
@@ -52,17 +52,17 @@ function Treemap({ data, height }) {
     const fontSize = 8
     const legendFontSize = 10
 
-    // add text to rects
+    // add text to rects -- jsha
     nodes
       .append('text')
       .text(d => `${d.data.name} ${d.data.value}`)
       .attr('data-width', d => d.x1 - d.x0)
       .attr('font-size', `${fontSize}px`)
-      // 각 element에 패딩을 주려면 x, y 옆 param으로 숫자를 입력하면 됨
+      // 각 element에 패딩을 주려면 x, y 옆 param으로 숫자를 입력하면 됨 -- jsha
       .attr('x', 3)
       .attr('y', fontSize + 3)
-      .style('fill', 'white') // Set font color to white
-      .style('font-weight', 'light') // Set font weight to bold (or any other desired value)
+      .style('fill', 'white') // Set font color to white -- jsha
+      .style('font-weight', 'light') // Set font weight to bold (or any other desired value) -- jsha
       .call(wrapText)
 
     function wrapText(selection) {
@@ -102,7 +102,7 @@ function Treemap({ data, height }) {
       })
     }
 
-    // pull out hierarchy categories
+    // pull out hierarchy categories -- jsha
     let categories = root.leaves().map(node => node.data.category)
     categories = categories.filter(
       (category, index, self) => self.indexOf(category) === index
@@ -110,10 +110,10 @@ function Treemap({ data, height }) {
 
     legendContainer.attr('width', width).attr('height', height / 4)
 
-    // create 'g' elements based on categories
+    // create 'g' elements based on categories -- jsha
     const legend = legendContainer.selectAll('g').data(categories).join('g')
 
-    // create 'rects' for each category
+    // create 'rects' for each category -- jsha
     legend
       .append('rect')
       .attr('width', legendFontSize)
@@ -122,7 +122,7 @@ function Treemap({ data, height }) {
       .attr('y', (_, i) => legendFontSize * 2 * i)
       .attr('fill', d => colorScale(d))
 
-    // add text to each category key
+    // add text to each category key -- jsha
     legend
       .append('text')
       .attr('transform', `translate(0, ${legendFontSize})`)
@@ -136,7 +136,7 @@ function Treemap({ data, height }) {
     if (svgRef.current.clientWidth) renderTreemap(svgRef.current.clientWidth)
   }, [data, height, windowWidth])
 
-  // Add a window resize event listener to update windowWidth
+  // Add a window resize event listener to update windowWidth -- jsha
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth)
@@ -148,28 +148,23 @@ function Treemap({ data, height }) {
   }, [])
 
   return (
-    <FalconComponentCard className="h-100 ps-0 pe-0 shadow-none bg-transparent">
+    <Card className="mb-3 g-3 h-100">
       <FalconComponentCard.Header
-        title="항생제 처방 이력"
-        light={false}
-        charts={true}
-        className="bg-transparent"
+        title="항생제 처방 차트"
+        className="bg-light"
       />
-      <FalconCardBody className="bg-transparent">
-        {noDataError.hist ? (
-          <div>해당 환자의 처방 이력이 없습니다.</div>
-        ) : (
-          <svg ref={svgRef} />
-        )}
-      </FalconCardBody>
-    </FalconComponentCard>
+      <Card.Body className="bg-white pb-2 pt-2">
+        <svg ref={svgRef} className="custom-svg" />
+        <svg ref={legendRef} />
+      </Card.Body>
+    </Card>
   )
 }
 
-// Add PropTypes validation for 'data' and 'height' props
+// Add PropTypes validation for 'data' and 'height' props -- jsha
 Treemap.propTypes = {
-  data: PropTypes.object.isRequired, // Adjust the PropTypes type as needed
-  height: PropTypes.number.isRequired // Adjust the PropTypes type as needed
+  data: PropTypes.object.isRequired, // Adjust the PropTypes type as needed -- jsha
+  height: PropTypes.number.isRequired // Adjust the PropTypes type as needed -- jsha
 }
 
 export default Treemap

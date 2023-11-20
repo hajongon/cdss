@@ -12,6 +12,7 @@ import {
   getSerumTestData,
   getUrineTestData
 } from './apis/History'
+import transformPrscData from './utils/transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   // const [isMedicated, setIsMedicated] = useState(false)
@@ -32,7 +33,8 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
     setAntiSensBeforeAdm,
     setAntiSensAfterAdm,
     setTreemapDataRange,
-    setAdrs
+    setAdrs,
+    setPrescriptions
   } = useContext(AppContext)
 
   const handleChange = e => {
@@ -45,9 +47,9 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   const onNameChange = async e => {
     setShowResult(false)
     if (e.target.value === '이름 선택') {
-      // 환자 선택 여부
+      // 환자 선택 여부 -- jsha
       setIsPatientSelected(false)
-      // treemap 크기 결정
+      // treemap 크기 결정 -- jsha
       setTreemapDataRange('entire')
       setNoDataError(prevState => ({
         ...prevState,
@@ -64,7 +66,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
     } else {
       setIsPatientSelected(true)
       setTreemapDataRange('personal')
-      // patnoid가 입력받은 값과 같은 데이터만 필터링
+      // patnoid가 입력받은 값과 같은 데이터만 필터링 -- jsha
       const selectedData = patientsInfo.filter(
         pat => pat.patnoid === e.target.value
       )[0]
@@ -72,7 +74,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       setPatInfoData({ ...selectedData })
 
-      // urine fecthing
+      // urine fecthing -- jsha
 
       const urineResponse = await getUrineTestData(
         `${process.env.REACT_APP_API_URL}/urine?ptSbstNo=${sbstNo}`
@@ -98,7 +100,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
-      // serum fecthing
+      // serum fecthing -- jsha
 
       const serumResponse = await getSerumTestData(
         `${process.env.REACT_APP_API_URL}/serum?ptSbstNo=${sbstNo}`
@@ -124,7 +126,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
-      // 과거 항생제 내성 이력 fecthing
+      // 과거 항생제 내성 이력 fecthing -- jsha
       const antiSensResponse = await getAntiSensRsltData(
         `${process.env.REACT_APP_API_URL}/antisens?ptSbstNo=${sbstNo}`
       )
@@ -154,62 +156,34 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
-      // try {
-      //   const ordCountResponse = await axios.request({
-      //     method: 'get',
-      //     url: `${process.env.REACT_APP_API_URL}/get-ord-count?ptSbstNo=${selectedData.ptSbstNo}`
-      //   })
-      //   if (ordCountResponse.data) {
-      //     const fetchedData = ordCountResponse.data
-      //     const transformedData = transformData(fetchedData)
-      //     const transformedBarData = transformArrayToCounts(fetchedData)
+      // 처방 이력 fetching
 
-      //     setOrdCount(transformedData)
-      //     setBarChartPersonalData(transformedBarData)
-      //     setNoDataError(prevState => ({
-      //       ...prevState,
-      //       hist: false
-      //     }))
-      //   }
-      // } catch (error) {
-      //   if (error.response && error.response.status === 404) {
-      //     setNoDataError(prevState => ({
-      //       ...prevState,
-      //       hist: true
-      //     }))
-      //   } else {
-      //     console.error('오류 발생:', error.message)
-      //   }
-      // }
+      try {
+        const prescriptionResponse = await axios.request({
+          method: 'get',
+          url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
+        })
+        if (prescriptionResponse.data) {
+          const fetchedData = prescriptionResponse.data
+          const transformedData = transformPrscData(fetchedData)
+          setPrescriptions(transformedData)
+          setNoDataError(prevState => ({
+            ...prevState,
+            prescription: false
+          }))
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            prescription: true
+          }))
+        } else {
+          console.error('오류 발생:', error.message)
+        }
+      }
 
-      // // 처방 이력 fetching
-
-      // try {
-      //   const prescriptionResponse = await axios.request({
-      //     method: 'get',
-      //     url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
-      //   })
-      //   if (prescriptionResponse.data) {
-      //     const fetchedData = prescriptionResponse.data
-      //     const transformedData = transformPrscData(fetchedData)
-      //     setPrescriptions(transformedData)
-      //     setNoDataError(prevState => ({
-      //       ...prevState,
-      //       prescription: false
-      //     }))
-      //   }
-      // } catch (error) {
-      //   if (error.response && error.response.status === 404) {
-      //     setNoDataError(prevState => ({
-      //       ...prevState,
-      //       prescription: true
-      //     }))
-      //   } else {
-      //     console.error('오류 발생:', error.message)
-      //   }
-      // }
-
-      // adr fetching
+      // adr fetching -- jsha
 
       try {
         const adrResponse = await axios.request({
@@ -264,7 +238,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               >
                 <option>이름 선택</option>
                 {patientsInfo.map(pat => (
-                  // 각 옵션에 patnoid 를 value로 추가
+                  // 각 옵션에 patnoid 를 value로 추가 -- jsha
                   <option key={pat.patnoid} value={pat.patnoid}>
                     {pat.ptSbstNo}
                   </option>
