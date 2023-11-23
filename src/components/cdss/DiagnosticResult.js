@@ -64,12 +64,12 @@ const DiagnosticResult = ({ setShowResult }) => {
             <tr>
               <td>3</td>
               <td>Ampicillin sodium + Sulbactam sodium</td>
-              <td className="text-youtube">항생제 감수성 결과 내성 있음</td>
+              <td>none</td>
             </tr>
             <tr>
               <td>4</td>
               <td>Colistimethate sodium</td>
-              <td>none</td>
+              <td className="text-youtube">항생제 감수성 결과 내성 있음</td>
             </tr>
           </tbody>
         </Table>

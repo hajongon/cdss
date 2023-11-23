@@ -1,8 +1,12 @@
 export const formatDate = dateString => {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
   const date = new Date(dateString)
-  date.setTime(date.getTime())
-  return date.toLocaleDateString('ko-KR', options).replace(/\./g, '. ')
+  let formattedDate = date
+    .toLocaleDateString('ko-KR', options)
+    .replace(/\./g, '. ')
+
+  console.log(formattedDate)
+  return formattedDate.slice(0, -2) // 마지막 점과 공백을 제거
 }
 
 export const formatDateForPatientInfo = dateString => {

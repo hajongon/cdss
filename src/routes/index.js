@@ -192,6 +192,7 @@ import ExampleA from 'components/system/ExampleA'
 import ExampleB from 'components/system/ExampleB'
 import CdssLogin from 'components/cdss/login/CdssLogin'
 import CdssCharts from 'components/cdss/CdssCharts'
+import ManageCode from 'components/cdss/ManageCode'
 
 const FalconRoutes = () => {
   return (
@@ -543,10 +544,11 @@ const FalconRoutes = () => {
         <Route path="changelog" element={<Changelog />} />
         <Route path="authentication-modal" element={<ModalAuth />} />
 
-        <Route path="system/ExampleA" element={<ExampleA />} />
-        <Route path="system/ExampleB" element={<ExampleB />} />
-        <Route path="system/CdssMain" element={<CdssMain />} />
-        <Route path="system/CdssCharts" element={<CdssCharts />} />
+        <Route path="system/example-a" element={<ExampleA />} />
+        <Route path="system/example-b" element={<ExampleB />} />
+        <Route path="system/cdss-main" element={<CdssMain />} />
+        <Route path="system/cdss-charts" element={<CdssCharts />} />
+        <Route path="system/manage-code" element={<ManageCode />} />
       </Route>
 
       {/* //--- MainLayout end  */}

@@ -46,7 +46,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
   const onNameChange = async e => {
     setShowResult(false)
-    if (e.target.value === '이름 선택') {
+    if (e.target.value === '환자 선택') {
       // 환자 선택 여부 -- jsha
       setIsPatientSelected(false)
       // treemap 크기 결정 -- jsha
@@ -221,14 +221,20 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   }
 
   return (
-    <Card style={window.innerWidth >= 576 ? { height: '150px' } : {}}>
+    <Card style={window.innerWidth >= 1430 ? { height: '150px' } : {}}>
       <FalconCardHeader title="환자 기본 정보" titleClass="fs-0 fw-semi-bold" />
       <Card.Body className="bg-white pb-2 pt-2">
         {/* <Background image={corner1} className="rounded-soft bg-card" /> */}
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3 g-3">
-            <Form.Group as={Col} lg={2} xs={12} controlId="selectPatient">
-              <Form.Label className="fs--1 mb-0 text-600">환자 선택</Form.Label>
+            <Form.Group
+              as={Col}
+              lg={2}
+              xs={12}
+              md={12}
+              controlId="selectPatient"
+            >
+              <Form.Label className="mb-0 text-600">환자 선택</Form.Label>
               <Form.Select
                 size="m"
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
@@ -236,7 +242,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                   onNameChange(e)
                 }}
               >
-                <option>이름 선택</option>
+                <option>환자 선택</option>
                 {patientsInfo.map(pat => (
                   // 각 옵션에 patnoid 를 value로 추가 -- jsha
                   <option key={pat.patnoid} value={pat.patnoid}>
@@ -246,7 +252,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               </Form.Select>
             </Form.Group>
 
-            <Form.Group as={Col} md={2} lg={2} xs={12} controlId="gender">
+            <Form.Group as={Col} md={12} lg={2} xs={12} controlId="gender">
               <Form.Label className="fs--1 mb-0 text-600">성별</Form.Label>
               <Form.Select
                 size="m"
@@ -262,7 +268,14 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 <option>F</option>
               </Form.Select>
             </Form.Group>
-            <Form.Group as={Col} lg={3} xs={12} xl={2} controlId="birthday">
+            <Form.Group
+              as={Col}
+              lg={3}
+              xs={12}
+              xl={2}
+              md={12}
+              controlId="birthday"
+            >
               <Form.Label className="fs--1 mb-0 text-600">생년월일</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
@@ -277,7 +290,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={1} xs={12} controlId="bodytemp">
+            <Form.Group as={Col} lg={2} xs={12} md={12} controlId="bodytemp">
               <Form.Label className="fs--1 mb-0 text-600">체온</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
@@ -288,7 +301,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 onChange={e => handleChange(e)}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={2} xs={12} controlId="period">
+            <Form.Group as={Col} lg={2} xs={12} md={12} controlId="period">
               <Form.Label className="fs--1 mb-0 text-600">내원일</Form.Label>
               <Col lg={12}>
                 <Form.Control

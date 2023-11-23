@@ -1306,25 +1306,31 @@ export const systemRoutes = {
     {
       name: 'CDSS',
       icon: 'rocket',
-      to: '/system/CdssMain',
+      to: '/system/cdss-main',
       active: true
     },
     {
       name: 'Charts',
       icon: 'rocket',
-      to: '/system/CdssCharts',
+      to: '/system/cdss-charts',
       active: true
     },
     {
       name: 'ExampleA',
       icon: 'rocket',
-      to: '/system/ExampleA',
+      to: '/system/example-a',
       active: true
     },
     {
       name: 'ExampleB',
       icon: 'rocket',
-      to: '/system/ExampleB',
+      to: '/system/example-b',
+      active: true
+    },
+    {
+      name: 'code',
+      icon: 'rocket',
+      to: '/system/manage-code',
       active: true
     }
   ]

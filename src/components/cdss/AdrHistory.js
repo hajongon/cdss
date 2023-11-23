@@ -14,11 +14,13 @@ const AdrHistory = () => {
       <FalconCardHeader title="과거 ADR 이력" titleClass="fs-0 fw-bold" />
       <Card.Body
         className="bg-white scrollbar"
-        style={{
-          overflow: 'hidden',
-          // 모바일 기기에서 보일 카드 높이 설정 -- jsha
-          height: window.innerWidth >= 576 ? '20dvh' : '20rem'
-        }}
+        style={
+          {
+            // overflow: 'hidden',
+            // // 모바일 기기에서 보일 카드 높이 설정 -- jsha
+            // height: window.innerWidth >= 576 ? '20dvh' : '20rem'
+          }
+        }
       >
         {noDataError.adrs ? (
           <div className="fs--1">해당 환자의 검사 내역이 없습니다.</div>
@@ -26,8 +28,8 @@ const AdrHistory = () => {
           <div
             className="scrollbar"
             style={{
-              overflow: 'auto',
-              height: '30dvh',
+              // overflow: 'auto',
+              // height: '30dvh',
               fontSize: window.innerWidth >= 576 ? '0.694444rem' : '0.6rem'
             }}
           >
