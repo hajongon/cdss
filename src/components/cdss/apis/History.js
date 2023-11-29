@@ -1,18 +1,13 @@
 import axios from 'axios'
+import { authInstance, axiosInstance } from './instance'
+import {
+  removeAccessTokenFromLocalStorage,
+  saveAccessTokenToLocalStorage
+} from '../utils/accessTokenHandler'
 
-export const getUrineTestData = async apiUrl => {
+export const getTestData = async apiUrl => {
   try {
-    const response = await axios.get(apiUrl)
-    return { status: 'success', data: response.data }
-  } catch (error) {
-    console.error(error)
-    return { status: 'fail', error }
-  }
-}
-
-export const getSerumTestData = async apiUrl => {
-  try {
-    const response = await axios.get(apiUrl)
+    const response = await axiosInstance.get(apiUrl)
     return { status: 'success', data: response.data }
   } catch (error) {
     console.error(error)
@@ -22,7 +17,7 @@ export const getSerumTestData = async apiUrl => {
 
 export const getAntiSensRsltData = async apiUrl => {
   try {
-    const response = await axios.get(apiUrl)
+    const response = await axiosInstance.get(apiUrl)
     return { status: 'success', data: response.data }
   } catch (error) {
     console.error(error)
@@ -32,7 +27,7 @@ export const getAntiSensRsltData = async apiUrl => {
 
 export const getAdrData = async apiUrl => {
   try {
-    const response = await axios.get(apiUrl)
+    const response = await axiosInstance.get(apiUrl)
     return { status: 'success', data: response.data }
   } catch (error) {
     console.error(error)

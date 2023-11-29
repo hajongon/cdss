@@ -5,13 +5,13 @@ import './PatientInfo.css'
 import axios from 'axios'
 import AppContext from 'context/Context'
 import { formatDateForPatientInfo } from './utils/timeDateFunction'
-import { splitByAdmDate } from './utils/transformData'
-import PropTypes from 'prop-types'
 import {
-  getAntiSensRsltData,
-  getSerumTestData,
-  getUrineTestData
-} from './apis/History'
+  rearrangePeriphData,
+  rearrangeSerumData,
+  splitByAdmDate
+} from './utils/transformData'
+import PropTypes from 'prop-types'
+import { getAntiSensRsltData, getTestData } from './apis/History'
 import transformPrscData from './utils/transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
@@ -28,6 +28,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   const {
     setUrineData,
     setSerumData,
+    setPeriphData,
     setNoDataError,
     patientsInfo,
     setAntiSensBeforeAdm,
@@ -76,7 +77,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       // urine fecthing -- jsha
 
-      const urineResponse = await getUrineTestData(
+      const urineResponse = await getTestData(
         `${process.env.REACT_APP_API_URL}/urine?ptSbstNo=${sbstNo}`
       )
 
@@ -102,12 +103,14 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       // serum fecthing -- jsha
 
-      const serumResponse = await getSerumTestData(
+      const serumResponse = await getTestData(
         `${process.env.REACT_APP_API_URL}/serum?ptSbstNo=${sbstNo}`
       )
 
       if (serumResponse.status === 'success') {
-        setSerumData(serumResponse.data)
+        const transformedData = rearrangeSerumData(serumResponse.data)
+        console.log(serumResponse.data, transformedData)
+        setSerumData(transformedData)
         setNoDataError(prevState => ({
           ...prevState,
           serum: false
@@ -123,6 +126,33 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
           }))
         } else {
           console.error(serumResponse.error.message)
+        }
+      }
+
+      // peripheral fecthing -- jsha
+
+      const periphResponse = await getTestData(
+        `${process.env.REACT_APP_API_URL}/periph?ptSbstNo=${sbstNo}`
+      )
+
+      if (periphResponse.status === 'success') {
+        const transformedData = rearrangePeriphData(periphResponse.data)
+        setPeriphData(transformedData)
+        setNoDataError(prevState => ({
+          ...prevState,
+          periph: false
+        }))
+      } else {
+        if (
+          periphResponse.error.response &&
+          periphResponse.error.response.status === 404
+        ) {
+          setNoDataError(prevState => ({
+            ...prevState,
+            periph: true
+          }))
+        } else {
+          console.error(periphResponse.error.message)
         }
       }
 
@@ -319,49 +349,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               </Col>
             </Form.Group>
           </Row>
-
-          <Row className="mb-3 g-3">
-            {/* <Form.Group as={Col} lg={2} controlId="medication">
-              <Form.Label className="fs--1 mb-0 text-600">
-                항생제 투약 여부
-              </Form.Label>
-              <Flex direction="row" className="p-2 gap-4" alignItems="center">
-                <Form.Check
-                  className="custom-label"
-                  type="radio"
-                  id="item1Radio"
-                  label="yes"
-                  name="medication"
-                  onChange={() => {
-                    setIsMedicated(true)
-                  }}
-                />
-                <Form.Check
-                  className="custom-label"
-                  type="radio"
-                  id="item2Radio"
-                  label="no"
-                  name="medication"
-                  onChange={() => {
-                    setIsMedicated(false)
-                  }}
-                />
-              </Flex>
-            </Form.Group> */}
-            {/* {isMedicated ? (
-              <Form.Group as={Col} lg={2} controlId="medicineName">
-                <Form.Label className="fs--1 mb-0">항생제 성분명</Form.Label>
-                <Form.Control
-                  className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
-                  type="text"
-                  placeholder="항생제 성분명"
-                  value={patInfoData.medicineName}
-                  name="medicineName"
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            ) : null} */}
-          </Row>
+          <Row className="mb-3 g-3"></Row>
         </Form>
       </Card.Body>
     </Card>

@@ -5,8 +5,8 @@ import is from 'is_js'
 import AppContext from 'context/Context'
 import FalconRoutes from 'routes'
 import { CloseButton } from 'components/common/Toast'
-import SettingsToggle from 'components/settings-panel/SettingsToggle'
-import SettingsPanel from 'components/settings-panel/SettingsPanel'
+// import SettingsToggle from 'components/settings-panel/SettingsToggle'
+// import SettingsPanel from 'components/settings-panel/SettingsPanel'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 
@@ -41,8 +41,8 @@ const App = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <FalconRoutes />
-      <SettingsToggle />
-      <SettingsPanel />
+      {/* <SettingsToggle />
+      <SettingsPanel /> */}
       <ToastContainer
         closeButton={CloseButton}
         icon={false}

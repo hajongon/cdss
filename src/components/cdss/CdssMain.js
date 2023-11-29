@@ -146,7 +146,8 @@ const CdssMain = () => {
           style={{
             ...(window.innerWidth >= 576 && {
               maxHeight: 'calc(100vh - var(--falcon-top-nav-height) - 1rem)',
-              overflowY: 'auto'
+              overflowY: 'scroll',
+              boxSizing: 'border-box'
             })
           }}
         >

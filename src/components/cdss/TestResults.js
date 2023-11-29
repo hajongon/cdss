@@ -7,7 +7,8 @@ import './TestResult.css'
 import TestResultsDataTable from './TestResultsDataTable'
 
 const TestResults = () => {
-  const { noDataError, urineData, serumData } = useContext(AppContext)
+  const { noDataError, urineData, serumData, periphData } =
+    useContext(AppContext)
 
   return (
     <Card className="h-100 fs--1">
@@ -18,19 +19,26 @@ const TestResults = () => {
       />
       <Card.Body
         className="bg-white"
-        style={{
-          overflow: 'hidden',
-          height: window.innerWidth >= 576 ? '41.5dvh' : '40rem'
-        }}
+        style={
+          {
+            // overflow: 'hidden',
+            // height: window.innerWidth >= 576 ? '41.5dvh' : '40rem'
+          }
+        }
       >
         <Row className="g-3 p-2">
           <TestResultsDataTable
-            title="Serum"
+            title="자동화학면역검사"
             data={serumData}
             hasNoDataError={noDataError.serum}
           />
           <TestResultsDataTable
-            title="Urine"
+            title="말초혈액검사"
+            data={periphData}
+            hasNoDataError={noDataError.periph}
+          />
+          <TestResultsDataTable
+            title="통상뇨검사"
             data={urineData}
             hasNoDataError={noDataError.urine}
           />

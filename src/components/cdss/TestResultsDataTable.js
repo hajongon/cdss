@@ -1,35 +1,35 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Row, Col, Table } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { formatDate } from './utils/timeDateFunction'
 
 const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
+  const scrollRef = useRef(null)
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [data])
   return (
-    <Col lg={6} xs={12} md={6} xl={6}>
+    <Col lg={4} xs={12} md={12} xl={4}>
       <Row className="g-3 mb-3">
-        <Col xl={3} lg={3} xs={3}>
+        <Col xl={4} lg={4} xs={4}>
           <div
-            className={
-              window.innerWidth >= 576
-                ? 'fs--1 badge badge-soft-info h-100'
-                : 'fs--2 badge badge-soft-info h-100'
-            }
+            className="fs--2 badge badge-soft-info h-100"
             style={{ width: 'fit-content' }}
           >
             {title}
           </div>
         </Col>
         <Col
-          xl={6}
-          lg={6}
-          xs={6}
-          md={6}
+          xl={8}
+          lg={8}
+          xs={8}
+          md={8}
           style={{ display: 'flex', flexDirection: 'row' }}
         >
           {!hasNoDataError && (
             <>
-              <div className="fs--1 me-3">검사일시</div>
-              <div className="fs--1">
+              <div className="fs--2 me-3">검사일시</div>
+              <div className="fs--2">
                 {data[0] && formatDate(data[0].spcdate)}
               </div>
             </>
@@ -37,14 +37,7 @@ const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
         </Col>
       </Row>
       <Row className="g-3">
-        <div
-          className="scrollbar"
-          style={{
-            overflow: 'auto',
-            height: window.innerWidth >= 576 ? '30dvh' : '10rem',
-            fontSize: window.innerWidth >= 576 ? '0.83333rem' : '0.6rem'
-          }}
-        >
+        <div className="scrollbar fs--2" ref={scrollRef}>
           {hasNoDataError ? (
             <div>해당 환자의 검사 내역이 없습니다.</div>
           ) : (
@@ -53,8 +46,8 @@ const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
                 <tr>
                   <th>검사명</th>
                   <th>결과</th>
-                  <th>정상구분</th>
                   <th>단위</th>
+                  <th>정상구분</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,10 +61,18 @@ const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
                 {data.map((dataItem, idx) => {
                   return (
                     <tr key={idx}>
-                      <td className="text-info">{dataItem.examname}</td>
+                      <td
+                        className={
+                          dataItem.examcode.length === 10
+                            ? 'text-info ps-4'
+                            : 'text-info'
+                        }
+                      >
+                        {dataItem.examname}
+                      </td>
                       <td>{dataItem.rsltnum}</td>
-                      <td>{dataItem.normalfg}</td>
                       <td>{dataItem.unit}</td>
+                      <td>{dataItem.normalfg}</td>
                     </tr>
                   )
                 })}

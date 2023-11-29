@@ -68,8 +68,11 @@ const Main = props => {
   // 소변 검사 이력
   const [urineData, setUrineData] = useState([])
 
-  // 혈액 검사 이력
+  // 자동 화학 면역 검사 이력
   const [serumData, setSerumData] = useState([])
+
+  // 말초 혈액 검사 이력
+  const [periphData, setPeriphData] = useState([])
 
   // Anti Sensrslt
   const [antiSensBeforeAdm, setAntiSensBeforeAdm] = useState([])
@@ -91,7 +94,8 @@ const Main = props => {
     sensrslt: false,
     hist: false,
     prescription: false,
-    adrs: false
+    adrs: false,
+    periph: false
   })
 
   // 처방 이력 데이터
@@ -193,7 +197,9 @@ const Main = props => {
         adrs,
         setAdrs,
         eChartsTreemapData,
-        setEChartsTreemapData
+        setEChartsTreemapData,
+        periphData,
+        setPeriphData
       }}
     >
       {props.children}

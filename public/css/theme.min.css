@@ -7008,11 +7008,11 @@ fieldset:disabled .tox .tox-menu__footer .tox-button:last-child {
   --falcon-accordion-border-radius: 0.25rem;
   --falcon-accordion-inner-border-radius: calc(0.25rem - 1px);
   --falcon-accordion-btn-padding-x: 1.25rem;
-  --falcon-accordion-btn-padding-y: 1rem;
+  --falcon-accordion-btn-padding-y: 0.3rem;
   --falcon-accordion-btn-color: #5e6e82;
   --falcon-accordion-btn-bg: var(--falcon-accordion-bg);
   --falcon-accordion-btn-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%235e6e82'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z'/%3E%3C/svg%3E");
-  --falcon-accordion-btn-icon-width: 1.25rem;
+  --falcon-accordion-btn-icon-width: 1rem;
   --falcon-accordion-btn-icon-transform: rotate(-180deg);
   --falcon-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --falcon-accordion-btn-active-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%235e6e82'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z'/%3E%3C/svg%3E");
@@ -7021,7 +7021,7 @@ fieldset:disabled .tox .tox-menu__footer .tox-button:last-child {
   );
   --falcon-accordion-btn-focus-box-shadow: 0 0 0 0.25rem
     rgba(44, 123, 229, 0.25);
-  --falcon-accordion-body-padding-x: 1.25rem;
+  --falcon-accordion-body-padding-x: 0.5rem;
   --falcon-accordion-body-padding-y: 1rem;
   --falcon-accordion-active-color: #286fce;
   --falcon-accordion-active-bg: var(--falcon-card-bg);
@@ -7033,7 +7033,7 @@ fieldset:disabled .tox .tox-menu__footer .tox-button:last-child {
   width: 100%;
   padding: var(--falcon-accordion-btn-padding-y)
     var(--falcon-accordion-btn-padding-x);
-  font-size: 1rem;
+  font-size: 0.83333rem;
   color: var(--falcon-accordion-btn-color);
   text-align: left;
   background-color: var(--falcon-accordion-btn-bg);
@@ -7053,6 +7053,16 @@ fieldset:disabled .tox .tox-menu__footer .tox-button:last-child {
   box-shadow: inset 0 calc(var(--falcon-accordion-border-width) * -1) 0
     var(--falcon-accordion-border-color);
 }
+
+.accordion-button:not(.collapsed) > table {
+  color: var(--falcon-accordion-active-color);
+  background-color: var(--falcon-accordion-active-bg);
+}
+
+.accordion-button:not(.collapsed) table tr th {
+  font-weight: 600;
+}
+
 .accordion-button:not(.collapsed):after {
   background-image: var(--falcon-accordion-btn-active-icon);
   transform: var(--falcon-accordion-btn-icon-transform);

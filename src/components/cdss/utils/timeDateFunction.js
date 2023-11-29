@@ -4,8 +4,6 @@ export const formatDate = dateString => {
   let formattedDate = date
     .toLocaleDateString('ko-KR', options)
     .replace(/\./g, '. ')
-
-  console.log(formattedDate)
   return formattedDate.slice(0, -2) // 마지막 점과 공백을 제거
 }
 

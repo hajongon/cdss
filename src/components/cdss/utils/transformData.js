@@ -136,32 +136,31 @@ export const processPatientsData = data => {
 }
 
 export function splitDataByCategory(data) {
-  // Check if data is empty -- jsha
   if (!data || data.length === 0) {
     return []
   }
 
-  // Initialize the result array with the first element -- jsha
-  let result = [[]]
-  let currentArray = 0
-  result[currentArray].push(data[0])
+  let result = []
 
-  // Iterate through the data, starting from the second element -- jsha
-  for (let i = 1; i < data.length; i++) {
-    // Check if the current item differs in spcname, micname, or cntfgnm from the last item in the current array -- jsha
-    if (
-      data[i].spcname !== result[currentArray][0].spcname ||
-      data[i].micname !== result[currentArray][0].micname ||
-      data[i].cntfgnm !== result[currentArray][0].cntfgnm ||
-      data[i].spcdate !== result[currentArray][0].spcdate
-    ) {
-      // If it differs, create a new array -- jsha
-      currentArray++
-      result[currentArray] = []
+  // Iterate through the data
+  for (let i = 0; i < data.length; i++) {
+    // Find an existing group that matches the current item
+    let existingGroupIndex = result.findIndex(
+      group =>
+        group.length > 0 &&
+        group[0].spcname === data[i].spcname &&
+        group[0].micname === data[i].micname &&
+        group[0].cntfgnm === data[i].cntfgnm &&
+        group[0].spcdate === data[i].spcdate
+    )
+
+    // If an existing group is found, add the current item to that group
+    if (existingGroupIndex !== -1) {
+      result[existingGroupIndex].push(data[i])
+    } else {
+      // Otherwise, create a new group with the current item
+      result.push([data[i]])
     }
-
-    // Add the current item to the current array -- jsha
-    result[currentArray].push(data[i])
   }
 
   return result
@@ -172,4 +171,22 @@ export function convertDataToEChartsFormat(data) {
     name: item.ordnameTyp1 || item.ordnameTyp2, // ordnameTyp1이 null이 아니면 사용하고, 그렇지 않으면 ordnameTyp2를 사용
     value: item.count
   }))
+}
+
+export function rearrangeSerumData(data) {
+  // 필터링된 요소들을 하나의 배열에, 나머지 요소들을 다른 배열에 저장
+  const matched = data.filter(item => item.examcode === 'C2243002')
+  const others = data.filter(item => item.examcode !== 'C2243002')
+
+  // 두 배열을 결합하여 새로운 배열 반환
+  return [...matched, ...others]
+}
+
+export function rearrangePeriphData(data) {
+  // 필터링된 요소들을 하나의 배열에, 나머지 요소들을 다른 배열에 저장
+  const matched = data.filter(item => item.examcode === 'B1030001')
+  const others = data.filter(item => item.examcode !== 'B1030001')
+
+  // 두 배열을 결합하여 새로운 배열 반환
+  return [...matched, ...others]
 }
