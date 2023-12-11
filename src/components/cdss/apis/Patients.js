@@ -1,10 +1,8 @@
-import axios from 'axios'
+import { authInstance } from './instance'
 
 export const getPatientsInfo = async () => {
   try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/patients`
-    )
+    const response = await authInstance.get(`/cdss/patients`)
     return { status: 'success', data: response.data }
   } catch (error) {
     console.error(error)

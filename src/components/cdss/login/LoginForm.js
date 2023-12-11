@@ -1,12 +1,15 @@
+import AppContext from 'context/Context'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { logIn } from '../apis/Auth'
+import { checkAutoLogin, logIn } from '../apis/Auth'
 
 const LoginForm = ({ hasLabel, layout }) => {
   const navigate = useNavigate()
+
+  const { setIsLogin } = useContext(AppContext)
 
   // State
   const [formData, setFormData] = useState({
@@ -28,42 +31,30 @@ const LoginForm = ({ hasLabel, layout }) => {
     const userInfo = JSON.stringify(inputData) // FormData를 요청의 본문으로 사용합니다.
 
     const logInResponse = await logIn(
-      'http://localhost:8080/api/user/login',
+      `${process.env.REACT_APP_API_USER_URL}/login`,
       userInfo
     )
-    if (logInResponse.data === 'success') navigate('/')
-    else console.log(logInResponse)
 
-    // POST 요청 보내기
-    // fetch('http://localhost:8080/api/user/login', requestOptions)
-    //   .then(response => {
-    //     if (!response.ok) {
-    //       throw new Error('Network response was not ok')
-    //     }
-    //     return response.json()
-    //   })
-    //   .then(data => {
-    //     // 서버로부터 받은 데이터(data)를 처리합니다.
-    //     console.log('Response Data:', data)
-    //     // 원하는 동작을 수행하세요.
-    //     if (data.result === 'success') {
-    //       navigate('/')
-    //       console.log(
-    //         'accessToken:',
-    //         data.data.accessToken,
-    //         '\n\nrefreshToken:',
-    //         data.data.refreshToken
-    //       )
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.error('Error:', error)
-    //     // 오류 처리를 수행하세요.
-    //   })
-
-    toast.success(`Logged in as ${formData.email}`, {
-      theme: 'colored'
-    })
+    if (logInResponse.data === 'success') {
+      navigate('/system/cdss-main')
+      setIsLogin(true)
+      toast.success(`Logged in as ${formData.email}`, {
+        theme: 'colored'
+      })
+    } else if (logInResponse.data === 'email-error') {
+      console.log(logInResponse)
+      toast.error(`해당 유저가 존재하지 않습니다.`, {
+        theme: 'colored'
+      })
+    } else if (logInResponse.data === 'pw-error') {
+      toast.error(`비밀번호가 일치하지 않습니다.`, {
+        theme: 'colored'
+      })
+    } else {
+      toast.error(`문제가 발생했습니다. 잠시 후 다시 시도해주세요.`, {
+        theme: 'colored'
+      })
+    }
   }
 
   const handleFieldChange = e => {
@@ -72,6 +63,17 @@ const LoginForm = ({ hasLabel, layout }) => {
       [e.target.name]: e.target.value
     })
   }
+
+  useEffect(() => {
+    const authCheck = async () => {
+      const res = await checkAutoLogin()
+      // console.log(res)
+      if (res) {
+        if (res.status === 'success') navigate('/system/cdss-main')
+      }
+    }
+    authCheck()
+  }, [])
 
   return (
     <Form onSubmit={handleSubmit}>

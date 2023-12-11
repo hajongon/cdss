@@ -56,7 +56,6 @@ const CdssMain = () => {
   useEffect(() => {
     const fetchPatientsInfo = async () => {
       const fetchedPatientsInfo = await getPatientsInfo()
-
       if (fetchedPatientsInfo.status === 'success') {
         // Process the data to remove duplicates and keep only the most recent entries -- jsha
         const processedData = processPatientsData(fetchedPatientsInfo.data)

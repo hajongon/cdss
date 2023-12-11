@@ -11,7 +11,7 @@ import {
   splitByAdmDate
 } from './utils/transformData'
 import PropTypes from 'prop-types'
-import { getAntiSensRsltData, getTestData } from './apis/History'
+import { getTestData } from './apis/History'
 import transformPrscData from './utils/transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
@@ -77,9 +77,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       // urine fecthing -- jsha
 
-      const urineResponse = await getTestData(
-        `${process.env.REACT_APP_API_URL}/urine?ptSbstNo=${sbstNo}`
-      )
+      const urineResponse = await getTestData(`/cdss/urine?ptSbstNo=${sbstNo}`)
 
       if (urineResponse.status === 'success') {
         setUrineData(urineResponse.data)
@@ -103,13 +101,10 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       // serum fecthing -- jsha
 
-      const serumResponse = await getTestData(
-        `${process.env.REACT_APP_API_URL}/serum?ptSbstNo=${sbstNo}`
-      )
+      const serumResponse = await getTestData(`/cdss/serum?ptSbstNo=${sbstNo}`)
 
       if (serumResponse.status === 'success') {
         const transformedData = rearrangeSerumData(serumResponse.data)
-        console.log(serumResponse.data, transformedData)
         setSerumData(transformedData)
         setNoDataError(prevState => ({
           ...prevState,
@@ -132,7 +127,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       // peripheral fecthing -- jsha
 
       const periphResponse = await getTestData(
-        `${process.env.REACT_APP_API_URL}/periph?ptSbstNo=${sbstNo}`
+        `/cdss/periph?ptSbstNo=${sbstNo}`
       )
 
       if (periphResponse.status === 'success') {
@@ -157,8 +152,8 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       }
 
       // 과거 항생제 내성 이력 fecthing -- jsha
-      const antiSensResponse = await getAntiSensRsltData(
-        `${process.env.REACT_APP_API_URL}/antisens?ptSbstNo=${sbstNo}`
+      const antiSensResponse = await getTestData(
+        `/cdss/antisens?ptSbstNo=${sbstNo}`
       )
 
       if (antiSensResponse.status === 'success') {
@@ -191,7 +186,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       try {
         const prescriptionResponse = await axios.request({
           method: 'get',
-          url: `${process.env.REACT_APP_API_URL}/prescription?ptSbstNo=${selectedData.ptSbstNo}`
+          url: `/cdss/prescription?ptSbstNo=${selectedData.ptSbstNo}`
         })
         if (prescriptionResponse.data) {
           const fetchedData = prescriptionResponse.data
@@ -213,29 +208,26 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
         }
       }
 
-      // adr fetching -- jsha
+      // adr 이력 fecthing -- jsha
+      const adrResponse = await getTestData(`/cdss/adr?ptSbstNo=${sbstNo}`)
 
-      try {
-        const adrResponse = await axios.request({
-          method: 'get',
-          url: `${process.env.REACT_APP_API_URL}/adr?ptSbstNo=${selectedData.ptSbstNo}`
-        })
-        if (adrResponse.data) {
-          const fetchedData = adrResponse.data
-          setAdrs(fetchedData)
-          setNoDataError(prevState => ({
-            ...prevState,
-            adrs: false
-          }))
-        }
-      } catch (error) {
-        if (error.response && error.response.status === 404) {
+      if (adrResponse.status === 'success') {
+        setAdrs(adrResponse.data)
+        setNoDataError(prevState => ({
+          ...prevState,
+          adrs: false
+        }))
+      } else {
+        if (
+          adrResponse.error.response &&
+          adrResponse.error.response.status === 404
+        ) {
           setNoDataError(prevState => ({
             ...prevState,
             adrs: true
           }))
         } else {
-          console.error('오류 발생:', error.message)
+          console.error(adrResponse.error.message)
         }
       }
     }

@@ -3,7 +3,7 @@ import axios from 'axios'
 import {
   getAccessTokenFromLocalStorage,
   saveAccessTokenToLocalStorage
-} from '../utils/accessTokenHandler'
+} from '../utils/tokenHandler'
 
 const instanceOptions = {
   baseURL: process.env.REACT_APP_API_URL,
@@ -39,14 +39,28 @@ function createAuthAxiosInstance() {
     response => response,
     async error => {
       const { config, response } = error
-
       if (response.status === 401) {
+        console.log('401 에러 잡힘')
         try {
-          const refreshRes = await axiosInstance.get('/members/refresh')
-          if (refreshRes.status === 200) {
-            const { authorization } = refreshRes.headers
-            saveAccessTokenToLocalStorage(authorization)
-            config.headers.Authorization = authorization
+          const currentAccessToken = getAccessTokenFromLocalStorage() || ''
+          // const currentRefreshToken =
+          //   getTokenFromLocalStorage('refreshToken') || ''
+          const requestBody = JSON.stringify({
+            accessToken: currentAccessToken.slice(7)
+            // refreshToken: currentRefreshToken
+          })
+          const refreshRes = await axiosInstance.post(
+            `/user/reissue`,
+            requestBody
+          )
+          console.log('refresh 요청에 대한 응답:', refreshRes)
+          if (refreshRes.data.success) {
+            console.log(refreshRes.data)
+            const { grantType, accessToken } = refreshRes.data
+            const newAccessToken = `${grantType} ${accessToken}`
+            saveAccessTokenToLocalStorage(newAccessToken)
+
+            config.headers.Authorization = newAccessToken
             return await axios(config)
           }
         } catch (error) {

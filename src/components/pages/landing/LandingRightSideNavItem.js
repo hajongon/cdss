@@ -57,7 +57,7 @@ const LandingRightSideNavItem = () => {
 
       <Dropdown>
         <Dropdown.Toggle as={Link} to="#!" className="nav-link fw-semi-bold">
-          Login
+          Log in
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-end dropdown-menu-card mt-0 dropdown-caret dropdown-caret-bg">
           <Card className="navbar-card-login shadow-none">
@@ -67,7 +67,6 @@ const LandingRightSideNavItem = () => {
           </Card>
         </Dropdown.Menu>
       </Dropdown>
-
       <Nav.Item>
         <Nav.Link
           as={Link}

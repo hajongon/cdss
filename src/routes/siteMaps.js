@@ -1309,12 +1309,12 @@ export const systemRoutes = {
       to: '/system/cdss-main',
       active: true
     },
-    {
-      name: 'Charts',
-      icon: 'rocket',
-      to: '/system/cdss-charts',
-      active: true
-    },
+    // {
+    //   name: 'Charts',
+    //   icon: 'rocket',
+    //   to: '/system/cdss-charts',
+    //   active: true
+    // },
     {
       name: 'ExampleA',
       icon: 'rocket',

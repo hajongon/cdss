@@ -1,33 +1,8 @@
-import axios from 'axios'
-import { authInstance, axiosInstance } from './instance'
-import {
-  removeAccessTokenFromLocalStorage,
-  saveAccessTokenToLocalStorage
-} from '../utils/accessTokenHandler'
+import { authInstance } from './instance'
 
 export const getTestData = async apiUrl => {
   try {
-    const response = await axiosInstance.get(apiUrl)
-    return { status: 'success', data: response.data }
-  } catch (error) {
-    console.error(error)
-    return { status: 'fail', error }
-  }
-}
-
-export const getAntiSensRsltData = async apiUrl => {
-  try {
-    const response = await axiosInstance.get(apiUrl)
-    return { status: 'success', data: response.data }
-  } catch (error) {
-    console.error(error)
-    return { status: 'fail', error }
-  }
-}
-
-export const getAdrData = async apiUrl => {
-  try {
-    const response = await axiosInstance.get(apiUrl)
+    const response = await authInstance.get(apiUrl)
     return { status: 'success', data: response.data }
   } catch (error) {
     console.error(error)

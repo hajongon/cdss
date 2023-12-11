@@ -556,11 +556,8 @@ const FalconRoutes = () => {
       {/* <Navigate to="/errors/404" /> */}
       <Route path="*" element={<Navigate to="/errors/404" replace />} />
 
-      <Route element={<MainLayout />}>
-        {/* cdss 화면 */}
-        <Route path="/" element={<CdssMain />} />
-      </Route>
-
+      <Route element={<MainLayout />}>{/* cdss 화면 */}</Route>
+      <Route path="/" element={<CdssLogin />} />
       {/* cdss login 화면 */}
       <Route path="/cdss-login" element={<CdssLogin />} />
     </Routes>

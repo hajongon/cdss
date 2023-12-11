@@ -109,6 +109,9 @@ const Main = props => {
 
   const [adrs, setAdrs] = useState([])
 
+  // 로그인 여부 체크
+  const [isLogin, setIsLogin] = useState(false)
+
   // treemap data fetching
 
   useEffect(() => {
@@ -116,7 +119,7 @@ const Main = props => {
       try {
         const ordCountResponse = await axios.request({
           method: 'get',
-          url: `${process.env.REACT_APP_API_URL}/get-ord-count`
+          url: `${process.env.REACT_APP_API_CDSS_URL}/get-ord-count`
         })
         if (ordCountResponse.data) {
           const fetchedData = ordCountResponse.data
@@ -199,7 +202,9 @@ const Main = props => {
         eChartsTreemapData,
         setEChartsTreemapData,
         periphData,
-        setPeriphData
+        setPeriphData,
+        isLogin,
+        setIsLogin
       }}
     >
       {props.children}
