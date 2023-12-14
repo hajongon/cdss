@@ -64,3 +64,18 @@ export const checkAutoLogin = async () => {
     return { status: 'fail', data: error }
   }
 }
+
+export const findPassword = async email => {
+  try {
+    const response = await axiosInstance.post(`/user/newpassword`, email, {
+      timeout: 20000
+    })
+    if (response.data.state === 200) {
+      return { status: 'success', data: response.data.message }
+    }
+    if (response) return {}
+  } catch (error) {
+    console.log(error)
+    return { status: 'fail', data: error }
+  }
+}
