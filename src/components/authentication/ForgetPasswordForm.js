@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { Button, Form } from 'react-bootstrap'
-import { findPassword } from 'components/cdss/apis/Auth'
+import { findPassword } from 'components/user/apis/user'
 
 const ForgetPasswordForm = () => {
   // State

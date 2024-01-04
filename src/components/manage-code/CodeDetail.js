@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap'
-import FalconCardHeader from './utils/FalconCardHeader'
+import FalconCardHeader from '../cdss/utils/FalconCardHeader'
 
 const CodeDetail = ({ selectedItem }) => {
   const [currentItem, setCurrentItem] = useState(selectedItem)

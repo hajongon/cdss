@@ -11,7 +11,7 @@ import './CdssMain.css'
 import AppContext from 'context/Context'
 import AntiSensrsltAfterAdm from './AntiSensrsltAfterAdm'
 import AntiSensrsltBeforeAdm from './AntiSensrsltBeformAdm'
-import { getPatientsInfo } from './apis/Patients'
+import { getPatientsInfo } from './apis/patients'
 import { processPatientsData } from './utils/transformData'
 
 const CdssMain = () => {

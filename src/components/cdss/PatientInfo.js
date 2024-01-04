@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Card, Col, Form, Row } from 'react-bootstrap'
 import FalconCardHeader from './utils/FalconCardHeader'
 import './PatientInfo.css'
-import axios from 'axios'
+// import axios from 'axios'
 import AppContext from 'context/Context'
 import { formatDateForPatientInfo } from './utils/timeDateFunction'
 import {
@@ -11,8 +11,8 @@ import {
   splitByAdmDate
 } from './utils/transformData'
 import PropTypes from 'prop-types'
-import { getTestData } from './apis/History'
-import transformPrscData from './utils/transformPrscData'
+import { getTestData } from './apis/history'
+// import transformPrscData from './utils/transformPrscData'
 
 const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
   // const [isMedicated, setIsMedicated] = useState(false)
@@ -33,9 +33,9 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
     patientsInfo,
     setAntiSensBeforeAdm,
     setAntiSensAfterAdm,
-    setTreemapDataRange,
-    setAdrs,
-    setPrescriptions
+    // setTreemapDataRange,
+    setAdrs
+    // setPrescriptions
   } = useContext(AppContext)
 
   const handleChange = e => {
@@ -51,7 +51,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       // 환자 선택 여부 -- jsha
       setIsPatientSelected(false)
       // treemap 크기 결정 -- jsha
-      setTreemapDataRange('entire')
+      // setTreemapDataRange('entire')
       setNoDataError(prevState => ({
         ...prevState,
         adrs: true
@@ -66,7 +66,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
       })
     } else {
       setIsPatientSelected(true)
-      setTreemapDataRange('personal')
+      // setTreemapDataRange('personal')
       // patnoid가 입력받은 값과 같은 데이터만 필터링 -- jsha
       const selectedData = patientsInfo.filter(
         pat => pat.patnoid === e.target.value
@@ -183,30 +183,30 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
 
       // 처방 이력 fetching
 
-      try {
-        const prescriptionResponse = await axios.request({
-          method: 'get',
-          url: `/cdss/prescription?ptSbstNo=${selectedData.ptSbstNo}`
-        })
-        if (prescriptionResponse.data) {
-          const fetchedData = prescriptionResponse.data
-          const transformedData = transformPrscData(fetchedData)
-          setPrescriptions(transformedData)
-          setNoDataError(prevState => ({
-            ...prevState,
-            prescription: false
-          }))
-        }
-      } catch (error) {
-        if (error.response && error.response.status === 404) {
-          setNoDataError(prevState => ({
-            ...prevState,
-            prescription: true
-          }))
-        } else {
-          console.error('오류 발생:', error.message)
-        }
-      }
+      // try {
+      //   const prescriptionResponse = await axios.request({
+      //     method: 'get',
+      //     url: `/cdss/prescription?ptSbstNo=${selectedData.ptSbstNo}`
+      //   })
+      //   if (prescriptionResponse.data) {
+      //     const fetchedData = prescriptionResponse.data
+      //     const transformedData = transformPrscData(fetchedData)
+      //     setPrescriptions(transformedData)
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       prescription: false
+      //     }))
+      //   }
+      // } catch (error) {
+      //   if (error.response && error.response.status === 404) {
+      //     setNoDataError(prevState => ({
+      //       ...prevState,
+      //       prescription: true
+      //     }))
+      //   } else {
+      //     console.error('오류 발생:', error.message)
+      //   }
+      // }
 
       // adr 이력 fecthing -- jsha
       const adrResponse = await getTestData(`/cdss/adr?ptSbstNo=${sbstNo}`)

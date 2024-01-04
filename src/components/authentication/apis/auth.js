@@ -12,14 +12,20 @@ import { axiosInstance } from './instance'
 export const logIn = async (apiUrl, userInfo) => {
   try {
     const response = await axiosInstance.post(apiUrl, userInfo)
+    console.log(response)
     if (response.data.success) {
       const { grantType, accessToken } = response.data
       const newAccessToken = `${grantType} ${accessToken}`
       saveAccessTokenToLocalStorage(newAccessToken)
-      return { status: response.status, data: response.data.message }
+      return { status: response.status, data: response.data }
     }
   } catch (error) {
-    return { status: error.response.status, data: error.response.data }
+    console.error(error)
+    if (!error.response) {
+      return { status: 'fail', data: 'network-error' }
+    } else {
+      return { status: error.response.status, data: error.response.data }
+    }
   }
 }
 
@@ -60,22 +66,27 @@ export const checkAutoLogin = async () => {
       return { status: 'success', data: response.data }
     }
   } catch (error) {
-    console.error(error)
-    return { status: 'fail', data: error }
+    if (!error.response) {
+      return { status: 'fail', data: 'network-error' }
+    } else {
+      return { status: error.response.status, data: error.response.data }
+    }
   }
 }
 
-export const findPassword = async email => {
+export const signUp = async data => {
   try {
-    const response = await axiosInstance.post(`/user/newpassword`, email, {
+    const response = await axiosInstance.post('/user/sign-up', data, {
       timeout: 20000
     })
-    if (response.data.state === 200) {
+    console.log(response)
+    if (response.data.state === 200)
       return { status: 'success', data: response.data.message }
-    }
-    if (response) return {}
+    else if (response.data.message === '이미 회원가입된 이메일입니다.')
+      return { status: 'fail', data: 'email-error' }
+    else if (response.data.message === '이미 존재하는 유저 이름입니다.')
+      return { status: 'fail', data: 'id-error' }
   } catch (error) {
-    console.log(error)
     return { status: 'fail', data: error }
   }
 }

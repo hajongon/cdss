@@ -4,12 +4,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { checkAutoLogin, logIn } from '../apis/Auth'
+import { checkAutoLogin, logIn } from '../../authentication/apis/auth'
+import { getCurrentUserInfo } from '../../user/apis/user'
 
 const LoginForm = ({ hasLabel, layout }) => {
   const navigate = useNavigate()
 
-  const { setIsLogin } = useContext(AppContext)
+  const { setIsLogin, setUserInfo } = useContext(AppContext)
 
   // State
   const [formData, setFormData] = useState({
@@ -35,18 +36,36 @@ const LoginForm = ({ hasLabel, layout }) => {
       userInfo
     )
 
-    if (logInResponse.data === 'success') {
-      navigate('/system/cdss-main')
-      setIsLogin(true)
-      toast.success(`Logged in as ${formData.email}`, {
-        theme: 'colored'
-      })
-    } else if (logInResponse.data === 'email-error') {
+    // if (logInResponse.data === 'network-error') {
+    //   alert('서버에 문제가 생겼습니다. 잠시 후에 다시 시도해주세요.')
+    // }
+
+    if (logInResponse.data.message === 'success') {
+      console.log('sss')
+      // const currentUser = {
+      //   email: logInResponse.data.email,
+      //   nickname: logInResponse.data.nickname
+      // }
+      // setUserInfo(currentUser)
+      const currentUserInfo = await getCurrentUserInfo()
+      if (currentUserInfo.idx) {
+        setUserInfo(currentUserInfo)
+        navigate('/system/cdss-main')
+        setIsLogin(true)
+        toast.success(`Logged in as ${formData.email}`, {
+          theme: 'colored'
+        })
+      } else {
+        toast.error(`유저 정보를 불러오는 데 실패했습니다.`, {
+          theme: 'colored'
+        })
+      }
+    } else if (logInResponse.data.message === 'email-error') {
       console.log(logInResponse)
       toast.error(`해당 유저가 존재하지 않습니다.`, {
         theme: 'colored'
       })
-    } else if (logInResponse.data === 'pw-error') {
+    } else if (logInResponse.data.message === 'pw-error') {
       toast.error(`비밀번호가 일치하지 않습니다.`, {
         theme: 'colored'
       })
@@ -67,7 +86,7 @@ const LoginForm = ({ hasLabel, layout }) => {
   useEffect(() => {
     const authCheck = async () => {
       const res = await checkAutoLogin()
-      // console.log(res)
+      console.log(res)
       if (res) {
         if (res.status === 'success') navigate('/system/cdss-main')
       }

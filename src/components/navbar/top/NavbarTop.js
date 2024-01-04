@@ -12,12 +12,12 @@ import TopNavRightSideNavItem from './TopNavRightSideNavItem'
 import { useLocation } from 'react-router-dom'
 
 const NavbarTop = () => {
+  const { pathname } = useLocation()
   const {
     config: { showBurgerMenu, navbarPosition, navbarCollapsed },
     setConfig
   } = useContext(AppContext)
 
-  const { pathname } = useLocation()
   const isChat = pathname.includes('chat')
 
   const [showDropShadow, setShowDropShadow] = useState(false)

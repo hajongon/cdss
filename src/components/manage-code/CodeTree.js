@@ -1,9 +1,9 @@
-import Treeview from './Treeview'
+import Treeview from '../cdss/Treeview'
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import { treeviewItems } from './dummyData'
+import { treeviewItems } from '../cdss/dummyData'
 import PropTypes from 'prop-types'
-import FalconCardHeader from './utils/FalconCardHeader'
+import FalconCardHeader from '../cdss/utils/FalconCardHeader'
 
 const CodeTree = ({ setSelectedItem }) => {
   const handleItemClick = item => {

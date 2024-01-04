@@ -6,8 +6,11 @@ import NavbarTop from 'components/navbar/top/NavbarTop'
 import NavbarVertical from 'components/navbar/vertical/NavbarVertical'
 import ProductProvider from 'components/app/e-commerce/ProductProvider'
 import CourseProvider from 'components/app/e-learning/CourseProvider'
+import { getCurrentUserInfo } from 'components/user/apis/user'
 
 const MainLayout = () => {
+  const { setUserInfo } = useContext(AppContext)
+
   const { hash, pathname } = useLocation()
   const isKanban = pathname.includes('kanban')
   // const isChat = pathname.includes('chat');
@@ -15,6 +18,15 @@ const MainLayout = () => {
   const {
     config: { isFluid, navbarPosition }
   } = useContext(AppContext)
+
+  const authHandler = async () => {
+    const userInfo = await getCurrentUserInfo()
+    setUserInfo(userInfo)
+  }
+
+  useEffect(() => {
+    authHandler()
+  }, [pathname])
 
   useEffect(() => {
     setTimeout(() => {

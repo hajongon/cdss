@@ -1,44 +1,67 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import { Button, Form, Row, Col } from 'react-bootstrap'
-import Divider from 'components/common/Divider'
-import SocialAuthButtons from './SocialAuthButtons'
+import { Button, Form } from 'react-bootstrap'
+import { signUp } from 'components/authentication/apis/auth'
 
-const RegistrationForm = ({ hasLabel }) => {
+const RegistrationForm = ({ hasLabel, setShow }) => {
   // State
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    isAccepted: false
+    userNm: '',
+    nickname: '',
+    email: ''
+    // isAdmin: false
   })
 
   // Handler
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    toast.success(`Successfully registered as ${formData.name}`, {
-      theme: 'colored'
-    })
+    const response = await signUp(JSON.stringify(formData))
+    console.log(response)
+    if (response.status === 'success') {
+      alert(`${formData.email}로 임시 비밀번호를 전송했습니다.`)
+      setShow(false)
+    } else if (response.data === 'email-error') {
+      alert(`이미 존재하는 이메일입니다.`)
+    } else if (response.data === 'id-error') {
+      alert(`이미 존재하는 ID입니다.`)
+    } else {
+      alert(`메일 전송에 실패했습니다.`)
+    }
   }
 
   const handleFieldChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    if (e.target.name === 'isAdmin') {
+      setFormData({
+        ...formData,
+        isAdmin: !formData.isAdmin
+      })
+    } else {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      })
+    }
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
-        {hasLabel && <Form.Label>Name</Form.Label>}
+        {hasLabel && <Form.Label>사용자 ID</Form.Label>}
         <Form.Control
-          placeholder={!hasLabel ? 'Name' : ''}
+          placeholder={!hasLabel ? '사용자 ID' : ''}
           value={formData.name}
-          name="name"
+          name="userNm"
+          onChange={handleFieldChange}
+          type="text"
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        {hasLabel && <Form.Label>사용자 이름</Form.Label>}
+        <Form.Control
+          placeholder={!hasLabel ? '사용자 이름' : ''}
+          value={formData.nickname}
+          name="nickname"
           onChange={handleFieldChange}
           type="text"
         />
@@ -55,73 +78,33 @@ const RegistrationForm = ({ hasLabel }) => {
         />
       </Form.Group>
 
-      <Row className="g-2 mb-3">
-        <Form.Group as={Col} sm={6}>
-          {hasLabel && <Form.Label>Password</Form.Label>}
-          <Form.Control
-            placeholder={!hasLabel ? 'Password' : ''}
-            value={formData.password}
-            name="password"
-            onChange={handleFieldChange}
-            type="password"
-          />
-        </Form.Group>
-        <Form.Group as={Col} sm={6}>
-          {hasLabel && <Form.Label>Confirm Password</Form.Label>}
-          <Form.Control
-            placeholder={!hasLabel ? 'Confirm Password' : ''}
-            value={formData.confirmPassword}
-            name="confirmPassword"
-            onChange={handleFieldChange}
-            type="password"
-          />
-        </Form.Group>
-      </Row>
-
-      <Form.Group className="mb-3">
-        <Form.Check type="checkbox" id="acceptCheckbox" className="form-check">
-          <Form.Check.Input
-            type="checkbox"
-            name="isAccepted"
-            checked={formData.isAccepted}
-            onChange={e =>
-              setFormData({
-                ...formData,
-                isAccepted: e.target.checked
-              })
-            }
-          />
-          <Form.Check.Label className="form-label">
-            I accept the <Link to="#!">terms</Link> and{' '}
-            <Link to="#!">privacy policy</Link>
-          </Form.Check.Label>
-        </Form.Check>
-      </Form.Group>
-
+      {/* <Form.Group className="mb-4">
+        <Form.Check
+          type="switch"
+          id="custom-switch"
+          label="이 사용자를 관리자로 지정합니다."
+          className="form-label-nogutter"
+          name="isAdmin"
+          onChange={handleFieldChange}
+          checked={formData.isAdmin === true}
+        />
+      </Form.Group> */}
       <Form.Group className="mb-4">
         <Button
           className="w-100"
           type="submit"
-          disabled={
-            !formData.name ||
-            !formData.email ||
-            !formData.password ||
-            !formData.confirmPassword ||
-            !formData.isAccepted
-          }
+          disabled={!formData.userNm || !formData.nickname || !formData.email}
         >
           Register
         </Button>
       </Form.Group>
-      <Divider>or register with</Divider>
-
-      <SocialAuthButtons />
     </Form>
   )
 }
 
 RegistrationForm.propTypes = {
-  hasLabel: PropTypes.bool
+  hasLabel: PropTypes.bool,
+  setShow: PropTypes.func.isRequired
 }
 
 export default RegistrationForm

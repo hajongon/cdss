@@ -1,4 +1,4 @@
-import { authInstance } from './instance'
+import { authInstance } from '../../authentication/apis/instance'
 
 export const getPatientsInfo = async () => {
   try {

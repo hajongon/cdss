@@ -4,13 +4,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Dropdown } from 'react-bootstrap'
 import profileImg from 'assets/img/team/avatar.png'
 import Avatar from 'components/common/Avatar'
+import { logOut } from 'components/authentication/apis/auth'
 import AppContext from 'context/Context'
-import { logOut } from 'components/cdss/apis/Auth'
 
 const ProfileDropdown = () => {
   const navigate = useNavigate()
-  const { isLogin } = useContext(AppContext)
+  const { userInfo, setUserInfo } = useContext(AppContext)
+
+  const handleClickMyPage = () => {
+    navigate('/system/mypage')
+  }
   const handleClickLogOutBtn = async () => {
+    setUserInfo({})
     const res = await logOut()
     if (!res.status) {
       alert('문제가 발생했습니다. 다시 로그인해주세요.')
@@ -23,6 +28,7 @@ const ProfileDropdown = () => {
       navigate('/')
     }
   }
+
   return (
     <Dropdown navbar={true} as="li">
       <Dropdown.Toggle
@@ -50,14 +56,17 @@ const ProfileDropdown = () => {
           {/* <Dropdown.Item as={Link} to="#">
             Settings
           </Dropdown.Item> */}
-          {!isLogin ? (
+          {userInfo && !userInfo.idx ? (
             <Dropdown.Item as={Link} to="/cdss-login">
               Log in
             </Dropdown.Item>
           ) : (
-            <Dropdown.Item onClick={handleClickLogOutBtn}>
-              Log out
-            </Dropdown.Item>
+            <>
+              <Dropdown.Item onClick={handleClickMyPage}>My Page</Dropdown.Item>
+              <Dropdown.Item onClick={handleClickLogOutBtn}>
+                Log out
+              </Dropdown.Item>
+            </>
           )}
         </div>
       </Dropdown.Menu>

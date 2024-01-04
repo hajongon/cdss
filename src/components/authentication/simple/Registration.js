@@ -1,22 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types' // Import PropTypes
 import { Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import RegistrationForm from 'components/authentication/RegistrationForm'
 
-const Registration = () => (
+const Registration = ({ setShow }) => (
   <>
     <Row className="align-items-center mb-2">
       <Col>
-        <h5 id="modalLabel">Register</h5>
+        <h5 id="modalLabel">사용자 정보</h5>
       </Col>
-      <Col xs="auto">
+      {/* <Col xs="auto">
         <p className="fs--1 text-600 mb-0">
           Have an account? <Link to="/authentication/simple/login">Login</Link>
         </p>
-      </Col>
+      </Col> */}
     </Row>
-    <RegistrationForm />
+    <RegistrationForm setShow={setShow} />
   </>
 )
+
+// Define propTypes
+Registration.propTypes = {
+  setShow: PropTypes.func.isRequired // Assuming setShow is a function and is required
+}
 
 export default Registration

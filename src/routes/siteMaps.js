@@ -1332,6 +1332,30 @@ export const systemRoutes = {
       icon: 'rocket',
       to: '/system/manage-code',
       active: true
+    },
+    {
+      name: '사용자 관리',
+      icon: 'rocket',
+      to: '/system/manage-users',
+      active: true
+    },
+    {
+      name: 'Rule Studio',
+      icon: 'rocket',
+      to: '/system/rule-studio',
+      active: true
+    },
+    {
+      name: 'Irukey',
+      icon: 'rocket',
+      to: '/system/irukey',
+      active: true
+    },
+    {
+      name: 'Community',
+      icon: 'rocket',
+      to: '/system/manage-community',
+      active: true
     }
   ]
 }
