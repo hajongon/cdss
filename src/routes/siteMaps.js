@@ -1309,6 +1309,13 @@ export const systemRoutes = {
       to: '/system/cdss-main',
       active: true
     },
+    // systemRoutes - children - CDSS 아래
+    {
+      name: 'Community',
+      icon: 'rocket',
+      to: '/system/manage-community',
+      active: true
+    },
     // {
     //   name: 'Charts',
     //   icon: 'rocket',
@@ -1332,30 +1339,6 @@ export const systemRoutes = {
       icon: 'rocket',
       to: '/system/manage-code',
       active: true
-    },
-    {
-      name: '사용자 관리',
-      icon: 'rocket',
-      to: '/system/manage-users',
-      active: true
-    },
-    {
-      name: 'Rule Studio',
-      icon: 'rocket',
-      to: '/system/rule-studio',
-      active: true
-    },
-    {
-      name: 'Irukey',
-      icon: 'rocket',
-      to: '/system/irukey',
-      active: true
-    },
-    {
-      name: 'Community',
-      icon: 'rocket',
-      to: '/system/manage-community',
-      active: true
     }
   ]
 }
@@ -1366,5 +1349,6 @@ export default [
   pagesRoutes,
   modulesRoutes,
   documentationRoutes,
-  systemRoutes
+  //export default
+  systemRoutes,
 ]

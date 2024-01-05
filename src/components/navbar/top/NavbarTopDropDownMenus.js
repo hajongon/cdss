@@ -1,3 +1,4 @@
+//import from 'react'
 import React, { useContext, useEffect } from 'react'
 import NavbarDropdown from './NavbarDropdown'
 import {
@@ -6,7 +7,8 @@ import {
   pagesRoutes,
   modulesRoutes,
   documentationRoutes,
-  systemRoutes
+  // import from 'routes/siteMaps'
+  systemRoutes,
 } from 'routes/siteMaps'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -21,10 +23,29 @@ const NavbarTopDropDownMenus = () => {
   const {
     config: { navbarCollapsed, showBurgerMenu },
     setConfig,
+    // useContext(AppContext)
     communityRoutes,
     setCommunityRoutes,
     comNavData
   } = useContext(AppContext)
+
+  //useContext(AppContext) 아래
+  const {
+    fetchComNavData
+  } = communityMaps()
+
+  useEffect(() => {
+    fetchComNavData()
+  },[])
+
+
+  useEffect(() => {
+    setCommunityRoutes({
+      label: 'Community',
+      children: comNavData})
+  }, [comNavData]);
+  
+  
 
   const handleDropdownItemClick = () => {
     if (navbarCollapsed) {
@@ -34,20 +55,6 @@ const NavbarTopDropDownMenus = () => {
       setConfig('showBurgerMenu', !showBurgerMenu)
     }
   }
-
-  const { fetchComNavData } = communityMaps()
-
-  useEffect(() => {
-    fetchComNavData()
-  }, [])
-
-  useEffect(() => {
-    const newRoutes = {
-      label: 'Community',
-      children: comNavData
-    }
-    setCommunityRoutes(newRoutes)
-  }, [comNavData])
   return (
     <>
       <NavbarDropdown title="dashboard">
@@ -88,8 +95,11 @@ const NavbarTopDropDownMenus = () => {
           </Dropdown.Item>
         ))}
       </NavbarDropdown>
+
+{/* NavbarDropdown - systme 위 */}
       <NavbarDropdown title="community">
-        {flatRoutes(communityRoutes.children).map(route => (
+        {flatRoutes(communityRoutes.children).map(route =>( 
+
           <Dropdown.Item
             key={route.name}
             as={Link}

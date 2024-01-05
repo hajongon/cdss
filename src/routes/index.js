@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom';
 import AuthSimpleLayout from '../layouts/AuthSimpleLayout'
 import MainLayout from '../layouts/MainLayout'
 import ErrorLayout from '../layouts/ErrorLayout'
@@ -193,12 +193,8 @@ import ExampleB from 'components/system/ExampleB'
 import CdssLogin from 'components/cdss/login/CdssLogin'
 import CdssCharts from 'components/cdss/CdssCharts'
 import ManageCode from 'components/manage-code/ManageCode'
-import MyPage from 'components/user/MyPage'
-import ManageUsers from 'components/user/ManageUsers'
-import RuleStudio from 'components/cdss/RuleStudio'
 import ManageCommunity from 'components/board/ManageCommunity'
 import BoardMain from 'components/board/BoardMain'
-import Irukey from 'components/cdss/Irukey'
 
 const FalconRoutes = () => {
   return (
@@ -552,16 +548,14 @@ const FalconRoutes = () => {
 
         <Route path="system/example-a" element={<ExampleA />} />
         <Route path="system/example-b" element={<ExampleB />} />
-        <Route path="system/manage-users" element={<ManageUsers />} />
         <Route path="system/cdss-main" element={<CdssMain />} />
         <Route path="system/cdss-charts" element={<CdssCharts />} />
         <Route path="system/manage-code" element={<ManageCode />} />
-        <Route path="system/mypage" element={<MyPage />} />
-        <Route path="system/rule-studio" element={<RuleStudio />} />
-        <Route path="system/irukey" element={<Irukey />} />
+        {/* managecode 아래 */}
         <Route path="system/manage-community" element={<ManageCommunity />} />
         <Route path="board/main/:boardId" element={<BoardMain />} />
       </Route>
+
 
       {/* //--- MainLayout end  */}
 
