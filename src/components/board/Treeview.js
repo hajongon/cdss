@@ -6,7 +6,6 @@ import { Collapse } from 'react-bootstrap'
 import useContextMenu from './utils/useContextMenu'
 import communityMaps from 'routes/communityMaps'
 import { deleteTree, getTree } from './apis/page'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
 const TreeviewListItem = ({
   item,
@@ -18,7 +17,8 @@ const TreeviewListItem = ({
   handleItemClick,
   selectedItem,
   handleAddData,
-  setData
+  setData,
+  setSelectedItem
 }) => {
   const [open, setOpen] = useState(openedItems.indexOf(item.id) !== -1)
   const [children, setChildren] = useState([])
@@ -53,35 +53,31 @@ const TreeviewListItem = ({
 
   const handleDeleteData = () => {
     deleteTreeview()
-    refreshTreeview()
-    fetchComNavData()
   }
 
   const deleteTreeview = async () => {
     const deleteTreeData = await deleteTree(selectedItem.id)
 
     if (deleteTreeData.status === 'success') {
-      console.log(deleteTreeData.status)
+      const fetchedTree = await getTree()
+      const fetchedTreeData = fetchedTree.data
+      // 데이터 변환
+      const modData = fetchedTreeData.map(item => ({
+        icon: 'file',
+        id: item.boardId,
+        name: item.boardName,
+        usecomment: item.isUseComment === 1,
+        rud: item.userRud
+      }))
+      if (fetchedTree.status === 'success') {
+        setData(modData)
+        setSelectedItem(modData[0])
+        fetchComNavData()
+      } else {
+        console.log(fetchedTree.error)
+      }
     } else {
       console.log(deleteTreeData.error)
-    }
-  }
-
-  const refreshTreeview = async () => {
-    const fetchedTree = await getTree()
-    const fetchedTreeData = fetchedTree.data
-    // 데이터 변환
-    const modData = fetchedTreeData.map(item => ({
-      icon: 'file',
-      id: item.boardId,
-      name: item.boardName,
-      usecomment: item.isUseComment === 1,
-      rud: item.userRud
-    }))
-    if (fetchedTree.status === 'success') {
-      setData(modData)
-    } else {
-      console.log(fetchedTree.error)
     }
   }
 
@@ -194,6 +190,7 @@ const TreeviewListItem = ({
                   selectedItem={selectedItem}
                   handleAddData={handleAddData}
                   setData={setData}
+                  setSelectedItem={setSelectedItem}
                 />
               ))}
             </ul>
@@ -279,6 +276,7 @@ const Treeview = ({
           selectedItem={selectedItem}
           handleAddData={handleAddData}
           setData={setData}
+          setSelectedItem={setSelectedItem}
         />
       ))}
     </ul>
@@ -295,7 +293,8 @@ TreeviewListItem.propTypes = {
   handleItemClick: PropTypes.func,
   selectedItem: PropTypes.object,
   handleAddData: PropTypes.func,
-  setData: PropTypes.func
+  setData: PropTypes.func,
+  setSelectedItem: PropTypes.func
 }
 
 Treeview.propTypes = {
