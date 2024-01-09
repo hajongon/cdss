@@ -7,7 +7,7 @@ const communityMaps = () => {
 
   const fetchComNavData = async () => {
     try {
-      const response = await axiosInstance.post(`/system/manage/tree`)
+      const response = await axiosInstance.post(`/board/manage/tree`)
       const fetchedData = response.data.data
 
       // 데이터 변환

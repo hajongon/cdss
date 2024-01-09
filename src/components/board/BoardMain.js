@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import { Row, Col, Card } from 'react-bootstrap'
-import { getBoard, getCodeALL, selectCode } from './apis/page'
+import { getArticles, getBoard, getCodeALL, selectCode } from './apis/page'
 
 const BoardMain = () => {
   const { boardId } = useParams()
+
+  const location = useLocation()
+
+  const newWritePath = `${location.pathname}/write`
 
   const [selectedOption, setSelectedOption] = useState('0')
 
   const [, setTitleHeader] = useState([])
 
   const [boardInfo, setBoardInfo] = useState({})
+
+  const [articles, setArticles] = useState([])
 
   const handleSelectChange = e => {
     setSelectedOption(e.target.value)
@@ -42,6 +48,21 @@ const BoardMain = () => {
     }
     fetchCodeInfo()
   }, [boardInfo])
+
+  useEffect(() => {
+    const fetchArticleData = async () => {
+      console.log(boardId)
+      const fetchedArticles = await getArticles(boardId)
+
+      if (fetchedArticles.status === 'success') {
+        setArticles(fetchedArticles.data)
+      } else {
+        console.log(fetchedArticles.error)
+      }
+    }
+
+    fetchArticleData()
+  }, [boardId])
 
   return (
     <div className="contetnt">
@@ -96,17 +117,47 @@ const BoardMain = () => {
                   />
                 </div>
               </Card.Title>
+              {boardInfo.userRud > 4 && (
+                <Link
+                  to={newWritePath}
+                  className="btn btn-primary er fs-6 px-8 py-4"
+                >
+                  글쓰기
+                </Link>
+              )}
             </Card.Header>
-            {boardInfo.userRud > 4 && (
-              <Link
-                to={`${boardId}/write`}
-                className="btn btn-primary er fs-6 px-8 py-4"
+            <Card.Body>
+              <table
+                className="table table-hover table-rounded table-striped border gy-7 gs-7"
+                id="boardList"
+                style={{ cursor: 'pointer' }}
               >
-                글쓰기
-              </Link>
-            )}
+                {/* Table head */}
+                <thead>
+                  {/* Table row */}
+                  <tr className="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+                    <th className="min-w-400px text-center">제목</th>
+                    <th className="min-w-100px text-center">작성자</th>
+                    <th className="min-w-100px text-center">작성일</th>
+                  </tr>
+                  {/* End Table row */}
+                </thead>
+                {/* End Table head */}
+
+                {/* Table body */}
+                <tbody>
+                  {/* {articles.map((item, index) => (
+                    <tr key={index}>
+                      <td className="min-w-400px text-center">{item.title}</td>
+                      <td className="min-w-100px text-center">{item.author}</td>
+                      <td className="min-w-100px text-center">{item.date}</td>
+                    </tr>
+                  ))} */}
+                </tbody>
+                {/* End Table body */}
+              </table>
+            </Card.Body>
           </Card>
-          <p>{boardId}</p>
         </Col>
       </Row>
     </div>

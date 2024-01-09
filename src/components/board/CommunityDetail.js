@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import FalconCardHeader from './utils/FalconCardHeader'
-import { axiosInstance } from '../authentication/apis/instance'
 import communityMaps from 'routes/communityMaps'
+import { addBoard, getTree } from './apis/page'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
-const CommunityDetail = ({ selectedItem, updateTree }) => {
+const CommunityDetail = ({ selectedItem, setData }) => {
   const [currentItem, setCurrentItem] = useState(selectedItem)
   const onItemClick = e => {
     setCurrentItem(prev => {
@@ -26,52 +27,64 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
     let isExist = false
 
     if (selectedItem?.id == '') {
-      const fetchData2 = async () => {
-        try {
-          const response2 = await axiosInstance.post(`/system/manage/tree`)
-          const fetchedData2 = response2.data.data
+      const checkName = async () => {
+        const fetchedTree = await getTree()
+        const fetchedTreeData = fetchedTree.data
+        console.log(fetchedTreeData)
+        fetchedTreeData.map(item => {
+          if (item.boardName == currentItem?.name) {
+            isExist = true
+            return
+          }
+        })
 
+        if (fetchedTree.status === 'success') {
+          console.log(fetchedTree.data)
+        } else {
+          console.log(fetchedTree.error)
+        }
+      }
+
+      checkName()
+
+      console.log(isExist)
+
+      if (isExist) {
+        alert('커뮤니티 이름이 중복되었습니다.')
+        return false
+      } else {
+        const saveBoard = async () => {
+          const requestData = {
+            boardId: selectedItem?.id,
+            boardName: currentItem?.name,
+            isUseComment: isChecked ? 1 : 0,
+            titleHeaderGroupCd: 'CBNTT',
+            userRud: isCheckedr * 4 + isCheckedu * 2 + isCheckedd
+          }
+
+          await addBoard(requestData)
+
+          const fetchedTree = await getTree()
+          const fetchedTreeData = fetchedTree.data
           // 데이터 변환
-          fetchedData2.map(item => {
-            if (item.boardName == currentItem?.name) {
-              isExist = true
-              return
-            }
-          })
-        } catch (error) {
-          console.error('Error fetching data:', error)
+          const modData = fetchedTreeData.map(item => ({
+            icon: 'file',
+            id: item.boardId,
+            name: item.boardName,
+            usecomment: item.isUseComment === 1,
+            rud: item.userRud
+          }))
+          if (fetchedTree.status === 'success') {
+            setData(modData)
+          } else {
+            console.log(fetchedTree.error)
+          }
+
+          fetchComNavData()
         }
-      }
-
-      fetchData2()
-    }
-
-    if (isExist) {
-      alert('커뮤니티 이름이 중복되었습니다.')
-      return
-    }
-
-    const fetchData = async () => {
-      try {
-        const requestData = {
-          boardId: selectedItem?.id,
-          boardName: currentItem?.name,
-          isUseComment: isChecked ? 1 : 0,
-          titleHeaderGroupCd: 'CBNTT',
-          userRud: isCheckedr * 4 + isCheckedu * 2 + isCheckedd
-        }
-        const response = await axiosInstance.post(
-          `/system/manage/save`,
-          requestData
-        )
-        console.log(response)
-        updateTree()
-        fetchComNavData()
-      } catch (error) {
-        console.error('Error fetching data:', error)
+        saveBoard()
       }
     }
-    fetchData()
   }
 
   // 체크 스위치의 상태를 관리하는 useState 훅
@@ -227,11 +240,6 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
 export default CommunityDetail
 
 CommunityDetail.propTypes = {
-  selectedItem: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    usecomment: PropTypes.bool,
-    rud: PropTypes.number
-  }),
-  updateTree: PropTypes.func
+  selectedItem: PropTypes.object,
+  setData: PropTypes.func
 }

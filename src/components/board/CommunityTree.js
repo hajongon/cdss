@@ -7,7 +7,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
-const CommunityTree = ({ setSelectedItem, selectedItem, data, updateTree }) => {
+const CommunityTree = ({ setSelectedItem, data, selectedItem, setData }) => {
   const handleItemClick = item => {
     setSelectedItem(item)
   }
@@ -53,26 +53,13 @@ const CommunityTree = ({ setSelectedItem, selectedItem, data, updateTree }) => {
           expanded={['1', '2', '3', '7', '18']}
           handleItemClick={handleItemClick}
           setTree={setTree}
-          selectedItem={selectedItem}
-          updateTree={updateTree}
           setSelectedItem={setSelectedItem}
+          selectedItem={selectedItem}
+          setData={setData}
         />
       </Card.Body>
     </Card>
   )
-}
-
-CommunityTree.propTypes = {
-  setSelectedItem: PropTypes.func.isRequired,
-  selectedItem: PropTypes.object, // You can specify the shape of selectedItem object more accurately
-  data: PropTypes.array, // You can specify the shape of data array more accurately
-  updateTree: PropTypes.func
-}
-
-export default CommunityTree
-
-CommunityTree.propTypes = {
-  setSelectedItem: PropTypes.func.isRequired
 }
 
 function TriggerExample() {
@@ -94,3 +81,12 @@ function TriggerExample() {
     </OverlayTrigger>
   )
 }
+
+CommunityTree.propTypes = {
+  setSelectedItem: PropTypes.func,
+  data: PropTypes.array.isRequired,
+  selectedItem: PropTypes.object,
+  setData: PropTypes.func
+}
+
+export default CommunityTree

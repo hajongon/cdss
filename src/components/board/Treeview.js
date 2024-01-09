@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 import { Collapse } from 'react-bootstrap'
-import { axiosInstance } from '../authentication/apis/instance'
 import useContextMenu from './utils/useContextMenu'
 import communityMaps from 'routes/communityMaps'
+import { deleteTree, getTree } from './apis/page'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 const TreeviewListItem = ({
   item,
@@ -15,14 +16,16 @@ const TreeviewListItem = ({
   setSelectedItems,
   selection,
   handleItemClick,
-  onAddData,
-  onDeleteData
+  selectedItem,
+  handleAddData,
+  setData
 }) => {
   const [open, setOpen] = useState(openedItems.indexOf(item.id) !== -1)
   const [children, setChildren] = useState([])
   const [firstChildren, setFirstChildren] = useState([])
   const [childrenOpen, setChildrenOpen] = useState(false)
   const checkRef = useRef()
+  const { fetchComNavData } = communityMaps()
 
   const {
     contextMenuRef,
@@ -35,17 +38,51 @@ const TreeviewListItem = ({
     const menuItems = [
       {
         label: '추가',
-        action: () => handleMenuItemClick(onAddData)
+        action: () => handleMenuItemClick(handleAddData)
       },
       {
         label: '삭제',
-        action: () => handleMenuItemClick(onDeleteData)
+        action: () => handleMenuItemClick(handleDeleteData)
       }
     ]
 
     handleItemClick(item)
 
     handleContextMenu(event, menuItems)
+  }
+
+  const handleDeleteData = () => {
+    deleteTreeview()
+    refreshTreeview()
+    fetchComNavData()
+  }
+
+  const deleteTreeview = async () => {
+    const deleteTreeData = await deleteTree(selectedItem.id)
+
+    if (deleteTreeData.status === 'success') {
+      console.log(deleteTreeData.status)
+    } else {
+      console.log(deleteTreeData.error)
+    }
+  }
+
+  const refreshTreeview = async () => {
+    const fetchedTree = await getTree()
+    const fetchedTreeData = fetchedTree.data
+    // 데이터 변환
+    const modData = fetchedTreeData.map(item => ({
+      icon: 'file',
+      id: item.boardId,
+      name: item.boardName,
+      usecomment: item.isUseComment === 1,
+      rud: item.userRud
+    }))
+    if (fetchedTree.status === 'success') {
+      setData(modData)
+    } else {
+      console.log(fetchedTree.error)
+    }
   }
 
   const getChildrens = item => {
@@ -154,8 +191,9 @@ const TreeviewListItem = ({
                   setSelectedItems={setSelectedItems}
                   selection={selection}
                   handleItemClick={handleItemClick}
-                  onAddData={onAddData}
-                  onDeleteData={onDeleteData}
+                  selectedItem={selectedItem}
+                  handleAddData={handleAddData}
+                  setData={setData}
                 />
               ))}
             </ul>
@@ -206,15 +244,14 @@ const Treeview = ({
   setSelectedItems,
   handleItemClick,
   setTree,
+  setSelectedItem,
   selectedItem,
-  updateTree,
-  setSelectedItem
+  setData
 }) => {
   const [openedItems, setOpenedItems] = useState(expanded)
 
-  const { fetchComNavData } = communityMaps()
-
   const handleAddData = () => {
+    console.log('변경 전:', selectedItem)
     const newData = { icon: 'file', id: '', name: '', usecomment: true, rud: 6 }
 
     setTree(prevData => [
@@ -224,29 +261,7 @@ const Treeview = ({
       }
     ])
 
-    setSelectedItem(newData)
-  }
-
-  const handleDeleteData = () => {
-    // 여기에서 트리 데이터를 업데이트하여 노드 삭제 로직을 구현
-    const fetchData = async () => {
-      try {
-        const requestData = {
-          boardId: selectedItem.id
-        }
-        console.log(selectedItem.id)
-        const response = await axiosInstance.post(
-          `/system/manage/delete`,
-          requestData
-        )
-        console.log(response)
-        updateTree()
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-    fetchData()
-    fetchComNavData()
+    setSelectedItem(JSON.parse(JSON.stringify(newData)))
   }
 
   return (
@@ -261,9 +276,9 @@ const Treeview = ({
           setSelectedItems={setSelectedItems}
           selection={selection}
           handleItemClick={handleItemClick}
-          onAddData={handleAddData}
-          onDeleteData={handleDeleteData}
           selectedItem={selectedItem}
+          handleAddData={handleAddData}
+          setData={setData}
         />
       ))}
     </ul>
@@ -271,29 +286,29 @@ const Treeview = ({
 }
 
 TreeviewListItem.propTypes = {
-  item: PropTypes.object.isRequired,
-  openedItems: PropTypes.array.isRequired,
-  setOpenedItems: PropTypes.func.isRequired,
-  selectedItems: PropTypes.array.isRequired,
-  setSelectedItems: PropTypes.func.isRequired,
-  selection: PropTypes.bool.isRequired,
-  handleItemClick: PropTypes.func.isRequired,
-  onAddData: PropTypes.func.isRequired,
-  onDeleteData: PropTypes.func.isRequired,
-  selectedItem: PropTypes.object.isRequired
+  item: PropTypes.object,
+  openedItems: PropTypes.array,
+  setOpenedItems: PropTypes.func,
+  selectedItems: PropTypes.array,
+  setSelectedItems: PropTypes.func,
+  selection: PropTypes.bool,
+  handleItemClick: PropTypes.func,
+  selectedItem: PropTypes.object,
+  handleAddData: PropTypes.func,
+  setData: PropTypes.func
 }
 
 Treeview.propTypes = {
-  data: PropTypes.array.isRequired,
-  selection: PropTypes.bool.isRequired, // If true, selection is enabled.
-  expanded: PropTypes.array.isRequired, // Default expanded children ids.
-  selectedItems: PropTypes.array.isRequired, // Selected item ids.
-  setSelectedItems: PropTypes.func.isRequired, // Setter to select items.
-  handleItemClick: PropTypes.func.isRequired,
-  setTree: PropTypes.func.isRequired,
-  selectedItem: PropTypes.object.isRequired,
-  updateTree: PropTypes.func.isRequired,
-  setSelectedItem: PropTypes.func.isRequired
+  data: PropTypes.array,
+  selection: PropTypes.bool, // If true selection is enabled.
+  expanded: PropTypes.array, // Default expanded children ids.
+  selectedItems: PropTypes.array, // Selected item ids..
+  setSelectedItems: PropTypes.func, // Setter to select items
+  handleItemClick: PropTypes.func,
+  setTree: PropTypes.func,
+  setSelectedItem: PropTypes.func,
+  selectedItem: PropTypes.object,
+  setData: PropTypes.func
 }
 
 export default Treeview

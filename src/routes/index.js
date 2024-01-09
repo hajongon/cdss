@@ -553,13 +553,13 @@ const FalconRoutes = () => {
         <Route path="system/example-b" element={<ExampleB />} />
         <Route path="system/cdss-main" element={<CdssMain />} />
         <Route path="system/cdss-charts" element={<CdssCharts />} />
-        <Route path="system/manage-code" element={<ManageCode />} />
+        <Route path="board/manage-code" element={<ManageCode />} />
         <Route path="system/rule-studio" element={<RuleStudio />} />
         <Route path="system/irukey" element={<Irukey />} />
         <Route path="user/mypage" element={<MyPage />} />
 
         {/* managecode 아래 */}
-        <Route path="system/manage-community" element={<ManageCommunity />} />
+        <Route path="board/manage-community" element={<ManageCommunity />} />
         <Route path="board/main/:boardId" element={<BoardMain />} />
       </Route>
 
