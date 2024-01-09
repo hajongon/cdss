@@ -1313,7 +1313,7 @@ export const systemRoutes = {
     {
       name: 'Community',
       icon: 'rocket',
-      to: '/system/manage-community',
+      to: '/board/manage-community',
       active: true
     },
     // {
@@ -1337,7 +1337,7 @@ export const systemRoutes = {
     {
       name: 'code',
       icon: 'rocket',
-      to: '/system/manage-code',
+      to: '/board/manage-code',
       active: true
     }
   ]
@@ -1350,5 +1350,5 @@ export default [
   modulesRoutes,
   documentationRoutes,
   //export default
-  systemRoutes,
+  systemRoutes
 ]

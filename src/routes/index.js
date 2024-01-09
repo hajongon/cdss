@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom'
 import AuthSimpleLayout from '../layouts/AuthSimpleLayout'
 import MainLayout from '../layouts/MainLayout'
 import ErrorLayout from '../layouts/ErrorLayout'
@@ -550,12 +550,11 @@ const FalconRoutes = () => {
         <Route path="system/example-b" element={<ExampleB />} />
         <Route path="system/cdss-main" element={<CdssMain />} />
         <Route path="system/cdss-charts" element={<CdssCharts />} />
-        <Route path="system/manage-code" element={<ManageCode />} />
+        <Route path="board/manage-code" element={<ManageCode />} />
         {/* managecode 아래 */}
-        <Route path="system/manage-community" element={<ManageCommunity />} />
+        <Route path="board/manage-community" element={<ManageCommunity />} />
         <Route path="board/main/:boardId" element={<BoardMain />} />
       </Route>
-
 
       {/* //--- MainLayout end  */}
 

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import FalconCardHeader from './utils/FalconCardHeader'
-import { axiosInstance } from '../authentication/apis/instance';
-import communityMaps from 'routes/communityMaps';
+import communityMaps from 'routes/communityMaps'
+import { addBoard, getTree } from './apis/page'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
-const CommunityDetail = ({ selectedItem, updateTree }) => {
+const CommunityDetail = ({ selectedItem, setData }) => {
   const [currentItem, setCurrentItem] = useState(selectedItem)
   const onItemClick = e => {
     setCurrentItem(prev => {
@@ -15,87 +16,96 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
     })
   }
 
-  const {
-    fetchComNavData
-  } = communityMaps()
+  const { fetchComNavData } = communityMaps()
 
-
-  const btnSave = ()=> {
-    if(currentItem?.name == ''){
-      alert('커뮤니티 이름을 입력해주세요.');
+  const btnSave = () => {
+    if (currentItem?.name == '') {
+      alert('커뮤니티 이름을 입력해주세요.')
       return
     }
 
-    const isExist = false;
+    let isExist = false
 
-    if ( selectedItem?.id == '' ) {
-      const fetchData2 = async () => {
-        try {
-          const response2 = await axiosInstance.post(`/system/manage/tree`);
-          const fetchedData2 = response2.data.data;
-    
-          // 데이터 변환
-          fetchedData2.map(item => {
-            if ( item.boardName == currentItem?.name ) {
-              isExist = true;
-              return;
-            }
-          });
-    
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-    
-      fetchData2();
-        
-    }
-    
-    if ( isExist ) {
-      alert('커뮤니티 이름이 중복되었습니다.');
-      return;
-    }
+    if (selectedItem?.id == '') {
+      const checkName = async () => {
+        const fetchedTree = await getTree()
+        const fetchedTreeData = fetchedTree.data
+        console.log(fetchedTreeData)
+        fetchedTreeData.map(item => {
+          if (item.boardName == currentItem?.name) {
+            isExist = true
+            return
+          }
+        })
 
-    const fetchData = async () => {
-      try {
-        const requestData = {
-          "boardId" : selectedItem?.id,
-          "boardName" : currentItem?.name,
-          "isUseComment": (isChecked?1:0),
-          "titleHeaderGroupCd": "CBNTT",
-          "userRud": (isCheckedr*4+isCheckedu*2+isCheckedd)
+        if (fetchedTree.status === 'success') {
+          console.log(fetchedTree.data)
+        } else {
+          console.log(fetchedTree.error)
         }
-        const response = await axiosInstance.post(`/system/manage/save`, requestData);
-        updateTree()
-        fetchComNavData()
-  
-      } catch (error) {
-        console.error('Error fetching data:', error);
       }
 
+      checkName()
+
+      console.log(isExist)
+
+      if (isExist) {
+        alert('커뮤니티 이름이 중복되었습니다.')
+        return false
+      } else {
+        const saveBoard = async () => {
+          const requestData = {
+            boardId: selectedItem?.id,
+            boardName: currentItem?.name,
+            isUseComment: isChecked ? 1 : 0,
+            titleHeaderGroupCd: 'CBNTT',
+            userRud: isCheckedr * 4 + isCheckedu * 2 + isCheckedd
+          }
+
+          await addBoard(requestData)
+
+          const fetchedTree = await getTree()
+          const fetchedTreeData = fetchedTree.data
+          // 데이터 변환
+          const modData = fetchedTreeData.map(item => ({
+            icon: 'file',
+            id: item.boardId,
+            name: item.boardName,
+            usecomment: item.isUseComment === 1,
+            rud: item.userRud
+          }))
+          if (fetchedTree.status === 'success') {
+            setData(modData)
+          } else {
+            console.log(fetchedTree.error)
+          }
+
+          fetchComNavData()
+        }
+        saveBoard()
+      }
     }
-    fetchData();
   }
 
   // 체크 스위치의 상태를 관리하는 useState 훅
-  const [isChecked, setChecked] = useState(false); // false는 기본값으로 설정
-  const [isCheckedr, setCheckedr] = useState(false); // false는 기본값으로 설정
-  const [isCheckedu, setCheckedu] = useState(false); // false는 기본값으로 설정
-  const [isCheckedd, setCheckedd] = useState(false); // false는 기본값으로 설정
+  const [isChecked, setChecked] = useState(false) // false는 기본값으로 설정
+  const [isCheckedr, setCheckedr] = useState(false) // false는 기본값으로 설정
+  const [isCheckedu, setCheckedu] = useState(false) // false는 기본값으로 설정
+  const [isCheckedd, setCheckedd] = useState(false) // false는 기본값으로 설정
 
   // 스위치가 변경될 때 실행되는 함수
   const handleSwitchChange = () => {
-    setChecked(!isChecked); // 현재 상태의 반대값으로 업데이트
-  };
+    setChecked(!isChecked) // 현재 상태의 반대값으로 업데이트
+  }
   const handleCheckedrChange = () => {
-    setCheckedr(!isCheckedr); // 현재 상태의 반대값으로 업데이트
-  };
+    setCheckedr(!isCheckedr) // 현재 상태의 반대값으로 업데이트
+  }
   const handleCheckeduChange = () => {
-    setCheckedu(!isCheckedu); // 현재 상태의 반대값으로 업데이트
-  };
+    setCheckedu(!isCheckedu) // 현재 상태의 반대값으로 업데이트
+  }
   const handleCheckeddChange = () => {
-    setCheckedd(!isCheckedd); // 현재 상태의 반대값으로 업데이트
-  };
+    setCheckedd(!isCheckedd) // 현재 상태의 반대값으로 업데이트
+  }
 
   useEffect(() => {
     setCurrentItem(selectedItem)
@@ -143,7 +153,9 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
               type="text"
               placeholder="Community ID"
               disabled
-              value={selectedItem?.id || '커뮤니티 아이디는 자동으로 부여됩니다.'}
+              value={
+                selectedItem?.id || '커뮤니티 아이디는 자동으로 부여됩니다.'
+              }
               className="fs--1"
             />
           </Col>
@@ -182,9 +194,9 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
           <Col sm="1">
             <Form.Check
               inline
-              type='checkbox'
+              type="checkbox"
               checked={isCheckedr}
-              id='item1Check'
+              id="item1Check"
               onChange={handleCheckedrChange}
             />
             <Form.Label className="mt-1">읽기</Form.Label>
@@ -192,9 +204,9 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
           <Col sm="1">
             <Form.Check
               inline
-              type='checkbox'
+              type="checkbox"
               checked={isCheckedu}
-              id='item2Check'
+              id="item2Check"
               onChange={handleCheckeduChange}
             />
             <Form.Label className="mt-1">쓰기</Form.Label>
@@ -202,9 +214,9 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
           <Col sm="1">
             <Form.Check
               inline
-              type='checkbox'
+              type="checkbox"
               checked={isCheckedd}
-              id='item3Check'
+              id="item3Check"
               onChange={handleCheckeddChange}
             />
             <Form.Label className="mt-1">삭제</Form.Label>
@@ -212,7 +224,11 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
         </Form.Group>
 
         <Col lg={12} xl={12} className="text-end">
-          <Button variant="primary" className="mt-2 me-0 mb-1 w-10" onClick={btnSave}>
+          <Button
+            variant="primary"
+            className="mt-2 me-0 mb-1 w-10"
+            onClick={btnSave}
+          >
             저장
           </Button>
         </Col>
@@ -224,8 +240,6 @@ const CommunityDetail = ({ selectedItem, updateTree }) => {
 export default CommunityDetail
 
 CommunityDetail.propTypes = {
-  selectedItem: PropTypes.shape({
-    CommunityGroup: PropTypes.string,
-    name: PropTypes.string
-  })
+  selectedItem: PropTypes.object,
+  setData: PropTypes.func
 }

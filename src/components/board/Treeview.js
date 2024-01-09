@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 import { Collapse } from 'react-bootstrap'
-import { axiosInstance } from '../authentication/apis/instance';
-import useContextMenu  from './utils/useContextMenu'
+import useContextMenu from './utils/useContextMenu'
 import communityMaps from 'routes/communityMaps'
+import { deleteTree, getTree } from './apis/page'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 const TreeviewListItem = ({
   item,
@@ -15,42 +16,76 @@ const TreeviewListItem = ({
   setSelectedItems,
   selection,
   handleItemClick,
-  onAddData,
-  onDeleteData,
   selectedItem,
+  handleAddData,
+  setData
 }) => {
   const [open, setOpen] = useState(openedItems.indexOf(item.id) !== -1)
   const [children, setChildren] = useState([])
   const [firstChildren, setFirstChildren] = useState([])
   const [childrenOpen, setChildrenOpen] = useState(false)
   const checkRef = useRef()
+  const { fetchComNavData } = communityMaps()
 
   const {
     contextMenuRef,
     contextMenuState,
     handleContextMenu,
-    handleMenuItemClick,
-  } = useContextMenu();
+    handleMenuItemClick
+  } = useContextMenu()
 
-  const handleRightClick = (event) => {
-      const menuItems = [
-        {
-          label: "추가",
-          action: () => handleMenuItemClick(onAddData),
-        },
-        {
-          label: "삭제",
-          action: () => handleMenuItemClick(onDeleteData),
-        }
-      ];
+  const handleRightClick = event => {
+    const menuItems = [
+      {
+        label: '추가',
+        action: () => handleMenuItemClick(handleAddData)
+      },
+      {
+        label: '삭제',
+        action: () => handleMenuItemClick(handleDeleteData)
+      }
+    ]
 
-      handleItemClick(item)
-      
-      handleContextMenu(event, menuItems);
-  };
+    handleItemClick(item)
 
+    handleContextMenu(event, menuItems)
+  }
 
-  const getChildrens = (item) => {
+  const handleDeleteData = () => {
+    deleteTreeview()
+    refreshTreeview()
+    fetchComNavData()
+  }
+
+  const deleteTreeview = async () => {
+    const deleteTreeData = await deleteTree(selectedItem.id)
+
+    if (deleteTreeData.status === 'success') {
+      console.log(deleteTreeData.status)
+    } else {
+      console.log(deleteTreeData.error)
+    }
+  }
+
+  const refreshTreeview = async () => {
+    const fetchedTree = await getTree()
+    const fetchedTreeData = fetchedTree.data
+    // 데이터 변환
+    const modData = fetchedTreeData.map(item => ({
+      icon: 'file',
+      id: item.boardId,
+      name: item.boardName,
+      usecomment: item.isUseComment === 1,
+      rud: item.userRud
+    }))
+    if (fetchedTree.status === 'success') {
+      setData(modData)
+    } else {
+      console.log(fetchedTree.error)
+    }
+  }
+
+  const getChildrens = item => {
     function flatInnter(item) {
       let flat = []
       item.map(child => {
@@ -128,11 +163,9 @@ const TreeviewListItem = ({
             >
               <p
                 className={classNames('treeview-text', { 'ms-2': !selection })}
-                
               >
                 {item.name}
               </p>
-              
             </a>
           </div>
           <Collapse
@@ -158,16 +191,16 @@ const TreeviewListItem = ({
                   setSelectedItems={setSelectedItems}
                   selection={selection}
                   handleItemClick={handleItemClick}
-                  onAddData={onAddData}
-                  onDeleteData={onDeleteData}
+                  selectedItem={selectedItem}
+                  handleAddData={handleAddData}
+                  setData={setData}
                 />
-                
               ))}
             </ul>
           </Collapse>
         </>
       ) : (
-        <div className="treeview-item" >
+        <div className="treeview-item">
           <button
             type="button"
             className="border-0 bg-transparent"
@@ -175,31 +208,30 @@ const TreeviewListItem = ({
             onContextMenu={handleRightClick}
           >
             <FontAwesomeIcon
-                icon={item.icon}
-                className={classNames('me-2', item.iconClass)}
-              />
-              {item?.name || '이름을 변경하세요'}
-              {contextMenuState.isOpen && (
-                <div
-                  ref={contextMenuRef}
-                  className="fixed rounded bg-gray-100 border border-gray-300 shadow shadow-gray-500 py-1 z-50"
-                  style={{ top: contextMenuState.y, left: contextMenuState.x }}
-                >
-                  {contextMenuState.menuItems.map((item) => (
-                    <div
-                      key={item.label}
-                      className="px-4 py-2 cursor-pointer hover:bg-gray-200"
-                      onClick={() => item.action()}
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              )}
+              icon={item.icon}
+              className={classNames('me-2', item.iconClass)}
+            />
+            {item?.name || '이름을 변경하세요'}
+            {contextMenuState.isOpen && (
+              <div
+                ref={contextMenuRef}
+                className="fixed rounded bg-gray-100 border border-gray-300 shadow shadow-gray-500 py-1 z-50"
+                style={{ top: contextMenuState.y, left: contextMenuState.x }}
+              >
+                {contextMenuState.menuItems.map(item => (
+                  <div
+                    key={item.label}
+                    className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => item.action()}
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            )}
           </button>
         </div>
       )}
-      
     </li>
   )
 }
@@ -212,53 +244,27 @@ const Treeview = ({
   setSelectedItems,
   handleItemClick,
   setTree,
+  setSelectedItem,
   selectedItem,
-  updateTree,
-  setSelectedItem
+  setData
 }) => {
   const [openedItems, setOpenedItems] = useState(expanded)
-  
-  const {
-    fetchComNavData
-  } = communityMaps()
 
-  const handleAddData = ()=>{
-    const newData = {icon: 'file',
-    id: '',
-    name: '',
-    usecomment: true,
-    rud: 6};
+  const handleAddData = () => {
 
-    setTree((prevData) => ([{
-      ...prevData[0],
-      children: [...prevData[0].children, newData],
-    }]));
+    console.log('변경 전:', selectedItem)
+    const newData = { icon: 'file', id: '', name: '', usecomment: true, rud: 6 }
 
-    setSelectedItem(newData)
-  };
-
-
-  const handleDeleteData = () => {
-    // 여기에서 트리 데이터를 업데이트하여 노드 삭제 로직을 구현
-    const fetchData = async () => {
-      try {
-        const requestData = {
-          "boardId" : selectedItem.id,
-          
-        }
-        console.log(selectedItem.id)
-        const response = await axiosInstance.post(`/system/manage/delete`, requestData);
-        updateTree()
-        
-        
-      } catch (error) {
-        console.error('Error fetching data:', error);
+    setTree(prevData => [
+      {
+        ...prevData[0],
+        children: [...prevData[0].children, newData]
       }
+    ])
 
-    }
-    fetchData();
-    fetchComNavData()
-  };
+    setSelectedItem(JSON.parse(JSON.stringify(newData)))
+    
+  }
 
   return (
     <ul className="treeview treeview-select">
@@ -272,9 +278,9 @@ const Treeview = ({
           setSelectedItems={setSelectedItems}
           selection={selection}
           handleItemClick={handleItemClick}
-          onAddData={handleAddData}
-          onDeleteData={handleDeleteData}
           selectedItem={selectedItem}
+          handleAddData={handleAddData}
+          setData={setData}
         />
       ))}
     </ul>
@@ -288,16 +294,23 @@ TreeviewListItem.propTypes = {
   selectedItems: PropTypes.array,
   setSelectedItems: PropTypes.func,
   selection: PropTypes.bool,
-  handleItemClick: PropTypes.func
+  handleItemClick: PropTypes.func,
+  selectedItem: PropTypes.object,
+  handleAddData: PropTypes.func,
+  setData: PropTypes.func
 }
 
 Treeview.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.array,
   selection: PropTypes.bool, // If true selection is enabled.
   expanded: PropTypes.array, // Default expanded children ids.
   selectedItems: PropTypes.array, // Selected item ids..
   setSelectedItems: PropTypes.func, // Setter to select items
-  handleItemClick: PropTypes.func
+  handleItemClick: PropTypes.func,
+  setTree: PropTypes.func,
+  setSelectedItem: PropTypes.func,
+  selectedItem: PropTypes.object,
+  setData: PropTypes.func
 }
 
 export default Treeview
