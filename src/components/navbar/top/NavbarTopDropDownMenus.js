@@ -8,7 +8,7 @@ import {
   modulesRoutes,
   documentationRoutes,
   // import from 'routes/siteMaps'
-  systemRoutes,
+  systemRoutes
 } from 'routes/siteMaps'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -30,22 +30,18 @@ const NavbarTopDropDownMenus = () => {
   } = useContext(AppContext)
 
   //useContext(AppContext) 아래
-  const {
-    fetchComNavData
-  } = communityMaps()
+  const { fetchComNavData } = communityMaps()
 
   useEffect(() => {
     fetchComNavData()
-  },[])
-
+  }, [])
 
   useEffect(() => {
     setCommunityRoutes({
       label: 'Community',
-      children: comNavData})
-  }, [comNavData]);
-  
-  
+      children: comNavData
+    })
+  }, [comNavData])
 
   const handleDropdownItemClick = () => {
     if (navbarCollapsed) {
@@ -96,10 +92,9 @@ const NavbarTopDropDownMenus = () => {
         ))}
       </NavbarDropdown>
 
-{/* NavbarDropdown - systme 위 */}
+      {/* NavbarDropdown - systme 위 */}
       <NavbarDropdown title="community">
-        {flatRoutes(communityRoutes.children).map(route =>( 
-
+        {flatRoutes(communityRoutes.children).map(route => (
           <Dropdown.Item
             key={route.name}
             as={Link}

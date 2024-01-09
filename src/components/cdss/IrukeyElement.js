@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
+import { Button, Row } from 'react-bootstrap'
 
 function popupCenter(href, w, h) {
   const xPos = window.innerWidth / 2 - w / 2 // 가로 가운데 정렬
   const yPos = window.innerHeight / 2 - h / 2 // 세로 가운데 정렬
-
-  console.log(xPos, yPos)
 
   window.open(
     href,
@@ -21,7 +20,22 @@ const IrukeyElement = () => {
     popupCenter('http://otid-irukey.kr:9080/rma', 800, 600)
   }, [])
 
-  return <div>팝업이 차단된 경우, 새 창이 열리지 않을 수 있습니다.</div>
+  return (
+    <>
+      <Row className="g-3 mb-2">
+        <div>팝업이 차단된 경우, 새 창이 열리지 않을 수 있습니다.</div>
+      </Row>
+      <Row className="g-3 mb-2">
+        <Button
+          onClick={() => {
+            popupCenter('http://otid-irukey.kr:9080/rma', 800, 600)
+          }}
+        >
+          창 다시 열기
+        </Button>
+      </Row>
+    </>
+  )
 }
 
 export default IrukeyElement

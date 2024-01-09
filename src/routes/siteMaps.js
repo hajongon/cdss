@@ -1339,6 +1339,18 @@ export const systemRoutes = {
       icon: 'rocket',
       to: '/system/manage-code',
       active: true
+    },
+    {
+      name: 'Rule Studio',
+      icon: 'rocket',
+      to: '/system/rule-studio',
+      active: true
+    },
+    {
+      name: 'Irukey',
+      icon: 'rocket',
+      to: '/system/irukey',
+      active: true
     }
   ]
 }
@@ -1350,5 +1362,5 @@ export default [
   modulesRoutes,
   documentationRoutes,
   //export default
-  systemRoutes,
+  systemRoutes
 ]

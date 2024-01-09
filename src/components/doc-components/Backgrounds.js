@@ -2,10 +2,10 @@ import React from 'react'
 import PageHeader from 'components/common/PageHeader'
 import FalconComponentCard from 'components/common/FalconComponentCard'
 import Background from 'components/common/Background'
-import gallery2 from 'assets/img/gallery/2.jpg'
-import beachMp4 from 'assets/video/beach.mp4'
-import beachWebm from 'assets/video/beach.webm'
-import beachImage from 'assets/video/beach.jpg'
+import gallery2 from 'assets/img/dummyimg.jpg'
+import beachMp4 from 'assets/img/dummyimg.jpg'
+import beachWebm from 'assets/img/dummyimg.jpg'
+import beachImage from 'assets/img/dummyimg.jpg'
 
 const imageCode = `<div className="position-relative py-6 py-lg-8 light">
   <Background image={gallery2} overlay="1" className="rounded-soft" />

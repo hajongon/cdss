@@ -1,6 +1,6 @@
 import React from 'react'
 import ConfirmMailContent from 'components/authentication/ConfirmMailContent'
-import bgImg from 'assets/img/generic/16.jpg'
+import bgImg from 'assets/img/dummyimg.jpg'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const ConfirmMail = () => {

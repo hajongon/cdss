@@ -4,12 +4,12 @@ import team3 from 'assets/img/team/3.jpg'
 import team4 from 'assets/img/team/4.jpg'
 import team5 from 'assets/img/team/5.jpg'
 import team6 from 'assets/img/team/6.jpg'
-import kanban1 from 'assets/img/kanban/1.jpg'
-import kanban2 from 'assets/img/kanban/2.jpg'
-import kanban3 from 'assets/img/kanban/3.jpg'
-import kanban4 from 'assets/img/kanban/4.jpg'
-import beach from 'assets/video/beach.jpg'
-import beachVideo from 'assets/video/beach.mp4'
+import kanban1 from 'assets/img/dummyimg.jpg'
+import kanban2 from 'assets/img/dummyimg.jpg'
+import kanban3 from 'assets/img/dummyimg.jpg'
+import kanban4 from 'assets/img/dummyimg.jpg'
+import beach from 'assets/img/dummyimg.jpg'
+import beachVideo from 'assets/img/dummyimg.jpg'
 
 export const members = [
   { id: 1, name: 'Anna Karinina', img: team1, role: 'Member' },

@@ -10,8 +10,8 @@ import team4 from 'assets/img/team/4.jpg'
 import youtube from 'assets/img/logos/youtube.png'
 import team5 from 'assets/img/team/5.jpg'
 import goodreads from 'assets/img/logos/goodreads.png'
-import generic1 from 'assets/img/generic/1.jpg'
-import generic8 from 'assets/img/generic/8.jpg'
+import generic1 from 'assets/img/dummyimg.jpg'
+import generic8 from 'assets/img/dummyimg.jpg'
 
 export default [
   {

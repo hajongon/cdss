@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Flex from 'components/common/Flex'
 import RegistrationForm from 'components/authentication/RegistrationForm'
-import bgImg from 'assets/img/generic/15.jpg'
+import bgImg from 'assets/img/dummyimg.jpg'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const Registration = () => {

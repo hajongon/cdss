@@ -1,6 +1,6 @@
 import React from 'react'
 import PasswordResetForm from 'components/authentication/PasswordResetForm'
-import bgImg from 'assets/img/generic/20.jpg'
+import bgImg from 'assets/img/dummyimg.jpg'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const PasswordReset = () => {

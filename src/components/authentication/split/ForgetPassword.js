@@ -1,6 +1,6 @@
 import React from 'react'
 import ForgetPasswordForm from 'components/authentication/ForgetPasswordForm'
-import bgImg from 'assets/img/generic/17.jpg'
+import bgImg from 'assets/img/dummyimg.jpg'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 
 const ForgetPassword = () => {

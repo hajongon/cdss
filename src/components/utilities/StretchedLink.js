@@ -1,8 +1,8 @@
 import React from 'react'
 import PageHeader from 'components/common/PageHeader'
 import FalconComponentCard from 'components/common/FalconComponentCard'
-import generic1 from 'assets/img/generic/1.jpg'
-import generic2 from 'assets/img/generic/2.jpg'
+import generic1 from 'assets/img/dummyimg.jpg'
+import generic2 from 'assets/img/dummyimg.jpg'
 import { Link } from 'react-router-dom'
 
 const stretchedLinkCode = `

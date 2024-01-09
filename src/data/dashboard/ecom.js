@@ -1,11 +1,10 @@
-import product1 from 'assets/img/products/ecommerce/1.jpg'
-import product2 from 'assets/img/products/ecommerce/2.jpg'
-import product3 from 'assets/img/products/ecommerce/3.jpg'
-import product4 from 'assets/img/products/ecommerce/4.jpg'
-import product5 from 'assets/img/products/ecommerce/5.jpg'
-import product6 from 'assets/img/products/ecommerce/6.jpg'
-import product7 from 'assets/img/products/ecommerce/7.jpg'
-
+import product1 from 'assets/img/dummyimg.jpg'
+import product2 from 'assets/img/dummyimg.jpg'
+import product3 from 'assets/img/dummyimg.jpg'
+import product4 from 'assets/img/dummyimg.jpg'
+import product5 from 'assets/img/dummyimg.jpg'
+import product6 from 'assets/img/dummyimg.jpg'
+import product7 from 'assets/img/dummyimg.jpg'
 export const notifications = [
   {
     id: 1,

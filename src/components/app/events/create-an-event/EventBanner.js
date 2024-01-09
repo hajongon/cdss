@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import eventBanner from 'assets/img/generic/13.jpg'
+import eventBanner from 'assets/img/dummyimg.jpg'
 import React from 'react'
 import { Card, Form, Image } from 'react-bootstrap'
 

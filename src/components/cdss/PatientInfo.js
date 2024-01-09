@@ -252,8 +252,9 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
             <Form.Group
               as={Col}
               lg={2}
+              md={2}
               xs={12}
-              md={12}
+              // md={12}
               controlId="selectPatient"
             >
               <Form.Label className="mb-0 text-600">환자 선택</Form.Label>
@@ -274,7 +275,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               </Form.Select>
             </Form.Group>
 
-            <Form.Group as={Col} md={12} lg={2} xs={12} controlId="gender">
+            <Form.Group as={Col} lg={2} md={2} xs={12} controlId="gender">
               <Form.Label className="fs--1 mb-0 text-600">성별</Form.Label>
               <Form.Select
                 size="m"
@@ -294,8 +295,9 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
               as={Col}
               lg={3}
               xs={12}
+              md={2}
               xl={2}
-              md={12}
+              // md={12}
               controlId="birthday"
             >
               <Form.Label className="fs--1 mb-0 text-600">생년월일</Form.Label>
@@ -312,7 +314,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={2} xs={12} md={12} controlId="bodytemp">
+            <Form.Group as={Col} lg={2} xs={12} md={2} controlId="bodytemp">
               <Form.Label className="fs--1 mb-0 text-600">체온</Form.Label>
               <Form.Control
                 className="fs--1 me-2 border-top-0 border-start-0 border-end-0 border-bottom-1 rounded-0 bg-transparent shadow-none"
@@ -323,7 +325,7 @@ const PatientInfo = ({ setShowResult, setIsPatientSelected }) => {
                 onChange={e => handleChange(e)}
               />
             </Form.Group>
-            <Form.Group as={Col} lg={2} xs={12} md={12} controlId="period">
+            <Form.Group as={Col} lg={2} xs={12} md={2} controlId="period">
               <Form.Label className="fs--1 mb-0 text-600">내원일</Form.Label>
               <Col lg={12}>
                 <Form.Control

@@ -12,7 +12,7 @@ import routes from 'routes/siteMaps'
 import { capitalize } from 'helpers/utils'
 import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus'
 import PurchaseCard from './PurchaseCard'
-import bgNavbar from 'assets/img/generic/bg-navbar.png'
+import bgNavbar from 'assets/img/dummyimg.jpg'
 
 const NavbarVertical = () => {
   const {

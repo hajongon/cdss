@@ -1,4 +1,4 @@
-import imageFile1 from 'assets/img/products/3-thumb.png'
+import imageFile1 from 'assets/img/dummyimg.jpg'
 import imageFile2 from 'assets/img/icons/zip.png'
 import imageMember1 from 'assets/img/team/1.jpg'
 import imageMember2 from 'assets/img/team/2.jpg'

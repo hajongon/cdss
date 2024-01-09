@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom'
 import AuthSimpleLayout from '../layouts/AuthSimpleLayout'
 import MainLayout from '../layouts/MainLayout'
 import ErrorLayout from '../layouts/ErrorLayout'
@@ -195,6 +195,9 @@ import CdssCharts from 'components/cdss/CdssCharts'
 import ManageCode from 'components/manage-code/ManageCode'
 import ManageCommunity from 'components/board/ManageCommunity'
 import BoardMain from 'components/board/BoardMain'
+import RuleStudio from 'components/cdss/RuleStudio'
+import Irukey from 'components/cdss/Irukey'
+import MyPage from 'components/user/MyPage'
 
 const FalconRoutes = () => {
   return (
@@ -551,11 +554,14 @@ const FalconRoutes = () => {
         <Route path="system/cdss-main" element={<CdssMain />} />
         <Route path="system/cdss-charts" element={<CdssCharts />} />
         <Route path="system/manage-code" element={<ManageCode />} />
+        <Route path="system/rule-studio" element={<RuleStudio />} />
+        <Route path="system/irukey" element={<Irukey />} />
+        <Route path="user/mypage" element={<MyPage />} />
+
         {/* managecode 아래 */}
         <Route path="system/manage-community" element={<ManageCommunity />} />
         <Route path="board/main/:boardId" element={<BoardMain />} />
       </Route>
-
 
       {/* //--- MainLayout end  */}
 

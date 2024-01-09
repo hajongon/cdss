@@ -4,7 +4,7 @@ import PageHeader from 'components/common/PageHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FalconComponentCard from 'components/common/FalconComponentCard'
 import { reactBootstrapDocsUrl } from 'helpers/utils'
-import generic1 from 'assets/img/generic/1.jpg'
+import generic1 from 'assets/img/dummyimg.jpg'
 
 const exampleCode = `<div className="d-flex justify-content-center flex-wrap gap-3">
   <Card style={{width: '20rem'}} className='overflow-hidden'>

@@ -1,13 +1,30 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Row, Col, Table } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { formatDate } from './utils/timeDateFunction'
 
 const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
   const scrollRef = useRef(null)
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1520)
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 576)
+
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = 0
   }, [data])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1520)
+      setIsSmallScreen(window.innerWidth < 576)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <Col lg={4} xs={12} md={12} xl={4}>
       <Row className="g-3 mb-3">
@@ -24,7 +41,12 @@ const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
           lg={8}
           xs={8}
           md={8}
-          style={{ display: 'flex', flexDirection: 'row' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
         >
           {!hasNoDataError && (
             <>
@@ -47,15 +69,13 @@ const TestResultsDataTable = ({ data, title, hasNoDataError }) => {
                   <th>검사명</th>
                   <th>결과</th>
                   <th>단위</th>
-                  <th>정상구분</th>
+                  <th>{isLargeScreen ? '정상구분' : ''}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr
                   className={
-                    window.innerWidth >= 576
-                      ? 'sticky-border'
-                      : 'sticky-border-sm'
+                    isSmallScreen ? 'sticky-border-sm' : 'sticky-border'
                   }
                 ></tr>
                 {data.map((dataItem, idx) => {

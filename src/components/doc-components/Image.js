@@ -9,7 +9,7 @@ import user2 from 'assets/img/team/2.jpg'
 import user3 from 'assets/img/team/3.jpg'
 import user24 from 'assets/img/team/24.jpg'
 import user25 from 'assets/img/team/25.jpg'
-import generic3 from 'assets/img/generic/9.jpg'
+import generic3 from 'assets/img/dummyimg.jpg'
 import Flex from 'components/common/Flex'
 
 const shapeCode = `

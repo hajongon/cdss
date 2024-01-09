@@ -3,7 +3,7 @@ import Avatar from 'components/common/Avatar'
 import LockScreenForm from 'components/authentication/LockScreenForm'
 import { Col, Row } from 'react-bootstrap'
 import team1 from 'assets/img/team/1.jpg'
-import bgImg from 'assets/img/generic/18.jpg'
+import bgImg from 'assets/img/dummyimg.jpg'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 import Flex from 'components/common/Flex'
 

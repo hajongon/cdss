@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import coverSrc from 'assets/img/generic/4.jpg'
+import coverSrc from 'assets/img/dummyimg.jpg'
 import apple from 'assets/img/logos/apple.png'
 import google from 'assets/img/logos/g.png'
 import hp from 'assets/img/logos/hp.png'

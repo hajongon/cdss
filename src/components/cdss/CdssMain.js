@@ -20,11 +20,15 @@ const CdssMain = () => {
 
   const { setPatientsInfo } = useContext(AppContext)
 
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 576)
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768)
+  const [isMediumScreen, setIsMediumScreen] = useState(
+    window.innerWidth >= 1200
+  )
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 576)
+      setIsLargeScreen(window.innerWidth >= 768)
+      setIsMediumScreen(window.innerWidth >= 1200)
     }
 
     // 리사이즈 이벤트 리스너 등록 -- jsha
@@ -75,7 +79,7 @@ const CdssMain = () => {
           xl={8}
           className="scrollbar"
           style={{
-            ...(window.innerWidth >= 576 && {
+            ...(isLargeScreen && {
               maxHeight: 'calc(100vh - var(--falcon-top-nav-height) - 1rem)',
               overflowY: 'auto',
               position: 'relative'
@@ -84,7 +88,7 @@ const CdssMain = () => {
           ref={scrollRef}
         >
           <Row
-            className={`mb-3 g-3 ${isLargeScreen ? 'sticky-top' : ''}`}
+            className={`mb-3 g-3 ${isMediumScreen ? 'sticky-top' : ''}`}
             style={{
               top: '-1rem'
             }}
@@ -116,7 +120,7 @@ const CdssMain = () => {
               </Row>
             </>
           ) : null}
-          {!showResult ? (
+          {!showResult && isMediumScreen ? (
             <Row className="g-1 mb-3">
               <Col md={12} xs={12} lg={12}>
                 <Button
@@ -143,7 +147,7 @@ const CdssMain = () => {
           xl={4}
           className="scrollbar"
           style={{
-            ...(window.innerWidth >= 576 && {
+            ...(isLargeScreen && {
               maxHeight: 'calc(100vh - var(--falcon-top-nav-height) - 1rem)',
               overflowY: 'scroll',
               boxSizing: 'border-box'
@@ -165,6 +169,20 @@ const CdssMain = () => {
               <AdrHistory />
             </Col>
           </Row>
+          {!showResult && !isMediumScreen ? (
+            <Row className="g-1 mb-3">
+              <Col md={12} xs={12} lg={12}>
+                <Button
+                  variant="primary"
+                  type="button"
+                  className="fs--1 align-self-center w-100"
+                  onClick={onClickDiagnosisBtn}
+                >
+                  항생제 내성 판단
+                </Button>
+              </Col>
+            </Row>
+          ) : null}
         </Col>
       </Row>
     </div>

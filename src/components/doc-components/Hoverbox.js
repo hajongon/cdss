@@ -2,9 +2,9 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import PageHeader from 'components/common/PageHeader'
 import FalconComponentCard from 'components/common/FalconComponentCard'
-import generic1 from 'assets/img/generic/1.jpg'
-import generic2 from 'assets/img/generic/2.jpg'
-import generic3 from 'assets/img/generic/3.jpg'
+import generic1 from 'assets/img/dummyimg.jpg'
+import generic2 from 'assets/img/dummyimg.jpg'
+import generic3 from 'assets/img/dummyimg.jpg'
 import Hoverbox from 'components/common/Hoverbox'
 
 const exampleCode = `

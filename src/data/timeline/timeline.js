@@ -1,10 +1,9 @@
-import img2000 from '../../assets/img/gallery/2000.jpg'
-import img2001 from '../../assets/img/gallery/2001.jpg'
-import img2006 from '../../assets/img/gallery/2006.jpg'
-import img2007 from '../../assets/img/gallery/2007.jpg'
-import img2008 from '../../assets/img/gallery/2008.jpg'
-import img2010 from '../../assets/img/gallery/2010.jpg'
-
+import img2000 from 'assets/img/dummyimg.jpg'
+import img2001 from 'assets/img/dummyimg.jpg'
+import img2006 from 'assets/img/dummyimg.jpg'
+import img2007 from 'assets/img/dummyimg.jpg'
+import img2008 from 'assets/img/dummyimg.jpg'
+import img2010 from 'assets/img/dummyimg.jpg'
 export const VerticalTimelineData = [
   {
     title: 'iPhone 13 released',

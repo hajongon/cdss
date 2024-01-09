@@ -3,12 +3,9 @@ import { useContext } from 'react'
 import AppContext from 'context/Context'
 
 const communityMaps = () => {
+  const { setComNavData } = useContext(AppContext)
 
-  const {
-    setComNavData
-  } = useContext(AppContext)
-
- const fetchComNavData = async () => {
+  const fetchComNavData = async () => {
     try {
       const response = await axiosInstance.post(`/system/manage/tree`)
       const fetchedData = response.data.data
@@ -22,15 +19,14 @@ const communityMaps = () => {
       }))
 
       setComNavData(modData)
-
     } catch (error) {
       console.error('Error fetching data:', error)
     }
   }
 
   return {
-    fetchComNavData,
-  };
+    fetchComNavData
+  }
 }
 
 export default communityMaps

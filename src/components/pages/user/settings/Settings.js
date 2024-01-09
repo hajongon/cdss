@@ -1,6 +1,6 @@
 import React from 'react'
 import ProfileBanner from '../ProfileBanner'
-import coverSrc from 'assets/img/generic/4.jpg'
+import coverSrc from 'assets/img/dummyimg.jpg'
 import avatar from 'assets/img/team/2.jpg'
 import { Col, Row } from 'react-bootstrap'
 import ProfileSettings from './ProfileSettings'

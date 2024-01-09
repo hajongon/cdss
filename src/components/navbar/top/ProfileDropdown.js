@@ -12,7 +12,7 @@ const ProfileDropdown = () => {
   const { userInfo, setUserInfo } = useContext(AppContext)
 
   const handleClickMyPage = () => {
-    navigate('/system/mypage')
+    navigate('/user/mypage')
   }
   const handleClickLogOutBtn = async () => {
     setUserInfo({})
