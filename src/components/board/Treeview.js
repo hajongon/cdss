@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'
 import { Collapse } from 'react-bootstrap'
-import useContextMenu from './utils/useContextMenu'
 import communityMaps from 'routes/communityMaps'
-import { deleteTree, getTree } from './apis/page'
+import { deleteTree } from './apis/page'
+import { Menu, Item, Separator, useContextMenu } from 'react-contexify'
+import 'react-contexify/ReactContexify.css'
+
+const MENU_ID = 'blahblah'
 
 const TreeviewListItem = ({
   item,
@@ -27,55 +30,61 @@ const TreeviewListItem = ({
   const checkRef = useRef()
   const { fetchComNavData } = communityMaps()
 
-  const {
-    contextMenuRef,
-    contextMenuState,
-    handleContextMenu,
-    handleMenuItemClick
-  } = useContextMenu()
+  const { show } = useContextMenu({
+    id: MENU_ID
+  })
 
-  const handleRightClick = event => {
-    const menuItems = [
-      {
-        label: '추가',
-        action: () => handleMenuItemClick(handleAddData)
-      },
-      {
-        label: '삭제',
-        action: () => handleMenuItemClick(handleDeleteData)
-      }
-    ]
-
+  function handleContextMenu(event) {
     handleItemClick(item)
+    show({
+      event,
+      props: {
+        key: 'value'
+      }
+    })
+  }
 
-    handleContextMenu(event, menuItems)
+  // I'm using a single event handler for all items
+  // but you don't have too :)
+  const handleMenuClick = ({ id }) => {
+    switch (id) {
+      case 'add':
+        handleAddData()
+        break
+      case 'delete':
+        handleDeleteData()
+        break
+      //etc...
+    }
   }
 
   const handleDeleteData = () => {
-    deleteTreeview()
+    const deleteConfirmed = confirm(
+      item.id && !item.id.startsWith('temp_')
+        ? '삭제 시 게시판 내 게시물이 삭제됩니다. 계속 진행하시겠습니까?'
+        : '삭제 시 작성한 내용이 사라집니다. 계속 진행하시겠습니까?'
+    )
+
+    if (deleteConfirmed) {
+      if (item.id && !item.id.startsWith('temp_')) {
+        deleteTreeview()
+      }
+      setData(prevData => {
+        const setArray = prevData.filter(obj => obj.id !== item.id)
+
+        // 삭제 후 첫 번째 아이템을 선택합니다.
+        setSelectedItem(setArray.length > 0 ? setArray[0] : null)
+
+        return setArray
+      })
+    }
   }
 
   const deleteTreeview = async () => {
-    const deleteTreeData = await deleteTree(selectedItem.id)
+    const deleteTreeData = await deleteTree(item.id)
 
     if (deleteTreeData.status === 'success') {
-      const fetchedTree = await getTree()
-      const fetchedTreeData = fetchedTree.data
-      // 데이터 변환
-      const modData = fetchedTreeData.map(item => ({
-        icon: 'file',
-        id: item.boardId,
-        name: item.boardName,
-        usecomment: item.isUseComment === 1,
-        rud: item.userRud
-      }))
-      if (fetchedTree.status === 'success') {
-        setData(modData)
-        setSelectedItem(modData[0])
-        fetchComNavData()
-      } else {
-        console.log(fetchedTree.error)
-      }
+      fetchComNavData()
     } else {
       console.log(deleteTreeData.error)
     }
@@ -179,8 +188,8 @@ const TreeviewListItem = ({
               {item.children.map((nestedItem, index) => (
                 <TreeviewListItem
                   key={index}
+                  index={String(index)}
                   item={nestedItem}
-                  index={index}
                   openedItems={openedItems}
                   setOpenedItems={setOpenedItems}
                   selectedItems={selectedItems}
@@ -202,31 +211,23 @@ const TreeviewListItem = ({
             type="button"
             className="border-0 bg-transparent"
             onClick={() => handleItemClick(item)}
-            onContextMenu={handleRightClick}
+            onContextMenu={handleContextMenu}
           >
             <FontAwesomeIcon
               icon={item.icon}
               className={classNames('me-2', item.iconClass)}
             />
             {item?.name || '이름을 변경하세요'}
-            {contextMenuState.isOpen && (
-              <div
-                ref={contextMenuRef}
-                className="fixed rounded bg-gray-100 border border-gray-300 shadow shadow-gray-500 py-1 z-50"
-                style={{ top: contextMenuState.y, left: contextMenuState.x }}
-              >
-                {contextMenuState.menuItems.map(item => (
-                  <div
-                    key={item.label}
-                    className="px-4 py-2 cursor-pointer hover:bg-gray-200"
-                    onClick={() => item.action()}
-                  >
-                    {item.label}
-                  </div>
-                ))}
-              </div>
-            )}
           </button>
+          <Menu id={MENU_ID}>
+            <Item id="add" onClick={handleMenuClick}>
+              추가
+            </Item>
+            <Separator />
+            <Item id="delete" onClick={handleMenuClick}>
+              삭제
+            </Item>
+          </Menu>
         </div>
       )}
     </li>
@@ -240,25 +241,31 @@ const Treeview = ({
   selectedItems = [],
   setSelectedItems,
   handleItemClick,
-  setTree,
   setSelectedItem,
   selectedItem,
   setData
 }) => {
   const [openedItems, setOpenedItems] = useState(expanded)
 
+  const generateTempId = () => {
+    // 임시 아이디를 간단히 생성하는 함수 (예: 일련번호 + 타임스탬프)
+    return `temp_${Date.now()}`
+  }
+
   const handleAddData = () => {
-    console.log('변경 전:', selectedItem)
-    const newData = { icon: 'file', id: '', name: '', usecomment: true, rud: 6 }
+    const tempId = generateTempId()
 
-    setTree(prevData => [
-      {
-        ...prevData[0],
-        children: [...prevData[0].children, newData]
-      }
-    ])
+    const newData = {
+      icon: 'file',
+      id: tempId,
+      name: '',
+      usecomment: true,
+      rud: 6
+    }
 
-    setSelectedItem(JSON.parse(JSON.stringify(newData)))
+    setData(prevData => [...prevData, newData])
+
+    setSelectedItem(newData)
   }
 
   return (
