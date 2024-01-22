@@ -35,6 +35,7 @@ const TreeviewListItem = ({
   } = useContextMenu()
 
   const handleRightClick = event => {
+    console.log('우클릭 시 selectedItem:', selectedItem)
     const menuItems = [
       {
         label: '추가',

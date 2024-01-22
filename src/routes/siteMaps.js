@@ -1351,6 +1351,12 @@ export const systemRoutes = {
       icon: 'rocket',
       to: '/system/irukey',
       active: true
+    },
+    {
+      name: '사용자 관리',
+      icon: 'rocket',
+      to: '/system/manage-users',
+      active: true
     }
   ]
 }

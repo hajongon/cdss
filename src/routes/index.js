@@ -198,6 +198,7 @@ import BoardMain from 'components/board/BoardMain'
 import RuleStudio from 'components/cdss/RuleStudio'
 import Irukey from 'components/cdss/Irukey'
 import MyPage from 'components/user/MyPage'
+import ManageUsers from 'components/user/ManageUsers'
 
 const FalconRoutes = () => {
   return (
@@ -556,6 +557,7 @@ const FalconRoutes = () => {
         <Route path="board/manage-code" element={<ManageCode />} />
         <Route path="system/rule-studio" element={<RuleStudio />} />
         <Route path="system/irukey" element={<Irukey />} />
+        <Route path="system/manage-users" element={<ManageUsers />} />
         <Route path="user/mypage" element={<MyPage />} />
 
         {/* managecode 아래 */}
