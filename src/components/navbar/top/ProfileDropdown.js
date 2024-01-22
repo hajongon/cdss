@@ -56,6 +56,8 @@ const ProfileDropdown = () => {
           {/* <Dropdown.Item as={Link} to="#">
             Settings
           </Dropdown.Item> */}
+
+          {/* userInfo && !userInfo.idx 에서 변경 */}
           {!userInfo?.idx ? (
             <Dropdown.Item as={Link} to="/cdss-login">
               Log in
