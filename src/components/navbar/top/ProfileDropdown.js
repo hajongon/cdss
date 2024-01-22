@@ -56,7 +56,7 @@ const ProfileDropdown = () => {
           {/* <Dropdown.Item as={Link} to="#">
             Settings
           </Dropdown.Item> */}
-          {userInfo && !userInfo.idx ? (
+          {!userInfo?.idx ? (
             <Dropdown.Item as={Link} to="/cdss-login">
               Log in
             </Dropdown.Item>
