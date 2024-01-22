@@ -13,7 +13,7 @@ const Login = () => {
   const { userInfo } = useContext(AppContext)
 
   useEffect(() => {
-    if (userInfo.email) {
+    if (userInfo && userInfo.email) {
       setIsLogin(true)
     }
   }, [userInfo])
