@@ -8,8 +8,8 @@ const RegistrationForm = ({ hasLabel, setShow }) => {
   const [formData, setFormData] = useState({
     userNm: '',
     nickname: '',
-    email: ''
-    // isAdmin: false
+    email: '',
+    isAdmin: false
   })
 
   // Handler
@@ -78,7 +78,7 @@ const RegistrationForm = ({ hasLabel, setShow }) => {
         />
       </Form.Group>
 
-      {/* <Form.Group className="mb-4">
+      <Form.Group className="mb-4">
         <Form.Check
           type="switch"
           id="custom-switch"
@@ -88,7 +88,7 @@ const RegistrationForm = ({ hasLabel, setShow }) => {
           onChange={handleFieldChange}
           checked={formData.isAdmin === true}
         />
-      </Form.Group> */}
+      </Form.Group>
       <Form.Group className="mb-4">
         <Button
           className="w-100"

@@ -30,10 +30,6 @@ const TreeviewListItem = ({
   const checkRef = useRef()
   const { fetchComNavData } = communityMaps()
 
-  const { show } = useContextMenu({
-    id: MENU_ID
-  })
-
   function handleContextMenu(event) {
     handleItemClick(item)
     show({

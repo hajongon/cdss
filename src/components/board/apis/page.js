@@ -54,18 +54,114 @@ export const addBoard = async requestData => {
 
 export const getArticles = async id => {
   try {
-    const requestData = {
-      boardId: id
-    }
+    const url = '/board/' + id + '/list'
 
-    const url = '/board/${id}/list'
-
-    const response = await axiosInstance.post(url, requestData)
+    const response = await axiosInstance.post(url)
 
     return { status: 'success', data: response.data.data }
   } catch (error) {
     console.error('Error fetching data:', error)
 
+    return { status: 'fail', error }
+  }
+}
+
+export const addArticles = async requestData => {
+  try {
+    await axiosInstance.post(`/board/article`, requestData)
+
+    return { status: 'success' }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+
+    return { status: 'fail', error }
+  }
+}
+
+export const getArticle = async (id, idx) => {
+  try {
+    const requestData = {
+      boardId: id,
+      articleIdx: idx
+    }
+
+    const response = await axiosInstance.post(`/board/article/get`, requestData)
+
+    return { status: 'success', data: response.data.data }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return { status: 'fail', error }
+  }
+}
+
+export const deleteArticle = async idx => {
+  try {
+    const requestData = {
+      articleIdx: idx
+    }
+
+    await axiosInstance.post(`/board/article/delete`, requestData)
+    return { status: 'success' }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return { status: 'fail', error }
+  }
+}
+
+export const getComments = async idx => {
+  try {
+    const requestData = {
+      articleIdx: idx
+    }
+
+    const response = await axiosInstance.post('/board/comments', requestData)
+
+    return { status: 'success', data: response.data.data }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+
+    return { status: 'fail', error }
+  }
+}
+
+export const addComment = async requestData => {
+  try {
+    await axiosInstance.post(`/board/comment`, requestData)
+
+    return { status: 'success' }
+  } catch (error) {
+    console.error('Error adding comment:', error)
+
+    return { status: 'fail', error }
+  }
+}
+
+export const getComment = async (id, idx) => {
+  try {
+    const requestData = {
+      boardId: id,
+      commentIdx: idx
+    }
+
+    const response = await axiosInstance.post(`/board/comment/get`, requestData)
+
+    return { status: 'success', data: response.data.data }
+  } catch (error) {
+    console.error('Error fetching comment:', error)
+    return { status: 'fail', error }
+  }
+}
+
+export const deleteComment = async idx => {
+  try {
+    const requestData = {
+      commentIdx: idx
+    }
+
+    await axiosInstance.post(`/board/comment/delete`, requestData)
+    return { status: 'success' }
+  } catch (error) {
+    console.error('Error deleting comment:', error)
     return { status: 'fail', error }
   }
 }
@@ -99,6 +195,24 @@ export const getCodeALL = async () => {
     const codes = response.data.data
 
     return { status: 'success', data: codes }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return { status: 'fail', error }
+  }
+}
+
+export const uploadImage = async formData => {
+  try {
+    const res = await axiosInstance.post(
+      `/board/service/uploadImage`,
+      formData,
+      {
+        headers: { 'content-type': 'multipart/form-data' }
+      }
+    )
+    const url = res.data
+
+    return { status: 'success', data: url }
   } catch (error) {
     console.error('Error fetching data:', error)
     return { status: 'fail', error }

@@ -44,12 +44,14 @@ const NavbarDropdown = ({ title, children }) => {
               'p-0 py-2':
                 title === 'dashboard' ||
                 title === 'documentation' ||
-                title === 'system'
+                title === 'system' ||
+                title === 'communuity'
             })}
           >
             {title !== 'dashboard' &&
               title !== 'documentation' &&
-              title !== 'system' && (
+              title !== 'system' &&
+              title !== 'community' && (
                 <img
                   src={AuthCornerImage}
                   alt=""

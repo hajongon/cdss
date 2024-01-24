@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import LoginForm from '../LoginForm'
 import AuthSplitLayout from 'layouts/AuthSplitLayout'
 import bgImg from 'assets/img/cdss/login-bg-image.jpg'
@@ -13,7 +13,7 @@ const Login = () => {
   const { userInfo } = useContext(AppContext)
 
   useEffect(() => {
-    if (userInfo.email) {
+    if (userInfo && userInfo.email) {
       setIsLogin(true)
     }
   }, [userInfo])
@@ -26,10 +26,10 @@ const Login = () => {
     <AuthSplitLayout bgProps={{ image: bgImg, position: '50% 20%' }}>
       <Flex alignItems="center" justifyContent="between">
         <h3>Login</h3>
-        <p className="mb-0 fs--1">
+        {/* <p className="mb-0 fs--1">
           <span className="fw-semi-bold">New User? </span>
           <Link to="/authentication/split/register">Create account</Link>
-        </p>
+        </p> */}
       </Flex>
       <LoginForm layout="split" hasLabel />
     </AuthSplitLayout>
