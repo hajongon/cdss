@@ -195,6 +195,8 @@ import CdssCharts from 'components/cdss/CdssCharts'
 import ManageCode from 'components/manage-code/ManageCode'
 import ManageCommunity from 'components/board/ManageCommunity'
 import BoardMain from 'components/board/BoardMain'
+import Write from 'components/board/Write'
+import View from 'components/board/View'
 import RuleStudio from 'components/cdss/RuleStudio'
 import Irukey from 'components/cdss/Irukey'
 import MyPage from 'components/user/MyPage'
@@ -561,6 +563,12 @@ const FalconRoutes = () => {
         {/* managecode 아래 */}
         <Route path="board/manage-community" element={<ManageCommunity />} />
         <Route path="board/main/:boardId" element={<BoardMain />} />
+        <Route path="board/main/:boardId/write" element={<Write />} />
+        <Route
+          path="board/main/:boardId/:articleIdx/write"
+          element={<Write />}
+        />
+        <Route path="board/main/:boardId/view/:articleIdx" element={<View />} />
       </Route>
 
       {/* //--- MainLayout end  */}
