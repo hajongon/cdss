@@ -4,21 +4,26 @@ import { Card, Form, Row, Col, Button } from 'react-bootstrap'
 import FalconCardHeader from './utils/FalconCardHeader'
 import communityMaps from 'routes/communityMaps'
 import { addBoard, getTree } from './apis/page'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
-const CommunityDetail = ({ selectedItem, setData }) => {
+const CommunityDetail = ({ selectedItem, setData, setSelectedItem }) => {
   const [currentItem, setCurrentItem] = useState(selectedItem)
-  const onItemClick = e => {
+  const onChangeName = e => {
     setCurrentItem(prev => {
-      let newItem = { ...prev }
-      newItem.name = e.target.value
-      return newItem
+      let current = { ...prev }
+      current.name = e.target.value
+      return current
     })
   }
 
+  const idCheck = () => {
+    if (!selectedItem?.id || selectedItem?.id.startsWith('temp_')) {
+      return '커뮤니티 아이디는 자동으로 부여됩니다.'
+    }
+    return selectedItem?.id
+  }
   const { fetchComNavData } = communityMaps()
 
-  const btnSave = () => {
+  const btnSave = async () => {
     if (currentItem?.name == '') {
       alert('커뮤니티 이름을 입력해주세요.')
       return
@@ -26,11 +31,10 @@ const CommunityDetail = ({ selectedItem, setData }) => {
 
     let isExist = false
 
-    if (selectedItem?.id == '') {
+    if (selectedItem?.id === '' || selectedItem?.id.startsWith('temp_')) {
       const checkName = async () => {
         const fetchedTree = await getTree()
         const fetchedTreeData = fetchedTree.data
-        console.log(fetchedTreeData)
         fetchedTreeData.map(item => {
           if (item.boardName == currentItem?.name) {
             isExist = true
@@ -38,53 +42,65 @@ const CommunityDetail = ({ selectedItem, setData }) => {
           }
         })
 
-        if (fetchedTree.status === 'success') {
-          console.log(fetchedTree.data)
-        } else {
+        if (fetchedTree.status !== 'success') {
           console.log(fetchedTree.error)
         }
       }
 
-      checkName()
-
-      console.log(isExist)
+      await checkName()
 
       if (isExist) {
         alert('커뮤니티 이름이 중복되었습니다.')
         return false
-      } else {
-        const saveBoard = async () => {
-          const requestData = {
-            boardId: selectedItem?.id,
-            boardName: currentItem?.name,
-            isUseComment: isChecked ? 1 : 0,
-            titleHeaderGroupCd: 'CBNTT',
-            userRud: isCheckedr * 4 + isCheckedu * 2 + isCheckedd
-          }
-
-          await addBoard(requestData)
-
-          const fetchedTree = await getTree()
-          const fetchedTreeData = fetchedTree.data
-          // 데이터 변환
-          const modData = fetchedTreeData.map(item => ({
-            icon: 'file',
-            id: item.boardId,
-            name: item.boardName,
-            usecomment: item.isUseComment === 1,
-            rud: item.userRud
-          }))
-          if (fetchedTree.status === 'success') {
-            setData(modData)
-          } else {
-            console.log(fetchedTree.error)
-          }
-
-          fetchComNavData()
-        }
-        saveBoard()
       }
     }
+    const saveBoard = async () => {
+      const requestData = {
+        boardId:
+          selectedItem?.id === '' || selectedItem?.id.startsWith('temp_')
+            ? ''
+            : selectedItem?.id,
+        boardName: currentItem?.name,
+        isUseComment: isChecked ? 1 : 0,
+        titleHeaderGroupCd: 'CBNTT',
+        userRud: isCheckedr * 2 + isCheckedu * 4 + isCheckedd
+      }
+
+      await addBoard(requestData)
+    }
+
+    await saveBoard()
+
+    const updateTree = async () => {
+      const fetchedTree2 = await getTree()
+      const fetchedTreeData2 = fetchedTree2.data
+      const findArray = fetchedTreeData2.find(function (item) {
+        return item.boardName === currentItem?.name
+      })
+
+      if (fetchedTree2.status !== 'success') {
+        console.log(fetchedTree2.error)
+      }
+
+      setData(prevData => {
+        const setArray = [...prevData]
+        const findArray2 = setArray.findIndex(function (item) {
+          return item.id === selectedItem?.id
+        })
+        setArray[findArray2] = {
+          icon: 'file',
+          id: findArray.boardId,
+          name: currentItem?.name,
+          usecomment: isChecked,
+          rud: isCheckedr * 2 + isCheckedu * 4 + isCheckedd
+        }
+        setSelectedItem(setArray[findArray2])
+        return setArray
+      })
+
+      fetchComNavData()
+    }
+    updateTree()
   }
 
   // 체크 스위치의 상태를 관리하는 useState 훅
@@ -118,29 +134,37 @@ const CommunityDetail = ({ selectedItem, setData }) => {
       setCheckedr(true)
       setCheckedu(true)
       setCheckedd(false)
-    } else if (selectedItem?.rud == 4) {
-      setCheckedr(true)
-      setCheckedu(false)
-      setCheckedd(false)
-    } else if (selectedItem?.rud == 3) {
+    } else if (selectedItem?.rud == 5) {
       setCheckedr(false)
       setCheckedu(true)
       setCheckedd(true)
-    } else if (selectedItem?.rud == 2) {
+    } else if (selectedItem?.rud == 4) {
       setCheckedr(false)
       setCheckedu(true)
+      setCheckedd(false)
+    } else if (selectedItem?.rud == 3) {
+      setCheckedr(true)
+      setCheckedu(false)
+      setCheckedd(true)
+    } else if (selectedItem?.rud == 2) {
+      setCheckedr(true)
+      setCheckedu(false)
       setCheckedd(false)
     } else if (selectedItem?.rud == 1) {
       setCheckedr(false)
       setCheckedu(false)
       setCheckedd(true)
+    } else if (selectedItem?.rud == 0) {
+      setCheckedr(false)
+      setCheckedu(false)
+      setCheckedd(false)
     }
   }, [selectedItem])
 
   return (
     <Card>
       <FalconCardHeader
-        title="Community Tree"
+        title={selectedItem?.name || 'Community Detail'}
         titleClass="fs-0 fw-semi-bold bg-light"
       />
       <Card.Body className="fs--1">
@@ -153,9 +177,7 @@ const CommunityDetail = ({ selectedItem, setData }) => {
               type="text"
               placeholder="Community ID"
               disabled
-              value={
-                selectedItem?.id || '커뮤니티 아이디는 자동으로 부여됩니다.'
-              }
+              value={idCheck()}
               className="fs--1"
             />
           </Col>
@@ -170,7 +192,7 @@ const CommunityDetail = ({ selectedItem, setData }) => {
               placeholder="Community Name"
               value={currentItem?.name || ''}
               className="fs--1"
-              onChange={e => onItemClick(e)}
+              onChange={e => onChangeName(e)}
             />
           </Col>
         </Form.Group>
@@ -241,5 +263,6 @@ export default CommunityDetail
 
 CommunityDetail.propTypes = {
   selectedItem: PropTypes.object,
-  setData: PropTypes.func
+  setData: PropTypes.func,
+  setSelectedItem: PropTypes.func
 }

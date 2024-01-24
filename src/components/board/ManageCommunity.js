@@ -6,7 +6,6 @@ import { getTree } from './apis/page'
 
 const ManageCommunity = () => {
   const [selectedItem, setSelectedItem] = useState(null)
-  console.log('변경 후:', selectedItem)
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -31,10 +30,6 @@ const ManageCommunity = () => {
     fetchTreeInfo()
   }, [])
 
-  useEffect(() => {
-    // console.log(selectedItem) // 업데이트된 값이 출력됨
-  }, [selectedItem])
-
   return (
     <div className="p-2">
       <Row className="g-3 mb-3">
@@ -48,7 +43,7 @@ const ManageCommunity = () => {
           {/* <Treemap data={allOrdCount} height={400} /> */}
         </Col>
         <Col xl={8} lg={8} xs={12} md={8}>
-          <CommunityDetail selectedItem={selectedItem} setData={setData} />
+          <CommunityDetail selectedItem={selectedItem} setData={setData} setSelectedItem={setSelectedItem} />
         </Col>
       </Row>
     </div>
