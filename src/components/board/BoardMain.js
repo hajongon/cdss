@@ -1,25 +1,136 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams, useLocation } from 'react-router-dom'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
+import {
+  Container,
+  Table,
+  Button,
+  InputGroup,
+  FormControl,
+  Pagination,
+  Overlay,
+  Row,
+  Col,
+  Card
+} from 'react-bootstrap'
 import { getArticles, getBoard, getCodeALL, selectCode } from './apis/page'
 
 const BoardMain = () => {
   const { boardId } = useParams()
-
   const location = useLocation()
-
-  const newWritePath = `${location.pathname}/write`
-
+  const newWritePath = `${location.pathname}/write?mod=false`
+  const navigate = useNavigate()
   const [selectedOption, setSelectedOption] = useState('0')
-
-  const [, setTitleHeader] = useState([])
-
+  const [searchText, setSearchText] = useState('')
+  const [titleHeader, setTitleHeader] = useState([])
   const [boardInfo, setBoardInfo] = useState({})
-
   const [articles, setArticles] = useState([])
+
+  const [originalArticles, setOriginalArticles] = useState([])
+  const [currentPage, setCurrentPage] = useState(1) // 현재 페이지 상태
+  const [inputPage, setInputPage] = useState('') // 입력된 페이지 번호
+  const [showOverlay, setShowOverlay] = useState(false)
+  const [target, setTarget] = useState(null)
+  const itemsPerPage = 10 // 페이지당 아이템 수
+
+  // 페이지 변경 이벤트 핸들러
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber)
+  }
+
+  // 현재 페이지에 해당하는 데이터 계산
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentData = articles.slice(indexOfFirstItem, indexOfLastItem)
+
+  // 처음과 끝으로 이동하는 이벤트 핸들러
+  const goToFirstPage = () => {
+    setCurrentPage(1)
+  }
+
+  const goToLastPage = () => {
+    setCurrentPage(Math.ceil(articles.length / itemsPerPage))
+  }
+
+  // 페이지 수 계산
+  const pageCount = Math.ceil(articles.length / itemsPerPage)
+
+  // 중간 페이지 범위 계산
+  const middlePages = () => {
+    const displayPages = 5 // 중앙에 표시할 페이지 수
+    const middle = Math.ceil(displayPages / 2)
+    let start = currentPage - middle + 1
+    let end = currentPage + middle - 1
+
+    if (start < 1) {
+      start = 1
+      end = Math.min(displayPages, pageCount)
+    }
+
+    if (end > pageCount) {
+      start = Math.max(1, pageCount - displayPages + 1)
+      end = pageCount
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, index) => start + index)
+  }
+
+  // 중앙 페이지 배열
+  const middlePagesArray = middlePages()
+
+  // 페이지 입력창 변경 이벤트 핸들러
+  const handleInputChange = e => {
+    setInputPage(e.target.value)
+  }
+
+  // 페이지 입력창에서 Enter 키 이벤트 핸들러
+  const handleInputKeyDown = e => {
+    if (e.key === 'Enter') {
+      goToInputPage()
+    }
+  }
+
+  // 입력된 페이지로 이동하는 함수
+  const goToInputPage = () => {
+    const inputPageNumber = parseInt(inputPage, 10)
+    if (
+      !isNaN(inputPageNumber) &&
+      inputPageNumber >= 1 &&
+      inputPageNumber <= pageCount
+    ) {
+      setCurrentPage(inputPageNumber)
+    }
+    setInputPage('')
+    setShowOverlay(false)
+  }
+
+  const handleEllipsisClick = event => {
+    // Toggle the visibility of InputGroup when Ellipsis is clicked
+    setShowOverlay(!showOverlay)
+    setTarget(event.target)
+  }
+
+  const handleClickOutside = event => {
+    // Close the Overlay when clicking outside of it
+    if (target && !target.contains(event.target)) {
+      setShowOverlay(false)
+    }
+  }
+
+  const handleArticleClick = item => {
+    const redirectUrl = `/board/main/${boardInfo.boardId}/view/${item.articleIdx}`
+    navigate(redirectUrl)
+  }
+
+  const handleInputClick = e => {
+    e.stopPropagation() // Input 클릭이벤트 전파 막기
+  }
 
   const handleSelectChange = e => {
     setSelectedOption(e.target.value)
+  }
+
+  const handleSearchTxt = e => {
+    setSearchText(e.target.value)
   }
 
   useEffect(() => {
@@ -41,6 +152,7 @@ const BoardMain = () => {
       const fetchedCodes = await getCodeALL()
       if (fetchedCodes.status === 'success') {
         const selectCodeData = selectCode(fetchedCodes.data)
+
         setTitleHeader(selectCodeData[boardInfo.titleHeaderGroupCd])
       } else {
         console.log(fetchedCodes.error)
@@ -51,11 +163,11 @@ const BoardMain = () => {
 
   useEffect(() => {
     const fetchArticleData = async () => {
-      console.log(boardId)
       const fetchedArticles = await getArticles(boardId)
 
       if (fetchedArticles.status === 'success') {
         setArticles(fetchedArticles.data)
+        setOriginalArticles(fetchedArticles.data)
       } else {
         console.log(fetchedArticles.error)
       }
@@ -64,103 +176,195 @@ const BoardMain = () => {
     fetchArticleData()
   }, [boardId])
 
+  useEffect(() => {
+    if (showOverlay) {
+      document.addEventListener('click', handleClickOutside)
+    } else {
+      document.removeEventListener('click', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [showOverlay])
+
+  useEffect(() => {
+    filterArticles()
+  }, [selectedOption, searchText])
+
+  const filterArticles = () => {
+    let filteredResult = originalArticles // 처음 마운트된 값으로 초기화
+
+    // 선택 옵션에 따라 필터링
+    if (selectedOption !== '0') {
+      filteredResult = filteredResult.filter(
+        item => item.articleHeaderCd === selectedOption
+      )
+    }
+
+    // 검색어에 따라 필터링
+    if (searchText) {
+      filteredResult = filteredResult.filter(
+        item =>
+          (item.articleTitle &&
+            item.articleTitle
+              .toLowerCase()
+              .includes(searchText.toLowerCase())) ||
+          (item.publisherId &&
+            item.publisherId
+              .toLowerCase()
+              .includes(searchText.toLowerCase())) ||
+          (item.regTimeTxt &&
+            item.regTimeTxt.toLowerCase().includes(searchText.toLowerCase()))
+      )
+    }
+
+    setArticles(filteredResult)
+  }
   return (
-    <div className="contetnt">
+    <Container>
       <input type="hidden" id="board_id" value={boardId} />
 
-      <Row className="g-5" xl={8}>
-        <Col xl={12}>
+      <Row>
+        <Col lg={10} className="mx-auto">
           <Card>
-            <Card.Header className="border-0 pt-6">
-              <Card.Title className="flex-wrap">
-                <div className="d-flex align-items-center my-1 me-5">
-                  <select value={selectedOption} onChange={handleSelectChange}>
+            <Card.Header className="justify-content-start">
+              <Row>
+                <Col sm={2}>
+                  <select
+                    value={selectedOption}
+                    onChange={handleSelectChange}
+                    className="form-select form-select-md"
+                    style={{ verticalAlign: 'middle' }}
+                  >
                     <option value="0">전체</option>
-                    {/* {titleHeader.map((item, index) => (
-                    <option key={index} value={item.cd}>
-                      {item.cdName}
-                    </option>
-                  ))} */}
+                    {titleHeader !== undefined &&
+                      titleHeader.map((item, index) => (
+                        <option key={index} value={item.cd}>
+                          {item.cdName}
+                        </option>
+                      ))}
                   </select>
-                </div>
-                <div className="d-flex align-items-center my-1">
-                  <span className="svg-icon svg-icon-1 ms-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <rect
-                        opacity="0.5"
-                        x="17.0365"
-                        y="15.1223"
-                        width="8.15546"
-                        height="2"
-                        rx="1"
-                        transform="rotate(45 17.0365 15.1223)"
-                        fill="currentColor"
-                      ></rect>
-                      <path
-                        d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </span>
+                </Col>
+                <Col sm={4}>
                   <input
                     type="text"
-                    id="searchTxt"
-                    data-kt-user-table-filter="search"
-                    className="form-control form-control-solid w-400px ps-14"
+                    className="form-control form-control-solid"
                     placeholder="검색어를 입력하세요."
+                    onKeyUp={handleSearchTxt}
                   />
-                </div>
-              </Card.Title>
-              {boardInfo.userRud > 4 && (
-                <Link
-                  to={newWritePath}
-                  className="btn btn-primary er fs-6 px-8 py-4"
-                >
-                  글쓰기
-                </Link>
-              )}
+                </Col>
+                <Col className="text-end">
+                  {boardInfo.userRud > 3 && (
+                    <Link to={newWritePath} className="btn btn-primary">
+                      글쓰기
+                    </Link>
+                  )}
+                </Col>
+              </Row>
             </Card.Header>
             <Card.Body>
-              <table
-                className="table table-hover table-rounded table-striped border gy-7 gs-7"
-                id="boardList"
-                style={{ cursor: 'pointer' }}
-              >
-                {/* Table head */}
-                <thead>
-                  {/* Table row */}
-                  <tr className="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-                    <th className="min-w-400px text-center">제목</th>
-                    <th className="min-w-100px text-center">작성자</th>
-                    <th className="min-w-100px text-center">작성일</th>
-                  </tr>
-                  {/* End Table row */}
-                </thead>
-                {/* End Table head */}
-
-                {/* Table body */}
-                <tbody>
-                  {/* {articles.map((item, index) => (
-                    <tr key={index}>
-                      <td className="min-w-400px text-center">{item.title}</td>
-                      <td className="min-w-100px text-center">{item.author}</td>
-                      <td className="min-w-100px text-center">{item.date}</td>
+              <div className="text-center">
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>제목</th>
+                      <th>작성자</th>
+                      <th>작성일</th>
                     </tr>
-                  ))} */}
-                </tbody>
-                {/* End Table body */}
-              </table>
+                  </thead>
+                  <tbody>
+                    {currentData.map(item => (
+                      <tr
+                        key={item.id}
+                        onClick={() => handleArticleClick(item)}
+                      >
+                        <td>
+                          {item.articleHeaderCdTxt
+                            ? item.articleTitleChg
+                            : item.articleTitle}
+                        </td>
+                        <td>{item.publisherId}</td>
+                        <td>{item.regTimeTxt}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+
+                <div className="d-flex justify-content-center">
+                  <Pagination>
+                    <Pagination.First onClick={goToFirstPage} />
+                    <Pagination.Prev
+                      onClick={() => handlePageChange(currentPage - 1)}
+                    />
+
+                    {currentPage > 1 && (
+                      <>
+                        {currentPage > 2 && (
+                          <Pagination.Ellipsis onClick={handleEllipsisClick} />
+                        )}
+                      </>
+                    )}
+
+                    {middlePagesArray.map(number => (
+                      <Pagination.Item
+                        key={number}
+                        active={number === currentPage}
+                        onClick={() => handlePageChange(number)}
+                      >
+                        {number}
+                      </Pagination.Item>
+                    ))}
+
+                    {currentPage < pageCount && (
+                      <>
+                        {currentPage < pageCount - 1 && (
+                          <Pagination.Ellipsis onClick={handleEllipsisClick} />
+                        )}
+                      </>
+                    )}
+
+                    <Pagination.Next
+                      onClick={() => handlePageChange(currentPage + 1)}
+                    />
+                    <Pagination.Last onClick={goToLastPage} />
+                  </Pagination>
+
+                  <Overlay
+                    show={showOverlay}
+                    target={target}
+                    placement="bottom"
+                    containerPadding={20}
+                  >
+                    <InputGroup
+                      style={{
+                        width: '200px',
+                        backgroundColor: 'rgba(255, 255, 255, 1)'
+                      }}
+                    >
+                      <FormControl
+                        placeholder="페이지 번호"
+                        value={inputPage}
+                        onClick={handleInputClick}
+                        onChange={handleInputChange}
+                        onKeyDown={handleInputKeyDown}
+                        style={{ backgroundColor: 'white' }}
+                      />
+                      <Button
+                        variant="outline-secondary"
+                        onClick={goToInputPage}
+                      >
+                        이동
+                      </Button>
+                    </InputGroup>
+                  </Overlay>
+                </div>
+              </div>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-    </div>
+    </Container>
   )
 }
 
