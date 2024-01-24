@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams, useLocation } from 'react-router-dom'
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
 import {
   Container,
   Table,
@@ -16,68 +16,16 @@ import { getArticles, getBoard, getCodeALL, selectCode } from './apis/page'
 
 const BoardMain = () => {
   const { boardId } = useParams()
-
   const location = useLocation()
-
-  const newWritePath = `${location.pathname}/write`
-
+  const newWritePath = `${location.pathname}/write?mod=false`
+  const navigate = useNavigate()
   const [selectedOption, setSelectedOption] = useState('0')
-
+  const [searchText, setSearchText] = useState('')
   const [titleHeader, setTitleHeader] = useState([])
-
   const [boardInfo, setBoardInfo] = useState({})
-  console.log(boardInfo)
-
   const [articles, setArticles] = useState([])
 
-  const mod = true
-
-  const handleSelectChange = e => {
-    setSelectedOption(e.target.value)
-  }
-
-  useEffect(() => {
-    const fetchBoardInfo = async () => {
-      const fetchedBoard = await getBoard(boardId)
-
-      if (fetchedBoard.status === 'success') {
-        setBoardInfo(fetchedBoard.data)
-      } else {
-        console.log(fetchedBoard.error)
-      }
-    }
-
-    fetchBoardInfo()
-  }, [boardId])
-
-  useEffect(() => {
-    const fetchCodeInfo = async () => {
-      const fetchedCodes = await getCodeALL()
-      if (fetchedCodes.status === 'success') {
-        const selectCodeData = selectCode(fetchedCodes.data)
-
-        setTitleHeader(selectCodeData[boardInfo.titleHeaderGroupCd])
-      } else {
-        console.log(fetchedCodes.error)
-      }
-    }
-    fetchCodeInfo()
-  }, [boardInfo])
-
-  useEffect(() => {
-    const fetchArticleData = async () => {
-      const fetchedArticles = await getArticles(boardId)
-
-      if (fetchedArticles.status === 'success') {
-        setArticles(fetchedArticles.data)
-      } else {
-        console.log(fetchedArticles.error)
-      }
-    }
-
-    fetchArticleData()
-  }, [boardId])
-
+  const [originalArticles, setOriginalArticles] = useState([])
   const [currentPage, setCurrentPage] = useState(1) // 현재 페이지 상태
   const [inputPage, setInputPage] = useState('') // 입력된 페이지 번호
   const [showOverlay, setShowOverlay] = useState(false)
@@ -93,6 +41,7 @@ const BoardMain = () => {
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentData = articles.slice(indexOfFirstItem, indexOfLastItem)
+
   // 처음과 끝으로 이동하는 이벤트 핸들러
   const goToFirstPage = () => {
     setCurrentPage(1)
@@ -101,6 +50,7 @@ const BoardMain = () => {
   const goToLastPage = () => {
     setCurrentPage(Math.ceil(articles.length / itemsPerPage))
   }
+
   // 페이지 수 계산
   const pageCount = Math.ceil(articles.length / itemsPerPage)
 
@@ -166,6 +116,66 @@ const BoardMain = () => {
     }
   }
 
+  const handleArticleClick = item => {
+    const redirectUrl = `/board/main/${boardInfo.boardId}/view/${item.articleIdx}`
+    navigate(redirectUrl)
+  }
+
+  const handleInputClick = e => {
+    e.stopPropagation() // Input 클릭이벤트 전파 막기
+  }
+
+  const handleSelectChange = e => {
+    setSelectedOption(e.target.value)
+  }
+
+  const handleSearchTxt = e => {
+    setSearchText(e.target.value)
+  }
+
+  useEffect(() => {
+    const fetchBoardInfo = async () => {
+      const fetchedBoard = await getBoard(boardId)
+
+      if (fetchedBoard.status === 'success') {
+        setBoardInfo(fetchedBoard.data)
+      } else {
+        console.log(fetchedBoard.error)
+      }
+    }
+
+    fetchBoardInfo()
+  }, [boardId])
+
+  useEffect(() => {
+    const fetchCodeInfo = async () => {
+      const fetchedCodes = await getCodeALL()
+      if (fetchedCodes.status === 'success') {
+        const selectCodeData = selectCode(fetchedCodes.data)
+
+        setTitleHeader(selectCodeData[boardInfo.titleHeaderGroupCd])
+      } else {
+        console.log(fetchedCodes.error)
+      }
+    }
+    fetchCodeInfo()
+  }, [boardInfo])
+
+  useEffect(() => {
+    const fetchArticleData = async () => {
+      const fetchedArticles = await getArticles(boardId)
+
+      if (fetchedArticles.status === 'success') {
+        setArticles(fetchedArticles.data)
+        setOriginalArticles(fetchedArticles.data)
+      } else {
+        console.log(fetchedArticles.error)
+      }
+    }
+
+    fetchArticleData()
+  }, [boardId])
+
   useEffect(() => {
     if (showOverlay) {
       document.addEventListener('click', handleClickOutside)
@@ -178,10 +188,39 @@ const BoardMain = () => {
     }
   }, [showOverlay])
 
-  const handleInputClick = e => {
-    e.stopPropagation() // Input 클릭이벤트 전파 막기
-  }
+  useEffect(() => {
+    filterArticles()
+  }, [selectedOption, searchText])
 
+  const filterArticles = () => {
+    let filteredResult = originalArticles // 처음 마운트된 값으로 초기화
+
+    // 선택 옵션에 따라 필터링
+    if (selectedOption !== '0') {
+      filteredResult = filteredResult.filter(
+        item => item.articleHeaderCd === selectedOption
+      )
+    }
+
+    // 검색어에 따라 필터링
+    if (searchText) {
+      filteredResult = filteredResult.filter(
+        item =>
+          (item.articleTitle &&
+            item.articleTitle
+              .toLowerCase()
+              .includes(searchText.toLowerCase())) ||
+          (item.publisherId &&
+            item.publisherId
+              .toLowerCase()
+              .includes(searchText.toLowerCase())) ||
+          (item.regTimeTxt &&
+            item.regTimeTxt.toLowerCase().includes(searchText.toLowerCase()))
+      )
+    }
+
+    setArticles(filteredResult)
+  }
   return (
     <Container>
       <input type="hidden" id="board_id" value={boardId} />
@@ -210,19 +249,14 @@ const BoardMain = () => {
                 <Col sm={4}>
                   <input
                     type="text"
-                    id="searchTxt"
-                    data-kt-user-table-filter="search"
                     className="form-control form-control-solid"
                     placeholder="검색어를 입력하세요."
+                    onKeyUp={handleSearchTxt}
                   />
                 </Col>
                 <Col className="text-end">
                   {boardInfo.userRud > 3 && (
-                    <Link
-                      to={newWritePath}
-                      state={{ boardInfo, titleHeader, mod: !mod }}
-                      className="btn btn-primary"
-                    >
+                    <Link to={newWritePath} className="btn btn-primary">
                       글쓰기
                     </Link>
                   )}
@@ -241,10 +275,17 @@ const BoardMain = () => {
                   </thead>
                   <tbody>
                     {currentData.map(item => (
-                      <tr key={item.id}>
-                        <td>{item.title}</td>
-                        <td>{item.author}</td>
-                        <td>{item.date}</td>
+                      <tr
+                        key={item.id}
+                        onClick={() => handleArticleClick(item)}
+                      >
+                        <td>
+                          {item.articleHeaderCdTxt
+                            ? item.articleTitleChg
+                            : item.articleTitle}
+                        </td>
+                        <td>{item.publisherId}</td>
+                        <td>{item.regTimeTxt}</td>
                       </tr>
                     ))}
                   </tbody>
