@@ -23,7 +23,7 @@ const Write = () => {
   const [boardInfo, setBoardInfo] = useState({})
   const [articleInfo, setArticleInfo] = useState({})
   const [searchParams] = useSearchParams()
-  const [mod, setMod] = useState(false) 
+  const [mod, setMod] = useState(false)
   const [content, setContent] = useState('')
   const quillRef = useRef(null)
 
@@ -112,9 +112,9 @@ const Write = () => {
     const modParam = searchParams.get('mod')
 
     if (modParam !== null && modParam.toLowerCase() === 'true') {
-      setMod(true);
+      setMod(true)
     }
-  }, []); 
+  }, [])
 
   useEffect(() => {
     const fetchBoardInfo = async () => {
