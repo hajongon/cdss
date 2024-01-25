@@ -88,7 +88,6 @@ const Write = () => {
         articleContent: content,
         articleHeaderCd: !selectedOption ? null : selectedOption
       }
-      console.log(requestData)
 
       await addArticles(requestData)
 
