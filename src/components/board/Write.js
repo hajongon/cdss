@@ -23,7 +23,7 @@ const Write = () => {
   const [boardInfo, setBoardInfo] = useState({})
   const [articleInfo, setArticleInfo] = useState({})
   const [searchParams] = useSearchParams()
-  const mod = searchParams.get('mod')
+  const [mod, setMod] = useState(false) 
   const [content, setContent] = useState('')
   const quillRef = useRef(null)
 
@@ -82,7 +82,7 @@ const Write = () => {
       alert('내용을 작성해주세요.')
     } else {
       const requestData = {
-        articleIdx: mod ? articleInfo.articleIdx : 0,
+        articleIdx: mod ? articleIdx : 0,
         boardId: boardId,
         articleTitle: title,
         articleContent: content,
@@ -107,6 +107,14 @@ const Write = () => {
       navigate(redirectUrl)
     }
   }
+
+  useEffect(() => {
+    const modParam = searchParams.get('mod')
+
+    if (modParam !== null && modParam.toLowerCase() === 'true') {
+      setMod(true);
+    }
+  }, []); 
 
   useEffect(() => {
     const fetchBoardInfo = async () => {
