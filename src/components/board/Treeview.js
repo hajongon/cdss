@@ -34,7 +34,6 @@ const TreeviewListItem = ({
     id: MENU_ID
   })
 
-
   function handleContextMenu(event) {
     handleItemClick(item)
     show({
