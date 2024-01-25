@@ -43,7 +43,11 @@ const ManageCommunity = () => {
           {/* <Treemap data={allOrdCount} height={400} /> */}
         </Col>
         <Col xl={8} lg={8} xs={12} md={8}>
-          <CommunityDetail selectedItem={selectedItem} setData={setData} setSelectedItem={setSelectedItem} />
+          <CommunityDetail
+            selectedItem={selectedItem}
+            setData={setData}
+            setSelectedItem={setSelectedItem}
+          />
         </Col>
       </Row>
     </div>
